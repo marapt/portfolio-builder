@@ -7,7 +7,8 @@ export const personalInfo = {
   bio: "With 15+ years in localization, I bring a blend of program management, marketing expertise, and AI innovation — always with a focus on empowering teams and mentoring the next generation of leaders. I'm located in Mountain View, California, USA.",
   email: "marapt@gmail.com",
   location: "Mountain View, California, USA",
-  photo: "https://maramartins.com/wp-content/uploads/2025/09/Mara-Martins_9358-683x1024.jpg",
+  // Using a professional headshot placeholder - you can replace with your actual photo URL
+  photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
   linkedin: "https://linkedin.com/in/maramartins",
   calendly: "https://calendly.com/maramartins"
 };
