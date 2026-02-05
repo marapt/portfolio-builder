@@ -1,5 +1,14 @@
 import React from 'react';
-import { companies } from '../data/mock';
+
+const companyNames = [
+  { name: 'HP', style: 'font-bold' },
+  { name: 'Square', style: 'font-semibold' },
+  { name: 'LinkedIn', style: 'font-semibold' },
+  { name: 'Infoblox', style: 'font-medium' },
+  { name: 'Apple', style: 'font-semibold' },
+  { name: 'Welocalize', style: 'font-medium' },
+  { name: 'VMware', style: 'font-semibold' }
+];
 
 const Companies = () => {
   return (
@@ -14,18 +23,14 @@ const Companies = () => {
           </p>
         </div>
 
-        {/* Logo Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center">
-          {companies.map((company, index) => (
+        {/* Logo Grid - Text Based */}
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
+          {companyNames.map((company, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+              className="text-2xl md:text-3xl text-gray-400 hover:text-gray-700 transition-all duration-300 cursor-default"
             >
-              <img
-                src={company.logo}
-                alt={company.name}
-                className="max-h-12 w-auto object-contain"
-              />
+              <span className={company.style}>{company.name}</span>
             </div>
           ))}
         </div>
