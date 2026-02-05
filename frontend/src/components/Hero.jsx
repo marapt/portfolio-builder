@@ -71,16 +71,20 @@ const Hero = () => {
           {/* Right Content - Photo */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-72 h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+              <div className="w-56 h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-indigo-100 to-indigo-50">
                 <img
                   src={personalInfo.photo}
                   alt={personalInfo.name}
                   className="w-full h-full object-cover object-top"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = `<div class="w-full h-full flex items-center justify-center text-6xl lg:text-8xl font-bold text-indigo-300">MM</div>`;
+                  }}
                 />
               </div>
               {/* Decorative elements */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-indigo-100 rounded-full -z-10"></div>
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-indigo-200 rounded-full -z-10"></div>
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 md:w-24 md:h-24 bg-indigo-100 rounded-full -z-10"></div>
+              <div className="absolute -top-4 -left-4 w-12 h-12 md:w-16 md:h-16 bg-indigo-200 rounded-full -z-10"></div>
             </div>
           </div>
         </div>
