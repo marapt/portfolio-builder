@@ -425,3 +425,150 @@ All content from your portfolio, ready to copy into WordPress.
 - https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop
 - https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop
 - https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=400&fit=crop
+
+---
+
+## RESUME PAGE
+
+### Professional Summary
+> Global Localization & AI Program Lead with 15+ years of experience driving international expansion for Fortune 500 technology companies. Expert in building scalable localization programs, implementing AI-powered translation workflows, and leading cross-functional teams across EMEA, APAC, and LATAM regions. Passionate about bridging technology with language and culture to help organizations reach global audiences.
+
+---
+
+### Work Experience
+
+#### 1. Block (Square) - Senior Localization Program Manager
+**Period:** 2021 - Present
+**Location:** San Francisco Bay Area
+**Type:** Full-time
+
+**Description:** Leading global localization strategy and operations for Block's suite of financial products.
+
+**Achievements:**
+- Scaled localization program to support 40+ languages across multiple product lines
+- Implemented AI-powered translation workflows reducing time-to-market by 60%
+- Built and mentored a high-performing team of localization specialists
+- Established quality frameworks achieving 98% customer satisfaction scores
+- Managed $2M+ annual localization budget with 40% cost optimization
+
+---
+
+#### 2. LinkedIn - Localization Program Manager
+**Period:** 2018 - 2021
+**Location:** San Francisco Bay Area
+**Type:** Full-time
+
+**Description:** Managed end-to-end localization for LinkedIn's core platform and marketing initiatives.
+
+**Achievements:**
+- Led localization for LinkedIn's expansion into 10+ new markets
+- Developed centralized terminology management system used across all products
+- Coordinated with engineering teams to implement i18n best practices
+- Reduced localization bugs by 75% through improved QA processes
+- Trained 50+ content creators on localization-friendly content development
+
+---
+
+#### 3. Microsoft - Localization Project Manager
+**Period:** 2014 - 2018
+**Location:** Seattle / Bay Area
+**Type:** Full-time
+
+**Description:** Managed localization projects for Microsoft's enterprise and consumer products.
+
+**Achievements:**
+- Coordinated localization for Windows, Office, and Azure documentation
+- Managed relationships with 15+ language service providers globally
+- Implemented translation memory optimization saving $500K annually
+- Led cross-functional initiatives between engineering, marketing, and legal teams
+- Achieved 99% on-time delivery rate for all localization projects
+
+---
+
+#### 4. HP Inc. - Localization Specialist
+**Period:** 2010 - 2014
+**Location:** Bay Area
+**Type:** Full-time
+
+**Description:** Specialized in marketing and product localization for HP's global markets.
+
+**Achievements:**
+- Localized marketing campaigns for 30+ regional markets
+- Developed style guides and glossaries for consistent brand voice
+- Collaborated with regional marketing teams to ensure cultural relevance
+- Managed desktop publishing and multimedia localization projects
+
+---
+
+#### 5. Welocalize - Senior Linguist / Project Coordinator
+**Period:** 2008 - 2010
+**Location:** Portugal / Remote
+**Type:** Full-time
+
+**Description:** Started career in localization as a linguist specializing in Portuguese translations.
+
+**Achievements:**
+- Translated and reviewed 500K+ words for major tech clients
+- Promoted to project coordinator role within 18 months
+- Specialized in software localization and technical documentation
+- Built expertise in CAT tools and translation technology
+
+---
+
+### Education
+
+| Degree | Institution | Location | Year |
+|--------|-------------|----------|------|
+| Master's in Translation & Localization Management | Universidade Nova de Lisboa | Lisbon, Portugal | 2008 |
+| Bachelor's in Modern Languages | Universidade de Lisboa | Lisbon, Portugal | 2006 |
+
+---
+
+### Skills
+
+**Localization:**
+Program Management, Vendor Management, Quality Assurance, Translation Memory, Terminology Management, Internationalization (i18n), Localization (L10n), Globalization Strategy
+
+**Technology:**
+SDL Trados, memoQ, Smartling, Crowdin, Phrase, Neural MT, Python (Learning), GitHub
+
+**AI & Machine Learning:**
+AI/ML in Localization, NMT Implementation, Post-editing Workflows, Quality Estimation, LLM Applications, Prompt Engineering
+
+**Management:**
+Team Leadership, Budget Management, Stakeholder Communication, Process Optimization, Cross-functional Collaboration, Agile/Scrum, OKR Planning, Training & Mentoring
+
+---
+
+### Languages
+
+| Language | Level | Flag |
+|----------|-------|------|
+| Portuguese | Native | 🇵🇹 |
+| English | Fluent (C2) | 🇺🇸 |
+| Spanish | Professional (C1) | 🇪🇸 |
+| French | Intermediate (B1) | 🇫🇷 |
+
+---
+
+### Certifications
+
+| Certification | Issuer | Year |
+|---------------|--------|------|
+| PMP - Project Management Professional | Project Management Institute | 2016 |
+| Certified Localization Professional | GALA | 2015 |
+| SDL Trados Certification | SDL/RWS | 2014 |
+| Agile Certified Practitioner | PMI-ACP | 2019 |
+
+---
+
+### Awards
+
+| Award | Organization | Year |
+|-------|--------------|------|
+| Excellence in Localization Leadership | LocWorld Conference | 2022 |
+| Innovation Award - AI Implementation | Block Inc. | 2023 |
+
+---
+
+**Resume Page URL:** /resume
