@@ -189,9 +189,9 @@ This project is open source and available on GitHub as part of my commitment to 
       'Real-time Processing'
     ],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop', caption: 'Mobile Interface' },
-      { url: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop', caption: 'Voice Translation' },
-      { url: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=400&fit=crop', caption: 'Accessibility Features' }
+      { url: '/polyglot-text.png', caption: 'Text Translation - English to Spanish' },
+      { url: '/polyglot-voice.png', caption: 'Voice Translation Interface' },
+      { url: '/polyglot-sign.png', caption: 'Sign Language to Text Feature' }
     ]
   }
 };
