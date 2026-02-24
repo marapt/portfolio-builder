@@ -2,17 +2,41 @@ import React from 'react';
 
 const Companies = () => {
   const employers = [
-    { name: 'Middlebury Institute', category: 'education' },
-    { name: 'Block', category: 'employer' },
-    { name: 'LinkedIn', category: 'employer' },
-    { name: 'Microsoft', category: 'employer' },
-    { name: 'Infoblox', category: 'employer' },
-    { name: 'Apple', category: 'employer' },
+    { 
+      name: 'Middlebury Institute', 
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/93/MIIS_logo.svg/1200px-MIIS_logo.svg.png'
+    },
+    { 
+      name: 'Block', 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Block%2C_Inc._logo.svg/512px-Block%2C_Inc._logo.svg.png'
+    },
+    { 
+      name: 'LinkedIn', 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/512px-LinkedIn_Logo.svg.png'
+    },
+    { 
+      name: 'Microsoft', 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/512px-Microsoft_logo_%282012%29.svg.png'
+    },
+    { 
+      name: 'Infoblox', 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Infoblox_logo.svg/512px-Infoblox_logo.svg.png'
+    },
+    { 
+      name: 'Apple', 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png'
+    },
   ];
 
-  const agencies = [
-    { name: 'Hogarth Worldwide', category: 'agency' },
-    { name: 'Sony UK', category: 'agency' },
+  const ukExperience = [
+    { 
+      name: 'Hogarth Worldwide', 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hogarth_Worldwide_logo.svg/512px-Hogarth_Worldwide_logo.svg.png'
+    },
+    { 
+      name: 'Sony', 
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sony_logo.svg/512px-Sony_logo.svg.png'
+    },
   ];
 
   return (
@@ -27,18 +51,26 @@ const Companies = () => {
           </p>
         </div>
 
-        {/* Direct Employers */}
-        <div className="mb-10">
-          <p className="text-center text-sm text-indigo-600 font-medium uppercase tracking-wider mb-6">
+        {/* Companies & Institutions */}
+        <div className="mb-12">
+          <p className="text-center text-sm text-indigo-600 font-medium uppercase tracking-wider mb-8">
             Companies & Institutions
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-16">
             {employers.map((company, index) => (
               <div
                 key={index}
-                className="text-xl md:text-2xl text-gray-400 hover:text-indigo-600 transition-all duration-300 cursor-default font-semibold"
+                className="flex items-center justify-center h-12 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
               >
-                {company.name}
+                <img 
+                  src={company.logo} 
+                  alt={company.name}
+                  className="h-8 md:h-10 w-auto object-contain"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = `<span class="text-xl md:text-2xl font-semibold text-gray-400">${company.name}</span>`;
+                  }}
+                />
               </div>
             ))}
           </div>
@@ -46,16 +78,24 @@ const Companies = () => {
 
         {/* UK Experience */}
         <div>
-          <p className="text-center text-sm text-gray-500 font-medium uppercase tracking-wider mb-6">
+          <p className="text-center text-sm text-gray-500 font-medium uppercase tracking-wider mb-8">
             International Experience (UK)
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {agencies.map((company, index) => (
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+            {ukExperience.map((company, index) => (
               <div
                 key={index}
-                className="text-lg md:text-xl text-gray-300 hover:text-gray-600 transition-all duration-300 cursor-default font-medium"
+                className="flex items-center justify-center h-10 grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300"
               >
-                {company.name}
+                <img 
+                  src={company.logo} 
+                  alt={company.name}
+                  className="h-6 md:h-8 w-auto object-contain"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = `<span class="text-lg md:text-xl font-medium text-gray-300">${company.name}</span>`;
+                  }}
+                />
               </div>
             ))}
           </div>
