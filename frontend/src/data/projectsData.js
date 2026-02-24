@@ -189,9 +189,9 @@ This project is open source and available on GitHub as part of my commitment to 
       'Real-time Processing'
     ],
     gallery: [
-      { url: '/polyglot-text.png', caption: 'Text Translation - English to Spanish' },
-      { url: '/polyglot-voice.png', caption: 'Voice Translation Interface' },
-      { url: '/polyglot-sign.png', caption: 'Sign Language to Text Feature' }
+      { url: '/polyglot-text.jpg', caption: 'Text Translation - Multilingual Support' },
+      { url: '/polyglot-voice.jpg', caption: 'Voice Translation Interface' },
+      { url: '/polyglot-sign.jpg', caption: 'Sign Language to Text Feature' }
     ]
   }
 };
