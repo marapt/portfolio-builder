@@ -1,7 +1,7 @@
 // Resume data for Mara Martins - Updated from actual CV
 
 export const resumeData = {
-  summary: `Localization Expert with Regional GTM & Launch Program Management experience for 12+ years leading regional go-to-market execution, product launches, and operational programs across 45+ international markets. Proven track record driving cross-functional initiatives across Marketing, Product, Creative, Engineering. Bridging corporate and regional teams to scale new products and features through structured program management, localization, and change adoption in highly matrixed environments. Deep expertise in market readiness, localization at scale and change adoption in highly complex organizations.`,
+  summary: `Bridging AI with language, culture, and technology to help global companies expand with confidence and impact. With 15+ years in localization, I bring a blend of program management, marketing expertise, and AI innovation — always with a focus on empowering teams and mentoring the next generation of leaders.`,
   
   experience: [
     {
