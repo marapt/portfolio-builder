@@ -10,7 +10,7 @@ export const personalInfo = {
   // Mara's actual GitHub profile photo
   photo: "https://avatars.githubusercontent.com/u/233815337?v=4",
   linkedin: "https://linkedin.com/in/maramartinspt",
-  github: "https://github.com/maramartinprt",
+  github: "https://github.com/marapt",
   calendly: "https://calendly.com/maramartins"
 };
 
