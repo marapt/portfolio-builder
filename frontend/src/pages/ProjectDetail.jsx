@@ -85,14 +85,24 @@ const ProjectDetail = () => {
                 )}
               </div>
               
-              {project.liveUrl && (
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2">
-                    View Live Project
-                    <ExternalLink size={18} />
-                  </Button>
-                </a>
-              )}
+              <div className="flex flex-wrap gap-3">
+                {project.liveUrl && (
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2">
+                      View Live Project
+                      <ExternalLink size={18} />
+                    </Button>
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="border-gray-800 text-gray-800 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium flex items-center gap-2">
+                      <Github size={18} />
+                      View on GitHub
+                    </Button>
+                  </a>
+                )}
+              </div>
             </div>
             
             <div className="relative">
