@@ -99,49 +99,70 @@ By combining custom-trained NMT engines with intelligent routing and human post-
   
   'localization-training-program': {
     id: 'localization-training-program',
-    title: 'Localization Training Program',
-    description: 'Developed comprehensive training curriculum adopted by multiple enterprise clients worldwide, empowering teams with localization best practices and emerging technologies.',
-    heroImage: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=500&fit=crop',
-    tags: ['Training', 'Education', 'L10n', 'Leadership'],
-    duration: '24 months',
-    teamSize: '8 instructors',
-    scope: '500+ professionals trained',
+    title: 'MIIS Teaching & AI Speaker Series',
+    description: 'Visiting Professor at Middlebury Institute of International Studies, teaching graduate-level courses on Translation and Localization Management while leading the AI in Localization Speaker Series.',
+    heroImage: '/miis-ai-series.jpg',
+    tags: ['Education', 'AI', 'Localization', 'MIIS', 'Speaker Series'],
+    duration: 'Jul 2023 - Jul 2025',
+    teamSize: '90+ Students Mentored',
+    scope: 'Graduate Program',
     liveUrl: null,
-    overview: `This comprehensive training initiative was designed to bridge the knowledge gap in enterprise localization, providing practical skills and strategic thinking to professionals at all levels of the organization.
+    overview: `As a Visiting Professor at the Middlebury Institute of International Studies (MIIS), one of my main goals is to empower students to hear real life experiences beyond the classroom and my own perspectives or life experiences.
 
-The curriculum spans from foundational concepts for newcomers to advanced topics for experienced practitioners, including AI/ML in localization, quality management, and global content strategy. The program has been adopted by Fortune 500 companies across technology, healthcare, and financial services sectors.`,
+I designed and launched the institute's first AI Event Series "AI in Localization" by collaborating with industry leaders from GitLab, Block, Coupa, Smartling, and more. This initiative brings real-world insights directly to students while building bridges between academia and industry.
+
+Through teaching graduate-level courses on Translation and Localization Management Program, I advocate for Responsible AI adoption in Localization, preparing the next generation of localization professionals for an AI-enhanced industry.`,
     challenges: [
-      'Lack of standardized localization training resources in the industry',
-      'Diverse audience with varying experience levels and learning objectives',
-      'Rapidly evolving technology landscape requiring continuous curriculum updates',
-      'Need to balance theoretical knowledge with practical, hands-on skills'
+      'Bridging the gap between academic theory and real-world industry practices',
+      'Keeping curriculum current with rapidly evolving AI and localization technologies',
+      'Connecting students with industry leaders for mentorship and career opportunities',
+      'Preparing students for an AI-transformed localization industry'
     ],
     solutions: [
-      'Created modular curriculum with multiple learning paths for different roles and experience levels',
-      'Developed interactive workshops with real-world case studies and simulations',
-      'Established quarterly curriculum reviews to incorporate latest industry developments',
-      'Built certification program with practical assessments and portfolio requirements'
+      'Launched the AI in Localization Speaker Series featuring industry experts from leading tech companies',
+      'Designed courses that combine theoretical foundations with hands-on, practical projects',
+      'Built partnerships with companies like GitLab, Block, Coupa, and Smartling for guest lectures',
+      'Created curriculum focusing on Responsible AI adoption and ethical considerations in localization'
     ],
     results: [
-      { value: '500+', label: 'Professionals Trained' },
-      { value: '95%', label: 'Satisfaction Rate' },
-      { value: '12', label: 'Enterprise Clients' },
-      { value: '40hrs', label: 'Curriculum Hours' }
+      { value: '90+', label: 'Students Mentored' },
+      { value: '3', label: 'Cohorts Taught' },
+      { value: '10+', label: 'Industry Speakers' },
+      { value: '2 yrs', label: 'Program Duration' }
     ],
     technologies: [
-      'LMS Platform',
-      'Video Production',
-      'Interactive Simulations',
-      'Assessment Tools',
-      'CAT Tools Training',
-      'TMS Administration',
-      'Quality Frameworks',
-      'Project Management'
+      'AI/ML in Localization',
+      'Translation Management Systems',
+      'Go-to-Market Strategy',
+      'Program Management',
+      'Smartling',
+      'LLM Applications',
+      'Responsible AI'
     ],
     gallery: [
-      { url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', caption: 'Workshop Session' },
-      { url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop', caption: 'Team Training' },
-      { url: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop', caption: 'Certification Ceremony' }
+      { url: '/miis-guest-speakers.jpg', caption: 'Guest Speakers: Jose Palomares & Ernesto Cabanes on GTM Strategy' },
+      { url: '/miis-ai-series.jpg', caption: 'AI Speaker Series: Adelina Cristovao & Rodrigo Cristina' },
+      { url: '/miis-smartling.jpg', caption: 'AI Speaker Series: Olga Beregovaya & Marina Sánchez Torrón from Smartling' }
+    ],
+    linkedInPosts: [
+      {
+        title: 'Guest Speakers on Go-to-Market (GTM)',
+        description: 'I\'d like to give a public thanks to our incredible guest speakers Jose Palomares and Ernesto Cabanes for joining our Advanced Localization PM class to share real-world insights on Go-to-Market (GTM).',
+        url: 'https://www.linkedin.com/posts/maramartinspt_as-a-professor-at-miis-one-of-my-main-goals-ugcPost-7317937686097342464-_OIn',
+        image: '/miis-guest-speakers.jpg'
+      },
+      {
+        title: 'AI Speaker Series - Adelina & Rodrigo',
+        description: 'I\'d like to give a public thanks to our incredible guest speakers Adelina Cristovao and Rodrigo Cristina for presenting at the AI Speaker Series. The AI Speaker Series is an initiative I\'ve been leading.',
+        url: 'https://www.linkedin.com/posts/maramartinspt_id-like-to-give-a-public-thanks-to-our-incredible-share-7325951062819983360-j3dn',
+        image: '/miis-ai-series.jpg'
+      },
+      {
+        title: 'AI Speaker Series - Olga & Marina from Smartling',
+        description: 'I\'d like to give a public thanks to our incredible guest speakers Olga Beregovaya and her MT expert colleague Marina Sánchez Torrón for presenting at the AI Speaker Series last week at MIIS.',
+        url: 'https://www.linkedin.com/posts/maramartinspt_id-like-to-give-a-public-thanks-to-our-incredible-share-7327805130374815744-WLgE',
+        image: '/miis-smartling.jpg'
+      }
     ]
   },
   
