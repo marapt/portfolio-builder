@@ -207,10 +207,36 @@ const Resume = () => {
                   
                   <div className="space-y-4">
                     <div>
+                      <h4 className="text-sm font-semibold text-gray-700 mb-2">GTM & Launch</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {resumeData.skills.gtm.map((skill, i) => (
+                          <Badge key={i} variant="secondary" className="bg-indigo-50 text-indigo-700 text-xs">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <Separator />
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold text-gray-700 mb-2">Program Management</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {resumeData.skills.program.map((skill, i) => (
+                          <Badge key={i} variant="secondary" className="bg-green-50 text-green-700 text-xs">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <Separator />
+                    
+                    <div>
                       <h4 className="text-sm font-semibold text-gray-700 mb-2">Localization</h4>
                       <div className="flex flex-wrap gap-2">
                         {resumeData.skills.localization.map((skill, i) => (
-                          <Badge key={i} variant="secondary" className="bg-indigo-50 text-indigo-700 text-xs">
+                          <Badge key={i} variant="secondary" className="bg-purple-50 text-purple-700 text-xs">
                             {skill}
                           </Badge>
                         ))}
@@ -224,32 +250,6 @@ const Resume = () => {
                       <div className="flex flex-wrap gap-2">
                         {resumeData.skills.technology.map((skill, i) => (
                           <Badge key={i} variant="secondary" className="bg-gray-100 text-gray-700 text-xs">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <Separator />
-                    
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-700 mb-2">AI & Machine Learning</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {resumeData.skills.ai.map((skill, i) => (
-                          <Badge key={i} variant="secondary" className="bg-purple-50 text-purple-700 text-xs">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <Separator />
-                    
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-700 mb-2">Management</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {resumeData.skills.management.map((skill, i) => (
-                          <Badge key={i} variant="secondary" className="bg-green-50 text-green-700 text-xs">
                             {skill}
                           </Badge>
                         ))}
