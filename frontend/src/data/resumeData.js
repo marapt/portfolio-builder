@@ -7,7 +7,7 @@ export const resumeData = {
     {
       id: 1,
       company: 'Block (Square)',
-      logo: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=80&h=80&fit=crop',
+      logo: null,
       role: 'Senior Localization Program Manager',
       location: 'San Francisco Bay Area',
       period: '2021 - Present',
@@ -24,7 +24,7 @@ export const resumeData = {
     {
       id: 2,
       company: 'LinkedIn',
-      logo: 'https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=80&h=80&fit=crop',
+      logo: null,
       role: 'Localization Program Manager',
       location: 'San Francisco Bay Area',
       period: '2018 - 2021',
@@ -41,10 +41,10 @@ export const resumeData = {
     {
       id: 3,
       company: 'Microsoft',
-      logo: 'https://images.unsplash.com/photo-1633419461186-7d40a38105ec?w=80&h=80&fit=crop',
+      logo: null,
       role: 'Localization Project Manager',
       location: 'Seattle / Bay Area',
-      period: '2014 - 2018',
+      period: '2016 - 2018',
       type: 'Full-time',
       description: 'Managed localization projects for Microsoft\'s enterprise and consumer products.',
       achievements: [
@@ -57,15 +57,15 @@ export const resumeData = {
     },
     {
       id: 4,
-      company: 'HP Inc.',
-      logo: 'https://images.unsplash.com/photo-1616763355603-9755a640a287?w=80&h=80&fit=crop',
+      company: 'Apple (via Acclaro)',
+      logo: null,
       role: 'Localization Specialist',
-      location: 'Bay Area',
-      period: '2010 - 2014',
-      type: 'Full-time',
-      description: 'Specialized in marketing and product localization for HP\'s global markets.',
+      location: 'Cupertino, California',
+      period: '2014 - 2016',
+      type: 'Contract',
+      description: 'Provided localization services for Apple\'s global marketing and product content.',
       achievements: [
-        'Localized marketing campaigns for 30+ regional markets',
+        'Localized marketing campaigns and product documentation for global markets',
         'Developed style guides and glossaries for consistent brand voice',
         'Collaborated with regional marketing teams to ensure cultural relevance',
         'Managed desktop publishing and multimedia localization projects'
@@ -73,18 +73,93 @@ export const resumeData = {
     },
     {
       id: 5,
-      company: 'Welocalize',
-      logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=80&h=80&fit=crop',
-      role: 'Senior Linguist / Project Coordinator',
-      location: 'Portugal / Remote',
-      period: '2008 - 2010',
-      type: 'Full-time',
-      description: 'Started career in localization as a linguist specializing in Portuguese translations.',
+      company: 'Infoblox (via Acclaro)',
+      logo: null,
+      role: 'Localization Project Coordinator',
+      location: 'San Francisco Bay Area',
+      period: '2012 - 2014',
+      type: 'Contract',
+      description: 'Coordinated localization projects for Infoblox\'s enterprise network solutions.',
       achievements: [
-        'Translated and reviewed 500K+ words for major tech clients',
-        'Promoted to project coordinator role within 18 months',
+        'Managed translation of technical documentation and marketing materials',
+        'Established quality assurance processes for localized content',
+        'Coordinated with vendors to ensure timely delivery of localized assets'
+      ]
+    },
+    {
+      id: 6,
+      company: 'Venga Global',
+      logo: null,
+      role: 'Senior Linguist / Project Coordinator',
+      location: 'USA',
+      period: '2010 - 2012',
+      type: 'Full-time',
+      description: 'Started US career in localization, specializing in Portuguese translations and project coordination.',
+      achievements: [
+        'Translated and reviewed content for major tech clients',
+        'Promoted to project coordinator role',
         'Specialized in software localization and technical documentation',
         'Built expertise in CAT tools and translation technology'
+      ]
+    },
+    {
+      id: 7,
+      company: 'HogarthWW',
+      logo: null,
+      role: 'Localization Specialist',
+      location: 'London, UK',
+      period: '2009 - 2010',
+      type: 'Full-time',
+      description: 'Worked on global marketing localization campaigns for major brands.',
+      achievements: [
+        'Localized advertising and marketing content for European markets',
+        'Collaborated with creative teams on transcreation projects',
+        'Managed multiple language versions of campaigns simultaneously'
+      ]
+    },
+    {
+      id: 8,
+      company: 'Sony',
+      logo: null,
+      role: 'Translator / Linguist',
+      location: 'London, UK',
+      period: '2008 - 2009',
+      type: 'Full-time',
+      description: 'Provided translation services for Sony\'s gaming and entertainment divisions.',
+      achievements: [
+        'Translated gaming content and entertainment materials',
+        'Ensured localized content met Sony\'s quality standards',
+        'Collaborated with QA teams on linguistic testing'
+      ]
+    },
+    {
+      id: 9,
+      company: 'European Commission',
+      logo: null,
+      role: 'Translation Intern',
+      location: 'Brussels, Belgium',
+      period: '2007 - 2008',
+      type: 'Internship',
+      description: 'Internship at the European Commission\'s Directorate-General for Translation.',
+      achievements: [
+        'Translated official EU documents and communications',
+        'Gained experience in institutional translation processes',
+        'Worked with multilingual teams across EU languages'
+      ]
+    },
+    {
+      id: 10,
+      company: 'RTP (Rádio e Televisão de Portugal)',
+      logo: null,
+      role: 'Translation Intern',
+      location: 'Lisbon, Portugal',
+      period: '2006 - 2007',
+      type: 'Internship',
+      description: 'Internship at Portugal\'s public broadcasting company.',
+      achievements: [
+        'Provided subtitling and translation for broadcast content',
+        'Gained experience in media localization',
+        'Collaborated with production teams on multilingual content'
       ]
     }
   ],
