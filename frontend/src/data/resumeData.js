@@ -12,7 +12,7 @@ export const resumeData = {
       location: 'Monterey, California',
       period: 'Jul 2023 - Jul 2025',
       type: 'Full-time',
-      description: 'Teaching graduate-level courses on Global Program Management, AI adoption in Localization, and Automation.',
+      description: 'Teaching graduate-level courses on Translation and Localization Management Program and advocating for Responsible AI adoption in Localization.',
       achievements: [
         'Designed and launched the institute\'s first AI Event Series "AI in Localization" by collaborating with industry leaders (GitLab, Block, Coupa, Smartling) to enhance courses and industry alignment',
         'Designed and taught graduate-level courses on Global Program Management, AI adoption in Localization, and Automation, highlighting launch readiness, cross-functional coordination, and scalable execution models',
