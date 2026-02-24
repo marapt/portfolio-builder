@@ -284,48 +284,52 @@ const Resume = () => {
               </Card>
               
               {/* Certifications */}
-              <Card className="border border-gray-100 shadow-sm">
-                <CardContent className="p-6">
-                  <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <Award size={18} className="text-indigo-600" />
-                    Certifications
-                  </h2>
-                  
-                  <div className="space-y-4">
-                    {resumeData.certifications.map((cert, index) => (
-                      <div key={index} className="border-l-2 border-indigo-200 pl-4">
-                        <h4 className="font-medium text-gray-900 text-sm">{cert.name}</h4>
-                        <p className="text-xs text-gray-500">{cert.issuer}</p>
-                        <p className="text-xs text-indigo-600">{cert.year}</p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              {resumeData.certifications && resumeData.certifications.length > 0 && (
+                <Card className="border border-gray-100 shadow-sm">
+                  <CardContent className="p-6">
+                    <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                      <Award size={18} className="text-indigo-600" />
+                      Certifications
+                    </h2>
+                    
+                    <div className="space-y-4">
+                      {resumeData.certifications.map((cert, index) => (
+                        <div key={index} className="border-l-2 border-indigo-200 pl-4">
+                          <h4 className="font-medium text-gray-900 text-sm">{cert.name}</h4>
+                          <p className="text-xs text-gray-500">{cert.issuer}</p>
+                          <p className="text-xs text-indigo-600">{cert.year}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
               
               {/* Awards */}
-              <Card className="border border-gray-100 shadow-sm">
-                <CardContent className="p-6">
-                  <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <Award size={18} className="text-yellow-500" />
-                    Awards
-                  </h2>
-                  
-                  <div className="space-y-4">
-                    {resumeData.awards.map((award, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
-                          <Award size={14} className="text-yellow-600" />
+              {resumeData.awards && resumeData.awards.length > 0 && (
+                <Card className="border border-gray-100 shadow-sm">
+                  <CardContent className="p-6">
+                    <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                      <Award size={18} className="text-yellow-500" />
+                      Awards
+                    </h2>
+                    
+                    <div className="space-y-4">
+                      {resumeData.awards.map((award, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <Award size={14} className="text-yellow-600" />
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-gray-900 text-sm">{award.title}</h4>
+                            <p className="text-xs text-gray-500">{award.organization}, {award.year}</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 text-sm">{award.title}</h4>
-                          <p className="text-xs text-gray-500">{award.organization}, {award.year}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </div>
           </div>
         </div>
