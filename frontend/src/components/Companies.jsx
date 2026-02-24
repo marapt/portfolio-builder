@@ -2,22 +2,17 @@ import React from 'react';
 
 const Companies = () => {
   const employers = [
+    { name: 'Middlebury Institute', category: 'education' },
     { name: 'Block', category: 'employer' },
-    { name: 'Microsoft', category: 'employer' },
     { name: 'LinkedIn', category: 'employer' },
-    { name: 'Apple', category: 'employer' },
+    { name: 'Microsoft', category: 'employer' },
     { name: 'Infoblox', category: 'employer' },
+    { name: 'Apple', category: 'employer' },
   ];
 
   const agencies = [
-    { name: 'Acclaro', category: 'agency' },
-    { name: 'Venga', category: 'agency' },
-    { name: 'HogarthWW', category: 'agency' },
-  ];
-
-  const education = [
-    { name: 'Middlebury Institute', category: 'education' },
-    { name: 'Polytechnic of Leiria', category: 'education' },
+    { name: 'Hogarth Worldwide', category: 'agency' },
+    { name: 'Sony UK', category: 'agency' },
   ];
 
   return (
@@ -28,20 +23,20 @@ const Companies = () => {
             Where I've Made an Impact
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Over the years, I've had the privilege to work with industry-leading companies across tech, localization, and global markets.
+            Over 12+ years leading regional go-to-market execution, product launches, and operational programs across 45+ international markets.
           </p>
         </div>
 
         {/* Direct Employers */}
         <div className="mb-10">
           <p className="text-center text-sm text-indigo-600 font-medium uppercase tracking-wider mb-6">
-            Companies I've Worked For
+            Companies & Institutions
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {employers.map((company, index) => (
               <div
                 key={index}
-                className="text-2xl md:text-3xl text-gray-400 hover:text-indigo-600 transition-all duration-300 cursor-default font-semibold"
+                className="text-xl md:text-2xl text-gray-400 hover:text-indigo-600 transition-all duration-300 cursor-default font-semibold"
               >
                 {company.name}
               </div>
@@ -49,35 +44,18 @@ const Companies = () => {
           </div>
         </div>
 
-        {/* Agencies */}
-        <div className="mb-10">
+        {/* UK Experience */}
+        <div>
           <p className="text-center text-sm text-gray-500 font-medium uppercase tracking-wider mb-6">
-            Localization Agencies & Partners
+            International Experience (UK)
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {agencies.map((company, index) => (
               <div
                 key={index}
-                className="text-xl md:text-2xl text-gray-300 hover:text-gray-600 transition-all duration-300 cursor-default font-medium"
+                className="text-lg md:text-xl text-gray-300 hover:text-gray-600 transition-all duration-300 cursor-default font-medium"
               >
                 {company.name}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Education */}
-        <div>
-          <p className="text-center text-sm text-gray-500 font-medium uppercase tracking-wider mb-6">
-            Education
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {education.map((school, index) => (
-              <div
-                key={index}
-                className="text-xl md:text-2xl text-gray-300 hover:text-gray-600 transition-all duration-300 cursor-default font-medium"
-              >
-                {school.name}
               </div>
             ))}
           </div>
