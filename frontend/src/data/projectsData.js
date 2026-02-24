@@ -150,14 +150,17 @@ The curriculum spans from foundational concepts for newcomers to advanced topics
     title: 'PolyglotAI Translator',
     description: 'A universal translation app supporting text, voice, and sign language - powered by AI for seamless global communication.',
     heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop',
-    tags: ['AI', 'Translation', 'Accessibility', 'Innovation'],
+    tags: ['AI', 'Translation', 'Accessibility', 'Innovation', 'Open Source'],
     duration: 'Ongoing',
     teamSize: 'Solo Project',
     scope: 'Global',
     liveUrl: 'https://polyglotai-28.preview.emergentagent.com',
+    githubUrl: 'https://github.com/maramartinprt',
     overview: `PolyglotAI Translator is a groundbreaking universal translation application that breaks down communication barriers through multi-modal translation capabilities. Supporting text, voice, and sign language, this tool represents the future of accessible global communication.
 
-Built with cutting-edge AI technology, the application provides real-time translation across multiple modalities, making it invaluable for international travelers, deaf and hard-of-hearing communities, and global business communications.`,
+Built with cutting-edge AI technology, the application provides real-time translation across multiple modalities, making it invaluable for international travelers, deaf and hard-of-hearing communities, and global business communications.
+
+This project is open source and available on GitHub as part of my commitment to advancing AI accessibility in localization.`,
     challenges: [
       'Creating a unified interface for multiple translation modalities',
       'Ensuring accessibility for users with different abilities',
