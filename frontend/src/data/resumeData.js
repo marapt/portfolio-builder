@@ -92,17 +92,17 @@ export const resumeData = {
   education: [
     {
       degree: 'Master\'s in Translation & Localization Management',
-      institution: 'Universidade Nova de Lisboa',
-      location: 'Lisbon, Portugal',
-      year: '2008',
-      details: 'Specialized in technical translation and localization technology'
+      institution: 'Middlebury Institute of International Studies',
+      location: 'Monterey, California, USA',
+      year: '2016',
+      details: 'Specialized in localization project management and translation technology'
     },
     {
-      degree: 'Bachelor\'s in Modern Languages',
-      institution: 'Universidade de Lisboa',
-      location: 'Lisbon, Portugal',
-      year: '2006',
-      details: 'Focus on English, Spanish, and Linguistics'
+      degree: 'Bachelor\'s in Translation & Interpreting',
+      institution: 'Polytechnic Institute of Leiria',
+      location: 'Leiria, Portugal',
+      year: '2008',
+      details: 'Focus on English and Spanish translation'
     }
   ],
   
