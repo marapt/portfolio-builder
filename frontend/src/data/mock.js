@@ -122,8 +122,8 @@ export const testimonials = [
 ];
 
 export const stats = [
-  { value: "12+", label: "Years Experience" },
-  { value: "45+", label: "Markets" },
+  { value: "15+", label: "Years Experience" },
+  { value: "40+", label: "Languages" },
   { value: "50+", label: "Global Projects" },
   { value: "100%", label: "Client Satisfaction" }
 ];
