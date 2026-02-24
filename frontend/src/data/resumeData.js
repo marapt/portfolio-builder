@@ -230,38 +230,22 @@ export const resumeData = {
   ],
   
   certifications: [
-    {
-      name: 'PMP - Project Management Professional',
-      issuer: 'Project Management Institute',
-      year: '2016'
-    },
-    {
-      name: 'Certified Localization Professional',
-      issuer: 'GALA (Globalization and Localization Association)',
-      year: '2015'
-    },
-    {
-      name: 'SDL Trados Certification',
-      issuer: 'SDL/RWS',
-      year: '2014'
-    },
-    {
-      name: 'Agile Certified Practitioner',
-      issuer: 'PMI-ACP',
-      year: '2019'
-    }
+    // Add your actual certifications here
+    // Example format:
+    // {
+    //   name: 'Certification Name',
+    //   issuer: 'Issuing Organization',
+    //   year: '2020'
+    // }
   ],
   
   awards: [
-    {
-      title: 'Excellence in Localization Leadership',
-      organization: 'LocWorld Conference',
-      year: '2022'
-    },
-    {
-      title: 'Innovation Award - AI Implementation',
-      organization: 'Block Inc.',
-      year: '2023'
-    }
+    // Add your actual awards here
+    // Example format:
+    // {
+    //   title: 'Award Title',
+    //   organization: 'Organization Name',
+    //   year: '2022'
+    // }
   ]
 };
