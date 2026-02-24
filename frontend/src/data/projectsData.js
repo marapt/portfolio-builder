@@ -251,10 +251,10 @@ export const projects = [
   },
   {
     id: 'localization-training-program',
-    title: 'Localization Training Program',
-    description: 'Developed comprehensive training curriculum adopted by multiple enterprise clients worldwide.',
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop',
-    tags: ['Training', 'Education', 'L10n'],
+    title: 'MIIS Teaching & AI Speaker Series',
+    description: 'Visiting Professor at Middlebury Institute, teaching graduate courses on Translation and Localization Management while leading the AI in Localization Speaker Series.',
+    image: '/miis-ai-series.jpg',
+    tags: ['Education', 'AI', 'MIIS'],
     link: null,
     featured: false,
     hasDetailPage: true
