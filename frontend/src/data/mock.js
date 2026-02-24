@@ -2,14 +2,15 @@
 
 export const personalInfo = {
   name: "Mara Martins",
-  title: "Localization Lead & Program Manager",
+  title: "Localization Expert & GTM Program Manager",
   tagline: "Bridging AI with language, culture, and technology to help global companies expand with confidence and impact.",
-  bio: "With 15+ years in localization, I bring a blend of program management, marketing expertise, and AI innovation — always with a focus on empowering teams and mentoring the next generation of leaders. I'm located in Mountain View, California, USA.",
+  bio: "12+ years leading regional go-to-market execution, product launches, and operational programs across 45+ international markets. Proven track record driving cross-functional initiatives across Marketing, Product, Creative, and Engineering.",
   email: "marapt@gmail.com",
   location: "Mountain View, California, USA",
   // Mara's actual GitHub profile photo
   photo: "https://avatars.githubusercontent.com/u/233815337?v=4",
-  linkedin: "https://linkedin.com/in/maramartins",
+  linkedin: "https://linkedin.com/in/maramartinspt",
+  github: "https://github.com/maramartinprt",
   calendly: "https://calendly.com/maramartins"
 };
 
