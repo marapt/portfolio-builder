@@ -2,7 +2,7 @@
 
 export const personalInfo = {
   name: "Mara Martins",
-  title: "Localization Expert & GTM Program Manager",
+  title: "AI Localization Strategist & Program Leader",
   tagline: "Bridging AI with language, culture, and technology to help global companies expand with confidence and impact.",
   bio: "With 15+ years in localization, I bring a blend of program management, marketing expertise, and AI innovation — always with a focus on empowering teams and mentoring the next generation of leaders. I'm located in Mountain View, California, USA.",
   email: "marapt@gmail.com",
