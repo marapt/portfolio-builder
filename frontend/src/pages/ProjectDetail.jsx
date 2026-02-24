@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Calendar, Users, Globe, CheckCircle } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, Users, Globe, CheckCircle, Github } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
