@@ -155,7 +155,7 @@ The curriculum spans from foundational concepts for newcomers to advanced topics
     teamSize: 'Solo Project',
     scope: 'Global',
     liveUrl: 'https://polyglotai-28.preview.emergentagent.com',
-    githubUrl: 'https://github.com/maramartinprt',
+    githubUrl: 'https://github.com/marapt',
     overview: `PolyglotAI Translator is a groundbreaking universal translation application that breaks down communication barriers through multi-modal translation capabilities. Supporting text, voice, and sign language, this tool represents the future of accessible global communication.
 
 Built with cutting-edge AI technology, the application provides real-time translation across multiple modalities, making it invaluable for international travelers, deaf and hard-of-hearing communities, and global business communications.
