@@ -262,7 +262,7 @@ export const resumeData = {
   
   links: {
     linkedin: 'https://www.linkedin.com/in/maramartinspt',
-    github: 'https://github.com/maramartinprt',
+    github: 'https://github.com/marapt',
     email: 'marapt@gmail.com',
     phone: '+16506669468'
   }
