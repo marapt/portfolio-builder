@@ -68,12 +68,12 @@ export const resumeData = {
     },
     {
       id: 5,
-      company: 'Infoblox',
+      company: 'Infoblox (via Acclaro)',
       logo: null,
-      role: 'Project Manager',
+      role: 'Marketing Localization Project Manager',
       location: 'Santa Clara, California',
       period: 'Mar 2015 - Jun 2016',
-      type: 'Full-time',
+      type: 'Contract',
       description: 'Localization Project Manager responsible for ensuring operational excellence for cross-functional globalization programs.',
       achievements: [
         'Ensured operational excellence for cross-functional globalization programs for EMEA, LATAM and APAC',
