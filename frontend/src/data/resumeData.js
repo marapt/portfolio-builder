@@ -1,251 +1,199 @@
-// Resume data for Mara Martins
+// Resume data for Mara Martins - Updated from actual CV
 
 export const resumeData = {
-  summary: `Global Localization & AI Program Lead with 15+ years of experience driving international expansion for Fortune 500 technology companies. Expert in building scalable localization programs, implementing AI-powered translation workflows, and leading cross-functional teams across EMEA, APAC, and LATAM regions. Passionate about bridging technology with language and culture to help organizations reach global audiences.`,
+  summary: `Localization Expert with Regional GTM & Launch Program Management experience for 12+ years leading regional go-to-market execution, product launches, and operational programs across 45+ international markets. Proven track record driving cross-functional initiatives across Marketing, Product, Creative, Engineering. Bridging corporate and regional teams to scale new products and features through structured program management, localization, and change adoption in highly matrixed environments. Deep expertise in market readiness, localization at scale and change adoption in highly complex organizations.`,
   
   experience: [
     {
       id: 1,
-      company: 'Block (Square)',
+      company: 'Middlebury Institute of International Studies',
       logo: null,
-      role: 'Senior Localization Program Manager',
-      location: 'San Francisco Bay Area',
-      period: '2021 - Present',
+      role: 'Visiting Professor',
+      location: 'Monterey, California',
+      period: 'Jul 2023 - Jul 2025',
       type: 'Full-time',
-      description: 'Leading global localization strategy and operations for Block\'s suite of financial products.',
+      description: 'Teaching graduate-level courses on Global Program Management, AI adoption in Localization, and Automation.',
       achievements: [
-        'Scaled localization program to support 40+ languages across multiple product lines',
-        'Implemented AI-powered translation workflows reducing time-to-market by 60%',
-        'Built and mentored a high-performing team of localization specialists',
-        'Established quality frameworks achieving 98% customer satisfaction scores',
-        'Managed $2M+ annual localization budget with 40% cost optimization'
+        'Designed and launched the institute\'s first AI Event Series "AI in Localization" by collaborating with industry leaders (GitLab, Block, Coupa, Smartling) to enhance courses and industry alignment',
+        'Designed and taught graduate-level courses on Global Program Management, AI adoption in Localization, and Automation, highlighting launch readiness, cross-functional coordination, and scalable execution models',
+        'Mentored 90+ students across three cohorts, guiding teams to build E2E market ready localization and GLM workflows for global product and marketing launches'
       ]
     },
     {
       id: 2,
-      company: 'LinkedIn',
+      company: 'Block, Inc',
       logo: null,
-      role: 'Localization Program Manager',
-      location: 'San Francisco Bay Area',
-      period: '2018 - 2021',
+      role: 'Senior Localization Manager',
+      location: 'San Francisco, California',
+      period: 'Nov 2021 - Nov 2022',
       type: 'Full-time',
-      description: 'Managed end-to-end localization for LinkedIn\'s core platform and marketing initiatives.',
+      description: 'Led the GTM execution for marketing and creative launches across international markets.',
       achievements: [
-        'Led localization for LinkedIn\'s expansion into 10+ new markets',
-        'Developed centralized terminology management system used across all products',
-        'Coordinated with engineering teams to implement i18n best practices',
-        'Reduced localization bugs by 75% through improved QA processes',
-        'Trained 50+ content creators on localization-friendly content development'
+        'Led the GTM execution for marketing and creative launches, managing localized rollout of web, video and campaign assets across 10+ international markets',
+        'Owned E2E launch operations, from intake and planning through execution, QA, and ensuring alignment with regional requirements and brand standards',
+        'Partnered with Brand, Creative, Design, and Marketing teams to adapt messaging and visual contents for cultural relevance and market impact',
+        'Drove operational excellence by standardizing workflows across Smartling and Figma, improving turnaround times and alignment between global and local teams'
       ]
     },
     {
       id: 3,
-      company: 'Microsoft',
+      company: 'LinkedIn Marketing',
       logo: null,
-      role: 'Localization Project Manager',
-      location: 'Seattle / Bay Area',
-      period: '2016 - 2018',
+      role: 'Senior Localization Manager',
+      location: 'San Francisco Bay Area',
+      period: 'Mar 2020 - Oct 2021',
       type: 'Full-time',
-      description: 'Managed localization projects for Microsoft\'s enterprise and consumer products.',
+      description: 'Oversaw global launch readiness for marketing campaigns, websites, and digital assets.',
       achievements: [
-        'Coordinated localization for Windows, Office, and Azure documentation',
-        'Managed relationships with 15+ language service providers globally',
-        'Implemented translation memory optimization saving $500K annually',
-        'Led cross-functional initiatives between engineering, marketing, and legal teams',
-        'Achieved 99% on-time delivery rate for all localization projects'
+        'Oversaw global launch readiness for marketing campaigns, websites, and digital assets across 20+ languages and regions',
+        'Led intake, scheduling, and vendor coordination for simultaneous regional launches in time sensitive environments',
+        'Collaborated with Marketing and Creative teams to ensure consistent global strategy with locally relevant execution',
+        'Leveraged launch data and quality insights to identify patterns and continuously improve regional execution and localization quality'
       ]
     },
     {
       id: 4,
-      company: 'Apple (via Acclaro)',
+      company: 'Microsoft USA',
       logo: null,
-      role: 'Localization Specialist',
-      location: 'Cupertino, California',
-      period: '2014 - 2016',
-      type: 'Contract',
-      description: 'Provided localization services for Apple\'s global marketing and product content.',
+      role: 'Senior Marcom Manager',
+      location: 'Seattle / Bay Area',
+      period: 'Jun 2016 - Apr 2020',
+      type: 'Full-time',
+      description: 'Directed multi-market content readiness for Microsoft 365 global marketing campaigns.',
       achievements: [
-        'Localized marketing campaigns and product documentation for global markets',
-        'Developed style guides and glossaries for consistent brand voice',
-        'Collaborated with regional marketing teams to ensure cultural relevance',
-        'Managed desktop publishing and multimedia localization projects'
+        'Directed multi-market content readiness for Microsoft 365 global marketing campaigns across web, in-product and retail channels',
+        'Partnered with Creative, Engineering and Agency teams to ensure market-ready launches with strong cultural and operations alignment',
+        'Built scalable project launch frameworks that integrated CMS and TMS systems for automated content deployment via cross-functional communication with engineering',
+        'Acted as a cross-functional connector to align planning, execution and delivery across global stakeholders'
       ]
     },
     {
       id: 5,
-      company: 'Infoblox (via Acclaro)',
+      company: 'Infoblox USA',
       logo: null,
-      role: 'Localization Project Coordinator',
+      role: 'Marketing Project & Program Manager',
       location: 'San Francisco Bay Area',
-      period: '2012 - 2014',
-      type: 'Contract',
-      description: 'Coordinated localization projects for Infoblox\'s enterprise network solutions.',
+      period: 'Mar 2015 - Mar 2016',
+      type: 'Full-time',
+      description: 'Managed localization of marketing launch operations.',
       achievements: [
-        'Managed translation of technical documentation and marketing materials',
-        'Established quality assurance processes for localized content',
-        'Coordinated with vendors to ensure timely delivery of localized assets'
+        'Managed localization of marketing launch operations, including websites localization, event decks and visual assets partnering with creative vendors for delivery accuracy',
+        'Coordinated workflows across internal teams and external vendors to support timely and high-quality execution and delivery',
+        'Standardized vendor handoffs and QA processes, reducing turnaround time by 10% and improving process operations'
       ]
     },
     {
       id: 6,
-      company: 'Venga Global',
+      company: 'Apple (Globalization)',
       logo: null,
-      role: 'Senior Linguist / Project Coordinator',
-      location: 'USA',
-      period: '2010 - 2012',
-      type: 'Full-time',
-      description: 'Started US career in localization, specializing in Portuguese translations and project coordination.',
+      role: 'Project Manager',
+      location: 'Cupertino, California',
+      period: 'Oct 2014 - Mar 2015',
+      type: 'Contract',
+      description: 'Supported global launch readiness for AppleCare\'s multimedia content.',
       achievements: [
-        'Translated and reviewed content for major tech clients',
-        'Promoted to project coordinator role',
-        'Specialized in software localization and technical documentation',
-        'Built expertise in CAT tools and translation technology'
+        'Supported global launch readiness for AppleCare\'s multimedia content, coordinating localization of UI screens, videos and motion graphics',
+        'Managed Agile workflows and tools (like RADAR) partnering with Engineering and Regional teams to ensure timely, compliant execution',
+        'Oversaw E2E content readiness while maintaining Apple\'s strict brand and quality standards'
       ]
     },
     {
       id: 7,
-      company: 'HogarthWW',
+      company: 'Hogarth Worldwide',
       logo: null,
-      role: 'Localization Specialist',
+      role: 'Senior Project Manager',
       location: 'London, UK',
-      period: '2009 - 2010',
+      period: 'Jan 2010 - Mar 2014',
       type: 'Full-time',
-      description: 'Worked on global marketing localization campaigns for major brands.',
+      description: 'Delivered global campaign execution for digital, video, and print launches.',
       achievements: [
-        'Localized advertising and marketing content for European markets',
-        'Collaborated with creative teams on transcreation projects',
-        'Managed multiple language versions of campaigns simultaneously'
+        'Delivered global campaign execution for digital, video, and print launches across 30+ markets',
+        'Partnered with agencies and brand teams to adapt messaging while preserving global intent and local relevance',
+        'Implemented early multimedia localization workflows that improved schedule predictability and launch quality'
       ]
     },
     {
       id: 8,
-      company: 'Sony',
+      company: 'Sony UK',
       logo: null,
-      role: 'Translator / Linguist',
+      role: 'Prime-Vox Coordinator',
       location: 'London, UK',
-      period: '2008 - 2009',
+      period: 'Aug 2007 - Dec 2009',
       type: 'Full-time',
-      description: 'Provided translation services for Sony\'s gaming and entertainment divisions.',
+      description: 'Liaison between customers, engineering, and product teams.',
       achievements: [
-        'Translated gaming content and entertainment materials',
-        'Ensured localized content met Sony\'s quality standards',
-        'Collaborated with QA teams on linguistic testing'
-      ]
-    },
-    {
-      id: 9,
-      company: 'European Commission',
-      logo: null,
-      role: 'Translation Intern',
-      location: 'Brussels, Belgium',
-      period: '2007 - 2008',
-      type: 'Internship',
-      description: 'Internship at the European Commission\'s Directorate-General for Translation.',
-      achievements: [
-        'Translated official EU documents and communications',
-        'Gained experience in institutional translation processes',
-        'Worked with multilingual teams across EU languages'
-      ]
-    },
-    {
-      id: 10,
-      company: 'RTP (Rádio e Televisão de Portugal)',
-      logo: null,
-      role: 'Translation Intern',
-      location: 'Lisbon, Portugal',
-      period: '2006 - 2007',
-      type: 'Internship',
-      description: 'Internship at Portugal\'s public broadcasting company.',
-      achievements: [
-        'Provided subtitling and translation for broadcast content',
-        'Gained experience in media localization',
-        'Collaborated with production teams on multilingual content'
+        'Acted as a liaison between customers, engineering, and product teams, supporting issue resolution and product implementation',
+        'Supported training initiatives and early-stage globalization efforts'
       ]
     }
   ],
   
   education: [
     {
-      degree: 'Master\'s in Translation & Localization Management',
-      institution: 'Middlebury Institute of International Studies',
-      location: 'Monterey, California, USA',
-      year: '2016',
-      details: 'Specialized in localization project management and translation technology'
+      degree: 'University Degree in Translation & Interpretation Studies',
+      institution: 'Escola Superior de Tecnologia e Gestão (Polytechnic Institute of Leiria)',
+      location: 'Leiria, Portugal',
+      year: '2001 - 2007',
+      details: 'Focus on Translation and Interpretation'
+    }
+  ],
+  
+  onlineLearning: [
+    {
+      course: 'AI Python Introduction',
+      provider: 'Coursera',
+      year: '2025 (ongoing)'
     },
     {
-      degree: 'Bachelor\'s in Translation & Interpreting',
-      institution: 'Polytechnic Institute of Leiria',
-      location: 'Leiria, Portugal',
-      year: '2008',
-      details: 'Focus on English and Spanish translation'
+      course: 'High Impact Presentations',
+      provider: 'Dale Carnegie',
+      year: '2015'
     }
   ],
   
   skills: {
+    gtm: [
+      'Regional Go-to-Market (GTM) Strategy & Execution',
+      'Global Product & Feature Launch Management',
+      'Market Readiness & Launch Enablement',
+      'Marketing Operations & Launch Execution'
+    ],
+    program: [
+      'Cross-Functional Program Leadership',
+      'End-to-End Program & Project Management',
+      'Operational Excellence & Workflow Optimization',
+      'Stakeholder Management in Matrixed Organizations'
+    ],
     localization: [
-      'Program Management',
-      'Vendor Management',
-      'Quality Assurance',
-      'Translation Memory',
-      'Terminology Management',
-      'Internationalization (i18n)',
-      'Localization (L10n)',
-      'Globalization Strategy'
+      'Global Localization Strategy (45+ Markets)',
+      'Change Management & Adoption Enablement',
+      'Localization at Scale',
+      'Vendor Management'
     ],
     technology: [
-      'SDL Trados',
-      'memoQ',
       'Smartling',
-      'Crowdin',
-      'Phrase',
-      'Neural MT',
+      'Figma',
+      'CMS & TMS Integration',
+      'Agile Workflows',
       'Python (Learning)',
       'GitHub'
-    ],
-    management: [
-      'Team Leadership',
-      'Budget Management',
-      'Stakeholder Communication',
-      'Process Optimization',
-      'Cross-functional Collaboration',
-      'Agile/Scrum',
-      'OKR Planning',
-      'Training & Mentoring'
-    ],
-    ai: [
-      'AI/ML in Localization',
-      'NMT Implementation',
-      'Post-editing Workflows',
-      'Quality Estimation',
-      'LLM Applications',
-      'Prompt Engineering'
     ]
   },
   
   languages: [
     { language: 'Portuguese', level: 'Native', flag: '🇵🇹' },
-    { language: 'English', level: 'Fluent (C2)', flag: '🇺🇸' },
-    { language: 'Spanish', level: 'Professional (C1)', flag: '🇪🇸' },
-    { language: 'French', level: 'Intermediate (B1)', flag: '🇫🇷' }
+    { language: 'English', level: 'Fluent', flag: '🇺🇸' },
+    { language: 'Spanish', level: 'Professional', flag: '🇪🇸' }
   ],
   
-  certifications: [
-    // Add your actual certifications here
-    // Example format:
-    // {
-    //   name: 'Certification Name',
-    //   issuer: 'Issuing Organization',
-    //   year: '2020'
-    // }
-  ],
+  certifications: [],
   
-  awards: [
-    // Add your actual awards here
-    // Example format:
-    // {
-    //   title: 'Award Title',
-    //   organization: 'Organization Name',
-    //   year: '2022'
-    // }
-  ]
+  awards: [],
+  
+  links: {
+    linkedin: 'https://www.linkedin.com/in/maramartinspt',
+    github: 'https://github.com/maramartinprt',
+    email: 'marapt@gmail.com',
+    phone: '+16506669468'
+  }
 };
