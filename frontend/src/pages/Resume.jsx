@@ -192,6 +192,36 @@ const Resume = () => {
                   ))}
                 </div>
               </div>
+              
+              {/* Online Learning */}
+              {resumeData.onlineLearning && resumeData.onlineLearning.length > 0 && (
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                      <Brain size={20} className="text-indigo-600" />
+                    </div>
+                    Continuing Education
+                  </h2>
+                  
+                  <div className="space-y-4">
+                    {resumeData.onlineLearning.map((course, index) => (
+                      <Card key={index} className="border border-gray-100 shadow-sm">
+                        <CardContent className="p-4">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <h3 className="font-semibold text-gray-900">{course.course}</h3>
+                              <p className="text-sm text-gray-500">{course.provider}</p>
+                            </div>
+                            <Badge variant="outline" className="border-gray-200">
+                              {course.year}
+                            </Badge>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
             
             {/* Right Column - Skills, Languages, Certifications */}
