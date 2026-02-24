@@ -5,6 +5,22 @@ export const resumeData = {
   
   experience: [
     {
+      id: 0,
+      company: 'Career Transition',
+      logo: null,
+      role: 'Open to New Opportunities',
+      location: 'San Francisco Bay Area',
+      period: 'Jul 2025 - Present',
+      type: 'Career Break',
+      description: 'Following the announcement of MIIS closure by June 2027, I am actively seeking new opportunities in AI Localization Strategy, Program Management, and Education.',
+      achievements: [
+        'Leveraging 15+ years of experience in localization and program management',
+        'Open to roles in AI/Localization leadership, GTM strategy, and education',
+        'Available for full-time positions, consulting, or advisory roles'
+      ],
+      linkedInPost: 'https://www.linkedin.com/posts/maramartinspt_middlebury-to-close-miis-by-june-2027-the-share-7367252461322977280-JJ6m'
+    },
+    {
       id: 1,
       company: 'Middlebury Institute of International Studies',
       logo: null,
