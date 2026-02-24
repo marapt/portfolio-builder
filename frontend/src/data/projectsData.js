@@ -152,13 +152,13 @@ Through teaching graduate-level courses on Translation and Localization Manageme
         image: '/miis-guest-speakers.jpg'
       },
       {
-        title: 'AI Speaker Series - Adelina & Rodrigo',
-        description: 'I\'d like to give a public thanks to our incredible guest speakers Adelina Cristovao and Rodrigo Cristina for presenting at the AI Speaker Series. The AI Speaker Series is an initiative I\'ve been leading.',
-        url: 'https://www.linkedin.com/posts/maramartinspt_id-like-to-give-a-public-thanks-to-our-incredible-share-7325951062819983360-j3dn',
-        image: '/miis-ai-series.jpg'
+        title: 'Howard Steinberg - Behind the Scenes',
+        description: 'I\'d like to say thank you to Howard Steinberg from Bridgehead Media for his "behind the scenes" presentation. Howard talked to students about his experience as a corporate listener and gave solid advice on being persistent in a world in constant change.',
+        url: 'https://www.linkedin.com/posts/maramartinspt_miis-localization-share-7327808671315382272-Gpo3',
+        image: '/miis-howard.jpg'
       },
       {
-        title: 'AI Speaker Series - Olga & Marina from Smartling',
+        title: 'AI Speaker Series - Smartling',
         description: 'I\'d like to give a public thanks to our incredible guest speakers Olga Beregovaya and her MT expert colleague Marina Sánchez Torrón for presenting at the AI Speaker Series last week at MIIS.',
         url: 'https://www.linkedin.com/posts/maramartinspt_id-like-to-give-a-public-thanks-to-our-incredible-share-7327805130374815744-WLgE',
         image: '/miis-smartling.jpg'
