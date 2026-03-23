@@ -69,7 +69,7 @@ emailjs.sendForm(
       icon: Calendar,
       label: 'Schedule',
       value: 'Book a Meeting',
-      href: https://calendar.app.google/amu5LAV3cd2pmaBSA
+      href: 'https://calendar.app.google/amu5LAV3cd2pmaBSA'
     }
   ];
 
