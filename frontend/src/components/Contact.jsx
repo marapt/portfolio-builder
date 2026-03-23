@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import React, { useState } from 'react';
 import { Mail, MapPin, Linkedin, Calendar, Send, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
@@ -23,19 +24,26 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    // Simulate form submission (mock)
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1000);
+
+emailjs.sendForm(
+      'service_3me9sqg',   // This stays the same
+      'template_64i4un8',  // Your Template ID is now here
+      e.target, 
+      'tWVzxU_-s7boVuyDp'  // Your Public Key is now here
+    )
+      .then(() => {
+        setIsLoading(false);
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      }, (error) => {
+        setIsLoading(false);
+        alert("Failed to send. Please try again or email me directly.");
+        console.error('EmailJS Error:', error);
+      });
   };
 
   const contactMethods = [
@@ -61,7 +69,7 @@ const Contact = () => {
       icon: Calendar,
       label: 'Schedule',
       value: 'Book a Meeting',
-      href: personalInfo.calendly
+      href: https://calendar.app.google/amu5LAV3cd2pmaBSA
     }
   ];
 
@@ -118,6 +126,24 @@ const Contact = () => {
                 );
               })}
             </div>
+
+      {/* Booking Note */}
+<div className="mt-8 p-6 bg-indigo-50 rounded-xl">
+  <h4 className="font-semibold text-gray-900 mb-2">Booking Note</h4>
+  <p className="text-gray-600 text-sm">
+    When booking, please include your agenda or topic so we can make the most of our time together.
+  </p>
+</div>
+
+{/* Embedded Google Calendar */}
+<div className="mt-8 border border-gray-100 rounded-xl overflow-hidden shadow-sm bg-white">
+  <iframe 
+    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3y8ucTjg3h5EAxXZrtgdb9TOpurbNFBPBAcn-B56lwTnIJi12_UeEcYSP-2tNew3WoUuYhMCEg?gv=true" 
+    style={{ border: 0, width: '100%', height: '600px' }} 
+    frameBorder="0"
+    title="Schedule an interview with Mara"
+  ></iframe>
+</div>
 
             {/* Availability Note */}
             <div className="mt-8 p-6 bg-indigo-50 rounded-xl">
