@@ -135,15 +135,15 @@ const Contact = () => {
               </p>
             </div>
 
-            {/* Embedded Google Calendar */}
-            <div className="mt-8 border border-gray-100 rounded-xl overflow-hidden shadow-sm bg-white">
-              <iframe 
-                src='https://calendar.google.com/calendar/appointments/schedules/AcZssZ3y8ucTjg3h5EAxXZrtgdb9TOpurbNFBPBAcn-B56lwTnIJi12_UeEcYSP-2tNew3WoUuYhMCEg?gv=true' 
-                style={{ border: 0, width: '100%', height: '600px' }} 
-                frameBorder="0"
-                title="Schedule an interview with Mara"
-              ></iframe>
-            </div>
+           {/* Embedded Google Calendar */}
+<div className="mt-2 border overflow-hidden bg-white">
+  <iframe 
+    src='https://calendar.google.com/calendar/appointments/schedules/AcZssZ3y8ucTjg3h5EAxXZrtgdb9TOpurbNFBPBAcn-B56lwTnIJi12_UeEcYSP-2tNew3WoUuYhMCEg?gv=true' 
+    style={{ border: 0, width: '100%', height: '600px' }} 
+    frameBorder="0"
+    title="Schedule an interview with Mara"
+  ></iframe>
+</div>
           </div>
 
           {/* Contact Form */}
