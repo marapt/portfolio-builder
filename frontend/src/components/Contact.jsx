@@ -69,7 +69,7 @@ const Contact = () => {
       icon: Calendar,
       label: 'Schedule',
       value: 'Book a Meeting',
-      href: 'https://calendar.app.google/yNKAaQQDHUaVqj6V7'
+      href: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3y8ucTjg3h5EAxXZrtgdb9TOpurbNFBPBAcn-B56lwTnIJi12_UeEcYSP-2tNew3WoUuYhMCEg?gv=true'
     }
   ];
 
@@ -138,7 +138,7 @@ const Contact = () => {
             {/* Embedded Google Calendar */}
             <div className="mt-8 border border-gray-100 rounded-xl overflow-hidden shadow-sm bg-white">
               <iframe 
-                src='https://calendar.app.google/yNKAaQQDHUaVqj6V7' 
+                src='https://calendar.google.com/calendar/appointments/schedules/AcZssZ3y8ucTjg3h5EAxXZrtgdb9TOpurbNFBPBAcn-B56lwTnIJi12_UeEcYSP-2tNew3WoUuYhMCEg?gv=true' 
                 style={{ border: 0, width: '100%', height: '600px' }} 
                 frameBorder="0"
                 title="Schedule an interview with Mara"
