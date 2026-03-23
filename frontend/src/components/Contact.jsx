@@ -24,15 +24,15 @@ const Contact = () => {
     });
   };
 
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-emailjs.sendForm(
-      'service_3me9sqg',   // This stays the same
-      'template_64i4un8',  // Your Template ID is now here
+    emailjs.sendForm(
+      'service_3me9sqg',
+      'template_64i4un8',
       e.target, 
-      'tWVzxU_-s7boVuyDp'  // Your Public Key is now here
+      'tWVzxU_-s7boVuyDp'
     )
       .then(() => {
         setIsLoading(false);
@@ -127,30 +127,22 @@ emailjs.sendForm(
               })}
             </div>
 
-      {/* Booking Note */}
-<div className="mt-8 p-6 bg-indigo-50 rounded-xl">
-  <h4 className="font-semibold text-gray-900 mb-2">Booking Note</h4>
-  <p className="text-gray-600 text-sm">
-    When booking, please include your agenda or topic so we can make the most of our time together.
-  </p>
-</div>
-
-{/* Embedded Google Calendar */}
-<div className="mt-8 border border-gray-100 rounded-xl overflow-hidden shadow-sm bg-white">
-  <iframe 
-    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3y8ucTjg3h5EAxXZrtgdb9TOpurbNFBPBAcn-B56lwTnIJi12_UeEcYSP-2tNew3WoUuYhMCEg?gv=true" 
-    style={{ border: 0, width: '100%', height: '600px' }} 
-    frameBorder="0"
-    title="Schedule an interview with Mara"
-  ></iframe>
-</div>
-
-            {/* Availability Note */}
+            {/* Booking Note */}
             <div className="mt-8 p-6 bg-indigo-50 rounded-xl">
               <h4 className="font-semibold text-gray-900 mb-2">Booking Note</h4>
               <p className="text-gray-600 text-sm">
                 When booking, please include your agenda or topic so we can make the most of our time together.
               </p>
+            </div>
+
+            {/* Embedded Google Calendar */}
+            <div className="mt-8 border border-gray-100 rounded-xl overflow-hidden shadow-sm bg-white">
+              <iframe 
+                src="https://calendar.app.google/amu5LAV3cd2pmaBSA" 
+                style={{ border: 0, width: '100%', height: '600px' }} 
+                frameBorder="0"
+                title="Schedule an interview with Mara"
+              ></iframe>
             </div>
           </div>
 
