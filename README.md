@@ -1,37 +1,61 @@
 # Portfolio Builder
 
-💻 **Building My Personal Website – [maramartins.com](https://maramartins.com)**  
-A creative playground for experimenting with design, content organization, and linking GitHub projects to my professional portfolio.
+This repository contains the source code for my personal portfolio website, [maramartins.com](https://maramartins.com). It's built as a modern full-stack application to showcase my work in localization, program management, and AI.
 
 ---
 
 ## 🌍 Overview
-This repository contains early layouts and experiments for my personal portfolio site.  
-The goal is to design a space that showcases my localization and AI work while maintaining a minimalist, professional aesthetic.
+
+This project is a comprehensive portfolio website featuring:
+- A dynamic hero section
+- Detailed service offerings
+- An interactive project portfolio with case study pages
+- Client testimonials
+- A functional contact form
+- A full resume page
 
 ---
 
-## 🧩 Structure
-- `/designs` → early HTML/CSS layout drafts  
-- `/assets` → mockups and graphics  
-- `/links` → references to GitHub projects and localization case studies  
+## 🛠️ Tech Stack
 
----
-
-## 🛠️ Tools & Technologies
-- HTML / CSS  
-- GitHub Pages  
-- Markdown for documentation  
+This project is built with a modern tech stack:
+- **Frontend**: React (bootstrapped with Create React App)
+- **Styling**: Tailwind CSS
+- **Backend**: FastAPI (Python)
+- **Database**: MongoDB
+- **Deployment**: Vercel
 
 ---
 
 ## 🚀 Roadmap
-- [ ] Design responsive homepage  
-- [ ] Connect GitHub project cards  
-- [ ] Add light/dark theme  
-- [ ] Publish initial version on `maramartins.com`
+
+- [x] Design and build responsive homepage and project pages
+- [x] Structure and implement all portfolio content
+- [x] Set up backend API with FastAPI
+- [x] Create Vercel deployment guide
+- [ ] Implement light/dark theme
+- [ ] Finalize contact form integration (currently using EmailJS)
+- [x] Publish initial version on `maramartins.com`
+
+---
+
+## 🏃‍♀️ Running the Project
+
+### Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### Backend
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn server:app --reload
+```
 
 ---
 
 ## 📬 Contact
-👋 Reach me on [LinkedIn](https://www.linkedin.com/in/maramartinspt/) or visit [maramartins.com](https://maramartins.com)
+👋 Reach me on LinkedIn or visit the live site at maramartins.com.
