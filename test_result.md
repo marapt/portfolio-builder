@@ -186,6 +186,9 @@ frontend:
         - working: "NA"
           agent: "main"
           comment: "Frontend service and ScrumBoardPage implemented. Pending backend proxy configuration."
+        - working: false
+          agent: "user"
+          comment: "Received 404 error when fetching board data. Implementation of backend proxy endpoint needed."
 metadata:
   created_by: "main_agent"
   version: "1.0"

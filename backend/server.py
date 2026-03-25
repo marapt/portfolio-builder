@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from typing import List
 import uuid
 from datetime import datetime, timezone
+import httpx
 
 
 ROOT_DIR = Path(__file__).parent
@@ -65,6 +66,49 @@ async def get_status_checks():
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
     
     return status_checks
+
+@api_router.get("/jira/board/{board_id}")
+async def get_jira_board(board_id: str):
+    """
+    Proxy request to Jira Cloud API to fetch board issues.
+    Requires JIRA_INSTANCE_URL, JIRA_EMAIL, and JIRA_API_TOKEN in .env
+    """
+    instance_url = os.environ.get('JIRA_INSTANCE_URL')
+    email = os.environ.get('JIRA_EMAIL')
+    token = os.environ.get('JIRA_API_TOKEN')
+    
+    if not all([instance_url, email, token]):
+        logger.error("Jira credentials missing from environment variables")
+        raise HTTPException(status_code=500, detail="Jira credentials not configured")
+        
+    # API endpoint for board issues
+    url = f"{instance_url.rstrip('/')}/rest/agile/1.0/board/{board_id}/issue"
+    
+    async with httpx.AsyncClient() as client:
+        try:
+            # Jira uses Basic Auth with Email and API Token
+            response = await client.get(url, auth=(email, token))
+            response.raise_for_status()
+            data = response.json()
+            
+            # Transform data for the frontend Scrum board
+            transformed_issues = []
+            for issue in data.get('issues', []):
+                transformed_issues.append({
+                    'key': issue.get('key'),
+                    'summary': issue.get('fields', {}).get('summary'),
+                    'status': issue.get('fields', {}).get('status', {}).get('name'),
+                    'priority': issue.get('fields', {}).get('priority', {}).get('name'),
+                    'updated': issue.get('fields', {}).get('updated')
+                })
+            
+            return {"issues": transformed_issues}
+        except httpx.HTTPStatusError as exc:
+            logger.error(f"Jira API error: {exc.response.status_code} - {exc.response.text}")
+            raise HTTPException(status_code=exc.response.status_code, detail="Error fetching data from Jira")
+        except Exception as exc:
+            logger.error(f"Unexpected error during Jira proxy: {str(exc)}")
+            raise HTTPException(status_code=500, detail="Internal server error connecting to Jira")
 
 # Include the router in the main app
 app.include_router(api_router)
