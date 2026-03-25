@@ -10,6 +10,7 @@ const JIRA_BOARD_ID = '1';
 
 export const jiraService = {
   fetchLiveBoard: async () => {
+    console.log(`Attempting to fetch Jira board ${JIRA_BOARD_ID} from ${API_BASE_URL}`);
     const response = await fetch(`${API_BASE_URL}/api/jira/board/${JIRA_BOARD_ID}`);
     if (!response.ok) {
       throw new Error(`Jira API Error: ${response.statusText}`);

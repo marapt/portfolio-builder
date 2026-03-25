@@ -175,14 +175,26 @@ frontend:
         - working: true
           agent: "main"
           comment: "Updated guide to reflect 'frontend/' folder structure and clarify backend status."
+  - task: "Jira API Integration"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/data/jiraService.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Frontend service and ScrumBoardPage implemented. Pending backend proxy configuration."
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 7
+  test_sequence: 8
   run_ui: false
 test_plan:
   current_focus:
-    []
+    - "Verify Jira API connectivity via FastAPI backend"
+    - "Validate ScrumBoardPage UI rendering with live data"
   stuck_tasks: []
   test_all: false
   test_priority: "sequential"
@@ -201,3 +213,5 @@ agent_communication:
       message: "Verified user's manual changes to VERCEL_DEPLOYMENT_GUIDE.md. The guide is now correct."
     - agent: "user"
       message: "Changes committed successfully."
+    - agent: "main"
+      message: "Added Jira integration tracking. Added console logging to jiraService for debugging."
