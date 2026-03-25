@@ -20,6 +20,7 @@ const Header = () => {
     { href: '/#about', label: 'About' },
     { href: '/#services', label: 'Services' },
     { href: '/#portfolio', label: 'Portfolio' },
+    { href: '/scrum-board', label: 'Scrum Board', isPage: true },
     { href: '/resume', label: 'Resume', isPage: true },
     { href: '/#testimonials', label: 'Testimonials' },
     { href: '/#contact', label: 'Contact' }

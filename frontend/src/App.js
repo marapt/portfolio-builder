@@ -5,6 +5,7 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import ProjectDetail from './pages/ProjectDetail';
 import Resume from './pages/Resume';
+import ScrumBoardPage from './pages/ScrumBoardPage';
 
 // Initialize GA4 (G-0BB4XSY59N)
 ReactGA.initialize("G-0BB4XSY59N");
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/project/:projectId" element={<ProjectDetail />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/scrum-board" element={<ScrumBoardPage />} />
         </Routes>
       </BrowserRouter>
     </div>

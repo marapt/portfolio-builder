@@ -214,6 +214,44 @@ This project is open source and available on GitHub as part of my commitment to 
       { url: '/polyglot-voice.jpg', caption: 'Voice Translation Interface' },
       { url: '/polyglot-sign.jpg', caption: 'Sign Language to Text Feature' }
     ]
+  },
+
+  'jira-scrum-board': {
+    id: 'jira-scrum-board',
+    title: 'Agile Scrum Board',
+    description: 'A live dashboard fetching real-time data from my Jira Scrum board to demonstrate sprint planning and task tracking.',
+    heroImage: 'https://images.unsplash.com/photo-1584433144859-1fc3ab84a957?w=800&h=500&fit=crop',
+    tags: ['Agile', 'Scrum', 'Jira', 'Program Management'],
+    duration: 'Ongoing',
+    teamSize: 'Cross-functional',
+    scope: 'Global Operations',
+    liveUrl: '/scrum-board',
+    overview: `This page integrates my live Jira Scrum board, providing a transparent view of current workflows, sprint progress, and task prioritization. As a Program Manager, I utilize Jira to maintain organizational clarity and ensure on-time delivery of complex localization projects.`,
+    challenges: [
+      'Managing high-volume task dependencies across multiple time zones',
+      'Ensuring real-time visibility for stakeholders during rapid development cycles',
+      'Maintaining a clean backlog while balancing urgent localization requests'
+    ],
+    solutions: [
+      'Implemented customized Scrum workflows with automated status triggers',
+      'Established bi-weekly grooming sessions to maintain backlog health',
+      'Integrated live reporting dashboards for instantaneous progress tracking'
+    ],
+    results: [
+      { value: '100%', label: 'Sprint Completion' },
+      { value: '25%', label: 'Efficiency Increase' },
+      { value: 'Live', label: 'Tracking' },
+      { value: 'Agile', label: 'Methodology' }
+    ],
+    technologies: [
+      'Jira Software',
+      'Atlassian Confluence',
+      'Agile Framework',
+      'Sprint Planning',
+      'Kanban',
+      'Automation'
+    ],
+    gallery: []
   }
 };
 
@@ -256,6 +294,16 @@ export const projects = [
     image: '/miis-ai-series.jpg',
     tags: ['Education', 'AI', 'MIIS'],
     link: null,
+    featured: false,
+    hasDetailPage: true
+  },
+  {
+    id: 'jira-scrum-board',
+    title: 'Agile Scrum Board',
+    description: 'Live Jira Scrum board demonstrating my program management methodologies and task tracking.',
+    image: 'https://images.unsplash.com/photo-1584433144859-1fc3ab84a957?w=600&h=400&fit=crop',
+    tags: ['Agile', 'Jira', 'Management'],
+    link: '/scrum-board',
     featured: false,
     hasDetailPage: true
   }
