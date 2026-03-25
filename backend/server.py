@@ -86,6 +86,7 @@ async def get_jira_board(board_id: str):
     if board_id in jira_cache:
         cached_data, timestamp = jira_cache[board_id]
         if now - timestamp < CACHE_EXPIRATION_SECONDS:
+            logger.info(f"Jira cache hit for board {board_id}")
             return cached_data
 
     if not all([instance_url, email, token]):
