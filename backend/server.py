@@ -67,6 +67,10 @@ async def get_status_checks():
     
     return status_checks
 
+# Simple in-memory cache to avoid rate limiting and speed up response times
+jira_cache = {}
+CACHE_EXPIRATION_SECONDS = 300  # 5 minutes
+
 @api_router.get("/jira/board/{board_id}")
 async def get_jira_board(board_id: str):
     """
@@ -77,6 +81,13 @@ async def get_jira_board(board_id: str):
     email = os.environ.get('JIRA_EMAIL')
     token = os.environ.get('JIRA_API_TOKEN')
     
+    # Check cache first
+    now = datetime.now(timezone.utc).timestamp()
+    if board_id in jira_cache:
+        cached_data, timestamp = jira_cache[board_id]
+        if now - timestamp < CACHE_EXPIRATION_SECONDS:
+            return cached_data
+
     if not all([instance_url, email, token]):
         logger.error("Jira credentials missing from environment variables")
         raise HTTPException(status_code=500, detail="Jira credentials not configured")
@@ -102,7 +113,10 @@ async def get_jira_board(board_id: str):
                     'updated': issue.get('fields', {}).get('updated')
                 })
             
-            return {"issues": transformed_issues}
+            result = {"issues": transformed_issues, "last_synced": datetime.now(timezone.utc).isoformat()}
+            # Update cache
+            jira_cache[board_id] = (result, now)
+            return result
         except httpx.HTTPStatusError as exc:
             logger.error(f"Jira API error: {exc.response.status_code} - {exc.response.text}")
             raise HTTPException(status_code=exc.response.status_code, detail="Error fetching data from Jira")
