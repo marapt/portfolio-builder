@@ -175,8 +175,8 @@ Through teaching graduate-level courses on Translation and Localization Manageme
     duration: 'Ongoing',
     teamSize: 'Solo Project',
     scope: 'Global',
-    liveUrl: 'https://polyglotai-28.preview.emergentagent.com',
-    githubUrl: 'https://github.com/marapt/Emergent-Universal-Translation-APP',
+    liveUrl: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://polyglotai-28.preview.emergentagent.com',
+    githubUrl: process.env.REACT_APP_POLYGLOT_GITHUB_URL || 'https://github.com/marapt/Emergent-Universal-Translation-APP',
     overview: `PolyglotAI Translator is a groundbreaking universal translation application that breaks down communication barriers through multi-modal translation capabilities. Supporting text, voice, and sign language, this tool represents the future of accessible global communication.
 
 Built with cutting-edge AI technology, the application provides real-time translation across multiple modalities, making it invaluable for international travelers, deaf and hard-of-hearing communities, and global business communications.
@@ -225,7 +225,7 @@ export const projects = [
     description: 'A universal translation app supporting text, voice, and sign language - powered by AI for seamless global communication.',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop',
     tags: ['AI', 'Translation', 'Accessibility'],
-    link: 'https://polyglotai-28.preview.emergentagent.com',
+    link: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://polyglotai-28.preview.emergentagent.com',
     featured: true,
     hasDetailPage: true
   },
