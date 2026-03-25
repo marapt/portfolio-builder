@@ -103,5 +103,4 @@ const ScrumBoardPage = () => {
     </div>
   );
 };
-
 export default ScrumBoardPage;
