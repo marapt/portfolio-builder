@@ -108,7 +108,7 @@ All content from your portfolio, ready to copy into WordPress.
 
 **Tags:** AI, Translation, Accessibility
 
-**Live URL:** https://polyglotai-28.preview.emergentagent.com
+**Live URL:** N/A
 
 **Hero Image:** https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop
 

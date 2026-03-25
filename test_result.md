@@ -117,7 +117,7 @@ backend:
           comment: "Backend files (requirements.txt, server.py) are missing from the current file view."
         - working: true
           agent: "main"
-          comment: "User confirmed via Emergent agent check that all backend files including server.py are present in the repository."
+          comment: "User confirmed that all backend files including server.py are present in the repository."
 frontend:
   - task: "Verify image paths"
     implemented: true
@@ -132,7 +132,7 @@ frontend:
           comment: "Check that all root-relative image paths (e.g., /image.jpg) in projectsData.js exist in the frontend/public folder."
         - working: true
           agent: "main"
-          comment: "User confirmed via Emergent agent check that all 16 images are present. This resolves the concern about root-relative image paths."
+          comment: "User confirmed that all 16 images are present. This resolves the concern about root-relative image paths."
   - task: "Verify React components"
     implemented: true
     working: true
@@ -146,7 +146,7 @@ frontend:
           comment: "Core React files (App.js, index.js, components/) are not visible in the current file view."
         - working: true
           agent: "main"
-          comment: "User confirmed via Emergent agent check that all React components and pages are present in the repository."
+          comment: "User confirmed that all React components and pages are present in the repository."
         - working: true
           agent: "main"
           comment: "Re-verified context: App.js and index.js are now explicitly loaded and visible. Full repo integrity confirmed."
