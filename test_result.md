@@ -189,6 +189,17 @@ frontend:
         - working: false
           agent: "user"
           comment: "Received 404 error when fetching board data. Implementation of backend proxy endpoint needed."
+  - task: "Verify Jira-GitHub Smart Link (PMJ-44)"
+    implemented: true
+    working: "NA"
+    file: "N/A"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Awaiting empty commit with key PMJ-44 to verify development panel link in Jira."
 metadata:
   created_by: "main_agent"
   version: "1.0"
