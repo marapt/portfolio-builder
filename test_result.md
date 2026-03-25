@@ -150,10 +150,35 @@ frontend:
         - working: true
           agent: "main"
           comment: "Re-verified context: App.js and index.js are now explicitly loaded and visible. Full repo integrity confirmed."
+  - task: "Re-apply deployment guide update"
+    implemented: true
+    working: true
+    file: "VERCEL_DEPLOYMENT_GUIDE.md"
+    stuck_count: 1
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: false
+          agent: "user"
+          comment: "Previous automated update failed to apply. User will apply changes manually."
+        - working: true
+          agent: "main"
+          comment: "User applied changes manually. I have reviewed the VERCEL_DEPLOYMENT_GUIDE.md file and confirmed it is now correct."
+  - task: "Update deployment guide"
+    implemented: true
+    working: true
+    file: "VERCEL_DEPLOYMENT_GUIDE.md"
+    stuck_count: 1
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Updated guide to reflect 'frontend/' folder structure and clarify backend status."
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 4
+  test_sequence: 6
   run_ui: false
 test_plan:
   current_focus:
@@ -168,3 +193,9 @@ agent_communication:
       message: "Acknowledged user confirmation that all project files are present in the repository. Updated verification tasks to 'working: true'."
     - agent: "main"
       message: "Confirmed visibility of core frontend files (App.js, index.js) in context."
+    - agent: "main"
+      message: "Updated VERCEL_DEPLOYMENT_GUIDE.md to correct the root directory instructions for the actual repo structure."
+    - agent: "main"
+      message: "Re-applying VERCEL_DEPLOYMENT_GUIDE.md update after user reported application failure."
+    - agent: "main"
+      message: "Verified user's manual changes to VERCEL_DEPLOYMENT_GUIDE.md. The guide is now correct."
