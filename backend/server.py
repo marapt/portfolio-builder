@@ -77,9 +77,10 @@ async def get_jira_board(board_id: str):
     Proxy request to Jira Cloud API to fetch board issues.
     Requires JIRA_INSTANCE_URL, JIRA_EMAIL, and JIRA_API_TOKEN in .env
     """
-    instance_url = os.environ.get('JIRA_INSTANCE_URL')
-    email = os.environ.get('JIRA_EMAIL')
-    token = os.environ.get('JIRA_API_TOKEN')
+    # Support both your new naming and the previous naming
+    instance_url = os.environ.get('JIRA_BASE_URL') or os.environ.get('JIRA_INSTANCE_URL')
+    email = os.environ.get('JIRA_EMAIL') or os.environ.get('REACT_APP_JIRA_EMAIL')
+    token = os.environ.get('JIRA_API_TOKEN') or os.environ.get('REACT_APP_JIRA_API_TOKEN')
     
     # Check cache first
     now = datetime.now(timezone.utc).timestamp()

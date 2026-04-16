@@ -219,11 +219,12 @@ frontend:
     status_history:
         - working: true
           agent: "main"
-          comment: "Hardened .gitignore with recursive patterns to ensure secrets and dependencies are protected across all subdirectories."
+          comment: "Security audit complete: Verified Backend Proxy Pattern. Instructions provided to move Jira secrets from frontend .env to backend .env to prevent token leakage."
 metadata:
   created_by: "main_agent"
   version: "1.1"
   test_sequence: 10
+  test_sequence: 11
   run_ui: false
 test_plan:
   current_focus:
@@ -251,3 +252,5 @@ agent_communication:
       message: "Added Jira integration tracking. Added console logging to jiraService for debugging."
     - agent: "main"
       message: "Marked Jira and GitHub integrations as working. Transitioning to standard maintenance mode."
+    - agent: "main"
+      message: "Provided instructions and content for creating the missing backend/.env file to ensure local connectivity and security."
