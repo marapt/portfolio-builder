@@ -118,11 +118,17 @@ class PortfolioManagerAgent:
 
         try:
             response = self.model.generate_content(prompt)
-            js_code = response.text.replace('```javascript', '').replace('```', '').strip()
+            # Robustly strip markdown code blocks if the AI includes them anyway
+            raw_text = response.text
+            js_code = re.sub(r'```(?:javascript|js)?\n?|\n?```', '', raw_text).strip()
             
-            with open(self.frontend_data, 'w', encoding='utf-8') as f:
-                f.write(js_code)
-            self.update_state("Frontend Sync", "AI-driven sync of CONTENT_EXPORT.md to projectsData.js complete.")
+            if "export const" in js_code:
+                with open(self.frontend_data, 'w', encoding='utf-8') as f:
+                    f.write(js_code)
+                self.update_state("Frontend Sync", "AI-driven sync of CONTENT_EXPORT.md to projectsData.js complete.")
+            else:
+                logger.error("AI returned invalid JS structure (missing exports)")
+                return "Error: AI generated invalid code structure."
         except Exception as e:
             logger.error(f"Sync failed: {e}")
             return f"Error during sync: {e}"
@@ -159,7 +165,8 @@ class PortfolioManagerAgent:
         
         try:
             response = self.model.generate_content(prompt)
-            updated_md = response.text.replace('```markdown', '').replace('```', '').strip()
+            raw_text = response.text
+            updated_md = re.sub(r'```(?:markdown|md)?\n?|\n?```', '', raw_text).strip()
             
             with open(self.content_file, 'w', encoding='utf-8') as f:
                 f.write(updated_md)

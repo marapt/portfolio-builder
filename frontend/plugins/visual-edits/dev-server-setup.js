@@ -25,6 +25,11 @@ const SUP_PASS = getCodeServerPassword();
 
 // Dev server setup function
 function setupDevServer(config) {
+  if (process.env.NODE_ENV === 'production') {
+    console.warn("[Security] Visual Edits plugin disabled in production environment.");
+    return config;
+  }
+
   config.setupMiddlewares = (middlewares, devServer) => {
     if (!devServer) throw new Error("webpack-dev-server not defined");
     devServer.app.use(express.json());

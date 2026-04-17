@@ -210,17 +210,20 @@ async def create_jira_issue(issue: JiraIssueCreate):
 
 # Secure CORS Configuration
 # Defaulting to a safe empty list if not provided to avoid open-access '*' in production
-allowed_origins = os.environ.get('CORS_ORIGINS', 'http://localhost:3000').split(',')
-if "*" in allowed_origins and os.environ.get('ENVIRONMENT') == 'production':
-    logger.warning("CORS '*' detected in production! Restricting to known origins is recommended.")
-    allowed_origins = ['http://localhost:3000']  # Fallback to safe default
+env_origins = os.environ.get('CORS_ORIGINS', 'http://localhost:3000')
+allowed_origins = [o.strip() for o in env_origins.split(',')]
+
+if os.environ.get('ENVIRONMENT') == 'production':
+    if "*" in allowed_origins:
+        logger.error("CRITICAL: CORS '*' is strictly forbidden in production. Defaulting to empty list.")
+        allowed_origins = []
 
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
     allow_origins=allowed_origins,
-    allow_methods=["GET", "POST", "PUT", "DELETE"],
-    allow_headers=["Content-Type", "Authorization"],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type", "Authorization", "x-api-key"],
 )
 
 @app.on_event("shutdown")
