@@ -22,6 +22,7 @@ portfolio-builder/
 ├── frontend/       <-- We will deploy this folder
 │   ├── public/
 │   ├── src/
+│   ├── vercel.json <-- Added for SPA routing
 │   └── package.json
 ├── backend/        <-- Python backend (Optional deployment)
 └── ...
@@ -73,7 +74,7 @@ If you are using EmailJS or other services, add them here if you haven't hardcod
 ## Step 4: Verify Deployment
 1. Visit your Vercel URL.
 2. Check that navigation works (Click "About", "Projects").
-3. **Important:** Since we are using client-side routing (React Router), refreshing a sub-page (like `/project/polyglotai-translator`) should work. Vercel's "Create React App" preset handles this automatically.
+3. **Important:** The `vercel.json` file we added ensures that refreshing a sub-page (like `/resume`) correctly loads the React app instead of a 404 error.
 
 ---
 

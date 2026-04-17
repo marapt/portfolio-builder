@@ -3,6 +3,7 @@ import os
 import re
 import json
 import logging
+import yaml
 from datetime import datetime
 from pathlib import Path
 import google.generativeai as genai
@@ -51,22 +52,39 @@ class PortfolioManagerAgent:
     def update_state(self, task_name, comment, working=True):
         """Logs the agent's action back to the state file."""
         try:
-            log_entry = {
-                "working": working,
+            with open(self.state_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            marker = "#===================================================================================================="
+            parts = content.split(marker)
+            if len(parts) < 3:
+                logger.error("State file format invalid. Could not update.")
+                return
+
+            # Parse and update the YAML data section
+            lines = parts[2].splitlines()
+            yaml_lines = [l for l in lines if "Testing Data" not in l and l.strip()]
+            data = yaml.safe_load("\n".join(yaml_lines)) or {}
+            
+            if "agent_communication" not in data:
+                data["agent_communication"] = []
+            
+            data["agent_communication"].append({
                 "agent": "portfolio_manager",
-                "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                "task": task_name,
-                "comment": comment
-            }
+                "message": f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] {task_name}: {comment}"
+            })
+
+            # Reconstruct part 2 with header
+            header = "\n\n# Testing Data - Main Agent and testing sub agent both should log testing data below this section\n"
+            updated_yaml = yaml.dump(data, sort_keys=False, allow_unicode=True)
+            parts[2] = header + updated_yaml
             
-            # Append to state file
-            status_indicator = "✓" if working else "✗"
-            with open(self.state_file, 'a', encoding='utf-8') as f:
-                f.write(f"\n[{log_entry['timestamp']}] {status_indicator} {log_entry['agent']} - {task_name}: {comment}")
-            
-            logger.info(f"State updated: {comment}")
-        except IOError as e:
-            logger.error(f"Failed to update state file: {e}")
+            with open(self.state_file, 'w', encoding='utf-8') as f:
+                f.write(marker.join(parts))
+
+            logger.info(f"State updated in MAS protocol: {comment}")
+        except Exception as e:
+            logger.error(f"Failed to update state file YAML: {e}")
 
     def sync_tasks_to_jira(self, tasks):
         """
