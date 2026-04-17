@@ -134,6 +134,7 @@ const ScrumBoardPage = () => {
                   
                   {[
                     { label: 'Discovery', status: 'completed' },
+                    { label: 'Strategy & IA', status: 'completed' },
                     { label: 'Infrastructure', status: 'completed' },
                     { label: 'Production', status: 'current' },
                     { label: 'Launch', status: 'upcoming' }
@@ -239,13 +240,24 @@ const ScrumBoardPage = () => {
                       <p className="text-sm font-semibold text-gray-700">{selectedIssue.status}</p>
                     </div>
                     <div className="p-3 bg-gray-50 rounded-xl">
-                      <p className="text-[10px] font-bold text-gray-400 uppercase mb-1">Last Updated</p>
-                      <p className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                      <p className="text-[10px] font-bold text-gray-400 uppercase mb-1">Due Date</p>
+                      <p className={`text-sm font-semibold flex items-center gap-2 ${new Date(selectedIssue.duedate) < new Date() ? 'text-red-600' : 'text-gray-700'}`}>
                         <Calendar size={14} className="text-gray-400" />
-                        {new Date(selectedIssue.updated).toLocaleDateString()}
+                        {selectedIssue.duedate ? new Date(selectedIssue.duedate).toLocaleDateString() : 'No date set'}
                       </p>
                     </div>
                   </div>
+
+                  {/* Labels Section */}
+                  {selectedIssue.labels?.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {selectedIssue.labels.map(label => (
+                        <Badge key={label} variant="secondary" className="text-[10px] bg-gray-100 text-gray-600 border-gray-200">
+                          {label}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Description Section */}
                   <div>
@@ -264,6 +276,12 @@ const ScrumBoardPage = () => {
                       Tracking this task via the Agile Scrum Board ensures cross-functional transparency and 
                       maintains the localization cycle's velocity.
                     </p>
+                    <div className="mt-4 pt-3 border-t border-indigo-100/30 flex items-center justify-between">
+                      <span className="text-[9px] text-indigo-400 font-medium tracking-wide flex items-center gap-1">
+                         <RefreshCw size={10} /> VS Code Automated Sync
+                      </span>
+                      <span className="text-[9px] text-indigo-300 italic">{new Date().toLocaleDateString()}</span>
+                    </div>
                   </div>
                 </div>
 

@@ -262,7 +262,7 @@ async def get_jira_board(board_id: str):
     if not config:
         raise HTTPException(status_code=500, detail="Jira credentials not configured")
         
-    url = f"{config['url']}/rest/agile/1.0/board/{board_id}/issue?fields=summary,status,priority,updated,description"
+    url = f"{config['url']}/rest/agile/1.0/board/{board_id}/issue?fields=summary,status,priority,updated,description,duedate,labels"
     
     try:
         response = await app.state.http_client.get(
@@ -281,6 +281,8 @@ async def get_jira_board(board_id: str):
                 'priority': issue.get('fields', {}).get('priority', {}).get('name'),
                 'updated': issue.get('fields', {}).get('updated'),
                 'description': issue.get('fields', {}).get('description'),
+                'duedate': issue.get('fields', {}).get('duedate'),
+                'labels': issue.get('fields', {}).get('labels', []),
                 'url': f"{config['url']}/browse/{issue.get('key')}"
             })
         

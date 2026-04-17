@@ -1,5 +1,5 @@
 import os
-import re
+import json
 import httpx
 import asyncio
 from pathlib import Path
@@ -12,72 +12,64 @@ load_dotenv(ROOT_DIR / '.env')
 JIRA_URL = os.environ.get('JIRA_BASE_URL').rstrip('/')
 JIRA_EMAIL = os.environ.get('JIRA_EMAIL')
 JIRA_TOKEN = os.environ.get('JIRA_API_TOKEN')
-BOARD_ID = os.environ.get('JIRA_BOARD_ID', '1')
-
 auth = (JIRA_EMAIL, JIRA_TOKEN)
 
-async def update_issue(issue_key, summary, description):
-    print(f"Cleaning up {issue_key}: {summary}...")
+PROJECT_STATUS_PATH = ROOT_DIR.parent / 'docs' / 'project_status.json'
+
+async def update_issue(issue_key, fields):
+    print(f"Syncing {issue_key}...")
     url = f"{JIRA_URL}/rest/api/2/issue/{issue_key}"
     payload = {
-        "fields": {
-            "summary": summary,
-            "description": description
-        }
+        "fields": fields
     }
     async with httpx.AsyncClient() as client:
         response = await client.put(url, json=payload, auth=auth)
-        if response.status_code != 204:
-            print(f"Error updating {issue_key}: {response.status_code} - {response.text}")
+        if response.status_code == 204:
+            print(f"Successfully synced {issue_key}.")
+        else:
+            print(f"Error syncing {issue_key}: {response.status_code} - {response.text}")
 
-async def create_issue(summary, description, issue_type="Task", project_key="PJM"):
-    print(f"Creating task: {summary}...")
-    url = f"{JIRA_URL}/rest/api/2/issue"
+async def update_sprint(sprint_id, goal):
+    print(f"Updating Sprint {sprint_id} goal...")
+    url = f"{JIRA_URL}/rest/agile/1.0/sprint/{sprint_id}"
     payload = {
-        "fields": {
-            "project": {"key": project_key},
-            "summary": summary,
-            "description": description,
-            "issuetype": {"name": issue_type}
-        }
+        "goal": goal
     }
     async with httpx.AsyncClient() as client:
         response = await client.post(url, json=payload, auth=auth)
-        if response.status_code == 201:
-            return response.json().get('key')
+        if response.status_code == 200:
+            print(f"Successfully updated sprint goal.")
         else:
-            print(f"Error creating task: {response.status_code} - {response.text}")
-            return None
+            print(f"Error updating sprint: {response.status_code} - {response.text}")
 
 async def main():
-    # 1. Cleanup messy debug tasks
-    # PJM-44 was the main one shown in the screenshot with technical notes
-    await update_issue(
-        "PJM-44", 
-        "UX: Interactive Scrum Board & Side Drawer", 
-        "Objective: Implement a high-fidelity interactive experience for the Scrum board.\n\nKey Deliverables:\n- Integrated Side-Drawer (Sheet) architecture for ticket details.\n- Live field synchronization for descriptions and priority.\n- Executive Call-to-Action integration (Calendly)."
-    )
+    if not PROJECT_STATUS_PATH.exists():
+        print(f"Error: {PROJECT_STATUS_PATH} not found.")
+        return
 
-    # 2. Add new Meta-Build tasks to showcase the portfolio's own production
-    meta_tasks = [
-        {
-            "summary": "Infrastructure: Secure Backend Proxy Migration",
-            "description": "Architected and implemented a secure FastAPI proxy layer to handle sensitive API interactions (Jira, EmailJS), ensuring zero-leakage of production credentials to the client browser."
-        },
-        {
-            "summary": "Branding: Production Content Alignment",
-            "description": "Executed a global content clear-out to remove legacy branding and align all project narratives under a unified production standard."
-        },
-        {
-            "summary": "Management: Executive Dashboard & Sprint Tracking",
-            "description": "Designed a high-level managerial overview section including Sprint velocity tracking and a multi-phase project roadmap for stakeholder transparency."
+    with open(PROJECT_STATUS_PATH, 'r') as f:
+        status_data = json.load(f)
+
+    # 1. Update Tasks
+    tasks = []
+    for task in status_data.get('tasks', []):
+        fields = {
+            "summary": task['summary'],
+            "description": task['description'],
+            "duedate": task.get('duedate'),
+            "labels": task.get('labels', [])
         }
-    ]
+        tasks.append(update_issue(task['key'], fields))
+    
+    # 2. Update Sprint (Assuming Sprint ID 1 for now, or fetch active)
+    # Note: Modern Jira Agile requires the 'goal' to be set via dedicated endpoint or update_sprint
+    sprint_goal = status_data.get('sprint', {}).get('goal')
+    if sprint_goal:
+        # We try to update Sprint 1, in a real scenario we'd query the active sprint ID first
+        tasks.append(update_sprint(1, sprint_goal))
 
-    for task in meta_tasks:
-        await create_issue(task['summary'], task['description'])
-
-    print("\nSync Complete. Jira board is now professionally populated.")
+    await asyncio.gather(*tasks)
+    print("\nVS Code -> Jira Sync Complete.")
 
 if __name__ == "__main__":
     asyncio.run(main())
