@@ -6,7 +6,7 @@
  */
 
 const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:8000').replace(/\/$/, '');
-const JIRA_BOARD_ID = '1';
+const JIRA_BOARD_ID = process.env.REACT_APP_JIRA_BOARD_ID || '1';
 
 export const jiraService = {
   fetchLiveBoard: async () => {

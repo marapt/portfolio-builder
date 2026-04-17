@@ -3,12 +3,28 @@ import { jiraService } from '../data/jiraService';
 import Header from '../components/Header';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Loader2, AlertCircle, RefreshCw } from 'lucide-react';
+import { Loader2, AlertCircle, RefreshCw, ExternalLink, Calendar, Tag, ChevronRight } from 'lucide-react';
+import { 
+  Sheet, 
+  SheetContent, 
+  SheetHeader, 
+  SheetTitle, 
+  SheetDescription,
+  SheetFooter
+} from '../components/ui/sheet';
+import { Button } from '../components/ui/button';
 
 const ScrumBoardPage = () => {
   const [boardData, setBoardData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedIssue, setSelectedIssue] = useState(null);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+  const handleIssueClick = (issue) => {
+    setSelectedIssue(issue);
+    setIsSheetOpen(true);
+  };
 
   const loadData = async () => {
     setLoading(true);
@@ -76,7 +92,11 @@ const ScrumBoardPage = () => {
                 
                 <div className="bg-gray-100/80 p-3 rounded-2xl min-h-[600px] flex flex-col gap-3">
                   {boardData?.issues?.filter(i => i.status === col).map(issue => (
-                    <Card key={issue.key} className="border-0 shadow-sm hover:shadow-md transition-all duration-200">
+                    <Card 
+                      key={issue.key} 
+                      className="border-0 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group"
+                      onClick={() => handleIssueClick(issue)}
+                    >
                       <CardContent className="p-4">
                         <div className="flex justify-between items-center mb-3">
                           <span className="text-[10px] font-bold text-indigo-500 bg-indigo-50 px-2 py-0.5 rounded uppercase">{issue.key}</span>
@@ -99,6 +119,75 @@ const ScrumBoardPage = () => {
             ))}
           </div>
         )}
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+          <SheetContent className="sm:max-w-md border-l border-gray-100 p-0 overflow-y-auto">
+            {selectedIssue && (
+              <div className="flex flex-col h-full">
+                <SheetHeader className="p-6 border-b border-gray-50 bg-gray-50/50">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge variant="outline" className="text-indigo-600 border-indigo-100 bg-indigo-50 font-bold px-2 py-0">
+                      {selectedIssue.key}
+                    </Badge>
+                    <Badge className={`${selectedIssue.priority === 'High' ? 'bg-red-500' : 'bg-green-500'}`}>
+                      {selectedIssue.priority} Priority
+                    </Badge>
+                  </div>
+                  <SheetTitle className="text-2xl font-bold text-gray-900 leading-tight">
+                    {selectedIssue.summary}
+                  </SheetTitle>
+                  <SheetDescription className="hidden">Issue details for {selectedIssue.key}</SheetDescription>
+                </SheetHeader>
+
+                <div className="flex-1 p-6 space-y-8">
+                  {/* Status & Metadata */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-3 bg-gray-50 rounded-xl">
+                      <p className="text-[10px] font-bold text-gray-400 uppercase mb-1">Status</p>
+                      <p className="text-sm font-semibold text-gray-700">{selectedIssue.status}</p>
+                    </div>
+                    <div className="p-3 bg-gray-50 rounded-xl">
+                      <p className="text-[10px] font-bold text-gray-400 uppercase mb-1">Last Updated</p>
+                      <p className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                        <Calendar size={14} className="text-gray-400" />
+                        {new Date(selectedIssue.updated).toLocaleDateString()}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Description Section */}
+                  <div>
+                    <h4 className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase mb-4 tracking-wider">
+                      <Tag size={14} /> Description
+                    </h4>
+                    <div className="text-gray-600 leading-relaxed text-sm whitespace-pre-wrap bg-white border border-gray-100 p-4 rounded-xl shadow-sm">
+                      {selectedIssue.description || "No description provided for this task."}
+                    </div>
+                  </div>
+
+                  {/* Program Management Insights */}
+                  <div className="p-4 bg-indigo-50/50 rounded-xl border border-indigo-100/50">
+                    <h4 className="text-[10px] font-bold text-indigo-400 uppercase mb-2">PM Insights</h4>
+                    <p className="text-xs text-indigo-600/80 leading-relaxed italic">
+                      Tracking this task via the Agile Scrum Board ensures cross-functional transparency and 
+                      maintains the localization cycle's velocity.
+                    </p>
+                  </div>
+                </div>
+
+                <SheetFooter className="p-6 mt-auto border-t border-gray-50 bg-white sticky bottom-0">
+                  <Button 
+                    asChild 
+                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-6 rounded-xl shadow-lg shadow-indigo-200"
+                  >
+                    <a href={selectedIssue.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                      View in Jira Cloud <ExternalLink size={16} />
+                    </a>
+                  </Button>
+                </SheetFooter>
+              </div>
+            )}
+          </SheetContent>
+        </Sheet>
       </main>
     </div>
   );
