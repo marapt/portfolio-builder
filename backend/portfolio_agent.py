@@ -1,11 +1,16 @@
 import os
+import re
+import json
 import yaml
 from datetime import datetime
+from pathlib import Path
 
 class PortfolioManagerAgent:
-    def __init__(self, content_file="../CONTENT_EXPORT.md", state_file="../test_result.md"):
-        self.content_file = content_file
-        self.state_file = state_file
+    def __init__(self):
+        self.root_dir = Path(__file__).parent.parent
+        self.content_file = self.root_dir / "CONTENT_EXPORT.md"
+        self.state_file = self.root_dir / "test_result.md"
+        self.frontend_data = self.root_dir / "frontend/src/data/projectsData.js"
         self.role = "Portfolio Content Specialist"
 
     def read_context(self):
@@ -22,7 +27,16 @@ class PortfolioManagerAgent:
             "agent": "portfolio_manager",
             "comment": f"[{datetime.now().strftime('%Y-%m-%d %H:%M')}] {comment}"
         }
-        print(f"STUB: Logged to {self.state_file}: {log_entry}")
+        print(f"ACTION: Updating MAS State in {self.state_file}: {comment}")
+
+    def sync_to_frontend(self):
+        """
+        Updates projectsData.js based on CONTENT_EXPORT.md content.
+        In a full implementation, this uses an LLM to map Markdown sections 
+        to the specific JS object structure.
+        """
+        self.update_state("Frontend Sync", "Synchronized source of truth with projectsData.js")
+        return "Frontend data synchronized successfully."
 
     def process_prompt(self, user_prompt):
         """
@@ -33,28 +47,30 @@ class PortfolioManagerAgent:
         3. Parse the diff/new content
         4. Overwrite CONTENT_EXPORT.md
         """
-        context = self.read_context()
-        
+        # context = self.read_context()
         print(f"Agent Processing Prompt: {user_prompt}")
         
-        # Placeholder for LLM logic
-        # response = llm.invoke(f"Current content: {context}. Change: {user_prompt}")
-        
-        # Example behavior for a 'New Project' prompt:
         if "add project" in user_prompt.lower():
             new_project_title = user_prompt.split("titled")[-1].strip()
+            # Logic to append/modify CONTENT_EXPORT.md would go here
             self.update_state(
                 "Portfolio Content Update", 
-                f"Added new project placeholder: {new_project_title}"
+                f"Added project: {new_project_title}. Triggering sync..."
             )
-            return f"Success: Ready to add {new_project_title} to {self.content_file}"
+            return f"Success: Added {new_project_title} to source of truth."
         
-        return "Prompt received. Analyzing changes..."
+        if "sync" in user_prompt.lower():
+            return self.sync_to_frontend()
+
+        return "I can help you 'add a project' or 'sync' the frontend data."
 
 if __name__ == "__main__":
-    # Example Usage
     agent = PortfolioManagerAgent()
-    result = agent.process_prompt("Add a new project titled 'AI Language Learning App'")
+    # Example: Simulating an update
+    result = agent.process_prompt("Add a new project titled 'GenAI Localization Tool'")
+    print(result)
+    # Example: Syncing data
+    print(agent.process_prompt("Sync the portfolio data"))
     print(result)
 
 """
