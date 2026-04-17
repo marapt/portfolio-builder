@@ -57,12 +57,12 @@ class PortfolioManagerAgent:
 
             marker = "#===================================================================================================="
             parts = content.split(marker)
-            if len(parts) < 3:
+            if not parts:
                 logger.error("State file format invalid. Could not update.")
                 return
 
             # Parse and update the YAML data section
-            lines = parts[2].splitlines()
+            lines = parts[-1].splitlines()
             yaml_lines = [l for l in lines if "Testing Data" not in l and l.strip()]
             data = yaml.safe_load("\n".join(yaml_lines)) or {}
             
@@ -77,7 +77,7 @@ class PortfolioManagerAgent:
             # Reconstruct part 2 with header
             header = "\n\n# Testing Data - Main Agent and testing sub agent both should log testing data below this section\n"
             updated_yaml = yaml.dump(data, sort_keys=False, allow_unicode=True)
-            parts[2] = header + updated_yaml
+            parts[-1] = header + updated_yaml
             
             with open(self.state_file, 'w', encoding='utf-8') as f:
                 f.write(marker.join(parts))

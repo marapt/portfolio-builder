@@ -72,12 +72,12 @@ def extract_yaml_from_markdown(file_path):
         
         parts = content.split(marker)
         
-        if len(parts) < 3:
+        if not parts:
             logger.warning("Could not parse expected sections in test_result.md")
             return None
             
-        # The third part contains the YAML data
-        yaml_content = parts[2].strip()
+        # The last part contains the YAML data
+        yaml_content = parts[-1].strip()
         # Remove the header line if it exists in that part
         yaml_content = "\n".join([line for line in yaml_content.splitlines() if "Testing Data" not in line])
         
