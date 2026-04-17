@@ -230,7 +230,8 @@ app.add_middleware(
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
-    client.close()
+    if db is not None:
+        client.close()
 
 
 if __name__ == "__main__":

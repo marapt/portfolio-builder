@@ -3,11 +3,13 @@ import os
 import re
 import json
 import logging
+import time
 import yaml
 from datetime import datetime
 from pathlib import Path
 import google.generativeai as genai
 from dotenv import load_dotenv
+import httpx
 
 # Configure logging
 logging.basicConfig(
@@ -86,29 +88,43 @@ class PortfolioManagerAgent:
         except Exception as e:
             logger.error(f"Failed to update state file YAML: {e}")
 
-    def sync_tasks_to_jira(self, tasks):
+    async def sync_tasks_to_jira(self):
         """
-        Calls the local FastAPI proxy to create Jira issues for a list of tasks.
+        Reads pending tasks from test_result.md and pushes them to the Jira proxy.
         """
-        if not tasks:
-            logger.warning("No tasks provided to sync to Jira")
-            return False
-        
-        if not isinstance(tasks, list):
-            logger.error("Tasks must be a list")
-            return False
-        
-        synced_count = 0
-        for task in tasks:
-            if not isinstance(task, dict) or 'task' not in task:
-                logger.warning(f"Invalid task format: {task}. Skipping...")
-                continue
-            logger.debug(f"Syncing '{task['task']}' to Jira...")
-            synced_count += 1
-        
-        self.update_state("Jira Sync", f"Synced {synced_count} tasks to Jira board.")
-        logger.info(f"Successfully synced {synced_count} tasks to Jira")
-        return True
+        from sync_to_jira import extract_yaml_from_markdown, API_ENDPOINT
+
+        data = extract_yaml_from_markdown(self.state_file)
+        if not data:
+            return "Error: Could not parse task data."
+
+        pending = []
+        for cat in ['backend', 'frontend']:
+            if cat in data:
+                for t in data[cat]:
+                    if not t.get('implemented', True):
+                        pending.append({
+                            "summary": f"[{cat.upper()}] {t['task']}",
+                            "description": f"File: {t.get('file', 'N/A')}\nPriority: {t.get('priority')}",
+                            "project_key": os.environ.get("JIRA_PROJECT_KEY", "PMJ")
+                        })
+
+        if not pending:
+            return "No pending tasks found to sync."
+
+        async with httpx.AsyncClient() as client:
+            success = 0
+            for task_payload in pending:
+                try:
+                    resp = await client.post(API_ENDPOINT, json=task_payload)
+                    if resp.status_code == 200:
+                        success += 1
+                except Exception as e:
+                    logger.error(f"Failed to sync task: {e}")
+
+        msg = f"Successfully synced {success}/{len(pending)} tasks to Jira."
+        self.update_state("Jira Sync", msg)
+        return msg
 
     def sync_to_frontend(self):
         """
@@ -134,23 +150,26 @@ class PortfolioManagerAgent:
         Return ONLY valid JavaScript code. No markdown formatting, no backticks, no explanations.
         """
 
-        try:
-            response = self.model.generate_content(prompt)
-            # Robustly strip markdown code blocks if the AI includes them anyway
-            raw_text = response.text
-            js_code = re.sub(r'```(?:javascript|js)?\n?|\n?```', '', raw_text).strip()
-            
-            if "export const" in js_code:
-                with open(self.frontend_data, 'w', encoding='utf-8') as f:
-                    f.write(js_code)
-                self.update_state("Frontend Sync", "AI-driven sync of CONTENT_EXPORT.md to projectsData.js complete.")
-            else:
-                logger.error("AI returned invalid JS structure (missing exports)")
-                return "Error: AI generated invalid code structure."
-        except Exception as e:
-            logger.error(f"Sync failed: {e}")
-            return f"Error during sync: {e}"
-            
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = self.model.generate_content(prompt)
+                raw_text = response.text
+                js_code = re.sub(r'```(?:javascript|js)?\n?|\n?```', '', raw_text).strip()
+                
+                if "export const" in js_code:
+                    with open(self.frontend_data, 'w', encoding='utf-8') as f:
+                        f.write(js_code)
+                    self.update_state("Frontend Sync", "AI-driven sync complete.")
+                    return "Frontend data synchronized successfully."
+                else:
+                    logger.error(f"Attempt {attempt+1}: Invalid JS structure.")
+            except Exception as e:
+                logger.warning(f"Attempt {attempt+1} failed: {e}")
+                if attempt < max_retries - 1:
+                    time.sleep(2 ** attempt) # Exponential backoff
+                else:
+                    return f"Error: Sync failed after {max_retries} attempts."
         return "Frontend data synchronized successfully."
 
     def process_prompt(self, user_prompt):

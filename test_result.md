@@ -362,3 +362,7 @@ agent_communication:
       message: "Corrected sync issue: 'Final cutover from SiteGround' task moved under 'frontend' category in test_result.md for proper detection by sync_to_jira.py."
     - agent: "main"
       message: "Pushing Jira update: Synchronizing the 'Final cutover from SiteGround' task to the PMJ board."
+    - agent: "main"
+      message: "Resolved path error for server.py. User was attempting to run from an incorrect directory; provided correct absolute path and venv instructions."
+    - agent: "main"
+      message: "Resolved ModuleNotFoundError by providing venv creation and activation steps. Fixed syntax error in portfolio_agent.py and hardened server.py shutdown logic."
