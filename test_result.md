@@ -284,6 +284,7 @@ metadata:
   version: "1.1"
   test_sequence: 10
   test_sequence: 11
+  test_sequence: 12
   run_ui: false
 test_plan:
   current_focus:
