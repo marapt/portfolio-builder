@@ -172,7 +172,7 @@ class PortfolioManagerAgent:
                     return f"Error: Sync failed after {max_retries} attempts."
         return "Frontend data synchronized successfully."
 
-    def process_prompt(self, user_prompt):
+    async def process_prompt(self, user_prompt):
         """
         In a live environment, this would call an LLM API.
         Logic:
@@ -184,7 +184,10 @@ class PortfolioManagerAgent:
         if not self.model:
             return "Error: Gemini API not configured. Ensure GOOGLE_API_KEY environment variable is set."
         
-        if "sync" in user_prompt.lower():
+        prompt_lower = user_prompt.lower()
+        if "sync" in prompt_lower and "tasks" in prompt_lower:
+            return await self.sync_tasks_to_jira()
+        elif "sync" in prompt_lower:
             return self.sync_to_frontend()
 
         context = self.read_context()
@@ -216,12 +219,13 @@ class PortfolioManagerAgent:
 
 if __name__ == "__main__":
     import sys
+    import asyncio
     agent = PortfolioManagerAgent()
     
     if len(sys.argv) > 1:
         user_input = " ".join(sys.argv[1:])
         print(f"Processing: {user_input}")
-        result = agent.process_prompt(user_input)
+        result = asyncio.run(agent.process_prompt(user_input))
         print(result)
     else:
         print("Portfolio Manager Agent initialized.")

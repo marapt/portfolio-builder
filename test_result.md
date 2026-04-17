@@ -368,3 +368,5 @@ agent_communication:
       message: "Resolved ModuleNotFoundError by providing venv creation and activation steps. Fixed syntax error in portfolio_agent.py and hardened server.py shutdown logic."
     - agent: "user"
       message: "Finalizing terminal environment setup: creating venv and installing requirements.txt to run sync scripts."
+    - agent: "main"
+      message: "Clarified to user that terminal commands must be executed manually. Updated portfolio_agent.py to support async CLI execution for Jira task syncing."
