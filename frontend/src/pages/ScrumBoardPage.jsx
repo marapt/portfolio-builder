@@ -175,14 +175,19 @@ const ScrumBoardPage = () => {
                 </div>
 
                 <SheetFooter className="p-6 mt-auto border-t border-gray-50 bg-white sticky bottom-0">
-                  <Button 
-                    asChild 
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-6 rounded-xl shadow-lg shadow-indigo-200"
-                  >
-                    <a href={selectedIssue.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                      View in Jira Cloud <ExternalLink size={16} />
-                    </a>
-                  </Button>
+                  <div className="w-full space-y-3">
+                    <Button 
+                      asChild 
+                      className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-6 rounded-xl shadow-lg shadow-indigo-200"
+                    >
+                      <a href="https://calendly.com/maramartins" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                        Schedule a Strategy Session <ExternalLink size={16} />
+                      </a>
+                    </Button>
+                    <p className="text-[10px] text-center text-gray-400 italic">
+                      Private board access is restricted. Let's connect to discuss how I can implement these workflows for your team.
+                    </p>
+                  </div>
                 </SheetFooter>
               </div>
             )}
