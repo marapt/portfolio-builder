@@ -51,8 +51,10 @@ npm start
 ### Backend
 ```bash
 cd backend
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
-uvicorn server:app --reload
+python3 server.py
 ```
 
 ---
