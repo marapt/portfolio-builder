@@ -3,7 +3,8 @@ import { jiraService } from '../data/jiraService';
 import Header from '../components/Header';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { Loader2, AlertCircle, RefreshCw, ExternalLink, Calendar, Tag, ChevronRight } from 'lucide-react';
+import { Loader2, AlertCircle, RefreshCw, ExternalLink, Calendar, Tag, ChevronRight, BarChart3, Clock, Rocket } from 'lucide-react';
+import { Progress } from '../components/ui/progress';
 import { 
   Sheet, 
   SheetContent, 
@@ -16,6 +17,7 @@ import { Button } from '../components/ui/button';
 
 const ScrumBoardPage = () => {
   const [boardData, setBoardData] = useState(null);
+  const [sprints, setSprints] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedIssue, setSelectedIssue] = useState(null);
@@ -29,8 +31,12 @@ const ScrumBoardPage = () => {
   const loadData = async () => {
     setLoading(true);
     try {
-      const data = await jiraService.fetchLiveBoard();
-      setBoardData(data);
+      const [board, sprintList] = await Promise.all([
+        jiraService.fetchLiveBoard(),
+        jiraService.fetchSprints()
+      ]);
+      setBoardData(board);
+      setSprints(sprintList || []);
       setError(null);
     } catch (err) {
       setError(err.message);
@@ -67,6 +73,87 @@ const ScrumBoardPage = () => {
           </button>
         </div>
 
+        {/* Managerial Overview Section */}
+        {!loading && boardData && (
+          <div className="grid lg:grid-cols-3 gap-6 mb-12">
+            {/* Sprint Summary */}
+            <Card className="lg:col-span-1 border-0 shadow-sm bg-white overflow-hidden">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-2 text-indigo-600 mb-6">
+                  <BarChart3 size={20} />
+                  <span className="font-bold text-xs uppercase tracking-wider">Active Sprint</span>
+                </div>
+                {sprints.filter(s => s.state === 'active').map(sprint => (
+                  <div key={sprint.id} className="space-y-6">
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-1">{sprint.name}</h3>
+                      <p className="text-sm text-gray-500 italic">"{sprint.goal || 'No goal set'}"</p>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-xs font-bold text-gray-400 uppercase">
+                        <span>Sprint Completion</span>
+                        <span>{boardData.issues.length > 0 ? Math.round((boardData.issues.filter(i => i.status === 'Done').length / boardData.issues.length) * 100) : 0}%</span>
+                      </div>
+                      <Progress value={boardData.issues.length > 0 ? (boardData.issues.filter(i => i.status === 'Done').length / boardData.issues.length) * 100 : 0} className="h-2" />
+                    </div>
+
+                    <div className="flex items-center gap-4 pt-2">
+                      <div className="flex items-center gap-2 text-gray-500">
+                        <Clock size={14} />
+                        <span className="text-xs font-medium">
+                          Ends: {sprint.endDate ? new Date(sprint.endDate).toLocaleDateString() : 'N/A'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                {sprints.filter(s => s.state === 'active').length === 0 && (
+                  <div className="py-6 text-center border-2 border-dashed border-gray-100 rounded-xl">
+                    <p className="text-sm text-gray-400">No active sprint found. Displaying overall board velocity.</p>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* End-to-End Project Roadmap */}
+            <Card className="lg:col-span-2 border-0 shadow-sm bg-white">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-2 text-purple-600">
+                    <Rocket size={20} />
+                    <span className="font-bold text-xs uppercase tracking-wider">Strategic Roadmap</span>
+                  </div>
+                  <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-100">Phase 04: Build</Badge>
+                </div>
+
+                <div className="relative flex justify-between">
+                  {/* Progress Line */}
+                  <div className="absolute top-4 left-0 w-full h-0.5 bg-gray-100 -z-0" />
+                  <div className="absolute top-4 left-0 w-3/4 h-0.5 bg-purple-500 -z-0" />
+                  
+                  {[
+                    { label: 'Discovery', status: 'completed' },
+                    { label: 'Infrastructure', status: 'completed' },
+                    { label: 'Production', status: 'current' },
+                    { label: 'Launch', status: 'upcoming' }
+                  ].map((phase, idx) => (
+                    <div key={idx} className="relative z-10 flex flex-col items-center gap-3">
+                      <div className={`w-8 h-8 rounded-full border-4 border-white shadow-sm flex items-center justify-center 
+                        ${phase.status === 'completed' ? 'bg-purple-500 text-white' : 
+                          phase.status === 'current' ? 'bg-white border-purple-500 text-purple-600' : 'bg-gray-100 text-gray-400'}`}>
+                        {phase.status === 'completed' ? <ChevronRight size={16} /> : <div className="w-2 h-2 rounded-full bg-current" />}
+                      </div>
+                      <span className={`text-[10px] font-bold uppercase tracking-tight 
+                        ${phase.status === 'upcoming' ? 'text-gray-400' : 'text-gray-900'}`}>{phase.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
         {loading && !boardData ? (
           <div className="flex flex-col items-center justify-center py-20">
             <Loader2 className="w-10 h-10 animate-spin text-indigo-600 mb-4" />
@@ -94,10 +181,16 @@ const ScrumBoardPage = () => {
                   {boardData?.issues?.filter(i => i.status === col).map(issue => (
                     <Card 
                       key={issue.key} 
-                      className="border-0 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group"
+                      className={`border-0 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group 
+                        ${issue.summary.includes('Portfolio') ? 'border-l-4 border-indigo-400' : ''}`}
                       onClick={() => handleIssueClick(issue)}
                     >
                       <CardContent className="p-4">
+                        {issue.summary.includes('Portfolio') && (
+                          <div className="flex items-center gap-1 mb-2">
+                            <Badge className="bg-indigo-600 text-[8px] py-0 px-1 uppercase leading-tight font-bold">Build Task</Badge>
+                          </div>
+                        )}
                         <div className="flex justify-between items-center mb-3">
                           <span className="text-[10px] font-bold text-indigo-500 bg-indigo-50 px-2 py-0.5 rounded uppercase">{issue.key}</span>
                           <div className={`w-2 h-2 rounded-full ${issue.priority === 'High' ? 'bg-red-500' : 'bg-green-500'}`} title={`Priority: ${issue.priority}`} />

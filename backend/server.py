@@ -139,6 +139,15 @@ class ServiceStatus(BaseModel):
     status: str
     details: Optional[str] = None
 
+class JiraSprint(BaseModel):
+    id: int
+    name: str
+    state: str
+    goal: Optional[str] = None
+    startDate: Optional[datetime] = None
+    endDate: Optional[datetime] = None
+    completeDate: Optional[datetime] = None
+
 class SystemHealth(BaseModel):
     mongodb: ServiceStatus
     jira: ServiceStatus
@@ -153,7 +162,7 @@ api_router = APIRouter(prefix="/api")
 
 # Simple in-memory cache for Jira
 jira_cache = {}
-CACHE_EXPIRATION_SECONDS = 300
+CACHE_EXPIRATION_SECONDS = 30
 
 # --- Routes ---
 
@@ -284,6 +293,32 @@ async def get_jira_board(board_id: str):
     except Exception as exc:
         logger.error(f"Unexpected Jira error: {str(exc)}")
         raise HTTPException(status_code=500, detail="Internal server error")
+
+@api_router.get("/jira/board/{board_id}/sprints", response_model=List[JiraSprint])
+async def get_jira_sprints(board_id: str):
+    """Proxy to fetch sprints for a specific board."""
+    config = get_jira_config()
+    if not config:
+        raise HTTPException(status_code=500, detail="Jira credentials not configured")
+        
+    url = f"{config['url']}/rest/agile/1.0/board/{board_id}/sprint"
+    
+    try:
+        response = await app.state.http_client.get(
+            url, 
+            auth=(config['email'], config['token'])
+        )
+        response.raise_for_status()
+        data = response.json()
+        
+        sprints = []
+        for s in data.get('values', []):
+            sprints.append(JiraSprint(**s))
+            
+        return sprints
+    except Exception as exc:
+        logger.error(f"Error fetching sprints: {str(exc)}")
+        raise HTTPException(status_code=500, detail="Error fetching sprints from Jira")
 
 @api_router.post("/jira/issue")
 async def create_jira_issue(issue: JiraIssueCreate):
