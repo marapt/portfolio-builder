@@ -175,8 +175,8 @@ Through teaching graduate-level courses on Translation and Localization Manageme
     duration: 'Ongoing',
     teamSize: 'Solo Project',
     scope: 'Global',
-    liveUrl: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://polyglotai-28.preview.emergentagent.com',
-    githubUrl: process.env.REACT_APP_POLYGLOT_GITHUB_URL || 'https://github.com/marapt/Emergent-Universal-Translation-APP',
+    liveUrl: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://where-my-code.emergent.host/',
+    githubUrl: process.env.REACT_APP_POLYGLOT_GITHUB_URL || 'https://github.com/marapt/PolyglotAI-Web',
     overview: `PolyglotAI Translator is a groundbreaking universal translation application that breaks down communication barriers through multi-modal translation capabilities. Supporting text, voice, and sign language, this tool represents the future of accessible global communication.
 
 Built with cutting-edge AI technology, the application provides real-time translation across multiple modalities, making it invaluable for international travelers, deaf and hard-of-hearing communities, and global business communications.
@@ -259,11 +259,11 @@ This project is open source and available on GitHub as part of my commitment to 
 export const projects = [
   {
     id: 'polyglotai-translator',
-    title: 'PolyglotAI Translator',
-    description: 'A universal translation app supporting text, voice, and sign language - powered by AI for seamless global communication.',
+    title: 'Polyglot AI',
+    description: 'An all-in-one universal translation platform supporting text, voice, and sign language with deep integrations for WhatsApp and Twilio.',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop',
     tags: ['AI', 'Translation', 'Accessibility'],
-    link: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://polyglotai-28.preview.emergentagent.com',
+    link: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://where-my-code.emergent.host/',
     featured: true,
     hasDetailPage: true
   },

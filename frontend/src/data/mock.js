@@ -58,7 +58,7 @@ export const projects = [
     description: "A universal translation app supporting text, voice, and sign language - powered by AI for seamless global communication.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
     tags: ["AI", "Translation", "Accessibility"],
-    link: "https://polyglotai-28.preview.emergentagent.com",
+    link: "https://where-my-code.emergent.host/",
     featured: true
   },
   {

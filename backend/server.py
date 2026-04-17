@@ -56,6 +56,11 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str = Field(..., min_length=1, max_length=255)
 
+class ContactRequest(BaseModel):
+    name: str
+    email: str
+    message: str
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
@@ -85,6 +90,51 @@ async def get_status_checks():
     
     return status_checks
 
+@api_router.post("/contact")
+async def send_contact_email(request: ContactRequest):
+    """
+    Proxy contact form submissions to EmailJS using private credentials.
+    Ensures secrets are never exposed to the browser.
+    """
+    service_id = os.environ.get('EMAILJS_SERVICE_ID')
+    template_id = os.environ.get('EMAILJS_TEMPLATE_ID')
+    public_key = os.environ.get('EMAILJS_PUBLIC_KEY')
+    private_key = os.environ.get('EMAILJS_PRIVATE_KEY')
+
+    if not all([service_id, template_id, public_key, private_key]):
+        logger.error("EmailJS credentials missing from environment variables")
+        raise HTTPException(status_code=500, detail="Email service not configured")
+
+    payload = {
+        "service_id": service_id,
+        "template_id": template_id,
+        "user_id": public_key,
+        "accessToken": private_key,
+        "template_params": {
+            "from_name": request.name,
+            "reply_to": request.email,
+            "message": request.message,
+            "user_email": request.email
+        }
+    }
+
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.post(
+                "https://api.emailjs.com/api/v1.0/email/send", 
+                json=payload,
+                headers={"Content-Type": "application/json"}
+            )
+            
+            if response.status_code != 200:
+                logger.error(f"EmailJS error response: {response.status_code} - {response.text}")
+                raise HTTPException(status_code=500, detail="Failed to send email through provider")
+                
+            return {"status": "success", "message": "Email sent successfully"}
+        except Exception as e:
+            logger.error(f"Unexpected error sending email: {str(e)}")
+            raise HTTPException(status_code=500, detail="Internal server error while sending email")
+
 # Simple in-memory cache to avoid rate limiting and speed up response times
 jira_cache = {}
 CACHE_EXPIRATION_SECONDS = 300  # 5 minutes
@@ -101,9 +151,9 @@ async def get_jira_board(board_id: str):
         raise HTTPException(status_code=400, detail="Invalid board ID format")
 
     # Support both your new naming and the previous naming
-    instance_url = os.environ.get('JIRA_BASE_URL') or os.environ.get('JIRA_INSTANCE_URL')
-    email = os.environ.get('JIRA_EMAIL') or os.environ.get('REACT_APP_JIRA_EMAIL')
-    token = os.environ.get('JIRA_API_TOKEN') or os.environ.get('REACT_APP_JIRA_API_TOKEN')
+    instance_url = os.environ.get('JIRA_BASE_URL')
+    email = os.environ.get('JIRA_EMAIL')
+    token = os.environ.get('JIRA_API_TOKEN')
     
     # Check cache first
     now = datetime.now(timezone.utc).timestamp()
@@ -164,9 +214,9 @@ async def create_jira_issue(issue: JiraIssueCreate):
     Create a new issue in Jira via the proxy.
     Used to sync local recommendations/tasks to the Jira board.
     """
-    instance_url = os.environ.get('JIRA_BASE_URL') or os.environ.get('JIRA_INSTANCE_URL')
-    email = os.environ.get('JIRA_EMAIL') or os.environ.get('REACT_APP_JIRA_EMAIL')
-    token = os.environ.get('JIRA_API_TOKEN') or os.environ.get('REACT_APP_JIRA_API_TOKEN')
+    instance_url = os.environ.get('JIRA_BASE_URL')
+    email = os.environ.get('JIRA_EMAIL')
+    token = os.environ.get('JIRA_API_TOKEN')
 
     if not all([instance_url, email, token]):
         logger.error("Jira credentials missing from environment variables")

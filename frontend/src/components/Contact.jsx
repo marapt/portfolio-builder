@@ -1,4 +1,3 @@
-import emailjs from '@emailjs/browser';
 import React, { useState } from 'react';
 import { Mail, MapPin, Linkedin, Calendar, Send, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
@@ -24,26 +23,33 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    emailjs.sendForm(
-      'service_3me9sqg',
-      'template_64i4un8',
-      e.target, 
-      'tWVzxU_-s7boVuyDp'
-    )
-      .then(() => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
         setIsLoading(false);
         setIsSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setIsSubmitted(false), 5000);
-      }, (error) => {
-        setIsLoading(false);
-        alert("Failed to send. Please try again or email me directly.");
-        console.error('EmailJS Error:', error);
-      });
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || 'Failed to send');
+      }
+    } catch (error) {
+      setIsLoading(false);
+      alert("Failed to send. Please try again or email me directly.");
+      console.error('Contact Error:', error);
+    }
   };
 
   const contactMethods = [
