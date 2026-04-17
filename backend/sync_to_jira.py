@@ -20,6 +20,40 @@ TEST_RESULT_FILE = BASE_DIR / "test_result.md"
 API_ENDPOINT = os.environ.get("JIRA_API_ENDPOINT", "http://localhost:8000/api/jira/issue")
 API_TIMEOUT = float(os.environ.get("API_TIMEOUT", "10.0"))
 
+def get_git_info():
+    """Get the current git commit hash and message."""
+    try:
+        # Get commit hash (short form)
+        hash_result = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=BASE_DIR,
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        commit_hash = hash_result.stdout.strip() if hash_result.returncode == 0 else None
+
+        # Get commit message (first line)
+        msg_result = subprocess.run(
+            ["git", "log", "-1", "--pretty=%s"],
+            cwd=BASE_DIR,
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        commit_msg = msg_result.stdout.strip() if msg_result.returncode == 0 else ""
+
+        return commit_hash, commit_msg
+    except subprocess.TimeoutExpired:
+        logger.warning("Git command timed out")
+        return None, ""
+    except FileNotFoundError:
+        logger.warning("Git not found in PATH")
+        return None, ""
+    except Exception as e:
+        logger.warning(f"Error getting git info: {e}")
+        return None, ""
+
 def extract_yaml_from_markdown(file_path):
     """Extracts the YAML section from the test_result.md file."""
     try:
