@@ -366,3 +366,5 @@ agent_communication:
       message: "Resolved path error for server.py. User was attempting to run from an incorrect directory; provided correct absolute path and venv instructions."
     - agent: "main"
       message: "Resolved ModuleNotFoundError by providing venv creation and activation steps. Fixed syntax error in portfolio_agent.py and hardened server.py shutdown logic."
+    - agent: "user"
+      message: "Finalizing terminal environment setup: creating venv and installing requirements.txt to run sync scripts."
