@@ -18,7 +18,8 @@ load_dotenv(ROOT_DIR / '.env')
 
 # Configure logging first, before any use of logger
 logging.basicConfig(
-    level=logging.INFO,
+    # Ensure we use INFO or WARNING in production to prevent sensitive data leakage in DEBUG logs
+    level=logging.INFO if os.environ.get('ENVIRONMENT') == 'production' else logging.DEBUG,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
