@@ -135,6 +135,17 @@ class JiraIssueCreate(BaseModel):
     description: str
     issue_type: str = "Task"
 
+class ServiceStatus(BaseModel):
+    status: str
+    details: Optional[str] = None
+
+class SystemHealth(BaseModel):
+    mongodb: ServiceStatus
+    jira: ServiceStatus
+    emailjs: ServiceStatus
+    gemini_ai: ServiceStatus
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
 # --- App & Router Setup ---
 
 app = FastAPI(lifespan=lifespan)
@@ -163,6 +174,35 @@ async def get_status_checks(db=Depends(get_db)):
     cursor = db.status_checks.find({}, {"_id": 0})
     checks = await cursor.to_list(1000)
     return checks
+
+@api_router.get("/health", response_model=SystemHealth)
+async def get_system_health():
+    """Diagnostic endpoint to check the status of external services and config."""
+    # 1. MongoDB Check
+    db = getattr(app.state, "db", None)
+    mongodb_status = ServiceStatus(status="Connected") if db is not None else ServiceStatus(status="Disconnected", details="MONGO_URL or DB_NAME not configured correctly.")
+
+    # 2. Jira Check
+    jira_config = get_jira_config()
+    jira_status = ServiceStatus(status="Configured") if jira_config else ServiceStatus(status="Missing", details="Jira credentials missing from environment.")
+
+    # 3. EmailJS Check
+    emailjs_config = get_emailjs_config()
+    emailjs_status = ServiceStatus(status="Configured") if emailjs_config else ServiceStatus(status="Missing", details="EmailJS credentials missing from environment.")
+
+    # 4. Gemini AI Check
+    api_key = os.environ.get("GOOGLE_API_KEY")
+    if not api_key or "your-gemini-api-key" in api_key:
+        gemini_status = ServiceStatus(status="Missing", details="GOOGLE_API_KEY is missing or set to a placeholder.")
+    else:
+        gemini_status = ServiceStatus(status="Configured")
+
+    return SystemHealth(
+        mongodb=mongodb_status,
+        jira=jira_status,
+        emailjs=emailjs_status,
+        gemini_ai=gemini_status
+    )
 
 @api_router.post("/contact")
 async def send_contact_email(request: ContactRequest):
