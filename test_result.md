@@ -183,6 +183,17 @@ frontend:
         - working: true
           agent: "main"
           comment: "Re-verified context: App.js and index.js are now explicitly loaded and visible. Full repo integrity confirmed."
+  - task: "Verify Local Production Build"
+    implemented: false
+    working: "NA"
+    file: "frontend/build/"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Instructions added to README for local production preview using 'npx serve -s build'."
   - task: "Deactivate Visual Edits for Production"
     implemented: false
     working: "NA"
@@ -316,3 +327,11 @@ agent_communication:
       message: "Implemented sync_to_jira.py to automate the transfer of pending tasks from this file to the Jira board."
     - agent: "main"
       message: "Resolved 'python' command not found issue by updating documentation and scripts to use 'python3', which is standard for modern macOS environments."
+    - agent: "main"
+      message: "Confirmed hosting roadmap: Current production remains on SiteGround; migration to Vercel (Hobby plan) planned for when SiteGround subscription expires to leverage free tier and better SPA support."
+    - agent: "user"
+      message: "Confirmed domain maramartins.com is registered via GoDaddy and valid until 2027; migration not required for the foreseeable future."
+    - agent: "main"
+      message: "Added documentation for local production build preview to ensure parity between local testing and Vercel deployment."
+    - agent: "main"
+      message: "Finalized PortfolioManagerAgent: Integrated Gemini API for NLP prompts and implemented AI-driven synchronization between CONTENT_EXPORT.md and projectsData.js."

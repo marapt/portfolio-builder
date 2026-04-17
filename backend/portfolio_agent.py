@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 import os
 import re
+import json
 import logging
 from datetime import datetime
 from pathlib import Path
+import google.generativeai as genai
+from dotenv import load_dotenv
 
 # Configure logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
@@ -19,6 +22,17 @@ class PortfolioManagerAgent:
         self.state_file = self.root_dir / "test_result.md"
         self.frontend_data = self.root_dir / "frontend/src/data/projectsData.js"
         self.role = "Portfolio Content Specialist"
+        self.model = None
+        
+        # Initialize AI
+        load_dotenv(self.root_dir / 'backend' / '.env')
+        api_key = os.environ.get("GOOGLE_API_KEY")
+        if api_key:
+            genai.configure(api_key=api_key)
+            self.model = genai.GenerativeModel('gemini-1.5-flash')
+            logger.info("Gemini API configured successfully")
+        else:
+            logger.warning("GOOGLE_API_KEY environment variable not found. AI features will be unavailable.")
 
     def read_context(self):
         """Reads the current portfolio content and agent state."""
@@ -46,8 +60,9 @@ class PortfolioManagerAgent:
             }
             
             # Append to state file
+            status_indicator = "✓" if working else "✗"
             with open(self.state_file, 'a', encoding='utf-8') as f:
-                f.write(f"\n[{log_entry['timestamp']}] {log_entry['agent']} - {task_name}: {comment}")
+                f.write(f"\n[{log_entry['timestamp']}] {status_indicator} {log_entry['agent']} - {task_name}: {comment}")
             
             logger.info(f"State updated: {comment}")
         except IOError as e:
@@ -79,15 +94,39 @@ class PortfolioManagerAgent:
 
     def sync_to_frontend(self):
         """
-        Updates projectsData.js based on CONTENT_EXPORT.md content.
-        In a full implementation, this uses an LLM to map Markdown sections 
-        to the specific JS object structure.
+        Uses AI to parse CONTENT_EXPORT.md and rewrite projectsData.js.
         """
-        if not self.frontend_data.exists():
-            logger.warning(f"Frontend data file not found: {self.frontend_data}")
+        if not self.model:
+            return "Error: Gemini API not configured. Ensure GOOGLE_API_KEY environment variable is set."
         
-        self.update_state("Frontend Sync", "Synchronized source of truth with projectsData.js")
-        logger.info("Frontend data synchronized successfully")
+        content = self.read_context()
+        if not content:
+            return "Error: No content found in CONTENT_EXPORT.md"
+
+        prompt = f"""
+        Act as a Senior Frontend Engineer. Convert the following Portfolio Markdown content into a valid 'projectsData.js' file.
+        
+        Required Structure:
+        1. Export a constant `projectDetails` (object where keys are slugs).
+        2. Export a constant `projects` (array of summary objects).
+        
+        Markdown:
+        {content}
+        
+        Return ONLY valid JavaScript code. No markdown formatting, no backticks, no explanations.
+        """
+
+        try:
+            response = self.model.generate_content(prompt)
+            js_code = response.text.replace('```javascript', '').replace('```', '').strip()
+            
+            with open(self.frontend_data, 'w', encoding='utf-8') as f:
+                f.write(js_code)
+            self.update_state("Frontend Sync", "AI-driven sync of CONTENT_EXPORT.md to projectsData.js complete.")
+        except Exception as e:
+            logger.error(f"Sync failed: {e}")
+            return f"Error during sync: {e}"
+            
         return "Frontend data synchronized successfully."
 
     def process_prompt(self, user_prompt):
@@ -99,51 +138,53 @@ class PortfolioManagerAgent:
         3. Parse the diff/new content
         4. Overwrite CONTENT_EXPORT.md
         """
-        if not user_prompt:
-            logger.warning("Empty prompt received")
-            return "Error: Please provide a prompt."
+        if not self.model:
+            return "Error: Gemini API not configured. Ensure GOOGLE_API_KEY environment variable is set."
         
-        prompt_lower = user_prompt.lower()
-        logger.info(f"Processing prompt: {user_prompt}")
-        
-        if "add project" in prompt_lower or "add" in prompt_lower and "project" in prompt_lower:
-            # Extract project title using regex - more robust than split
-            match = re.search(r"(?:titled|called|named|'|\")([^'\"]*)", user_prompt, re.IGNORECASE)
-            if match:
-                project_title = match.group(1).strip()
-                if project_title:
-                    self.update_state(
-                        "Portfolio Content Update", 
-                        f"Added project: {project_title}. Triggering sync..."
-                    )
-                    logger.info(f"Project added: {project_title}")
-                    return f"Success: Added '{project_title}' to source of truth."
-            logger.warning("Could not extract project title from prompt")
-            return "Error: Please specify a project title (e.g., 'Add a project titled MyProject')"
-        
-        if "sync" in prompt_lower:
+        if "sync" in user_prompt.lower():
             return self.sync_to_frontend()
 
-        return "I can help you 'add a project' or 'sync' the frontend data."
+        context = self.read_context()
+        prompt = f"""
+        Current Content:
+        {context}
+        
+        Instruction: {user_prompt}
+        
+        Update the Markdown content above based on the instruction. 
+        Return the ENTIRE updated Markdown file. 
+        Maintain the existing structure and headers.
+        Return ONLY the Markdown.
+        """
+        
+        try:
+            response = self.model.generate_content(prompt)
+            updated_md = response.text.replace('```markdown', '').replace('```', '').strip()
+            
+            with open(self.content_file, 'w', encoding='utf-8') as f:
+                f.write(updated_md)
+            
+            self.update_state("AI Update", f"Processed prompt: {user_prompt}")
+            return "Success: Portfolio content updated. Run 'sync' to push to frontend."
+        except Exception as e:
+            logger.error(f"AI processing failed: {e}")
+            return f"Error: {e}"
 
 if __name__ == "__main__":
+    import sys
     agent = PortfolioManagerAgent()
     
-    # Example: Simulating a project addition
-    result = agent.process_prompt("Add a new project titled 'GenAI Localization Tool'")
-    print(f"Result 1: {result}\n")
-    
-    # Example: Syncing data
-    result2 = agent.process_prompt("Sync the portfolio data")
-    print(f"Result 2: {result2}\n")
-
-    # Example: Syncing tasks to Jira
-    tasks = [
-        {"task": "Update bio"},
-        {"task": "Add new project"},
-        {"task": "Fix spelling errors"}
-    ]
-    agent.sync_tasks_to_jira(tasks)
+    if len(sys.argv) > 1:
+        user_input = " ".join(sys.argv[1:])
+        print(f"Processing: {user_input}")
+        result = agent.process_prompt(user_input)
+        print(result)
+    else:
+        print("Portfolio Manager Agent initialized.")
+        print("Usage: python portfolio_agent.py '<your command>'")
+        print("Example: python portfolio_agent.py 'Update my experience section'")
+        print("Example: python portfolio_agent.py 'sync'")
+        print("\nAgent is ready for integration with other services.")
 
 """
 ENHANCEMENT ROADMAP:
