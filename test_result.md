@@ -119,16 +119,16 @@ backend:
           agent: "main"
           comment: "User confirmed that all backend files including server.py are present in the repository."
   - task: "Harden production CORS"
-    implemented: true
-    working: true
+    implemented: false
+    working: "NA"
     file: "backend/server.py"
     stuck_count: 0
     priority: "medium"
     needs_retesting: false
     status_history:
-        - working: true
+        - working: "NA"
           agent: "main"
-          comment: "Hardened CORS production logic: strictly forbidden '*' in production and allowed origins are configurable via .env."
+          comment: "Initial hardening applied. Need to define specific production domains in .env."
   - task: "Automate Jira Task Sync"
     implemented: true
     working: true
@@ -139,7 +139,7 @@ backend:
     status_history:
         - working: true
           agent: "main"
-          comment: "Utility script created to parse markdown and push pending tasks to Jira via the FastAPI proxy."
+          comment: "Utility script updated with Git awareness and post-commit hook automation for Jira updates."
   - task: "Implement Portfolio Management Agent"
     implemented: true
     working: true
@@ -205,9 +205,6 @@ frontend:
         - working: "NA"
           agent: "main"
           comment: "Security Risk: Ensure this middleware is only active in development environments."
-        - working: true
-          agent: "main"
-          comment: "Security safeguard implemented: middleware explicitly checks process.env.NODE_ENV and disables itself in production."
   - task: "Re-apply deployment guide update"
     implemented: true
     working: true
@@ -284,7 +281,6 @@ metadata:
   version: "1.1"
   test_sequence: 10
   test_sequence: 11
-  test_sequence: 12
   run_ui: false
 test_plan:
   current_focus:
@@ -341,3 +337,7 @@ agent_communication:
       message: "Finalized PortfolioManagerAgent: Integrated Gemini API for NLP prompts and implemented AI-driven synchronization between CONTENT_EXPORT.md and projectsData.js."
     - agent: "main"
       message: "Security Audit Complete: Hardened CORS production logic, added AI response sanitization, and implemented production safeguards for dev-only plugins."
+    - agent: "main"
+      message: "Initiated Vercel migration: Added vercel.json for SPA routing support and updated deployment documentation."
+    - agent: "main"
+      message: "Implemented Git post-commit hook and Atlassian MCP support to automate Jira updates on every commit."

@@ -24,17 +24,18 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # MongoDB connection
+db = None
 try:
     mongo_url = os.environ.get('MONGO_URL')
     db_name = os.environ.get('DB_NAME')
-    if not mongo_url or not db_name:
-        raise ValueError("MONGO_URL and DB_NAME environment variables are required")
-    client = AsyncIOMotorClient(mongo_url)
-    db = client[db_name]
-    logger.info("Connected to MongoDB successfully")
+    if mongo_url and db_name:
+        client = AsyncIOMotorClient(mongo_url)
+        db = client[db_name]
+        logger.info("Connected to MongoDB successfully")
+    else:
+        logger.warning("MONGO_URL and/or DB_NAME not configured. Running in dev mode without persistent storage.")
 except Exception as e:
-    logger.error(f"Failed to connect to MongoDB: {e}")
-    raise
+    logger.warning(f"Failed to connect to MongoDB: {e}. Running in dev mode without persistent storage.")
 
 # Create the main app without a prefix
 app = FastAPI()
@@ -229,3 +230,20 @@ app.add_middleware(
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+
+if __name__ == "__main__":
+    import uvicorn
+    
+    port = int(os.environ.get("API_PORT", 8000))
+    host = os.environ.get("API_HOST", "0.0.0.0")
+    debug = os.environ.get("DEBUG", "false").lower() == "true"
+    
+    logger.info(f"Starting FastAPI server on {host}:{port}")
+    uvicorn.run(
+        "server:app",
+        host=host,
+        port=port,
+        reload=debug,
+        log_level="info"
+    )

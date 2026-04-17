@@ -4,6 +4,7 @@ import httpx
 import asyncio
 import os
 import logging
+import subprocess
 from pathlib import Path
 
 # Configure logging
@@ -66,6 +67,8 @@ async def sync_tasks():
         logger.error("Could not parse YAML data from test_result.md")
         return
 
+    commit_hash, commit_msg = get_git_info()
+    
     pending_tasks = []
     
     # Collect unimplemented tasks from backend and frontend
@@ -93,6 +96,9 @@ async def sync_tasks():
             task_description = f"File: {task.get('file', 'N/A')}\nPriority: {task.get('priority', 'N/A')}\nStatus: Pending implementation"
             task_type = task.get('type', 'Task')  # Defaults to Task
             
+            if commit_hash:
+                task_description += f"\n\nSync triggered by Commit: {commit_hash}\nMessage: {commit_msg.strip()}"
+
             pending_tasks.append({
                 "summary": task_summary,
                 "description": task_description,
