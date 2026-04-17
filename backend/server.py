@@ -27,10 +27,14 @@ logger = logging.getLogger(__name__)
 # --- Configuration Helpers ---
 
 def get_jira_config():
-    """Centralized Jira configuration retrieval."""
-    instance_url = os.environ.get('JIRA_BASE_URL') or os.environ.get('JIRA_INSTANCE_URL')
-    email = os.environ.get('JIRA_EMAIL') or os.environ.get('REACT_APP_JIRA_EMAIL')
-    token = os.environ.get('JIRA_API_TOKEN') or os.environ.get('REACT_APP_JIRA_API_TOKEN')
+    """
+    Centralized Jira configuration retrieval.
+    IMPORTANT: These variables must NOT have a 'REACT_APP_' prefix to prevent 
+    accidental leakage to the frontend bundle by build systems.
+    """
+    instance_url = os.environ.get('JIRA_INSTANCE_URL') or os.environ.get('JIRA_BASE_URL')
+    email = os.environ.get('JIRA_EMAIL')
+    token = os.environ.get('JIRA_API_TOKEN')
     
     if not all([instance_url, email, token]):
         logger.error("Jira credentials missing from environment variables")
@@ -43,7 +47,10 @@ def get_jira_config():
     }
 
 def get_emailjs_config():
-    """Centralized EmailJS configuration retrieval."""
+    """
+    Centralized EmailJS configuration retrieval.
+    All keys are stored on the backend to prevent exposure to the client browser.
+    """
     service_id = os.environ.get('EMAILJS_SERVICE_ID')
     template_id = os.environ.get('EMAILJS_TEMPLATE_ID')
     public_key = os.environ.get('EMAILJS_PUBLIC_KEY')
