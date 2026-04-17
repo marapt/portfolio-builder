@@ -274,8 +274,18 @@ frontend:
     status_history:
         - working: true
           agent: "main"
-          comment: "Security audit complete: Verified Backend Proxy Pattern. Instructions provided to move Jira secrets from frontend .env to backend .env to prevent token leakage."
-          comment: "Security audit complete: Verified Backend Proxy Pattern. backend/.env content provided to decouple secrets from frontend."
+          comment: "Security audit complete: Verified Backend Proxy Pattern. Instructions provided to move Jira secrets from frontend .env to backend .env to prevent token leakage. backend/.env content provided to decouple secrets from frontend."
+  - task: "Final cutover from SiteGround"
+    implemented: false
+    working: "NA"
+    file: "N/A"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "user"
+          comment: "Vercel/GoDaddy/SiteGround configuration verified manually. Final cutover scheduled for SiteGround subscription expiry."
 metadata:
   created_by: "main_agent"
   version: "1.1"
