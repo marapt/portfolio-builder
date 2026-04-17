@@ -118,6 +118,28 @@ backend:
         - working: true
           agent: "main"
           comment: "User confirmed that all backend files including server.py are present in the repository."
+  - task: "Harden production CORS"
+    implemented: false
+    working: "NA"
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Initial hardening applied. Need to define specific production domains in .env."
+  - task: "Automate Jira Task Sync"
+    implemented: true
+    working: true
+    file: "backend/sync_to_jira.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "main"
+          comment: "Utility script created to parse markdown and push pending tasks to Jira via the FastAPI proxy."
   - task: "Implement Portfolio Management Agent"
     implemented: true
     working: true
@@ -161,6 +183,17 @@ frontend:
         - working: true
           agent: "main"
           comment: "Re-verified context: App.js and index.js are now explicitly loaded and visible. Full repo integrity confirmed."
+  - task: "Deactivate Visual Edits for Production"
+    implemented: false
+    working: "NA"
+    file: "frontend/plugins/visual-edits/dev-server-setup.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Security Risk: Ensure this middleware is only active in development environments."
   - task: "Re-apply deployment guide update"
     implemented: true
     working: true
@@ -275,3 +308,11 @@ agent_communication:
       message: "Revisited backend/.env setup: Provided specific templates for Jira and Gemini API keys."
     - agent: "main"
       message: "Security Consultation: Explained the necessity of the backend proxy to prevent secret leakage in frontend builds and handle CORS/Filesystem constraints."
+    - agent: "main"
+      message: "Security Sweep Complete: Hardened server.py with input validation for Jira endpoints and restricted default CORS policies."
+    - agent: "main"
+      message: "Logged security recommendations and Jira sync requirements to the task list."
+    - agent: "main"
+      message: "Implemented sync_to_jira.py to automate the transfer of pending tasks from this file to the Jira board."
+    - agent: "main"
+      message: "Resolved 'python' command not found issue by updating documentation and scripts to use 'python3', which is standard for modern macOS environments."

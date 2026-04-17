@@ -10,15 +10,31 @@ from typing import List
 import uuid
 from datetime import datetime, timezone
 import httpx
+import re
 
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
+# Configure logging first, before any use of logger
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
 # MongoDB connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+try:
+    mongo_url = os.environ.get('MONGO_URL')
+    db_name = os.environ.get('DB_NAME')
+    if not mongo_url or not db_name:
+        raise ValueError("MONGO_URL and DB_NAME environment variables are required")
+    client = AsyncIOMotorClient(mongo_url)
+    db = client[db_name]
+    logger.info("Connected to MongoDB successfully")
+except Exception as e:
+    logger.error(f"Failed to connect to MongoDB: {e}")
+    raise
 
 # Create the main app without a prefix
 app = FastAPI()
@@ -36,7 +52,7 @@ class StatusCheck(BaseModel):
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class StatusCheckCreate(BaseModel):
-    client_name: str
+    client_name: str = Field(..., min_length=1, max_length=255)
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
@@ -77,6 +93,11 @@ async def get_jira_board(board_id: str):
     Proxy request to Jira Cloud API to fetch board issues.
     Requires JIRA_INSTANCE_URL, JIRA_EMAIL, and JIRA_API_TOKEN in .env
     """
+    # Input Validation: Ensure board_id is alphanumeric (Jira IDs are typically integers or short strings)
+    if not re.match(r"^[a-zA-Z0-9_-]+$", board_id):
+        logger.warning(f"Malicious board_id attempt blocked: {board_id}")
+        raise HTTPException(status_code=400, detail="Invalid board ID format")
+
     # Support both your new naming and the previous naming
     instance_url = os.environ.get('JIRA_BASE_URL') or os.environ.get('JIRA_INSTANCE_URL')
     email = os.environ.get('JIRA_EMAIL') or os.environ.get('REACT_APP_JIRA_EMAIL')
@@ -97,10 +118,10 @@ async def get_jira_board(board_id: str):
     # API endpoint for board issues
     url = f"{instance_url.rstrip('/')}/rest/agile/1.0/board/{board_id}/issue"
     
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient() as http_client:
         try:
             # Jira uses Basic Auth with Email and API Token
-            response = await client.get(url, auth=(email, token))
+            response = await http_client.get(url, auth=(email, token))
             response.raise_for_status()
             data = response.json()
             
@@ -129,20 +150,78 @@ async def get_jira_board(board_id: str):
 # Include the router in the main app
 app.include_router(api_router)
 
+class JiraIssueCreate(BaseModel):
+    project_key: str = "PMJ" # Default to your project key
+    summary: str
+    description: str
+    issue_type: str = "Task"
+
+@api_router.post("/jira/issue")
+async def create_jira_issue(issue: JiraIssueCreate):
+    """
+    Create a new issue in Jira via the proxy.
+    Used to sync local recommendations/tasks to the Jira board.
+    """
+    instance_url = os.environ.get('JIRA_BASE_URL') or os.environ.get('JIRA_INSTANCE_URL')
+    email = os.environ.get('JIRA_EMAIL') or os.environ.get('REACT_APP_JIRA_EMAIL')
+    token = os.environ.get('JIRA_API_TOKEN') or os.environ.get('REACT_APP_JIRA_API_TOKEN')
+
+    if not all([instance_url, email, token]):
+        logger.error("Jira credentials missing from environment variables")
+        raise HTTPException(status_code=500, detail="Jira credentials not configured")
+
+    url = f"{instance_url.rstrip('/')}/rest/api/2/issue"
+    
+    payload = {
+        "fields": {
+            "project": {"key": issue.project_key},
+            "summary": issue.summary,
+            "description": issue.description,
+            "issuetype": {"name": issue.issue_type}
+        }
+    }
+
+    async with httpx.AsyncClient() as http_client:
+        try:
+            response = await http_client.post(
+                url, 
+                auth=(email, token), 
+                json=payload,
+                headers={"Content-Type": "application/json"}
+            )
+            response.raise_for_status()
+            data = response.json()
+            
+            logger.info(f"Successfully created Jira issue: {data.get('key')}")
+            return {
+                "status": "success",
+                "jira_key": data.get("key"),
+                "jira_url": f"{instance_url.rstrip('/')}/browse/{data.get('key')}"
+            }
+        except httpx.HTTPStatusError as exc:
+            logger.error(f"Jira API POST error: {exc.response.status_code} - {exc.response.text}")
+            raise HTTPException(
+                status_code=exc.response.status_code, 
+                detail=f"Jira API Error: {exc.response.text}"
+            )
+        except Exception as exc:
+            logger.error(f"Unexpected error creating Jira issue: {str(exc)}")
+            raise HTTPException(status_code=500, detail="Internal server error")
+
+# Secure CORS Configuration
+# Defaulting to a safe empty list if not provided to avoid open-access '*' in production
+allowed_origins = os.environ.get('CORS_ORIGINS', 'http://localhost:3000').split(',')
+if "*" in allowed_origins and os.environ.get('ENVIRONMENT') == 'production':
+    logger.warning("CORS '*' detected in production! Restricting to known origins is recommended.")
+    allowed_origins = ['http://localhost:3000']  # Fallback to safe default
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=allowed_origins,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["Content-Type", "Authorization"],
 )
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
