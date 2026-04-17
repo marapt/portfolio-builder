@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 
 # MongoDB connection
 db = None
-try:
+try:Python Environments: Run Python Environment Tool (PET) in Terminal
     mongo_url = os.environ.get('MONGO_URL')
     db_name = os.environ.get('DB_NAME')
     if mongo_url and db_name:
