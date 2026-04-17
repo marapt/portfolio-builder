@@ -28,11 +28,15 @@ load_dotenv(ROOT_DIR / '.env')
 
 
 class JiraConfig:
-    """Jira configuration from environment"""
+    """
+    Jira configuration from environment.
+    Note: REACT_APP_ prefixes are excluded here to prevent accidental leakage
+    to the frontend by build systems.
+    """
     def __init__(self):
-        self.instance_url = os.environ.get('JIRA_BASE_URL') or os.environ.get('JIRA_INSTANCE_URL')
-        self.email = os.environ.get('JIRA_EMAIL') or os.environ.get('REACT_APP_JIRA_EMAIL')
-        self.token = os.environ.get('JIRA_API_TOKEN') or os.environ.get('REACT_APP_JIRA_API_TOKEN')
+        self.instance_url = os.environ.get('JIRA_INSTANCE_URL') or os.environ.get('JIRA_BASE_URL')
+        self.email = os.environ.get('JIRA_EMAIL')
+        self.token = os.environ.get('JIRA_API_TOKEN')
         self.board_id = os.environ.get('JIRA_BOARD_ID', '1')
         
     def is_configured(self) -> bool:
