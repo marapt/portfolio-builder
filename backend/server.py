@@ -41,9 +41,9 @@ def get_jira_config():
         return None
     
     return {
-        "url": instance_url.rstrip('/'),
-        "email": email,
-        "token": token
+        "url": instance_url.strip().rstrip('/'),
+        "email": email.strip(),
+        "token": token.strip()
     }
 
 def get_emailjs_config():
