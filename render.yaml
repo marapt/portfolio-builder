@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: portfolio-backend
+    env: python
+    buildCommand: "cd backend && pip install -r requirements.txt"
+    startCommand: "cd backend && API_PORT=$PORT ENVIRONMENT=production uvicorn server:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: API_PORT
+        value: 8000
+      - key: ENVIRONMENT
+        value: production
+      - key: CORS_ORIGINS
+        value: "https://your-vercel-domain.vercel.app,https://maramartins.com"
+      - key: MONGO_URL
+        value: "" # Optional
+      - key: DB_NAME
+        value: "" # Optional
+      - key: JIRA_INSTANCE_URL
+        value: ""
+      - key: JIRA_EMAIL
+        value: ""
+      - key: JIRA_API_TOKEN
+        value: ""
+      - key: EMAILJS_SERVICE_ID
+        value: ""
+      - key: EMAILJS_TEMPLATE_ID
+        value: ""
+      - key: EMAILJS_PUBLIC_KEY
+        value: ""
+      - key: EMAILJS_PRIVATE_KEY
+        value: ""

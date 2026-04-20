@@ -47,9 +47,10 @@ Vercel will detect the repository. You must configure the **Root Directory** so 
 4. Leave **Build Command** and **Output Directory** as default.
 
 ### 2.3 Environment Variables
-If you are using EmailJS or other services, add them here if you haven't hardcoded them.
-- *Note: Your current EmailJS configuration appears to be integrated directly in the code, so you can likely skip this step.*
+You must connect your frontend to your live backend. Under **Environment Variables**, add:
+- `REACT_APP_API_URL`: The URL of your deployed Python backend (e.g., `https://portfolio-backend.onrender.com`)
 
+*Note: The frontend now proxies contact requests and Jira fetches through the backend, so it won't function correctly if this points to localhost!*
 
 ---
 
@@ -80,6 +81,7 @@ If you are using EmailJS or other services, add them here if you haven't hardcod
 
 ## About the Backend
 
-Your repository contains a `backend/` folder with a FastAPI application.
-- **Current Status:** The live site uses EmailJS for the contact form, so the Python backend is **not required** for the portfolio to function.
-- **Future:** If you decide to use the Python backend, it should be deployed separately (e.g., on Render.com or Railway) or configured as Vercel Serverless Functions (requires rewriting code). For now, you can safely ignore it for the static portfolio deployment.
+Your repository contains a `backend/` folder with a FastAPI application. 
+- **Current Status:** The React frontend **requires** the backend to function in production. The backend securely proxies your EmailJS contact submissions and synchronizes the live Jira Board without exposing your keys to the frontend.
+- **Deployment:** You must deploy this backend to a platform like Render.com, Railway, or Heroku. 
+  - *Tip:* I have added a `render.yaml` file to your root directory. If you connect your repository to Render.com, it will automatically detect this file and deploy the backend for you! Once deployed, remember to add your Vercel URL to the `CORS_ORIGINS` environment variable in your backend provider.
