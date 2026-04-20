@@ -1,42 +1,66 @@
 {
-  "project": "Portfolio Production 2026",
+  "project": "Mara Martins Product Development Hub",
+  "project_key": "PJM",
   "sprint": {
     "name": "Sprint 4: High-Fidelity Interactivity",
     "goal": "Q2 Portfolio Launch: Hardening backend security, establishing high-fidelity project metrics, and professionalizing the Localization PM roadmap",
-    "startDate": "2026-04-01T09:00:00Z",
-    "endDate": "2026-04-15T18:00:00Z"
+    "id": 1
   },
   "tasks": [
     {
-      "key": "PJM-10",
-      "summary": "Strategy: Site Information Architecture & Localization Hierarchy",
-      "description": "Objective: Design a scalable IA that accommodates multi-language project showcases.\n\nKey Activities:\n- Mapping user journeys for tech recruiters and hiring managers.\n- Defining the global sitemap and content navigation logic.\n- Establishing the technical hierarchy for localized project details.",
-      "duedate": "2026-04-20",
-      "labels": ["Strategy", "IA"]
+      "key": "PJM-7",
+      "summary": "Confirm SSL & HTTPS (SiteGround)",
+      "status": "Done",
+      "labels": ["Tech_Foundations"]
+    },
+    {
+      "key": "PJM-8",
+      "summary": "Homepage Wireframe (Visual Plan)",
+      "status": "Done",
+      "labels": ["Tech_Foundations"]
     },
     {
       "key": "PJM-44",
       "summary": "UX: High-Fidelity Interactive Scrum Dashboard",
-      "description": "Objective: Implement a premium, real-time interactive board to showcase PM transparency.\n\nFeatures:\n- Side-drawer (Sheet) detail synchronization.\n- Live status and priority indicators.\n- Automated sync hooks for dev tracking.",
-      "duedate": "2026-04-18",
+      "status": "Done",
       "labels": ["UX", "Meta-Build"]
+    },
+    {
+      "key": "PJM-10",
+      "summary": "Strategy: Site Information Architecture & Localization Hierarchy",
+      "status": "In Progress",
+      "labels": ["Strategy", "IA"]
+    },
+    {
+      "key": "PJM-21",
+      "summary": "Professional Brand Identity Definition",
+      "status": "In Progress",
+      "labels": ["Tech_Foundations"]
+    },
+    {
+      "key": "PJM-25",
+      "summary": "Infrastructure & Hosting Procurement",
+      "status": "In Progress",
+      "labels": ["Tech_Foundations"]
+    },
+    {
+      "key": "PJM-11",
+      "summary": "Connect Service Desk Portal",
+      "status": "To Do",
+      "labels": ["Tech_Foundations"]
+    },
+    {
+      "key": "PJM-12",
+      "summary": "Sprint Review & Retrospective",
+      "status": "To Do",
+      "labels": ["Tech_Foundations"]
     },
     {
       "key": "PJM-46",
       "summary": "Infrastructure: Secure API Proxy Implementation",
       "description": "Objective: Architect a robust backend proxy layer for external service integrations.\n\nResults:\n- 100% credential security (Jira/EmailJS keys remain server-side).\n- Elimination of CORS issues via centralized FastAPI endpoints.\n- Implementation of memory-based performance caching.",
-      "duedate": "2026-04-17",
-      "labels": ["Infrastructure", "Security"]
+      "status": "In Progress",
+      "labels": ["Infrastructure", "Security", "vscode-extra-log"]
     }
-  ],
-  "roadmap": {
-    "phases": [
-      { "label": "Discovery", "status": "completed" },
-      { "label": "Strategy & IA", "status": "completed" },
-      { "label": "Infrastructure", "status": "completed" },
-      { "label": "Production", "status": "current" },
-      { "label": "Launch", "status": "upcoming" }
-    ],
-    "current_phase": "Production"
-  }
+  ]
 }
