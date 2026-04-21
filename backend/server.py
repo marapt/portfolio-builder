@@ -233,10 +233,18 @@ async def send_contact_email(request: ContactRequest):
         }
     }
 
+    # EmailJS requires browser-like headers when "non-browser environments" is disabled
+    emailjs_headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        "Origin": "https://maramartins.com",
+        "Referer": "https://maramartins.com/"
+    }
+
     try:
         response = await app.state.http_client.post(
             "https://api.emailjs.com/api/v1.0/email/send", 
-            json=payload
+            json=payload,
+            headers=emailjs_headers
         )
         if response.status_code != 200:
             logger.error(f"EmailJS error: {response.status_code} - {response.text}")
