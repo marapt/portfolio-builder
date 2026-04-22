@@ -80,6 +80,22 @@
     "legal_col": "Informações Legais",
     "rights": "Todos os direitos reservados."
   },
+  "privacy": {
+    "title": "Privacidade e Governança de Dados",
+    "intro": "Como consultoria de Gestão de Programas e Localização, a transparência e a integridade dos dados são princípios operacionais fundamentais.",
+    "controller_title": "Responsável pelo Tratamento",
+    "controller_desc": "O responsável pelo tratamento dos dados deste website é Mara Martins. Para qualquer questão relativa aos seus dados, utilize o formulário de contacto ou consulte as Informações Legais.",
+    "collection_title": "Recolha e Finalidade dos Dados",
+    "collection_desc": "Apenas recolhemos dados que nos fornece explicitamente (Nome, E-mail, Detalhes do Projeto) para efeitos de consulta profissional. Não utilizamos cookies de rastreamento para fins de marketing.",
+    "infra_title": "Infraestrutura e Subprocessadores",
+    "infra_desc": "Os seus dados são mantidos num cluster seguro de MongoDB Atlas (região AWS) e processados via Render (Serviços Web). Todos os dados são encriptados em repouso e em trânsito.",
+    "rights_title": "Os Seus Direitos (RGPD)",
+    "rights_desc": "Tem o direito de aceder, retificar ou apagar os seus dados. Os cidadãos da UE podem também apresentar uma reclamação junto da sua autoridade de controlo nacional.",
+    "supervisory_title": "Autoridade de Controlo",
+    "supervisory_desc": "Em Portugal, a autoridade competente é a Comissão Nacional de Protecção de Dados (CNPD).",
+    "complaints_book": "Livro de Reclamações Eletrónico",
+    "last_updated": "Última Atualização"
+  },
   "gtm": {
     "label": "Estratégia GTM",
     "live": "Direto",

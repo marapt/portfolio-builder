@@ -80,6 +80,22 @@
     "legal_col": "Legal",
     "rights": "All rights reserved."
   },
+  "privacy": {
+    "title": "Privacy & Data Governance",
+    "intro": "As a Program Management & Localization consultancy, transparency and data integrity are core operational principles.",
+    "controller_title": "Data Controller",
+    "controller_desc": "The data controller for this website is Mara Martins. For any enquiries regarding your data, please use the contact form or refer to the Imprint.",
+    "collection_title": "Data Collection & Purpose",
+    "collection_desc": "We only collect data you explicitly provide (Name, Email, Project Details) for the purpose of professional consultation. We do not use tracking cookies for marketing profiling.",
+    "infra_title": "Infrastructure & Sub-processors",
+    "infra_desc": "Your data is persisted in a secure MongoDB Atlas cluster (AWS region) and processed via Render (Web Services). All data is encrypted at rest and in transit.",
+    "rights_title": "Your Rights (GDPR)",
+    "rights_desc": "You have the right to access, rectify, or erase your data. Citizens of the EU may also lodge a complaint with their national supervisory authority.",
+    "supervisory_title": "Supervisory Authority",
+    "supervisory_desc": "In Portugal, the competent authority is the Comissão Nacional de Protecção de Dados (CNPD).",
+    "complaints_book": "Electronic Complaints Book",
+    "last_updated": "Last Updated"
+  },
   "gtm": {
     "label": "GTM Strategy",
     "live": "Live",

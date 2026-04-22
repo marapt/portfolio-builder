@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Shield, Lock, Eye, FileText } from 'lucide-react';
+import { Shield, Lock, Eye, FileText, Database, Scale, ExternalLink } from 'lucide-react';
 
 const Privacy = () => {
   const { t } = useTranslation();
@@ -8,53 +8,83 @@ const Privacy = () => {
   return (
     <div className="min-h-screen pt-32 pb-24 stellar-bg">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="glass-card p-10 lg:p-16 rounded-[4rem] border-white/5 relative overflow-hidden">
+        <div className="glass-card p-10 lg:p-16 rounded-[4rem] border border-white/5 relative overflow-hidden shadow-2xl shadow-violet-900/20">
           {/* Decorative Glow */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600/10 rounded-full blur-[80px] pointer-events-none" />
           
-          <div className="relative z-10 space-y-12 text-white/70 leading-relaxed">
+          <div className="relative z-10 space-y-12 text-white/70 leading-relaxed font-medium">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-600/10 border border-violet-600/20 text-cyan-400 text-[10px] font-black uppercase tracking-widest">
-                <Shield size={12} /> Compliance Guaranteed
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest">
+                <Shield size={12} /> GDPR Compliant • EU Expansion Ready
               </div>
               <h1 className="text-4xl lg:text-5xl font-black text-white tracking-tighter">
-                {t('hero.privacy_title')}
+                {t('privacy.title')}
               </h1>
-              <p className="text-lg italic text-white/40">
-                {t('hero.legal_intro')}
+              <p className="text-lg italic text-white/40 border-l-2 border-violet-500/30 pl-6">
+                {t('privacy.intro')}
               </p>
             </div>
 
-            <section className="space-y-6">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-                <Lock size={20} className="text-violet-400" /> Data Collection
+            <div className="grid md:grid-cols-2 gap-12">
+              <section className="space-y-6">
+                <h2 className="text-xl font-black text-white flex items-center gap-3 uppercase tracking-tighter">
+                  <Database size={20} className="text-violet-400" /> {t('privacy.controller_title')}
+                </h2>
+                <p className="text-sm">
+                  {t('privacy.controller_desc')}
+                </p>
+              </section>
+
+              <section className="space-y-6">
+                <h2 className="text-xl font-black text-white flex items-center gap-3 uppercase tracking-tighter">
+                  <Lock size={20} className="text-violet-400" /> {t('privacy.collection_title')}
+                </h2>
+                <p className="text-sm text-white/60">
+                   {t('privacy.collection_desc')}
+                </p>
+              </section>
+            </div>
+
+            <section className="space-y-6 bg-white/3 p-8 rounded-3xl border border-white/5">
+              <h2 className="text-xl font-black text-white flex items-center gap-3 uppercase tracking-tighter">
+                <Shield size={20} className="text-emerald-400" /> {t('privacy.infra_title')}
               </h2>
-              <p>
-                My consultancy follows strict data minimization principles. I only collect information provided directly by you through the contact form or Calendly booking integration. This typically includes your name, email address, and project details.
+              <p className="text-sm">
+                {t('privacy.infra_desc')}
               </p>
             </section>
 
-            <section className="space-y-6">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-                <Eye size={20} className="text-violet-400" /> AI & Processing
-              </h2>
-              <p>
-                As an AI-driven consultancy, I leverage local AI agents to assist in project orchestration. No personal data shared in our preliminary conversations is fed into public training models. Your privacy and intellectual property are protected by specialized local architectures.
-              </p>
-            </section>
+            <div className="grid md:grid-cols-2 gap-12">
+              <section className="space-y-6">
+                <h2 className="text-xl font-black text-white flex items-center gap-3 uppercase tracking-tighter">
+                  <Eye size={20} className="text-violet-400" /> {t('privacy.rights_title')}
+                </h2>
+                <p className="text-sm">
+                  {t('privacy.rights_desc')}
+                </p>
+              </section>
 
-            <section className="space-y-6">
-              <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-                <FileText size={20} className="text-violet-400" /> Your Rights (GDPR)
-              </h2>
-              <p>
-                In accordance with global standards (GDPR/EU and CCPA), you have the right to request access to, correction of, or deletion of your personal data at any time. For such requests, please contact me directly at the official address listed in the Imprint.
-              </p>
-            </section>
+              <section className="space-y-6">
+                <h2 className="text-xl font-black text-white flex items-center gap-3 uppercase tracking-tighter">
+                  <Scale size={20} className="text-violet-400" /> {t('privacy.supervisory_title')}
+                </h2>
+                <p className="text-sm italic text-white/50 mb-4">
+                   {t('privacy.supervisory_desc')}
+                </p>
+                <div className="flex flex-col gap-3">
+                  <a href="https://www.cnpd.pt/" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest text-white transition-all">
+                    CNPD Portal <ExternalLink size={11} />
+                  </a>
+                  <a href="https://www.livrodereclamacoes.pt/" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 px-4 py-2 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 rounded-xl text-[10px] font-black uppercase tracking-widest text-amber-400 transition-all">
+                    {t('privacy.complaints_book')} <ExternalLink size={11} />
+                  </a>
+                </div>
+              </section>
+            </div>
 
-            <div className="pt-12 border-t border-white/5 text-[10px] uppercase tracking-widest flex justify-between items-center">
-              <span>Last Updated: April 2024</span>
-              <span className="text-cyan-400">Strategically Secure</span>
+            <div className="pt-12 border-t border-white/5 text-[10px] uppercase tracking-widest flex justify-between items-center font-black opacity-30">
+              <span>{t('privacy.last_updated')}: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+              <span className="text-emerald-400">Governance Verified</span>
             </div>
           </div>
         </div>
