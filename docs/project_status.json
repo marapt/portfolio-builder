@@ -28,7 +28,7 @@
     {
       "key": "PJM-10",
       "summary": "Strategy: Site Information Architecture & Localization Hierarchy",
-      "status": "In Progress",
+      "status": "Done",
       "labels": ["Strategy", "IA"]
     },
     {
@@ -59,7 +59,7 @@
       "key": "PJM-46",
       "summary": "Infrastructure: Secure API Proxy Implementation",
       "description": "Objective: Architect a robust backend proxy layer for external service integrations.\n\nResults:\n- 100% credential security (Jira/EmailJS keys remain server-side).\n- Elimination of CORS issues via centralized FastAPI endpoints.\n- Implementation of memory-based performance caching.",
-      "status": "In Progress",
+      "status": "Done",
       "labels": ["Infrastructure", "Security", "vscode-extra-log"]
     }
   ]
