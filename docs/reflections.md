@@ -20,9 +20,19 @@ This document captures key technical challenges, errors, and resolutions encount
 ### 1. Vercel Build Failure (Syntax Error)
 - **Error**: `Syntax error: Unexpected token, expected ":"` in `ScrumBoardPage.jsx`.
 - **Cause**: A malformed ternary operator within a template literal on the Priority Badge.
-  - *Incorrect*: `${issue.priority === 'High' ? 'bg-red-50' text-red-500 : 'bg-green-50' text-green-500}`
-- **Fix**: Properly encapsulated the entire class string within the ternary segments.
-  - *Corrected*: `${issue.priority === 'High' ? 'bg-red-50 text-red-500' : 'bg-green-50 text-green-500'}`
+
+#### ❌ The Error (Code Snippet)
+```jsx
+// src/pages/ScrumBoardPage.jsx - Line 277
+<Badge className={`${issue.priority === 'High' ? 'bg-red-50' text-red-500 : 'bg-green-50' text-green-500} border-0`}>
+```
+
+#### ✅ The Fix (Code Snippet)
+```jsx
+// src/pages/ScrumBoardPage.jsx - Line 277 (Corrected)
+<Badge className={`${issue.priority === 'High' ? 'bg-red-50 text-red-500' : 'bg-green-50 text-green-500'} border-0`}>
+```
+
 - **Learning**: Template literals within JSX attributes can be deceptive; always verify that the ternary result is a single valid string.
 
 ### 2. Header Alignment & Toggle UI
