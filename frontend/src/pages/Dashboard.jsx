@@ -103,21 +103,32 @@ const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
     }
   }, [chatLog, showChat]);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!inputText.trim()) return;
-    const userMsg = { role: 'user', name: 'Mara Martins', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), text: inputText.trim() };
+    const currentText = inputText.trim();
+    const userMsg = { role: 'user', name: 'Mara Martins', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), text: currentText };
     setChatLog(prev => [...prev, userMsg]);
     setInputText('');
     setIsTyping(true);
-    setTimeout(() => {
-      const agentReply = {
-        role: 'agent', name: finding.agent,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        text: `Input received and logged. I will analyse your query: "${userMsg.text}" — and update this finding accordingly. If this requires a code change or Jira ticket, I will surface it as a new action item in the next audit cycle.`,
-      };
-      setChatLog(prev => [...prev, agentReply]);
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/governance/interaction`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ finding_id: finding.id, text: currentText })
+      });
+      if (response.ok) {
+        const agentReply = await response.json();
+        setChatLog(prev => [...prev, agentReply]);
+      } else {
+        throw new Error('API Sync Failed');
+      }
+    } catch (err) {
+      console.error(err);
+      setChatLog(prev => [...prev, { role: 'agent', name: 'System', time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), text: '[Error: Database Sync Failed]' }]);
+    } finally {
       setIsTyping(false);
-    }, 1200);
+    }
   };
 
   return (
@@ -278,17 +289,39 @@ const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
 };
 
 const Dashboard = () => {
-  const [queue, setQueue] = useState(MOCK_QUEUE);
+  const [queue, setQueue] = useState([]);
   const [decisions, setDecisions] = useState({});
   const [lastAudit] = useState(new Date().toISOString());
 
-  const handleApprove = (id) => {
-    setDecisions(prev => ({ ...prev, [id]: 'approved' }));
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/governance/findings`)
+      .then(res => res.json())
+      .then(data => {
+        setQueue(data);
+        const storedDecisions = {};
+        data.forEach(item => {
+          if (item.decision) storedDecisions[item.id] = item.decision;
+        });
+        setDecisions(storedDecisions);
+      })
+      .catch(err => console.error("Failed to load governance findings", err));
+  }, []);
+
+  const handleDecisionAPI = async (id, decisionStr) => {
+    setDecisions(prev => ({ ...prev, [id]: decisionStr }));
+    try {
+      await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/governance/decision`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ finding_id: id, decision: decisionStr })
+      });
+    } catch (err) {
+      console.error("Failed to save decision", err);
+    }
   };
 
-  const handleBlock = (id) => {
-    setDecisions(prev => ({ ...prev, [id]: 'blocked' }));
-  };
+  const handleApprove = (id) => handleDecisionAPI(id, 'approved');
+  const handleBlock = (id) => handleDecisionAPI(id, 'blocked');
 
   const passCount   = queue.filter(f => f.status === 'PASS').length;
   const warnCount   = queue.filter(f => f.status === 'WARNING' || f.status === 'CAUTION').length;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Globe, CheckCircle, XCircle, AlertTriangle, ChevronDown, ChevronUp, MapPin, TrendingUp, Users, Target, Clock, BookOpen, Zap, Lock, Unlock } from 'lucide-react';
 
 // ── GTM Phase Data ────────────────────────────────────────────────────────────
@@ -386,10 +386,22 @@ const GTMDashboard = () => {
   const [expandedPhase, setExpandedPhase] = useState(1);
   const [expandedPost, setExpandedPost] = useState('gtm-001');
   const [activeTab, setActiveTab] = useState('phases'); // 'phases' | 'blog'
+  const [phases, setPhases] = useState(PHASES);
 
-  const activeCount = PHASES.filter(p => p.status === 'ACTIVE').length;
-  const queuedCount = PHASES.filter(p => p.status === 'QUEUED').length;
-  const blockerCount = PHASES.reduce((acc, p) => acc + p.blockers.length, 0);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/gtm/phases`)
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.length > 0) {
+          setPhases(data);
+        }
+      })
+      .catch(err => console.error("Failed to fetch live phases from Jira backend:", err));
+  }, []);
+
+  const activeCount = phases.filter(p => p.status === 'ACTIVE').length;
+  const queuedCount = phases.filter(p => p.status === 'QUEUED').length;
+  const blockerCount = phases.reduce((acc, p) => acc + p.blockers.length, 0);
   const publishedPosts = BLOG_POSTS.filter(p => p.status === 'Published').length;
 
   return (
@@ -437,7 +449,7 @@ const GTMDashboard = () => {
         </div>
 
         {/* ── World Map ── */}
-        <WorldPhaseMap phases={PHASES} activePhase={activePhase} onSelectPhase={(id) => { setActivePhase(id); setExpandedPhase(id); }} />
+        <WorldPhaseMap phases={phases} activePhase={activePhase} onSelectPhase={(id) => { setActivePhase(id); setExpandedPhase(id); }} />
 
         {/* ── Tab Navigation ── */}
         <div className="flex gap-2">
@@ -465,7 +477,7 @@ const GTMDashboard = () => {
             <p className="text-[10px] font-black uppercase tracking-widest text-white/20 flex items-center gap-2">
               <Zap size={10} /> Phase Readiness & Approvals
             </p>
-            {PHASES.map(phase => (
+            {phases.map(phase => (
               <PhaseCard
                 key={phase.id}
                 phase={phase}

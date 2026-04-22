@@ -14,6 +14,9 @@ from fastapi import FastAPI, APIRouter, HTTPException, Depends, Header
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel, Field, ConfigDict
 from starlette.middleware.cors import CORSMiddleware
+import google.generativeai as genai
+
+from data.seed_data import MOCK_FINDINGS
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -24,6 +27,11 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+# Configure Gemini
+api_key = os.environ.get("GOOGLE_API_KEY")
+if api_key and "your-gemini-api-key" not in api_key:
+    genai.configure(api_key=api_key)
 
 # --- Configuration Helpers ---
 
@@ -167,6 +175,21 @@ class SystemHealth(BaseModel):
     emailjs: ServiceStatus
     gemini_ai: ServiceStatus
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+class AgentMessage(BaseModel):
+    role: str
+    name: str
+    time: str
+    text: str
+
+class InteractionReq(BaseModel):
+    finding_id: str
+    text: str
+
+class DecisionReq(BaseModel):
+    finding_id: str
+    decision: str # "approved" or "blocked"
+
 
 # --- App & Router Setup ---
 
@@ -399,6 +422,172 @@ async def create_jira_issue(issue: JiraIssueCreate, _ = Depends(verify_api_key))
     except Exception as exc:
         logger.error(f"Unexpected error: {str(exc)}")
         raise HTTPException(status_code=500, detail="Internal server error")
+
+# --- Interactive Live Dashboards API ---
+
+@api_router.get("/governance/findings")
+async def get_governance_findings(db=Depends(get_db)):
+    """Fetch live agent findings from MongoDB. Seed if empty."""
+    count = await db.findings.count_documents({})
+    if count == 0:
+        logger.info("Seeding MongoDB with initial MOCK_FINDINGS...")
+        await db.findings.insert_many(MOCK_FINDINGS)
+    
+    cursor = db.findings.find({}, {"_id": 0})
+    findings = await cursor.to_list(100)
+    return findings
+
+@api_router.post("/governance/interaction")
+async def create_governance_interaction(req: InteractionReq, db=Depends(get_db), _ = Depends(verify_api_key)):
+    finding = await db.findings.find_one({"id": req.finding_id})
+    if not finding:
+        raise HTTPException(status_code=404, detail="Finding not found")
+
+    user_msg = {
+        "role": "user",
+        "name": "Mara Martins",
+        "time": datetime.now(timezone.utc).strftime("%H:%M"),
+        "text": req.text
+    }
+    
+    # 1. Save user msg immediately
+    await db.findings.update_one(
+        {"id": req.finding_id},
+        {"$push": {"interactionLog": user_msg}}
+    )
+
+    # 2. Generate AI Reply
+    agent_name = finding.get("agent", "Agent")
+    system_prompt = f"You are {agent_name}, an expert AI agent inside Mara Martins' operational dashboard. The user is Mara Martins, a senior program manager. Keep your response highly professional, concise, and focused on tech operations, QA, or compliance. Refer to previous logs if needed. Log action items if appropriate."
+    
+    try:
+        model = genai.GenerativeModel('gemini-2.5-flash-8b', system_instruction=system_prompt)
+        chat_context = "\n".join([f"{m['name']}: {m['text']}" for m in finding.get("interactionLog", [])])
+        prompt = f"Chat History:\n{chat_context}\n\nMara just said: {req.text}\nRespond directly to Mara."
+        resp = model.generate_content(prompt)
+        ai_text = resp.text
+    except Exception as e:
+        logger.error(f"Gemini API Error: {e}")
+        ai_text = f"Input received. (My AI connectivity is currently degraded: {str(e)}). I will parse this query offline."
+
+    agent_reply = {
+        "role": "agent",
+        "name": agent_name,
+        "time": datetime.now(timezone.utc).strftime("%H:%M"),
+        "text": ai_text
+    }
+
+    # 3. Save AI reply
+    await db.findings.update_one(
+        {"id": req.finding_id},
+        {"$push": {"interactionLog": agent_reply}}
+    )
+
+    return agent_reply
+
+@api_router.post("/governance/decision")
+async def register_governance_decision(req: DecisionReq, db=Depends(get_db), _ = Depends(verify_api_key)):
+    finding = await db.findings.find_one({"id": req.finding_id})
+    if not finding:
+        raise HTTPException(status_code=404, detail="Finding not found")
+        
+    resolution_text = "Approved by Mara Martins — Tracked in registry." if req.decision == "approved" else "Blocked by Mara Martins."
+    
+    await db.findings.update_one(
+        {"id": req.finding_id},
+        {"$set": {"decision": req.decision, "resolution": resolution_text}}
+    )
+    return {"status": "success", "decision": req.decision, "resolution": resolution_text}
+
+@api_router.get("/gtm/phases")
+async def get_gtm_phases():
+    """Returns the GTM phases, dynamically resolving Jira blockers in real-time."""
+    # Start with the static baseline
+    phases = [
+      {
+        "id": 1, "name": "Home Base", "subtitle": "en-US Launch", "region": "North America",
+        "flag": "🇺🇸", "locale": "en-US", "status": "ACTIVE", "color": "emerald",
+        "coords": {"top": "28%", "left": "18%"},
+        "markets": ["Silicon Valley", "Seattle", "New York", "Toronto"],
+        "audience": ["Senior Tech Recruiters", "Heads of Localization", "Program Directors"],
+        "metrics": ["≥3 inbound recruiter contacts/month", "CV download rate ≥5%", "Time on site ≥2 min"],
+        "blockers": [],
+        "approved": True,
+      },
+      {
+        "id": 2, "name": "EU Expansion", "subtitle": "pt-PT Launch", "region": "Europe",
+        "flag": "🇵🇹", "locale": "pt-PT", "status": "QUEUED", "color": "amber",
+        "coords": {"top": "28%", "left": "46%"},
+        "markets": ["Lisbon", "Porto", "London", "Amsterdam", "Berlin"],
+        "audience": ["EU Tech Startups", "Portuguese Companies", "EUATC Network"],
+        "metrics": ["≥2 EU contacts/month", "pt-PT toggle ≥15% sessions", "Indexed on google.pt"],
+        "blockers": ["LQA pt-PT: resolve 'legal' term warning (PJM-68)", "hreflang tags not yet implemented (PJM-67)", "GDPR audit pending (PJM-69)"],
+        "approved": False,
+      },
+      {
+        "id": 3, "name": "LATAM Entry", "subtitle": "es-419 / pt-BR TBD", "region": "Latin America",
+        "flag": "🌎", "locale": "TBD", "status": "FUTURE", "color": "blue",
+        "coords": {"top": "58%", "left": "26%"},
+        "markets": ["Mexico City", "São Paulo", "Buenos Aires", "Bogotá"],
+        "audience": ["LATAM Tech Scale-ups", "Multinational Expansion Teams"],
+        "metrics": ["Locale selection decided", "≥1 LATAM contact/month", "Regional SEO indexed"],
+        "blockers": ["Locale decision required: es-419 vs pt-BR (PJM-72)", "No LATAM-specific content yet", "Legal compliance research needed (PJM-74)"],
+        "approved": False,
+      },
+      {
+        "id": 4, "name": "APAC Vision", "subtitle": "zh-TW / ja-JP TBD", "region": "Asia Pacific",
+        "flag": "🌏", "locale": "TBD", "status": "FUTURE", "color": "violet",
+        "coords": {"top": "38%", "left": "76%"},
+        "markets": ["Taipei", "Tokyo", "Singapore", "Hong Kong"],
+        "audience": ["Semiconductor Companies", "APAC Tech Leaders", "Global Consultancies"],
+        "metrics": ["CJK rendering feasibility complete", "Specialist linguist agents built"],
+        "blockers": ["Business vision definition required (PJM-75)", "CJK rendering engineering needed (PJM-76)", "Specialist agents not yet built"],
+        "approved": False,
+      }
+    ]
+
+    config = get_jira_config()
+    if not config:
+        return phases # Return raw without live Jira sync if degraded
+
+    # Live Jira Parsing Loop
+    try:
+        # Fetch board issues (assuming active issues are returned)
+        board_id = "1" # Hardcoded default for this portfolio
+        response = await app.state.http_client.get(
+            f"{config['url']}/rest/agile/1.0/board/{board_id}/issue?fields=status",
+            auth=(config['email'], config['token'])
+        )
+        if response.status_code == 200:
+            issues = response.json().get('issues', [])
+            # Map issues by key to their status names
+            issue_statuses = { i['key']: i.get('fields', {}).get('status', {}).get('name', '').lower() for i in issues }
+            
+            for phase in phases:
+                active_blockers = []
+                for blocker in phase["blockers"]:
+                    # Match PJM-XX from blocker strictly
+                    match = re.search(r'(PJM-\d+)', blocker)
+                    if match:
+                        key = match.group(1)
+                        status = issue_statuses.get(key, "").lower()
+                        # If the ticket exists and is Done, we REMOVE the blocker!
+                        if status == "done" or status == "closed":
+                            continue 
+                    # If it doesn't match a Done Jira issue, keep it as a blocker
+                    active_blockers.append(blocker)
+                
+                phase["blockers"] = active_blockers
+                
+                # Auto-upgrade logic: If Phase 2 drops to 0 blockers, signal it.
+                if len(phase["blockers"]) == 0 and not phase["approved"] and phase["id"] == 2:
+                    phase["status"] = "ACTIVE"
+                    
+    except Exception as e:
+        logger.error(f"Live Jira sync degraded: {e}")
+        
+    return phases
+
 
 # Include Router
 app.include_router(api_router)
