@@ -10,6 +10,7 @@ const MOCK_QUEUE = [
     message: 'Privacy Policy page detected. EU/GDPR requirement satisfied.',
     timestamp: new Date().toISOString(),
     category: 'Legal Compliance',
+    explanation: 'The EU General Data Protection Regulation (GDPR) requires every website targeting European visitors to publish a clear Privacy Policy. The Localization Lead agent scanned the site and confirmed this page exists at /privacy. This is a hard legal requirement — without it, the site cannot legally operate in EU markets.',
   },
   {
     id: 'qa-002',
@@ -18,14 +19,16 @@ const MOCK_QUEUE = [
     message: 'Legal Imprint page detected. EU business transparency requirement satisfied.',
     timestamp: new Date().toISOString(),
     category: 'Legal Compliance',
+    explanation: 'An Imprint (Impressum) is mandatory in Germany, Austria, Switzerland, and Portugal for any professional online presence. It must identify the responsible person behind the site by name and contact details. This protects visitors and satisfies EU business transparency law. The agent confirmed the /imprint page is live and populated.',
   },
   {
     id: 'qa-003',
-    agent: 'Linguist_pt-PT',
+    agent: 'Linguist pt-PT',
     status: 'PASS',
     message: 'No forbidden pt-BR terms detected. Locale is pt-PT compliant.',
     timestamp: new Date().toISOString(),
     category: 'Localization QA',
+    explanation: 'European Portuguese (pt-PT) and Brazilian Portuguese (pt-BR) are the same language but with significant differences in vocabulary, spelling, and formality. Terms that sound natural in Brazil can feel foreign or unprofessional to a Portuguese reader. The Linguist agent checked every string in the pt-PT locale file against a list of prohibited Brazilian terms — and found none. The content is clean for the EU/Portugal market.',
   },
   {
     id: 'qa-004',
@@ -34,6 +37,7 @@ const MOCK_QUEUE = [
     message: 'Manual visual audit pending: glassmorphism contrast and mobile Hero stacking.',
     timestamp: new Date().toISOString(),
     category: 'Visual QA',
+    explanation: 'Two specific visual issues need a human eye to verify: (1) Glassmorphism contrast — the frosted-glass card style used throughout the Stellar UI can occasionally produce low text-to-background contrast ratios on certain screen brightness settings, which affects readability and WCAG accessibility compliance. (2) Mobile Hero stacking — on small screens (375px), the 4-quadrant value cards in the Hero section should stack vertically without overlapping or overflowing. The agent flags this as needing a human visual check because automated tools cannot reliably detect subtle layout issues.',
   },
 ];
 
@@ -47,6 +51,7 @@ const statusConfig = {
 const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
   const cfg = statusConfig[finding.status] || statusConfig.WARNING;
   const Icon = cfg.icon;
+  const [showExplanation, setShowExplanation] = React.useState(false);
 
   return (
     <div className={`glass-card p-6 rounded-2xl border ${cfg.border} transition-all duration-300 ${decision ? 'opacity-50' : ''}`}>
@@ -65,7 +70,30 @@ const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
             <p className="text-[10px] text-white/20">{new Date(finding.timestamp).toLocaleString()}</p>
           </div>
         </div>
+
+        {/* Info toggle */}
+        {finding.explanation && (
+          <button
+            onClick={() => setShowExplanation(!showExplanation)}
+            title="What does this mean?"
+            className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center border transition-all duration-200 text-[11px] font-black ${
+              showExplanation
+                ? 'bg-white/10 border-white/20 text-white'
+                : 'bg-white/5 border-white/10 text-white/30 hover:bg-white/10 hover:text-white/60'
+            }`}
+          >
+            ?
+          </button>
+        )}
       </div>
+
+      {/* Explanation panel */}
+      {showExplanation && finding.explanation && (
+        <div className="mt-4 p-4 rounded-xl bg-white/5 border border-white/8 space-y-1">
+          <p className="text-[9px] font-black uppercase tracking-widest text-white/30 mb-2">ⓘ What does this mean?</p>
+          <p className="text-xs text-white/50 leading-relaxed">{finding.explanation}</p>
+        </div>
+      )}
 
       {!decision && (
         <div className="mt-4 flex gap-3">
