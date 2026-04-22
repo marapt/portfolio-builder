@@ -274,7 +274,7 @@ const ScrumBoardPage = () => {
                       <CardContent className="p-6">
                         <div className="flex justify-between items-start mb-4">
                           <span className="text-[10px] font-black tracking-widest text-indigo-500 bg-indigo-50 px-2.5 py-1 rounded-lg uppercase">{issue.key}</span>
-                          <Badge className={`${issue.priority === 'High' ? 'bg-red-50' text-red-500 : 'bg-green-50' text-green-500} border-0 text-[9px] font-black uppercase tracking-tighter`}>
+                          <Badge className={`${issue.priority === 'High' ? 'bg-red-50 text-red-500' : 'bg-green-50 text-green-500'} border-0 text-[9px] font-black uppercase tracking-tighter`}>
                              {issue.priority}
                           </Badge>
                         </div>
