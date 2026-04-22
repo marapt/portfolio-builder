@@ -76,8 +76,8 @@ async def lifespan(app: FastAPI):
     logger.info("Starting up resources...")
     
     # 1. MongoDB Client
-    mongo_url = os.environ.get('MONGO_URL')
-    db_name = os.environ.get('DB_NAME')
+    mongo_url = os.environ.get('MONGO_URL') or os.environ.get('MONGODB_URI')
+    db_name = os.environ.get('DB_NAME') or 'portfolio'
     if mongo_url and db_name:
         try:
             client = AsyncIOMotorClient(mongo_url)
