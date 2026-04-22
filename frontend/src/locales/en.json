@@ -47,6 +47,11 @@
     "name": "Full Name",
     "email": "Email Address",
     "message": "Message",
-    "submit": "Send Message"
+    "submit": "Send Message",
+    "booking_title": "Booking Note",
+    "booking_desc": "When booking, please include your agenda or topic so we can make the most of our time together.",
+    "success_title": "Message Sent!",
+    "success_desc": "Thank you for reaching out. I'll get back to you soon.",
+    "info_title": "Contact Information"
   }
 }

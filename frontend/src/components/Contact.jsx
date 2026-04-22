@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Linkedin, Calendar, Send, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Calendar, Send, CheckCircle, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { personalInfo } from '../data/mock';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -32,6 +34,7 @@ const Contact = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'x-api-key': process.env.REACT_APP_INTERNAL_API_KEY
         },
         body: JSON.stringify(formData),
       });
@@ -61,7 +64,7 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      label: 'Location',
+      label: t('stats.languages'),
       value: personalInfo.location,
       href: null
     },
@@ -70,111 +73,108 @@ const Contact = () => {
       label: 'LinkedIn',
       value: 'Connect on LinkedIn',
       href: personalInfo.linkedin
-    },
-    {
-      icon: Calendar,
-      label: 'Schedule',
-      value: 'Book a Meeting',
-      href: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3y8ucTjg3h5EAxXZrtgdb9TOpurbNFBPBAcn-B56lwTnIJi12_UeEcYSP-2tNew3WoUuYhMCEg?gv=true'
     }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-24 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-indigo-600 font-medium text-sm uppercase tracking-wider">
-            Get In Touch
+        <div className="text-center mb-20">
+          <span className="text-indigo-600 font-black text-[10px] uppercase tracking-[0.4em] mb-4 block animate-pulse">
+            {t('contact.label')}
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2 mb-4">
-            Let's Connect
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-2 mb-6 tracking-tighter">
+            {t('contact.title')}
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Ready to take your localization strategy to the next level? I'd love to hear about your project.
+          <p className="text-gray-500 max-w-2xl mx-auto text-lg font-medium leading-relaxed italic">
+            {t('contact.description')}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Methods */}
-          <div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-6">
-              Contact Information
-            </h3>
-            <div className="space-y-4">
-              {contactMethods.map((method, index) => {
-                const IconComponent = method.icon;
-                const content = (
-                  <Card className="border border-gray-100 hover:border-indigo-200 hover:shadow-md transition-all duration-300">
-                    <CardContent className="p-4 flex items-center gap-4">
-                      <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="text-indigo-600" size={22} />
-                      </div>
-                      <div>
-                        <div className="text-sm text-gray-500">{method.label}</div>
-                        <div className="text-gray-900 font-medium">{method.value}</div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Contact Methods & Info */}
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-2xl font-black text-gray-900 mb-8 tracking-tight">
+                {t('contact.info_title')}
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {contactMethods.map((method, index) => {
+                  const IconComponent = method.icon;
+                  const content = (
+                    <Card className="bg-white border-0 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] transition-all duration-500 group rounded-2xl h-full">
+                      <CardContent className="p-6 flex flex-col items-center text-center">
+                        <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-indigo-600 transition-all duration-500">
+                          <IconComponent className="text-indigo-600 group-hover:text-white transition-colors duration-500" size={20} />
+                        </div>
+                        <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">{method.label}</div>
+                        <div className="text-gray-900 font-bold text-sm truncate w-full">{method.value}</div>
+                      </CardContent>
+                    </Card>
+                  );
 
-                return method.href ? (
-                  <a
-                    key={index}
-                    href={method.href}
-                    target={method.href.startsWith('http') ? '_blank' : undefined}
-                    rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="block"
-                  >
-                    {content}
-                  </a>
-                ) : (
-                  <div key={index}>{content}</div>
-                );
-              })}
+                  return method.href ? (
+                    <a
+                      key={index}
+                      href={method.href}
+                      target={method.href.startsWith('http') ? '_blank' : undefined}
+                      rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="block group"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div key={index}>{content}</div>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Booking Note */}
-            <div className="mt-8 p-6 bg-indigo-50 rounded-xl">
-              <h4 className="font-semibold text-gray-900 mb-2">Booking Note</h4>
-              <p className="text-gray-600 text-sm">
-                When booking, please include your agenda or topic so we can make the most of our time together.
-              </p>
+            {/* Booking Section */}
+            <div className="p-8 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-[2.5rem] text-white shadow-2xl shadow-indigo-200">
+                <div className="flex items-center gap-2 mb-4">
+                   <div className="p-2 bg-white/10 rounded-lg backdrop-blur-md">
+                      <Calendar size={20} />
+                   </div>
+                   <h4 className="font-black text-xs uppercase tracking-[0.2em]">{t('contact.booking_title')}</h4>
+                </div>
+                <p className="text-white/80 text-sm font-medium leading-relaxed italic mb-8">
+                  "{t('contact.booking_desc')}"
+                </p>
+                <Button asChild className="w-full bg-white text-indigo-600 hover:bg-black hover:text-white rounded-[1.5rem] py-7 font-black uppercase tracking-widest text-xs transition-all duration-500">
+                   <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3y8ucTjg3h5EAxXZrtgdb9TOpurbNFBPBAcn-B56lwTnIJi12_UeEcYSP-2tNew3WoUuYhMCEg?gv=true" target="_blank" rel="noopener noreferrer">
+                      Schedule strategies session <ArrowRight size={16} className="ml-2" />
+                   </a>
+                </Button>
             </div>
-
-           {/* Embedded Google Calendar */}
-<div className="mt-2 border overflow-hidden bg-white">
-  <iframe 
-    src='https://calendar.google.com/calendar/appointments/schedules/AcZssZ3y8ucTjg3h5EAxXZrtgdb9TOpurbNFBPBAcn-B56lwTnIJi12_UeEcYSP-2tNew3WoUuYhMCEg?gv=true' 
-    style={{ border: 0, width: '100%', height: '600px' }} 
-    frameBorder="0"
-    title="Schedule an interview with Mara"
-  ></iframe>
-</div>
           </div>
 
           {/* Contact Form */}
-          <div>
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-6 lg:p-8">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                  Send a Message
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-100 to-purple-100 rounded-[3rem] -z-10 blur-2xl opacity-50"></div>
+            <Card className="border-0 shadow-2xl rounded-[3rem] bg-white/80 backdrop-blur-xl ring-1 ring-black/[0.03]">
+              <CardContent className="p-10 lg:p-12">
+                <h3 className="text-2xl font-black text-gray-900 mb-10 tracking-tight">
+                   {t('contact.submit')}
                 </h3>
                 
                 {isSubmitted ? (
-                  <div className="text-center py-12">
-                    <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                    <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                      Message Sent!
+                  <div className="text-center py-20 flex flex-col items-center">
+                    <div className="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mb-6">
+                       <CheckCircle className="w-10 h-10 text-emerald-500" />
+                    </div>
+                    <h4 className="text-2xl font-extrabold text-gray-900 mb-2">
+                       {t('contact.success_title')}
                     </h4>
-                    <p className="text-gray-600">
-                      Thank you for reaching out. I'll get back to you soon.
+                    <p className="text-gray-500 font-medium">
+                       {t('contact.success_desc')}
                     </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <Label htmlFor="name" className="text-gray-700 mb-2 block">
-                        Full Name
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="space-y-3">
+                      <Label htmlFor="name" className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">
+                         {t('contact.name')}
                       </Label>
                       <Input
                         id="name"
@@ -182,15 +182,15 @@ const Contact = () => {
                         type="text"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Your name"
+                        placeholder="Mara Martins"
                         required
-                        className="border-gray-200 focus:border-indigo-600 focus:ring-indigo-600"
+                        className="bg-gray-50 border-0 focus:ring-2 focus:ring-indigo-500 rounded-2xl p-6 text-sm font-bold text-gray-900 h-14"
                       />
                     </div>
                     
-                    <div>
-                      <Label htmlFor="email" className="text-gray-700 mb-2 block">
-                        Email Address
+                    <div className="space-y-3">
+                      <Label htmlFor="email" className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">
+                         {t('contact.email')}
                       </Label>
                       <Input
                         id="email"
@@ -198,39 +198,41 @@ const Contact = () => {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="your@email.com"
+                        placeholder="marapt@gmail.com"
                         required
-                        className="border-gray-200 focus:border-indigo-600 focus:ring-indigo-600"
+                        className="bg-gray-50 border-0 focus:ring-2 focus:ring-indigo-500 rounded-2xl p-6 text-sm font-bold text-gray-900 h-14"
                       />
                     </div>
                     
-                    <div>
-                      <Label htmlFor="message" className="text-gray-700 mb-2 block">
-                        Message
+                    <div className="space-y-3">
+                      <Label htmlFor="message" className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">
+                         {t('contact.message')}
                       </Label>
                       <Textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Tell me about your project or inquiry..."
+                        placeholder="..."
                         rows={5}
                         required
-                        className="border-gray-200 focus:border-indigo-600 focus:ring-indigo-600 resize-none"
+                        className="bg-gray-50 border-0 focus:ring-2 focus:ring-indigo-500 rounded-[2rem] p-6 text-sm font-bold text-gray-900 resize-none"
                       />
                     </div>
                     
                     <Button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg flex items-center justify-center gap-2"
+                      className="w-full bg-gray-900 hover:bg-black text-white py-8 rounded-[1.5rem] font-black uppercase tracking-widest text-xs transition-all duration-500 hover:shadow-2xl flex items-center justify-center gap-3 transform hover:-translate-y-1 active:scale-95"
                     >
                       {isLoading ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       ) : (
                         <>
-                          <Send size={18} />
-                          Send Message
+                          {t('contact.submit')}
+                          <div className="p-1 px-1.5 bg-white/10 rounded-lg">
+                             <Send size={14} />
+                          </div>
                         </>
                       )}
                     </Button>

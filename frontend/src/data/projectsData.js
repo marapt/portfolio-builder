@@ -32,6 +32,31 @@ The project encompassed digital marketing assets, print collateral, video conten
       { value: '98%', label: 'Quality Score' },
       { value: '40+', label: 'Languages Supported' }
     ],
+    locales: {
+      pt: {
+        title: 'Localização de Marketing Global',
+        description: 'Liderei a localização de ponta a ponta de campanhas de marketing em mais de 40 idiomas para uma empresa de tecnologia Fortune 500.',
+        overview: `Esta iniciativa abrangente de localização de marketing transformou a forma como uma empresa de tecnologia Fortune 500 abordou a expansão do mercado global. Ao implementar uma estratégia de localização centralizada, alcançamos uma consistência sem precedentes em todos os pontos de contato de marketing.`,
+        challenges: [
+          'Mensagens de marca inconsistentes em mais de 40 mercados regionais',
+          'Processos de aprovação longos causando atrasos de 6 a 8 semanas',
+          'Múltiplos fornecedores com padrões de qualidade variados',
+          'Visibilidade limitada dos gastos de localização e ROI'
+        ],
+        solutions: [
+          'Implementação de Sistema de Gestão de Tradução (TMS) centralizado',
+          'Estabelecimento de fluxos de revisão regional com SLAs claros',
+          'Criação de guias de estilo abrangentes para cada mercado',
+          'Desenvolvimento de painéis em tempo real para métricas de custo e qualidade'
+        ],
+        results: [
+          { value: '60%', label: 'Time-to-Market mais rápido' },
+          { value: '40%', label: 'Redução de Custos' },
+          { value: '98%', label: 'Pontuação de Qualidade' },
+          { value: '40+', label: 'Idiomas Suportados' }
+        ]
+      }
+    },
     technologies: [
       'SDL Trados',
       'memoQ',
@@ -80,6 +105,31 @@ By combining custom-trained NMT engines with intelligent routing and human post-
       { value: '94%', label: 'MTPE Efficiency' },
       { value: '2M+', label: 'Words/Month' }
     ],
+    locales: {
+      pt: {
+        title: 'Motor de Tradução por IA',
+        description: 'Implementação e otimização de fluxos de tradução automática neural, reduzindo o time-to-market em 60%.',
+        overview: `Este projeto transformador introduziu a tradução automática neural (NMT) alimentada por IA em um fluxo de trabalho de localização empresarial.`,
+        challenges: [
+          'Alto volume de conteúdo repetitivo',
+          'Qualidade inconsistente de motores genéricos',
+          'Complexidade de integração tecnológica',
+          'Resistência de linguistas à adoção de IA'
+        ],
+        solutions: [
+          'Implantação de motores NMT treinados sob medida',
+          'Implementação de tradução automática adaptativa',
+          'Roteamento inteligente de conteúdo',
+          'Design de fluxos human-in-the-loop'
+        ],
+        results: [
+          { value: '60%', label: 'Redução de Tempo' },
+          { value: '45%', label: 'Economia de Custos' },
+          { value: '94%', label: 'Eficiência de MTPE' },
+          { value: '2M+', label: 'Palavras/Mês' }
+        ]
+      }
+    },
     technologies: [
       'Neural Machine Translation',
       'TensorFlow',
@@ -130,6 +180,31 @@ Through teaching graduate-level courses on Translation and Localization Manageme
       { value: '10+', label: 'Industry Speakers' },
       { value: '2 yrs', label: 'Program Duration' }
     ],
+    locales: {
+      pt: {
+        title: 'Ensino no MIIS e Série de Palestras de IA',
+        description: 'Professora Visitante no Middlebury Institute, lecionando cursos de pós-graduação em Gestão de Tradução e Localização.',
+        overview: `Como Professora Visitante no Middlebury Institute of International Studies (MIIS), um dos meus principais objetivos é capacitar os alunos a ouvirem experiências da vida real além da sala de aula.`,
+        challenges: [
+          'Preencher a lacuna entre teoria acadêmica e prática da indústria',
+          'Manter o currículo atualizado com tecnologias de IA em rápida evolução',
+          'Conectar alunos com líderes da indústria para mentoria',
+          'Preparar alunos para uma indústria de localização transformada pela IA'
+        ],
+        solutions: [
+          'Lançamento da Série de Palestras AI in Localization',
+          'Design de cursos que combinam fundamentos teóricos com projetos práticos',
+          'Parcerias com empresas como GitLab, Block, Coupa e Smartling',
+          'Currículo focado em adoção responsável de IA'
+        ],
+        results: [
+          { value: '90+', label: 'Alunos Mentorados' },
+          { value: '3', label: 'Coortes Ensinadas' },
+          { value: '10+', label: 'Palestrantes da Indústria' },
+          { value: '2 anos', label: 'Duração do Programa' }
+        ]
+      }
+    },
     technologies: [
       'AI/ML in Localization',
       'Translation Management Systems',
@@ -200,6 +275,31 @@ This project is open source and available on GitHub as part of my commitment to 
       { value: 'Real-time', label: 'Processing' },
       { value: 'WCAG', label: 'Accessible' }
     ],
+    locales: {
+      pt: {
+        title: 'Tradutor PolyglotAI',
+        description: 'Um aplicativo de tradução universal com suporte a texto, voz e linguagem de sinais.',
+        overview: `O PolyglotAI Translator é um aplicativo de tradução universal inovador que rompe barreiras de comunicação através de capacidades de tradução multimodais.`,
+        challenges: [
+          'Criação de uma interface unificada para múltiplas modalidades',
+          'Garantia de acessibilidade para usuários com diferentes habilidades',
+          'Manutenção da precisão da tradução em tipos de entrada diversos',
+          'Construção de uma experiência de usuário responsiva e intuitiva'
+        ],
+        solutions: [
+          'Design de interface limpa baseada em modais',
+          'Implementação de recursos de acessibilidade em conformidade com WCAG',
+          'Integração de modelos avançados de IA para cada modalidade',
+          'Criação de design responsivo otimizado para desktop e mobile'
+        ],
+        results: [
+          { value: '3', label: 'Modos de Tradução' },
+          { value: '100+', label: 'Idiomas' },
+          { value: 'Tempo Real', label: 'Processamento' },
+          { value: 'WCAG', label: 'Acessível' }
+        ]
+      }
+    },
     technologies: [
       'React',
       'AI/ML APIs',
@@ -243,6 +343,29 @@ This project is open source and available on GitHub as part of my commitment to 
       { value: 'Live', label: 'Tracking' },
       { value: 'Agile', label: 'Methodology' }
     ],
+    locales: {
+      pt: {
+        title: 'Quadro Scrum Ágil',
+        description: 'Um painel ao vivo que busca dados em tempo real do meu quadro Jira Scrum.',
+        overview: `Esta página integra meu quadro Jira Scrum ao vivo, fornecendo uma visão transparente dos fluxos de trabalho atuais.`,
+        challenges: [
+          'Gestão de dependências de tarefas de alto volume em fusos horários',
+          'Garantia de visibilidade em tempo real para stakeholders',
+          'Manutenção de um backlog limpo durante ciclos rápidos'
+        ],
+        solutions: [
+          'Implementação de fluxos de trabalho Scrum customizados',
+          'Sessões quinzenais de refinamento do backlog',
+          'Integração de painéis de relatórios ao vivo'
+        ],
+        results: [
+          { value: '100%', label: 'Conclusão de Sprints' },
+          { value: '25%', label: 'Aumento de Eficiência' },
+          { value: 'Ao Vivo', label: 'Rastreamento' },
+          { value: 'Ágil', label: 'Metodologia' }
+        ]
+      }
+    },
     technologies: [
       'Jira Software',
       'Atlassian Confluence',

@@ -47,6 +47,11 @@
     "name": "Nome Completo",
     "email": "Endereço de E-mail",
     "message": "Mensagem",
-    "submit": "Enviar Mensagem"
+    "submit": "Enviar Mensagem",
+    "booking_title": "Nota de Agendamento",
+    "booking_desc": "Ao agendar, por favor inclua sua pauta ou tópico para que possamos aproveitar ao máximo nosso tempo juntos.",
+    "success_title": "Mensagem Enviada!",
+    "success_desc": "Obrigado pelo contato. Retornarei em breve.",
+    "info_title": "Informações de Contato"
   }
 }
