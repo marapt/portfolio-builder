@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, Bot } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTranslation } from 'react-i18next';
 import {
@@ -35,6 +35,8 @@ const Header = () => {
     { href: '/scrum-board', label: t('nav.insights'), isPage: true },
     { href: '/#contact', label: t('nav.contact') }
   ];
+
+  const dashboardLink = { href: '/dashboard', label: 'AI Agents', isPage: true };
 
   const handleNavClick = (e, link) => {
     if (link.isPage) {
@@ -107,6 +109,23 @@ const Header = () => {
                 </a>
               )
             ))}
+
+            {/* AI Agents Dashboard — Ops Tool */}
+            <Link
+              to={dashboardLink.href}
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 font-black text-[9px] uppercase tracking-[0.25em] ${
+                location.pathname === dashboardLink.href
+                  ? 'bg-violet-600/20 border-violet-500/40 text-violet-400'
+                  : 'bg-violet-600/10 border-violet-500/20 text-violet-400/70 hover:bg-violet-600/20 hover:border-violet-500/40 hover:text-violet-400'
+              }`}
+            >
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-violet-500" />
+              </span>
+              <Bot size={10} />
+              {dashboardLink.label}
+            </Link>
           </nav>
 
           <div className="hidden lg:flex items-center space-x-8">
@@ -215,6 +234,25 @@ const Header = () => {
                   </a>
                 )
               ))}
+
+              {/* AI Agents Dashboard — Mobile */}
+              <Link
+                to="/dashboard"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-4 font-black text-xs uppercase tracking-[0.3em] rounded-2xl transition-all ${
+                  location.pathname === '/dashboard'
+                    ? 'bg-violet-50 text-violet-600'
+                    : 'text-violet-400 hover:bg-violet-50'
+                }`}
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500" />
+                </span>
+                <Bot size={14} />
+                AI Agents
+              </Link>
+
               <div className="pt-8">
                 <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button
