@@ -163,7 +163,7 @@ This phase opens only when: (1) the business vision is defined, (2) the technica
     title: 'Behind the Scenes: Wiring a Live Agentic Database across Jira and MongoDB',
     category: 'Engineering & Orchestration',
     excerpt: 'A deep dive into how I transitioned the Portfolio Command Center from static mockups to a live, persistent, AI-governed ecosystem operating in real-time.',
-    content: `<audio controls class="w-full mt-2 mb-4 rounded-xl border border-white/10" src="/assets/blog/narration_draft.mp3">Your browser does not support the audio element.</audio>
+    content: `<audio controls class="w-full mt-2 mb-4 rounded-xl border border-white/10" src="/assets/blog/narration_draft.wav">Your browser does not support the audio element.</audio>
 
 When building a portfolio, it’s easy to settle for the illusion of functionality — static strings, mocked API calls, and fake loading spinners. But as a leader in Localization Engineering and Program Logic, I wanted to showcase **actual operational orchestration**.
 
