@@ -70,67 +70,76 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
+          ? 'bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-b border-gray-100/50'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24 transition-all duration-300">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-gray-900">Mara</span>
-            <span className="text-2xl font-light text-indigo-600">Martins</span>
+          <Link to="/" className="flex items-center group">
+            <span className="text-2xl font-black text-gray-900 tracking-tighter">Mara</span>
+            <span className="text-2xl font-light text-indigo-600 tracking-tighter ml-0.5 group-hover:ml-2 transition-all">Martins</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden xl:flex items-center space-x-10">
             {navLinks.map((link) => (
               link.isPage ? (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`font-medium text-sm uppercase tracking-widest transition-colors duration-200 ${
+                  className={`font-black text-[10px] uppercase tracking-[0.3em] transition-all duration-300 relative py-2 group ${
                     location.pathname === link.href 
                       ? 'text-indigo-600' 
-                      : 'text-gray-600 hover:text-indigo-600'
+                      : 'text-gray-400 hover:text-gray-900'
                   }`}
                 >
                   {link.label}
+                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full ${location.pathname === link.href ? 'w-full' : ''}`} />
                 </Link>
               ) : (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link)}
-                  className="text-gray-600 hover:text-indigo-600 text-sm font-medium uppercase tracking-widest transition-colors duration-200"
+                  className="text-gray-400 hover:text-gray-900 font-black text-[10px] uppercase tracking-[0.3em] transition-all duration-300 relative py-2 group"
                 >
                   {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full" />
                 </a>
               )
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-6">
-            {/* Language Switcher */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {/* Language Switcher - Premium "Pill" Design */}
+            <div className="h-6 w-px bg-gray-100 hidden xl:block"></div>
+            
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 font-bold uppercase tracking-tighter text-xs h-9 px-3 rounded-full hover:bg-indigo-50 border border-transparent hover:border-indigo-100 transition-all">
-                  <Globe size={16} className="text-indigo-500" />
-                  <span>{currentLanguage.code}</span>
-                  <ChevronDown size={14} className="opacity-50" />
+                <Button variant="ghost" className="relative flex items-center gap-3 text-gray-500 hover:text-indigo-600 bg-gray-50/50 hover:bg-indigo-50 border border-gray-100/50 hover:border-indigo-100 px-4 py-2 h-10 rounded-full transition-all group outline-none ring-0">
+                  <div className="w-5 h-5 flex items-center justify-center bg-white rounded-full shadow-sm border border-gray-100 group-hover:bg-indigo-600 transition-colors">
+                     <Globe size={10} className="text-gray-400 group-hover:text-white" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em]">{currentLanguage.code}</span>
+                  <ChevronDown size={12} className="opacity-30 group-hover:opacity-100 transition-opacity" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-40 p-1 rounded-xl shadow-xl border-gray-100 bg-white/95 backdrop-blur-md">
+              <DropdownMenuContent align="end" className="w-48 p-2 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-gray-100 bg-white/95 backdrop-blur-xl animate-in zoom-in-95 duration-200">
+                <div className="px-3 py-2 border-b border-gray-50 mb-1">
+                   <p className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-300">Select Region</p>
+                </div>
                 {languages.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
-                    className={`flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-xs font-bold transition-colors ${
-                      currentLanguage.code === lang.code ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-50'
+                    className={`flex items-center justify-between px-3 py-3 rounded-xl cursor-pointer text-[11px] font-black transition-all ${
+                      currentLanguage.code === lang.code ? 'bg-indigo-50 text-indigo-600' : 'text-gray-500 hover:bg-gray-50'
                     }`}
                     onClick={() => changeLanguage(lang.code)}
                   >
-                    <span className="flex items-center gap-2">
-                       <span className="text-base">{lang.flag}</span>
+                    <span className="flex items-center gap-3">
+                       <span className="text-lg grayscale-[0.5] group-hover:grayscale-0">{lang.flag}</span>
                        {lang.name}
                     </span>
                     {currentLanguage.code === lang.code && <div className="w-1.5 h-1.5 rounded-full bg-indigo-600" />}
@@ -141,29 +150,29 @@ const Header = () => {
 
             <Link to="/#contact">
               <Button
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-xl font-bold text-xs uppercase tracking-widest transition-all duration-300 hover:shadow-lg hover:shadow-indigo-200 active:scale-95"
+                className="bg-gray-900 hover:bg-indigo-600 text-white px-8 h-12 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] transition-all duration-500 shadow-xl shadow-gray-100 hover:shadow-indigo-100 transform hover:-translate-y-0.5 active:scale-95"
               >
                 {t('contact.submit')}
               </Button>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Actions */}
           <div className="flex items-center gap-4 lg:hidden">
              <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="p-2 h-9 w-9 rounded-full bg-gray-50">
-                    <Globe size={18} className="text-indigo-600" />
+                  <Button variant="ghost" className="p-0 h-10 w-10 flex items-center justify-center rounded-2xl bg-gray-50 border border-gray-100">
+                    <Globe size={16} className="text-indigo-600" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-40 p-1 rounded-xl bg-white shadow-xl border-gray-100">
+                <DropdownMenuContent align="end" className="w-40 p-1 rounded-2xl bg-white shadow-2xl border-gray-100">
                   {languages.map((lang) => (
                     <DropdownMenuItem
                       key={lang.code}
-                      className="flex items-center gap-3 px-3 py-2 text-xs font-bold"
+                      className="flex items-center gap-3 px-4 py-3 text-[11px] font-black uppercase tracking-wider"
                       onClick={() => changeLanguage(lang.code)}
                     >
-                      <span>{lang.flag}</span>
+                      <span className="text-base">{lang.flag}</span>
                       {lang.name}
                     </DropdownMenuItem>
                   ))}
@@ -171,28 +180,29 @@ const Header = () => {
               </DropdownMenu>
 
             <button
-              className="p-2 text-gray-600"
+              className="w-10 h-10 flex items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-gray-900"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 py-6 absolute left-0 right-0 shadow-2xl animate-in slide-in-from-top duration-300">
-            <nav className="flex flex-col space-y-2 px-6">
+          <div className="lg:hidden bg-white/95 backdrop-blur-2xl border-t border-gray-100 py-10 absolute left-0 right-0 shadow-[0_30px_60px_rgba(0,0,0,0.1)] animate-in slide-in-from-top duration-500 rounded-b-[3rem]">
+            <nav className="flex flex-col space-y-2 px-8">
+               <p className="text-[9px] font-black uppercase tracking-[0.4em] text-gray-300 mb-6 px-4">Navigation Menu</p>
               {navLinks.map((link) => (
                 link.isPage ? (
                   <Link
                     key={link.href}
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`px-4 py-3 font-bold text-sm uppercase tracking-[0.2em] rounded-xl transition-colors ${
+                    className={`px-4 py-4 font-black text-xs uppercase tracking-[0.3em] rounded-2xl transition-all ${
                       location.pathname === link.href 
                         ? 'bg-indigo-50 text-indigo-600' 
-                        : 'text-gray-600 hover:bg-gray-50'
+                        : 'text-gray-500 hover:bg-gray-50'
                     }`}
                   >
                     {link.label}
@@ -202,16 +212,16 @@ const Header = () => {
                     key={link.href}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link)}
-                    className="text-gray-600 hover:bg-gray-50 font-bold text-sm uppercase tracking-[0.2em] px-4 py-3 rounded-xl transition-colors"
+                    className="text-gray-500 hover:bg-gray-50 font-black text-xs uppercase tracking-[0.3em] px-4 py-4 rounded-2xl transition-all"
                   >
                     {link.label}
                   </a>
                 )
               ))}
-              <div className="pt-4">
+              <div className="pt-8">
                 <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl py-6 font-bold uppercase tracking-widest text-xs"
+                    className="w-full bg-indigo-600 hover:bg-black text-white rounded-2xl py-8 font-black uppercase tracking-[0.3em] text-[10px] shadow-2xl shadow-indigo-100"
                   >
                     {t('contact.submit')}
                   </Button>
