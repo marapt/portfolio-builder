@@ -1,9 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Linkedin, Mail, ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { personalInfo } from '../data/mock';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -11,16 +14,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#portfolio', label: 'Portfolio' },
-    { href: '#testimonials', label: 'Testimonials' },
-    { href: '#contact', label: 'Contact' }
+    { href: '#about', label: t('nav.about') },
+    { href: '#services', label: t('nav.services') },
+    { href: '#portfolio', label: t('nav.portfolio') },
+    { href: '#testimonials', label: t('nav.testimonials') },
+    { href: '#contact', label: t('nav.contact') }
   ];
 
   const legalLinks = [
-    { to: '/privacy', label: 'Privacy Policy' },
-    { to: '/imprint', label: 'Legal Imprint' },
+    { to: '/privacy', label: t('hero.privacy_title') || 'Privacy Policy' },
+    { to: '/imprint', label: t('hero.imprint_title') || 'Legal Imprint' },
   ];
 
   const scrollToSection = (e, href) => {
@@ -65,7 +68,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.quick_links')}</h4>
             <nav className="space-y-2">
               {footerLinks.map((link) => (
                 <a
@@ -82,7 +85,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Legal</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.legal_col')}</h4>
             <nav className="space-y-2">
               {legalLinks.map((link) => (
                 <Link
@@ -103,12 +106,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-xs">
-            © {currentYear} {personalInfo.name}. All rights reserved.
+            © {currentYear} {personalInfo.name}. {t('footer.rights')}
           </p>
           <div className="flex items-center gap-6 text-xs text-gray-500">
-            <Link to="/privacy" className="hover:text-indigo-400 transition-colors">Privacy Policy</Link>
+            <Link to="/privacy" className="hover:text-indigo-400 transition-colors">{t('hero.privacy_title')}</Link>
             <span>·</span>
-            <Link to="/imprint" className="hover:text-indigo-400 transition-colors">Legal Imprint</Link>
+            <Link to="/imprint" className="hover:text-indigo-400 transition-colors">{t('hero.imprint_title')}</Link>
           </div>
           <button
             onClick={scrollToTop}

@@ -74,5 +74,10 @@
       "pm": "Program Management",
       "other": "Other"
     }
+  },
+  "footer": {
+    "quick_links": "Quick Links",
+    "legal_col": "Legal",
+    "rights": "All rights reserved."
   }
 }

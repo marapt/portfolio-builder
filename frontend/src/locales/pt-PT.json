@@ -74,5 +74,10 @@
       "pm": "Gestão de Programas",
       "other": "Outro"
     }
+  },
+  "footer": {
+    "quick_links": "Links Úteis",
+    "legal_col": "Informações Legais",
+    "rights": "Todos os direitos reservados."
   }
 }
