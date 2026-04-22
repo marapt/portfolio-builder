@@ -227,11 +227,14 @@ async def get_system_health():
 
 @api_router.post("/contact")
 async def send_contact_email(request: ContactRequest, _ = Depends(verify_api_key)):
-    """Proxy contact form submissions to EmailJS."""
+    """Proxy contact form submissions to EmailJS with categorized subject lines."""
     config = get_emailjs_config()
     if not config:
         raise HTTPException(status_code=500, detail="Email service not configured")
 
+    # Smart Subject Line Logic
+    subject_tag = f"[{request.category}]" if request.category else "[General]"
+    
     payload = {
         "service_id": config["service_id"],
         "template_id": config["template_id"],
@@ -241,7 +244,9 @@ async def send_contact_email(request: ContactRequest, _ = Depends(verify_api_key
             "from_name": request.name,
             "reply_to": request.email,
             "message": request.message,
-            "user_email": request.email
+            "user_email": request.email,
+            "category": request.category,
+            "subject_suffix": f"New Lead: {subject_tag}"
         }
     }
 

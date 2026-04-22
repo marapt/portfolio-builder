@@ -52,6 +52,12 @@
     "booking_desc": "Ao agendar, por favor inclua sua pauta ou tópico para que possamos aproveitar ao máximo nosso tempo juntos.",
     "success_title": "Mensagem Enviada!",
     "success_desc": "Obrigado pelo contato. Retornarei em breve.",
-    "info_title": "Informações de Contato"
+    "info_title": "Informações de Contato",
+    "categories": {
+      "strategy": "Estratégia de Localização",
+      "ai": "Integração de IA",
+      "pm": "Gestão de Programas",
+      "other": "Outro"
+    }
   }
 }
