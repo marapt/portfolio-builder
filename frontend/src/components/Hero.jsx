@@ -178,13 +178,14 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Global Signature */}
-        <div className="mt-24 pt-12 border-t border-white/5 flex justify-between items-center text-white/10 uppercase tracking-[0.5em] text-[9px] font-black">
-           <span>Mara Martins · 2024</span>
-           <span className="flex items-center gap-2">
+        {/* Signature Branding */}
+        <div className="mt-24 pt-12 border-t border-white/5 flex justify-between items-center text-white/20 uppercase tracking-[0.4em] text-[10px] font-black">
+           <span>{personalInfo.name}</span>
+           <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-3 hover:text-cyan-400 transition-colors group">
              <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-             Strategic Alignment Active
-           </span>
+             <span className="hidden lg:inline">{personalInfo.email}</span>
+             <span className="lg:hidden">CONTACT</span>
+           </a>
         </div>
       </div>
     </section>
