@@ -140,6 +140,7 @@ class ContactRequest(BaseModel):
     name: str
     email: str
     message: str
+    category: Optional[str] = "General Inquiry"
 
 class JiraIssueCreate(BaseModel):
     project_key: str = "PJM"
