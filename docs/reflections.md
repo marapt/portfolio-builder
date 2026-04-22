@@ -41,3 +41,16 @@ This document captures key technical challenges, errors, and resolutions encount
   - Standardized the flex containers to use `items-center` and unified vertical padding.
   - Refined the Language Switcher into a premium "Glassmorphic Pill" design to reduce visual noise.
 - **Learning**: When adding new interactive elements to a stable header, re-evaluate the container's `gap` and `tracking` to maintain visual balance.
+
+## 🚀 Service Desk & Production (Sprint 2)
+
+### High-Fidelity Lead Intake (PJM-11)
+- **Challenge**: Standard contact forms lacked the professional weight of an AI Strategist persona.
+- **Resolution**: Transformed the form into a "Service Desk" intake system with lead categorization (AI, Strategy, Program Management).
+- **Hardening**: Implemented "Smart Subject Lines" in the backend proxy to automatically categorize inbound leads for easier inbox management.
+
+### Infrastructure "Mono" Fallback (PJM-25)
+- **Problem**: A typo in a production environment variable (`MONO_URL` vs `MONGO_URL`) caused a critical database disconnection during the final cutover.
+- **Resolution**: Implemented triple-redundancy fallbacks in the Python backend to support multiple common naming conventions (`MONGO_URL`, `MONGODB_URI`, `MONO_URL`).
+- **Learning**: Code-level resilience for environment variables can prevent deployment blockers when manual dashboard access is limited or error-prone.
+
