@@ -4,6 +4,7 @@ from loc_lead_expert import LocLeadExpert
 from linguist_en import run_en_audit
 from linguist_pt_pt import run_pt_pt_audit
 from visual_auditor import VisualAuditor
+from tester_agent import get_test_specs, write_report
 
 def run_full_stellar_audit():
     print("🚀 Starting Global Stellar Audit...")
@@ -24,6 +25,14 @@ def run_full_stellar_audit():
     # 3. Visual Audit Spec
     auditor = VisualAuditor()
     report_data["findings"].extend(auditor.get_report())
+
+    # 4. Tester Agent — print live test spec for browser execution
+    test_specs = get_test_specs()
+    report_data["findings"].append({
+        "agent": "TesterAgent",
+        "status": "INFO",
+        "message": f"{len(test_specs)} E2E tests defined. Run tester_agent.py --url https://maramartins.com to execute live tests."
+    })
 
     generate_markdown_report(report_data)
 
