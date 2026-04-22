@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Shield, CheckCircle, XCircle, AlertTriangle, Clock, ChevronRight, Lock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Shield, CheckCircle, XCircle, AlertTriangle, Clock, Bot, Users, Zap, Globe, Brain, GitMerge } from 'lucide-react';
 
 // ── Mock approval queue (will be replaced by API from pending_approvals.json) ──
 const MOCK_QUEUE = [
@@ -115,21 +115,87 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen stellar-bg pt-28 pb-24">
-      <div className="max-w-5xl mx-auto px-6 lg:px-8 space-y-10">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8 space-y-12">
 
-        {/* Header */}
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-violet-600/20">
-              <Shield size={20} className="text-violet-400" />
+        {/* ── Public Showcase Header ── */}
+        <div className="space-y-6">
+          <div className="flex items-start gap-4">
+            <div className="p-3 rounded-2xl bg-violet-600/20 flex-shrink-0">
+              <Shield size={24} className="text-violet-400" />
             </div>
-            <div>
-              <h1 className="text-3xl font-black text-white tracking-tighter">Governance HQ</h1>
-              <p className="text-white/30 text-xs uppercase tracking-widest">Internal Operations · Pre-Approval Dashboard</p>
+            <div className="space-y-2">
+              <div className="flex items-center gap-3 flex-wrap">
+                <span className="text-[10px] font-black uppercase tracking-widest text-violet-400/60">Live Operations</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-violet-500" />
+                  </span>
+                  <span className="text-[10px] text-violet-400/60 uppercase tracking-widest">Active</span>
+                </span>
+              </div>
+              <h1 className="text-4xl font-black text-white tracking-tighter">AI Agents Governance HQ</h1>
+              <p className="text-white/50 text-sm leading-relaxed max-w-2xl">
+                This is a live operations centre where I manage a fleet of specialised AI agents that run quality audits,
+                legal compliance checks, localisation reviews, and deployment verifications for this portfolio — 
+                in real time. Every agent finding surfaces here for my review and explicit approval before any change ships to production.
+              </p>
             </div>
-            <div className="ml-auto flex items-center gap-2">
-              <Lock size={12} className="text-white/20" />
-              <span className="text-[10px] text-white/20 uppercase tracking-widest">Private · Not Indexed</span>
+          </div>
+
+          {/* ── Philosophy Banner ── */}
+          <div className="glass-card p-6 rounded-2xl border border-violet-500/10 bg-violet-600/5 grid md:grid-cols-3 gap-6">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <Brain size={14} className="text-violet-400" />
+                <span className="text-[10px] font-black uppercase tracking-widest text-violet-400">AI Does the Heavy Lifting</span>
+              </div>
+              <p className="text-white/40 text-xs leading-relaxed">
+                Autonomous agents run continuous audits — linguistic quality, legal compliance, visual integrity, and E2E testing — with zero manual triggering.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <Users size={14} className="text-cyan-400" />
+                <span className="text-[10px] font-black uppercase tracking-widest text-cyan-400">Human Stays in Control</span>
+              </div>
+              <p className="text-white/40 text-xs leading-relaxed">
+                No agent decision reaches production without my explicit approval. Every finding below is reviewed, approved or blocked — by me.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <GitMerge size={14} className="text-emerald-400" />
+                <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400">Governance Gates Every Deploy</span>
+              </div>
+              <p className="text-white/40 text-xs leading-relaxed">
+                The merge gate below represents the current deployment health. Green means the full agent suite has signed off and the site is clear to ship.
+              </p>
+            </div>
+          </div>
+
+          {/* ── Agent Fleet ── */}
+          <div className="space-y-3">
+            <p className="text-[10px] font-black uppercase tracking-widest text-white/20 flex items-center gap-2">
+              <Bot size={11} /> Active Agent Fleet
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                { name: 'Loc Lead Expert', role: 'Localization Governance', icon: Globe, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+                { name: 'Linguist en-US', role: 'American English QA', icon: Zap, color: 'text-cyan-400', bg: 'bg-cyan-400/10' },
+                { name: 'Linguist pt-PT', role: 'European Portuguese QA', icon: Zap, color: 'text-green-400', bg: 'bg-green-400/10' },
+                { name: 'LQC Engine', role: 'Structural Quality Check', icon: Shield, color: 'text-violet-400', bg: 'bg-violet-400/10' },
+                { name: 'LQA Engine', role: 'Semantic & Cultural QA', icon: Brain, color: 'text-fuchsia-400', bg: 'bg-fuchsia-400/10' },
+                { name: 'Tester Agent', role: '12 E2E Live Tests', icon: CheckCircle, color: 'text-emerald-400', bg: 'bg-emerald-400/10' },
+                { name: 'Jira PM Agent', role: 'Sprint Lifecycle Sync', icon: GitMerge, color: 'text-orange-400', bg: 'bg-orange-400/10' },
+                { name: 'GTM Strategy', role: 'Worldwide Rollout Plan', icon: Globe, color: 'text-rose-400', bg: 'bg-rose-400/10' },
+              ].map(agent => (
+                <div key={agent.name} className={`glass-card p-4 rounded-2xl ${agent.bg} border border-white/5 space-y-2`}>
+                  <agent.icon size={14} className={agent.color} />
+                  <p className={`text-[10px] font-black uppercase tracking-wider ${agent.color}`}>{agent.name}</p>
+                  <p className="text-[9px] text-white/30 leading-relaxed">{agent.role}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
