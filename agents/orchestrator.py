@@ -1,7 +1,7 @@
 import json
 import datetime
 from loc_lead_expert import LocLeadExpert
-from linguist_en import run_en_audit
+from linguist_en_us import run_en_us_audit
 from linguist_pt_pt import run_pt_pt_audit
 from visual_auditor import VisualAuditor
 from tester_agent import get_test_specs, write_report
@@ -19,7 +19,7 @@ def run_full_stellar_audit():
     report_data["findings"].extend(lead.get_report())
 
     # 2. Run Linguists
-    report_data["findings"].extend(run_en_audit())
+    report_data["findings"].extend(run_en_us_audit())
     report_data["findings"].extend(run_pt_pt_audit())
 
     # 3. Visual Audit Spec

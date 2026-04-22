@@ -12,10 +12,10 @@
     }
   },
   "locales": {
-    "en": {
-      "region": "US/Mountain View",
+    "en-US": {
+      "region": "US/Mountain View, California",
       "tone": "Professional, Innovative, Strategic",
-      "requirements": ["US Date Formats", "Oxford Comma"]
+      "requirements": ["US Date Formats (MM/DD/YYYY)", "Oxford Comma", "American English Spelling"]
     },
     "pt-PT": {
       "region": "Portugal/EU",

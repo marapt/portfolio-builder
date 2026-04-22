@@ -23,7 +23,7 @@ class LQCEngine:
     """
 
     LOCALE_DIR = Path("frontend/src/locales")
-    SOURCE_LOCALE = "en"
+    SOURCE_LOCALE = "en-US"
     TARGET_LOCALES = ["pt-PT"]
 
     # Max recommended string lengths per category (chars)
