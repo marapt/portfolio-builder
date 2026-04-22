@@ -15,7 +15,15 @@
     "tagline": "Mara Martins. Líder de Localização e Gerente de Programas de IA.",
     "description": "Aproveitando a Inteligência Artificial e a Localização Estratégica para impulsionar o crescimento global e o avanço tecnológico para empresas em escala.",
     "cta_primary": "Ver portfólio",
-    "cta_secondary": "Entre em contato"
+    "cta_secondary": "Entre em contato",
+    "val_ai_title": "Estratégia de IA",
+    "val_ai_desc": "Otimizando workflows globais com integração de LLMs de ponta.",
+    "val_geo_title": "Escala Global",
+    "val_geo_desc": "Expandindo a presença comercial em mais de 40 idiomas e culturas.",
+    "val_pm_title": "Lógica de Programa",
+    "val_pm_desc": "Impulsionando a eficiência através de frameworks estruturados de gestão.",
+    "val_culture_title": "QI Cultural",
+    "val_culture_desc": "Unindo a tecnologia com a experiência humana local."
   },
   "stats": {
     "years": "Anos de Experiência",

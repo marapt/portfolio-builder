@@ -15,7 +15,15 @@
     "tagline": "Mara Martins. Localization Lead & AI Program Manager.",
     "description": "Leveraging Artificial Intelligence and Strategic Localization to drive global growth and technological advancement for scaling businesses.",
     "cta_primary": "View portfolio",
-    "cta_secondary": "Get in Touch"
+    "cta_secondary": "Get in Touch",
+    "val_ai_title": "AI Strategy",
+    "val_ai_desc": "Optimizing global workflows with cutting-edge LLM integration.",
+    "val_geo_title": "Global Scale",
+    "val_geo_desc": "Expanding business footprints across 40+ languages and cultures.",
+    "val_pm_title": "Program Logic",
+    "val_pm_desc": "Driving efficiency through structured program management frameworks.",
+    "val_culture_title": "Cultural IQ",
+    "val_culture_desc": "Bridging the gap between technology and local human experience."
   },
   "stats": {
     "years": "Years Experience",
