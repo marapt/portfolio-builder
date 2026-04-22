@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "scrum_board": "Scrum Board",
+    "resume": "Resume",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Bridging AI with language, culture, and technology to help global companies expand with confidence and impact.",
+    "cta_primary": "Book a Consultation",
+    "cta_secondary": "View My Work"
+  },
+  "stats": {
+    "years": "Years Experience",
+    "languages": "Languages",
+    "projects": "Global Projects",
+    "satisfaction": "Client Satisfaction"
+  },
+  "services": {
+    "label": "WHAT I OFFER",
+    "title": "My Services",
+    "description": "From localization strategy to AI-driven solutions, I help organizations design scalable programs that reach audiences worldwide.",
+    "ai": {
+      "title": "AI Localization",
+      "desc": "Smarter, faster global reach with AI. Leveraging cutting-edge machine learning and neural translation technologies to deliver high-quality localized content at scale."
+    },
+    "pm": {
+      "title": "Program Management",
+      "desc": "Clear plans, seamless execution. End-to-end localization program management with proven methodologies that ensure on-time, on-budget delivery."
+    },
+    "translation": {
+      "title": "Translation",
+      "desc": "Accurate words, trusted connections. Professional translation services that capture nuance, tone, and cultural context for authentic global communication."
+    },
+    "training": {
+      "title": "Training",
+      "desc": "Practical skills for real-world success. Customized training programs that empower teams with localization best practices and emerging technologies."
+    }
+  },
+  "contact": {
+    "label": "GET IN TOUCH",
+    "title": "Let's Connect",
+    "description": "Ready to take your localization strategy to the next level? I'd love to hear about your project.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "message": "Message",
+    "submit": "Send Message"
+  }
+}
