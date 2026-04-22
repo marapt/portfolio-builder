@@ -14,6 +14,7 @@ Usage:
 import json
 import re
 from pathlib import Path
+from typing import Optional
 
 
 # ── Style Guide Rules ─────────────────────────────────────────────────────────
@@ -160,7 +161,7 @@ class LQAEngine:
                                 "category": "Style Guide"
                             })
 
-    def _get_locale_file(self, locale: str) -> Path | None:
+    def _get_locale_file(self, locale: str) -> Optional[Path]:
         """Find locale file, supporting both 'en.json' and 'pt-PT.json' naming."""
         for suffix in [f"{locale}.json", f"{locale.lower()}.json"]:
             p = self.LOCALE_DIR / suffix
