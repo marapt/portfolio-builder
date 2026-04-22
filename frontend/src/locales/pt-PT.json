@@ -6,7 +6,7 @@
     "scrum_board": "Quadro Scrum",
     "resume": "Currículo",
     "testimonials": "Depoimentos",
-    "contact": "Contato",
+    "contact": "Contacto",
     "experience": "Experiência",
     "insights": "Insights"
   },
@@ -15,7 +15,7 @@
     "tagline": "Mara Martins. Líder de Localização e Gerente de Programas de IA.",
     "description": "Aproveitando a Inteligência Artificial e a Localização Estratégica para impulsionar o crescimento global e o avanço tecnológico para empresas em escala.",
     "cta_primary": "Ver portfólio",
-    "cta_secondary": "Entre em contato",
+    "cta_secondary": "Entre em contacto",
     "val_ai_title": "Estratégia de IA",
     "val_ai_desc": "Otimizando workflows globais com integração de LLMs de ponta.",
     "val_geo_title": "Escala Global",
@@ -23,7 +23,10 @@
     "val_pm_title": "Lógica de Programa",
     "val_pm_desc": "Impulsionando a eficiência através de frameworks estruturados de gestão.",
     "val_culture_title": "QI Cultural",
-    "val_culture_desc": "Unindo a tecnologia com a experiência humana local."
+    "val_culture_desc": "Unindo a tecnologia com a experiência humana local.",
+    "privacy_title": "Política de Privacidade",
+    "imprint_title": "Aviso Legal",
+    "legal_intro": "Transparência e segurança de dados são os pilares da minha consultoria profissional."
   },
   "stats": {
     "years": "Anos de Experiência",
@@ -48,12 +51,12 @@
       "desc": "Palavras precisas, conexões confiáveis. Serviços de tradução profissional que capturam nuances, tom e contexto cultural para uma comunicação global autêntica."
     },
     "training": {
-      "title": "Treinamento",
-      "desc": "Habilidades práticas para o sucesso no mundo real. Programas de treinamento personalizados que capacitam equipes com as melhores práticas de localização e tecnologias emergentes."
+      "title": "Formação",
+      "desc": "Habilidades práticas para o sucesso no mundo real. Programas de formação personalizados que capacitam equipas com as melhores práticas de localização e tecnologias emergentes."
     }
   },
   "contact": {
-    "label": "ENTRE EM CONTATO",
+    "label": "ENTRE EM CONTACTO",
     "title": "Vamos Conversar",
     "description": "Pronto para levar sua estratégia de localização para o próximo nível? Adoraria ouvir sobre o seu projeto.",
     "name": "Nome Completo",
@@ -63,8 +66,8 @@
     "booking_title": "Nota de Agendamento",
     "booking_desc": "Ao agendar, por favor inclua sua pauta ou tópico para que possamos aproveitar ao máximo nosso tempo juntos.",
     "success_title": "Mensagem Enviada!",
-    "success_desc": "Obrigado pelo contato. Retornarei em breve.",
-    "info_title": "Informações de Contato",
+    "success_desc": "Obrigado pelo contacto. Retornarei em breve.",
+    "info_title": "Informações de Contacto",
     "categories": {
       "strategy": "Estratégia de Localização",
       "ai": "Integração de IA",

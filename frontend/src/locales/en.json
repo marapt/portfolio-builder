@@ -23,7 +23,10 @@
     "val_pm_title": "Program Logic",
     "val_pm_desc": "Driving efficiency through structured program management frameworks.",
     "val_culture_title": "Cultural IQ",
-    "val_culture_desc": "Bridging the gap between technology and local human experience."
+    "val_culture_desc": "Bridging the gap between technology and local human experience.",
+    "privacy_title": "Privacy Policy",
+    "imprint_title": "Legal Imprint",
+    "legal_intro": "Transparency and data security are the cornerstones of my professional consultancy."
   },
   "stats": {
     "years": "Years Experience",

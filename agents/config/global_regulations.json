@@ -1,0 +1,44 @@
+{
+  "global_standards": {
+    "accessibility": {
+      "standard": "WCAG 2.1",
+      "level": "AA",
+      "requirements": ["alt-text", "contrast-ratio", "keyboard-navigation", "aria-labels"]
+    },
+    "i18n": {
+      "externalization": "required",
+      "no_hardcoded_strings": true,
+      "text_expansion_buffer": 0.3
+    }
+  },
+  "locales": {
+    "en": {
+      "region": "US/Mountain View",
+      "tone": "Professional, Innovative, Strategic",
+      "requirements": ["US Date Formats", "Oxford Comma"]
+    },
+    "pt-PT": {
+      "region": "Portugal/EU",
+      "tone": "Formal, Professional, Technical",
+      "requirements": ["EU/GDPR Compliance", "EU Date Formats", "European Portuguese Spelling"],
+      "prohibited_terms": ["Time", "Celular", "Treinamento", "Contato", "Equipes"],
+      "preferred_terms": {
+        "Equipa": "Standard for Team",
+        "Contacto": "Standard for Contact",
+        "Gestor": "Standard for Manager",
+        "Formação": "Standard for Training"
+      }
+    }
+  },
+  "legal_compliance": {
+    "EU": {
+      "privacy_policy": "required",
+      "imprint": "required",
+      "cookie_consent": "required"
+    },
+    "CA": {
+      "ccpa": "required",
+      "do_not_sell": "required"
+    }
+  }
+}
