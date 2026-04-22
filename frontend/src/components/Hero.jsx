@@ -1,116 +1,139 @@
 import React from 'react';
-import { ArrowDown, MapPin, Calendar } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Linkedin, Twitter, Github, Globe, Cpu } from 'lucide-react';
 import { Button } from './ui/button';
 import { personalInfo } from '../data/mock';
-import { useTranslation } from 'react-i18next';
+import aiGlassIcon from '../assets/branding/ai-glass-icon.png';
 
 const Hero = () => {
   const { t } = useTranslation();
 
   const scrollToSection = (e, href) => {
     e.preventDefault();
-    const element = document.querySelector(href);
+    const hash = href.replace('/', '');
+    const element = document.querySelector(hash);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const getLocalizedStats = () => {
-    return [
-      { value: '15+', label: t('stats.years') },
-      { value: '40+', label: t('stats.languages') },
-      { value: '50+', label: t('stats.projects') },
-      { value: '100%', label: t('stats.satisfaction') }
-    ];
-  };
-
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-indigo-50/50 to-white pt-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="order-2 lg:order-1">
-            <div className="flex items-center space-x-2 text-indigo-600 mb-4">
-              <div className="p-1.5 bg-indigo-50 rounded-lg">
-                <MapPin size={16} />
-              </div>
-              <span className="text-sm font-bold uppercase tracking-wider">{personalInfo.location}</span>
-            </div>
-            
-            <h1 className="text-5xl lg:text-7xl font-black text-gray-900 mb-4 leading-[1.1] tracking-tight">
-              {personalInfo.name}
-            </h1>
-            
-            <h2 className="text-2xl lg:text-3xl text-indigo-600 font-extrabold mb-8 uppercase tracking-tight">
-              {personalInfo.title}
-            </h2>
-            
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed font-medium">
-              {t('hero.tagline')}
-            </p>
+    <section className="relative min-h-[90vh] flex items-center stellar-bg pt-24 overflow-hidden">
+      {/* Dynamic Background Elements */}
+      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-violet-600/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none" />
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-5 mb-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Content */}
+          <div className="flex flex-col space-y-8 animate-in fade-in slide-in-from-left duration-1000">
+            <div className="space-y-4">
+              <h1 className="text-5xl lg:text-7xl font-black text-white leading-tight tracking-tighter">
+                {t('hero.title')}
+              </h1>
+              
+              <div className="space-y-6">
+                <h2 className="text-xl lg:text-2xl font-bold text-white/90">
+                  {t('hero.tagline')}
+                </h2>
+                
+                <p className="text-lg text-white/60 max-w-xl leading-relaxed">
+                  {t('hero.description')}
+                </p>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-6 pt-4">
               <Button
-                onClick={(e) => scrollToSection(e, '#contact')}
-                className="bg-indigo-600 hover:bg-black text-white px-10 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-200 flex items-center gap-2 transform hover:-translate-y-1 active:scale-95"
+                onClick={(e) => scrollToSection(e, '#portfolio')}
+                className="bg-violet-600 hover:bg-violet-500 text-white px-10 h-14 rounded-2xl font-bold text-sm transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.5)] transform hover:-translate-y-1"
               >
-                <Calendar size={18} />
                 {t('hero.cta_primary')}
               </Button>
+              
               <Button
                 variant="outline"
-                onClick={(e) => scrollToSection(e, '#portfolio')}
-                className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-10 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 transform hover:-translate-y-1"
+                onClick={(e) => scrollToSection(e, '#contact')}
+                className="bg-white/5 backdrop-blur-md border-white/10 text-white hover:bg-white/10 px-10 h-14 rounded-2xl font-bold text-sm transition-all"
               >
                 {t('hero.cta_secondary')}
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 border-t border-gray-100 pt-10">
-              {getLocalizedStats().map((stat, index) => (
-                <div key={index} className="text-center lg:text-left">
-                  <div className="text-4xl font-black text-indigo-600 tracking-tighter mb-1">{stat.value}</div>
-                  <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-tight">{stat.label}</div>
-                </div>
-              ))}
+            {/* Social Links */}
+            <div className="flex items-center gap-6 pt-8 text-white/40">
+              <a href={personalInfo.socials?.[0]?.url || "#"} className="hover:text-white transition-colors">
+                <Linkedin size={20} />
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href={personalInfo.github} className="hover:text-white transition-colors">
+                <Github size={20} />
+              </a>
             </div>
           </div>
 
-          {/* Right Content - Photo */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative group">
-              <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[480px] lg:h-[480px] rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl bg-gradient-to-br from-indigo-100 to-indigo-50 transition-all duration-700 group-hover:rotate-2 group-hover:scale-105">
-                <img
-                  src={personalInfo.photo}
-                  alt={personalInfo.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `<div class="w-full h-full flex items-center justify-center text-7xl lg:text-9xl font-black text-indigo-200">MM</div>`;
-                  }}
-                />
+          {/* Right Content - Floating Glass System */}
+          <div className="relative group flex justify-center lg:justify-end animate-in fade-in zoom-in duration-1000 delay-300">
+            
+            {/* Main Visual Container */}
+            <div className="relative w-full max-w-md aspect-square lg:aspect-video flex items-center justify-center">
+              
+              {/* Background Globe Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 to-cyan-500/10 rounded-full blur-3xl opacity-50 animate-pulse" />
+              
+              {/* Central AI Card (Floating) */}
+              <div className="relative z-20 glass-card p-1 rounded-[2.5rem] transform rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl">
+                <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-[2.2rem] overflow-hidden bg-black/40">
+                  <img 
+                    src={personalInfo.photo} 
+                    alt="Mara Martins"
+                    className="w-full h-full object-cover object-top mix-blend-lighten opacity-90"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                </div>
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-100 rounded-full -z-10 blur-2xl opacity-50 group-hover:bg-indigo-200 transition-colors"></div>
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-purple-100 rounded-full -z-10 blur-2xl opacity-50 group-hover:bg-purple-200 transition-colors"></div>
+
+              {/* Floating Element 1 - AI Icon */}
+              <div className="absolute -top-4 right-4 lg:-right-8 z-30 glass-card p-4 rounded-3xl shadow-2xl animate-bounce duration-[4000ms] transition-transform hover:scale-110">
+                <img src={aiGlassIcon} alt="AI" className="w-16 h-16 lg:w-20 lg:h-20 object-contain" />
+                <div className="absolute top-2 right-2 flex space-x-0.5">
+                  <div className="w-1 h-1 bg-cyan-400 rounded-full animate-ping" />
+                </div>
+                <div className="mt-2 text-center">
+                  <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest leading-none">AI Neural</span>
+                </div>
+              </div>
+
+              {/* Floating Element 2 - Tech Globe */}
+              <div className="absolute -bottom-8 left-4 lg:-left-12 z-30 glass-card p-5 rounded-3xl shadow-2xl animate-bounce duration-[5000ms] delay-700 transition-transform hover:scale-110">
+                <div className="flex flex-col items-center gap-3">
+                   <div className="p-3 bg-violet-600/20 rounded-2xl border border-violet-500/30">
+                     <Globe className="text-cyan-400" size={24} />
+                   </div>
+                   <div className="text-center">
+                      <p className="text-[10px] font-black text-white uppercase tracking-widest">Global Scan</p>
+                      <div className="w-full h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
+                        <div className="w-2/3 h-full bg-cyan-500 rounded-full animate-pulse" />
+                      </div>
+                   </div>
+                </div>
+              </div>
+
+              {/* Decorative Tech Grid */}
+              <div className="absolute inset-0 border border-white/5 rounded-full pointer-events-none" />
+              <div className="absolute inset-4 border border-white/5 rounded-full pointer-events-none scale-90" />
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="flex justify-center mt-20">
-          <a
-            href="#about"
-            onClick={(e) => scrollToSection(e, '#about')}
-            className="flex flex-col items-center text-gray-400 hover:text-indigo-600 transition-all duration-300 group"
-          >
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 opacity-50 group-hover:opacity-100 transition-opacity">Explore Work</span>
-            <div className="w-6 h-10 border-2 border-gray-200 rounded-full flex justify-center p-1">
-               <div className="w-1 h-2 bg-indigo-400 rounded-full animate-bounce"></div>
-            </div>
-          </a>
+        {/* Footer info (matching mockup bottom labels) */}
+        <div className="mt-24 pt-8 border-t border-white/5 flex justify-between items-center text-white/20">
+           <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Mara Martins</span>
+           <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Footer</span>
         </div>
       </div>
     </section>

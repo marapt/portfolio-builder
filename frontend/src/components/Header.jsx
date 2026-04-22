@@ -30,12 +30,9 @@ const Header = () => {
   };
 
   const navLinks = [
-    { href: '/#about', label: t('nav.about') },
     { href: '/#services', label: t('nav.services') },
-    { href: '/#portfolio', label: t('nav.portfolio') },
-    { href: '/scrum-board', label: t('nav.scrum_board'), isPage: true },
-    { href: '/resume', label: t('nav.resume'), isPage: true },
-    { href: '/#testimonials', label: t('nav.testimonials') },
+    { href: '/resume', label: t('nav.experience'), isPage: true },
+    { href: '/scrum-board', label: t('nav.insights'), isPage: true },
     { href: '/#contact', label: t('nav.contact') }
   ];
 
@@ -70,7 +67,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-b border-gray-100/50'
+          ? 'bg-black/20 backdrop-blur-xl border-b border-white/10 shadow-2xl'
           : 'bg-transparent'
       }`}
     >
@@ -78,8 +75,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-24 transition-all duration-300">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <span className="text-2xl font-black text-gray-900 tracking-tighter">Mara</span>
-            <span className="text-2xl font-light text-indigo-600 tracking-tighter ml-0.5 group-hover:ml-2 transition-all">Martins</span>
+            <span className="text-xl font-black text-white tracking-tighter uppercase">Mara</span>
+            <span className="text-xl font-light text-white/70 tracking-tighter ml-1 uppercase">Martins</span>
           </Link>
 
           {/* Desktop Navigation */}

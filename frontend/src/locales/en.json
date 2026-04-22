@@ -6,12 +6,16 @@
     "scrum_board": "Scrum Board",
     "resume": "Resume",
     "testimonials": "Testimonials",
-    "contact": "Contact"
+    "contact": "Contact",
+    "experience": "Experience",
+    "insights": "Insights"
   },
   "hero": {
-    "tagline": "Bridging AI with language, culture, and technology to help global companies expand with confidence and impact.",
-    "cta_primary": "Book a Consultation",
-    "cta_secondary": "View My Work"
+    "title": "Architecting Global Excellence",
+    "tagline": "Mara Martins. Localization Lead & AI Program Manager.",
+    "description": "Leveraging Artificial Intelligence and Strategic Localization to drive global growth and technological advancement for scaling businesses.",
+    "cta_primary": "View portfolio",
+    "cta_secondary": "Get in Touch"
   },
   "stats": {
     "years": "Years Experience",

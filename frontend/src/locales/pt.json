@@ -6,12 +6,16 @@
     "scrum_board": "Quadro Scrum",
     "resume": "Currículo",
     "testimonials": "Depoimentos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "experience": "Experiência",
+    "insights": "Insights"
   },
   "hero": {
-    "tagline": "Unindo IA com idioma, cultura e tecnologia para ajudar empresas globais a expandirem com confiança e impacto.",
-    "cta_primary": "Agendar Consultoria",
-    "cta_secondary": "Ver Meu Trabalho"
+    "title": "Arquitetando a Excelência Global",
+    "tagline": "Mara Martins. Líder de Localização e Gerente de Programas de IA.",
+    "description": "Aproveitando a Inteligência Artificial e a Localização Estratégica para impulsionar o crescimento global e o avanço tecnológico para empresas em escala.",
+    "cta_primary": "Ver portfólio",
+    "cta_secondary": "Entre em contato"
   },
   "stats": {
     "years": "Anos de Experiência",
