@@ -190,6 +190,9 @@ class DecisionReq(BaseModel):
     finding_id: str
     decision: str # "approved" or "blocked"
 
+class SocialDraftReq(BaseModel):
+    title: str
+    content: str
 
 # --- App & Router Setup ---
 
@@ -498,6 +501,24 @@ async def register_governance_decision(req: DecisionReq, db=Depends(get_db), _ =
         {"$set": {"decision": req.decision, "resolution": resolution_text}}
     )
     return {"status": "success", "decision": req.decision, "resolution": resolution_text}
+
+@api_router.post("/governance/social-draft")
+async def draft_social_post(req: SocialDraftReq, _ = Depends(verify_api_key)):
+    """Avery | Comms Manager Agent - Generates LinkedIn posts from blog content."""
+    system_prompt = (
+        "You are Avery, the Comms Manager Agent for Mara Martins. Your persona is highly professional, "
+        "strategic, and slightly technical. You specialize in translating program management milestones into "
+        "engaging LinkedIn posts. Write a single, highly polished LinkedIn post based on the provided blog content. "
+        "Include exactly 3 highly relevant hashtags. Omit placeholders. Keep it actionable and authoritative."
+    )
+    try:
+        model = genai.GenerativeModel('gemini-2.5-flash-8b', system_instruction=system_prompt)
+        prompt = f"Blog Title: {req.title}\n\nBlog Content snippet:\n{req.content}\n\nPlease draft the LinkedIn post."
+        resp = model.generate_content(prompt)
+        return {"agent": "Avery", "draft": resp.text.strip()}
+    except Exception as e:
+        logger.error(f"Generate Content Error (Avery): {e}")
+        raise HTTPException(status_code=503, detail="Avery is currently unavailable. Please check AI core link.")
 
 @api_router.get("/gtm/phases")
 async def get_gtm_phases():

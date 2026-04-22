@@ -179,10 +179,53 @@ class JiraPMAgent:
         print(f"✅ PM Status Report: {path}")
         return path
 
+    async def auto_close_sprints(self) -> None:
+        """Self-Correction Protocol: Audits active sprints to ensure completed ones don't stay open."""
+        print("🔍 [Jira PM Agent] Running Sprint Audit & Self-Correction Protocol...")
+        async with httpx.AsyncClient(timeout=30) as client:
+            # First, find active sprints
+            r = await client.get(f"{JIRA_BASE_URL}/rest/agile/1.0/board/1/sprint?state=active", auth=AUTH)
+            if r.status_code != 200:
+                print(f"  ❌ Error fetching sprints: {r.text}")
+                return
+            sprints = r.json().get("values", [])
+            
+            if not sprints:
+                print("  ✅ No active sprints found.")
+                return
+                
+            for sprint in sprints:
+                sprint_id = sprint["id"]
+                sprint_name = sprint["name"]
+                
+                # Check tickets in sprint
+                r_issues = await client.get(
+                    f"{JIRA_BASE_URL}/rest/agile/1.0/sprint/{sprint_id}/issue?fields=status",
+                    auth=AUTH
+                )
+                issues = r_issues.json().get("issues", [])
+                
+                if not issues:
+                    continue
+                    
+                incomplete_issues = [i["key"] for i in issues if i["fields"]["status"]["name"].lower() not in ["done", "completed", "closed"]]
+                
+                if not incomplete_issues:
+                    print(f"  🧠 [Self-Correction] Sprint '{sprint_name}' has 100% completed tickets but is still open.")
+                    print(f"  ⚙️ Auto-closing sprint {sprint_id}...")
+                    await client.put(
+                        f"{JIRA_BASE_URL}/rest/agile/1.0/sprint/{sprint_id}",
+                        json={"state": "closed", "name": sprint_name},
+                        auth=AUTH
+                    )
+                    print(f"  ✅ Sprint successfully closed.")
+                else:
+                    print(f"  ⚠️ Sprint '{sprint_name}' remains open. Blocking tickets: {', '.join(incomplete_issues)}")
+
 
 async def main():
     parser = argparse.ArgumentParser(description="Jira PM Agent — Sprint Lifecycle & Sync")
-    parser.add_argument("--action", choices=["status", "create-sprint", "sync-deployment"], required=True)
+    parser.add_argument("--action", choices=["status", "create-sprint", "sync-deployment", "auto-close-sprints"], required=True)
     parser.add_argument("--template", help="Sprint template key (for create-sprint)")
     parser.add_argument("--url", help="Deployment URL (for sync-deployment)")
     parser.add_argument("--tickets", nargs="+", help="Ticket keys to sync")
@@ -210,6 +253,9 @@ async def main():
             return
         print(f"🔄 Syncing deployment {args.url} to {args.tickets}")
         await agent.sync_deployment(args.url, args.tickets)
+
+    elif args.action == "auto-close-sprints":
+        await agent.auto_close_sprints()
 
 
 if __name__ == "__main__":
