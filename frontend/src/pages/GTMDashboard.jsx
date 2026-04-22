@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, CheckCircle, XCircle, AlertTriangle, ChevronDown, ChevronUp, MapPin, TrendingUp, Users, Target, Clock, BookOpen, Zap, Lock, Unlock } from 'lucide-react';
+import { Globe, CheckCircle, XCircle, AlertTriangle, ChevronDown, ChevronUp, MapPin, TrendingUp, Users, Target, Clock, BookOpen, Zap, Lock, Unlock, Sparkles, Copy, CheckCheck } from 'lucide-react';
 
 // ── GTM Phase Data ────────────────────────────────────────────────────────────
 const PHASES = [
@@ -369,53 +369,129 @@ const PhaseCard = ({ phase, expanded, onToggle }) => {
   );
 };
 
-const BlogPost = ({ post, expanded, onToggle }) => (
-  <div className="glass-card rounded-2xl border border-white/8 overflow-hidden transition-all duration-300">
-    <button onClick={onToggle} className="w-full p-6 text-left hover:bg-white/3 transition-colors">
-      <div className="flex items-start justify-between gap-6">
-        <div className="space-y-2 flex-1">
-          <div className="flex items-center gap-3 flex-wrap">
-            <span className="text-[9px] font-black uppercase tracking-widest text-white/30 flex items-center gap-1">
-              <Clock size={9} /> {post.date}
-            </span>
-            <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${blogStatusColors[post.status]}`}>{post.status}</span>
-            <span className="text-[9px] font-black uppercase tracking-widest text-violet-400/60 bg-violet-400/10 px-2 py-0.5 rounded-full">Phase {post.phase}</span>
+const BlogPost = ({ post, expanded, onToggle }) => {
+  const [isDrafting, setIsDrafting] = useState(false);
+  const [draft, setDraft] = useState(null);
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const handleDraft = async (e) => {
+    e.stopPropagation();
+    setIsDrafting(true);
+    setDraft(null);
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/governance/social-draft`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': process.env.REACT_APP_INTERNAL_API_KEY
+        },
+        body: JSON.stringify({
+          title: post.title,
+          content: post.content
+        })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setDraft(data.draft);
+      } else {
+        setDraft(`[Avery Error]: ${data.detail || 'Failed to draft post'}`);
+      }
+    } catch (err) {
+      setDraft('[Avery Error]: Network error communicating with Comms Agent.');
+    } finally {
+      setIsDrafting(false);
+    }
+  };
+
+  const handleCopy = (e) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(draft);
+    setCopySuccess(true);
+    setTimeout(() => setCopySuccess(false), 2000);
+  };
+
+  return (
+    <div className="glass-card rounded-2xl border border-white/8 overflow-hidden transition-all duration-300">
+      <button onClick={onToggle} className="w-full p-6 text-left hover:bg-white/3 transition-colors">
+        <div className="flex items-start justify-between gap-6">
+          <div className="space-y-2 flex-1">
+            <div className="flex items-center gap-3 flex-wrap">
+              <span className="text-[9px] font-black uppercase tracking-widest text-white/30 flex items-center gap-1">
+                <Clock size={9} /> {post.date}
+              </span>
+              <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${blogStatusColors[post.status]}`}>{post.status}</span>
+              <span className="text-[9px] font-black uppercase tracking-widest text-violet-400/60 bg-violet-400/10 px-2 py-0.5 rounded-full">Phase {post.phase}</span>
+            </div>
+            <h3 className="text-white font-black tracking-tight leading-snug">{post.title}</h3>
+            <p className="text-white/40 text-sm leading-relaxed">{post.excerpt}</p>
+            <div className="flex items-center gap-2 flex-wrap pt-1">
+              {post.tags.map(t => (
+                <span key={t} className="text-[9px] text-white/20 bg-white/5 px-2 py-0.5 rounded-full font-black uppercase tracking-wider">#{t}</span>
+              ))}
+            </div>
           </div>
-          <h3 className="text-white font-black tracking-tight leading-snug">{post.title}</h3>
-          <p className="text-white/40 text-sm leading-relaxed">{post.excerpt}</p>
-          <div className="flex items-center gap-2 flex-wrap pt-1">
-            {post.tags.map(t => (
-              <span key={t} className="text-[9px] text-white/20 bg-white/5 px-2 py-0.5 rounded-full font-black uppercase tracking-wider">#{t}</span>
-            ))}
+          <div className="flex-shrink-0 pt-1">
+            {expanded ? <ChevronUp size={16} className="text-white/30" /> : <ChevronDown size={16} className="text-white/30" />}
           </div>
         </div>
-        <div className="flex-shrink-0 pt-1">
-          {expanded ? <ChevronUp size={16} className="text-white/30" /> : <ChevronDown size={16} className="text-white/30" />}
+      </button>
+      {expanded && (
+        <div className="px-6 pb-6 border-t border-white/5 pt-6">
+          <div className="prose prose-invert max-w-none mb-6">
+            {post.content.split('\n\n').map((para, i) => {
+              if (para.startsWith('**') && para.endsWith('**')) {
+                return <p key={i} className="font-black text-white text-sm mb-3">{para.replace(/\*\*/g, '')}</p>;
+              }
+              if (para.startsWith('- ') || para.split('\n').every(l => l.startsWith('- '))) {
+                return (
+                  <ul key={i} className="mb-3 space-y-1">
+                    {para.split('\n').map((l, j) => <li key={j} className="text-white/50 text-sm ml-4">• {l.replace(/^- /, '').replace(/\*\*(.*?)\*\*/g, '$1')}</li>)}
+                  </ul>
+                );
+              }
+              return <p key={i} className="text-white/50 text-sm leading-relaxed mb-4"
+                dangerouslySetInnerHTML={{ __html: para.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white/80">$1</strong>') }} />;
+            })}
+          </div>
+
+          <div className="border-t border-white/5 pt-6 mt-6">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
+                <Sparkles size={11} className="text-violet-400" /> Executive Comms Manager
+              </span>
+              <button 
+                onClick={handleDraft}
+                disabled={isDrafting}
+                className="flex items-center gap-2 px-4 py-2 bg-violet-500/10 hover:bg-violet-500/20 text-violet-400 border border-violet-500/20 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all disabled:opacity-50"
+              >
+                {isDrafting ? 'Avery is drafting...' : 'Draft LinkedIn Post via Avery'}
+              </button>
+            </div>
+            
+            {draft && (
+              <div className="relative mt-4">
+                <div className="absolute -top-3 left-4 px-2 bg-[#0a0a1a] text-[9px] font-black uppercase tracking-widest text-emerald-400 z-10 flex items-center gap-1">
+                  <CheckCircle size={10} /> Avery Generated Draft
+                </div>
+                <textarea 
+                  readOnly 
+                  value={draft}
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl p-5 pt-6 text-sm text-white/80 focus:outline-none focus:border-violet-500/50 min-h-[150px] resize-none"
+                />
+                <button 
+                  onClick={handleCopy}
+                  className="absolute bottom-4 right-4 flex items-center gap-2 px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-[10px] font-black uppercase tracking-widest transition-all"
+                >
+                  {copySuccess ? <span className="flex items-center gap-1"><CheckCheck size={11} className="text-emerald-400"/> Copied!</span> : <span className="flex items-center gap-1"><Copy size={11} /> Copy to Clipboard</span>}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </button>
-    {expanded && (
-      <div className="px-6 pb-6 border-t border-white/5 pt-6">
-        <div className="prose prose-invert max-w-none">
-          {post.content.split('\n\n').map((para, i) => {
-            if (para.startsWith('**') && para.endsWith('**')) {
-              return <p key={i} className="font-black text-white text-sm mb-3">{para.replace(/\*\*/g, '')}</p>;
-            }
-            if (para.startsWith('- ') || para.split('\n').every(l => l.startsWith('- '))) {
-              return (
-                <ul key={i} className="mb-3 space-y-1">
-                  {para.split('\n').map((l, j) => <li key={j} className="text-white/50 text-sm ml-4">• {l.replace(/^- /, '').replace(/\*\*(.*?)\*\*/g, '$1')}</li>)}
-                </ul>
-              );
-            }
-            return <p key={i} className="text-white/50 text-sm leading-relaxed mb-4"
-              dangerouslySetInnerHTML={{ __html: para.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white/80">$1</strong>') }} />;
-          })}
-        </div>
-      </div>
-    )}
-  </div>
-);
+      )}
+    </div>
+  );
+};
 
 // ── Main Page ─────────────────────────────────────────────────────────────────
 const GTMDashboard = () => {
