@@ -156,6 +156,43 @@ This phase opens only when: (1) the business vision is defined, (2) the technica
     tags: ['APAC', 'CJK', 'Japan', 'Taiwan', 'Future Vision'],
     status: 'Outline',
   },
+  {
+    id: 'gtm-behind-scenes',
+    date: 'April 2026',
+    phase: 'BTS',
+    title: 'Behind the Scenes: Wiring a Live Agentic Database across Jira and MongoDB',
+    category: 'Engineering & Orchestration',
+    excerpt: 'A deep dive into how I transitioned the Portfolio Command Center from static mockups to a live, persistent, AI-governed ecosystem operating in real-time.',
+    content: `<audio controls class="w-full mt-2 mb-4 rounded-xl border border-white/10" src="/assets/blog/narration_draft.mp3">Your browser does not support the audio element.</audio>
+
+When building a portfolio, it’s easy to settle for the illusion of functionality — static strings, mocked API calls, and fake loading spinners. But as a leader in Localization Engineering and Program Logic, I wanted to showcase **actual operational orchestration**.
+
+<img src="/assets/blog/vscode_agent.png" class="w-full rounded-2xl border border-white/10 my-4 shadow-lg shadow-violet-500/20" alt="VS Code paired with AI Agent" />
+
+The concept was simple: break the fourth wall. I collaborated with an advanced AI Agent paired directly in my IDE to engineer the underlying systems. The agent didn't just write code; it acted as a living, thinking counterpart to my Program Management commands.
+
+**The MongoDB Backbone**
+
+First, we replaced the hardcoded UI state with a live MongoDB database deployed via Render. Now, when a recruiter or hiring manager interacts with the Governance Headquarters, their approvals, blocks, and agent chats are securely persisted to a live infrastructure.
+
+<img src="/assets/blog/live_dashboard.png" class="w-full rounded-2xl border border-white/10 my-4 shadow-lg shadow-emerald-500/20" alt="Governance Data Visualisation" />
+
+**The Jira Synchronization Engine**
+
+The GTM Command Centre is wired directly to my live Jira board using automated Python proxy routes. The EU Expansion phase was literally blocked by live tickets (\`PJM-67\` and \`PJM-68\`). 
+
+<img src="/assets/blog/jira_sync.png" class="w-full rounded-2xl border border-white/10 my-4 shadow-lg shadow-rose-500/20" alt="Jira Sync Logic" />
+
+By committing fixes to the codebase natively in my local environment, pre-commit hooks fired off payloads to automatically transition the Jira tickets to "Done". The Python backend instantly synced this state back to the portfolio, automatically unlocking the visual gates across the web application.
+
+- **Data Layer:** MongoDB connected via Python FastAPI
+- **Security:** Authenticated reverse proxies protecting native API tokens on edge networks
+- **AI Brain:** Gemini LLMs assuming specialized Agent Personas in real time
+
+This is what modern program execution looks like. It’s not just a dashboard; it’s a living, breathing machine.`,
+    tags: ['Architecture', 'Jira Sync', 'AI Engineering', 'Behind the Scenes'],
+    status: 'Published',
+  },
 ];
 
 // ── Utility ───────────────────────────────────────────────────────────────────
