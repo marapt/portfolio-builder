@@ -10,7 +10,7 @@ from typing import List, Optional
 
 import httpx
 from dotenv import load_dotenv
-from fastapi import FastAPI, APIRouter, HTTPException, Depends
+from fastapi import FastAPI, APIRouter, HTTPException, Depends, Header
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel, Field, ConfigDict
 from starlette.middleware.cors import CORSMiddleware
@@ -112,6 +112,17 @@ async def get_db():
             detail="Database connection not available. Running in non-persistent dev mode."
         )
     return db
+
+async def verify_api_key(x_api_key: str = Header(None)):
+    """Validates the optional internal API key for proxied requests."""
+    expected_key = os.environ.get('INTERNAL_API_KEY')
+    if not expected_key:
+        return # Skip if not configured
+    
+    if x_api_key != expected_key:
+        logger.warning(f"Unauthorized API access attempt with key: {x_api_key}")
+        raise HTTPException(status_code=403, detail="Invalid API Key")
+    return x_api_key
 
 # --- Models ---
 
@@ -215,7 +226,7 @@ async def get_system_health():
     )
 
 @api_router.post("/contact")
-async def send_contact_email(request: ContactRequest):
+async def send_contact_email(request: ContactRequest, _ = Depends(verify_api_key)):
     """Proxy contact form submissions to EmailJS."""
     config = get_emailjs_config()
     if not config:
@@ -257,7 +268,7 @@ async def send_contact_email(request: ContactRequest):
         raise HTTPException(status_code=500, detail="Internal server error")
 
 @api_router.get("/jira/board/{board_id}")
-async def get_jira_board(board_id: str):
+async def get_jira_board(board_id: str, _ = Depends(verify_api_key)):
     if not re.match(r"^[a-zA-Z0-9_-]+$", board_id):
         raise HTTPException(status_code=400, detail="Invalid board ID format")
 
@@ -306,7 +317,7 @@ async def get_jira_board(board_id: str):
         raise HTTPException(status_code=500, detail="Internal server error")
 
 @api_router.get("/jira/board/{board_id}/sprints", response_model=List[JiraSprint])
-async def get_jira_sprints(board_id: str):
+async def get_jira_sprints(board_id: str, _ = Depends(verify_api_key)):
     """Proxy to fetch sprints for a specific board."""
     config = get_jira_config()
     if not config:
@@ -332,7 +343,7 @@ async def get_jira_sprints(board_id: str):
         raise HTTPException(status_code=500, detail="Error fetching sprints from Jira")
 
 @api_router.get("/project/roadmap")
-async def get_project_roadmap():
+async def get_project_roadmap(_ = Depends(verify_api_key)):
     """Fetch the project roadmap from local project_status.json."""
     roadmap_path = ROOT_DIR.parent / 'docs' / 'project_status.json'
     if not roadmap_path.exists():
@@ -347,7 +358,7 @@ async def get_project_roadmap():
         raise HTTPException(status_code=500, detail="Error reading roadmap data")
 
 @api_router.post("/jira/issue")
-async def create_jira_issue(issue: JiraIssueCreate):
+async def create_jira_issue(issue: JiraIssueCreate, _ = Depends(verify_api_key)):
     config = get_jira_config()
     if not config:
         raise HTTPException(status_code=500, detail="Jira credentials not configured")
