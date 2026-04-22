@@ -9,6 +9,7 @@ import ScrumBoardPage from './pages/ScrumBoardPage';
 import Privacy from './pages/Privacy';
 import Imprint from './pages/Imprint';
 import Dashboard from './pages/Dashboard';
+import GTMDashboard from './pages/GTMDashboard';
 
 // Initialize GA4 (G-0BB4XSY59N)
 ReactGA.initialize("G-0BB4XSY59N");
@@ -26,6 +27,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/imprint" element={<Imprint />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/gtm" element={<GTMDashboard />} />
         </Routes>
       </BrowserRouter>
     </div>

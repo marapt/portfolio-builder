@@ -37,6 +37,7 @@ const Header = () => {
   ];
 
   const dashboardLink = { href: '/dashboard', label: 'AI Agents', isPage: true };
+  const gtmLink = { href: '/gtm', label: 'GTM', isPage: true };
 
   const handleNavClick = (e, link) => {
     if (link.isPage) {
@@ -125,6 +126,19 @@ const Header = () => {
               </span>
               <Bot size={10} />
               {dashboardLink.label}
+            </Link>
+
+            {/* GTM Strategy — Global */}
+            <Link
+              to={gtmLink.href}
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 font-black text-[9px] uppercase tracking-[0.25em] ${
+                location.pathname === gtmLink.href
+                  ? 'bg-rose-600/20 border-rose-500/40 text-rose-400'
+                  : 'bg-rose-600/10 border-rose-500/20 text-rose-400/70 hover:bg-rose-600/20 hover:border-rose-500/40 hover:text-rose-400'
+              }`}
+            >
+              <Globe size={10} />
+              {gtmLink.label}
             </Link>
           </nav>
 
@@ -251,6 +265,20 @@ const Header = () => {
                 </span>
                 <Bot size={14} />
                 AI Agents
+              </Link>
+
+              {/* GTM Dashboard — Mobile */}
+              <Link
+                to="/gtm"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-4 font-black text-xs uppercase tracking-[0.3em] rounded-2xl transition-all ${
+                  location.pathname === '/gtm'
+                    ? 'bg-rose-50 text-rose-600'
+                    : 'text-rose-400 hover:bg-rose-50'
+                }`}
+              >
+                <Globe size={14} />
+                GTM Strategy
               </Link>
 
               <div className="pt-8">
