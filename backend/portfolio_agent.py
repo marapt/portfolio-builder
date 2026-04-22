@@ -106,7 +106,7 @@ class PortfolioManagerAgent:
                         pending.append({
                             "summary": f"[{cat.upper()}] {t['task']}",
                             "description": f"File: {t.get('file', 'N/A')}\nPriority: {t.get('priority')}",
-                            "project_key": os.environ.get("JIRA_PROJECT_KEY", "PMJ")
+                            "project_key": os.environ.get("JIRA_PROJECT_KEY", "PJM")
                         })
 
         if not pending:

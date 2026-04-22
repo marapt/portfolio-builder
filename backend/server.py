@@ -1,4 +1,5 @@
 import os
+import json
 import logging
 import uuid
 import re
@@ -130,7 +131,7 @@ class ContactRequest(BaseModel):
     message: str
 
 class JiraIssueCreate(BaseModel):
-    project_key: str = "PMJ"
+    project_key: str = "PJM"
     summary: str
     description: str
     issue_type: str = "Task"
@@ -329,6 +330,21 @@ async def get_jira_sprints(board_id: str):
     except Exception as exc:
         logger.error(f"Error fetching sprints: {str(exc)}")
         raise HTTPException(status_code=500, detail="Error fetching sprints from Jira")
+
+@api_router.get("/project/roadmap")
+async def get_project_roadmap():
+    """Fetch the project roadmap from local project_status.json."""
+    roadmap_path = ROOT_DIR.parent / 'docs' / 'project_status.json'
+    if not roadmap_path.exists():
+        raise HTTPException(status_code=404, detail="Roadmap file not found")
+    
+    try:
+        with open(roadmap_path, 'r') as f:
+            data = json.load(f)
+        return data
+    except Exception as e:
+        logger.error(f"Error reading roadmap: {e}")
+        raise HTTPException(status_code=500, detail="Error reading roadmap data")
 
 @api_router.post("/jira/issue")
 async def create_jira_issue(issue: JiraIssueCreate):

@@ -24,5 +24,13 @@ export const jiraService = {
       throw new Error(`Jira Sprint Error: ${response.statusText}`);
     }
     return response.json();
+  },
+  fetchRoadmap: async () => {
+    const url = `${API_BASE_URL}/api/project/roadmap`;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Roadmap Error: ${response.statusText}`);
+    }
+    return response.json();
   }
 };
