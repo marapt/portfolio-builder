@@ -2,9 +2,9 @@
   "project": "Mara Martins Product Development Hub",
   "project_key": "PJM",
   "sprint": {
-    "name": "Sprint 4: High-Fidelity Interactivity",
-    "goal": "Q2 Portfolio Launch: Hardening backend security, establishing high-fidelity project metrics, and professionalizing the Localization PM roadmap",
-    "id": 1
+    "name": "Sprint 2: Content & Assets",
+    "goal": "Professional Brand Identity, Housing Procurement, and Content Localization for individual case studies.",
+    "id": 2
   },
   "tasks": [
     {
@@ -32,35 +32,35 @@
       "labels": ["Strategy", "IA"]
     },
     {
-      "key": "PJM-21",
-      "summary": "Professional Brand Identity Definition",
-      "status": "In Progress",
-      "labels": ["Tech_Foundations"]
-    },
-    {
-      "key": "PJM-25",
-      "summary": "Infrastructure & Hosting Procurement",
-      "status": "In Progress",
-      "labels": ["Tech_Foundations"]
-    },
-    {
-      "key": "PJM-11",
-      "summary": "Connect Service Desk Portal",
-      "status": "To Do",
-      "labels": ["Tech_Foundations"]
-    },
-    {
       "key": "PJM-12",
-      "summary": "Sprint Review & Retrospective",
-      "status": "To Do",
+      "summary": "Sprint Review & Retrospective (Sprint 1)",
+      "status": "Done",
       "labels": ["Tech_Foundations"]
     },
     {
       "key": "PJM-46",
       "summary": "Infrastructure: Secure API Proxy Implementation",
-      "description": "Objective: Architect a robust backend proxy layer for external service integrations.\n\nResults:\n- 100% credential security (Jira/EmailJS keys remain server-side).\n- Elimination of CORS issues via centralized FastAPI endpoints.\n- Implementation of memory-based performance caching.",
+      "description": "Objective: Architect a robust backend proxy layer for external service integrations.",
       "status": "Done",
-      "labels": ["Infrastructure", "Security", "vscode-extra-log"]
+      "labels": ["Infrastructure", "Security"]
+    },
+    {
+      "key": "PJM-21",
+      "summary": "Professional Brand Identity Definition",
+      "status": "In Progress",
+      "labels": ["Tech_Foundations", "Sprint_2"]
+    },
+    {
+      "key": "PJM-25",
+      "summary": "Infrastructure & Hosting Procurement",
+      "status": "In Progress",
+      "labels": ["Tech_Foundations", "Sprint_2"]
+    },
+    {
+      "key": "PJM-11",
+      "summary": "Connect Service Desk Portal",
+      "status": "To Do",
+      "labels": ["Tech_Foundations", "Sprint_2"]
     }
   ]
 }
