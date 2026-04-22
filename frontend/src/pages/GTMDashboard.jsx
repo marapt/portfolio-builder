@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { Globe, CheckCircle, XCircle, AlertTriangle, ChevronDown, ChevronUp, MapPin, TrendingUp, Users, Target, Clock, BookOpen, Zap, Lock, Unlock, Sparkles, Copy, CheckCheck } from 'lucide-react';
 
 // ── GTM Phase Data ────────────────────────────────────────────────────────────
@@ -370,6 +373,7 @@ const PhaseCard = ({ phase, expanded, onToggle }) => {
 };
 
 const BlogPost = ({ post, expanded, onToggle }) => {
+  const { t } = useTranslation();
   const [isDrafting, setIsDrafting] = useState(false);
   const [draft, setDraft] = useState(null);
   const [copySuccess, setCopySuccess] = useState(false);
@@ -457,14 +461,14 @@ const BlogPost = ({ post, expanded, onToggle }) => {
           <div className="border-t border-white/5 pt-6 mt-6">
             <div className="flex items-center justify-between mb-4">
               <span className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
-                <Sparkles size={11} className="text-violet-400" /> Executive Comms Manager
+                <Sparkles size={11} className="text-violet-400" /> {t('gtm.post.avery_comms')}
               </span>
               <button 
                 onClick={handleDraft}
                 disabled={isDrafting}
                 className="flex items-center gap-2 px-4 py-2 bg-violet-500/10 hover:bg-violet-500/20 text-violet-400 border border-violet-500/20 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all disabled:opacity-50"
               >
-                {isDrafting ? 'Avery is drafting...' : 'Draft LinkedIn Post via Avery'}
+                {isDrafting ? t('gtm.post.drafting') : t('gtm.post.draft_btn')}
               </button>
             </div>
             
@@ -482,7 +486,7 @@ const BlogPost = ({ post, expanded, onToggle }) => {
                   onClick={handleCopy}
                   className="absolute bottom-4 right-4 flex items-center gap-2 px-3 py-1.5 bg-white/10 hover:bg-white/20 text-white rounded-lg text-[10px] font-black uppercase tracking-widest transition-all"
                 >
-                  {copySuccess ? <span className="flex items-center gap-1"><CheckCheck size={11} className="text-emerald-400"/> Copied!</span> : <span className="flex items-center gap-1"><Copy size={11} /> Copy to Clipboard</span>}
+                  {copySuccess ? <span className="flex items-center gap-1"><CheckCheck size={11} className="text-emerald-400"/> {t('gtm.post.copied')}</span> : <span className="flex items-center gap-1"><Copy size={11} /> {t('gtm.post.copy')}</span>}
                 </button>
               </div>
             )}
@@ -495,6 +499,7 @@ const BlogPost = ({ post, expanded, onToggle }) => {
 
 // ── Main Page ─────────────────────────────────────────────────────────────────
 const GTMDashboard = () => {
+  const { t } = useTranslation();
   const [activePhase, setActivePhase] = useState(1);
   const [expandedPhase, setExpandedPhase] = useState(1);
   const [expandedPost, setExpandedPost] = useState('gtm-001');
@@ -518,8 +523,9 @@ const GTMDashboard = () => {
   const publishedPosts = BLOG_POSTS.filter(p => p.status === 'Published').length;
 
   return (
-    <div className="min-h-screen stellar-bg pt-28 pb-24">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 space-y-10">
+    <div className="min-h-screen stellar-bg">
+      <Header />
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 space-y-10 pt-32 pb-24">
 
         {/* ── Header ── */}
         <div className="space-y-4">
@@ -529,18 +535,18 @@ const GTMDashboard = () => {
             </div>
             <div className="space-y-2">
               <div className="flex items-center gap-3">
-                <span className="text-[10px] font-black uppercase tracking-widest text-rose-400/60">GTM Strategy</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-rose-400/60">{t('gtm.label')}</span>
                 <span className="flex items-center gap-1.5">
                   <span className="relative flex h-1.5 w-1.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-rose-500" />
                   </span>
-                  <span className="text-[10px] text-rose-400/60 uppercase tracking-widest">Live</span>
+                  <span className="text-[10px] text-rose-400/60 uppercase tracking-widest">{t('gtm.live')}</span>
                 </span>
               </div>
-              <h1 className="text-4xl font-black text-white tracking-tighter">Global GTM Command Centre</h1>
+              <h1 className="text-4xl font-black text-white tracking-tighter">{t('gtm.title')}</h1>
               <p className="text-white/50 text-sm leading-relaxed max-w-2xl">
-                A live Go-To-Market strategy dashboard tracking the phased worldwide expansion of maramartins.com — from Silicon Valley to Europe, Latin America, and APAC. Each phase is governed by a strict readiness gate and requires explicit approval before opening. The strategy blog documents the reasoning behind every major decision.
+                {t('gtm.description')}
               </p>
             </div>
           </div>
@@ -548,10 +554,10 @@ const GTMDashboard = () => {
           {/* Stats */}
           <div className="grid grid-cols-4 gap-4">
             {[
-              { label: 'Phases Active', value: `${activeCount}/4`, color: 'text-emerald-400', bg: 'bg-emerald-400/10' },
-              { label: 'Queued', value: queuedCount, color: 'text-amber-400', bg: 'bg-amber-400/10' },
-              { label: 'Open Blockers', value: blockerCount, color: 'text-red-400', bg: 'bg-red-400/10' },
-              { label: 'Strategy Posts', value: `${publishedPosts}/${BLOG_POSTS.length}`, color: 'text-violet-400', bg: 'bg-violet-400/10' },
+              { label: t('gtm.stats.active'), value: `${activeCount}/4`, color: 'text-emerald-400', bg: 'bg-emerald-400/10' },
+              { label: t('gtm.stats.queued'), value: queuedCount, color: 'text-amber-400', bg: 'bg-amber-400/10' },
+              { label: t('gtm.stats.blockers'), value: blockerCount, color: 'text-red-400', bg: 'bg-red-400/10' },
+              { label: t('gtm.stats.blog'), value: `${publishedPosts}/${BLOG_POSTS.length}`, color: 'text-violet-400', bg: 'bg-violet-400/10' },
             ].map(s => (
               <div key={s.label} className={`glass-card p-5 rounded-2xl ${s.bg} text-center space-y-1`}>
                 <div className={`text-3xl font-black ${s.color}`}>{s.value}</div>
@@ -567,8 +573,8 @@ const GTMDashboard = () => {
         {/* ── Tab Navigation ── */}
         <div className="flex gap-2">
           {[
-            { id: 'phases', label: 'Phase Approvals', icon: Target },
-            { id: 'blog', label: 'GTM Strategy Blog', icon: BookOpen },
+            { id: 'phases', label: t('gtm.tabs.phases'), icon: Target },
+            { id: 'blog', label: t('gtm.tabs.blog'), icon: BookOpen },
           ].map(tab => (
             <button
               key={tab.id}
@@ -627,6 +633,7 @@ const GTMDashboard = () => {
           </span>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

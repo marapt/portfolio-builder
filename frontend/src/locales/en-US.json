@@ -79,5 +79,28 @@
     "quick_links": "Quick Links",
     "legal_col": "Legal",
     "rights": "All rights reserved."
+  },
+  "gtm": {
+    "label": "GTM Strategy",
+    "live": "Live",
+    "title": "Global GTM Command Centre",
+    "description": "A live Go-To-Market strategy dashboard tracking the phased worldwide expansion of maramartins.com — from Silicon Valley to Europe, Latin America, and APAC. Each phase is governed by a strict readiness gate and requires explicit approval before opening. The strategy blog documents the reasoning behind every major decision.",
+    "stats": {
+      "active": "Phases Active",
+      "queued": "Queued",
+      "blockers": "Open Blockers",
+      "blog": "Strategy Posts"
+    },
+    "tabs": {
+      "phases": "Phase Approvals",
+      "blog": "GTM Strategy Blog"
+    },
+    "post": {
+      "avery_comms": "Executive Comms Manager",
+      "draft_btn": "Draft LinkedIn Post via Avery",
+      "drafting": "Avery is drafting...",
+      "copy": "Copy to Clipboard",
+      "copied": "Copied!"
+    }
   }
 }

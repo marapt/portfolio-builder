@@ -79,5 +79,28 @@
     "quick_links": "Links Úteis",
     "legal_col": "Informações Legais",
     "rights": "Todos os direitos reservados."
+  },
+  "gtm": {
+    "label": "Estratégia GTM",
+    "live": "Direto",
+    "title": "Centro de Comando GTM Global",
+    "description": "Um painel de estratégia Go-To-Market em tempo real que acompanha a expansão mundial faseada do maramartins.com — de Silicon Valley à Europa, América Latina e APAC. Cada fase é regida por um portal de prontidão rigoroso e requer aprovação explícita antes da abertura. O blog de estratégia documenta o raciocínio por trás de cada decisão importante.",
+    "stats": {
+      "active": "Fases Ativas",
+      "queued": "Em Espera",
+      "blockers": "Bloqueios Abertos",
+      "blog": "Posts de Estratégia"
+    },
+    "tabs": {
+      "phases": "Aprovações de Fase",
+      "blog": "Blog de Estratégia GTM"
+    },
+    "post": {
+      "avery_comms": "Gestor de Comunicação Executiva",
+      "draft_btn": "Rascunhar post LinkedIn via Avery",
+      "drafting": "Avery está a rascunhar...",
+      "copy": "Copiar para Área de Transferência",
+      "copied": "Copiado!"
+    }
   }
 }
