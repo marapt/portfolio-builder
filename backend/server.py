@@ -305,6 +305,12 @@ async def get_jira_board(board_id: str, _ = Depends(verify_api_key)):
         raise HTTPException(status_code=400, detail="Invalid board ID format")
 
     now = datetime.now(timezone.utc).timestamp()
+    
+    # Clean up expired cache entries to prevent memory leaks over time
+    expired_keys = [k for k, v in jira_cache.items() if now - v[1] >= CACHE_EXPIRATION_SECONDS]
+    for k in expired_keys:
+        del jira_cache[k]
+        
     if board_id in jira_cache:
         cached_data, timestamp = jira_cache[board_id]
         if now - timestamp < CACHE_EXPIRATION_SECONDS:
