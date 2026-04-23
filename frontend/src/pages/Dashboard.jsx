@@ -93,6 +93,7 @@ const Dashboard = () => {
               </p>
             </div>
           </div>
+          </div>
 
           {/* ── Philosophy Banner ── */}
           <div className="glass-card p-6 rounded-2xl border border-violet-500/10 bg-violet-600/5 grid md:grid-cols-3 gap-6 shadow-2xl">
