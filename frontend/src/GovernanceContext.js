@@ -92,7 +92,6 @@ export const GovernanceProvider = ({ children }) => {
         targetData={targetData}
         onReported={(key) => {
           console.log(`PJM Issue Created: ${key}`);
-          alert(`Enviado! Ticket Jira criado: ${key}. Tiago foi notificado.`);
         }}
       />
       {isAuditMode && (
