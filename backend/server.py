@@ -607,6 +607,54 @@ async def draft_social_post(req: SocialDraftReq, _ = Depends(verify_api_key)):
         logger.error(f"Generate Content Error (Avery): {e}")
         raise HTTPException(status_code=503, detail="Avery is currently unavailable. Please check AI core link.")
 
+@api_router.post("/governance/report")
+async def create_governance_report(req: dict, _ = Depends(verify_api_key)):
+    """Receives an LQA report and creates a Jira issue."""
+    config = get_jira_config()
+    if not config:
+        raise HTTPException(status_code=500, detail="Jira credentials not configured")
+
+    # Construct the Jira payload
+    summary = f"LQA Error Found: {req.get('originalText')[:30]}..."
+    description = (
+        f"*LQA Error Report*\n\n"
+        f"*Detected Text:* {req.get('originalText')}\n"
+        f"*Suggested Fix:* {req.get('suggestedFix')}\n"
+        f"*Agent:* {req.get('agent')}\n"
+        f"*Selector:* {req.get('selector')}\n"
+        f"*URL:* {req.get('url')}\n"
+        f"*Locale:* {req.get('locale')}\n"
+    )
+    
+    url = f"{config['url']}/rest/api/2/issue"
+    payload = {
+        "fields": {
+            "project": {"key": "PJM"},
+            "summary": summary,
+            "description": description,
+            "issuetype": {"name": "Bug"},
+            "labels": ["LQA", "Human_Reported", req.get("locale")]
+        }
+    }
+
+    try:
+        response = await app.state.http_client.post(
+            url, 
+            auth=(config['email'], config['token']), 
+            json=payload
+        )
+        response.raise_for_status()
+        data = response.json()
+        
+        return {
+            "status": "success",
+            "jira_key": data.get("key"),
+            "jira_url": f"{config['url']}/browse/{data.get('key')}"
+        }
+    except Exception as exc:
+        logger.error(f"LQA Report Error: {str(exc)}")
+        raise HTTPException(status_code=500, detail="Failed to create Jira ticket")
+
 @api_router.get("/gtm/phases")
 async def get_gtm_phases():
     """Returns the GTM phases, dynamically resolving Jira blockers in real-time."""

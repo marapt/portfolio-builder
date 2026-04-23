@@ -15,7 +15,7 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
-          'x-api-key': 'MARA_GOVERNANCE_2026' // Simplified for this environment
+          'x-api-key': sessionStorage.getItem('gov_auth_key') || ''
         },
         body: JSON.stringify({
           originalText: targetData.text,
