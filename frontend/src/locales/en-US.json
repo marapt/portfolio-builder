@@ -8,7 +8,8 @@
     "testimonials": "Testimonials",
     "contact": "Contact",
     "experience": "Experience",
-    "insights": "Insights"
+    "insights": "Insights",
+    "ai_agents": "AI Agents"
   },
   "hero": {
     "title": "Architecting Global Excellence",
@@ -108,6 +109,7 @@
     "jurisdiction": "Jurisdiction: California, USA",
     "audited": "Professionally Audited",
     "ai_disclosure": "Built by Mara Martins with AI support through Agents.",
+    "legal_ai_disclaimer": "Disclaimer: This site uses a Legal AI agent (Elena | Loc Lead) to manage compliance structured guidance. This is not a substitute for professional legal counsel.",
     "ethics_title": "AI Ethics & Global Compliance",
     "ethics_desc": "This portfolio is governed by the Mara Martins OS, a framework for ethical AI collaboration. I adhere to the EU AI Act (Transparency & Risk) and California AI Disclosure guidelines. Every AI-generated commit is human-audited before reaching production."
   },

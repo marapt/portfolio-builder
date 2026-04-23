@@ -63,6 +63,9 @@ const Imprint = () => {
                 <div className="p-4 rounded-xl bg-cyan-400/5 border border-cyan-400/10 text-[11px] font-bold text-cyan-400/80">
                   {t('imprint.ai_disclosure')}
                 </div>
+                <div className="p-4 rounded-xl bg-violet-400/5 border border-violet-400/10 text-[10px] italic text-violet-400/60 leading-relaxed">
+                  {t('imprint.legal_ai_disclaimer')}
+                </div>
               </div>
             </section>
 

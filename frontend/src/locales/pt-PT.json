@@ -8,11 +8,12 @@
     "testimonials": "Depoimentos",
     "contact": "Contacto",
     "experience": "Experiência",
-    "insights": "Insights"
+    "insights": "Perspetivas",
+    "ai_agents": "Agentes de IA"
   },
   "hero": {
     "title": "Arquitetando a Excelência Global",
-    "tagline": "Mara Martins. Líder de Localização e Gerente de Programas de IA.",
+    "tagline": "Mara Martins. Líder de Localização e Gestora de Programas de IA.",
     "description": "Aproveitando a Inteligência Artificial e a Localização Estratégica para impulsionar o crescimento global e o avanço tecnológico para empresas em escala.",
     "cta_primary": "Ver portfólio",
     "cta_secondary": "Entre em contacto",
@@ -78,7 +79,10 @@
   "footer": {
     "quick_links": "Links Úteis",
     "legal_col": "Informações Legais",
-    "rights": "Todos os direitos reservados."
+    "rights": "Todos os direitos reservados.",
+    "back_to_top": "Voltar ao topo",
+    "bio": "Unir a IA com a língua, cultura e estratégia organizacional para o sucesso global.",
+    "california": "Califórnia, EUA"
   },
   "privacy": {
     "title": "Privacidade e Governança de Dados",
@@ -108,6 +112,7 @@
     "jurisdiction": "Jurisdição: Califórnia, EUA",
     "audited": "Auditado Profissionalmente",
     "ai_disclosure": "Construído por Mara Martins com suporte de IA através de Agentes.",
+    "legal_ai_disclaimer": "Aviso: Este site utiliza um agente de IA Jurídico (Elena | Loc Lead) para gerir orientações estruturadas de conformidade. Este serviço não substitui o aconselhamento jurídico profissional.",
     "ethics_title": "Ética de IA e Conformidade Global",
     "ethics_desc": "Este portefólio é governado pelo Mara Martins OS, uma estrutura para colaboração ética de IA. Adiro ao Regulamento da IA da UE (EU AI Act - Transparência e Risco) e às diretrizes de transparência de IA da Califórnia. Cada commit gerado por IA é auditado por um humano antes de chegar à produção."
   },
@@ -138,7 +143,32 @@
     "queue": "Fila de Aprovação",
     "last_audit": "Última Auditoria",
     "os_version": "Sistema Operativo Mara Martins",
-    "gov_active": "Governança Ativa"
+    "gov_active": "Governança Ativa",
+    "buttons": {
+      "approve": "Aprovar",
+      "block": "Bloquear",
+      "consult": "Consultar"
+    }
+  },
+  "resume": {
+    "summary_header": "Resumo Profissional",
+    "skills_header": "Competências",
+    "languages_header": "Idiomas",
+    "experience_header": "Experiência Profissional",
+    "education_header": "Educação",
+    "languages": "Português (Nativo), Inglês (Fluente), Espanhol (Intermédio)"
+  },
+  "scrum": {
+    "title": "Quadro Ágil em Tempo Real",
+    "columns": {
+      "todo": "Por Fazer",
+      "inprogress": "Em Curso",
+      "done": "Concluído"
+    },
+    "roadmap": {
+      "discovery": "Descoberta",
+      "infra": "Infraestrutura"
+    }
   },
   "gtm": {
     "label": "Estratégia GTM",

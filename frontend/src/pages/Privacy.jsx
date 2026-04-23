@@ -85,6 +85,10 @@ const Privacy = () => {
               </section>
             </div>
 
+            <div className="p-4 rounded-xl bg-violet-400/5 border border-violet-400/10 text-[10px] italic text-violet-400/60 leading-relaxed">
+              {t('imprint.legal_ai_disclaimer')}
+            </div>
+
             <div className="pt-12 border-t border-white/5 text-[10px] uppercase tracking-widest flex justify-between items-center font-black opacity-30">
               <span>{t('privacy.last_updated')}: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
               <span className="text-emerald-400">Governance Verified</span>
