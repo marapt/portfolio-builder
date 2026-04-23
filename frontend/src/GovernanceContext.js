@@ -8,44 +8,64 @@ export const GovernanceProvider = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [targetData, setTargetData] = useState(null);
 
+  const [selection, setSelection] = useState(null);
+  const [isDrawing, setIsDrawing] = useState(false);
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+
   useEffect(() => {
     if (isAuditMode) {
       document.body.classList.add('audit-mode');
     } else {
       document.body.classList.remove('audit-mode');
+      setSelection(null);
     }
 
-    const handleGlobalClick = (e) => {
-      // 1. Ignore if mode is off
-      if (!isAuditMode) return;
+    const handleMouseDown = (e) => {
+      if (!isAuditMode || e.target.closest('#lqa-modal') || e.target.closest('button')) return;
+      setIsDrawing(true);
+      setStartPos({ x: e.clientX, y: e.clientY });
+      setSelection({ x: e.clientX, y: e.clientY, w: 0, h: 0 });
+    };
 
-      // 2. Ignore clicks inside the LQA modal itself (to prevent meta-reporting)
-      if (e.target.closest('.glass-card') || e.target.closest('#lqa-modal')) return;
+    const handleMouseMove = (e) => {
+      if (!isDrawing) return;
+      const w = e.clientX - startPos.x;
+      const h = e.clientY - startPos.y;
+      setSelection(prev => ({ ...prev, w, h }));
+    };
 
-      // 3. Allow navigation and button clicks
-      if (e.target.closest('a') || e.target.closest('button')) return;
+    const handleMouseUp = async (e) => {
+      if (!isDrawing) return;
+      setIsDrawing(false);
+      
+      // Capture the selected area
+      const rect = {
+        x: Math.min(startPos.x, e.clientX),
+        y: Math.min(startPos.y, e.clientY),
+        w: Math.abs(e.clientX - startPos.x),
+        h: Math.abs(e.clientY - startPos.y)
+      };
 
-      // If text is being selected (dragged), don't trigger the modal
-      if (window.getSelection().toString().length > 0) return;
-
-      e.preventDefault();
-      e.stopPropagation();
-
-      const text = e.target.innerText || e.target.value || '';
-      if (text.length > 0) {
+      if (rect.w > 10 && rect.h > 10) {
         setTargetData({
-          text: text.trim(),
-          selector: e.target.tagName + (e.target.className ? '.' + e.target.className.split(' ').join('.') : ''),
+          text: "Visual Area Capture",
+          selector: "body",
+          rect: rect
         });
         setModalOpen(true);
       }
     };
 
-    document.addEventListener('click', handleGlobalClick, true);
+    document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+    
     return () => {
-      document.removeEventListener('click', handleGlobalClick, true);
+      document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isAuditMode]);
+  }, [isAuditMode, isDrawing, startPos]);
 
   return (
     <GovernanceContext.Provider value={{ isAuditMode, setIsAuditMode }}>
@@ -60,18 +80,35 @@ export const GovernanceProvider = ({ children }) => {
         }}
       />
       {isAuditMode && (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[1000] px-6 py-3 bg-red-600 text-white font-black uppercase tracking-[0.2em] rounded-full shadow-2xl animate-pulse flex items-center gap-6 border-2 border-white/20">
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-white rounded-full animate-ping" />
-            <span>MODO DE ANOTAÇÃO ATIVO</span>
+        <>
+          {selection && isDrawing && (
+            <div 
+              style={{
+                position: 'fixed',
+                left: Math.min(selection.x, selection.x + selection.w),
+                top: Math.min(selection.y, selection.y + selection.h),
+                width: Math.abs(selection.w),
+                height: Math.abs(selection.h),
+                border: '2px solid #22d3ee',
+                backgroundColor: 'rgba(34, 211, 238, 0.1)',
+                zIndex: 9999,
+                pointerEvents: 'none'
+              }}
+            />
+          )}
+          <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[1000] px-6 py-3 bg-red-600 text-white font-black uppercase tracking-[0.2em] rounded-full shadow-2xl animate-pulse flex items-center gap-6 border-2 border-white/20">
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-white rounded-full animate-ping" />
+              <span>MODO DE ANOTAÇÃO ATIVO: ARRASTE PARA CAPTURAR</span>
+            </div>
+            <button 
+              onClick={() => setIsAuditMode(false)}
+              className="px-4 py-1.5 bg-white text-red-600 rounded-lg text-[10px] hover:bg-white/90 transition-colors"
+            >
+              SAIR DO MODO
+            </button>
           </div>
-          <button 
-            onClick={() => setIsAuditMode(false)}
-            className="px-4 py-1.5 bg-white text-red-600 rounded-lg text-[10px] hover:bg-white/90 transition-colors"
-          >
-            SAIR DO MODO
-          </button>
-        </div>
+        </>
       )}
     </GovernanceContext.Provider>
   );

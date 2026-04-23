@@ -26,8 +26,21 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
 
   const captureScreenshot = async () => {
     try {
-      const element = document.querySelector(targetData.selector) || document.body;
-      const canvas = await html2canvas(element, { backgroundColor: null, scale: 2 });
+      const element = document.body;
+      const options = {
+        backgroundColor: null,
+        scale: 2,
+        useCORS: true
+      };
+
+      if (targetData.rect) {
+        options.x = targetData.rect.x + window.scrollX;
+        options.y = targetData.rect.y + window.scrollY;
+        options.width = targetData.rect.w;
+        options.height = targetData.rect.h;
+      }
+
+      const canvas = await html2canvas(element, options);
       setScreenshot(canvas.toDataURL('image/png'));
     } catch (err) {
       console.error("Screenshot failed:", err);
