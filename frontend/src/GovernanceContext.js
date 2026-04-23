@@ -38,7 +38,6 @@ export const GovernanceProvider = ({ children }) => {
       if (!isDrawing) return;
       setIsDrawing(false);
       
-      // Capture the selected area
       const rect = {
         x: Math.min(startPos.x, e.clientX),
         y: Math.min(startPos.y, e.clientY),
@@ -47,8 +46,25 @@ export const GovernanceProvider = ({ children }) => {
       };
 
       if (rect.w > 10 && rect.h > 10) {
+        // Spatial Text Extraction logic
+        const allElements = document.querySelectorAll('p, h1, h2, h3, h4, span, li, a, button');
+        let extractedText = "";
+        
+        allElements.forEach(el => {
+          const elRect = el.getBoundingClientRect();
+          // Check if element is at least partially within the selection box
+          if (
+            elRect.left < rect.x + rect.w &&
+            elRect.right > rect.x &&
+            elRect.top < rect.y + rect.h &&
+            elRect.bottom > rect.y
+          ) {
+            extractedText += el.innerText + " ";
+          }
+        });
+
         setTargetData({
-          text: "Visual Area Capture",
+          text: extractedText.trim() || "Visual Area Capture",
           selector: "body",
           rect: rect
         });
