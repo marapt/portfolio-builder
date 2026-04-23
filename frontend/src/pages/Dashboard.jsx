@@ -300,12 +300,4 @@ const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
   );
 };
 
-export default Dashboard;nce Active
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export default Dashboard;
