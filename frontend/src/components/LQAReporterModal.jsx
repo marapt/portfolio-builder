@@ -5,6 +5,7 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
   const [fix, setFix] = useState('');
   const [agent, setAgent] = useState('Tiago | pt-PT Linguist');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successKey, setSuccessKey] = useState(null);
 
   if (!isOpen) return null;
 
@@ -28,12 +29,20 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
       });
       
       const data = await response.json();
-      if (data.status === 'success') {
+      if (response.ok && data.status === 'success') {
+        setSuccessKey(data.jira_key);
         onReported(data.jira_key);
-        onClose();
+        setTimeout(() => {
+          setSuccessKey(null);
+          setFix('');
+          onClose();
+        }, 2500);
+      } else {
+        alert("Erro ao reportar: " + (data.message || "Verifique a sua chave de acesso."));
       }
     } catch (error) {
       console.error('LQA Submission failed:', error);
+      alert("Erro de conexão com o servidor de Governança.");
     } finally {
       setIsSubmitting(false);
     }
