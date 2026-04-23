@@ -128,6 +128,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+      </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-12">
