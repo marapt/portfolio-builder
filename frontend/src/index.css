@@ -195,14 +195,13 @@ code {
 }
 
 .annotation-mode-active * {
-    transition: all 0.2s ease;
+    transition: none !important; /* Disable transitions to prevent layout shifts */
 }
 
-.annotation-mode-active *:hover:not(nav, div, section, main, body, html) {
-    outline: 2px dashed rgba(239, 68, 68, 0.5) !important;
-    outline-offset: 4px;
-    background-color: rgba(239, 68, 68, 0.05);
-    border-radius: 4px;
+.annotation-mode-active *:hover:not(nav, div, section, main, body, html, button, a) {
+    outline: 2px dashed rgba(239, 68, 68, 0.8) !important;
+    outline-offset: -2px; /* Inward outline to prevent expansion */
+    background-color: rgba(239, 68, 68, 0.1);
 }
 
 .annotation-mode-active nav:hover, 
