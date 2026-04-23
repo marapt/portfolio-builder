@@ -13,19 +13,20 @@ const Dashboard = () => {
   const [queue, setQueue] = useState([]);
   const [decisions, setDecisions] = useState({});
   const [lastAudit] = useState(new Date().toISOString());
-  const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('gov_auth') === 'true');
+  const [isAuthenticated, setIsAuthenticated] = useState(!!sessionStorage.getItem('gov_auth_key'));
+  const [authKey, setAuthKey] = useState(sessionStorage.getItem('gov_auth_key') || '');
 
   useEffect(() => {
     const checkAuth = async () => {
       if (!isAuthenticated) {
         const pass = prompt(t("governance.auth_prompt") || "Operações de Governança: Insira a Chave de Acesso");
         if (!pass) {
-          window.location.href = "/";
+          // Allow read-only access instead of redirecting
+          console.log("Entering Read-Only mode.");
           return;
         }
 
         try {
-          // In production, this would hit the API URL. In dev, it hits the vite proxy.
           const response = await fetch('/api/governance/auth', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -34,14 +35,13 @@ const Dashboard = () => {
 
           if (response.ok) {
             setIsAuthenticated(true);
-            localStorage.setItem('gov_auth', 'true');
+            setAuthKey(pass);
+            sessionStorage.setItem('gov_auth_key', pass);
           } else {
-            alert(t("governance.auth_failed") || "Chave Inválida. Acesso negado.");
-            window.location.href = "/";
+            alert(t("governance.auth_failed") || "Chave Inválida. Modo de Leitura Ativado.");
           }
         } catch (error) {
           console.error("Auth error:", error);
-          window.location.href = "/";
         }
       }
     };
@@ -239,6 +239,8 @@ const Dashboard = () => {
               onApprove={handleApprove}
               onBlock={handleBlock}
               decision={decisions[finding.id]}
+              isAuthenticated={isAuthenticated}
+              authKey={authKey}
             />
           ))}
         </div>
@@ -265,7 +267,7 @@ const statusConfig = {
   CAUTION: { color: 'text-orange-400',  bg: 'bg-orange-400/10',  border: 'border-orange-400/20'  },
 };
 
-const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
+const FindingCard = ({ finding, onApprove, onBlock, decision, isAuthenticated, authKey }) => {
   const { t, i18n } = useTranslation();
   const cfg = statusConfig[finding.status] || statusConfig.WARNING;
   const [showExplanation, setShowExplanation] = React.useState(false);
@@ -292,7 +294,10 @@ const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/governance/interaction`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-api-key': authKey 
+        },
         body: JSON.stringify({ finding_id: finding.id, text: currentText })
       });
       if (response.ok) {
@@ -327,11 +332,18 @@ const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
           </div>
           <button onClick={() => setShowExplanation(!showExplanation)} className="text-[11px] font-black text-white/20 hover:text-white/60">?</button>
         </div>
-        {!decision && (
+        {!decision && isAuthenticated && (
           <div className="mt-4 flex gap-2">
             <button onClick={() => onApprove(finding.id)} className="flex-1 py-2 rounded-xl bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest">{t('dashboard.buttons.approve')}</button>
             <button onClick={() => onBlock(finding.id)} className="flex-1 py-2 rounded-xl bg-red-400/10 border border-red-400/20 text-red-400 text-[10px] font-black uppercase tracking-widest">{t('dashboard.buttons.block')}</button>
             <button onClick={() => setShowChat(!showChat)} className="flex-1 py-2 rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 text-[10px] font-black uppercase tracking-widest">{t('dashboard.buttons.consult')}</button>
+          </div>
+        )}
+        {!decision && !isAuthenticated && (
+          <div className="mt-4">
+             <button onClick={() => setShowChat(!showChat)} className="w-full py-2 rounded-xl bg-white/5 border border-white/10 text-white/30 text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition-all">
+                {showChat ? 'Hide History' : 'View Interaction History (Read Only)'}
+             </button>
           </div>
         )}
       </div>
@@ -345,10 +357,16 @@ const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
             ))}
             <div ref={chatEndRef} />
           </div>
-          <div className="flex gap-2">
-            <input type="text" value={inputText} onChange={e => setInputText(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleSend()} className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-xs text-white" placeholder="Respond..." />
-            <button onClick={handleSend} className="p-2 bg-cyan-400/20 rounded-lg"><Send size={14} className="text-cyan-400" /></button>
-          </div>
+          {isAuthenticated ? (
+            <div className="flex gap-2">
+              <input type="text" value={inputText} onChange={e => setInputText(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleSend()} className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-xs text-white" placeholder="Respond..." />
+              <button onClick={handleSend} className="p-2 bg-cyan-400/20 rounded-lg"><Send size={14} className="text-cyan-400" /></button>
+            </div>
+          ) : (
+            <div className="py-2 text-[10px] font-black uppercase tracking-widest text-white/20 text-center border border-white/5 rounded-lg bg-white/2">
+               🔒 Read-Only Mode · Auth Required to Consult
+            </div>
+          )}
         </div>
       )}
     </div>
