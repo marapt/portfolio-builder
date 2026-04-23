@@ -30,11 +30,11 @@ class LQCEngine:
 
     # Max recommended string lengths per category (chars)
     LENGTH_LIMITS = {
-        "title":       60,
-        "description": 200,
-        "label":       40,
-        "cta":         30,
-        "tagline":     120,
+        "title":       80,
+        "description": 600,
+        "label":       60,
+        "cta":         200,
+        "tagline":     150,
     }
 
     # Placeholder patterns to verify integrity across locales

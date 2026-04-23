@@ -52,7 +52,7 @@ STYLE_GUIDES = {
         "tone": "Formal, precise, European. No Brazilian idiomatic expressions.",
         "brand_terms": {
             "required": ["IA", "Localização", "Gestão de Programas"],
-            "avoid": ["legal", "top", "hype"],   # Borrowed English slang
+            "avoid": ["hype"],   # Borrowed English slang
         },
         "checks": [
             {
