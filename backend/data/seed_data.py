@@ -76,5 +76,19 @@ MOCK_FINDINGS = [
       { "role": "user", "name": "Mara Martins", "time": "14:41", "text": "Excellent. Have we audited the new Render backend endpoints from the recent cutover?" },
       { "role": "agent", "name": "Marcus | Security Analyst", "time": "14:42", "text": "Yes. The Render /contact backend endpoint correctly negotiates TLS 1.3. CORS is tightly scoped to maramartins.com origins. All external API keys (Jira, SendGrid) are confirmed hidden from client-side bundles and resolved natively server-side. No credential leaks detected. Security posture is GREEN." }
     ],
+  },
+  {
+    "id": "sec-777",
+    "agent": "Marcus | Security Analyst",
+    "status": "FAIL",
+    "message": "CRITICAL: Mandatory regulatory portal (livrodereclamacoes.pt) detected as compromised.",
+    "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    "category": "Security Operations",
+    "explanation": "Security audit detected a defacement of the external government portal. To prevent visitor redirection to a malicious domain, Marcus has automatically isolated the link components in Privacy.jsx and Imprint.jsx until the government endpoint restores integrity.",
+    "interactionLog": [
+      { "role": "agent", "name": "Marcus | Security Analyst", "time": "17:58", "text": "Immediate action required. livrodereclamacoes.pt has been hacked and defaced. I have temporarily redirected our local links to a maintenance notice." },
+      { "role": "user", "name": "Mara Martins", "time": "17:59", "text": "Should this be reported to PT authorities?" },
+      { "role": "agent", "name": "Marcus | Security Analyst", "time": "18:00", "text": "Confirmed. I recommend filing a report with CNCS (cert.pt@cncs.gov.pt) and the Políca Judiciária (unc3t@pj.pt) сразу. Our integration is secured." }
+    ],
   }
 ]
