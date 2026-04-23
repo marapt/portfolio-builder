@@ -102,7 +102,31 @@ const Dashboard = () => {
     <div className="min-h-screen stellar-bg">
       <Header />
       <div className="pt-28 pb-24 max-w-5xl mx-auto px-6 lg:px-8 space-y-12">
-        {/* ── Public Showcase Header ── */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-6">
+          <div className="flex items-start gap-4">
+            <div className="p-3 rounded-2xl bg-violet-600/20 flex-shrink-0 animate-pulse">
+              <Shield size={24} className="text-violet-400" />
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-center gap-3 flex-wrap">
+                <span className="text-[10px] font-black uppercase tracking-widest text-violet-400/60">{t('dashboard.subtitle')}</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-violet-500" />
+                  </span>
+                  <span className="text-[10px] text-violet-400/60 uppercase tracking-widest">{t('dashboard.active')}</span>
+                </span>
+              </div>
+              <h1 className="text-4xl font-black text-white tracking-tighter">
+                {t('dashboard.title')}
+              </h1>
+              <p className="text-white/50 text-sm leading-relaxed max-w-2xl font-medium">
+                {t('dashboard.desc')}
+              </p>
+            </div>
+          </div>
           </div>
         </div>
 
