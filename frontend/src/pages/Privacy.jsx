@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { useTranslation } from 'react-i18next';
 import { Shield, Lock, Eye, FileText, Database, Scale, ExternalLink } from 'lucide-react';
 
@@ -6,8 +8,9 @@ const Privacy = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen pt-32 pb-24 stellar-bg">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+    <div className="min-h-screen stellar-bg">
+      <Header />
+      <div className="pt-32 pb-24 max-w-4xl mx-auto px-6 lg:px-8">
         <div className="glass-card p-10 lg:p-16 rounded-[4rem] border border-white/5 relative overflow-hidden shadow-2xl shadow-violet-900/20">
           {/* Decorative Glow */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600/10 rounded-full blur-[80px] pointer-events-none" />
@@ -89,6 +92,7 @@ const Privacy = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

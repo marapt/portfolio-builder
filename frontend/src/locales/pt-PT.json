@@ -106,7 +106,39 @@
     "disclaimer_title": "Exoneração de Responsabilidade",
     "disclaimer_desc": "O conteúdo fornecido neste website destina-se a fins informativos para consultoria profissional e recrutamento. Embora me esforce por garantir 100% de precisão no design 'Stellar' e na implementação de IA, não assumo qualquer responsabilidade pelo conteúdo de links externos. Os operadores das páginas ligadas são os únicos responsáveis pelo seu conteúdo.",
     "jurisdiction": "Jurisdição: Califórnia, EUA",
-    "audited": "Auditado Profissionalmente"
+    "audited": "Auditado Profissionalmente",
+    "ai_disclosure": "Construído por Mara Martins com suporte de IA através de Agentes.",
+    "ethics_title": "Ética de IA e Conformidade Global",
+    "ethics_desc": "Este portefólio é governado pelo Mara Martins OS, uma estrutura para colaboração ética de IA. Adiro ao Regulamento da IA da UE (EU AI Act - Transparência e Risco) e às diretrizes de transparência de IA da Califórnia. Cada commit gerado por IA é auditado por um humano antes de chegar à produção."
+  },
+  "dashboard": {
+    "title": "Centro de Comando de Governança de Agentes IA",
+    "subtitle": "Operações em Direto",
+    "desc": "Este é um centro de operações em direto onde giro uma frota de agentes de IA especializados que executam auditorias de qualidade, verificações de conformidade legal, revisões de localização e verificações de implementação para este portefólio — em tempo real. Cada descoberta do agente aparece aqui para minha revisão e aprovação explícita antes de qualquer alteração ser enviada para produção.",
+    "active": "Ativo",
+    "heavy_lifting": "A IA faz o trabalho pesado",
+    "heavy_lifting_desc": "Agentes autónomos executam auditorias contínuas — qualidade linguística, conformidade legal, integridade visual e testes E2E — sem intervenção manual.",
+    "human_control": "O Humano mantém o controlo",
+    "human_control_desc": "Nenhuma decisão de agente chega à produção sem a minha aprovação explícita. Cada descoberta abaixo é revista, aprovada ou bloqueada — por mim.",
+    "gates": "A Governança regula cada implementação",
+    "gates_desc": "O portão de integração abaixo representa a saúde atual da implementação. Verde significa que a suite completa de agentes deu o aval e o site está pronto para ser enviado.",
+    "fleet": "Frota de Agentes Ativa",
+    "stats": {
+      "passing": "Aprovado",
+      "warnings": "Avisos",
+      "failures": "Falhas",
+      "pending": "Revisão Pendente"
+    },
+    "merge": {
+      "blocked": "Integração: BLOQUEADA",
+      "cleared": "Integração: AUTORIZADA",
+      "blocked_desc": "Reveja e resolva todas as descobertas abertas antes de prosseguir.",
+      "cleared_desc": "Todas as descobertas revistas. Seguro para avançar com a implementação."
+    },
+    "queue": "Fila de Aprovação",
+    "last_audit": "Última Auditoria",
+    "os_version": "Sistema Operativo Mara Martins",
+    "gov_active": "Governança Ativa"
   },
   "gtm": {
     "label": "Estratégia GTM",

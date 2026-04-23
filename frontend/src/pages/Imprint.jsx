@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Mail, Globe, Scale } from 'lucide-react';
+import { MapPin, Mail, Globe, Scale, Brain } from 'lucide-react';
 import { personalInfo } from '../data/mock';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -48,6 +48,20 @@ const Imprint = () => {
                 <div className="space-y-2 text-sm">
                    <p className="flex items-center gap-2"><span className="text-white/30 uppercase text-[9px] font-black">Email:</span> {personalInfo.email}</p>
                    <p className="flex items-center gap-2"><span className="text-white/30 uppercase text-[9px] font-black">{t('imprint.web')}:</span> maramartins.com</p>
+                </div>
+              </div>
+            </section>
+
+            <section className="space-y-6 bg-white/3 p-8 rounded-3xl border border-white/5">
+              <h2 className="text-xl font-black text-white flex items-center gap-3 uppercase tracking-tighter">
+                <Brain size={20} className="text-cyan-400" /> {t('imprint.ethics_title')}
+              </h2>
+              <div className="space-y-4">
+                <p className="text-sm leading-relaxed text-white/50">
+                  {t('imprint.ethics_desc')}
+                </p>
+                <div className="p-4 rounded-xl bg-cyan-400/5 border border-cyan-400/10 text-[11px] font-bold text-cyan-400/80">
+                  {t('imprint.ai_disclosure')}
                 </div>
               </div>
             </section>

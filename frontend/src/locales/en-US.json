@@ -106,7 +106,39 @@
     "disclaimer_title": "Disclaimer",
     "disclaimer_desc": "The content provided on this website is for informational purposes for professional consultancy and recruitment. While I strive for 100% accuracy in the 'Stellar' design and AI implementation, I assume no liability for the content of external links. The operators of the linked pages are solely responsible for their content.",
     "jurisdiction": "Jurisdiction: California, USA",
-    "audited": "Professionally Audited"
+    "audited": "Professionally Audited",
+    "ai_disclosure": "Built by Mara Martins with AI support through Agents.",
+    "ethics_title": "AI Ethics & Global Compliance",
+    "ethics_desc": "This portfolio is governed by the Mara Martins OS, a framework for ethical AI collaboration. I adhere to the EU AI Act (Transparency & Risk) and California AI Disclosure guidelines. Every AI-generated commit is human-audited before reaching production."
+  },
+  "dashboard": {
+    "title": "AI Agents Governance HQ",
+    "subtitle": "Live Operations",
+    "desc": "This is a live operations centre where I manage a fleet of specialised AI agents that run quality audits, legal compliance checks, localisation reviews, and deployment verifications for this portfolio — in real time. Every agent finding surfaces here for my review and explicit approval before any change ships to production.",
+    "active": "Active",
+    "heavy_lifting": "AI Does the Heavy Lifting",
+    "heavy_lifting_desc": "Autonomous agents run continuous audits — linguistic quality, legal compliance, visual integrity, and E2E testing — with zero manual triggering.",
+    "human_control": "Human Stays in Control",
+    "human_control_desc": "No agent decision reaches production without my explicit approval. Every finding below is reviewed, approved or blocked — by me.",
+    "gates": "Governance Gates Every Deploy",
+    "gates_desc": "The merge gate below represents the current deployment health. Green means the full agent suite has signed off and the site is clear to ship.",
+    "fleet": "Active Agent Fleet",
+    "stats": {
+      "passing": "Passing",
+      "warnings": "Warnings",
+      "failures": "Failures",
+      "pending": "Pending Review"
+    },
+    "merge": {
+      "blocked": "Merge to Main: BLOCKED",
+      "cleared": "Merge to Main: CLEARED",
+      "blocked_desc": "Review and resolve all open findings before proceeding.",
+      "cleared_desc": "All findings reviewed. Safe to proceed with deployment."
+    },
+    "queue": "Approval Queue",
+    "last_audit": "Last Audit",
+    "os_version": "Mara Martins Operating System",
+    "gov_active": "Governance Active"
   },
   "gtm": {
     "label": "GTM Strategy",
