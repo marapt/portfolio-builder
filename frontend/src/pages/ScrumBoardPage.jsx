@@ -369,7 +369,7 @@ const ScrumBoardPage = () => {
                   <div className="p-6 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-[2rem] text-white shadow-xl shadow-indigo-100">
                     <h4 className="text-[10px] font-black text-white/50 uppercase mb-3 tracking-widest">{t('scrum.stakeholder_insights')}</h4>
                     <p className="text-sm text-white/90 leading-relaxed font-bold italic tracking-tight">
-                      "{t('scrum.insight_quote')}"
+                      &ldquo;{t('scrum.insight_quote')}&rdquo;
                     </p>
                     <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
                       <span className="text-[9px] text-white/40 font-black tracking-[0.2em] flex items-center gap-2">
