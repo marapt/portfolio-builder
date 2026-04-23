@@ -282,7 +282,11 @@ const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
                 <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${cfg.bg} ${cfg.color}`}>{finding.status}</span>
                 <span className="text-[9px] text-white/20 ml-auto font-black">{finding.category}</span>
               </div>
-              <p className="text-sm text-white/70 font-medium leading-relaxed">{finding.message}</p>
+              <p className="text-sm text-white/70 font-medium leading-relaxed">
+                {i18n.language.startsWith('pt') 
+                  ? (finding.message_pt || finding.message) 
+                  : (finding.message_en || finding.message)}
+              </p>
             </div>
           </div>
           <button onClick={() => setShowExplanation(!showExplanation)} className="text-[11px] font-black text-white/20 hover:text-white/60">?</button>

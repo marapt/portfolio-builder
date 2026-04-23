@@ -79,7 +79,8 @@
   "footer": {
     "quick_links": "Quick Links",
     "legal_col": "Legal",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "back_to_top": "Back to top"
   },
   "privacy": {
     "title": "Privacy & Data Governance",
@@ -119,6 +120,8 @@
     "subtitle": "Live Operations",
     "desc": "This is a live operations centre where I manage a fleet of specialised AI agents that run quality audits, legal compliance checks, localisation reviews, and deployment verifications for this portfolio — in real time. Every agent finding surfaces here for my review and explicit approval before any change ships to production.",
     "active": "Active",
+    "activate_audit": "Activate LQA Audit",
+    "audit_on": "Audit Mode: ACTIVE",
     "heavy_lifting": "AI Does the Heavy Lifting",
     "heavy_lifting_desc": "Autonomous agents run continuous audits — linguistic quality, legal compliance, visual integrity, and E2E testing — with zero manual triggering.",
     "human_control": "Human Stays in Control",
@@ -126,6 +129,17 @@
     "gates": "Governance Gates Every Deploy",
     "gates_desc": "The merge gate below represents the current deployment health. Green means the full agent suite has signed off and the site is clear to ship.",
     "fleet": "Active Agent Fleet",
+    "fleet_roles": {
+      "loc_lead": "Localization Governance",
+      "en_linguist": "en-US Linguist QA",
+      "pt_linguist": "pt-PT Linguist QA",
+      "lqc_eng": "Structural Quality Check",
+      "lqa_expert": "Semantic & Cultural QA",
+      "qa_tester": "12 E2E Live Tests",
+      "scrum_master": "Sprint Cycle Sync",
+      "gtm_strat": "Global Launch Plan",
+      "sec_analyst": "Security Ops & Compliance"
+    },
     "stats": {
       "passing": "Passing",
       "warnings": "Warnings",
@@ -141,29 +155,11 @@
     "queue": "Approval Queue",
     "last_audit": "Last Audit",
     "os_version": "Mara Martins Operating System",
-    "gov_active": "Governance Active"
-  },
-  "gtm": {
-    "label": "GTM Strategy",
-    "live": "Live",
-    "title": "Global GTM Command Centre",
-    "description": "A live Go-To-Market strategy dashboard tracking the phased worldwide expansion of maramartins.com — from Silicon Valley to Europe, Latin America, and APAC. Each phase is governed by a strict readiness gate and requires explicit approval before opening. The strategy blog documents the reasoning behind every major decision.",
-    "stats": {
-      "active": "Phases Active",
-      "queued": "Queued",
-      "blockers": "Open Blockers",
-      "blog": "Strategy Posts"
-    },
-    "tabs": {
-      "phases": "Phase Approvals",
-      "blog": "GTM Strategy Blog"
-    },
-    "post": {
-      "avery_comms": "Executive Comms Manager",
-      "draft_btn": "Draft LinkedIn Post via Avery",
-      "drafting": "Avery is drafting...",
-      "copy": "Copy to Clipboard",
-      "copied": "Copied!"
+    "gov_active": "Governance Active",
+    "buttons": {
+      "approve": "Approve",
+      "block": "Block",
+      "consult": "Consult"
     }
   },
   "resume": {
@@ -185,7 +181,8 @@
   "common": {
     "contact": "Contact",
     "linkedin": "LinkedIn",
-    "get_in_touch": "Get in Touch"
+    "get_in_touch": "Get in Touch",
+    "rolling": "Rolling"
   },
   "scrum": {
     "title": "Live Agile Board",
@@ -221,6 +218,29 @@
       "infra": "Infrastructure",
       "production": "Production",
       "launch": "Launch"
+    }
+  },
+  "gtm": {
+    "label": "GTM Strategy",
+    "live": "Live",
+    "title": "Global GTM Command Centre",
+    "description": "A live Go-To-Market strategy dashboard tracking the phased worldwide expansion of maramartins.com — from Silicon Valley to Europe, Latin America, and APAC. Each phase is governed by a strict readiness gate and requires explicit approval before opening. The strategy blog documents the reasoning behind every major decision.",
+    "stats": {
+      "active": "Phases Active",
+      "queued": "Queued",
+      "blockers": "Open Blockers",
+      "blog": "Strategy Posts"
+    },
+    "tabs": {
+      "phases": "Phase Approvals",
+      "blog": "GTM Strategy Blog"
+    },
+    "post": {
+      "avery_comms": "Executive Comms Manager",
+      "draft_btn": "Draft LinkedIn Post via Avery",
+      "drafting": "Avery is drafting...",
+      "copy": "Copy to Clipboard",
+      "copied": "Copied!"
     }
   }
 }

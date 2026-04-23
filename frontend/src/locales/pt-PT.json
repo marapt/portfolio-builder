@@ -3,7 +3,7 @@
     "about": "Sobre",
     "services": "Serviços",
     "portfolio": "Portfólio",
-    "scrum_board": "Quadro Scrum",
+    "scrum_board": "Quadro Agile",
     "resume": "Currículo",
     "testimonials": "Depoimentos",
     "contact": "Contacto",
@@ -14,7 +14,7 @@
   "hero": {
     "title": "Arquitetando a Excelência Global",
     "tagline": "Mara Martins. Líder de Localização e Gestora de Programas de IA.",
-    "description": "Aproveitando a Inteligência Artificial e a Localização Estratégica para impulsionar o crescimento global e o avanço tecnológico para empresas em escala.",
+    "description": "Utilizando Inteligência Artificial e Localização Estratégica para impulsionar o crescimento global e o avanço tecnológico para empresas em escala.",
     "cta_primary": "Ver portfólio",
     "cta_secondary": "Entre em contacto",
     "val_ai_title": "Estratégia de IA",
@@ -165,49 +165,6 @@
     }
   },
   "resume": {
-    "summary_header": "Resumo Profissional",
-    "skills_header": "Competências",
-    "languages_header": "Idiomas",
-    "experience_header": "Experiência Profissional",
-    "education_header": "Educação",
-    "languages": "Português (Nativo), Inglês (Fluente), Espanhol (Intermédio)"
-  },
-  "scrum": {
-    "title": "Quadro Ágil em Tempo Real",
-    "columns": {
-      "todo": "Por Fazer",
-      "inprogress": "Em Curso",
-      "done": "Concluído"
-    },
-    "roadmap": {
-      "discovery": "Descoberta",
-      "infra": "Infraestrutura"
-    }
-  },
-  "gtm": {
-    "label": "Estratégia GTM",
-    "live": "Direto",
-    "title": "Centro de Comando GTM Global",
-    "description": "Um painel de estratégia Go-To-Market em tempo real que acompanha a expansão mundial faseada do maramartins.com — de Silicon Valley à Europa, América Latina e APAC. Cada fase é regida por um portal de prontidão rigoroso e requer aprovação explícita antes da abertura. O blog de estratégia documenta o raciocínio por trás de cada decisão importante.",
-    "stats": {
-      "active": "Fases Ativas",
-      "queued": "Em Espera",
-      "blockers": "Bloqueios Abertos",
-      "blog": "Posts de Estratégia"
-    },
-    "tabs": {
-      "phases": "Aprovações de Fase",
-      "blog": "Blog de Estratégia GTM"
-    },
-    "post": {
-      "avery_comms": "Gestor de Comunicação Executiva",
-      "draft_btn": "Rascunhar post LinkedIn via Avery",
-      "drafting": "Avery está a rascunhar...",
-      "copy": "Copiar para Área de Transferência",
-      "copied": "Copiado!"
-    }
-  },
-  "resume": {
     "back": "Voltar ao Início",
     "sections": {
       "summary": "Resumo Profissional",
@@ -226,7 +183,8 @@
   "common": {
     "contact": "Contacto",
     "linkedin": "LinkedIn",
-    "get_in_touch": "Entrar em Contacto"
+    "get_in_touch": "Entrar em Contacto",
+    "rolling": "Contínuo"
   },
   "scrum": {
     "title": "Quadro Agile em Direto",
@@ -262,6 +220,29 @@
       "infra": "Infraestrutura",
       "production": "Produção",
       "launch": "Lançamento"
+    }
+  },
+  "gtm": {
+    "label": "Estratégia GTM",
+    "live": "Direto",
+    "title": "Centro de Comando GTM Global",
+    "description": "Um painel de estratégia Go-To-Market em tempo real que acompanha a expansão mundial faseada do maramartins.com — de Silicon Valley à Europa, América Latina e APAC. Cada fase é regida por um portal de prontidão rigoroso e requer aprovação explícita antes da abertura. O blog de estratégia documenta o raciocínio por trás de cada decisão importante.",
+    "stats": {
+      "active": "Fases Ativas",
+      "queued": "Em Espera",
+      "blockers": "Bloqueios Abertos",
+      "blog": "Posts de Estratégia"
+    },
+    "tabs": {
+      "phases": "Aprovações de Fase",
+      "blog": "Blog de Estratégia GTM"
+    },
+    "post": {
+      "avery_comms": "Gestor de Comunicação Executiva",
+      "draft_btn": "Rascunhar post LinkedIn via Avery",
+      "drafting": "Avery está a rascunhar...",
+      "copy": "Copiar para Área de Transferência",
+      "copied": "Copiado!"
     }
   }
 }
