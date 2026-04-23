@@ -96,6 +96,18 @@
     "complaints_book": "Livro de Reclamações Eletrónico",
     "last_updated": "Última Atualização"
   },
+  "imprint": {
+    "label": "Identificação Legal",
+    "intro": "Em conformidade com os padrões profissionais para consultorias globais.",
+    "base_title": "Base Profissional",
+    "role": "Estratégia de Localização com IA e Liderança de Programas",
+    "contact_title": "Contacto Digital",
+    "web": "Presença Digital",
+    "disclaimer_title": "Exoneração de Responsabilidade",
+    "disclaimer_desc": "O conteúdo fornecido neste website destina-se a fins informativos para consultoria profissional e recrutamento. Embora me esforce por garantir 100% de precisão no design 'Stellar' e na implementação de IA, não assumo qualquer responsabilidade pelo conteúdo de links externos. Os operadores das páginas ligadas são os únicos responsáveis pelo seu conteúdo.",
+    "jurisdiction": "Jurisdição: Califórnia, EUA",
+    "audited": "Auditado Profissionalmente"
+  },
   "gtm": {
     "label": "Estratégia GTM",
     "live": "Direto",

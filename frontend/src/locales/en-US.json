@@ -96,6 +96,18 @@
     "complaints_book": "Electronic Complaints Book",
     "last_updated": "Last Updated"
   },
+  "imprint": {
+    "label": "Legal Discovery",
+    "intro": "In compliance with professional standards for global consultancies.",
+    "base_title": "Professional Base",
+    "role": "AI Localization Strategy & Program Leadership",
+    "contact_title": "Digital Contact",
+    "web": "Digital Presence",
+    "disclaimer_title": "Disclaimer",
+    "disclaimer_desc": "The content provided on this website is for informational purposes for professional consultancy and recruitment. While I strive for 100% accuracy in the 'Stellar' design and AI implementation, I assume no liability for the content of external links. The operators of the linked pages are solely responsible for their content.",
+    "jurisdiction": "Jurisdiction: California, USA",
+    "audited": "Professionally Audited"
+  },
   "gtm": {
     "label": "GTM Strategy",
     "live": "Live",
