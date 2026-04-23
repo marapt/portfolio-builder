@@ -13,7 +13,7 @@ async def main():
         'agent': 'Marcus | Security Analyst',
         'status': 'FAIL',
         'category': 'External Security Integrity',
-        'message': 'CRITICAL: Mandatory regulatory portal (livrodereclamacoes.pt) detected as compromised.',
+        'message': 'CRITICAL: Security Protocol Active - Mandatory regulatory portal (livrodereclamacoes.pt) detected as compromised.',
         'explanation': 'Marcus | Security Analyst has automatically quarantined the link in Privacy.jsx to prevent visitor redirection to a defaced domain. This is a critical external dependency failure.',
         'timestamp': '2026-04-23T01:00:00Z',
         'interactionLog': [

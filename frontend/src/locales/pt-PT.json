@@ -25,9 +25,9 @@
     "val_pm_desc": "Impulsionando a eficiência através de frameworks estruturados de gestão.",
     "val_culture_title": "QI Cultural",
     "val_culture_desc": "Unindo a tecnologia com a experiência humana local.",
-    "privacy_title": "Política de Privacidade",
-    "imprint_title": "Informações Legais",
-    "legal_intro": "Transparência e segurança de dados são os pilares da minha consultoria profissional."
+    "privacy_title": "Privacidade e Governança",
+    "imprint_title": "Identificação Jurídica",
+    "legal_intro": "Transparência e integridade de dados são os pilares da minha atuação profissional."
   },
   "stats": {
     "years": "Anos de Experiência",
@@ -102,18 +102,18 @@
     "last_updated": "Última Atualização"
   },
   "imprint": {
-    "label": "Identificação Legal",
-    "intro": "Em conformidade com os padrões profissionais para consultorias globais.",
-    "base_title": "Base Profissional",
-    "role": "Estratégia de Localização com IA e Liderança de Programas",
-    "contact_title": "Contacto Digital",
+    "label": "Identificação Jurídica",
+    "intro": "Conformidade com os padrões de excelência para consultorias globais.",
+    "base_title": "Matriz Profissional",
+    "role": "Estratégia de Localização e Liderança de IA",
+    "contact_title": "Contacto Directo",
     "web": "Presença Digital",
-    "disclaimer_title": "Exoneração de Responsabilidade",
-    "disclaimer_desc": "O conteúdo fornecido neste website destina-se a fins informativos para consultoria profissional e recrutamento. Embora me esforce por garantir 100% de precisão no design 'Stellar' e na implementação de IA, não assumo qualquer responsabilidade pelo conteúdo de links externos. Os operadores das páginas ligadas são os únicos responsáveis pelo seu conteúdo.",
+    "disclaimer_title": "Nota de Responsabilidade",
+    "disclaimer_desc": "O conteúdo deste website destina-se a fins informativos para consultoria e recrutamento. Embora garanta o rigor no design 'Stellar' e na implementação de IA, não assumo responsabilidade pelo conteúdo de links externos.",
     "jurisdiction": "Jurisdição: Califórnia, EUA",
-    "audited": "Auditado Profissionalmente",
-    "ai_disclosure": "Construído por Mara Martins com suporte de IA através de Agentes.",
-    "legal_ai_disclaimer": "Aviso: Este site utiliza um agente de IA Jurídico (Elena | Loc Lead) para gerir orientações estruturadas de conformidade. Este serviço não substitui o aconselhamento jurídico profissional.",
+    "audited": "Auditado e Verificado",
+    "ai_disclosure": "Arquitetado por Mara Martins com suporte de Agentes IA.",
+    "legal_ai_disclaimer": "Aviso: Este site utiliza o agente Elena (Loc Lead) para orientações de conformidade. Este serviço não substitui o aconselhamento jurídico profissional.",
     "ethics_title": "Ética de IA e Conformidade Global",
     "ethics_desc": "Este portefólio é governado pelo Mara Martins OS, uma estrutura para colaboração ética de IA. Adiro ao Regulamento da IA da UE (EU AI Act - Transparência e Risco) e às diretrizes de transparência de IA da Califórnia. Cada commit gerado por IA é auditado por um humano antes de chegar à produção."
   },
@@ -177,8 +177,8 @@
       "awards": "Prémios"
     },
     "read_more_linkedin": "Ler mais no LinkedIn",
-    "cta_title": "Interessado em trabalhar em conjunto?",
-    "cta_desc": "Estou aberta a oportunidades como Gestora de Programas/Projectos de Localização, Operações de IA/Localização ou funções Executivas/Business de IA."
+    "cta_title": "Vamos colaborar no seu próximo desafio global?",
+    "cta_desc": "Disponível para liderar Programas de Localização, Operações de IA ou funções estratégicas de Business Intelligence."
   },
   "common": {
     "contact": "Contacto",
@@ -227,7 +227,7 @@
     "label": "Estratégia GTM",
     "live": "Direto",
     "title": "Centro de Comando GTM Global",
-    "description": "Um painel de estratégia Go-To-Market em tempo real que acompanha a expansão mundial faseada do maramartins.com — de Silicon Valley à Europa, América Latina e APAC. Cada fase é regida por um portal de prontidão rigoroso e requer aprovação explícita antes da abertura. O blog de estratégia documenta o raciocínio por trás de cada decisão importante.",
+    "description": "Dashboard estratégico que acompanha a expansão global do maramartins.com. Monitorização em tempo real de Silicon Valley à APAC, com aprovações por fase e insights sobre IA.",
     "stats": {
       "active": "Fases Ativas",
       "queued": "Em Espera",
