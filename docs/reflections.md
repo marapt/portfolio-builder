@@ -54,3 +54,11 @@ This document captures key technical challenges, errors, and resolutions encount
 - **Resolution**: Implemented triple-redundancy fallbacks in the Python backend to support multiple common naming conventions (`MONGO_URL`, `MONGODB_URI`, `MONO_URL`).
 - **Learning**: Code-level resilience for environment variables can prevent deployment blockers when manual dashboard access is limited or error-prone.
 
+## 🤖 Agentic QA Suite & Security (Sprint 3)
+
+### Autonomous Quality Gates (PJM-88)
+- **Challenge**: Scaling linguistic quality and security audits manually was a bottleneck for the "Stellar" UI.
+- **Resolution**: Implemented a multi-agent fleet (**Sofia, Isabella, Elena, Marcus**) that runs automated checks for structural, semantic, legal, and security integrity.
+- **Security Breakthrough**: Marcus identified a hardcoded secret in the dashboard, leading to a refactor of the governance auth flow into a secure, key-based session system.
+- **Persistence Innovation**: Developed the `LocalDB` fallback system to ensure the interactive dashboard remains functional even when MongoDB is unavailable.
+- **Learning**: Autonomous agents are most effective when they have distinct, standardized roles and report to a central "authoritative" dashboard with human oversight (Governance HQ).

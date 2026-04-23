@@ -2,9 +2,9 @@
   "project": "Mara Martins Product Development Hub",
   "project_key": "PJM",
   "sprint": {
-    "name": "Sprint 2: Content & Assets",
-    "goal": "Professional Brand Identity, Housing Procurement, and Content Localization for individual case studies.",
-    "id": 2
+    "name": "Sprint 3: Agentic QA & Governance",
+    "goal": "Integrating autonomous auditing fleet, security hardening, and live governance orchestration.",
+    "id": 3
   },
   "tasks": [
     {
@@ -47,20 +47,32 @@
     {
       "key": "PJM-21",
       "summary": "Professional Brand Identity Definition",
-      "status": "In Progress",
+      "status": "Done",
       "labels": ["Tech_Foundations", "Sprint_2"]
     },
     {
       "key": "PJM-25",
       "summary": "Infrastructure & Hosting Procurement",
-      "status": "In Progress",
+      "status": "Done",
       "labels": ["Tech_Foundations", "Sprint_2"]
     },
     {
       "key": "PJM-11",
       "summary": "Connect Service Desk Portal",
-      "status": "To Do",
+      "status": "Done",
       "labels": ["Tech_Foundations", "Sprint_2"]
+    },
+    {
+      "key": "PJM-88",
+      "summary": "Automated Agent QA Suite Construction",
+      "status": "Done",
+      "labels": ["AI_Agents", "Governance", "Sprint_3"]
+    },
+    {
+      "key": "PJM-47",
+      "summary": "Security Hardening: Marcus & Read-Only Gates",
+      "status": "Done",
+      "labels": ["Security", "Infrastructure", "Sprint_3"]
     }
   ]
 }
