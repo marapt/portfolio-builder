@@ -87,11 +87,9 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
         setSuccessKey(data.jira_key);
         onReported(data.jira_key);
         setTimeout(() => {
-          setSuccessKey(null);
-          setFix('');
-          setChatLog([]);
-          onClose();
-        }, 3000);
+          setSuccessKey(data.jira_key);
+          onReported(data.jira_key);
+        }, 500);
       } else {
         alert("Erro ao reportar: " + (data.message || "Verifique a sua chave de acesso."));
       }
@@ -101,6 +99,13 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleFinish = () => {
+    setSuccessKey(null);
+    setFix('');
+    setChatLog([]);
+    onClose();
   };
 
   return (
@@ -249,9 +254,17 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
 
         <div className="p-8 bg-white/2 border-t border-white/5">
           {successKey ? (
-             <div className="flex items-center justify-center gap-4 text-emerald-400 font-bold animate-in zoom-in duration-300">
-               <Shield size={20} />
-               <span>REPORTADO COM SUCESSO: {successKey}</span>
+             <div className="flex flex-col items-center gap-4 animate-in zoom-in duration-300">
+               <div className="flex items-center gap-4 text-emerald-400 font-bold">
+                 <Shield size={20} />
+                 <span>REPORTADO COM SUCESSO: {successKey}</span>
+               </div>
+               <button 
+                 onClick={handleFinish}
+                 className="px-8 py-3 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-emerald-500/30 transition-all"
+               >
+                 Concluir e Voltar
+               </button>
              </div>
           ) : (
             <button 
