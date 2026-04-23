@@ -78,9 +78,6 @@ const Privacy = () => {
                   <a href="https://www.cnpd.pt/" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest text-white transition-all">
                     CNPD Portal <ExternalLink size={11} />
                   </a>
-                  <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-[10px] font-black uppercase tracking-widest text-red-400">
-                    {t('privacy.service_unavailable_notice')}
-                  </div>
                 </div>
               </section>
             </div>
