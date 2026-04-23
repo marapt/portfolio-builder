@@ -98,18 +98,30 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
             </div>
           </div>
 
-          <button 
-            onClick={handleSubmit}
-            disabled={isSubmitting || !fix}
-            className="w-full py-4 bg-cyan-400/20 hover:bg-cyan-400/30 border border-cyan-400/30 rounded-2xl flex items-center justify-center gap-2 text-cyan-400 font-bold transition-all disabled:opacity-30 disabled:grayscale"
-          >
-            {isSubmitting ? 'A Sincronizar com Jira...' : (
-              <>
-                <Send size={18} />
-                Submeter para Auditoria de Agente
-              </>
-            )}
-          </button>
+          {successKey ? (
+            <div className="py-8 text-center space-y-4 animate-in fade-in zoom-in duration-300">
+              <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto border border-emerald-500/30">
+                <Shield size={32} className="text-emerald-400" />
+              </div>
+              <div>
+                <p className="text-emerald-400 font-bold">Enviado com Sucesso!</p>
+                <p className="text-[10px] text-white/40 uppercase tracking-widest font-black">Ticket Jira: {successKey}</p>
+              </div>
+            </div>
+          ) : (
+            <button 
+              onClick={handleSubmit}
+              disabled={isSubmitting || !fix}
+              className="w-full py-4 bg-cyan-400/20 hover:bg-cyan-400/30 border border-cyan-400/30 rounded-2xl flex items-center justify-center gap-2 text-cyan-400 font-bold transition-all disabled:opacity-30 disabled:grayscale"
+            >
+              {isSubmitting ? 'A Sincronizar com Jira...' : (
+                <>
+                  <Send size={18} />
+                  Submeter para Auditoria de Agente
+                </>
+              )}
+            </button>
+          )}
         </div>
       </div>
     </div>
