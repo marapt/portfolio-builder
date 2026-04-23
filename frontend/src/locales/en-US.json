@@ -95,6 +95,7 @@
     "supervisory_title": "Supervisory Authority",
     "supervisory_desc": "In Portugal, the competent authority is the Comissão Nacional de Protecção de Dados (CNPD).",
     "complaints_book": "Electronic Complaints Book",
+    "service_unavailable_notice": "Service Unavailable: The Electronic Complaints Book portal is undergoing external security maintenance. Please try again later.",
     "last_updated": "Last Updated"
   },
   "imprint": {

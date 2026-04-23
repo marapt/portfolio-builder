@@ -98,6 +98,7 @@
     "supervisory_title": "Autoridade de Controlo",
     "supervisory_desc": "Em Portugal, a autoridade competente é a Comissão Nacional de Protecção de Dados (CNPD).",
     "complaints_book": "Livro de Reclamações Eletrónico",
+    "service_unavailable_notice": "Serviço Indisponível: O portal do Livro de Reclamações Eletrónico está a passar por manutenção de segurança externa. Por favor, tente novamente mais tarde.",
     "last_updated": "Última Atualização"
   },
   "imprint": {
