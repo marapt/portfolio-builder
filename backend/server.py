@@ -611,18 +611,27 @@ async def draft_social_post(req: SocialDraftReq, _ = Depends(verify_api_key)):
         raise HTTPException(status_code=503, detail="Avery is currently unavailable. Please check AI core link.")
 
 @api_router.post("/governance/report")
-async def create_governance_report(req: dict, _ = Depends(verify_api_key)):
-    """Receives an LQA report and creates a Jira issue."""
+async def report_governance_issue(req: dict, db=Depends(get_db), x_api_key: str = Header(None)):
     config = get_jira_config()
     if not config:
-        raise HTTPException(status_code=500, detail="Jira credentials not configured")
+        raise HTTPException(status_code=500, detail="Jira not configured")
 
-    # Construct the Jira payload
+    # 1. Security Check: Validate Key
+    if x_api_key != os.environ.get('INTERNAL_API_KEY'):
+        raise HTTPException(status_code=403, detail="Unauthorized governance report")
+
+    # 2. Hardening: Payload Capping
+    original_text = req.get('originalText', '')[:1000]
+    suggested_fix = req.get('suggestedFix', '')[:1000]
+    
+    if len(original_text) < 2:
+        raise HTTPException(status_code=400, detail="Insignificant payload")
+
     summary = f"LQA Error Found: {req.get('originalText')[:30]}..."
     description = (
         f"*LQA Error Report*\n\n"
-        f"*Detected Text:* {req.get('originalText')}\n"
-        f"*Suggested Fix:* {req.get('suggestedFix')}\n"
+        f"*Detected Text:* {original_text}\n"
+        f"*Suggested Fix:* {suggested_fix}\n"
         f"*Agent:* {req.get('agent')}\n"
         f"*Selector:* {req.get('selector')}\n"
         f"*URL:* {req.get('url')}\n"
