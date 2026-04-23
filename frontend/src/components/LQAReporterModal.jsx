@@ -126,18 +126,55 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
           <div className="p-8 border-r border-white/5 space-y-6">
             <div className="space-y-4">
                <div className="space-y-2">
-                 <label className="text-[10px] uppercase tracking-widest font-black text-white/40 flex items-center gap-2">
-                   <Camera size={12} /> Evidência Visual
+                 <label className="text-[10px] uppercase tracking-widest font-black text-white/40 flex items-center justify-between">
+                   <div className="flex items-center gap-2"><Camera size={12} /> Evidência Visual</div>
+                   <span className="text-[9px] text-cyan-400/60 lowercase italic">Dica: Cole (Cmd+V) para anexar instantaneamente</span>
                  </label>
-                 {screenshot ? (
-                   <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
-                     <img src={screenshot} alt="Evidence" className="w-full h-auto" />
-                   </div>
-                 ) : (
-                   <div className="h-32 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center animate-pulse">
-                     <p className="text-[10px] text-white/20 uppercase font-black">A capturar evidência...</p>
-                   </div>
-                 )}
+                 <div 
+                   onPaste={(e) => {
+                     const item = e.clipboardData.items[0];
+                     if (item?.type.includes('image')) {
+                       const blob = item.getAsFile();
+                       const reader = new FileReader();
+                       reader.onload = (event) => setScreenshot(event.target.result);
+                       reader.readAsDataURL(blob);
+                     }
+                   }}
+                   className="relative group rounded-xl overflow-hidden border border-white/10 bg-black/40 min-h-[160px] flex items-center justify-center transition-all hover:border-cyan-400/30"
+                 >
+                   {screenshot ? (
+                     <>
+                       <img src={screenshot} alt="Evidence" className="w-full h-auto" />
+                       <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                         <button onClick={() => setScreenshot(null)} className="p-2 bg-red-500/20 rounded-lg text-red-400 hover:bg-red-500/40 text-[10px] font-bold uppercase">Limpar</button>
+                         <label className="p-2 bg-cyan-500/20 rounded-lg text-cyan-400 hover:bg-cyan-500/40 text-[10px] font-bold uppercase cursor-pointer">
+                           Alterar
+                           <input type="file" className="hidden" accept="image/*" onChange={(e) => {
+                             const file = e.target.files[0];
+                             if (file) {
+                               const reader = new FileReader();
+                               reader.onload = (event) => setScreenshot(event.target.result);
+                               reader.readAsDataURL(file);
+                             }
+                           }} />
+                         </label>
+                       </div>
+                     </>
+                   ) : (
+                     <label className="cursor-pointer flex flex-col items-center gap-3">
+                       <Camera size={24} className="text-white/20" />
+                       <span className="text-[10px] text-white/30 font-black uppercase tracking-widest">Carregar ou Colar Imagem</span>
+                       <input type="file" className="hidden" accept="image/*" onChange={(e) => {
+                          const file = e.target.files[0];
+                          if (file) {
+                            const reader = new FileReader();
+                            reader.onload = (event) => setScreenshot(event.target.result);
+                            reader.readAsDataURL(file);
+                          }
+                       }} />
+                     </label>
+                   )}
+                 </div>
                </div>
 
                <div className="space-y-2">
@@ -178,6 +215,15 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
                    </div>
                  </div>
                ))}
+               {isConsulting && (
+                 <div className="flex justify-start">
+                   <div className="bg-violet-600/10 border border-violet-500/20 text-violet-200 p-3 rounded-2xl flex items-center gap-2">
+                     <div className="w-1 h-1 bg-violet-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                     <div className="w-1 h-1 bg-violet-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                     <div className="w-1 h-1 bg-violet-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                   </div>
+                 </div>
+               )}
                <div ref={chatEndRef} />
             </div>
 
