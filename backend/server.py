@@ -750,7 +750,7 @@ async def get_gtm_phases():
 app.include_router(api_router)
 
 # CORS Configuration
-env_origins = os.environ.get('CORS_ORIGINS', 'http://localhost:3000')
+env_origins = os.environ.get('CORS_ORIGINS', 'http://localhost:3000,https://maramartins.com,https://www.maramartins.com')
 allowed_origins = [o.strip() for o in env_origins.split(',')]
 
 if os.environ.get('ENVIRONMENT') == 'production' and "*" in allowed_origins:
