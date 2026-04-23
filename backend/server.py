@@ -552,13 +552,12 @@ async def create_governance_interaction(req: InteractionReq, db=Depends(get_db))
 
     # 2. Generate AI Reply
     agent_name = finding.get("agent", "Agent")
-    system_prompt = f"You are {agent_name}, an expert AI agent inside Mara Martins' operational dashboard. The user is Mara Martins, a senior program manager. Keep your response highly professional, concise, and focused on tech operations, QA, or compliance. Refer to previous logs if needed. Log action items if appropriate."
+    system_prompt = f"You are {agent_name}, an expert strategist. Respond to Mara Martins. KEEP IT BRIEF (MAX 2 SENTENCES). Ignore technical HTML noise. Focus only on the linguistic or operational fix requested. Be fast."
     
     try:
-        model = genai.GenerativeModel('gemini-2.5-flash-8b', system_instruction=system_prompt)
-        chat_context = "\n".join([f"{m['name']}: {m['text']}" for m in finding.get("interactionLog", [])])
-        prompt = f"Chat History:\n{chat_context}\n\nMara just said: {req.text}\nRespond directly to Mara."
-        resp = model.generate_content(prompt)
+        model = genai.GenerativeModel('gemini-2.0-flash', system_instruction=system_prompt)
+        prompt = f"CONTEXT: {req.text}\nUSER QUERY: {req.text}"
+        resp = model.generate_content(prompt, generation_config={"max_output_tokens": 150})
         ai_text = resp.text
     except Exception as e:
         logger.error(f"Gemini API Error: {e}")
