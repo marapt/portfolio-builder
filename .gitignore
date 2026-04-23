@@ -61,4 +61,5 @@ agenthub/agents/youtube/db
 # Build caches
 .cache/
 
-*.pembackend/data/local_db.json
+*.pem
+backend/data/local_db.json
