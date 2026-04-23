@@ -543,13 +543,13 @@ async def get_gtm_phases():
       },
       {
         "id": 2, "name": "EU Expansion", "subtitle": "pt-PT Launch", "region": "Europe",
-        "flag": "🇵🇹", "locale": "pt-PT", "status": "QUEUED", "color": "amber",
+        "flag": "🇵🇹", "locale": "pt-PT", "status": "ACTIVE", "color": "emerald",
         "coords": {"top": "28%", "left": "46%"},
         "markets": ["Lisbon", "Porto", "London", "Amsterdam", "Berlin"],
         "audience": ["EU Tech Startups", "Portuguese Companies", "EUATC Network"],
         "metrics": ["≥2 EU contacts/month", "pt-PT toggle ≥15% sessions", "Indexed on google.pt"],
-        "blockers": ["LQA pt-PT: resolve 'legal' term warning (PJM-68)", "hreflang tags not yet implemented (PJM-67)", "GDPR audit pending (PJM-69)"],
-        "approved": False,
+        "blockers": [],
+        "approved": True,
       },
       {
         "id": 3, "name": "LATAM Entry", "subtitle": "es-419 / pt-BR TBD", "region": "Latin America",
