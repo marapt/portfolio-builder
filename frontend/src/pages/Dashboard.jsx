@@ -128,69 +128,64 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2 space-y-12">
-            {/* ── Philosophy Banner ── */}
-            <div className="glass-card p-6 rounded-2xl border border-violet-500/10 bg-violet-600/5 grid md:grid-cols-3 gap-6 shadow-2xl">
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <Brain size={14} className="text-violet-400" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-violet-400">{t('dashboard.heavy_lifting')}</span>
-              </div>
-              <p className="text-white/40 text-xs leading-relaxed font-medium">
-                {t('dashboard.heavy_lifting_desc')}
-              </p>
+        {/* ── Philosophy Banner ── */}
+        <div className="glass-card p-6 rounded-2xl border border-violet-500/10 bg-violet-600/5 grid md:grid-cols-3 gap-6 shadow-2xl">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Brain size={14} className="text-violet-400" />
+              <span className="text-[10px] font-black uppercase tracking-widest text-violet-400">{t('dashboard.heavy_lifting')}</span>
             </div>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <Users size={14} className="text-cyan-400" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-cyan-400">{t('dashboard.human_control')}</span>
-              </div>
-              <p className="text-white/40 text-xs leading-relaxed font-medium">
-                {t('dashboard.human_control_desc')}
-              </p>
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <GitMerge size={14} className="text-emerald-400" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400">{t('dashboard.gates')}</span>
-              </div>
-              <p className="text-white/40 text-xs leading-relaxed font-medium">
-                {t('dashboard.gates_desc')}
-              </p>
-            </div>
-            </div>
+            <p className="text-white/40 text-xs leading-relaxed font-medium">
+              {t('dashboard.heavy_lifting_desc')}
+            </p>
           </div>
-
-          <div className="space-y-8">
-            <button 
-              onClick={() => setIsAuditMode(!isAuditMode)}
-              className={`w-full px-8 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] transition-all border-2 flex items-center justify-center gap-3 shrink-0 ${
-                isAuditMode 
-                ? 'bg-red-500/10 border-red-500/50 text-red-400 shadow-[0_0_20px_rgba(239,68,68,0.2)]' 
-                : 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10'
-              }`}
-            >
-              <Shield size={14} className={isAuditMode ? 'animate-spin-slow' : ''} />
-              {isAuditMode ? t('dashboard.annotation_on') : t('dashboard.activate_annotation')}
-            </button>
-
-            {/* ── Agent Fleet ── */}
-            <div className="space-y-3">
-              <p className="text-[10px] font-black uppercase tracking-widest text-white/20 flex items-center gap-2">
-                <Bot size={11} /> {t('dashboard.fleet')}
-              </p>
-              <div className="grid grid-cols-2 gap-3">
-                {AGENT_FLEET.map(agent => (
-                  <div key={agent.name} className={`glass-card p-4 rounded-2xl ${agent.bg} border border-white/5 space-y-2 hover:translate-y-[-2px] transition-all`}>
-                    <agent.icon size={14} className={agent.color} />
-                    <p className={`text-[10px] font-black uppercase tracking-wider ${agent.color}`}>{agent.name}</p>
-                    <p className="text-[9px] text-white/30 leading-relaxed font-black">{agent.role}</p>
-                  </div>
-                ))}
-              </div>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Users size={14} className="text-cyan-400" />
+              <span className="text-[10px] font-black uppercase tracking-widest text-cyan-400">{t('dashboard.human_control')}</span>
             </div>
+            <p className="text-white/40 text-xs leading-relaxed font-medium">
+              {t('dashboard.human_control_desc')}
+            </p>
+          </div>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <GitMerge size={14} className="text-emerald-400" />
+              <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400">{t('dashboard.gates')}</span>
+            </div>
+            <p className="text-white/40 text-xs leading-relaxed font-medium">
+              {t('dashboard.gates_desc')}
+            </p>
+          </div>
+        </div>
+
+        <div className="flex justify-center">
+          <button 
+            onClick={() => setIsAuditMode(!isAuditMode)}
+            className={`px-8 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] transition-all border-2 flex items-center gap-3 shrink-0 ${
+              isAuditMode 
+              ? 'bg-red-500/10 border-red-500/50 text-red-400 shadow-[0_0_20px_rgba(239,68,68,0.2)]' 
+              : 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10'
+            }`}
+          >
+            <Shield size={14} className={isAuditMode ? 'animate-spin-slow' : ''} />
+            {isAuditMode ? t('dashboard.annotation_on') : t('dashboard.activate_annotation')}
+          </button>
+        </div>
+
+        {/* ── Agent Fleet (Horizontal Row) ── */}
+        <div className="space-y-4">
+          <p className="text-[10px] font-black uppercase tracking-widest text-white/20 flex items-center gap-2">
+            <Bot size={11} /> {t('dashboard.fleet')}
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {AGENT_FLEET.map(agent => (
+              <div key={agent.name} className={`glass-card p-4 rounded-2xl ${agent.bg} border border-white/5 space-y-2 hover:translate-y-[-2px] transition-all`}>
+                <agent.icon size={14} className={agent.color} />
+                <p className={`text-[10px] font-black uppercase tracking-wider ${agent.color}`}>{agent.name}</p>
+                <p className="text-[9px] text-white/30 leading-relaxed font-black">{agent.role}</p>
+              </div>
+            ))}
           </div>
         </div>
 
