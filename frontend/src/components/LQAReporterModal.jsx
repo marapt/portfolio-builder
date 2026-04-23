@@ -1,11 +1,63 @@
-import React, { useState } from 'react';
-import { Shield, Send, X, AlertCircle } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Shield, Send, X, AlertCircle, Camera, MessageSquare, Bot } from 'lucide-react';
+import html2canvas from 'html2canvas';
 
 const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
   const [fix, setFix] = useState('');
   const [agent, setAgent] = useState('Tiago | pt-PT Linguist');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successKey, setSuccessKey] = useState(null);
+  const [screenshot, setScreenshot] = useState(null);
+  const [chatLog, setChatLog] = useState([]);
+  const [inputText, setInputText] = useState('');
+  const [isConsulting, setIsConsulting] = useState(false);
+  const chatEndRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen && targetData) {
+      captureScreenshot();
+      setChatLog([{
+        role: 'agent',
+        name: agent.split(' | ')[0],
+        text: `Olá Mara! Detectei o elemento "${targetData.text}". Como posso ajudar com esta auditoria?`
+      }]);
+    }
+  }, [isOpen, targetData]);
+
+  const captureScreenshot = async () => {
+    try {
+      const element = document.querySelector(targetData.selector) || document.body;
+      const canvas = await html2canvas(element, { backgroundColor: null, scale: 2 });
+      setScreenshot(canvas.toDataURL('image/png'));
+    } catch (err) {
+      console.error("Screenshot failed:", err);
+    }
+  };
+
+  const handleConsult = async () => {
+    if (!inputText.trim()) return;
+    const userMsg = { role: 'user', name: 'Mara', text: inputText };
+    setChatLog(prev => [...prev, userMsg]);
+    setInputText('');
+    setIsConsulting(true);
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend-dot7.onrender.com'}/api/governance/interaction`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            finding_id: 'lqa_live_audit', 
+            text: `[LQA AUDIT CONTEXT: ${targetData.text}] User says: ${inputText}` 
+        })
+      });
+      const data = await response.json();
+      setChatLog(prev => [...prev, { role: 'agent', name: agent.split(' | ')[0], text: data.agent_response }]);
+    } catch (err) {
+      console.error("Consultation failed:", err);
+    } finally {
+      setIsConsulting(false);
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -24,6 +76,8 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
           suggestedFix: fix,
           agent: agent,
           url: window.location.href,
+          screenshot: screenshot,
+          chatHistory: chatLog,
           locale: localStorage.getItem('i18nextLng') || 'pt-PT'
         })
       });
@@ -35,8 +89,9 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
         setTimeout(() => {
           setSuccessKey(null);
           setFix('');
+          setChatLog([]);
           onClose();
-        }, 2500);
+        }, 3000);
       } else {
         alert("Erro ao reportar: " + (data.message || "Verifique a sua chave de acesso."));
       }
@@ -49,77 +104,117 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm">
-      <div className="glass-card w-full max-w-lg p-8 rounded-[2.5rem] border border-white/10 shadow-2xl relative">
-        <button onClick={onClose} className="absolute top-6 right-6 p-2 hover:bg-white/5 rounded-full transition-colors">
-          <X size={20} className="text-white/40" />
-        </button>
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-6 bg-black/80 backdrop-blur-md">
+      <div className="glass-card w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-[2.5rem] border border-white/10 shadow-2xl flex flex-col">
+        <div className="p-8 border-b border-white/5 flex justify-between items-center bg-white/2">
+          <div className="flex items-center gap-4">
+             <div className="p-3 bg-red-500/10 rounded-2xl border border-red-500/20">
+               <Shield size={24} className="text-red-400" />
+             </div>
+             <div>
+               <h2 className="text-xl font-bold text-white tracking-tight">Hub de Auditoria LQA</h2>
+               <p className="text-[10px] text-white/40 uppercase tracking-widest font-black">Agent Consultation Mode</p>
+             </div>
+          </div>
+          <button onClick={onClose} className="p-2 hover:bg-white/5 rounded-full transition-colors">
+            <X size={20} className="text-white/40" />
+          </button>
+        </div>
 
-        <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="p-3 bg-red-500/10 rounded-2xl border border-red-500/20">
-              <AlertCircle size={24} className="text-red-400" />
-            </div>
-            <div>
-              <h2 className="text-xl font-bold text-white tracking-tight">Reportar Erro de Ativo</h2>
-              <p className="text-xs text-white/40 uppercase tracking-widest font-black">Modo LQA Ativo</p>
+        <div className="flex-1 overflow-y-auto grid md:grid-cols-2 gap-0">
+          {/* Left Side: Visual Evidence & Report */}
+          <div className="p-8 border-r border-white/5 space-y-6">
+            <div className="space-y-4">
+               <div className="space-y-2">
+                 <label className="text-[10px] uppercase tracking-widest font-black text-white/40 flex items-center gap-2">
+                   <Camera size={12} /> Evidência Visual
+                 </label>
+                 {screenshot ? (
+                   <div className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
+                     <img src={screenshot} alt="Evidence" className="w-full h-auto" />
+                   </div>
+                 ) : (
+                   <div className="h-32 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center animate-pulse">
+                     <p className="text-[10px] text-white/20 uppercase font-black">A capturar evidência...</p>
+                   </div>
+                 )}
+               </div>
+
+               <div className="space-y-2">
+                 <label className="text-[10px] uppercase tracking-widest font-black text-white/40">Contexto Original</label>
+                 <div className="p-4 bg-white/5 rounded-xl border border-white/5 text-sm text-white/60 italic font-mono">
+                   "{targetData.text}"
+                 </div>
+               </div>
+
+               <div className="space-y-2">
+                 <label className="text-[10px] uppercase tracking-widest font-black text-white/40">Correção Sugerida</label>
+                 <textarea 
+                   value={fix}
+                   onChange={(e) => setFix(e.target.value)}
+                   placeholder="Insira a correção final aqui..."
+                   className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-white focus:outline-none focus:border-cyan-400/50 min-h-[80px]"
+                 />
+               </div>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <label className="text-[10px] uppercase tracking-widest font-black text-white/40">Texto Original Detectado</label>
-              <div className="p-4 bg-white/5 rounded-xl border border-white/5 text-sm text-white/60 font-mono italic">
-                "{targetData.text}"
-              </div>
+          {/* Right Side: Agent Consultation */}
+          <div className="bg-white/2 flex flex-col">
+            <div className="p-6 border-b border-white/5 bg-white/2 flex items-center gap-3">
+              <Bot size={16} className="text-violet-400" />
+              <span className="text-[10px] font-black uppercase tracking-widest text-violet-400">Consultar Especialista: {agent.split(' | ')[0]}</span>
+            </div>
+            
+            <div className="flex-1 p-6 overflow-y-auto space-y-4 min-h-[300px]">
+               {chatLog.map((msg, i) => (
+                 <div key={i} className={`flex ${msg.role === 'agent' ? 'justify-start' : 'justify-end'}`}>
+                   <div className={`max-w-[85%] p-3 rounded-2xl text-[11px] leading-relaxed ${
+                     msg.role === 'agent' 
+                     ? 'bg-violet-600/10 border border-violet-500/20 text-violet-200' 
+                     : 'bg-white/5 border border-white/10 text-white/80'
+                   }`}>
+                     {msg.text}
+                   </div>
+                 </div>
+               ))}
+               <div ref={chatEndRef} />
             </div>
 
-            <div className="space-y-2">
-              <label className="text-[10px] uppercase tracking-widest font-black text-white/40">Correção Sugerida (pt-PT)</label>
-              <textarea 
-                value={fix}
-                onChange={(e) => setFix(e.target.value)}
-                placeholder="Insira a tradução correta ou ajuste de conteúdo..."
-                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-white focus:outline-none focus:border-cyan-400/50 transition-all min-h-[100px]"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-[10px] uppercase tracking-widest font-black text-white/40">Atribuir a Especialista</label>
-              <select 
-                value={agent}
-                onChange={(e) => setAgent(e.target.value)}
-                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-white appearance-none"
-              >
-                <option value="Tiago | pt-PT Linguist">Tiago | Linguagem e Cultura</option>
-                <option value="Elena | Loc Lead">Elena | Conformidade e Estratégia</option>
-                <option value="Marcus | Security Analyst">Marcus | Segurança e Integridade</option>
-              </select>
+            <div className="p-4 bg-black/20 border-t border-white/5 flex gap-2">
+               <input 
+                 type="text" 
+                 value={inputText}
+                 onChange={e => setInputText(e.target.value)}
+                 onKeyDown={e => e.key === 'Enter' && handleConsult()}
+                 placeholder="Perguntar ao agente..."
+                 className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-xs text-white"
+               />
+               <button 
+                 onClick={handleConsult}
+                 disabled={isConsulting || !inputText}
+                 className="p-2 bg-violet-500/20 rounded-xl text-violet-400 hover:bg-violet-500/30 transition-all disabled:opacity-30"
+               >
+                 <Send size={16} />
+               </button>
             </div>
           </div>
+        </div>
 
+        <div className="p-8 bg-white/2 border-t border-white/5">
           {successKey ? (
-            <div className="py-8 text-center space-y-4 animate-in fade-in zoom-in duration-300">
-              <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto border border-emerald-500/30">
-                <Shield size={32} className="text-emerald-400" />
-              </div>
-              <div>
-                <p className="text-emerald-400 font-bold">Enviado com Sucesso!</p>
-                <p className="text-[10px] text-white/40 uppercase tracking-widest font-black">Ticket Jira: {successKey}</p>
-              </div>
-            </div>
+             <div className="flex items-center justify-center gap-4 text-emerald-400 font-bold animate-in zoom-in duration-300">
+               <Shield size={20} />
+               <span>REPORTADO COM SUCESSO: {successKey}</span>
+             </div>
           ) : (
             <button 
               onClick={handleSubmit}
               disabled={isSubmitting || !fix}
-              className="w-full py-4 bg-cyan-400/20 hover:bg-cyan-400/30 border border-cyan-400/30 rounded-2xl flex items-center justify-center gap-2 text-cyan-400 font-bold transition-all disabled:opacity-30 disabled:grayscale"
+              className="w-full py-4 bg-cyan-400/20 hover:bg-cyan-400/30 border border-cyan-400/30 rounded-2xl flex items-center justify-center gap-3 text-cyan-400 font-bold transition-all disabled:opacity-30"
             >
-              {isSubmitting ? 'A Sincronizar com Jira...' : (
-                <>
-                  <Send size={18} />
-                  Submeter para Auditoria de Agente
-                </>
-              )}
+              <Send size={18} />
+              {isSubmitting ? 'A Sincronizar com Jira...' : 'Submeter Auditoria Final'}
             </button>
           )}
         </div>
