@@ -25,11 +25,13 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { resumeData as resumeEn } from '../data/resume/en';
 import { resumeData as resumePt } from '../data/resume/pt';
-import { personalInfo } from '../data/mock';
+import { personalInfo as personalInfoEN } from '../data/site/en';
+import { personalInfo as personalInfoPT } from '../data/site/pt';
 
 const Resume = () => {
   const { t, i18n } = useTranslation();
   const resumeData = i18n.language.startsWith('pt') ? resumePt : resumeEn;
+  const personalInfo = i18n.language.startsWith('pt') ? personalInfoPT : personalInfoEN;
 
   return (
     <div className="min-h-screen bg-white">

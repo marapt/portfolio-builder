@@ -227,5 +227,41 @@
     "contact": "Contacto",
     "linkedin": "LinkedIn",
     "get_in_touch": "Entrar em Contacto"
+  },
+  "scrum": {
+    "title": "Quadro Agile em Direto",
+    "desc": "Sincronização em tempo real com a Jira Cloud. Este quadro demonstra como faço a gestão de fluxos de trabalho complexos com transparência e agilidade de nível empresarial.",
+    "sync": "Sincronizar Dados",
+    "snapshot": "Captura Local",
+    "active_sprint": "Sprint Ativa",
+    "strategic_roadmap": "Roteiro Estratégico",
+    "phase_tag": "Fase 04: Construção",
+    "completion": "Conclusão da Sprint",
+    "ends": "Termina",
+    "no_sprint": "Nenhuma sprint ativa encontrada.",
+    "establishing_tunnel": "Estabelecendo Túnel Seguro para a Jira...",
+    "sync_unavailable": "Sincronização em Direto Indisponível",
+    "error_connect": "Não foi possível ligar à Jira ou obter o estado local do projeto.",
+    "priority": "Prioridade",
+    "current_status": "Estado Atual",
+    "delivery_target": "Meta de Entrega",
+    "executive_summary": "Resumo Executivo",
+    "no_description": "Nenhum resumo estratégico fornecido para este fluxo de trabalho.",
+    "stakeholder_insights": "Insights de Stakeholders",
+    "insight_quote": "A monitorização deste fluxo de trabalho através da automação da Jira mantém a velocidade e garante 100% de transparência arquitetónica em todo o pipeline de localização.",
+    "enterprise_sync": "SINCRONIZAÇÃO EMPRESARIAL ATIVA",
+    "request_access": "SOLICITAR ACESSO TOTAL",
+    "columns": {
+      "todo": "Para Fazer",
+      "progress": "Em Curso",
+      "done": "Concluído"
+    },
+    "phases": {
+      "discovery": "Descoberta",
+      "strategy": "Estratégia e IA",
+      "infra": "Infraestrutura",
+      "production": "Produção",
+      "launch": "Lançamento"
+    }
   }
 }

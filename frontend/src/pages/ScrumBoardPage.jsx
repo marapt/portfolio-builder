@@ -15,7 +15,10 @@ import {
 } from '../components/ui/sheet';
 import { Button } from '../components/ui/button';
 
+import { useTranslation } from 'react-i18next';
+
 const ScrumBoardPage = () => {
+  const { t, i18n } = useTranslation();
   const [boardData, setBoardData] = useState(null);
   const [sprints, setSprints] = useState([]);
   const [roadmapData, setRoadmapData] = useState(null);
@@ -81,13 +84,14 @@ const ScrumBoardPage = () => {
       setRoadmapData(finalRoadmap);
       
       if (!finalBoard && !finalRoadmap) {
-        setError("Unable to connect to Jira or retrieve local project status.");
+        setError(t('scrum.error_connect'));
       } else {
         setError(null);
       }
     } catch (err) {
       setError(err.message);
     } finally {
+      // Ensure loading spinner clears correctly
       setLoading(false);
     }
   };
@@ -97,26 +101,31 @@ const ScrumBoardPage = () => {
   }, []);
 
   const columns = ['To Do', 'In Progress', 'Done'];
+  const columnLabels = {
+    'To Do': t('scrum.columns.todo'),
+    'In Progress': t('scrum.columns.progress'),
+    'Done': t('scrum.columns.done')
+  };
 
   // Map Jira statuses to our board columns safely
   const getIssuesByColumn = (col) => {
     if (!boardData?.issues) return [];
     return boardData.issues.filter(i => {
       const status = i.status.toLowerCase();
-      if (col === 'To Do') return status === 'to do' || status === 'open' || status === 'backlog';
+      if (col === 'To Do') return status === 'to do' || status === 'open' || status === 'backlog' || status === 'todo';
       if (col === 'In Progress') return status === 'in progress' || status === 'doing' || status === 'in review';
       if (col === 'Done') return status === 'done' || status === 'completed' || status === 'closed';
       return false;
     });
   };
 
-  // Hardcoded phases but with dynamic highlighting potential if we find a match
+  // Hardcoded phases but localized
   const roadmapPhases = [
-    { label: 'Discovery', status: 'completed' },
-    { label: 'Strategy & IA', status: 'completed' },
-    { label: 'Infrastructure', status: 'completed' },
-    { label: 'Production', status: 'current' },
-    { label: 'Launch', status: 'upcoming' }
+    { label: t('scrum.phases.discovery'), status: 'completed' },
+    { label: t('scrum.phases.strategy'), status: 'completed' },
+    { label: t('scrum.phases.infra'), status: 'completed' },
+    { label: t('scrum.phases.production'), status: 'current' },
+    { label: t('scrum.phases.launch'), status: 'upcoming' }
   ];
 
   return (
@@ -126,16 +135,15 @@ const ScrumBoardPage = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight">Live Agile Board</h1>
+              <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight">{t('scrum.title')}</h1>
               {isLocalFallback && (
-                <Badge className="bg-amber-100 text-amber-700 hover:bg-amber-100 border-amber-200 flex items-center gap-1 py-1">
-                  <ShieldCheck size={12} /> Local Snapshot
+                <Badge className="bg-amber-100 text-amber-700 hover:bg-amber-100 border-amber-200 flex items-center gap-1 py-1 text-[10px] font-black uppercase">
+                  <ShieldCheck size={12} /> {t('scrum.snapshot')}
                 </Badge>
               )}
             </div>
             <p className="text-gray-500 max-w-2xl text-lg font-medium leading-relaxed">
-              Real-time synchronization with Jira Cloud. This board demonstrates how I manage 
-              complex workstreams with enterprise-grade transparency and agility.
+              {t('scrum.desc')}
             </p>
           </div>
           <button 
@@ -144,7 +152,7 @@ const ScrumBoardPage = () => {
             className="group flex items-center gap-3 bg-white border border-gray-200 px-5 py-2.5 rounded-full text-indigo-600 font-bold hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-300 shadow-sm"
           >
             <RefreshCw size={18} className={`${loading ? 'animate-spin text-indigo-400' : 'group-hover:rotate-180 transition-transform duration-500'}`} />
-            Sync Data
+            {t('scrum.sync')}
           </button>
         </div>
 
@@ -158,7 +166,7 @@ const ScrumBoardPage = () => {
                   <div className="p-2 bg-indigo-50 rounded-lg">
                     <BarChart3 size={20} />
                   </div>
-                  <span className="font-bold text-[10px] uppercase tracking-[0.2em]">Active Sprint</span>
+                  <span className="font-bold text-[10px] uppercase tracking-[0.2em]">{t('scrum.active_sprint')}</span>
                 </div>
                 {sprints.filter(s => s.state === 'active').map(sprint => (
                   <div key={sprint.id} className="space-y-8">
@@ -169,7 +177,7 @@ const ScrumBoardPage = () => {
                     
                     <div className="space-y-3">
                       <div className="flex justify-between text-[11px] font-black text-gray-400 uppercase tracking-wider">
-                        <span>Sprint Completion</span>
+                        <span>{t('scrum.completion')}</span>
                         <span className="text-indigo-600">
                           {boardData.issues.length > 0 ? Math.round((getIssuesByColumn('Done').length / boardData.issues.length) * 100) : 0}%
                         </span>
@@ -184,7 +192,7 @@ const ScrumBoardPage = () => {
                       <div className="flex items-center gap-2 text-gray-400 bg-gray-50 px-3 py-1.5 rounded-lg">
                         <Clock size={14} className="text-indigo-400" />
                         <span className="text-[11px] font-bold">
-                          Ends: {sprint.endDate ? new Date(sprint.endDate).toLocaleDateString() : 'Rolling'}
+                          {t('scrum.ends')}: {sprint.endDate ? new Date(sprint.endDate).toLocaleDateString() : t('common.rolling')}
                         </span>
                       </div>
                     </div>
@@ -192,7 +200,7 @@ const ScrumBoardPage = () => {
                 ))}
                 {sprints.filter(s => s.state === 'active').length === 0 && (
                   <div className="py-10 text-center border-2 border-dashed border-gray-100 rounded-2xl bg-gray-50/50">
-                    <p className="text-sm font-semibold text-gray-400">No active sprint found.</p>
+                    <p className="text-sm font-semibold text-gray-400">{t('scrum.no_sprint')}</p>
                   </div>
                 )}
               </CardContent>
@@ -206,9 +214,9 @@ const ScrumBoardPage = () => {
                     <div className="p-2 bg-purple-50 rounded-lg">
                       <Rocket size={20} />
                     </div>
-                    <span className="font-bold text-[10px] uppercase tracking-[0.2em]">Strategic Roadmap</span>
+                    <span className="font-bold text-[10px] uppercase tracking-[0.2em]">{t('scrum.strategic_roadmap')}</span>
                   </div>
-                  <Badge className="bg-purple-600 text-white hover:bg-purple-700 border-0 px-3 py-1 text-[10px] font-bold shadow-lg shadow-purple-200 uppercase tracking-widest">Phase 04: Build</Badge>
+                  <Badge className="bg-purple-600 text-white hover:bg-purple-700 border-0 px-3 py-1 text-[10px] font-bold shadow-lg shadow-purple-200 uppercase tracking-widest">{t('scrum.phase_tag')}</Badge>
                 </div>
 
                 <div className="relative flex justify-between px-2">
@@ -238,16 +246,16 @@ const ScrumBoardPage = () => {
                 <Loader2 className="w-16 h-16 animate-spin text-indigo-600 opacity-20" />
                 <Loader2 className="w-16 h-16 animate-spin text-indigo-600 absolute top-0 left-0" style={{ animationDirection: 'reverse', animationDuration: '3s' }} />
             </div>
-            <p className="text-gray-400 font-bold tracking-tighter uppercase text-xs">Establishing Secure Tunnel to Jira...</p>
+            <p className="text-gray-400 font-bold tracking-tighter uppercase text-xs">{t('scrum.establishing_tunnel')}</p>
           </div>
         ) : error && !boardData ? (
           <div className="bg-white border border-red-100 p-12 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] text-center max-w-2xl mx-auto">
             <div className="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
               <AlertCircle className="w-10 h-10 text-red-500" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Live Sync Unavailable</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('scrum.sync_unavailable')}</h3>
             <p className="text-gray-500 mb-8 font-medium leading-relaxed">{error}</p>
-            <Button onClick={loadData} className="bg-gray-900 text-white hover:bg-black px-8 py-6 rounded-2xl font-bold">Try Again</Button>
+            <Button onClick={loadData} className="bg-gray-900 text-white hover:bg-black px-8 py-6 rounded-2xl font-bold">{t('common.try_again')}</Button>
           </div>
         ) : (
           <div className="grid md:grid-cols-3 gap-10">
@@ -256,7 +264,7 @@ const ScrumBoardPage = () => {
                 <div className="flex items-center justify-between px-4">
                   <div className="flex items-center gap-3">
                     <div className={`w-2 h-2 rounded-full ${col === 'Done' ? 'bg-green-500' : col === 'In Progress' ? 'bg-amber-500' : 'bg-gray-400'}`} />
-                    <h2 className="font-black text-gray-900 uppercase tracking-[0.25em] text-[11px]">{col}</h2>
+                    <h2 className="font-black text-gray-900 uppercase tracking-[0.25em] text-[11px]">{columnLabels[col]}</h2>
                   </div>
                   <Badge variant="outline" className="bg-white text-gray-400 border-gray-100 font-bold px-3">
                     {getIssuesByColumn(col).length}
@@ -308,7 +316,8 @@ const ScrumBoardPage = () => {
                       {selectedIssue.key}
                     </Badge>
                     <Badge className={`${selectedIssue.priority === 'High' ? 'bg-red-500' : 'bg-emerald-500'} font-black text-[10px] px-3 py-1 shadow-lg shadow-black/5`}>
-                      {selectedIssue.priority} PRIORITY
+                    <Badge className={`${selectedIssue.priority === 'High' ? 'bg-red-500' : 'bg-emerald-500'} font-black text-[10px] px-3 py-1 shadow-lg shadow-black/5`}>
+                      {selectedIssue.priority} {t('scrum.priority').toUpperCase()}
                     </Badge>
                   </div>
                   <SheetTitle className="text-3xl lg:text-4xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
@@ -321,17 +330,17 @@ const ScrumBoardPage = () => {
                   {/* Status & Metadata */}
                   <div className="grid grid-cols-2 gap-6">
                     <div className="p-5 bg-gray-50 rounded-[1.5rem] border border-gray-100 shadow-inner">
-                      <p className="text-[10px] font-black text-gray-400 uppercase mb-2 tracking-widest">Current Status</p>
+                      <p className="text-[10px] font-black text-gray-400 uppercase mb-2 tracking-widest">{t('scrum.current_status')}</p>
                       <p className="text-lg font-extrabold text-gray-900 flex items-center gap-2">
                         <div className={`w-2 h-2 rounded-full ${selectedIssue.status === 'Done' ? 'bg-emerald-500' : 'bg-indigo-500'}`} />
                         {selectedIssue.status}
                       </p>
                     </div>
                     <div className="p-5 bg-gray-50 rounded-[1.5rem] border border-gray-100 shadow-inner">
-                      <p className="text-[10px] font-black text-gray-400 uppercase mb-2 tracking-widest">Delivery Target</p>
+                      <p className="text-[10px] font-black text-gray-400 uppercase mb-2 tracking-widest">{t('scrum.delivery_target')}</p>
                       <p className={`text-lg font-extrabold flex items-center gap-2 ${selectedIssue.duedate && new Date(selectedIssue.duedate) < new Date() ? 'text-red-600' : 'text-gray-900'}`}>
                         <Calendar size={18} className="text-indigo-600" />
-                        {selectedIssue.duedate ? new Date(selectedIssue.duedate).toLocaleDateString() : 'Rolling'}
+                        {selectedIssue.duedate ? new Date(selectedIssue.duedate).toLocaleDateString() : t('common.rolling')}
                       </p>
                     </div>
                   </div>
@@ -350,23 +359,22 @@ const ScrumBoardPage = () => {
                   {/* Description Section */}
                   <div className="space-y-4">
                     <h4 className="flex items-center gap-2 text-[11px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                      <Tag size={16} className="text-indigo-400" /> Executive Summary
+                      <Tag size={16} className="text-indigo-400" /> {t('scrum.executive_summary')}
                     </h4>
                     <div className="text-gray-600 leading-relaxed text-base whitespace-pre-wrap bg-white border border-gray-100 p-8 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.03)] font-medium">
-                      {selectedIssue.description || "No strategic overview provided for this workstream."}
+                      {selectedIssue.description || t('scrum.no_description')}
                     </div>
                   </div>
 
                   {/* Program Management Insights */}
                   <div className="p-6 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-[2rem] text-white shadow-xl shadow-indigo-100">
-                    <h4 className="text-[10px] font-black text-white/50 uppercase mb-3 tracking-widest">Stakeholder Insights</h4>
+                    <h4 className="text-[10px] font-black text-white/50 uppercase mb-3 tracking-widest">{t('scrum.stakeholder_insights')}</h4>
                     <p className="text-sm text-white/90 leading-relaxed font-bold italic tracking-tight">
-                      "Tracking this workstream through live Jira automation maintains velocity and ensures 
-                      100% architectural transparency across the localization pipeline."
+                      "{t('scrum.insight_quote')}"
                     </p>
                     <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
                       <span className="text-[9px] text-white/40 font-black tracking-[0.2em] flex items-center gap-2">
-                         <ShieldCheck size={12} /> ENTERPRISE SYNC ACTIVE
+                         <ShieldCheck size={12} /> {t('scrum.enterprise_sync')}
                       </span>
                       <span className="text-[9px] text-white/40 italic font-bold">{new Date().toLocaleDateString()}</span>
                     </div>
@@ -380,11 +388,11 @@ const ScrumBoardPage = () => {
                       className="w-full bg-indigo-600 hover:bg-black text-white font-black py-8 rounded-[1.5rem] shadow-2xl shadow-indigo-200 text-lg transition-all duration-500"
                     >
                       <a href="https://calendly.com/maramartins" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3">
-                        REQUEST FULL ACCESS <ExternalLink size={20} />
+                        {t('scrum.request_access')} <ExternalLink size={20} />
                       </a>
                     </Button>
                     <p className="text-[10px] text-gray-300 font-extrabold uppercase tracking-widest">
-                       &copy; {new Date().getFullYear()} MARA MARTINS &bull; ALL RIGHTS RESERVED
+                       &copy; {new Date().getFullYear()} MARA MARTINS &bull; {t('footer.rights')}
                     </p>
                   </div>
                 </SheetFooter>

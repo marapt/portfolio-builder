@@ -186,5 +186,41 @@
     "contact": "Contact",
     "linkedin": "LinkedIn",
     "get_in_touch": "Get in Touch"
+  },
+  "scrum": {
+    "title": "Live Agile Board",
+    "desc": "Real-time synchronization with Jira Cloud. This board demonstrates how I manage complex workstreams with enterprise-grade transparency and agility.",
+    "sync": "Sync Data",
+    "snapshot": "Local Snapshot",
+    "active_sprint": "Active Sprint",
+    "strategic_roadmap": "Strategic Roadmap",
+    "phase_tag": "Phase 04: Build",
+    "completion": "Sprint Completion",
+    "ends": "Ends",
+    "no_sprint": "No active sprint found.",
+    "establishing_tunnel": "Establishing Secure Tunnel to Jira...",
+    "sync_unavailable": "Live Sync Unavailable",
+    "error_connect": "Unable to connect to Jira or retrieve local project status.",
+    "priority": "Priority",
+    "current_status": "Current Status",
+    "delivery_target": "Delivery Target",
+    "executive_summary": "Executive Summary",
+    "no_description": "No strategic overview provided for this workstream.",
+    "stakeholder_insights": "Stakeholder Insights",
+    "insight_quote": "Tracking this workstream through live Jira automation maintains velocity and ensures 100% architectural transparency across the localization pipeline.",
+    "enterprise_sync": "ENTERPRISE SYNC ACTIVE",
+    "request_access": "REQUEST FULL ACCESS",
+    "columns": {
+      "todo": "To Do",
+      "progress": "In Progress",
+      "done": "Done"
+    },
+    "phases": {
+      "discovery": "Discovery",
+      "strategy": "Strategy & IA",
+      "infra": "Infrastructure",
+      "production": "Production",
+      "launch": "Launch"
+    }
   }
 }
