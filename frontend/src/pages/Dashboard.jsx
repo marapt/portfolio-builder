@@ -230,7 +230,7 @@ const statusConfig = {
 };
 
 const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const cfg = statusConfig[finding.status] || statusConfig.WARNING;
   const [showExplanation, setShowExplanation] = React.useState(false);
   const [showChat, setShowChat] = React.useState(false);

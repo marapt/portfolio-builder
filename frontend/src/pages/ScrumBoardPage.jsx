@@ -55,14 +55,14 @@ const ScrumBoardPage = () => {
         
         // Transform local tasks into board-like structure
         finalBoard = {
-          issues: (finalRoadmap.tasks || []).map(t => ({
-            key: t.key,
-            summary: t.summary,
-            status: t.status,
-            priority: t.priority || 'Medium',
+          issues: (finalRoadmap.tasks || []).map(task => ({
+            key: task.key,
+            summary: task.summary,
+            status: task.status,
+            priority: task.priority || 'Medium',
             updated: new Date().toISOString(),
-            description: t.description || 'Synced from local project status.',
-            labels: t.labels || [],
+            description: task.description || 'Synced from local project status.',
+            labels: task.labels || [],
             url: '#'
           })),
           last_synced: new Date().toISOString()
@@ -401,7 +401,7 @@ const ScrumBoardPage = () => {
           </SheetContent>
         </Sheet>
       </main>
-      <style jsx>{`
+      <style>{`
         .status-glow {
           text-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
         }
