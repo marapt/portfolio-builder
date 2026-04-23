@@ -6,7 +6,7 @@ import re
 from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 from pathlib import Path
-from typing import List, Optional
+from typing import Optional
 
 import httpx
 from dotenv import load_dotenv
@@ -218,7 +218,7 @@ async def create_status_check(input: StatusCheckCreate, db=Depends(get_db)):
     await db.status_checks.insert_one(doc)
     return status_obj
 
-@api_router.get("/status", response_model=List[StatusCheck])
+@api_router.get("/status", response_model=list[StatusCheck])
 async def get_status_checks(db=Depends(get_db)):
     cursor = db.status_checks.find({}, {"_id": 0})
     checks = await cursor.to_list(1000)
