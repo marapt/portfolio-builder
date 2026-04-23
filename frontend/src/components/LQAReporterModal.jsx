@@ -104,7 +104,7 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center p-6 bg-black/80 backdrop-blur-md">
+    <div id="lqa-modal" className="fixed inset-0 z-[999] flex items-center justify-center p-6 bg-black/80 backdrop-blur-md">
       <div className="glass-card w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-[2.5rem] border border-white/10 shadow-2xl flex flex-col">
         <div className="p-8 border-b border-white/5 flex justify-between items-center bg-white/2">
           <div className="flex items-center gap-4">

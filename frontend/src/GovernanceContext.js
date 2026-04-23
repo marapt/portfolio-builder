@@ -16,11 +16,14 @@ export const GovernanceProvider = ({ children }) => {
     }
 
     const handleGlobalClick = (e) => {
-      // Allow navigation and buttons
-      if (e.target.closest('a') || e.target.closest('button')) return;
-
-      // Only trigger if Audit Mode is active
+      // 1. Ignore if mode is off
       if (!isAuditMode) return;
+
+      // 2. Ignore clicks inside the LQA modal itself (to prevent meta-reporting)
+      if (e.target.closest('.glass-card') || e.target.closest('#lqa-modal')) return;
+
+      // 3. Allow navigation and button clicks
+      if (e.target.closest('a') || e.target.closest('button')) return;
 
       // If text is being selected (dragged), don't trigger the modal
       if (window.getSelection().toString().length > 0) return;
