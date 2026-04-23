@@ -178,12 +178,15 @@ const Dashboard = () => {
           <p className="text-[10px] font-black uppercase tracking-widest text-white/20 flex items-center gap-2">
             <Bot size={11} /> {t('dashboard.fleet')}
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {AGENT_FLEET.map(agent => (
-              <div key={agent.name} className={`glass-card p-4 rounded-2xl ${agent.bg} border border-white/5 space-y-2 hover:translate-y-[-2px] transition-all`}>
-                <agent.icon size={14} className={agent.color} />
+              <div key={agent.name} className={`glass-card p-4 rounded-2xl ${agent.bg} border border-white/5 space-y-2 hover:translate-y-[-2px] transition-all group cursor-help`}>
+                <div className="flex justify-between items-start">
+                  <agent.icon size={14} className={agent.color} />
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.4)]" />
+                </div>
                 <p className={`text-[10px] font-black uppercase tracking-wider ${agent.color}`}>{agent.name}</p>
-                <p className="text-[9px] text-white/30 leading-relaxed font-black">{agent.role}</p>
+                <p className="text-[9px] text-white/30 leading-relaxed font-black group-hover:text-white/50 transition-colors">{agent.role}</p>
               </div>
             ))}
           </div>
