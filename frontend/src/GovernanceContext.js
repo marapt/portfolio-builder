@@ -9,13 +9,21 @@ export const GovernanceProvider = ({ children }) => {
   const [targetData, setTargetData] = useState(null);
 
   useEffect(() => {
-    if (!isAuditMode) return;
+    if (isAuditMode) {
+      document.body.classList.add('audit-mode');
+    } else {
+      document.body.classList.remove('audit-mode');
+    }
 
     const handleGlobalClick = (e) => {
-      // Allow navigation and button clicks even in audit mode
-      if (e.target.closest('a') || e.target.closest('button')) {
-          return; 
-      }
+      // Allow navigation and buttons
+      if (e.target.closest('a') || e.target.closest('button')) return;
+
+      // Only trigger if Audit Mode is active
+      if (!isAuditMode) return;
+
+      // If text is being selected (dragged), don't trigger the modal
+      if (window.getSelection().toString().length > 0) return;
 
       e.preventDefault();
       e.stopPropagation();
@@ -30,12 +38,8 @@ export const GovernanceProvider = ({ children }) => {
       }
     };
 
-    // Add overlay class to body to show annotation cursor
-    document.body.classList.add('annotation-mode-active');
     document.addEventListener('click', handleGlobalClick, true);
-
     return () => {
-      document.body.classList.remove('annotation-mode-active');
       document.removeEventListener('click', handleGlobalClick, true);
     };
   }, [isAuditMode]);
