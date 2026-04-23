@@ -44,6 +44,19 @@ MOCK_FINDINGS = [
     "resolution": "Bloqueado aguardando refatoração de mock.js e mapeamento dinâmico no Hero.jsx.",
   },
   {
+    "id": "qa-004",
+    "agent": "Sofia | LQC Engineer",
+    "status": "PASS",
+    "message": "Sincronização de chaves de tradução verificada entre en-US e pt-PT.",
+    "message_en": "Translation key sync verified between en-US and pt-PT.",
+    "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    "category": "Linguistic Quality Check",
+    "explanation": "A estrutura dos ficheiros JSON de localização deve ser idêntica para evitar erros de renderização.",
+    "interactionLog": [
+      { "role": "agent", "name": "Sofia | LQC Engineer", "time": "10:15", "text": "LQC Pass. Ficheiros JSON validados estruturalmente." }
+    ],
+  },
+  {
     "id": "qa-005",
     "agent": "Marcus | Security Analyst",
     "status": "PASS",

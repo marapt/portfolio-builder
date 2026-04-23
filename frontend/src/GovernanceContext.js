@@ -12,7 +12,7 @@ export const GovernanceProvider = ({ children }) => {
     if (!isAuditMode) return;
 
     const handleGlobalClick = (e) => {
-      // Prevent default navigation if in audit mode
+      // Prevent default navigation if in annotation mode
       e.preventDefault();
       e.stopPropagation();
 
@@ -26,12 +26,12 @@ export const GovernanceProvider = ({ children }) => {
       }
     };
 
-    // Add overlay class to body to show audit cursor
-    document.body.classList.add('audit-mode-active');
+    // Add overlay class to body to show annotation cursor
+    document.body.classList.add('annotation-mode-active');
     document.addEventListener('click', handleGlobalClick, true);
 
     return () => {
-      document.body.classList.remove('audit-mode-active');
+      document.body.classList.remove('annotation-mode-active');
       document.removeEventListener('click', handleGlobalClick, true);
     };
   }, [isAuditMode]);
@@ -51,7 +51,7 @@ export const GovernanceProvider = ({ children }) => {
       {isAuditMode && (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[1000] px-6 py-3 bg-red-600 text-white font-black uppercase tracking-[0.2em] rounded-full shadow-2xl animate-pulse flex items-center gap-3 border-2 border-white/20">
           <div className="w-2 h-2 bg-white rounded-full animate-ping" />
-          MODO LQA ATIVO: Clique em qualquer erro para reportar
+          MODO DE ANOTAÇÃO ATIVO: Clique em qualquer erro para reportar
         </div>
       )}
     </GovernanceContext.Provider>

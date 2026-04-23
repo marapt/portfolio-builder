@@ -17,6 +17,7 @@ from starlette.middleware.cors import CORSMiddleware
 import google.generativeai as genai
 
 from data.seed_data import MOCK_FINDINGS
+from local_db import LocalDB
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -93,11 +94,11 @@ async def lifespan(app: FastAPI):
             app.state.db = client[db_name]
             logger.info(f"Connected to MongoDB: {db_name}")
         except Exception as e:
-            logger.error(f"Failed to connect to MongoDB: {e}")
-            app.state.db = None
+            logger.error(f"Failed to connect to MongoDB: {e}. Falling back to Local JSON DB.")
+            app.state.db = LocalDB()
     else:
-        logger.warning("MONGO_URL/DB_NAME not set. Running without persistent storage.")
-        app.state.db = None
+        logger.warning("MONGO_URL/DB_NAME not set. Falling back to Local JSON DB.")
+        app.state.db = LocalDB()
 
     # 2. HTTPX Client for external proxies
     app.state.http_client = httpx.AsyncClient(timeout=10.0)
@@ -446,26 +447,59 @@ async def get_governance_findings(db=Depends(get_db)):
     findings = await cursor.to_list(100)
     return findings
 
+@api_router.post("/governance/auth")
+async def verify_governance_access(payload: dict):
+    """Verify the access key against the internal secret."""
+    key = payload.get("key")
+    if key == os.environ.get("INTERNAL_API_KEY"):
+        return {"status": "success", "token": "session_active"}
+    raise HTTPException(status_code=401, detail="Chave de Acesso Inválida")
+
+@api_router.post("/governance/findings/batch")
+async def batch_upsert_findings(findings: List[dict], db=Depends(get_db), _ = Depends(verify_api_key)):
+    """Allow automated agents to push a full suite of findings in one go."""
+    # To keep the dashboard clean and reflecting only the LATEST audit,
+    # we clear previous automated findings and insert the new batch.
+    # We preserve manual LQA reports (ids starting with 'lqa-').
+    
+    await db.findings.delete_many({"id": {"$not": re.compile(r"^lqa-")}})
+    
+    # Ensure every finding has a timestamp and a unique ID if missing
+    for f in findings:
+        if "id" not in f:
+            f["id"] = f"qa-{uuid.uuid4().hex[:6]}"
+        if "timestamp" not in f:
+            f["timestamp"] = datetime.now(timezone.utc).isoformat()
+            
+    if findings:
+        await db.findings.insert_many(findings)
+        
+    return {"status": "success", "count": len(findings)}
+
 @api_router.post("/governance/report")
 async def create_governance_report(report: dict, db=Depends(get_db), _ = Depends(verify_api_key)):
     """Handle visual LQA reports: Create Jira issue and update MongoDB findings."""
     config = get_jira_config()
     
     # 1. Create Jira Issue
-    summary = f"[LQA AUDIT] {report.get('agent', 'Tiago')} - {report.get('originalText')[:30]}..."
+    agent_name = report.get('agent', 'Tiago')
+    is_legal = "Elena" in agent_name or "Marcus" in agent_name
+    project_key = "LEGAL" if is_legal else "PJM"
+    
+    summary = f"[{'LEGAL' if is_legal else 'LQA'}] {agent_name} - {report.get('originalText')[:30]}..."
     description = (
-        f"LQA Bug Report from Mara Martins Live Audit\n\n"
+        f"{'LEGAL' if is_legal else 'LQA'} Bug Report from Mara Martins Live Audit\n\n"
         f"Element: {report.get('selector')}\n"
         f"Original Text (EN): {report.get('originalText')}\n"
         f"Suggested Fix ({report.get('locale', 'pt-PT')}): {report.get('suggestedFix')}\n"
         f"Page: {report.get('url')}\n\n"
-        f"Assigned Agent Specialty: {report.get('agent')}"
+        f"Assigned Agent Specialty: {agent_name}"
     )
     
     jira_url = f"{config['url']}/rest/api/2/issue"
     payload = {
         "fields": {
-            "project": {"key": "PJM"},
+            "project": {"key": project_key},
             "summary": summary,
             "description": description,
             "issuetype": {"name": "Task"}

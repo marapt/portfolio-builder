@@ -13,8 +13,43 @@ const Dashboard = () => {
   const [queue, setQueue] = useState([]);
   const [decisions, setDecisions] = useState({});
   const [lastAudit] = useState(new Date().toISOString());
+  const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('gov_auth') === 'true');
 
   useEffect(() => {
+    const checkAuth = async () => {
+      if (!isAuthenticated) {
+        const pass = prompt(t("governance.auth_prompt") || "Operações de Governança: Insira a Chave de Acesso");
+        if (!pass) {
+          window.location.href = "/";
+          return;
+        }
+
+        try {
+          // In production, this would hit the API URL. In dev, it hits the vite proxy.
+          const response = await fetch('/api/governance/auth', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ key: pass })
+          });
+
+          if (response.ok) {
+            setIsAuthenticated(true);
+            localStorage.setItem('gov_auth', 'true');
+          } else {
+            alert(t("governance.auth_failed") || "Chave Inválida. Acesso negado.");
+            window.location.href = "/";
+          }
+        } catch (error) {
+          console.error("Auth error:", error);
+          window.location.href = "/";
+        }
+      }
+    };
+    checkAuth();
+  }, [isAuthenticated, t]);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
     fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/governance/findings`)
       .then(res => res.json())
       .then(data => {
@@ -151,7 +186,7 @@ const Dashboard = () => {
             }`}
           >
             <Shield size={14} className={isAuditMode ? 'animate-spin-slow' : ''} />
-            {isAuditMode ? t('dashboard.audit_on') : t('dashboard.activate_audit')}
+            {isAuditMode ? t('dashboard.annotation_on') : t('dashboard.activate_annotation')}
           </button>
         </div>
 
