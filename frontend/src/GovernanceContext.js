@@ -12,7 +12,11 @@ export const GovernanceProvider = ({ children }) => {
     if (!isAuditMode) return;
 
     const handleGlobalClick = (e) => {
-      // Prevent default navigation if in annotation mode
+      // Allow navigation and button clicks even in audit mode
+      if (e.target.closest('a') || e.target.closest('button')) {
+          return; 
+      }
+
       e.preventDefault();
       e.stopPropagation();
 
@@ -49,9 +53,17 @@ export const GovernanceProvider = ({ children }) => {
         }}
       />
       {isAuditMode && (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[1000] px-6 py-3 bg-red-600 text-white font-black uppercase tracking-[0.2em] rounded-full shadow-2xl animate-pulse flex items-center gap-3 border-2 border-white/20">
-          <div className="w-2 h-2 bg-white rounded-full animate-ping" />
-          MODO DE ANOTAÇÃO ATIVO: Clique em qualquer erro para reportar
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[1000] px-6 py-3 bg-red-600 text-white font-black uppercase tracking-[0.2em] rounded-full shadow-2xl animate-pulse flex items-center gap-6 border-2 border-white/20">
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-white rounded-full animate-ping" />
+            <span>MODO DE ANOTAÇÃO ATIVO</span>
+          </div>
+          <button 
+            onClick={() => setIsAuditMode(false)}
+            className="px-4 py-1.5 bg-white text-red-600 rounded-lg text-[10px] hover:bg-white/90 transition-colors"
+          >
+            SAIR DO MODO
+          </button>
         </div>
       )}
     </GovernanceContext.Provider>
