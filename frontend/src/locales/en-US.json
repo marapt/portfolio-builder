@@ -165,5 +165,26 @@
       "copy": "Copy to Clipboard",
       "copied": "Copied!"
     }
+  },
+  "resume": {
+    "back": "Back to Home",
+    "sections": {
+      "summary": "Professional Summary",
+      "experience": "Work Experience",
+      "education": "Education",
+      "continuing_education": "Continuing Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "certifications": "Certifications",
+      "awards": "Awards"
+    },
+    "read_more_linkedin": "Read more on LinkedIn",
+    "cta_title": "Interested in working together?",
+    "cta_desc": "I'm open to Localization Program/Project Manager, AI/Localization Ops, or AI Business/Executive opportunities."
+  },
+  "common": {
+    "contact": "Contact",
+    "linkedin": "LinkedIn",
+    "get_in_touch": "Get in Touch"
   }
 }

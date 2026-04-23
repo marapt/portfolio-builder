@@ -3,11 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Shield, CheckCircle, XCircle, AlertTriangle, Clock, Bot, Users, Zap, Globe, Brain, GitMerge, MessageSquare, Send, ChevronDown, ChevronUp } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useGovernance } from '../GovernanceContext';
 
 // ── Mock data remained the same as it represents live logs ──
 // But we could translate the roles in the fleet list
 const Dashboard = () => {
   const { t } = useTranslation();
+  const { isAuditMode, setIsAuditMode } = useGovernance();
   const [queue, setQueue] = useState([]);
   const [decisions, setDecisions] = useState({});
   const [lastAudit] = useState(new Date().toISOString());
@@ -50,15 +52,15 @@ const Dashboard = () => {
   const mergeBlocked = queue.some(f => (f.status === 'FAIL' || f.status === 'WARNING') && !decisions[f.id]);
 
   const AGENT_FLEET = [
-    { name: 'Elena | Loc Lead', role: 'Localization Governance', icon: Globe, color: 'text-blue-400', bg: 'bg-blue-400/10' },
-    { name: 'David | en-US Linguist', role: 'American English QA', icon: Zap, color: 'text-cyan-400', bg: 'bg-cyan-400/10' },
-    { name: 'Tiago | pt-PT Linguist', role: 'European Portuguese QA', icon: Zap, color: 'text-green-400', bg: 'bg-green-400/10' },
-    { name: 'Sofia | LQC Engineer', role: 'Structural Quality Check', icon: Shield, color: 'text-violet-400', bg: 'bg-violet-400/10' },
-    { name: 'Isabella | LQA Expert', role: 'Semantic & Cultural QA', icon: Brain, color: 'text-fuchsia-400', bg: 'bg-fuchsia-400/10' },
-    { name: 'Lucas | QA Tester', role: '12 E2E Live Tests', icon: CheckCircle, color: 'text-emerald-400', bg: 'bg-emerald-400/10' },
-    { name: 'Sarah | Scrum Master', role: 'Sprint Lifecycle Sync', icon: GitMerge, color: 'text-orange-400', bg: 'bg-orange-400/10' },
-    { name: 'Julia | GTM Strategist', role: 'Worldwide Rollout Plan', icon: Globe, color: 'text-rose-400', bg: 'bg-rose-400/10' },
-    { name: 'Marcus | Security Analyst', role: 'SecOps & Compliance', icon: Shield, color: 'text-indigo-400', bg: 'bg-indigo-400/10' },
+    { name: 'Elena | Loc Lead', role: t('dashboard.fleet_roles.loc_lead'), icon: Globe, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+    { name: 'David | en-US Linguist', role: t('dashboard.fleet_roles.en_linguist'), icon: Zap, color: 'text-cyan-400', bg: 'bg-cyan-400/10' },
+    { name: 'Tiago | pt-PT Linguist', role: t('dashboard.fleet_roles.pt_linguist'), icon: Zap, color: 'text-green-400', bg: 'bg-green-400/10' },
+    { name: 'Sofia | LQC Engineer', role: t('dashboard.fleet_roles.lqc_eng'), icon: Shield, color: 'text-violet-400', bg: 'bg-violet-400/10' },
+    { name: 'Isabella | LQA Expert', role: t('dashboard.fleet_roles.lqa_expert'), icon: Brain, color: 'text-fuchsia-400', bg: 'bg-fuchsia-400/10' },
+    { name: 'Lucas | QA Tester', role: t('dashboard.fleet_roles.qa_tester'), icon: CheckCircle, color: 'text-emerald-400', bg: 'bg-emerald-400/10' },
+    { name: 'Sarah | Scrum Master', role: t('dashboard.fleet_roles.scrum_master'), icon: GitMerge, color: 'text-orange-400', bg: 'bg-orange-400/10' },
+    { name: 'Julia | GTM Strategist', role: t('dashboard.fleet_roles.gtm_strat'), icon: Globe, color: 'text-rose-400', bg: 'bg-rose-400/10' },
+    { name: 'Marcus | Security Analyst', role: t('dashboard.fleet_roles.sec_analyst'), icon: Shield, color: 'text-indigo-400', bg: 'bg-indigo-400/10' },
   ];
 
   return (
@@ -66,7 +68,8 @@ const Dashboard = () => {
       <Header />
       <div className="pt-28 pb-24 max-w-5xl mx-auto px-6 lg:px-8 space-y-12">
         {/* ── Public Showcase Header ── */}
-        <div className="space-y-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-6">
           <div className="flex items-start gap-4">
             <div className="p-3 rounded-2xl bg-violet-600/20 flex-shrink-0 animate-pulse">
               <Shield size={24} className="text-violet-400" />
@@ -137,6 +140,18 @@ const Dashboard = () => {
               ))}
             </div>
           </div>
+
+          <button 
+            onClick={() => setIsAuditMode(!isAuditMode)}
+            className={`px-8 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] transition-all border-2 flex items-center gap-3 shrink-0 ${
+              isAuditMode 
+              ? 'bg-red-500/10 border-red-500/50 text-red-400 shadow-[0_0_20px_rgba(239,68,68,0.2)]' 
+              : 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10'
+            }`}
+          >
+            <Shield size={14} className={isAuditMode ? 'animate-spin-slow' : ''} />
+            {isAuditMode ? t('dashboard.audit_on') : t('dashboard.activate_audit')}
+          </button>
         </div>
 
         {/* Stats Bar */}
@@ -274,9 +289,9 @@ const FindingCard = ({ finding, onApprove, onBlock, decision }) => {
         </div>
         {!decision && (
           <div className="mt-4 flex gap-2">
-            <button onClick={() => onApprove(finding.id)} className="flex-1 py-2 rounded-xl bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest">Approve</button>
-            <button onClick={() => onBlock(finding.id)} className="flex-1 py-2 rounded-xl bg-red-400/10 border border-red-400/20 text-red-400 text-[10px] font-black uppercase tracking-widest">Block</button>
-            <button onClick={() => setShowChat(!showChat)} className="flex-1 py-2 rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 text-[10px] font-black uppercase tracking-widest">Consult</button>
+            <button onClick={() => onApprove(finding.id)} className="flex-1 py-2 rounded-xl bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest">{t('dashboard.buttons.approve')}</button>
+            <button onClick={() => onBlock(finding.id)} className="flex-1 py-2 rounded-xl bg-red-400/10 border border-red-400/20 text-red-400 text-[10px] font-black uppercase tracking-widest">{t('dashboard.buttons.block')}</button>
+            <button onClick={() => setShowChat(!showChat)} className="flex-1 py-2 rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 text-[10px] font-black uppercase tracking-widest">{t('dashboard.buttons.consult')}</button>
           </div>
         )}
       </div>

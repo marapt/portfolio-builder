@@ -446,6 +446,53 @@ async def get_governance_findings(db=Depends(get_db)):
     findings = await cursor.to_list(100)
     return findings
 
+@api_router.post("/governance/report")
+async def create_governance_report(report: dict, db=Depends(get_db), _ = Depends(verify_api_key)):
+    """Handle visual LQA reports: Create Jira issue and update MongoDB findings."""
+    config = get_jira_config()
+    
+    # 1. Create Jira Issue
+    summary = f"[LQA AUDIT] {report.get('agent', 'Tiago')} - {report.get('originalText')[:30]}..."
+    description = (
+        f"LQA Bug Report from Mara Martins Live Audit\n\n"
+        f"Element: {report.get('selector')}\n"
+        f"Original Text (EN): {report.get('originalText')}\n"
+        f"Suggested Fix ({report.get('locale', 'pt-PT')}): {report.get('suggestedFix')}\n"
+        f"Page: {report.get('url')}\n\n"
+        f"Assigned Agent Specialty: {report.get('agent')}"
+    )
+    
+    jira_url = f"{config['url']}/rest/api/2/issue"
+    payload = {
+        "fields": {
+            "project": {"key": "PJM"},
+            "summary": summary,
+            "description": description,
+            "issuetype": {"name": "Task"}
+        }
+    }
+    
+    jira_resp = await app.state.http_client.post(jira_url, auth=(config['email'], config['token']), json=payload)
+    jira_data = jira_resp.json()
+    
+    # 2. Add to MongoDB Findings as FAIL
+    finding = {
+        "id": f"lqa-{uuid.uuid4().hex[:6]}",
+        "agent": report.get('agent', 'Tiago | pt-PT Linguist'),
+        "status": "FAIL",
+        "category": "Localization QA" if report.get('agent') == "Tiago" else "Legal Compliance",
+        "message": f"Leak detected: {report.get('originalText')[:50]}",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "explanation": f"LQA error reported during manual audit: {report.get('suggestedFix')}",
+        "interactionLog": [
+            {"role": "user", "name": "Mara Martins", "time": datetime.now().strftime("%H:%M"), "text": f"Found a leak on {report.get('url')}: {report.get('originalText')}"},
+            {"role": "agent", "name": report.get('agent'), "time": datetime.now().strftime("%H:%M"), "text": f"Acknowledged. Jira issue {jira_data.get('key')} created. I am applying the fix now."}
+        ]
+    }
+    await db.findings.insert_one(finding)
+    
+    return {"status": "success", "jira_key": jira_data.get('key')}
+
 @api_router.post("/governance/interaction")
 async def create_governance_interaction(req: InteractionReq, db=Depends(get_db), _ = Depends(verify_api_key)):
     finding = await db.findings.find_one({"id": req.finding_id})

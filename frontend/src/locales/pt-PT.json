@@ -122,6 +122,8 @@
     "subtitle": "Operações em Direto",
     "desc": "Este é um centro de operações em direto onde giro uma frota de agentes de IA especializados que executam auditorias de qualidade, verificações de conformidade legal, revisões de localização e verificações de implementação para este portefólio — em tempo real. Cada descoberta do agente aparece aqui para minha revisão e aprovação explícita antes de qualquer alteração ser enviada para produção.",
     "active": "Ativo",
+    "activate_audit": "Activar Auditoria LQA",
+    "audit_on": "Modo Auditoria: ACTIVO",
     "heavy_lifting": "A IA faz o trabalho pesado",
     "heavy_lifting_desc": "Agentes autónomos executam auditorias contínuas — qualidade linguística, conformidade legal, integridade visual e testes E2E — sem intervenção manual.",
     "human_control": "O Humano mantém o controlo",
@@ -129,6 +131,17 @@
     "gates": "A Governança regula cada implementação",
     "gates_desc": "O portão de integração abaixo representa a saúde atual da implementação. Verde significa que a suite completa de agentes deu o aval e o site está pronto para ser enviado.",
     "fleet": "Frota de Agentes Ativa",
+    "fleet_roles": {
+      "loc_lead": "Governança de Localização",
+      "en_linguist": "QA de Inglês Americano",
+      "pt_linguist": "QA de Português Europeu",
+      "lqc_eng": "Verificação de Qualidade Estrutural",
+      "lqa_expert": "QA Semântica e Cultural",
+      "qa_tester": "12 Testes E2E em Direto",
+      "scrum_master": "Sincronização de Ciclo Sprint",
+      "gtm_strat": "Plano de Lançamento Global",
+      "sec_analyst": "Operações de Segurança e Conformidade"
+    },
     "stats": {
       "passing": "Aprovado",
       "warnings": "Avisos",
@@ -138,12 +151,12 @@
     "merge": {
       "blocked": "Integração: BLOQUEADA",
       "cleared": "Integração: AUTORIZADA",
-      "blocked_desc": "Reveja e resolva todas as descobertas abertas antes de prosseguir.",
-      "cleared_desc": "Todas as descobertas revistas. Seguro para avançar com a implementação."
+      "blocked_desc": "Falhas críticas ou avisos não resolvidos detetados. A implementação em produção está suspensa até resolução.",
+      "cleared_desc": "Todos os agentes de governança deram luz verde. O site está estável e pronto para implementação."
     },
     "queue": "Fila de Aprovação",
     "last_audit": "Última Auditoria",
-    "os_version": "Sistema Operativo Mara Martins",
+    "os_version": "Mara Martins OS v1.2",
     "gov_active": "Governança Ativa",
     "buttons": {
       "approve": "Aprovar",
@@ -193,5 +206,26 @@
       "copy": "Copiar para Área de Transferência",
       "copied": "Copiado!"
     }
+  },
+  "resume": {
+    "back": "Voltar ao Início",
+    "sections": {
+      "summary": "Resumo Profissional",
+      "experience": "Experiência Profissional",
+      "education": "Educação",
+      "continuing_education": "Formação Contínua",
+      "skills": "Competências",
+      "languages": "Idiomas",
+      "certifications": "Certificações",
+      "awards": "Prémios"
+    },
+    "read_more_linkedin": "Ler mais no LinkedIn",
+    "cta_title": "Interessado em trabalhar em conjunto?",
+    "cta_desc": "Estou aberta a oportunidades como Gestora de Programas/Projectos de Localização, Operações de IA/Localização ou funções Executivas/Business de IA."
+  },
+  "common": {
+    "contact": "Contacto",
+    "linkedin": "LinkedIn",
+    "get_in_touch": "Entrar em Contacto"
   }
 }

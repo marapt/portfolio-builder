@@ -15,21 +15,25 @@ import GTMDashboard from './pages/GTMDashboard';
 ReactGA.initialize("G-0BB4XSY59N");
 ReactGA.send("pageview");
 
+import { GovernanceProvider } from './GovernanceContext';
+
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/project/:projectId" element={<ProjectDetail />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/scrum-board" element={<ScrumBoardPage />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/imprint" element={<Imprint />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/gtm" element={<GTMDashboard />} />
-        </Routes>
-      </BrowserRouter>
+      <GovernanceProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/project/:projectId" element={<ProjectDetail />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/scrum-board" element={<ScrumBoardPage />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/imprint" element={<Imprint />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/gtm" element={<GTMDashboard />} />
+          </Routes>
+        </BrowserRouter>
+      </GovernanceProvider>
     </div>
   );
 }

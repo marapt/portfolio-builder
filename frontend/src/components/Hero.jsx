@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Linkedin, Twitter, Github, Globe, Brain, Layout, Heart, ArrowUpRight } from 'lucide-react';
 import { Button } from './ui/button';
-import { personalInfo } from '../data/mock';
+import { personalInfo as personalInfoEN } from '../data/site/en';
+import { personalInfo as personalInfoPT } from '../data/site/pt';
 import aiGlassIcon from '../assets/branding/ai-glass-icon.png';
 
 const InsightCard = ({ label, description, icon: Icon, position, targetId, isPrimary }) => {
@@ -31,7 +32,7 @@ const InsightCard = ({ label, description, icon: Icon, position, targetId, isPri
           onClick={scrollToSection}
           className="mt-3 flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-cyan-400 hover:text-white transition-colors"
         >
-          Learn More <ArrowUpRight size={10} />
+          {label === "QI Cultural" || label === "Cultural IQ" ? "Saiba Mais" : "Learn More"} <ArrowUpRight size={10} />
         </button>
       </div>
 
@@ -51,7 +52,8 @@ const InsightCard = ({ label, description, icon: Icon, position, targetId, isPri
 };
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const personalInfo = i18n.language.startsWith('pt') ? personalInfoPT : personalInfoEN;
 
   const quadrants = [
     { 
@@ -86,7 +88,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center stellar-bg pt-24 overflow-hidden">
+    <section className="relative min-h-screen flex items-center stellar-bg pt-24 overflow-hidden" id="hero">
       {/* Background Decorative Blobs */}
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-violet-600/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none" />
@@ -138,7 +140,7 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="flex items-center gap-8 pt-8 text-white/30">
-              <a href={personalInfo.socials?.[0]?.url || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
                 <Linkedin size={20} />
               </a>
               <a href="#" className="hover:text-cyan-400 transition-colors">

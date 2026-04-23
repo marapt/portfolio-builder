@@ -25,27 +25,65 @@ class LinguistAgent:
                 })
 
     def check_sync(self, current_json, compare_json):
-        """Ensures all keys match between locales."""
-        current_keys = set(self._get_all_keys(current_json))
-        compare_keys = set(self._get_all_keys(compare_json))
+        """Ensures all keys match and checks for English leakage."""
+        current_data = self._get_flatten_data(current_json)
+        compare_data = self._get_flatten_data(compare_json)
         
+        current_keys = set(current_data.keys())
+        compare_keys = set(compare_data.keys())
+        
+        # 1. Missing keys
         missing = compare_keys - current_keys
         if missing:
             self.findings.append({
-                "agent": f"Linguist_{self.locale_code}",
-                "status": "WARNING",
-                "message": f"Missing keys in {self.locale_code}: {list(missing)}"
+                "agent": f"Tiago | pt-PT Linguist",
+                "status": "FAIL",
+                "message": f"Critical Leak: Missing locale keys for {self.locale_code}",
+                "explanation": f"The following keys exist in English but not in Portuguese: {list(missing)[:5]}... This will lead to broken UI or fallback text."
             })
 
-    def _get_all_keys(self, d, parent_key=''):
-        keys = []
+        # 2. English Leakage (Identical text detection)
+        # Avoid checking keys that are expected to be same (IDs, names, urls, etc)
+        ignore_patterns = ["url", "link", "id", "name", "email", "phone", "flag", "date", "year", "cert", "skills.technology"]
+        
+        for key, pt_val in current_data.items():
+            en_val = compare_data.get(key)
+            if not en_val: continue
+
+            # Skip short things like "Mara" or technical IDs correctly
+            if len(str(pt_val)) < 5: continue
+            if any(p in key.lower() for p in ignore_patterns): continue
+
+            # Heuristic 1: Exact Match (Copy-Paste Leak)
+            if pt_val == en_val:
+                self.findings.append({
+                    "agent": f"Tiago | pt-PT Linguist",
+                    "status": "FAIL",
+                    "category": "Localization QA",
+                    "message": f"English Leak detected in '{key}'",
+                    "explanation": f"Text is identical to English source: \"{pt_val[:30]}...\". This indicates a missed translation step."
+                })
+            
+            # Heuristic 2: English Keywords in PT string (AI Hallucination/Hybrid leak)
+            en_keywords = [' the ', ' with ', ' and ', ' to ', ' for ', ' from ', ' bridging ', ' expanding ']
+            if any(kw in str(pt_val).lower() for kw in en_keywords) and self.locale_code == "pt-PT":
+                 self.findings.append({
+                    "agent": f"Tiago | pt-PT Linguist",
+                    "status": "FAIL",
+                    "category": "Localization QA",
+                    "message": f"Mixed-Language content in '{key}'",
+                    "explanation": f"English words detected within a Portuguese string. Heuristic hit: {pt_val}"
+                })
+
+    def _get_flatten_data(self, d, parent_key=''):
+        items = {}
         for k, v in d.items():
             new_key = f"{parent_key}.{k}" if parent_key else k
             if isinstance(v, dict):
-                keys.extend(self._get_all_keys(v, new_key))
+                items.update(self._get_flatten_data(v, new_key))
             else:
-                keys.append(new_key)
-        return keys
+                items[new_key] = v
+        return items
 
     def get_report(self):
         return self.findings

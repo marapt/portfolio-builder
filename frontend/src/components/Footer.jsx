@@ -2,10 +2,12 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Linkedin, Mail, ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { personalInfo } from '../data/mock';
+import { personalInfo as personalInfoEN } from '../data/site/en';
+import { personalInfo as personalInfoPT } from '../data/site/pt';
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const personalInfo = i18n.language.startsWith('pt') ? personalInfoPT : personalInfoEN;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -46,7 +48,7 @@ const Footer = () => {
               <span className="text-2xl font-light text-indigo-400">Martins</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
-              {personalInfo.tagline}
+              {t('hero.description')}
             </p>
             <div className="flex space-x-4">
               <a
@@ -68,7 +70,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">{t('footer.quick_links')}</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.quick_links') || 'Quick Links'}</h4>
             <nav className="space-y-2">
               {footerLinks.map((link) => (
                 <a
@@ -85,7 +87,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">{t('footer.legal_col')}</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.legal_col') || 'Legal'}</h4>
             <nav className="space-y-2">
               {legalLinks.map((link) => (
                 <Link
@@ -106,7 +108,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-xs">
-            © {currentYear} {personalInfo.name}. {t('footer.rights')}
+            © {currentYear} {personalInfo.name}. {t('footer.rights') || 'All rights reserved.'}
           </p>
           <div className="flex items-center gap-6 text-xs text-gray-500">
             <Link to="/privacy" className="hover:text-indigo-400 transition-colors">{t('hero.privacy_title')}</Link>
@@ -117,7 +119,7 @@ const Footer = () => {
             onClick={scrollToTop}
             className="flex items-center gap-2 text-gray-400 hover:text-indigo-400 transition-colors duration-200"
           >
-            Back to top
+            {i18n.language.startsWith('pt') ? 'Voltar ao topo' : 'Back to top'}
             <ArrowUp size={16} />
           </button>
         </div>

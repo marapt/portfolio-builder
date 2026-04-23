@@ -20,12 +20,17 @@ import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
 import { Separator } from '../components/ui/separator';
+import { useTranslation } from 'react-i18next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { resumeData } from '../data/resumeData';
+import { resumeData as resumeEn } from '../data/resume/en';
+import { resumeData as resumePt } from '../data/resume/pt';
 import { personalInfo } from '../data/mock';
 
 const Resume = () => {
+  const { t, i18n } = useTranslation();
+  const resumeData = i18n.language.startsWith('pt') ? resumePt : resumeEn;
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -38,7 +43,7 @@ const Resume = () => {
             className="inline-flex items-center text-indigo-600 hover:text-indigo-700 mb-8 transition-colors"
           >
             <ArrowLeft size={18} className="mr-2" />
-            Back to Home
+            {t('resume.back')}
           </Link>
           
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
@@ -68,13 +73,13 @@ const Resume = () => {
               <a href={`mailto:${personalInfo.email}`}>
                 <Button variant="outline" className="border-indigo-600 text-indigo-600 hover:bg-indigo-50">
                   <Mail size={18} className="mr-2" />
-                  Contact
+                  {t('common.contact')}
                 </Button>
               </a>
               <a href="https://linkedin.com/in/maramartinspt" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-indigo-600 hover:bg-indigo-700 text-white">
                   <Linkedin size={18} className="mr-2" />
-                  LinkedIn
+                  {t('common.linkedin')}
                 </Button>
               </a>
             </div>
@@ -89,7 +94,7 @@ const Resume = () => {
             <CardContent className="p-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
                 <Users size={20} className="text-indigo-600" />
-                Professional Summary
+                {t('resume.sections.summary')}
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 {resumeData.summary}
@@ -113,7 +118,7 @@ const Resume = () => {
                   <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
                     <Briefcase size={20} className="text-indigo-600" />
                   </div>
-                  Work Experience
+                  {t('resume.sections.experience')}
                 </h2>
                 
                 <div className="space-y-6">
@@ -168,7 +173,7 @@ const Resume = () => {
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
-                            Read more on LinkedIn
+                            {t('resume.read_more_linkedin')}
                           </a>
                         )}
                       </CardContent>
@@ -183,7 +188,7 @@ const Resume = () => {
                   <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
                     <GraduationCap size={20} className="text-indigo-600" />
                   </div>
-                  Education
+                  {t('resume.sections.education')}
                 </h2>
                 
                 <div className="space-y-4">
@@ -214,7 +219,7 @@ const Resume = () => {
                     <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
                       <Brain size={20} className="text-indigo-600" />
                     </div>
-                    Continuing Education
+                    {t('resume.sections.continuing_education')}
                   </h2>
                   
                   <div className="space-y-4">
@@ -246,7 +251,7 @@ const Resume = () => {
                 <CardContent className="p-6">
                   <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                     <Code size={18} className="text-indigo-600" />
-                    Skills
+                    {t('resume.sections.skills')}
                   </h2>
                   
                   <div className="space-y-4">
@@ -308,7 +313,7 @@ const Resume = () => {
                 <CardContent className="p-6">
                   <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                     <Languages size={18} className="text-indigo-600" />
-                    Languages
+                    {t('resume.sections.languages')}
                   </h2>
                   
                   <div className="space-y-3">
@@ -333,7 +338,7 @@ const Resume = () => {
                   <CardContent className="p-6">
                     <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                       <Award size={18} className="text-indigo-600" />
-                      Certifications
+                      {t('resume.sections.certifications')}
                     </h2>
                     
                     <div className="space-y-4">
@@ -355,7 +360,7 @@ const Resume = () => {
                   <CardContent className="p-6">
                     <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
                       <Award size={18} className="text-yellow-500" />
-                      Awards
+                      {t('resume.sections.awards')}
                     </h2>
                     
                     <div className="space-y-4">
@@ -383,20 +388,20 @@ const Resume = () => {
       <section className="py-12 bg-indigo-600">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">
-            Interested in working together?
+            {t('resume.cta_title')}
           </h2>
           <p className="text-indigo-100 mb-6">
-            I'm open to Localization Program/Project Manager, AI/Localization Ops, or AI Business/Executive opportunities.
+            {t('resume.cta_desc')}
           </p>
           <div className="flex justify-center gap-4">
             <Link to="/#contact">
               <Button className="bg-white text-indigo-600 hover:bg-indigo-50 px-8 py-3 rounded-lg font-medium">
-                Get in Touch
+                {t('common.get_in_touch')}
               </Button>
             </Link>
             <a href="https://linkedin.com/in/maramartinspt" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium">
-                Connect on LinkedIn
+                {t('common.linkedin')}
               </Button>
             </a>
           </div>
