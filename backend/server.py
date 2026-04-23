@@ -436,7 +436,7 @@ async def create_jira_issue(issue: JiraIssueCreate, _ = Depends(verify_api_key))
 # --- Interactive Live Dashboards API ---
 
 @api_router.get("/governance/findings")
-async def get_governance_findings(db=Depends(get_db)):
+async def get_governance_findings(db=Depends(get_db)) -> list:
     """Fetch live agent findings from MongoDB. Seed if empty."""
     count = await db.findings.count_documents({})
     if count == 0:
@@ -456,7 +456,7 @@ async def verify_governance_access(payload: dict):
     raise HTTPException(status_code=401, detail="Chave de Acesso Inválida")
 
 @api_router.post("/governance/findings/batch")
-async def batch_upsert_findings(findings: List[dict], db=Depends(get_db), _ = Depends(verify_api_key)):
+async def batch_upsert_findings(findings: list[dict], db=Depends(get_db), _ = Depends(verify_api_key)):
     """Allow automated agents to push a full suite of findings in one go."""
     # To keep the dashboard clean and reflecting only the LATEST audit,
     # we clear previous automated findings and insert the new batch.
