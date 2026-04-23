@@ -316,7 +316,6 @@ const ScrumBoardPage = () => {
                       {selectedIssue.key}
                     </Badge>
                     <Badge className={`${selectedIssue.priority === 'High' ? 'bg-red-500' : 'bg-emerald-500'} font-black text-[10px] px-3 py-1 shadow-lg shadow-black/5`}>
-                    <Badge className={`${selectedIssue.priority === 'High' ? 'bg-red-500' : 'bg-emerald-500'} font-black text-[10px] px-3 py-1 shadow-lg shadow-black/5`}>
                       {selectedIssue.priority} {t('scrum.priority').toUpperCase()}
                     </Badge>
                   </div>

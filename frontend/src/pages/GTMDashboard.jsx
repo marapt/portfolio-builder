@@ -429,8 +429,8 @@ const BlogPost = ({ post, expanded, onToggle }) => {
             <h3 className="text-white font-black tracking-tight leading-snug">{post.title}</h3>
             <p className="text-white/40 text-sm leading-relaxed">{post.excerpt}</p>
             <div className="flex items-center gap-2 flex-wrap pt-1">
-              {post.tags.map(t => (
-                <span key={t} className="text-[9px] text-white/20 bg-white/5 px-2 py-0.5 rounded-full font-black uppercase tracking-wider">#{t}</span>
+              {post.tags.map(tag => (
+                <span key={tag} className="text-[9px] text-white/20 bg-white/5 px-2 py-0.5 rounded-full font-black uppercase tracking-wider">#{tag}</span>
               ))}
             </div>
           </div>
