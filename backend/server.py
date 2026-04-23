@@ -581,8 +581,9 @@ async def get_gtm_phases():
     try:
         # Fetch board issues (assuming active issues are returned)
         board_id = "1" # Hardcoded default for this portfolio
+        # Fetch all PJM issues to ensure we see 'Done' tickets correctly
         response = await app.state.http_client.get(
-            f"{config['url']}/rest/agile/1.0/board/{board_id}/issue?fields=status",
+            f"{config['url']}/rest/api/2/search?jql=project=PJM&fields=status&maxResults=100",
             auth=(config['email'], config['token'])
         )
         if response.status_code == 200:
