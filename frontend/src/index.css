@@ -188,3 +188,25 @@ code {
 .pulse-glow {
     animation: pulse-glow 3s infinite ease-in-out;
 }
+
+/* --- LQA Annotation Mode --- */
+.annotation-mode-active {
+    cursor: crosshair !important;
+}
+
+.annotation-mode-active * {
+    transition: all 0.2s ease;
+}
+
+.annotation-mode-active *:hover:not(nav, div, section, main, body, html) {
+    outline: 2px dashed rgba(239, 68, 68, 0.5) !important;
+    outline-offset: 4px;
+    background-color: rgba(239, 68, 68, 0.05);
+    border-radius: 4px;
+}
+
+.annotation-mode-active nav:hover, 
+.annotation-mode-active div:hover, 
+.annotation-mode-active section:hover {
+    outline: none !important;
+}

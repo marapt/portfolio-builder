@@ -9,12 +9,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { useGovernance } from '../GovernanceContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { t, i18n } = useTranslation();
+  const { isAuditMode } = useGovernance();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -143,6 +145,14 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-8">
+            {/* LQA Audit Mode Indicator */}
+            {isAuditMode && (
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 animate-pulse">
+                <div className="w-1.5 h-1.5 bg-red-500 rounded-full" />
+                <span className="text-[9px] font-black uppercase tracking-widest text-red-400">Audit Active</span>
+              </div>
+            )}
+
             {/* Language Switcher - Premium "Pill" Design */}
             <div className="h-6 w-px bg-gray-100 hidden xl:block"></div>
             
