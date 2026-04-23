@@ -68,7 +68,10 @@ export const GovernanceProvider = ({ children }) => {
           selector: "body",
           rect: rect
         });
+        setSelection(null); // Clear the blue box immediately
         setModalOpen(true);
+      } else {
+        setSelection(null); // Clear if click was too small
       }
     };
 

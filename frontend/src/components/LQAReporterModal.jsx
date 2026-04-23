@@ -15,11 +15,14 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
 
   useEffect(() => {
     if (isOpen && targetData) {
+      setScreenshot(null); // Clear old evidence
+      setFix(''); // Clear old suggestion
+      setSuccessKey(null); // Clear old success state
       captureScreenshot();
       setChatLog([{
         role: 'agent',
         name: agent.split(' | ')[0],
-        text: `Olá Mara! Detectei o elemento "${targetData.text}". Como posso ajudar com esta auditoria?`
+        text: `Olá Mara! Detectei a área: "${targetData.text.substring(0, 40)}...". Como posso ajudar?`
       }]);
     }
   }, [isOpen, targetData]);
