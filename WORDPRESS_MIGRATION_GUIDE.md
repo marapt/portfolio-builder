@@ -225,7 +225,7 @@ h4 { font-size: 1.25rem; font-weight: 600; color: #111827; }
 ---
 
 ### PORTFOLIO SECTION
-**Featured Project (AI Poliglots):**
+**Featured Project (AI Polyglots):**
 - Full-width card with 2 columns
 - Left: Large image
 - Right: Badge "Featured Project", title, description, tags, 2 buttons

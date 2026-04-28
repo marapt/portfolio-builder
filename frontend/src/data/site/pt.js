@@ -41,8 +41,8 @@ export const services = [
 export const projects = [
   {
     id: 1,
-    title: "AI Poliglots",
-    description: "Uma aplicação de tradução universal que suporta texto, voz e linguagem gestual — alimentada por IA para uma comunicação global sem falhas.",
+    title: "AI Polyglots",
+    description: "Quebre todas as barreiras linguísticas. Em qualquer lugar. Uma plataforma experimental que permite a comunicação através de barreiras linguísticas usando texto, voz, linguagem gestual e muito mais.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
     tags: ["IA", "Tradução", "Acessibilidade"],
     link: "https://aipolyglots.com/",

@@ -98,11 +98,11 @@ All content from your portfolio, ready to copy into WordPress.
 
 ---
 
-### PROJECT 1: AI Poliglots (FEATURED)
+### PROJECT 1: AI Polyglots (FEATURED)
 
 **Badge:** Featured Project
 
-**Title:** AI Poliglots
+**Title:** AI Polyglots
 
 **Short Description:** A universal translation app supporting text, voice, and sign language - powered by AI for seamless global communication.
 
@@ -113,7 +113,7 @@ All content from your portfolio, ready to copy into WordPress.
 **Hero Image:** https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop
 
 **Full Overview:**
-> AI Poliglots is a groundbreaking universal translation application that breaks down communication barriers through multi-modal translation capabilities. Supporting text, voice, and sign language, this tool represents the future of accessible global communication.
+> AI Polyglots is an experimental platform that allows you to communicate across language barriers using text, voice, sign language, and more. Translate text, voice, sign language, and messages across 100+ languages. Integrate with WhatsApp, phone calls, websites, and any app through our API.
 >
 > Built with cutting-edge AI technology, the application provides real-time translation across multiple modalities, making it invaluable for international travelers, deaf and hard-of-hearing communities, and global business communications.
 
@@ -400,7 +400,7 @@ All content from your portfolio, ready to copy into WordPress.
 - Profile Photo: https://avatars.githubusercontent.com/u/233815337?v=4
 
 ### Project Hero Images
-- AI Poliglots: https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop
+- AI Polyglots: https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop
 - Marketing: https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop
 - AI Engine: https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop
 - Training: https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=500&fit=crop
@@ -421,7 +421,7 @@ All content from your portfolio, ready to copy into WordPress.
 - https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop
 - https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop
 
-**AI Poliglots Gallery:**
+**AI Polyglots Gallery:**
 - https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop
 - https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop
 - https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=400&fit=crop
