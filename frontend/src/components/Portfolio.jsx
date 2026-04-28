@@ -38,7 +38,7 @@ const Portfolio = () => {
           </p>
         </div>
 
-        {/* Featured Project - PolyglotAI */}
+        {/* Featured Project - AI Poliglots */}
         {projects.filter(p => p.featured).map((p) => {
           const project = getLocalizedProject(p);
           return (

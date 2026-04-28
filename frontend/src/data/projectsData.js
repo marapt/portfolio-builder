@@ -243,16 +243,16 @@ Through teaching graduate-level courses on Translation and Localization Manageme
   
   'polyglotai-translator': {
     id: 'polyglotai-translator',
-    title: 'PolyglotAI Translator',
+    title: 'AI Poliglots',
     description: 'A universal translation app supporting text, voice, and sign language - powered by AI for seamless global communication.',
     heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop',
     tags: ['AI', 'Translation', 'Accessibility', 'Innovation', 'Open Source'],
     duration: 'Ongoing',
     teamSize: 'Solo Project',
     scope: 'Global',
-    liveUrl: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://where-my-code.emergent.host/',
+    liveUrl: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://aipolyglots.com/',
     githubUrl: process.env.REACT_APP_POLYGLOT_GITHUB_URL || 'https://github.com/marapt/PolyglotAI-Web',
-    overview: `PolyglotAI Translator is a groundbreaking universal translation application that breaks down communication barriers through multi-modal translation capabilities. Supporting text, voice, and sign language, this tool represents the future of accessible global communication.
+    overview: `AI Poliglots is a groundbreaking universal translation application that breaks down communication barriers through multi-modal translation capabilities. Supporting text, voice, and sign language, this tool represents the future of accessible global communication.
 
 Built with cutting-edge AI technology, the application provides real-time translation across multiple modalities, making it invaluable for international travelers, deaf and hard-of-hearing communities, and global business communications.
 
@@ -277,9 +277,9 @@ This project is open source and available on GitHub as part of my commitment to 
     ],
     locales: {
       pt: {
-        title: 'Tradutor PolyglotAI',
+        title: 'AI Poliglots',
         description: 'Um aplicativo de tradução universal com suporte a texto, voz e linguagem de sinais.',
-        overview: `O PolyglotAI Translator é um aplicativo de tradução universal inovador que rompe barreiras de comunicação através de capacidades de tradução multimodais.`,
+        overview: `O AI Poliglots é um aplicativo de tradução universal inovador que rompe barreiras de comunicação através de capacidades de tradução multimodais.`,
         challenges: [
           'Criação de uma interface unificada para múltiplas modalidades',
           'Garantia de acessibilidade para usuários com diferentes habilidades',
@@ -382,11 +382,11 @@ This project is open source and available on GitHub as part of my commitment to 
 export const projects = [
   {
     id: 'polyglotai-translator',
-    title: 'Polyglot AI',
+    title: 'AI Poliglots',
     description: 'An all-in-one universal translation platform supporting text, voice, and sign language with deep integrations for WhatsApp and Twilio.',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop',
     tags: ['AI', 'Translation', 'Accessibility'],
-    link: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://where-my-code.emergent.host/',
+    link: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://aipolyglots.com/',
     featured: true,
     hasDetailPage: true
   },

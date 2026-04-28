@@ -41,11 +41,11 @@ export const services = [
 export const projects = [
   {
     id: 1,
-    title: "Tradutor PolyglotAI",
+    title: "AI Poliglots",
     description: "Uma aplicação de tradução universal que suporta texto, voz e linguagem gestual — alimentada por IA para uma comunicação global sem falhas.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
     tags: ["IA", "Tradução", "Acessibilidade"],
-    link: "https://where-my-code.emergent.host/",
+    link: "https://aipolyglots.com/",
     featured: true
   },
   {
