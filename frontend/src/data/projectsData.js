@@ -250,7 +250,7 @@ Through teaching graduate-level courses on Translation and Localization Manageme
     duration: 'Ongoing',
     teamSize: 'Solo Project',
     scope: 'Global',
-    liveUrl: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://aipolyglots.com/',
+    liveUrl: 'https://aipolyglots.com/',
     githubUrl: process.env.REACT_APP_POLYGLOT_GITHUB_URL || 'https://github.com/marapt/PolyglotAI-Web',
     overview: `AI Polyglots is an experimental platform that allows you to communicate across language barriers using text, voice, sign language, and more. Translate text, voice, sign language, and messages across 100+ languages. Integrate with WhatsApp, phone calls, websites, and any app through our API.
 
@@ -386,7 +386,7 @@ export const projects = [
     description: 'Break every language barrier. Everywhere. An experimental platform for cross-language communication with deep integrations for WhatsApp and Twilio.',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop',
     tags: ['AI', 'Translation', 'Accessibility'],
-    link: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://aipolyglots.com/',
+    link: 'https://aipolyglots.com/',
     featured: true,
     hasDetailPage: true
   },
