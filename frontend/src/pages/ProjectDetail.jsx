@@ -325,9 +325,19 @@ const ProjectDetail = () => {
                 {/* Bio column */}
                 <div className="flex-1 p-12 flex flex-col justify-center">
                   <p className="text-[10px] font-black text-gray-300 uppercase tracking-[0.35em] mb-6">As documented by the Middlebury Institute</p>
-                  <blockquote className="text-xl text-gray-600 font-medium leading-relaxed italic border-l-4 border-indigo-100 pl-8 mb-8">
-                    "{project.credentialBlock.bio}"
-                  </blockquote>
+                  <div className="border-l-4 border-indigo-100 pl-8 mb-8 max-h-[320px] overflow-y-auto pr-6" style={{ scrollbarWidth: 'thin', scrollbarColor: '#c7d2fe transparent' }}>
+                    {Array.isArray(project.credentialBlock.bio) ? (
+                      project.credentialBlock.bio.map((paragraph, idx) => (
+                        <p key={idx} className="text-lg text-gray-600 font-medium leading-relaxed italic mb-5 last:mb-0">
+                          {paragraph}
+                        </p>
+                      ))
+                    ) : (
+                      <p className="text-lg text-gray-600 font-medium leading-relaxed italic">
+                        "{project.credentialBlock.bio}"
+                      </p>
+                    )}
+                  </div>
                   {/* Mobile links */}
                   <div className="flex flex-wrap gap-4 md:hidden mt-2">
                     <a href={project.credentialBlock.url} target="_blank" rel="noopener noreferrer"
@@ -372,10 +382,15 @@ const ProjectDetail = () => {
         <div className="max-w-5xl mx-auto bg-gray-900 rounded-[4rem] p-12 lg:p-24 text-center relative overflow-hidden group">
            <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-[100px] -z-10 group-hover:bg-indigo-600/30 transition-colors duration-1000"></div>
           <h2 className="text-4xl lg:text-6xl font-black text-white mb-6 tracking-tighter leading-tight">
-            Interested in a similar<br /><span className="text-indigo-400 font-medium italic">localization strategy?</span>
+            Interested in a similar<br />
+            <span className="text-indigo-400 font-medium italic">
+              {project.tags?.includes('Education') ? 'educational initiative?' : 'localization strategy?'}
+            </span>
           </h2>
           <p className="text-gray-400 text-lg font-medium mb-12 max-w-xl mx-auto leading-relaxed">
-            Let's discuss how I can help your organization expand effortlessly across global markets.
+            {project.tags?.includes('Education') 
+              ? "Let's discuss how we can collaborate to empower and educate the next generation of professionals."
+              : "Let's discuss how I can help your organization expand effortlessly across global markets."}
           </p>
           <Link to="/#contact">
             <Button className="bg-white text-gray-900 hover:bg-indigo-400 hover:text-white px-16 py-8 rounded-[2rem] font-black uppercase tracking-[0.25em] text-xs transition-all duration-500 shadow-2xl hover:shadow-indigo-500/20 transform hover:-translate-y-2 active:scale-95">

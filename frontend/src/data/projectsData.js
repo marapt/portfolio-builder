@@ -219,9 +219,14 @@ Through teaching graduate-level courses on Translation and Localization Manageme
       institution: 'Middlebury Institute of International Studies at Monterey',
       role: 'Visiting Professor',
       url: 'https://www.middlebury.edu/institute/people/mara-martins',
-      archiveUrl: 'https://web.archive.org/web/2025*/https://www.middlebury.edu/institute/people/mara-martins',
+      archiveUrl: 'https://web.archive.org/web/20250211181739/https://www.middlebury.edu/institute/people/mara-martins',
       headshot: '/miis-headshot.jpg',
-      bio: 'Professor Martins has been in the localization industry for over fourteen years and has worked with leading companies like Sony, Apple, LinkedIn, and Square. At the Middlebury Institute, she focused on her role as an educator, bringing industry expertise to the academic setting and is dedicated to helping the next generation of localizers build a successful career in Localization.',
+      bio: [
+        'Professor Martins has been in the localization industry for over fourteen years and has worked with leading companies like Sony, Apple, LinkedIn, and Square. Mara’s career journey offers a wide range of experience from diverse roles in both supplier and client side. Her career path includes roles such as Translator, Project and Program Manager and Localization Leader.',
+        'Mara’s career spans a wide range of fields, including E-commerce, Retail, Marketing, and Customer Support, providing her with valuable insights. She has experience in managing teams and E2E localization processes. Mara also acted as an ambassador for geopolitical localization by educating stakeholders and business partners, emphasizing the critical role of localization within the organizations.',
+        'As a Program Manager at Microsoft Mara led the MS Store E-commerce localization program for over 200 products and 195 languages and managed budgets exceeding $2M. As a Manager at Linkedin and Square, she led the Marketing & Project Managers team. She also strategized and partnered with company leadership on international growth strategy and language support expansion. At Monterey Institute, Professor Martins now focuses on her role as an educator, bringing her industry expertise to the academic setting and is dedicated to help the next generation of localizers build a successful career in Localization.',
+        'Mara’s pedagogical approach is a combination of sharing her own experiences and industry learnings with simulating real-life situations with students to navigate career challenges and providing a toolkit that can lead students to find their own discovery path.'
+      ],
     },
     gallery: [
       { url: '/miis-guest-speakers.jpg', caption: 'Guest Speakers: Jose Palomares & Ernesto Cabanes on GTM Strategy' },
