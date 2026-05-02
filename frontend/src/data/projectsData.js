@@ -231,7 +231,7 @@ Through teaching graduate-level courses on Translation and Localization Manageme
     },
     gallery: [
       { url: '/miis-guest-speakers.jpg', caption: 'Guest Speakers: Jose Palomares & Ernesto Cabanes on GTM Strategy', link: 'https://www.linkedin.com/posts/maramartinspt_as-a-professor-at-miis-one-of-my-main-goals-ugcPost-7317937686097342464-_OIn' },
-      { url: '/miis-ai-series.jpg', caption: 'AI Speaker Series: Adelina Cristovao & Rodrigo Cristina', link: 'https://www.linkedin.com/in/maramartinspt/recent-activity/all/' },
+      { url: '/miis-ai-series.jpg', caption: 'AI Speaker Series: Adelina Cristovao & Rodrigo Cristina', link: 'https://www.linkedin.com/posts/maramartinspt_id-like-to-give-a-public-thanks-to-our-incredible-share-7325951062819983360-j3dn?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAOLIVwBajugFT0p3mD4pY_GTdLq7wdc2p4' },
       { url: '/miis-smartling.jpg', caption: 'AI Speaker Series: Olga Beregovaya & Marina Sánchez Torrón from Smartling', link: 'https://www.linkedin.com/posts/maramartinspt_id-like-to-give-a-public-thanks-to-our-incredible-share-7327805130374815744-WLgE' }
     ],
     linkedInPosts: [
