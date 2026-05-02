@@ -154,7 +154,7 @@ By combining custom-trained NMT engines with intelligent routing and human post-
     heroImage: '/miis-ai-series.jpg',
     tags: ['Education', 'AI', 'Localization', 'MIIS', 'Speaker Series'],
     duration: 'Jul 2023 - Jul 2025',
-    teamSize: '90+ Students Mentored',
+    teamSize: '90+ Total Students',
     scope: 'Graduate Program',
     liveUrl: null,
     overview: `As a Visiting Professor at the Middlebury Institute of International Studies (MIIS), one of my main goals is to empower students to hear real life experiences beyond the classroom and my own perspectives or life experiences.
@@ -175,8 +175,8 @@ Through teaching graduate-level courses on Translation and Localization Manageme
       'Created curriculum focusing on Responsible AI adoption and ethical considerations in localization'
     ],
     results: [
-      { value: '90+', label: 'Students Mentored' },
-      { value: '3', label: 'Cohorts Taught' },
+      { value: '90+', label: 'Total Students' },
+      { value: '3', label: 'Courses Taught' },
       { value: '10+', label: 'Industry Speakers' },
       { value: '2 yrs', label: 'Program Duration' }
     ],
@@ -198,22 +198,31 @@ Through teaching graduate-level courses on Translation and Localization Manageme
           'Currículo focado em adoção responsável de IA'
         ],
         results: [
-          { value: '90+', label: 'Alunos Mentorados' },
-          { value: '3', label: 'Coortes Ensinadas' },
+          { value: '90+', label: 'Total de Alunos' },
+          { value: '3', label: 'Cursos Lecionados' },
           { value: '10+', label: 'Palestrantes da Indústria' },
           { value: '2 anos', label: 'Duração do Programa' }
         ]
       }
     },
     technologies: [
-      'AI/ML in Localization',
-      'Translation Management Systems',
-      'Go-to-Market Strategy',
-      'Program Management',
-      'Smartling',
-      'LLM Applications',
+      'Zoom',
+      'Canvas',
       'Responsible AI'
     ],
+    // Original broad tech list — reusable for other pages:
+    // 'AI/ML in Localization', 'Translation Management Systems', 'Go-to-Market Strategy',
+    // 'Program Management', 'Smartling', 'LLM Applications', 'Responsible AI'
+    technologiesTitle: 'Educational Tools & Infrastructure',
+    technologiesBadge: 'Classroom toolkit',
+    credentialBlock: {
+      institution: 'Middlebury Institute of International Studies at Monterey',
+      role: 'Visiting Professor',
+      url: 'https://www.middlebury.edu/institute/people/mara-martins',
+      archiveUrl: 'https://web.archive.org/web/2025*/https://www.middlebury.edu/institute/people/mara-martins',
+      headshot: '/miis-headshot.jpg',
+      bio: 'Professor Martins has been in the localization industry for over fourteen years and has worked with leading companies like Sony, Apple, LinkedIn, and Square. At the Middlebury Institute, she focused on her role as an educator, bringing industry expertise to the academic setting and is dedicated to helping the next generation of localizers build a successful career in Localization.',
+    },
     gallery: [
       { url: '/miis-guest-speakers.jpg', caption: 'Guest Speakers: Jose Palomares & Ernesto Cabanes on GTM Strategy' },
       { url: '/miis-ai-series.jpg', caption: 'AI Speaker Series: Adelina Cristovao & Rodrigo Cristina' },

@@ -248,14 +248,112 @@ const ProjectDetail = () => {
         </section>
       )}
       
-      {/* Technologies & Tools Badge Cloud */}
+      {/* Credential / Official Recognition Block */}
+      {project.credentialBlock && (
+        <section className="py-24 bg-[#fafafa]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+            {/* Section label */}
+            <div className="flex items-center justify-center gap-4 mb-16">
+              <div className="h-px flex-1 bg-gray-100" />
+              <div className="inline-flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 rounded-full shadow-sm">
+                <div className="w-2 h-2 rounded-full bg-indigo-500" />
+                <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em]">Official Credential</span>
+              </div>
+              <div className="h-px flex-1 bg-gray-100" />
+            </div>
+
+            <div className="bg-white rounded-[3rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-50">
+              {/* Navy header bar — MIIS branding */}
+              <div className="bg-[#003366] px-12 py-8 flex items-center justify-between">
+                <div className="flex items-center gap-5">
+                  {/* MIIS shield badge */}
+                  <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 backdrop-blur-sm flex-shrink-0">
+                    <span className="text-white font-black text-[11px] tracking-widest">MIIS</span>
+                  </div>
+                  <div>
+                    <p className="text-white/60 text-[10px] font-bold uppercase tracking-[0.3em]">Middlebury Institute of International Studies at Monterey</p>
+                    <p className="text-white font-black text-lg tracking-tight mt-0.5">{project.credentialBlock.role}</p>
+                  </div>
+                </div>
+                <div className="hidden md:flex items-center gap-3">
+                  <a
+                    href={project.credentialBlock.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200"
+                  >
+                    <ExternalLink size={11} />
+                    Faculty Profile
+                  </a>
+                  <a
+                    href={project.credentialBlock.archiveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-[10px] font-semibold transition-colors"
+                  >
+                    <ExternalLink size={10} />
+                    Archive
+                  </a>
+                </div>
+              </div>
+
+              {/* Body */}
+              <div className="flex flex-col lg:flex-row">
+                {/* Portrait column */}
+                <div className="lg:w-72 flex-shrink-0 bg-[#fafafa] flex flex-col items-center justify-start gap-4 p-10 border-r border-gray-50">
+                  {project.credentialBlock.headshot ? (
+                    <img
+                      src={project.credentialBlock.headshot}
+                      alt="Mara Martins — Middlebury Institute Faculty"
+                      className="w-44 h-52 object-cover object-top rounded-2xl shadow-xl ring-4 ring-white"
+                    />
+                  ) : (
+                    <div className="w-44 h-52 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl shadow-inner ring-4 ring-white flex flex-col items-center justify-center gap-3">
+                      <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center">
+                        <Users size={24} className="text-indigo-400" />
+                      </div>
+                      <p className="text-[9px] font-bold text-gray-300 uppercase tracking-widest text-center px-4">Photo<br/>coming soon</p>
+                    </div>
+                  )}
+                  <div className="text-center">
+                    <p className="font-black text-gray-900 text-sm">Mara Martins</p>
+                    <p className="text-[10px] text-gray-400 font-semibold mt-0.5">{project.credentialBlock.role}</p>
+                  </div>
+                </div>
+
+                {/* Bio column */}
+                <div className="flex-1 p-12 flex flex-col justify-center">
+                  <p className="text-[10px] font-black text-gray-300 uppercase tracking-[0.35em] mb-6">As documented by the Middlebury Institute</p>
+                  <blockquote className="text-xl text-gray-600 font-medium leading-relaxed italic border-l-4 border-indigo-100 pl-8 mb-8">
+                    "{project.credentialBlock.bio}"
+                  </blockquote>
+                  {/* Mobile links */}
+                  <div className="flex flex-wrap gap-4 md:hidden mt-2">
+                    <a href={project.credentialBlock.url} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs font-black text-indigo-600 uppercase tracking-wider">
+                      <ExternalLink size={11} /> Faculty Profile
+                    </a>
+                    <a href={project.credentialBlock.archiveUrl} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[10px] font-semibold text-gray-400">
+                      <ExternalLink size={10} /> Wayback Archive
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      )}
+
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-full mb-8">
              <Sparkles size={14} className="text-indigo-600" />
-             <span className="text-[10px] font-black text-indigo-600 uppercase tracking-[0.2em]">Technology stack</span>
+             <span className="text-[10px] font-black text-indigo-600 uppercase tracking-[0.2em]">{project.technologiesBadge || 'Technology stack'}</span>
           </div>
-          <h2 className="text-4xl font-black text-gray-900 mb-12 tracking-tighter">Infrastructure & Tools Used</h2>
+          <h2 className="text-4xl font-black text-gray-900 mb-12 tracking-tighter">{project.technologiesTitle || 'Infrastructure & Tools Used'}</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {project.technologies.map((tech, index) => (
               <Badge 
