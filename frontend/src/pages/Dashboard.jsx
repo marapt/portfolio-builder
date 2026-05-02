@@ -49,7 +49,7 @@ const Dashboard = () => {
   }, [isAuthenticated, t]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend-dot7.onrender.com'}/api/governance/findings`)
+    fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend.onrender.com'}/api/governance/findings`)
       .then(res => res.json())
       .then(data => {
         setQueue(data);

@@ -58,7 +58,7 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
     setIsConsulting(true);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend-dot7.onrender.com'}/api/governance/interaction`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend.onrender.com'}/api/governance/interaction`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -80,7 +80,7 @@ const LQAReporterModal = ({ isOpen, onClose, targetData, onReported }) => {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend-dot7.onrender.com'}/api/governance/report`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend.onrender.com'}/api/governance/report`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

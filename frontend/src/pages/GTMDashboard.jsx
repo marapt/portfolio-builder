@@ -507,7 +507,7 @@ const GTMDashboard = () => {
   const [phases, setPhases] = useState(PHASES);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/gtm/phases`)
+    fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend.onrender.com'}/api/gtm/phases`)
       .then(res => res.json())
       .then(data => {
         if (data && data.length > 0) {
