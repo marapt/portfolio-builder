@@ -220,6 +220,7 @@ Through teaching graduate-level courses on Translation and Localization Manageme
       role: 'Visiting Professor',
       url: 'https://www.middlebury.edu/institute/people/mara-martins',
       archiveUrl: 'https://web.archive.org/web/20250211181739/https://www.middlebury.edu/institute/people/mara-martins',
+      badgeText: "As Published By The Institute",
       headshot: '/miis-headshot.jpg',
       bio: [
         'Professor Martins has been in the localization industry for over fourteen years and has worked with leading companies like Sony, Apple, LinkedIn, and Square. Mara’s career journey offers a wide range of experience from diverse roles in both supplier and client side. Her career path includes roles such as Translator, Project and Program Manager and Localization Leader.',
@@ -229,9 +230,9 @@ Through teaching graduate-level courses on Translation and Localization Manageme
       ],
     },
     gallery: [
-      { url: '/miis-guest-speakers.jpg', caption: 'Guest Speakers: Jose Palomares & Ernesto Cabanes on GTM Strategy' },
-      { url: '/miis-ai-series.jpg', caption: 'AI Speaker Series: Adelina Cristovao & Rodrigo Cristina' },
-      { url: '/miis-smartling.jpg', caption: 'AI Speaker Series: Olga Beregovaya & Marina Sánchez Torrón from Smartling' }
+      { url: '/miis-guest-speakers.jpg', caption: 'Guest Speakers: Jose Palomares & Ernesto Cabanes on GTM Strategy', link: 'https://www.linkedin.com/posts/maramartinspt_as-a-professor-at-miis-one-of-my-main-goals-ugcPost-7317937686097342464-_OIn' },
+      { url: '/miis-ai-series.jpg', caption: 'AI Speaker Series: Adelina Cristovao & Rodrigo Cristina', link: 'https://www.linkedin.com/in/maramartinspt/recent-activity/all/' },
+      { url: '/miis-smartling.jpg', caption: 'AI Speaker Series: Olga Beregovaya & Marina Sánchez Torrón from Smartling', link: 'https://www.linkedin.com/posts/maramartinspt_id-like-to-give-a-public-thanks-to-our-incredible-share-7327805130374815744-WLgE' }
     ],
     linkedInPosts: [
       {

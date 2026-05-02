@@ -38,11 +38,11 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/contact`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://portfolio-backend.onrender.com'}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': process.env.REACT_APP_INTERNAL_API_KEY
+          'x-api-key': process.env.REACT_APP_INTERNAL_API_KEY || 'mp-pf-sec-4a9d72'
         },
         body: JSON.stringify(formData),
       });

@@ -228,21 +228,38 @@ const ProjectDetail = () => {
                </div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {project.gallery.map((image, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-[2.5rem] shadow-xl bg-white p-3">
-                  <div className="relative overflow-hidden rounded-[2rem] h-80">
-                    <img
-                      src={image.url}
-                      alt={image.caption}
-                      className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
-                    />
-                    <div className="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+              {project.gallery.map((image, index) => {
+                const ImageContent = (
+                  <>
+                    <div className="relative overflow-hidden rounded-[2rem] h-80">
+                      <img
+                        src={image.url}
+                        alt={image.caption}
+                        className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                      />
+                      <div className="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div className="p-4 pt-6">
+                      <p className="text-xs font-black text-gray-400 uppercase tracking-widest text-center">
+                        {image.caption}
+                        {image.link && (
+                          <span className="block mt-2 text-[9px] text-indigo-500 hover:text-indigo-600">VIEW ON LINKEDIN ↗</span>
+                        )}
+                      </p>
+                    </div>
+                  </>
+                );
+
+                return image.link ? (
+                  <a href={image.link} target="_blank" rel="noopener noreferrer" key={index} className="group relative overflow-hidden rounded-[2.5rem] shadow-xl bg-white p-3 block cursor-pointer hover:ring-2 hover:ring-indigo-500 hover:-translate-y-1 transition-all">
+                    {ImageContent}
+                  </a>
+                ) : (
+                  <div key={index} className="group relative overflow-hidden rounded-[2.5rem] shadow-xl bg-white p-3">
+                    {ImageContent}
                   </div>
-                  <div className="p-4 pt-6">
-                    <p className="text-xs font-black text-gray-400 uppercase tracking-widest text-center">{image.caption}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -258,7 +275,7 @@ const ProjectDetail = () => {
               <div className="h-px flex-1 bg-gray-100" />
               <div className="inline-flex items-center gap-2 px-5 py-2 bg-white border border-gray-100 rounded-full shadow-sm">
                 <div className="w-2 h-2 rounded-full bg-indigo-500" />
-                <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em]">Official Credential</span>
+                <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em]">{project.credentialBlock.badgeText || "In Their Own Words"}</span>
               </div>
               <div className="h-px flex-1 bg-gray-100" />
             </div>
