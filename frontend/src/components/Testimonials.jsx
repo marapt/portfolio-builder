@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
@@ -86,11 +87,10 @@ const Testimonials = () => {
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === activeIndex
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeIndex
                   ? 'bg-indigo-600 w-8'
                   : 'bg-gray-300 hover:bg-gray-400'
-              }`}
+                }`}
             />
           ))}
         </div>
@@ -101,11 +101,10 @@ const Testimonials = () => {
             <Card
               key={testimonial.id}
               onClick={() => setActiveIndex(index)}
-              className={`border cursor-pointer transition-all duration-300 ${
-                index === activeIndex
+              className={`border cursor-pointer transition-all duration-300 ${index === activeIndex
                   ? 'border-indigo-600 shadow-md'
                   : 'border-gray-100 hover:border-indigo-200'
-              }`}
+                }`}
             >
               <CardContent className="p-4">
                 <p className="text-sm text-gray-600 line-clamp-3 mb-3">

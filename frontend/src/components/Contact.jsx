@@ -229,6 +229,7 @@ const Contact = () => {
                           <SelectItem value="Localization Strategy">{t('contact.categories.strategy')}</SelectItem>
                           <SelectItem value="AI Implementation">{t('contact.categories.ai')}</SelectItem>
                           <SelectItem value="Program Management">{t('contact.categories.pm')}</SelectItem>
+                          <SelectItem value="Education">Education</SelectItem>
                           <SelectItem value="Other">{t('contact.categories.other')}</SelectItem>
                         </SelectContent>
                       </Select>
