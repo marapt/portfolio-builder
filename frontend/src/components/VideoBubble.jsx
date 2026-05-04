@@ -10,13 +10,13 @@ const VideoBubble = () => {
   const handleAction = (type) => {
     switch(type) {
       case 'hire':
-        document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+        window.location.href = '/resume';
         break;
       case 'stack':
-        document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
         break;
       case 'contact':
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        window.location.href = '/#contact';
         break;
       case 'linkedin':
         window.open('https://www.linkedin.com/in/maramartinspt/', '_blank');
@@ -106,7 +106,7 @@ const VideoBubble = () => {
                 <Github size={18} />
               </div>
               <div className="sidebar-icon-bubble avatar" onClick={(e) => { e.stopPropagation(); handleAction('chatbot'); }} title="Chat with my AI">
-                <img src="/miis-headshot.jpg" alt="Mara Martins" className="sidebar-avatar-img" />
+                <img src="/ai-avatar.png" alt="AI Assistant" className="sidebar-avatar-img" />
               </div>
             </div>
 
