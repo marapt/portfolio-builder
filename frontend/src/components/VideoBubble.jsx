@@ -73,6 +73,7 @@ const VideoBubble = () => {
               muted 
               loop 
               playsInline
+              crossOrigin="anonymous"
               src="https://www.w3schools.com/html/mov_bbb.mp4"
             />
           </div>
@@ -94,6 +95,7 @@ const VideoBubble = () => {
               ref={videoRef}
               controls
               autoPlay
+              crossOrigin="anonymous"
               src="https://joy1.videvo.net/videvo_files/video/free/2019-11/large_watermarked/190828_27_Super_Slow_Motion_1080p_016_preview.mp4"
             />
             
@@ -106,7 +108,12 @@ const VideoBubble = () => {
                 <Github size={18} />
               </div>
               <div className="sidebar-icon-bubble avatar" onClick={(e) => { e.stopPropagation(); handleAction('chatbot'); }} title="Chat with my AI">
-                <img src="/ai-avatar.png" alt="AI Assistant" className="sidebar-avatar-img" />
+                <img 
+                  src="/miis-headshot.jpg" 
+                  alt="Mara Martins" 
+                  className="sidebar-avatar-img" 
+                  crossOrigin="anonymous"
+                />
               </div>
             </div>
 
