@@ -11,6 +11,7 @@ import Privacy from './pages/Privacy';
 import Imprint from './pages/Imprint';
 import Dashboard from './pages/Dashboard';
 import GTMDashboard from './pages/GTMDashboard';
+import VideoBubble from './components/VideoBubble';
 
 // Initialize GA4 (G-0BB4XSY59N)
 ReactGA.initialize("G-0BB4XSY59N");
@@ -31,6 +32,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/gtm" element={<GTMDashboard />} />
           </Routes>
+          <VideoBubble />
         </BrowserRouter>
       </GovernanceProvider>
     </div>
