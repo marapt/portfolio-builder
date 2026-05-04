@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { X, Play, MessageSquare, ChevronRight, Video, Globe, Github } from 'lucide-react';
 import './VideoBubble.css';
 
@@ -6,17 +7,18 @@ const VideoBubble = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const videoRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleAction = (type) => {
     switch(type) {
       case 'hire':
-        window.location.href = '/resume';
+        navigate('/resume');
         break;
       case 'stack':
-        document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+        navigate('/#portfolio');
         break;
       case 'contact':
-        window.location.href = '/#contact';
+        navigate('/#contact');
         break;
       case 'linkedin':
         window.open('https://www.linkedin.com/in/maramartinspt/', '_blank');
@@ -74,7 +76,7 @@ const VideoBubble = () => {
               loop 
               playsInline
               crossOrigin="anonymous"
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              src="https://joy1.videvo.net/videvo_files/video/free/2019-11/large_watermarked/190828_27_Super_Slow_Motion_1080p_016_preview.mp4"
             />
           </div>
           <div className="bubble-overlay">

@@ -13,6 +13,26 @@ import Dashboard from './pages/Dashboard';
 import GTMDashboard from './pages/GTMDashboard';
 import VideoBubble from './components/VideoBubble';
 
+const ScrollToHash = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+};
+
 // Initialize GA4 (G-0BB4XSY59N)
 ReactGA.initialize("G-0BB4XSY59N");
 ReactGA.send("pageview");
@@ -22,6 +42,7 @@ function App() {
     <div className="App">
       <GovernanceProvider>
         <BrowserRouter>
+          <ScrollToHash />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/project/:projectId" element={<ProjectDetail />} />
