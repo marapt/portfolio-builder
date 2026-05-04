@@ -7,6 +7,11 @@ const VideoBubble = () => {
   const [isMinimized, setIsMinimized] = useState(false);
   const videoRef = useRef(null);
 
+  const handleAction = (label) => {
+    alert(`Navigating to: ${label}`);
+    // You can replace this with: window.location.href = "/your-link"
+  };
+
   const toggleOpen = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
@@ -37,7 +42,7 @@ const VideoBubble = () => {
               muted 
               loop 
               playsInline
-              src="https://assets.mixkit.co/videos/preview/mixkit-man-working-on-his-laptop-in-a-coffee-shop-4340-large.mp4"
+              src="https://assets.mixkit.co/videos/preview/mixkit-woman-talking-to-the-camera-in-a-bright-room-41221-large.mp4"
             />
           </div>
           <div className="bubble-overlay">
@@ -58,7 +63,7 @@ const VideoBubble = () => {
               ref={videoRef}
               controls
               autoPlay
-              src="https://assets.mixkit.co/videos/preview/mixkit-man-working-on-his-laptop-in-a-coffee-shop-4340-large.mp4"
+              src="https://assets.mixkit.co/videos/preview/mixkit-woman-talking-to-the-camera-in-a-bright-room-41221-large.mp4"
             />
             
             {/* Sidebar Icons */}
@@ -76,15 +81,15 @@ const VideoBubble = () => {
 
             {/* Bottom Pills (A, B, C) */}
             <div className="video-pill-actions">
-              <button className="pill-btn">
+              <button className="pill-btn" onClick={() => handleAction('Why hire me?')}>
                 <span className="pill-letter">A</span>
                 <span className="pill-text">Why hire me?</span>
               </button>
-              <button className="pill-btn">
+              <button className="pill-btn" onClick={() => handleAction('My Tech Stack')}>
                 <span className="pill-letter">B</span>
                 <span className="pill-text">My Tech Stack</span>
               </button>
-              <button className="pill-btn">
+              <button className="pill-btn" onClick={() => handleAction("Let's collaborate")}>
                 <span className="pill-letter">C</span>
                 <span className="pill-text">Let's collaborate</span>
               </button>
