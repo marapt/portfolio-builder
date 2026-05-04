@@ -7,22 +7,48 @@ const VideoBubble = () => {
   const [isMinimized, setIsMinimized] = useState(false);
   const videoRef = useRef(null);
 
-  const handleAction = (label) => {
-    alert(`Navigating to: ${label}`);
-    // You can replace this with: window.location.href = "/your-link"
+  const handleAction = (type) => {
+    switch(type) {
+      case 'hire':
+        document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'stack':
+        document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'contact':
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'linkedin':
+        window.open('https://linkedin.com/in/maramartins', '_blank');
+        break;
+      case 'github':
+        window.open('https://github.com/marapt', '_blank');
+        break;
+      case 'resume':
+        window.location.href = '/resume';
+        break;
+      default:
+        break;
+    }
+    setIsOpen(false);
   };
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
-    if (!isOpen) {
-      // Small delay to ensure video element is rendered
-      setTimeout(() => {
-        if (videoRef.current) {
-          videoRef.current.play().catch(err => console.log("Video play failed:", err));
-        }
-      }, 100);
-    }
   };
+
+  useEffect(() => {
+    if (isOpen && videoRef.current) {
+      const playVideo = async () => {
+        try {
+          await videoRef.current.play();
+        } catch (err) {
+          console.log("Video auto-play blocked, waiting for interaction");
+        }
+      };
+      playVideo();
+    }
+  }, [isOpen]);
 
   const handleClose = (e) => {
     e.stopPropagation();
@@ -68,28 +94,28 @@ const VideoBubble = () => {
             
             {/* Sidebar Icons */}
             <div className="video-sidebar">
-              <div className="sidebar-icon-bubble" title="My Projects">
-                <Video size={18} />
+              <div className="sidebar-icon-bubble" onClick={(e) => { e.stopPropagation(); handleAction('linkedin'); }} title="LinkedIn">
+                <Globe size={18} />
               </div>
-              <div className="sidebar-icon-bubble" title="Podcast/Talks">
+              <div className="sidebar-icon-bubble" onClick={(e) => { e.stopPropagation(); handleAction('github'); }} title="GitHub">
                 <Play size={18} />
               </div>
-              <div className="sidebar-icon-bubble" title="Download Resume">
-                <MessageSquare size={18} />
+              <div className="sidebar-icon-bubble" onClick={(e) => { e.stopPropagation(); handleAction('resume'); }} title="View Resume">
+                <X size={18} />
               </div>
             </div>
 
             {/* Bottom Pills (A, B, C) */}
             <div className="video-pill-actions">
-              <button className="pill-btn" onClick={() => handleAction('Why hire me?')}>
+              <button className="pill-btn" onClick={() => handleAction('hire')}>
                 <span className="pill-letter">A</span>
                 <span className="pill-text">Why hire me?</span>
               </button>
-              <button className="pill-btn" onClick={() => handleAction('My Tech Stack')}>
+              <button className="pill-btn" onClick={() => handleAction('stack')}>
                 <span className="pill-letter">B</span>
                 <span className="pill-text">My Tech Stack</span>
               </button>
-              <button className="pill-btn" onClick={() => handleAction("Let's collaborate")}>
+              <button className="pill-btn" onClick={() => handleAction('contact')}>
                 <span className="pill-letter">C</span>
                 <span className="pill-text">Let's collaborate</span>
               </button>
