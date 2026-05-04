@@ -48,7 +48,7 @@ const VideoBubble = () => {
 
       {/* Expanded State */}
       {isOpen && (
-        <div className="video-expanded-card glass-card">
+        <div className="video-expanded-card glass-card landscape">
           <button className="close-btn" onClick={handleClose}>
             <X size={20} />
           </button>
@@ -60,27 +60,33 @@ const VideoBubble = () => {
               autoPlay
               src="https://assets.mixkit.co/videos/preview/mixkit-man-working-on-his-laptop-in-a-coffee-shop-4340-large.mp4"
             />
-          </div>
-
-          <div className="video-content p-4">
-            <h3 className="text-lg font-semibold mb-1">Hi, I'm your host! 👋</h3>
-            <p className="text-sm opacity-80 mb-4">Want to see how I built this portfolio or discuss a project?</p>
             
-            <div className="action-buttons space-y-2">
-              <button className="action-btn primary w-full flex items-center justify-between p-3 rounded-xl transition-all">
-                <span className="flex items-center gap-2">
-                  <Play size={18} />
-                  See my Tech Stack
-                </span>
-                <ChevronRight size={16} />
+            {/* Sidebar Icons */}
+            <div className="video-sidebar">
+              <div className="sidebar-icon-bubble" title="My Projects">
+                <Video size={18} />
+              </div>
+              <div className="sidebar-icon-bubble" title="Podcast/Talks">
+                <Play size={18} />
+              </div>
+              <div className="sidebar-icon-bubble" title="Download Resume">
+                <MessageSquare size={18} />
+              </div>
+            </div>
+
+            {/* Bottom Pills (A, B, C) */}
+            <div className="video-pill-actions">
+              <button className="pill-btn">
+                <span className="pill-letter">A</span>
+                <span className="pill-text">Why hire me?</span>
               </button>
-              
-              <button className="action-btn secondary w-full flex items-center justify-between p-3 rounded-xl transition-all">
-                <span className="flex items-center gap-2">
-                  <MessageSquare size={18} />
-                  Let's Chat
-                </span>
-                <ChevronRight size={16} />
+              <button className="pill-btn">
+                <span className="pill-letter">B</span>
+                <span className="pill-text">My Tech Stack</span>
+              </button>
+              <button className="pill-btn">
+                <span className="pill-letter">C</span>
+                <span className="pill-text">Let's collaborate</span>
               </button>
             </div>
           </div>
