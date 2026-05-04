@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactGA from "react-ga4"; 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { GovernanceProvider } from './GovernanceContext';
 import './App.css';
 import HomePage from './pages/HomePage';
@@ -41,20 +41,18 @@ function App() {
   return (
     <div className="App">
       <GovernanceProvider>
-        <BrowserRouter>
-          <ScrollToHash />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/project/:projectId" element={<ProjectDetail />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/scrum-board" element={<ScrumBoardPage />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/imprint" element={<Imprint />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/gtm" element={<GTMDashboard />} />
-          </Routes>
-          <VideoBubble />
-        </BrowserRouter>
+        <ScrollToHash />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/project/:projectId" element={<ProjectDetail />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/scrum-board" element={<ScrumBoardPage />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/imprint" element={<Imprint />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/gtm" element={<GTMDashboard />} />
+        </Routes>
+        <VideoBubble />
       </GovernanceProvider>
     </div>
   );
