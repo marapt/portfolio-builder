@@ -1,6 +1,6 @@
 .video-bubble-container {
     position: fixed;
-    bottom: 2rem;
+    bottom: 10rem;
     right: 2rem;
     z-index: 9999;
     display: flex;
@@ -27,6 +27,7 @@
 .bubble-video-preview {
     width: 100%;
     height: 100%;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
 }
 
 .bubble-video-preview video {
