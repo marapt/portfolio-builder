@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Play, MessageSquare, ChevronRight, Video, Globe } from 'lucide-react';
+import { X, Play, MessageSquare, ChevronRight, Video, Globe, Github } from 'lucide-react';
 import './VideoBubble.css';
 
 const VideoBubble = () => {
@@ -19,13 +19,18 @@ const VideoBubble = () => {
         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
         break;
       case 'linkedin':
-        window.open('https://linkedin.com/in/maramartins', '_blank');
+        window.open('https://www.linkedin.com/in/maramartinspt/', '_blank');
         break;
       case 'github':
         window.open('https://github.com/marapt', '_blank');
         break;
       case 'resume':
         window.location.href = '/resume';
+        break;
+      case 'chatbot':
+        if (window.chatbase) {
+          window.chatbase("open");
+        }
         break;
       default:
         break;
@@ -68,7 +73,7 @@ const VideoBubble = () => {
               muted 
               loop 
               playsInline
-              src="https://assets.mixkit.co/videos/preview/mixkit-woman-talking-to-the-camera-in-a-bright-room-41221-large.mp4"
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
             />
           </div>
           <div className="bubble-overlay">
@@ -89,7 +94,7 @@ const VideoBubble = () => {
               ref={videoRef}
               controls
               autoPlay
-              src="https://assets.mixkit.co/videos/preview/mixkit-woman-talking-to-the-camera-in-a-bright-room-41221-large.mp4"
+              src="https://joy1.videvo.net/videvo_files/video/free/2019-11/large_watermarked/190828_27_Super_Slow_Motion_1080p_016_preview.mp4"
             />
             
             {/* Sidebar Icons */}
@@ -98,10 +103,10 @@ const VideoBubble = () => {
                 <Globe size={18} />
               </div>
               <div className="sidebar-icon-bubble" onClick={(e) => { e.stopPropagation(); handleAction('github'); }} title="GitHub">
-                <Play size={18} />
+                <Github size={18} />
               </div>
-              <div className="sidebar-icon-bubble" onClick={(e) => { e.stopPropagation(); handleAction('resume'); }} title="View Resume">
-                <X size={18} />
+              <div className="sidebar-icon-bubble avatar" onClick={(e) => { e.stopPropagation(); handleAction('chatbot'); }} title="Chat with my AI">
+                <img src="/miis-headshot.jpg" alt="Mara Martins" className="sidebar-avatar-img" />
               </div>
             </div>
 
@@ -109,15 +114,15 @@ const VideoBubble = () => {
             <div className="video-pill-actions">
               <button className="pill-btn" onClick={() => handleAction('hire')}>
                 <span className="pill-letter">A</span>
-                <span className="pill-text">Why hire me?</span>
+                <span className="pill-text">See my Resume</span>
               </button>
               <button className="pill-btn" onClick={() => handleAction('stack')}>
                 <span className="pill-letter">B</span>
-                <span className="pill-text">My Tech Stack</span>
+                <span className="pill-text">Check my Featured Projects</span>
               </button>
               <button className="pill-btn" onClick={() => handleAction('contact')}>
                 <span className="pill-letter">C</span>
-                <span className="pill-text">Let's collaborate</span>
+                <span className="pill-text">Let's connect</span>
               </button>
             </div>
           </div>

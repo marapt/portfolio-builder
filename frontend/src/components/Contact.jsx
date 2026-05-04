@@ -205,6 +205,7 @@ const Contact = () => {
                           id="email"
                           name="email"
                           type="email"
+                          autoComplete="email"
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="marapt@gmail.com"
@@ -222,7 +223,7 @@ const Contact = () => {
                         onValueChange={(value) => setFormData({...formData, category: value})}
                         required
                       >
-                        <SelectTrigger className="bg-gray-50/50 border-0 focus:ring-2 focus:ring-primary rounded-2xl p-6 text-sm font-bold text-foreground h-14">
+                        <SelectTrigger id="category" className="bg-gray-50/50 border-0 focus:ring-2 focus:ring-primary rounded-2xl p-6 text-sm font-bold text-foreground h-14">
                           <SelectValue placeholder="Select a service category" />
                         </SelectTrigger>
                         <SelectContent className="rounded-2xl border-gray-100 shadow-xl">
