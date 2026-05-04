@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Play, MessageSquare, ChevronRight, Video } from 'lucide-react';
+import { X, Play, MessageSquare, ChevronRight, Video, Globe } from 'lucide-react';
 import './VideoBubble.css';
 
 const VideoBubble = () => {
