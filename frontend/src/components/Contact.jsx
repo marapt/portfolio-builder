@@ -72,7 +72,7 @@ const Contact = () => {
     },
     {
       icon: MapPin,
-      label: t('stats.languages'),
+      label: 'Location',
       value: personalInfo.location,
       href: null
     },
