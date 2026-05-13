@@ -355,7 +355,7 @@ async def get_jira_board(board_id: str, _ = Depends(verify_api_key)):
         logger.error(f"Unexpected Jira error: {str(exc)}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
-@api_router.get("/jira/board/{board_id}/sprints", response_model=List[JiraSprint])
+@api_router.get("/jira/board/{board_id}/sprints", response_model=list[JiraSprint])
 async def get_jira_sprints(board_id: str, _ = Depends(verify_api_key)):
     """Proxy to fetch sprints for a specific board."""
     config = get_jira_config()
