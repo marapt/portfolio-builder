@@ -53,9 +53,9 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/gtm" element={<GTMDashboard />} />
         </Routes>
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { GovernanceProvider } from './GovernanceContext';
-import { SpeedInsights } from '@vercel/speed-insights/react';
+        <VideoBubble />
+        <SpeedInsights />
+      </GovernanceProvider>
     </div>
   );
 }
