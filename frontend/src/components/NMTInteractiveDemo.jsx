@@ -979,7 +979,7 @@ const NMTInteractiveDemo = () => {
                     Enterprise Cost Rationale & 40% Reduction
                   </span>
                   <p className="text-xs text-slate-200">
-                    A <strong>$50 fine-tuning run</strong> on ~150k curated pairs eliminates manual human translation on 5M rote words, delivering <strong>$500,000+ in annual savings</strong>.
+                    Routing <strong>11.25M rote words</strong> (45% of a 25M-word program) through the NMT engine saves <strong>$0.10/word</strong>, or <strong>$1,125,000 a year</strong> against a $2.8M baseline.
                   </p>
                 </div>
               </div>

@@ -1242,64 +1242,155 @@ if (cosineScore < 0.75) {
             </div>
           </div>
 
-          {/* Part 4: The Mathematical ROI Argument & 40% Cost Reduction Proof */}
+          {/* Part 4: The 40% Cost Reduction — Exact Mathematical Breakdown */}
           <div className="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-emerald-950/60 via-slate-900 to-indigo-950/50 border border-emerald-500/50 shadow-2xl relative overflow-hidden">
-            <div className="max-w-4xl">
+            <div className="max-w-5xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold uppercase tracking-widest mb-4">
                 <Calculator size={13} className="text-emerald-300" />
                 <span>The Mathematical ROI Proof</span>
               </div>
               <h3 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
-                How a $50 Training Run Unlocks $500,000+ in Annual Savings
+                The Exact Math Behind the 40% Net Cost Reduction
               </h3>
-              <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-8 font-normal">
-                This is the ultimate justification for this methodology in any executive or interview review:
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-10 font-normal">
+                This is how the 40% is calculated, step by step, as you would pitch it to a Director of Finance or VP of Operations. Picture an enterprise localization program (think Apple Music or Spotify) running massive global releases.
               </p>
 
-              {/* Formula & Step Breakdown */}
-              <div className="grid sm:grid-cols-3 gap-4 mb-8">
-                <div className="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">Step 1: Compute Spend</span>
-                  <div className="text-2xl font-black text-white mb-1">&lt; $100</div>
-                  <p className="text-[11px] text-slate-400 leading-relaxed">
-                    Trains a customized NMT engine hitting a <strong>0.85+ COMET score</strong> on domain copy.
-                  </p>
+              {/* Step 1: Baseline */}
+              <div className="mb-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-7 h-7 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-center font-black text-xs">1</span>
+                  <h4 className="text-lg font-bold text-white">The Baseline (Before Custom NMT)</h4>
                 </div>
-
-                <div className="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">Step 2: Word Volume</span>
-                  <div className="text-2xl font-black text-emerald-300 mb-1">5,000,000</div>
-                  <p className="text-[11px] text-slate-400 leading-relaxed">
-                    Words/year of repetitive UI strings, notifications, and metadata translated automatically.
-                  </p>
-                </div>
-
-                <div className="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">Step 3: Direct Savings</span>
-                  <div className="text-2xl font-black text-emerald-400 mb-1">$500,000 / yr</div>
-                  <p className="text-[11px] text-slate-400 leading-relaxed">
-                    Eliminating manual human translation on rote UI strings at <strong>$0.10/word</strong> saves $500k annually.
-                  </p>
+                <div className="grid sm:grid-cols-3 gap-4">
+                  <div className="bg-slate-950/80 p-5 rounded-2xl border border-slate-800">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1">Total Annual Volume</span>
+                    <div className="text-2xl font-black text-white mb-1">25,000,000</div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed">words localized across global releases per year.</p>
+                  </div>
+                  <div className="bg-slate-950/80 p-5 rounded-2xl border border-slate-800">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1">Average Human Rate</span>
+                    <div className="text-2xl font-black text-white mb-1">~$0.112 / word</div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed">a blended rate across all global languages.</p>
+                  </div>
+                  <div className="bg-slate-950/80 p-5 rounded-2xl border border-slate-800">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1">Total Annual Spend</span>
+                    <div className="text-2xl font-black text-white mb-1">$2,800,000</div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed font-mono">25,000,000 × $0.112</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Enterprise Baseline Validation (40% Proof) */}
-              <div className="p-6 rounded-2xl bg-slate-950/90 border border-slate-800 text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3">
-                <div className="font-bold text-white text-base flex items-center gap-2">
-                  <Scale size={18} className="text-emerald-400" />
-                  <span>Validating the 40% Enterprise Spend Reduction Claim:</span>
+              {/* Step 2: The Problem */}
+              <div className="mb-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-7 h-7 rounded-lg bg-amber-600/20 text-amber-300 border border-amber-500/40 flex items-center justify-center font-black text-xs">2</span>
+                  <h4 className="text-lg font-bold text-white">The Problem: Not Every Word Is High-Value</h4>
                 </div>
-                <p>
-                  Across an enterprise localization program with an annual volume of <strong>25M+ words</strong> and a baseline spend of <strong>$2.8M</strong>:
+                <p className="text-sm text-slate-300 leading-relaxed mb-4 max-w-3xl">
+                  Not all 25 million words are marketing transcreation. In software, roughly <strong>45%</strong> of the volume is repetitive UI buttons (<em>"Cancel Subscription"</em>, <em>"Play"</em>, <em>"Next"</em>), artist metadata, system error alerts, and boilerplate catalog strings.
                 </p>
-                <ul className="list-disc pl-5 space-y-1.5 text-slate-300">
-                  <li><strong>Catalog & Repetitive UI Triage:</strong> Approximately 45% of total word volume consists of repetitive UI buttons, artist catalog metadata, and system alerts.</li>
-                  <li><strong>Automated Gating:</strong> Deploying our custom-trained NMT engine with automated quality gating ($\ge 0.82$ COMET) routes rote copy directly to automated publish or light MTPE, reducing cost per word from $0.12 down to $0.03.</li>
-                  <li><strong>Financial Outcome:</strong> Saves over <strong>$1,120,000 annually</strong>—mathematically confirming our <strong>40% net cost reduction</strong> while freeing budget to compensate expert human linguists at top-tier rates for high-visibility marketing transcreation.</li>
-                </ul>
+                <div className="bg-slate-950/80 p-5 rounded-2xl border border-amber-500/30 inline-block">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-amber-400 block mb-1">Rote / Repetitive Volume</span>
+                  <div className="text-2xl font-black text-amber-300 mb-1">11,250,000 words</div>
+                  <p className="text-[11px] text-slate-400 font-mono">45% × 25,000,000</p>
+                </div>
               </div>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              {/* Step 3: The Intervention */}
+              <div className="mb-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-7 h-7 rounded-lg bg-indigo-600/20 text-indigo-300 border border-indigo-500/40 flex items-center justify-center font-black text-xs">3</span>
+                  <h4 className="text-lg font-bold text-white">The Intervention: Re-Route, Don't Replace</h4>
+                </div>
+                <p className="text-sm text-slate-300 leading-relaxed mb-4 max-w-3xl">
+                  You don't replace human linguists; you re-route the traffic. Those 11.25M rote words go through the domain-adapted NMT engine. Because it clears the <strong>&gt; 0.82 COMET</strong> gate, human linguists only need light post-editing (MTPE), or the engine publishes directly.
+                </p>
+                <div className="overflow-x-auto rounded-2xl border border-slate-800">
+                  <table className="w-full text-left text-xs sm:text-sm">
+                    <thead className="bg-slate-950 text-slate-300 font-bold uppercase tracking-wider text-[10px]">
+                      <tr>
+                        <th className="p-4">Workflow (Rote UI / Catalog)</th>
+                        <th className="p-4">Cost per Word</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-800 bg-slate-950/60">
+                      <tr>
+                        <td className="p-4 text-slate-300">Human translation (tech / UI)</td>
+                        <td className="p-4 font-mono text-rose-300 font-bold">~$0.13</td>
+                      </tr>
+                      <tr>
+                        <td className="p-4 text-slate-300">Custom NMT + light MTPE / direct publish</td>
+                        <td className="p-4 font-mono text-emerald-300 font-bold">~$0.03</td>
+                      </tr>
+                      <tr className="bg-emerald-950/30">
+                        <td className="p-4 font-bold text-white">Net savings per word</td>
+                        <td className="p-4 font-mono text-emerald-400 font-black">$0.10</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Step 4: The Proof */}
+              <div className="mb-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-7 h-7 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-500/40 flex items-center justify-center font-black text-xs">4</span>
+                  <h4 className="text-lg font-bold text-white">The Mathematical ROI Proof (The 40%)</h4>
+                </div>
+                <div className="grid md:grid-cols-3 gap-4 items-stretch">
+                  <div className="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30 flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">Volume × Savings</span>
+                      <div className="text-xl sm:text-2xl font-black text-white mb-2">11,250,000 × $0.10</div>
+                    </div>
+                    <p className="text-[11px] text-slate-400">automated volume × savings per word</p>
+                  </div>
+                  <div className="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30 flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">Total Annual Savings</span>
+                      <div className="text-2xl font-black text-emerald-400 mb-2">$1,125,000</div>
+                    </div>
+                    <p className="text-[11px] text-slate-400">recovered every year</p>
+                  </div>
+                  <div className="bg-emerald-950/50 p-5 rounded-2xl border border-emerald-400/60 flex flex-col justify-between">
+                    <div>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-emerald-300 block mb-1">Savings ÷ Original Spend</span>
+                      <div className="text-xl sm:text-2xl font-black text-white mb-1 font-mono">$1,125,000 ÷ $2,800,000</div>
+                      <div className="text-sm text-emerald-200 font-mono">= 0.4018</div>
+                    </div>
+                    <div className="mt-3 text-3xl font-black text-emerald-400">≈ 40% Cost Reduction</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Beyond Rate Arbitrage + Reinvestment */}
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                <div className="p-6 rounded-2xl bg-slate-950/90 border border-slate-800 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <div className="font-bold text-white text-base flex items-center gap-2 mb-2">
+                    <Scale size={18} className="text-emerald-400" />
+                    <span>It's Not Just About Paying Translators $0.10 Less</span>
+                  </div>
+                  <p>
+                    The real leverage is no longer needing to translate the phrase <em>"Cancel Subscription"</em> 500 times. A domain-adapted engine, backed by clean translation memory, handles repetition and consistency at near-zero marginal cost, so human attention goes only where it adds value.
+                  </p>
+                </div>
+                <div className="p-6 rounded-2xl bg-slate-950/90 border border-emerald-500/30 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <div className="font-bold text-white text-base flex items-center gap-2 mb-2">
+                    <Coins size={18} className="text-emerald-400" />
+                    <span>Reinvest the $1.1M in Human-in-the-Loop Talent</span>
+                  </div>
+                  <p>
+                    The best use of the savings is to reinvest them in <strong>top-tier premium rates for expert linguists</strong> on high-visibility, creative marketing copy, where human empathy and cultural nuance actually matter. Automation funds the craft.
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-[11px] text-slate-400 leading-relaxed mb-8">
+                Investment note: fine-tuning the engine costs roughly $20–$100 per language pair in compute (see Option A / Option B above), a rounding error against $1.125M in annual savings.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4">
                 <a
                   href="#interactive-nmt-demo"
                   onClick={(e) => {
