@@ -346,6 +346,9 @@ export function calculateCOMET(source, hypothesis, reference) {
     ['morceau', 'titre'],
     ['morceaux', 'titres'],
     ['préféré', 'favori'],
+    ['préféré', 'favoris'],
+    ['artiste', 'morceau'],
+    ['artiste', 'morceaux'],
     ['mondialement', 'monde'],
     // Spanish
     ['estrena', 'lanzamiento'],
