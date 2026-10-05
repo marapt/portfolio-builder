@@ -17,7 +17,11 @@ import {
   FileCheck,
   Zap,
   Sliders,
-  Award
+  Award,
+  PlayCircle,
+  Pause,
+  SkipForward,
+  X
 } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
@@ -38,6 +42,12 @@ import {
 
 const NMTInteractiveDemo = () => {
   const [activeTab, setActiveTab] = useState('funnel'); // 'funnel' | 'evaluator'
+
+  // --- Auto-Play Walkthrough State ---
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
+  const [autoPlayIndex, setAutoPlayIndex] = useState(0);
+  const [isAutoPlayPaused, setIsAutoPlayPaused] = useState(false);
+  const [stepSecondsLeft, setStepSecondsLeft] = useState(6);
 
   // --- Funnel / Sanitization State ---
   const [selectedFunnelStage, setSelectedFunnelStage] = useState(1);
@@ -102,8 +112,126 @@ const NMTInteractiveDemo = () => {
   };
 
   const handleHypChange = (val) => {
+    if (isAutoPlaying) setIsAutoPlayPaused(true);
     setEvalHyp(val);
     recalculateMetrics(evalSource, val, evalRef);
+  };
+
+  const STEP_DURATION = 7; // 7 seconds per walkthrough phase
+
+  const AUTO_PLAY_STEPS = [
+    {
+      title: "1. Data Normalization & Tag Cleaning",
+      stageDesc: "Stage 1 Heuristic Pre-Filtering",
+      narration: "Cleaning broken HTML tags, unescaping entities, and converting placeholders ({0}, %s, rdar://) into uniform <var> tokens.",
+      tab: 'funnel',
+      run: () => {
+        setActiveTab('funnel');
+        setSelectedFunnelStage(1);
+        const tc = PRESET_TEST_CASES[0];
+        setSelectedTestCase(tc);
+        setCustomSource(tc.source);
+        setCustomTarget(tc.target);
+        setTargetLang('de');
+        runAnalysisDirect(tc.source, tc.target, 'de');
+      }
+    },
+    {
+      title: "2. Neural Semantic Filtering (LaBSE Cutoff)",
+      stageDesc: "Stage 4 Semantic Alignment Gate",
+      narration: "Detecting divergent meaning and sentence misalignments. Segments scoring below 0.75 Cosine Similarity are automatically rejected.",
+      tab: 'funnel',
+      run: () => {
+        setActiveTab('funnel');
+        setSelectedFunnelStage(4);
+        const tc = PRESET_TEST_CASES[1];
+        setSelectedTestCase(tc);
+        setCustomSource(tc.source);
+        setCustomTarget(tc.target);
+        setTargetLang('de');
+        runAnalysisDirect(tc.source, tc.target, 'de');
+      }
+    },
+    {
+      title: "3. Tripartite Evaluation & COMET Quality Gate",
+      stageDesc: "Step 5 Metric Evaluation",
+      narration: "Testing creative editorial synonym ('global veröffentlicht'). Notice BLEU drops due to n-gram mismatch, but COMET awards 0.85 and PASSES the production gate.",
+      tab: 'evaluator',
+      run: () => {
+        setActiveTab('evaluator');
+        const c = PRESET_EVALUATION_CASES[0];
+        setSelectedEvalCase(c);
+        setEvalSource(c.source);
+        setEvalRef(c.reference);
+        setEvalHyp(c.hypothesis);
+        recalculateMetrics(c.source, c.hypothesis, c.reference);
+      }
+    },
+    {
+      title: "4. Automated Rejection on Literal Translation Failure",
+      stageDesc: "Step 5 Production Gate Failure",
+      narration: "Testing a literal foundation translation error. The COMET score drops to 0.71 (<0.82), rejecting the output before human blind testing.",
+      tab: 'evaluator',
+      run: () => {
+        setActiveTab('evaluator');
+        const c = PRESET_EVALUATION_CASES[2];
+        setSelectedEvalCase(c);
+        setEvalSource(c.source);
+        setEvalRef(c.reference);
+        setEvalHyp(c.hypothesis);
+        recalculateMetrics(c.source, c.hypothesis, c.reference);
+      }
+    }
+  ];
+
+  // Auto-play timer
+  useEffect(() => {
+    let interval = null;
+    if (isAutoPlaying && !isAutoPlayPaused) {
+      interval = setInterval(() => {
+        setStepSecondsLeft((prev) => {
+          if (prev <= 1) {
+            setAutoPlayIndex((curIdx) => {
+              const nextIdx = curIdx + 1;
+              if (nextIdx >= AUTO_PLAY_STEPS.length) {
+                setIsAutoPlaying(false);
+                return 0;
+              } else {
+                AUTO_PLAY_STEPS[nextIdx].run();
+                return nextIdx;
+              }
+            });
+            return STEP_DURATION;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, isAutoPlayPaused]);
+
+  const startAutoPlay = () => {
+    setIsAutoPlaying(true);
+    setIsAutoPlayPaused(false);
+    setAutoPlayIndex(0);
+    setStepSecondsLeft(STEP_DURATION);
+    AUTO_PLAY_STEPS[0].run();
+  };
+
+  const stopAutoPlay = () => {
+    setIsAutoPlaying(false);
+    setIsAutoPlayPaused(false);
+  };
+
+  const togglePause = () => {
+    setIsAutoPlayPaused((prev) => !prev);
+  };
+
+  const skipToNextStep = () => {
+    const nextIdx = (autoPlayIndex + 1) % AUTO_PLAY_STEPS.length;
+    setAutoPlayIndex(nextIdx);
+    setStepSecondsLeft(STEP_DURATION);
+    AUTO_PLAY_STEPS[nextIdx].run();
   };
 
   const activeFunnel = FUNNEL_STAGES_DATA[selectedFunnelStage];
@@ -129,32 +257,110 @@ const NMTInteractiveDemo = () => {
           </p>
         </div>
 
-        {/* Mode Switcher Tabs */}
-        <div className="flex bg-slate-950 border border-slate-800 p-1.5 rounded-2xl self-start md:self-auto">
+        {/* Controls and Tabs */}
+        <div className="flex flex-wrap items-center gap-3 self-start md:self-auto">
+          {/* Auto-Play Walkthrough Button */}
           <button
-            onClick={() => setActiveTab('funnel')}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
-              activeTab === 'funnel'
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30'
-                : 'text-slate-400 hover:text-white'
+            onClick={isAutoPlaying ? stopAutoPlay : startAutoPlay}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-black uppercase tracking-wider transition-all border shadow-lg ${
+              isAutoPlaying 
+                ? 'bg-rose-950/80 border-rose-500/80 text-rose-300 hover:bg-rose-900 shadow-rose-900/30' 
+                : 'bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-600 hover:from-emerald-500 hover:to-indigo-500 text-white shadow-emerald-600/30 transform hover:-translate-y-0.5'
             }`}
           >
-            <Filter size={14} />
-            <span>Step 1: Sanitization Funnel</span>
+            {isAutoPlaying ? <Pause size={14} className="text-rose-300 animate-pulse" /> : <PlayCircle size={14} className="text-emerald-200" />}
+            <span>{isAutoPlaying ? 'Exit Auto-Play' : 'Auto-Play Guided Tour'}</span>
           </button>
-          <button
-            onClick={() => setActiveTab('evaluator')}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
-              activeTab === 'evaluator'
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            <BarChart3 size={14} />
-            <span>Step 5: Metric Evaluator</span>
-          </button>
+
+          {/* Mode Switcher Tabs */}
+          <div className="flex bg-slate-950 border border-slate-800 p-1.5 rounded-2xl">
+            <button
+              onClick={() => { if (isAutoPlaying) stopAutoPlay(); setActiveTab('funnel'); }}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                activeTab === 'funnel'
+                  ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <Filter size={13} />
+              <span>Sanitization Funnel</span>
+            </button>
+            <button
+              onClick={() => { if (isAutoPlaying) stopAutoPlay(); setActiveTab('evaluator'); }}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                activeTab === 'evaluator'
+                  ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <BarChart3 size={13} />
+              <span>Metric Evaluator</span>
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Auto-Play Guided Tour Banner */}
+      {isAutoPlaying && (
+        <div className="mb-8 p-5 bg-gradient-to-r from-slate-900/90 via-indigo-950/70 to-slate-900/90 border border-indigo-500/80 rounded-2xl shadow-2xl relative z-20 animate-in fade-in duration-300">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-start sm:items-center gap-3.5">
+              <div className="w-9 h-9 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/40 flex items-center justify-center font-black text-sm flex-shrink-0">
+                {autoPlayIndex + 1}/4
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400">
+                    Guided Walkthrough • {AUTO_PLAY_STEPS[autoPlayIndex].stageDesc}
+                  </span>
+                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                </div>
+                <h4 className="text-sm sm:text-base font-bold text-white mt-0.5">
+                  {AUTO_PLAY_STEPS[autoPlayIndex].title}
+                </h4>
+                <p className="text-xs text-slate-300 mt-1 max-w-2xl leading-relaxed">
+                  {AUTO_PLAY_STEPS[autoPlayIndex].narration}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 self-end sm:self-center">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={togglePause}
+                className="h-8 px-3 text-xs border-slate-700 bg-slate-950 text-slate-200 hover:bg-slate-800"
+              >
+                {isAutoPlayPaused ? <Play size={12} className="mr-1 text-emerald-400" /> : <Pause size={12} className="mr-1 text-yellow-400" />}
+                {isAutoPlayPaused ? 'Resume' : 'Pause'}
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={skipToNextStep}
+                className="h-8 px-3 text-xs border-slate-700 bg-slate-950 text-slate-200 hover:bg-slate-800"
+              >
+                <SkipForward size={12} className="mr-1 text-indigo-400" /> Next
+              </Button>
+              <button
+                onClick={stopAutoPlay}
+                className="w-8 h-8 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors"
+                title="Exit Guided Walkthrough"
+              >
+                <X size={14} />
+              </button>
+            </div>
+          </div>
+
+          {/* Step Progress Bar */}
+          <div className="w-full h-1.5 bg-slate-950 rounded-full mt-4 overflow-hidden border border-slate-800">
+            <div 
+              className="h-full bg-gradient-to-r from-emerald-500 via-indigo-500 to-purple-500 rounded-full transition-all duration-1000 ease-linear"
+              style={{ width: `${((STEP_DURATION - stepSecondsLeft) / STEP_DURATION) * 100}%` }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* ========================================================================= */}
       {/* MODE 1: STEP 1 DATA SANITIZATION & RETENTION FUNNEL                       */}
