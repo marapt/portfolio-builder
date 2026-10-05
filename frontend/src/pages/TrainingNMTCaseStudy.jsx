@@ -972,9 +972,9 @@ if (cosineScore < 0.75) {
                   <TrendingDown size={14} className="text-emerald-400" />
                   <span>Cost & 40% ROI Justification ↓</span>
                 </a>
-                <Link to="/project/ai-translation-engine">
+                <Link to="/#portfolio">
                   <Button variant="outline" className="border-slate-700 text-slate-200 hover:bg-slate-800 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider">
-                    Explore Translation Engine App ↗
+                    All Case Studies ↗
                   </Button>
                 </Link>
               </div>
@@ -1312,43 +1312,12 @@ if (cosineScore < 0.75) {
                   <Sparkles size={14} className="text-yellow-300" />
                   <span>Test Quality Gating in Demo ↗</span>
                 </a>
-                <Link to="/project/ai-translation-engine">
+                <Link to="/#portfolio">
                   <Button variant="outline" className="border-slate-700 text-slate-200 hover:bg-slate-800 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider">
-                    Explore Enterprise Translation App ↗
+                    All Portfolio Case Studies ↗
                   </Button>
                 </Link>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Cross-Link / Related Projects CTA */}
-      <section className="py-20 border-t border-slate-800 bg-[#060911]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-slate-900 to-indigo-950/50 border border-slate-800 rounded-[3rem] p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="max-w-2xl">
-              <span className="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-2 block">
-                Related Production Application
-              </span>
-              <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
-                Explore the AI Translation Engine App
-              </h3>
-              <p className="text-slate-400 text-base leading-relaxed">
-                See the corresponding interactive application showcase, featuring full-scale enterprise localization workflow metrics, team collaboration models, and client delivery results.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/project/ai-translation-engine">
-                <Button className="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-6 rounded-2xl font-black uppercase tracking-wider text-xs shadow-xl shadow-indigo-600/20">
-                  View Translation Engine App ↗
-                </Button>
-              </Link>
-              <Link to="/#portfolio">
-                <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 px-8 py-6 rounded-2xl font-black uppercase tracking-wider text-xs">
-                  All Case Studies
-                </Button>
-              </Link>
             </div>
           </div>
         </div>
