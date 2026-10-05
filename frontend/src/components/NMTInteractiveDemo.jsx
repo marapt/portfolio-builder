@@ -21,7 +21,8 @@ import {
   PlayCircle,
   Pause,
   SkipForward,
-  X
+  X,
+  Terminal
 } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
@@ -310,6 +311,17 @@ const NMTInteractiveDemo = () => {
             >
               <BarChart3 size={13} />
               <span>Metric Evaluator</span>
+            </button>
+            <button
+              onClick={() => { if (isAutoPlaying) stopAutoPlay(); setActiveTab('engine'); }}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                activeTab === 'engine'
+                  ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <Cpu size={13} />
+              <span>Under the Hood</span>
             </button>
           </div>
         </div>
@@ -858,6 +870,119 @@ const NMTInteractiveDemo = () => {
                   </span>
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* MODE 3: UNDER THE HOOD (ENGINE ARCHITECTURE)                              */}
+      {/* ========================================================================= */}
+      {activeTab === 'engine' && (
+        <div className="space-y-8 relative z-10 animate-in fade-in duration-300">
+          <div className="bg-slate-950/80 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Simulation Architecture</span>
+                <h3 className="text-xl font-bold text-white">How the Engine Works Under the Hood</h3>
+              </div>
+              <a
+                href="#under-the-hood"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById('under-the-hood');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-xs font-bold text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 self-start sm:self-auto"
+              >
+                <span>Full Architectural Breakdown Below</span>
+                <span>↓</span>
+              </a>
+            </div>
+
+            <p className="text-sm text-slate-300 leading-relaxed max-w-3xl mb-8">
+              Because running massive 768-dimensional Python GPU models inside a browser for a portfolio demo isn't feasible, I engineered <code className="px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 font-mono text-xs border border-indigo-800/60">nmtPipelineEngine.js</code> in client-side JavaScript. It accurately replicates the exact mathematical boundaries, stop-word frequency classifiers, length ratios, and cross-encoder semantic rewards of an enterprise NLP pipeline.
+            </p>
+
+            {/* 5 Engine Quick Cards */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* Function 1 */}
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 hover:border-indigo-500/50 transition-all">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-mono text-blue-400 bg-blue-950/80 border border-blue-800/60 px-2 py-0.5 rounded">01 • REGEX</span>
+                  <Badge variant="outline" className="text-[9px] border-slate-700 text-slate-400">Sanitization</Badge>
+                </div>
+                <h4 className="text-sm font-bold text-white font-mono mb-2">cleanTagsAndEntities()</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Decodes HTML entities, purges internal bug patterns (<code className="text-rose-400 font-mono text-[10px]">rdar://</code>, <code className="text-rose-400 font-mono text-[10px]">JIRA-</code>), and normalizes sprint tags and variables to uniform <code className="text-emerald-300 font-mono text-[10px]">&lt;var&gt;</code> tokens.
+                </p>
+              </div>
+
+              {/* Function 2 */}
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 hover:border-indigo-500/50 transition-all">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-mono text-purple-400 bg-purple-950/80 border border-purple-800/60 px-2 py-0.5 rounded">02 • CLASSIFIER</span>
+                  <Badge variant="outline" className="text-[9px] border-slate-700 text-slate-400">fastText</Badge>
+                </div>
+                <h4 className="text-sm font-bold text-white font-mono mb-2">simulateLangId()</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Profiles stop-word distributions across PT, FR, DE, ES, and JA. Catches translators who accidentally copy-pasted English source into target translation files and automatically purges the contaminated row.
+                </p>
+              </div>
+
+              {/* Function 3 */}
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 hover:border-indigo-500/50 transition-all">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-mono text-amber-400 bg-amber-950/80 border border-amber-800/60 px-2 py-0.5 rounded">03 • BOUNDARY</span>
+                  <Badge variant="outline" className="text-[9px] border-slate-700 text-slate-400">Pure Math</Badge>
+                </div>
+                <h4 className="text-sm font-bold text-white font-mono mb-2">checkLengthRatio()</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Computes token count ratio (Target / Source). Enforces the strict empirical NLP window <code className="text-amber-300 font-mono text-[10px]">[0.4, 2.5]</code>, discarding segments where 1 word was paired with a 50-word foreign paragraph.
+                </p>
+              </div>
+
+              {/* Function 4 */}
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 hover:border-indigo-500/50 transition-all">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-2 py-0.5 rounded">04 • EMBEDDINGS</span>
+                  <Badge variant="outline" className="text-[9px] border-slate-700 text-slate-400">LaBSE</Badge>
+                </div>
+                <h4 className="text-sm font-bold text-white font-mono mb-2">simulateSemanticSimilarity()</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Simulates 768-dimension vector cosine similarity. Detects domain divergence (e.g. source talks about "Music" while target talks about "Billing"), purging misaligned legacy database pairs with cosine &lt; 0.75.
+                </p>
+              </div>
+
+              {/* Function 5 */}
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 hover:border-indigo-500/50 transition-all sm:col-span-2">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-mono text-indigo-400 bg-indigo-950/80 border border-indigo-800/60 px-2 py-0.5 rounded">05 • METRIC LAB</span>
+                  <Badge variant="outline" className="text-[9px] border-indigo-800 text-indigo-400">BLEU · chrF · COMET</Badge>
+                </div>
+                <h4 className="text-sm font-bold text-white font-mono mb-2">Tripartite Evaluation Engines</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Calculates real word n-grams (BLEU), character n-grams (chrF++), and cross-encoder neural transcreation weights (COMET). Awards bonuses for idiomatic synonyms while heavily penalizing literal translations (e.g. music "drops" translated as "falls down") to stop unverified deployment.
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Link to In-Depth Conclusion */}
+            <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span className="text-xs text-slate-400">
+                Want to read the full code formulas and engineering rationale?
+              </span>
+              <a
+                href="#under-the-hood"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById('under-the-hood');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg shadow-indigo-600/20"
+              >
+                <span>Read Full Conclusion & Architecture ↓</span>
+              </a>
             </div>
           </div>
         </div>

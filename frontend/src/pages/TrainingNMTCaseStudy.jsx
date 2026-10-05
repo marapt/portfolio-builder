@@ -21,7 +21,11 @@ import {
   FileCode2,
   Sliders,
   Check,
-  Award
+  Award,
+  Terminal,
+  CheckCircle2,
+  AlertTriangle,
+  ArrowUpRight
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -369,6 +373,19 @@ const TrainingNMTCaseStudy = () => {
                 </button>
               );
             })}
+            <div className="h-6 w-px bg-slate-800 flex-shrink-0" />
+            <a
+              href="#under-the-hood"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('under-the-hood');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-300 border bg-indigo-950/40 border-indigo-500/50 text-indigo-300 hover:text-white hover:border-indigo-400 shadow-sm"
+            >
+              <Cpu size={13} className="text-indigo-400" />
+              <span>Under the Hood</span>
+            </a>
           </div>
         </div>
       </section>
@@ -526,6 +543,413 @@ const TrainingNMTCaseStudy = () => {
           </div>
         )}
       </main>
+
+      {/* ========================================================================= */}
+      {/* CONCLUSION & ARCHITECTURE: HOW THIS DEMO WORKS UNDER THE HOOD            */}
+      {/* ========================================================================= */}
+      <section id="under-the-hood" className="py-24 border-t border-slate-800/80 bg-gradient-to-b from-[#060a14] via-[#080d1a] to-[#060911] relative overflow-hidden">
+        {/* Ambient background glow */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="max-w-3xl mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-4">
+              <Terminal size={13} className="text-indigo-400" />
+              <span>Technical Deep Dive & Conclusion</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-6">
+              How This Demo Works: Under the Hood
+            </h2>
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+              If you are curious or want more detail on how this works, this section is for you. My goal was to build a React application powered by a custom JavaScript regex and heuristic engine that accurately mimics the mathematical boundaries, filtering logic, and n-gram scoring of a production NLP pipeline. The goal is to allow users to experience deep-learning concepts instantly in their browser.
+            </p>
+          </div>
+
+          {/* Engine Motivation Callout Box */}
+          <div className="p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-indigo-500/40 shadow-2xl mb-16 max-w-4xl relative overflow-hidden">
+            <div className="absolute -right-10 -bottom-10 w-44 h-44 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-bold flex-shrink-0">
+                <Code2 size={24} />
+              </div>
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-[0.25em] text-indigo-400 block mb-1">
+                  Engine Architecture Rationale
+                </span>
+                <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
+                  Since we can't run massive Python GPU models inside a browser for a portfolio demo, I built a lightweight JavaScript "engine" (<code className="px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 font-mono text-xs border border-indigo-800/60">nmtPipelineEngine.js</code>) that simulates the exact mathematical logic of a real NLP pipeline.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 5 Architecture Pillar Cards */}
+          <div className="space-y-8">
+            {/* Pillar 1: Data Sanitization */}
+            <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-8 sm:p-10 hover:border-slate-700 transition-all shadow-xl">
+              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6 pb-6 border-b border-slate-800/80">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center font-black text-sm flex-shrink-0">
+                    01
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-blue-400 block mb-1">
+                      Regex & Token Normalization
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white">
+                      1. Data Sanitization Engine (Regex)
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-slate-950 text-slate-300 border border-slate-800 font-mono text-xs">
+                    cleanTagsAndEntities()
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-4 text-sm text-slate-300 leading-relaxed">
+                  <p>
+                    If you inspect the <code className="px-1.5 py-0.5 rounded bg-slate-950 text-indigo-300 font-mono text-xs">cleanTagsAndEntities</code> function, it uses targeted Regular Expressions (Regex) to purge noise before tokenization:
+                  </p>
+                  <ul className="space-y-3 pl-2">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-blue-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>Decodes HTML Entities:</strong> It hunts for entities like <code className="text-slate-400 font-mono text-xs">&amp;amp;</code> or <code className="text-slate-400 font-mono text-xs">&amp;quot;</code> and unescapes them into natural characters.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-blue-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>Purges Confidential Internal Metadata:</strong> It hunts for internal corporate ticket patterns (like <code className="text-rose-400 font-mono text-xs">rdar://1234567</code> or <code className="text-rose-400 font-mono text-xs">JIRA-9876</code>) and strips them out so you don't leak internal bugs or confidential system URLs into the AI's training weights.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>The Smartest Part (Placeholder Normalization):</strong> It identifies HTML tags (<code className="text-indigo-300 font-mono text-xs">&lt;b&gt;</code>, <code className="text-indigo-300 font-mono text-xs">&lt;span&gt;</code>) and printf placeholders (<code className="text-indigo-300 font-mono text-xs">%s</code>, <code className="text-indigo-300 font-mono text-xs">&#123;0&#125;</code>) and replaces them all with a uniform <code className="text-emerald-300 font-mono text-xs">&lt;var&gt;</code> token. This prevents the AI's subword BPE/SentencePiece tokenizer from fragmenting code syntax during fine-tuning.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="lg:col-span-5 bg-slate-950 p-5 rounded-2xl border border-slate-800 font-mono text-xs text-slate-300 overflow-x-auto">
+                  <div className="text-[10px] text-slate-400 uppercase tracking-widest font-sans font-bold mb-3 flex items-center justify-between">
+                    <span>Regex Core Implementation</span>
+                    <span className="text-blue-400">cleanTagsAndEntities</span>
+                  </div>
+                  <pre className="text-slate-300 leading-relaxed">
+{`// 1. Decodes HTML Entities
+clean = clean.replace(/&amp;/g, '&')
+             .replace(/&lt;/g, '<');
+
+// 2. Strips internal bug links
+clean = clean.replace(
+  /(rdar:\\/\\/\\d+|[A-Z]+-\\d+)/gi, ''
+);
+
+// 3. Normalizes tags & placeholders
+clean = clean.replace(
+  /(<[^>]+>|%[s|d]|\\{[0-9]+\\})/gi, 
+  '<var>'
+);`}
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 2: The Language ID Gate */}
+            <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-8 sm:p-10 hover:border-slate-700 transition-all shadow-xl">
+              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6 pb-6 border-b border-slate-800/80">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-purple-600/20 text-purple-400 border border-purple-500/30 flex items-center justify-center font-black text-sm flex-shrink-0">
+                    02
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-purple-400 block mb-1">
+                      Neural Classifier Emulation (fastText)
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white">
+                      2. The Language ID Gate (Simulating fastText)
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-slate-950 text-slate-300 border border-slate-800 font-mono text-xs">
+                    simulateLangId()
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-4 text-sm text-slate-300 leading-relaxed">
+                  <p>
+                    The <code className="px-1.5 py-0.5 rounded bg-slate-950 text-indigo-300 font-mono text-xs">simulateLangId</code> function acts like an in-browser neural language classifier:
+                  </p>
+                  <ul className="space-y-3 pl-2">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-purple-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>Statistical Stop-Word Profiling:</strong> It scans the string for characteristic linguistic markers (e.g. <code className="text-purple-300 font-mono text-xs">der/die/das/und</code> for German, <code className="text-purple-300 font-mono text-xs">o/a/os/para/com</code> for Portuguese, <code className="text-purple-300 font-mono text-xs">le/la/les/dans</code> for French, <code className="text-purple-300 font-mono text-xs">el/la/en/los</code> for Spanish, and script ranges for Japanese).</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>The Pro-Trick (Catching English Leakage):</strong> If it sees that the English source is English, but the localized target file <em>also</em> scores 99% on English stop words, it flags a classic enterprise localization blunder: a translator or ingestion script accidentally copy-pasted the English string into the foreign target file. The gate drops the contaminated row immediately before it ruins model training.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="lg:col-span-5 bg-slate-950 p-5 rounded-2xl border border-slate-800 font-mono text-xs text-slate-300 overflow-x-auto">
+                  <div className="text-[10px] text-slate-400 uppercase tracking-widest font-sans font-bold mb-3 flex items-center justify-between">
+                    <span>Language Gating Logic</span>
+                    <span className="text-purple-400">simulateLangId</span>
+                  </div>
+                  <pre className="text-slate-300 leading-relaxed">
+{`// Catching unlocalized source leakage
+if (expectedLang !== 'en' && 
+    detectedLang === 'en' && 
+    confidence > 0.85) {
+  return {
+    passed: false,
+    reason: 'Unlocalized English copy in target file'
+  };
+}`}
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 3: The Boundary & Ratio Gate */}
+            <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-8 sm:p-10 hover:border-slate-700 transition-all shadow-xl">
+              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6 pb-6 border-b border-slate-800/80">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-400 border border-amber-500/30 flex items-center justify-center font-black text-sm flex-shrink-0">
+                    03
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-amber-400 block mb-1">
+                      Token Distribution Mathematics
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white">
+                      3. The Boundary & Ratio Gate
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-slate-950 text-slate-300 border border-slate-800 font-mono text-xs">
+                    checkLengthRatio()
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-4 text-sm text-slate-300 leading-relaxed">
+                  <p>
+                    The <code className="px-1.5 py-0.5 rounded bg-slate-950 text-indigo-300 font-mono text-xs">checkLengthRatio</code> function is pure mathematics:
+                  </p>
+                  <ul className="space-y-3 pl-2">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-amber-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>Length Ratio Computation:</strong> It splits both strings into word token arrays and divides the Target count by the Source count (<code className="text-amber-300 font-mono text-xs">ratio = targetWords.length / sourceWords.length</code>).</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>Preventing Catastrophic Hallucinations:</strong> If the ratio falls outside the boundary <code className="text-amber-300 font-mono text-xs">[0.4, 2.5]</code>, the pair is purged. This prevents the AI from learning from misaligned segments where 1 English word was accidentally mapped to a 50-word foreign paragraph due to database indexing slips.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="lg:col-span-5 bg-slate-950 p-5 rounded-2xl border border-slate-800 font-mono text-xs text-slate-300 overflow-x-auto">
+                  <div className="text-[10px] text-slate-400 uppercase tracking-widest font-sans font-bold mb-3 flex items-center justify-between">
+                    <span>Mathematical Ratio Boundary</span>
+                    <span className="text-amber-400">checkLengthRatio</span>
+                  </div>
+                  <pre className="text-slate-300 leading-relaxed">
+{`const ratio = tgtWords.length / srcWords.length;
+
+// Strict empirical NLP boundary
+if (ratio < 0.4 || ratio > 2.5) {
+  return {
+    passed: false,
+    ratio: Number(ratio.toFixed(2)),
+    reason: \`Ratio \${ratio} out of bounds [0.4, 2.5]\`
+  };
+}`}
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 4: Neural Semantic Gating */}
+            <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-8 sm:p-10 hover:border-slate-700 transition-all shadow-xl">
+              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6 pb-6 border-b border-slate-800/80">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-black text-sm flex-shrink-0">
+                    04
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">
+                      Vector Space Divergence (LaBSE)
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white">
+                      4. Neural Semantic Gating (Simulating LaBSE Embeddings)
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-slate-950 text-slate-300 border border-slate-800 font-mono text-xs">
+                    simulateSemanticSimilarity()
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-7 space-y-4 text-sm text-slate-300 leading-relaxed">
+                  <p>
+                    In production, Google LaBSE converts sentences into 768-dimensional vectors and compares their angles via Cosine Similarity (<code className="text-emerald-300 font-mono text-xs">cos(θ)</code>):
+                  </p>
+                  <ul className="space-y-3 pl-2">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>High-Precision Divergence Detection:</strong> In the JS engine (<code className="px-1.5 py-0.5 rounded bg-slate-950 text-indigo-300 font-mono text-xs">simulateSemanticSimilarity</code>), I mocked this with a cross-lingual domain divergence detector.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span><strong>Catching Legacy Database Misalignments:</strong> It checks whether the English source talks about "Music Streaming" while the Target text talks about "Billing & Invoices" (a common database offset bug). If topics diverge, the Cosine Score drops below 0.75, and the pair is purged immediately.</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="lg:col-span-5 bg-slate-950 p-5 rounded-2xl border border-slate-800 font-mono text-xs text-slate-300 overflow-x-auto">
+                  <div className="text-[10px] text-slate-400 uppercase tracking-widest font-sans font-bold mb-3 flex items-center justify-between">
+                    <span>Semantic Cosine Verification</span>
+                    <span className="text-emerald-400">LaBSE Emulation</span>
+                  </div>
+                  <pre className="text-slate-300 leading-relaxed">
+{`// Cosine similarity threshold >= 0.75
+if (cosineScore < 0.75) {
+  return {
+    passed: false,
+    score: cosineScore,
+    reason: 'Semantic misalignment (cosine < 0.75)'
+  };
+}`}
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            {/* Pillar 5: The Tripartite Evaluator */}
+            <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-8 sm:p-10 hover:border-slate-700 transition-all shadow-xl">
+              <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6 pb-6 border-b border-slate-800/80">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-black text-sm flex-shrink-0">
+                    05
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400 block mb-1">
+                      Evaluation Framework
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white">
+                      5. The Tripartite Evaluator (BLEU, chrF++, COMET)
+                    </h3>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-slate-950 text-slate-300 border border-slate-800 font-mono text-xs">
+                    calculateBLEU · chrF · COMET
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-6 text-sm text-slate-300 leading-relaxed">
+                <p>
+                  This is the heart of the demo—showing why production AI localization requires semantic neural scoring over legacy surface matching:
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                  {/* BLEU */}
+                  <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider">calculateBLEU</span>
+                        <Badge variant="outline" className="text-[10px] border-slate-700 text-slate-400">Surface N-Gram</Badge>
+                      </div>
+                      <h4 className="text-base font-bold text-white mb-2">Word N-Gram Matching (1–4)</h4>
+                      <p className="text-xs text-slate-400 leading-relaxed">
+                        I wrote a real n-gram matching algorithm (1 to 4 words). It mathematically proves that BLEU fails for transcreation: if the hypothesis uses a valid, idiomatic synonym, the exact word match fails, and BLEU crashes to 0.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-amber-400 font-medium">
+                      ⚠️ False Negative on creative synonyms
+                    </div>
+                  </div>
+
+                  {/* chrF++ */}
+                  <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-bold text-purple-400 uppercase tracking-wider">calculateChrF</span>
+                        <Badge variant="outline" className="text-[10px] border-slate-700 text-slate-400">Subword & Char</Badge>
+                      </div>
+                      <h4 className="text-base font-bold text-white mb-2">Character N-Gram Matching</h4>
+                      <p className="text-xs text-slate-400 leading-relaxed">
+                        I wrote a character-level matching algorithm. It proves why German works better here: if the reference is <em>Lieblingslied</em> and the model outputs <em>Lieblingssong</em>, chrF++ still awards points because the first 9 characters (<em>Lieblings</em>) match perfectly.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-purple-300 font-medium">
+                      ✓ Ideal for German compound words
+                    </div>
+                  </div>
+
+                  {/* COMET */}
+                  <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">calculateCOMET</span>
+                        <Badge variant="outline" className="text-[10px] border-emerald-800 text-emerald-400">Neural Semantic</Badge>
+                      </div>
+                      <h4 className="text-base font-bold text-white mb-2">Cross-Lingual Neural Simulation</h4>
+                      <p className="text-xs text-slate-400 leading-relaxed">
+                        To mock neural embeddings in JS, I built a dictionary of high-editorial cross-lingual synonyms. If the model uses a colloquial synonym (like translating "drops" as <em>lançamento</em> in Portuguese or <em>disponible</em> in French), COMET awards a bonus. BUT, if the model translates a music "drop" literally as "falling down" (PT: <em>cai</em>, FR: <em>laissez tomber</em>), the script heavily penalizes the score below 0.82, forcing human review.
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-emerald-400 font-medium">
+                      ★ Industry standard production release gate
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Strategic Conclusion & Executive Summary Box */}
+          <div className="mt-16 p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-indigo-950/60 via-slate-900 to-slate-950 border border-indigo-500/40 shadow-2xl relative overflow-hidden">
+            <div className="max-w-3xl">
+              <span className="text-xs font-black uppercase tracking-[0.3em] text-indigo-400 mb-3 block">
+                Executive Takeaway & Business Impact
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-4">
+                Bridging Linguistic Empathy with Computational Rigor
+              </h3>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal mb-8">
+                By embedding linguistic expertise directly into the automated data pipeline, we transformed what was once an uncurated, error-prone translation memory into a high-precision, self-sustaining neural asset. The result was not merely a 40% cost reduction on high-volume catalog localization, but the ability to launch worldwide marketing releases across 5 major languages on day one—with brand voice and musical authenticity preserved.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="#interactive-nmt-demo"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('interactive-nmt-demo');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2"
+                >
+                  <Sparkles size={14} className="text-yellow-300" />
+                  <span>Launch Interactive Simulator ↗</span>
+                </a>
+                <Link to="/project/ai-translation-engine">
+                  <Button variant="outline" className="border-slate-700 text-slate-200 hover:bg-slate-800 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider">
+                    Explore Translation Engine App ↗
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Cross-Link / Related Projects CTA */}
       <section className="py-20 border-t border-slate-800 bg-[#060911]">
