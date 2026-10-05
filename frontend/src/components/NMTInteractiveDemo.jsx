@@ -54,7 +54,7 @@ const NMTInteractiveDemo = () => {
   const [selectedTestCase, setSelectedTestCase] = useState(PRESET_TEST_CASES[0]);
   const [customSource, setCustomSource] = useState(PRESET_TEST_CASES[0].source);
   const [customTarget, setCustomTarget] = useState(PRESET_TEST_CASES[0].target);
-  const [targetLang, setTargetLang] = useState('de');
+  const [targetLang, setTargetLang] = useState(PRESET_TEST_CASES[0].targetLang || 'pt');
   const [pipelineResult, setPipelineResult] = useState(null);
   const [isRunningAnalysis, setIsRunningAnalysis] = useState(false);
 
@@ -121,45 +121,45 @@ const NMTInteractiveDemo = () => {
 
   const AUTO_PLAY_STEPS = [
     {
-      title: "1. Data Normalization & Tag Cleaning",
+      title: "1. 🇵🇹 Portuguese: Data Normalization & Bug ID Scrubbing",
       stageDesc: "Stage 1 Heuristic Pre-Filtering",
-      narration: "Cleaning broken HTML tags, unescaping entities, and converting placeholders ({0}, %s, rdar://) into uniform <var> tokens.",
+      narration: "Cleaning broken HTML tags, unescaping entities, and converting placeholders into uniform <var> tokens in Portuguese and German.",
       tab: 'funnel',
       run: () => {
         setActiveTab('funnel');
         setSelectedFunnelStage(1);
-        const tc = PRESET_TEST_CASES[0];
+        const tc = PRESET_TEST_CASES[5]; // Tag Normalization
         setSelectedTestCase(tc);
         setCustomSource(tc.source);
         setCustomTarget(tc.target);
-        setTargetLang('de');
-        runAnalysisDirect(tc.source, tc.target, 'de');
+        setTargetLang('pt');
+        runAnalysisDirect(tc.source, tc.target, 'pt');
       }
     },
     {
-      title: "2. Neural Semantic Filtering (LaBSE Cutoff)",
-      stageDesc: "Stage 4 Semantic Alignment Gate",
-      narration: "Detecting divergent meaning and sentence misalignments. Segments scoring below 0.75 Cosine Similarity are automatically rejected.",
+      title: "2. 🇫🇷 French: Neural LangID Filtering (Untranslated Drop)",
+      stageDesc: "Stage 2 Language Identification Gate",
+      narration: "Detecting untranslated English mistakenly left in French TM. FastText identifies target as EN with 0.99 confidence and automatically rejects.",
       tab: 'funnel',
       run: () => {
         setActiveTab('funnel');
-        setSelectedFunnelStage(4);
-        const tc = PRESET_TEST_CASES[1];
+        setSelectedFunnelStage(2);
+        const tc = PRESET_TEST_CASES[6]; // Untranslated English
         setSelectedTestCase(tc);
         setCustomSource(tc.source);
         setCustomTarget(tc.target);
-        setTargetLang('de');
-        runAnalysisDirect(tc.source, tc.target, 'de');
+        setTargetLang('fr');
+        runAnalysisDirect(tc.source, tc.target, 'fr');
       }
     },
     {
-      title: "3. Tripartite Evaluation & COMET Quality Gate",
-      stageDesc: "Step 5 Metric Evaluation",
-      narration: "Testing creative editorial synonym ('global veröffentlicht'). Notice BLEU drops due to n-gram mismatch, but COMET awards 0.85 and PASSES the production gate.",
+      title: "3. 🇵🇹 Portuguese Transcreation: The COMET Quality Gate",
+      stageDesc: "Step 5 Metric Evaluation (Portuguese)",
+      narration: "Testing Portuguese editorial transcreation ('Novo disco chega hoje...'). BLEU drops due to n-gram mismatch, but COMET awards 0.86 and PASSES the enterprise release gate.",
       tab: 'evaluator',
       run: () => {
         setActiveTab('evaluator');
-        const c = PRESET_EVALUATION_CASES[0];
+        const c = PRESET_EVALUATION_CASES[0]; // Portuguese Pass
         setSelectedEvalCase(c);
         setEvalSource(c.source);
         setEvalRef(c.reference);
@@ -168,13 +168,28 @@ const NMTInteractiveDemo = () => {
       }
     },
     {
-      title: "4. Automated Rejection on Literal Translation Failure",
-      stageDesc: "Step 5 Production Gate Failure",
-      narration: "Testing a literal foundation translation error. The COMET score drops to 0.71 (<0.82), rejecting the output before human blind testing.",
+      title: "4. 🇫🇷 French Transcreation: Audio Spatial Editorial",
+      stageDesc: "Step 5 Metric Evaluation (French)",
+      narration: "Testing French transcreation ('Découvrez vos morceaux favoris'). COMET scores 0.85, recognizing human editorial parity over literal word matching.",
       tab: 'evaluator',
       run: () => {
         setActiveTab('evaluator');
-        const c = PRESET_EVALUATION_CASES[2];
+        const c = PRESET_EVALUATION_CASES[1]; // French Pass
+        setSelectedEvalCase(c);
+        setEvalSource(c.source);
+        setEvalRef(c.reference);
+        setEvalHyp(c.hypothesis);
+        recalculateMetrics(c.source, c.hypothesis, c.reference);
+      }
+    },
+    {
+      title: "5. ❌ Literal MT Failure Gate Rejection (Portuguese / French)",
+      stageDesc: "Step 5 Production Gate Rejection",
+      narration: "Testing literal translation error ('drops' -> 'cai' / 'tombe'). The COMET score collapses to 0.46, instantly rejecting the output before human blind testing.",
+      tab: 'evaluator',
+      run: () => {
+        setActiveTab('evaluator');
+        const c = PRESET_EVALUATION_CASES[4]; // Portuguese Fail
         setSelectedEvalCase(c);
         setEvalSource(c.source);
         setEvalRef(c.reference);
@@ -306,7 +321,7 @@ const NMTInteractiveDemo = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-start sm:items-center gap-3.5">
               <div className="w-9 h-9 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/40 flex items-center justify-center font-black text-sm flex-shrink-0">
-                {autoPlayIndex + 1}/4
+                {autoPlayIndex + 1}/{AUTO_PLAY_STEPS.length}
               </div>
               <div>
                 <div className="flex items-center gap-2">
@@ -489,15 +504,17 @@ const NMTInteractiveDemo = () => {
                 <h3 className="text-xl font-bold text-white">Execute Pipeline on Custom or Preset Strings</h3>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-xs text-slate-400">Target:</span>
+                <span className="text-xs text-slate-400">Target Locale:</span>
                 <select
                   value={targetLang}
                   onChange={(e) => setTargetLang(e.target.value)}
-                  className="bg-slate-900 border border-slate-700 text-white text-xs rounded-xl px-3 py-1.5 focus:outline-none focus:border-indigo-500"
+                  className="bg-slate-900 border border-slate-700 text-white text-xs font-bold rounded-xl px-3.5 py-1.5 focus:outline-none focus:border-indigo-500 shadow-sm"
                 >
-                  <option value="de">German (DE)</option>
-                  <option value="fr">French (FR)</option>
-                  <option value="es">Spanish (ES)</option>
+                  <option value="pt">🇵🇹 Portuguese (PT)</option>
+                  <option value="fr">🇫🇷 French (FR)</option>
+                  <option value="de">🇩🇪 German (DE)</option>
+                  <option value="es">🇪🇸 Spanish (ES)</option>
+                  <option value="ja">🇯🇵 Japanese (JA)</option>
                 </select>
               </div>
             </div>
@@ -726,7 +743,7 @@ const NMTInteractiveDemo = () => {
 
               <div>
                 <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1.5">
-                  2. Human Reference
+                  2. Human Reference {selectedEvalCase.langName && <span className="text-indigo-400 font-bold">({selectedEvalCase.langName})</span>}
                 </label>
                 <textarea
                   rows={3}
@@ -738,7 +755,7 @@ const NMTInteractiveDemo = () => {
 
               <div>
                 <label className="text-[10px] font-black uppercase tracking-widest text-indigo-400 block mb-1.5">
-                  3. Model Hypothesis (Editable)
+                  3. Model Hypothesis (Editable) {selectedEvalCase.langName && <span className="text-purple-300 font-bold">({selectedEvalCase.langName})</span>}
                 </label>
                 <textarea
                   rows={3}
