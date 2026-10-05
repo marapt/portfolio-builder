@@ -28,6 +28,7 @@ import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
+import NMTInteractiveDemo from '../components/NMTInteractiveDemo';
 
 const TrainingNMTCaseStudy = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -35,7 +36,9 @@ const TrainingNMTCaseStudy = () => {
   const [modalImage, setModalImage] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   const stepsData = [
@@ -267,6 +270,34 @@ const TrainingNMTCaseStudy = () => {
                   <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Cosine Gate</div>
                 </div>
               </div>
+
+              {/* Action CTA Buttons */}
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="#interactive-nmt-demo"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('interactive-nmt-demo');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black text-xs uppercase tracking-wider shadow-xl shadow-indigo-600/30 transition-all transform hover:-translate-y-0.5"
+                >
+                  <Sparkles size={16} className="text-yellow-300" />
+                  <span>Try Live Pipeline Demo ↓</span>
+                </a>
+                <a
+                  href="#methodology-steps"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('methodology-steps');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-slate-900 border border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white font-bold text-xs uppercase tracking-wider transition-all"
+                >
+                  <span>5-Step Methodology</span>
+                  <ChevronRight size={14} />
+                </a>
+              </div>
             </div>
 
             {/* Hero Image Showcase */}
@@ -297,10 +328,30 @@ const TrainingNMTCaseStudy = () => {
         </div>
       </section>
 
+      {/* Live Interactive Demo Section */}
+      <section id="interactive-nmt-demo" className="py-16 bg-[#060a14] border-b border-slate-800/80 relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <NMTInteractiveDemo />
+        </div>
+      </section>
+
       {/* Sticky Step Navigation */}
-      <section className="sticky top-20 z-40 bg-[#070b14]/90 backdrop-blur-md border-b border-slate-800/80 py-4">
+      <section id="methodology-steps" className="sticky top-20 z-40 bg-[#070b14]/90 backdrop-blur-md border-b border-slate-800/80 py-4">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
+            <a
+              href="#interactive-nmt-demo"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('interactive-nmt-demo');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-300 border bg-gradient-to-r from-indigo-950 to-purple-950/70 border-indigo-500/60 text-indigo-300 hover:text-white shadow-sm"
+            >
+              <Sparkles size={13} className="text-yellow-300" />
+              <span>Interactive Demo</span>
+            </a>
+            <div className="h-6 w-px bg-slate-800 flex-shrink-0" />
             {stepsData.map((step, idx) => {
               const IconComp = step.icon;
               return (
@@ -338,6 +389,20 @@ const TrainingNMTCaseStudy = () => {
                 <p className="text-slate-400 text-base max-w-2xl font-medium">
                   {stepsData[activeStep].subtitle}
                 </p>
+                {(activeStep === 0 || activeStep === 4) && (
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('interactive-nmt-demo');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-xl bg-indigo-950/80 border border-indigo-700/60 text-indigo-300 hover:text-white text-xs font-bold transition-all shadow-sm"
+                  >
+                    <Sparkles size={14} className="text-yellow-300" />
+                    <span>
+                      {activeStep === 0 ? 'Launch Step 1 Sanitization Funnel Simulator ↑' : 'Test BLEU, chrF++, and COMET in Simulator ↑'}
+                    </span>
+                  </button>
+                )}
               </div>
 
               <div className="bg-slate-950 p-5 rounded-2xl border border-slate-800 max-w-md self-start">

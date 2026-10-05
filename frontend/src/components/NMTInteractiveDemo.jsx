@@ -1,0 +1,646 @@
+import React, { useState, useEffect } from 'react';
+import { 
+  Play, 
+  RotateCcw, 
+  CheckCircle, 
+  AlertTriangle, 
+  XCircle, 
+  Sparkles, 
+  Filter, 
+  BarChart3, 
+  Cpu, 
+  Layers, 
+  ArrowRight, 
+  ShieldCheck, 
+  HelpCircle,
+  Code2,
+  FileCheck,
+  Zap,
+  Sliders,
+  Award
+} from 'lucide-react';
+import { Card, CardContent } from './ui/card';
+import { Button } from './ui/button';
+import { Badge } from './ui/badge';
+import { 
+  cleanTagsAndEntities, 
+  simulateLangId, 
+  checkLengthRatio, 
+  simulateSemanticSimilarity, 
+  executeFullPipeline,
+  calculateBLEU,
+  calculateChrF,
+  calculateCOMET,
+  FUNNEL_STAGES_DATA,
+  PRESET_TEST_CASES,
+  PRESET_EVALUATION_CASES
+} from '../utils/nmtPipelineEngine';
+
+const NMTInteractiveDemo = () => {
+  const [activeTab, setActiveTab] = useState('funnel'); // 'funnel' | 'evaluator'
+
+  // --- Funnel / Sanitization State ---
+  const [selectedFunnelStage, setSelectedFunnelStage] = useState(1);
+  const [selectedTestCase, setSelectedTestCase] = useState(PRESET_TEST_CASES[0]);
+  const [customSource, setCustomSource] = useState(PRESET_TEST_CASES[0].source);
+  const [customTarget, setCustomTarget] = useState(PRESET_TEST_CASES[0].target);
+  const [targetLang, setTargetLang] = useState('de');
+  const [pipelineResult, setPipelineResult] = useState(null);
+  const [isRunningAnalysis, setIsRunningAnalysis] = useState(false);
+
+  // --- Evaluator State ---
+  const [selectedEvalCase, setSelectedEvalCase] = useState(PRESET_EVALUATION_CASES[0]);
+  const [evalSource, setEvalSource] = useState(PRESET_EVALUATION_CASES[0].source);
+  const [evalRef, setEvalRef] = useState(PRESET_EVALUATION_CASES[0].reference);
+  const [evalHyp, setEvalHyp] = useState(PRESET_EVALUATION_CASES[0].hypothesis);
+  const [bleuScore, setBleuScore] = useState(0);
+  const [chrfScore, setChrfScore] = useState(0);
+  const [cometResult, setCometResult] = useState({ score: 0, passed: false, note: '' });
+
+  // Initial calculation
+  useEffect(() => {
+    runAnalysis();
+    recalculateMetrics(evalSource, evalHyp, evalRef);
+  }, []);
+
+  const handleSelectTestCase = (tc) => {
+    setSelectedTestCase(tc);
+    setCustomSource(tc.source);
+    setCustomTarget(tc.target);
+    setTargetLang(tc.targetLang || 'de');
+    runAnalysisDirect(tc.source, tc.target, tc.targetLang || 'de');
+  };
+
+  const runAnalysis = () => {
+    runAnalysisDirect(customSource, customTarget, targetLang);
+  };
+
+  const runAnalysisDirect = (src, tgt, lang) => {
+    setIsRunningAnalysis(true);
+    setTimeout(() => {
+      const res = executeFullPipeline(src, tgt, lang);
+      setPipelineResult(res);
+      setIsRunningAnalysis(false);
+    }, 250);
+  };
+
+  const handleSelectEvalCase = (c) => {
+    setSelectedEvalCase(c);
+    setEvalSource(c.source);
+    setEvalRef(c.reference);
+    setEvalHyp(c.hypothesis);
+    recalculateMetrics(c.source, c.hypothesis, c.reference);
+  };
+
+  const recalculateMetrics = (src, hyp, ref) => {
+    const b = calculateBLEU(hyp, ref);
+    const c = calculateChrF(hyp, ref);
+    const comet = calculateCOMET(src, hyp, ref);
+    setBleuScore(b);
+    setChrfScore(c);
+    setCometResult(comet);
+  };
+
+  const handleHypChange = (val) => {
+    setEvalHyp(val);
+    recalculateMetrics(evalSource, val, evalRef);
+  };
+
+  const activeFunnel = FUNNEL_STAGES_DATA[selectedFunnelStage];
+
+  return (
+    <div id="interactive-nmt-demo" className="w-full bg-[#0a0f1d] border border-slate-800 rounded-[3rem] p-6 sm:p-10 lg:p-14 shadow-2xl relative overflow-hidden text-slate-100">
+      {/* Background Lighting */}
+      <div className="absolute top-0 right-1/3 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[130px] pointer-events-none -z-0"></div>
+      <div className="absolute bottom-0 right-10 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none -z-0"></div>
+
+      {/* Demo Header */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-8 border-b border-slate-800 relative z-10">
+        <div>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-700/60 text-indigo-300 text-[10px] font-black uppercase tracking-wider mb-3">
+            <Zap size={13} className="text-indigo-400" />
+            Live Interactive Simulator
+          </div>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
+            NMT Pipeline & Metric Execution Demo
+          </h2>
+          <p className="text-slate-400 text-sm mt-1 max-w-2xl font-medium">
+            Test real-life translation memory pairs through our 5-stage corpus sanitization funnel and evaluate model outputs against BLEU, chrF++, and COMET.
+          </p>
+        </div>
+
+        {/* Mode Switcher Tabs */}
+        <div className="flex bg-slate-950 border border-slate-800 p-1.5 rounded-2xl self-start md:self-auto">
+          <button
+            onClick={() => setActiveTab('funnel')}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+              activeTab === 'funnel'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30'
+                : 'text-slate-400 hover:text-white'
+            }`}
+          >
+            <Filter size={14} />
+            <span>Step 1: Sanitization Funnel</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('evaluator')}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+              activeTab === 'evaluator'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30'
+                : 'text-slate-400 hover:text-white'
+            }`}
+          >
+            <BarChart3 size={14} />
+            <span>Step 5: Metric Evaluator</span>
+          </button>
+        </div>
+      </div>
+
+      {/* ========================================================================= */}
+      {/* MODE 1: STEP 1 DATA SANITIZATION & RETENTION FUNNEL                       */}
+      {/* ========================================================================= */}
+      {activeTab === 'funnel' && (
+        <div className="space-y-10 relative z-10 animate-in fade-in duration-300">
+          {/* Funnel Graph Section */}
+          <div className="bg-slate-950/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Step 1 Corpus Telemetry</span>
+                <h3 className="text-xl font-bold text-white">Segment Retention Funnel (500k Corpus)</h3>
+              </div>
+              <span className="text-xs text-slate-400">Click any stage bar below to inspect rules</span>
+            </div>
+
+            {/* Stage Selector Pills */}
+            <div className="grid grid-cols-2 sm:grid-cols-6 gap-2 mb-8">
+              {FUNNEL_STAGES_DATA.map((stg) => (
+                <button
+                  key={stg.id}
+                  onClick={() => setSelectedFunnelStage(stg.id)}
+                  className={`p-3 rounded-xl border text-left transition-all ${
+                    selectedFunnelStage === stg.id
+                      ? 'bg-indigo-600 border-indigo-400 text-white shadow-md'
+                      : 'bg-slate-900/60 border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white'
+                  }`}
+                >
+                  <div className="text-[9px] font-black uppercase tracking-wider opacity-75">{stg.stage.split(' ')[0]}</div>
+                  <div className="text-xs font-bold truncate mt-0.5">{stg.stage.split('. ')[1] || stg.stage}</div>
+                </button>
+              ))}
+            </div>
+
+            {/* Animated Funnel Bars */}
+            <div className="space-y-3.5">
+              {FUNNEL_STAGES_DATA.map((stg) => {
+                const percentage = (stg.retainedCount / 500000) * 100;
+                const isSelected = selectedFunnelStage === stg.id;
+                return (
+                  <div 
+                    key={stg.id}
+                    onClick={() => setSelectedFunnelStage(stg.id)}
+                    className={`cursor-pointer p-3 rounded-2xl transition-all ${
+                      isSelected ? 'bg-indigo-950/40 ring-1 ring-indigo-500' : 'hover:bg-slate-900/40'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between text-xs mb-1.5 font-bold">
+                      <span className={isSelected ? 'text-white' : 'text-slate-300'}>{stg.stage}</span>
+                      <div className="flex items-center gap-3">
+                        <span className="text-slate-400 font-mono text-[11px]">{stg.retainedCount.toLocaleString()} segments</span>
+                        <span className="text-indigo-400 font-black text-xs">{stg.retentionRate}</span>
+                      </div>
+                    </div>
+                    <div className="w-full h-3.5 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                      <div 
+                        className={`h-full rounded-full transition-all duration-700 ${
+                          isSelected 
+                            ? 'bg-gradient-to-r from-indigo-500 to-purple-400 shadow-[0_0_12px_rgba(99,102,241,0.5)]' 
+                            : 'bg-indigo-600/70 hover:bg-indigo-500'
+                        }`}
+                        style={{ width: `${percentage}%` }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Selected Stage Detail Panel */}
+            {activeFunnel && (
+              <div className="mt-8 pt-8 border-t border-slate-800/80 bg-slate-900/40 rounded-2xl p-6 border border-slate-800">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                  <div className="flex items-center gap-3">
+                    <span className="text-lg font-black text-white">{activeFunnel.name}</span>
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider border ${activeFunnel.statusColor}`}>
+                      {activeFunnel.statusBadge}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-6 text-xs">
+                    <div>
+                      <span className="text-slate-400">Retained: </span>
+                      <strong className="text-emerald-400">{activeFunnel.retainedCount.toLocaleString()}</strong>
+                    </div>
+                    <div>
+                      <span className="text-slate-400">Filtered Out: </span>
+                      <strong className="text-rose-400">{activeFunnel.filteredCount.toLocaleString()}</strong>
+                    </div>
+                    <div>
+                      <span className="text-slate-400">Retention: </span>
+                      <strong className="text-indigo-400">{activeFunnel.retentionRate}</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4 text-xs mt-4">
+                  <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1">Operation & Logic Rule</span>
+                    <p className="text-slate-300 leading-relaxed">{activeFunnel.operationRule}</p>
+                  </div>
+                  <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1">Rejection Criteria</span>
+                    <p className="text-rose-300/90 leading-relaxed">{activeFunnel.rejectionCriteria}</p>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-4 border-t border-slate-800/60 grid md:grid-cols-2 gap-4 text-xs font-mono">
+                  <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Sample Raw Segment</span>
+                    <p className="text-slate-300 break-all">{activeFunnel.sampleRaw}</p>
+                  </div>
+                  <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+                    <span className="text-[9px] font-bold text-indigo-400 uppercase tracking-widest block mb-1">Sanitized Output / Action</span>
+                    <p className="text-indigo-200 break-all">{activeFunnel.sampleSanitized}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Live Segment Pair Analyzer */}
+          <div className="bg-slate-950/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Interactive Segment Tester</span>
+                <h3 className="text-xl font-bold text-white">Execute Pipeline on Custom or Preset Strings</h3>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-slate-400">Target:</span>
+                <select
+                  value={targetLang}
+                  onChange={(e) => setTargetLang(e.target.value)}
+                  className="bg-slate-900 border border-slate-700 text-white text-xs rounded-xl px-3 py-1.5 focus:outline-none focus:border-indigo-500"
+                >
+                  <option value="de">German (DE)</option>
+                  <option value="fr">French (FR)</option>
+                  <option value="es">Spanish (ES)</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Presets Row */}
+            <div className="mb-6">
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Production Test Case Presets:</span>
+              <div className="flex flex-wrap gap-2">
+                {PRESET_TEST_CASES.map((tc) => (
+                  <button
+                    key={tc.id}
+                    onClick={() => handleSelectTestCase(tc)}
+                    className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all border ${
+                      selectedTestCase.id === tc.id
+                        ? 'bg-indigo-600 border-indigo-400 text-white shadow-md'
+                        : 'bg-slate-900/80 border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white'
+                    }`}
+                  >
+                    {tc.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Inputs Grid */}
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1.5">
+                  English Source Segment
+                </label>
+                <textarea
+                  rows={3}
+                  value={customSource}
+                  onChange={(e) => setCustomSource(e.target.value)}
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl p-4 text-xs font-mono text-white focus:outline-none focus:border-indigo-500"
+                  placeholder="Enter source string..."
+                />
+              </div>
+
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1.5">
+                  Localized Target Segment ({targetLang.toUpperCase()})
+                </label>
+                <textarea
+                  rows={3}
+                  value={customTarget}
+                  onChange={(e) => setCustomTarget(e.target.value)}
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl p-4 text-xs font-mono text-white focus:outline-none focus:border-indigo-500"
+                  placeholder="Enter localized target string..."
+                />
+              </div>
+            </div>
+
+            {/* Run Button */}
+            <div className="flex items-center justify-between mb-8">
+              <p className="text-xs text-slate-400 italic">
+                {selectedTestCase.description}
+              </p>
+              <Button
+                onClick={runAnalysis}
+                disabled={isRunningAnalysis}
+                className="bg-indigo-600 hover:bg-indigo-500 text-white font-black uppercase tracking-wider text-xs px-6 py-3 rounded-xl shadow-lg shadow-indigo-600/30 flex items-center gap-2"
+              >
+                <Play size={14} /> Run Pipeline Analysis
+              </Button>
+            </div>
+
+            {/* Live Pipeline Results */}
+            {pipelineResult && (
+              <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+                {/* Result Verdict Banner */}
+                <div className={`p-4 rounded-xl border flex items-center justify-between mb-6 ${
+                  pipelineResult.verdict === 'PASS'
+                    ? 'bg-emerald-950/40 border-emerald-700/60 text-emerald-300'
+                    : pipelineResult.verdict === 'CLEANED & PASSED'
+                    ? 'bg-blue-950/40 border-blue-700/60 text-blue-300'
+                    : 'bg-rose-950/40 border-rose-700/60 text-rose-300'
+                }`}>
+                  <div className="flex items-center gap-3">
+                    {pipelineResult.verdict === 'PASS' && <CheckCircle size={20} className="text-emerald-400" />}
+                    {pipelineResult.verdict === 'CLEANED & PASSED' && <Sparkles size={20} className="text-blue-400" />}
+                    {pipelineResult.verdict === 'REJECTED' && <XCircle size={20} className="text-rose-400" />}
+                    <div>
+                      <span className="text-xs font-black uppercase tracking-widest block">Pipeline Verdict: {pipelineResult.verdict}</span>
+                      <p className="text-xs font-medium opacity-90 mt-0.5">
+                        {pipelineResult.rejectionReason || 'Segment pair satisfies all data hygiene and neural semantic gates.'}
+                      </p>
+                    </div>
+                  </div>
+                  {pipelineResult.dropStage && (
+                    <Badge className="bg-rose-900/80 border border-rose-600 text-white text-[10px] font-black uppercase tracking-wider">
+                      Dropped at {pipelineResult.dropStage}
+                    </Badge>
+                  )}
+                </div>
+
+                {/* Step-by-Step Gate Audit */}
+                <div className="grid sm:grid-cols-5 gap-3 text-xs">
+                  {/* Gate 1 */}
+                  <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block mb-1">Gate 1: De-Tag</span>
+                    <div className="flex items-center gap-1.5 font-bold text-emerald-400 text-xs mb-1">
+                      <CheckCircle size={13} /> {pipelineResult.stage1.wasCleaned ? 'Normalized' : 'Clean'}
+                    </div>
+                    <p className="text-[10px] text-slate-400 leading-tight">Tags mapped to &lt;var&gt;, entities decoded.</p>
+                  </div>
+
+                  {/* Gate 2 */}
+                  <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block mb-1">Gate 2: LangID</span>
+                    <div className={`flex items-center gap-1.5 font-bold text-xs mb-1 ${
+                      pipelineResult.stage2.passed ? 'text-emerald-400' : 'text-rose-400'
+                    }`}>
+                      {pipelineResult.stage2.passed ? <CheckCircle size={13} /> : <XCircle size={13} />}
+                      {pipelineResult.stage2.tgtLangInfo.lang.toUpperCase()} ({(pipelineResult.stage2.tgtLangInfo.confidence * 100).toFixed(0)}%)
+                    </div>
+                    <p className="text-[10px] text-slate-400 leading-tight">Requires ≥90% confidence on {targetLang.toUpperCase()}.</p>
+                  </div>
+
+                  {/* Gate 3 */}
+                  <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block mb-1">Gate 3: Ratio</span>
+                    <div className={`flex items-center gap-1.5 font-bold text-xs mb-1 ${
+                      pipelineResult.stage3.passed ? 'text-emerald-400' : 'text-rose-400'
+                    }`}>
+                      {pipelineResult.stage3.passed ? <CheckCircle size={13} /> : <XCircle size={13} />}
+                      Ratio: {pipelineResult.stage3.ratio}
+                    </div>
+                    <p className="text-[10px] text-slate-400 leading-tight">Allowed bounds: [0.4, 2.5].</p>
+                  </div>
+
+                  {/* Gate 4 */}
+                  <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block mb-1">Gate 4: LaBSE</span>
+                    <div className={`flex items-center gap-1.5 font-bold text-xs mb-1 ${
+                      pipelineResult.stage4.passed ? 'text-emerald-400' : 'text-rose-400'
+                    }`}>
+                      {pipelineResult.stage4.passed ? <CheckCircle size={13} /> : <XCircle size={13} />}
+                      Cosine: {pipelineResult.stage4.score}
+                    </div>
+                    <p className="text-[10px] text-slate-400 leading-tight">Requires cosine similarity ≥ 0.75.</p>
+                  </div>
+
+                  {/* Gate 5 */}
+                  <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 block mb-1">Gate 5: Dedup</span>
+                    <div className={`flex items-center gap-1.5 font-bold text-xs mb-1 ${
+                      pipelineResult.stage5.passed ? 'text-emerald-400' : 'text-rose-400'
+                    }`}>
+                      {pipelineResult.stage5.passed ? <CheckCircle size={13} /> : <XCircle size={13} />}
+                      {pipelineResult.stage5.passed ? 'Indexed' : 'Skipped'}
+                    </div>
+                    <p className="text-[10px] text-slate-400 leading-tight">Deduplicated in clean training pool.</p>
+                  </div>
+                </div>
+
+                {/* Sanitized String Diff */}
+                <div className="mt-6 pt-6 border-t border-slate-800 grid md:grid-cols-2 gap-4 font-mono text-xs">
+                  <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Cleaned Source Output:</span>
+                    <p className="text-slate-200">{pipelineResult.cleanSource}</p>
+                  </div>
+                  <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+                    <span className="text-[9px] font-bold text-indigo-400 uppercase tracking-widest block mb-1">Cleaned Target Output:</span>
+                    <p className="text-indigo-200">{pipelineResult.cleanTarget}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* MODE 2: STEP 5 TRIPARTITE METRIC EVALUATION CALCULATOR                    */}
+      {/* ========================================================================= */}
+      {activeTab === 'evaluator' && (
+        <div className="space-y-10 relative z-10 animate-in fade-in duration-300">
+          <div className="bg-slate-950/70 border border-slate-800 rounded-3xl p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400">Step 5 Production Benchmarks</span>
+                <h3 className="text-xl font-bold text-white">Tripartite Automated Evaluation Stack</h3>
+              </div>
+              <Badge className="bg-indigo-950 text-indigo-300 border border-indigo-700/60 text-xs font-bold self-start">
+                COMET Gating Threshold: 0.82
+              </Badge>
+            </div>
+
+            {/* Presets Row */}
+            <div className="mb-6">
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Evaluation Scenarios:</span>
+              <div className="flex flex-wrap gap-2">
+                {PRESET_EVALUATION_CASES.map((c) => (
+                  <button
+                    key={c.id}
+                    onClick={() => handleSelectEvalCase(c)}
+                    className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all border ${
+                      selectedEvalCase.id === c.id
+                        ? 'bg-indigo-600 border-indigo-400 text-white shadow-md'
+                        : 'bg-slate-900/80 border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white'
+                    }`}
+                  >
+                    {c.name}
+                  </button>
+                ))}
+              </div>
+              <p className="text-xs text-indigo-300/80 italic mt-3 bg-indigo-950/30 p-3 rounded-xl border border-indigo-800/40">
+                {selectedEvalCase.scenarioNote}
+              </p>
+            </div>
+
+            {/* Input Triplet */}
+            <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1.5">
+                  1. English Source
+                </label>
+                <textarea
+                  rows={3}
+                  value={evalSource}
+                  onChange={(e) => { setEvalSource(e.target.value); recalculateMetrics(e.target.value, evalHyp, evalRef); }}
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl p-4 text-xs font-mono text-white focus:outline-none focus:border-indigo-500"
+                />
+              </div>
+
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-1.5">
+                  2. Human Reference
+                </label>
+                <textarea
+                  rows={3}
+                  value={evalRef}
+                  onChange={(e) => { setEvalRef(e.target.value); recalculateMetrics(evalSource, evalHyp, e.target.value); }}
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl p-4 text-xs font-mono text-white focus:outline-none focus:border-indigo-500"
+                />
+              </div>
+
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest text-indigo-400 block mb-1.5">
+                  3. Model Hypothesis (Editable)
+                </label>
+                <textarea
+                  rows={3}
+                  value={evalHyp}
+                  onChange={(e) => handleHypChange(e.target.value)}
+                  className="w-full bg-slate-900 border border-indigo-500/80 rounded-2xl p-4 text-xs font-mono text-indigo-100 focus:outline-none focus:ring-1 focus:ring-indigo-400"
+                />
+              </div>
+            </div>
+
+            {/* Metric Score Cards */}
+            <div className="grid sm:grid-cols-3 gap-4 mb-8">
+              {/* BLEU */}
+              <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">BLEU Score</span>
+                  <span className="text-[9px] font-semibold text-slate-400">Word n-grams</span>
+                </div>
+                <div className="text-3xl font-black text-white tracking-tight mb-2">
+                  {bleuScore} <span className="text-xs text-slate-400 font-normal">/ 100</span>
+                </div>
+                <div className="w-full h-2 bg-slate-950 rounded-full overflow-hidden mb-2">
+                  <div className="h-full bg-slate-500 rounded-full" style={{ width: `${Math.min(100, bleuScore)}%` }} />
+                </div>
+                <p className="text-[10px] text-slate-400 leading-tight">
+                  Automated sanity check. Penalizes synonyms that deviate from literal tokens.
+                </p>
+              </div>
+
+              {/* chrF++ */}
+              <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-indigo-300">chrF++ Score</span>
+                  <span className="text-[9px] font-semibold text-indigo-300">Char + Word n-grams</span>
+                </div>
+                <div className="text-3xl font-black text-indigo-400 tracking-tight mb-2">
+                  {chrfScore} <span className="text-xs text-slate-400 font-normal">/ 100</span>
+                </div>
+                <div className="w-full h-2 bg-slate-950 rounded-full overflow-hidden mb-2">
+                  <div className="h-full bg-indigo-500 rounded-full" style={{ width: `${Math.min(100, chrfScore)}%` }} />
+                </div>
+                <p className="text-[10px] text-slate-400 leading-tight">
+                  Morphological root matching. Awards partial credit to shared compound stems.
+                </p>
+              </div>
+
+              {/* COMET */}
+              <div className={`rounded-2xl p-5 border ${
+                cometResult.passed 
+                  ? 'bg-indigo-950/40 border-indigo-500/80 ring-1 ring-indigo-500/30' 
+                  : 'bg-rose-950/30 border-rose-700/60'
+              }`}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-indigo-300">COMET Neural Gate</span>
+                  <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase ${
+                    cometResult.passed ? 'bg-emerald-950 text-emerald-400 border border-emerald-700' : 'bg-rose-950 text-rose-400 border border-rose-700'
+                  }`}>
+                    {cometResult.passed ? 'PASS (>0.82)' : 'FAIL (<0.82)'}
+                  </span>
+                </div>
+                <div className={`text-3xl font-black tracking-tight mb-2 ${
+                  cometResult.passed ? 'text-emerald-400' : 'text-rose-400'
+                }`}>
+                  {cometResult.score} <span className="text-xs text-slate-400 font-normal">/ 1.000</span>
+                </div>
+                <div className="w-full h-2 bg-slate-950 rounded-full overflow-hidden mb-2">
+                  <div 
+                    className={`h-full rounded-full ${cometResult.passed ? 'bg-emerald-500' : 'bg-rose-500'}`} 
+                    style={{ width: `${Math.min(100, cometResult.score * 100)}%` }} 
+                  />
+                </div>
+                <p className="text-[10px] text-slate-300 leading-tight font-medium">
+                  {cometResult.note}
+                </p>
+              </div>
+            </div>
+
+            {/* Production Decision Explanation */}
+            <div className={`p-6 rounded-2xl border flex items-start gap-4 ${
+              cometResult.passed
+                ? 'bg-slate-900 border-indigo-500/40 text-indigo-100'
+                : 'bg-rose-950/20 border-rose-800/40 text-rose-200'
+            }`}>
+              <div className={`w-8 h-8 rounded-xl flex items-center justify-center font-bold flex-shrink-0 ${
+                cometResult.passed ? 'bg-emerald-600/20 text-emerald-400' : 'bg-rose-600/20 text-rose-400'
+              }`}>
+                {cometResult.passed ? <CheckCircle size={18} /> : <AlertTriangle size={18} />}
+              </div>
+              <div className="text-xs leading-relaxed">
+                <span className="font-black uppercase tracking-wider block mb-1 text-white">
+                  Producer Release Gate Evaluation:
+                </span>
+                {cometResult.passed ? (
+                  <span>
+                    <strong>Model output cleared for human blind testing.</strong> The engine captures semantic meaning, intent, and musical terminology while exhibiting natural editorial syntax that traditional surface metrics like BLEU under-score.
+                  </span>
+                ) : (
+                  <span>
+                    <strong>Model output rejected by automated gate.</strong> The engine failed semantic threshold (score {cometResult.score} &lt; 0.82). Segment must be routed to human linguist post-editing (MTPE) or flagged for fine-tuning retraining.
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default NMTInteractiveDemo;

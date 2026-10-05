@@ -48,6 +48,8 @@ function App() {
           <Route path="/project/:projectId" element={<ProjectDetail />} />
           <Route path="/case-studies/training-nmt" element={<TrainingNMTCaseStudy />} />
           <Route path="/case-study/training-nmt" element={<TrainingNMTCaseStudy />} />
+          <Route path="/demos/nmt-pipeline" element={<TrainingNMTCaseStudy />} />
+          <Route path="/nmt-demo" element={<TrainingNMTCaseStudy />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/scrum-board" element={<ScrumBoardPage />} />
           <Route path="/privacy" element={<Privacy />} />
