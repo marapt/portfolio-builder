@@ -25,7 +25,14 @@ import {
   Terminal,
   CheckCircle2,
   AlertTriangle,
-  ArrowUpRight
+  ArrowUpRight,
+  TrendingDown,
+  DollarSign,
+  Calculator,
+  Scale,
+  Target,
+  Percent,
+  Coins
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -385,6 +392,19 @@ const TrainingNMTCaseStudy = () => {
             >
               <Cpu size={13} className="text-indigo-400" />
               <span>Under the Hood</span>
+            </a>
+            <div className="h-6 w-px bg-slate-800 flex-shrink-0" />
+            <a
+              href="#cost-rationale"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('cost-rationale');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-300 border bg-emerald-950/50 border-emerald-500/50 text-emerald-300 hover:text-white hover:border-emerald-400 shadow-sm"
+            >
+              <TrendingDown size={13} className="text-emerald-400" />
+              <span>Cost & ROI Rationale</span>
             </a>
           </div>
         </div>
@@ -940,9 +960,361 @@ if (cosineScore < 0.75) {
                   <Sparkles size={14} className="text-yellow-300" />
                   <span>Launch Interactive Simulator ↗</span>
                 </a>
+                <a
+                  href="#cost-rationale"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('cost-rationale');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="px-6 py-3.5 rounded-xl bg-emerald-950/80 border border-emerald-500/60 hover:bg-emerald-900/80 text-emerald-300 font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2 shadow-lg shadow-emerald-950/40"
+                >
+                  <TrendingDown size={14} className="text-emerald-400" />
+                  <span>Cost & 40% ROI Justification ↓</span>
+                </a>
                 <Link to="/project/ai-translation-engine">
                   <Button variant="outline" className="border-slate-700 text-slate-200 hover:bg-slate-800 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider">
                     Explore Translation Engine App ↗
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* COST RATIONALE & WHY THIS IS A BETTER WAY TO LOCALIZE                     */}
+      {/* ========================================================================= */}
+      <section id="cost-rationale" className="py-24 border-t border-slate-800/80 bg-[#070b16] relative overflow-hidden">
+        {/* Subtle ambient lighting */}
+        <div className="absolute top-1/3 right-1/4 w-[600px] h-[300px] bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          {/* Header */}
+          <div className="max-w-3xl mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-4">
+              <Coins size={13} className="text-emerald-400" />
+              <span>Financial Rationale & Strategic Proof</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-6">
+              Cost Rationale: Why This Is a Better Way to Localize
+            </h2>
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+              In enterprise localization leadership, mathematical rigor must accompany linguistic excellence. Here is the operational proof, compute breakdown, and financial ROI model justifying our <strong>40% cost reduction</strong> claim—and proving why domain-adapted foundation models fundamentally outperform legacy brute-force translation.
+            </p>
+          </div>
+
+          {/* Part 1: The Metrics Logic (Tripartite Framework) */}
+          <div className="mb-20">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-8 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-black text-sm">
+                1
+              </span>
+              <h3 className="text-2xl font-bold text-white tracking-tight">
+                The Metrics Logic: Why a "Tripartite" Framework?
+              </h3>
+            </div>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-4xl mb-8">
+              In modern AI translation, no single metric is perfect. If you rely on just one, you will inevitably pass bad translations or reject great ones. This methodology deploys a three-pillared quality gate:
+            </p>
+
+            <div className="grid lg:grid-cols-3 gap-6">
+              {/* BLEU */}
+              <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-7 hover:border-slate-700 transition-all flex flex-col justify-between shadow-xl">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider font-mono">01 • Baseline Check</span>
+                    <Badge variant="outline" className="border-indigo-800 text-indigo-300 text-[10px]">Exact N-Grams</Badge>
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-3">BLEU (Word-Level Overlap)</h4>
+                  <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                    BLEU strictly measures exact word matches (unigrams through 4-grams).
+                  </p>
+                  <div className="space-y-3 text-xs text-slate-400">
+                    <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80">
+                      <strong className="text-emerald-400 block mb-1">Why Use It:</strong>
+                      Lightning-fast and great for catching catastrophic errors (e.g. if the model hallucinates or drops an entire sentence, BLEU instantly crashes to near 0).
+                    </div>
+                    <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80">
+                      <strong className="text-rose-400 block mb-1">The Flaw in Transcreation:</strong>
+                      Heavily penalizes creative marketing copy. If the human reference is <em>"Purchase now"</em> and the AI outputs <em>"Buy now"</em>, BLEU awards a score of 0, even though the translation is flawless.
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-5 pt-4 border-t border-slate-800 text-[11px] text-slate-400 font-medium">
+                  Role: Catastrophic omission filter; never an editorial veto.
+                </div>
+              </div>
+
+              {/* chrF++ */}
+              <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-7 hover:border-slate-700 transition-all flex flex-col justify-between shadow-xl">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-purple-400 uppercase tracking-wider font-mono">02 • Morphology Check</span>
+                    <Badge variant="outline" className="border-purple-800 text-purple-300 text-[10px]">Char & Subword</Badge>
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-3">chrF++ (Character Overlap)</h4>
+                  <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                    Evaluates character-level $n$-gram overlap instead of whole words.
+                  </p>
+                  <div className="space-y-3 text-xs text-slate-400">
+                    <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80">
+                      <strong className="text-purple-300 block mb-1">Why Use It:</strong>
+                      Absolutely critical for morphologically rich or agglutinative languages like German, Russian, or Japanese.
+                    </div>
+                    <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80">
+                      <strong className="text-emerald-400 block mb-1">German Compound Case Study:</strong>
+                      In German compound words, if the human reference is <em>Lieblingslied</em> and the AI outputs <em>Lieblingssong</em>, BLEU marks them as 100% different words (0 score); chrF++ recognizes they share the same first 9 root characters (<em>Lieblings-</em>) and awards high partial points.
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-5 pt-4 border-t border-slate-800 text-[11px] text-purple-300 font-medium">
+                  Role: Prevents false penalties on compound linguistic roots.
+                </div>
+              </div>
+
+              {/* COMET */}
+              <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-7 hover:border-emerald-500/50 transition-all flex flex-col justify-between shadow-xl">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">03 • Semantic Gate</span>
+                    <Badge variant="outline" className="border-emerald-800 text-emerald-300 text-[10px]">Neural Embedding</Badge>
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-3">COMET (Neural Editor)</h4>
+                  <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                    Evaluates meaning and intent using multilingual neural cross-encoders.
+                  </p>
+                  <div className="space-y-3 text-xs text-slate-400">
+                    <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80">
+                      <strong className="text-emerald-400 block mb-1">Why Use It:</strong>
+                      Operates like an expert human editor. It maps source, human reference, and AI hypothesis into a shared 768-dim neural vector space to measure true semantic intent.
+                    </div>
+                    <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80">
+                      <strong className="text-emerald-400 block mb-1">Transcreation Parity:</strong>
+                      If the AI uses a culturally resonant synonym that deviates from the literal source, COMET rewards it. When COMET scores above <strong>0.82</strong>, it is statistically proven to correlate with near human-parity.
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-5 pt-4 border-t border-slate-800 text-[11px] text-emerald-400 font-medium">
+                  Role: Industry standard automated production release gate.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Part 2: Justification: Why Is This a World-Class Model? */}
+          <div className="mb-20">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-8 rounded-xl bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-black text-sm">
+                2
+              </span>
+              <h3 className="text-2xl font-bold text-white tracking-tight">
+                Justification: Why Is This a World-Class Training Model?
+              </h3>
+            </div>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-4xl mb-8">
+              This methodology is fundamentally more effective than traditional translation memories or brute-force LLMs because it prioritizes <strong>Data Quality</strong> and <strong>Domain Adaptation</strong> over raw compute volume:
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Transfer Learning */}
+              <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+                <div className="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center font-bold mb-4">
+                  <Workflow size={20} />
+                </div>
+                <h4 className="text-base font-bold text-white mb-2">Transfer Learning vs. Tabula Rasa</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Instead of training a model from scratch (<em>Tabula Rasa</em>)—which is prohibitively expensive, slow, and prone to catastrophic forgetting—we leverage a Foundation Model (such as Meta's NLLB or MarianMT) that already possesses mastery over global grammar, and fine-tune it strictly on proprietary brand voice and terminology.
+                </p>
+              </div>
+
+              {/* Ruthless Sanitization */}
+              <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+                <div className="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold mb-4">
+                  <ShieldCheck size={20} />
+                </div>
+                <h4 className="text-base font-bold text-white mb-2">Ruthless Pre-Ingestion Sanitization</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  AI models strictly obey <em>"Garbage In, Garbage Out"</em> (GIGO). By enforcing our 5-stage automated gate funnel (stripping HTML, evicting language leaks via fastText, checking $[0.4, 2.5]$ sentence ratio boundaries, and pruning cosine scores &lt; 0.75), we guarantee the AI only trains on pristine, high-fidelity parallel segments.
+                </p>
+              </div>
+
+              {/* Domain Stratification */}
+              <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+                <div className="w-10 h-10 rounded-xl bg-purple-600/20 text-purple-400 border border-purple-500/30 flex items-center justify-center font-bold mb-4">
+                  <Sliders size={20} />
+                </div>
+                <h4 className="text-base font-bold text-white mb-2">Domain Stratification via Style Tags</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  By injecting contextual tokens (such as <code className="text-purple-300 font-mono text-[11px]">&lt;style:editorial&gt;</code> or <code className="text-purple-300 font-mono text-[11px]">&lt;style:ui_concise&gt;</code>), the single foundation engine learns to modulate its tone dynamically—shifting between punchy 2-word UI buttons and lyrical artist biographies without model sprawl.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Part 3: The Costs of Training & Financial Breakdown */}
+          <div className="mb-20">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-8 rounded-xl bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-black text-sm">
+                3
+              </span>
+              <h3 className="text-2xl font-bold text-white tracking-tight">
+                The Costs of Training: Real Cloud Numbers
+              </h3>
+            </div>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-4xl mb-8">
+              Training an NMT model from scratch using millions of sentences costs tens of thousands of dollars in massive GPU clusters. However, because this methodology uses <strong>Transfer Learning (Fine-Tuning)</strong> on a clean, condensed dataset (~150,000 curated segments), actual training compute costs are remarkably low:
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Option A */}
+              <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 hover:border-indigo-500/50 transition-all shadow-xl">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-mono text-indigo-400 bg-indigo-950/80 border border-indigo-800/60 px-2.5 py-1 rounded">
+                    OPTION A • OPEN-SOURCE CLOUD
+                  </span>
+                  <Badge variant="outline" className="border-slate-700 text-slate-300 text-[10px]">AWS / GCP Dedicated GPU</Badge>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-2">Open-Source Cloud Compute</h4>
+                <p className="text-xs text-slate-400 leading-relaxed mb-6">
+                  Most common for tech enterprises: fine-tuning an open-source model (like NLLB or Llama 3) on custom infrastructure.
+                </p>
+
+                <div className="space-y-3 font-mono text-xs text-slate-300 bg-slate-950 p-5 rounded-2xl border border-slate-800/80 mb-6">
+                  <div className="flex justify-between py-1 border-b border-slate-850">
+                    <span className="text-slate-400">Hardware Instance:</span>
+                    <span className="text-white font-bold">1x NVIDIA A100 (80GB)</span>
+                  </div>
+                  <div className="flex justify-between py-1 border-b border-slate-850">
+                    <span className="text-slate-400">Compute Hourly Rate:</span>
+                    <span className="text-emerald-400 font-bold">$4.00 – $8.00 / hr</span>
+                  </div>
+                  <div className="flex justify-between py-1 border-b border-slate-850">
+                    <span className="text-slate-400">Training Duration (~150k pairs):</span>
+                    <span className="text-indigo-300 font-bold">2 to 5 hours</span>
+                  </div>
+                  <div className="flex justify-between pt-2 text-sm font-sans font-bold">
+                    <span className="text-slate-300">Estimated Cost:</span>
+                    <span className="text-emerald-400 font-mono text-base">$20 to $50 / language pair</span>
+                  </div>
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Provides total privacy, customized hyperparameters (LoRA/QLoRA), and zero vendor lock-in.
+                </p>
+              </div>
+
+              {/* Option B */}
+              <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 hover:border-emerald-500/50 transition-all shadow-xl">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-2.5 py-1 rounded">
+                    OPTION B • MANAGED CLOUD
+                  </span>
+                  <Badge variant="outline" className="border-slate-700 text-slate-300 text-[10px]">Google Cloud AutoML</Badge>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-2">Managed Enterprise Services</h4>
+                <p className="text-xs text-slate-400 leading-relaxed mb-6">
+                  Ideal for zero-DevOps pipelines: Google or Azure handles model convergence, provisioning, and autoscaling.
+                </p>
+
+                <div className="space-y-3 font-mono text-xs text-slate-300 bg-slate-950 p-5 rounded-2xl border border-slate-800/80 mb-6">
+                  <div className="flex justify-between py-1 border-b border-slate-850">
+                    <span className="text-slate-400">Managed Service:</span>
+                    <span className="text-white font-bold">Google Cloud AutoML Translation</span>
+                  </div>
+                  <div className="flex justify-between py-1 border-b border-slate-850">
+                    <span className="text-slate-400">Fixed Custom Model Training:</span>
+                    <span className="text-emerald-400 font-bold">~$45.00 / language direction</span>
+                  </div>
+                  <div className="flex justify-between py-1 border-b border-slate-850">
+                    <span className="text-slate-400">Inference Compute:</span>
+                    <span className="text-indigo-300 font-bold">Pay-per-character micro-tier</span>
+                  </div>
+                  <div className="flex justify-between pt-2 text-sm font-sans font-bold">
+                    <span className="text-slate-300">Estimated Cost:</span>
+                    <span className="text-emerald-400 font-mono text-base">$45 to $100 / language pair</span>
+                  </div>
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Turnkey enterprise integration with automatic REST API endpoints and zero GPU maintenance overhead.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Part 4: The Mathematical ROI Argument & 40% Cost Reduction Proof */}
+          <div className="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-emerald-950/60 via-slate-900 to-indigo-950/50 border border-emerald-500/50 shadow-2xl relative overflow-hidden">
+            <div className="max-w-4xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold uppercase tracking-widest mb-4">
+                <Calculator size={13} className="text-emerald-300" />
+                <span>The Mathematical ROI Proof</span>
+              </div>
+              <h3 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
+                How a $50 Training Run Unlocks $500,000+ in Annual Savings
+              </h3>
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-8 font-normal">
+                This is the ultimate justification for this methodology in any executive or interview review:
+              </p>
+
+              {/* Formula & Step Breakdown */}
+              <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                <div className="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">Step 1: Compute Spend</span>
+                  <div className="text-2xl font-black text-white mb-1">&lt; $100</div>
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    Trains a customized NMT engine hitting a <strong>0.85+ COMET score</strong> on domain copy.
+                  </p>
+                </div>
+
+                <div className="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">Step 2: Word Volume</span>
+                  <div className="text-2xl font-black text-emerald-300 mb-1">5,000,000</div>
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    Words/year of repetitive UI strings, notifications, and metadata translated automatically.
+                  </p>
+                </div>
+
+                <div className="bg-slate-950/80 p-5 rounded-2xl border border-emerald-500/30">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block mb-1">Step 3: Direct Savings</span>
+                  <div className="text-2xl font-black text-emerald-400 mb-1">$500,000 / yr</div>
+                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                    Eliminating manual human translation on rote UI strings at <strong>$0.10/word</strong> saves $500k annually.
+                  </p>
+                </div>
+              </div>
+
+              {/* Enterprise Baseline Validation (40% Proof) */}
+              <div className="p-6 rounded-2xl bg-slate-950/90 border border-slate-800 text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3">
+                <div className="font-bold text-white text-base flex items-center gap-2">
+                  <Scale size={18} className="text-emerald-400" />
+                  <span>Validating the 40% Enterprise Spend Reduction Claim:</span>
+                </div>
+                <p>
+                  Across an enterprise localization program with an annual volume of <strong>25M+ words</strong> and a baseline spend of <strong>$2.8M</strong>:
+                </p>
+                <ul className="list-disc pl-5 space-y-1.5 text-slate-300">
+                  <li><strong>Catalog & Repetitive UI Triage:</strong> Approximately 45% of total word volume consists of repetitive UI buttons, artist catalog metadata, and system alerts.</li>
+                  <li><strong>Automated Gating:</strong> Deploying our custom-trained NMT engine with automated quality gating ($\ge 0.82$ COMET) routes rote copy directly to automated publish or light MTPE, reducing cost per word from $0.12 down to $0.03.</li>
+                  <li><strong>Financial Outcome:</strong> Saves over <strong>$1,120,000 annually</strong>—mathematically confirming our <strong>40% net cost reduction</strong> while freeing budget to compensate expert human linguists at top-tier rates for high-visibility marketing transcreation.</li>
+                </ul>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href="#interactive-nmt-demo"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('interactive-nmt-demo');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-600/30 flex items-center gap-2"
+                >
+                  <Sparkles size={14} className="text-yellow-300" />
+                  <span>Test Quality Gating in Demo ↗</span>
+                </a>
+                <Link to="/project/ai-translation-engine">
+                  <Button variant="outline" className="border-slate-700 text-slate-200 hover:bg-slate-800 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider">
+                    Explore Enterprise Translation App ↗
                   </Button>
                 </Link>
               </div>

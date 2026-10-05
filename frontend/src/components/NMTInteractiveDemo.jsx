@@ -22,7 +22,8 @@ import {
   Pause,
   SkipForward,
   X,
-  Terminal
+  Terminal,
+  Coins
 } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
@@ -965,6 +966,34 @@ const NMTInteractiveDemo = () => {
                   Calculates real word n-grams (BLEU), character n-grams (chrF++), and cross-encoder neural transcreation weights (COMET). Awards bonuses for idiomatic synonyms while heavily penalizing literal translations (e.g. music "drops" translated as "falls down") to stop unverified deployment.
                 </p>
               </div>
+            </div>
+
+            {/* Financial ROI Callout */}
+            <div className="p-5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6">
+              <div className="flex items-start sm:items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold flex-shrink-0">
+                  <Coins size={16} />
+                </div>
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-emerald-400 block">
+                    Enterprise Cost Rationale & 40% Reduction
+                  </span>
+                  <p className="text-xs text-slate-200">
+                    A <strong>$50 fine-tuning run</strong> on ~150k curated pairs eliminates manual human translation on 5M rote words, delivering <strong>$500,000+ in annual savings</strong>.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="#cost-rationale"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById('cost-rationale');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-3.5 py-1.5 rounded-lg bg-emerald-900/80 hover:bg-emerald-800 border border-emerald-500/60 text-emerald-300 text-[11px] font-bold uppercase tracking-wider whitespace-nowrap self-start sm:self-auto transition-colors"
+              >
+                Cost Rationale & ROI ↓
+              </a>
             </div>
 
             {/* Bottom Link to In-Depth Conclusion */}
