@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).parent.parent
 TEST_RESULT_FILE = BASE_DIR / "test_result.md"
 API_ENDPOINT = os.environ.get("JIRA_API_ENDPOINT", "http://localhost:8000/api/jira/issue")
 API_TIMEOUT = float(os.environ.get("API_TIMEOUT", "10.0"))
-JIRA_PROJECT_KEY = os.environ.get("JIRA_PROJECT_KEY", "PMJ")
+JIRA_PROJECT_KEY = os.environ.get("JIRA_PROJECT_KEY", "PJM")
 
 def get_git_info():
     """Get the current git commit hash and message."""

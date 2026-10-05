@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: portfolio-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: ENVIRONMENT
+        value: production
+      - key: CORS_ORIGINS
+        value: "https://maramartins.com,https://www.maramartins.com"
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME
+        value: portfolio
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: INTERNAL_API_KEY
+        sync: false
+      - key: JIRA_INSTANCE_URL
+        sync: false
+      - key: JIRA_EMAIL
+        sync: false
+      - key: JIRA_API_TOKEN
+        sync: false
+      - key: EMAILJS_SERVICE_ID
+        sync: false
+      - key: EMAILJS_TEMPLATE_ID
+        sync: false
+      - key: EMAILJS_PUBLIC_KEY
+        sync: false
+      - key: EMAILJS_PRIVATE_KEY
+        sync: false

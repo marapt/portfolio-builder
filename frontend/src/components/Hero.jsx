@@ -1,104 +1,193 @@
-import React from 'react';
-import { ArrowDown, MapPin, Linkedin, Calendar } from 'lucide-react';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Linkedin, Twitter, Github, Globe, Brain, Layout, Heart, ArrowUpRight } from 'lucide-react';
 import { Button } from './ui/button';
-import { personalInfo, stats } from '../data/mock';
+import { personalInfo as personalInfoEN } from '../data/site/en';
+import { personalInfo as personalInfoPT } from '../data/site/pt';
+import aiGlassIcon from '../assets/branding/ai-glass-icon.png';
 
-const Hero = () => {
-  const scrollToSection = (e, href) => {
+const InsightCard = ({ label, description, icon: Icon, position, targetId, isPrimary }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const scrollToSection = (e) => {
     e.preventDefault();
-    const element = document.querySelector(href);
+    const element = document.querySelector(targetId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-indigo-50/50 to-white pt-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="order-2 lg:order-1">
-            <div className="flex items-center space-x-2 text-indigo-600 mb-4">
-              <MapPin size={18} />
-              <span className="text-sm font-medium">{personalInfo.location}</span>
-            </div>
-            
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-              {personalInfo.name}
-            </h1>
-            
-            <h2 className="text-xl lg:text-2xl text-indigo-600 font-medium mb-6">
-              {personalInfo.title}
-            </h2>
-            
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              {personalInfo.tagline}
-            </p>
-            
-            <p className="text-gray-500 mb-8">
-              {personalInfo.bio}
-            </p>
+    <div 
+      className={`absolute z-30 transition-all duration-500 transform ${position} ${isHovered ? 'scale-110' : 'scale-100'}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Balloon / Tooltip */}
+      <div className={`absolute bottom-full mb-4 left-1/2 -translate-x-1/2 w-48 p-4 rounded-2xl insight-balloon transition-all duration-500 ${isHovered ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95 pointer-events-none'}`}>
+        <p className="text-[10px] text-white/90 leading-relaxed font-medium">
+          {description}
+        </p>
+        <button 
+          onClick={scrollToSection}
+          className="mt-3 flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-cyan-400 hover:text-white transition-colors"
+        >
+          {label === "QI Cultural" || label === "Cultural IQ" ? "Saiba Mais" : "Learn More"} <ArrowUpRight size={10} />
+        </button>
+      </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-12">
+      {/* Main Card */}
+      <div className={`glass-card p-4 lg:p-5 rounded-3xl shadow-2xl cursor-pointer pulse-glow ${isPrimary ? 'bg-violet-600/10' : 'bg-white/5'}`}>
+        <div className="flex flex-col items-center gap-2">
+          {Icon && (
+            <div className={`p-2 rounded-xl ${isPrimary ? 'bg-violet-600/20' : 'bg-white/10'}`}>
+              <Icon size={isPrimary ? 24 : 20} className={isPrimary ? 'text-cyan-400' : 'text-white/70'} />
+            </div>
+          )}
+          <span className="text-[10px] font-black text-white uppercase tracking-[0.2em]">{label}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Hero = () => {
+  const { t, i18n } = useTranslation();
+  const personalInfo = i18n.language.startsWith('pt') ? personalInfoPT : personalInfoEN;
+
+  const quadrants = [
+    { 
+      label: t('hero.val_ai_title'), 
+      description: t('hero.val_ai_desc'), 
+      icon: Brain, 
+      position: "-top-8 -right-8 lg:-top-16 lg:-right-16",
+      targetId: "#portfolio",
+      isPrimary: true
+    },
+    { 
+      label: t('hero.val_geo_title'), 
+      description: t('hero.val_geo_desc'), 
+      icon: Globe, 
+      position: "-bottom-8 -right-8 lg:-bottom-16 lg:-right-16",
+      targetId: "#resume"
+    },
+    { 
+      label: t('hero.val_pm_title'), 
+      description: t('hero.val_pm_desc'), 
+      icon: Layout, 
+      position: "-bottom-8 -left-8 lg:-bottom-16 lg:-left-16",
+      targetId: "#scrum-board"
+    },
+    { 
+      label: t('hero.val_culture_title'), 
+      description: t('hero.val_culture_desc'), 
+      icon: Heart, 
+      position: "-top-8 -left-8 lg:-top-16 lg:-left-16",
+      targetId: "#about"
+    }
+  ];
+
+  return (
+    <section className="relative min-h-screen flex items-center stellar-bg pt-24 overflow-hidden" id="hero">
+      {/* Background Decorative Blobs */}
+      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-violet-600/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Content */}
+          <div className="flex flex-col space-y-10 animate-in fade-in slide-in-from-left duration-1000">
+            <div className="space-y-6">
+              <h1 className="text-5xl lg:text-7xl font-black text-white leading-tight tracking-tighter">
+                {t('hero.title')}
+              </h1>
+              
+              <div className="space-y-6">
+                <h2 className="text-xl lg:text-2xl font-bold text-white/90">
+                  {t('hero.tagline')}
+                </h2>
+                
+                <p className="text-lg text-white/50 max-w-xl leading-relaxed">
+                  {t('hero.description')}
+                </p>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-6 pt-4">
               <Button
-                onClick={(e) => scrollToSection(e, '#contact')}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg flex items-center gap-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-violet-600 hover:bg-violet-500 text-white px-10 h-14 rounded-2xl font-black uppercase tracking-widest text-[10px] transition-all duration-300 shadow-[0_0_25px_rgba(139,92,246,0.5)] transform hover:-translate-y-1 active:scale-95"
               >
-                <Calendar size={18} />
-                Book a Consultation
+                {t('hero.cta_primary')}
               </Button>
+              
               <Button
                 variant="outline"
-                onClick={(e) => scrollToSection(e, '#portfolio')}
-                className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-3 rounded-lg font-medium transition-all duration-200"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-white/5 backdrop-blur-md border-white/10 text-white hover:bg-white/10 px-10 h-14 rounded-2xl font-black uppercase tracking-widest text-[10px] transition-all transform hover:-translate-y-1 active:scale-95"
               >
-                View My Work
+                {t('hero.cta_secondary')}
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center lg:text-left">
-                  <div className="text-3xl font-bold text-indigo-600">{stat.value}</div>
-                  <div className="text-sm text-gray-500">{stat.label}</div>
-                </div>
-              ))}
+            {/* Social Links */}
+            <div className="flex items-center gap-8 pt-8 text-white/30">
+              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+                <Linkedin size={20} />
+              </a>
+              <a href="#" className="hover:text-cyan-400 transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+                <Github size={20} />
+              </a>
             </div>
           </div>
 
-          {/* Right Content - Photo */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="w-56 h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-indigo-100 to-indigo-50">
-                <img
-                  src={personalInfo.photo}
-                  alt={personalInfo.name}
-                  className="w-full h-full object-cover object-top"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `<div class="w-full h-full flex items-center justify-center text-6xl lg:text-8xl font-bold text-indigo-300">MM</div>`;
-                  }}
-                />
+          {/* Right Content - Interactive Visual System */}
+          <div className="relative group flex justify-center lg:justify-end animate-in fade-in zoom-in duration-1000 delay-300">
+            <div className="relative w-full max-w-sm aspect-square flex items-center justify-center">
+              
+              {/* Central Shield/Photo */}
+              <div className="relative z-20 glass-card p-1.5 rounded-[3rem] shadow-2xl">
+                <div className="relative w-56 h-56 lg:w-72 lg:h-72 rounded-[2.8rem] overflow-hidden bg-black/40 border border-white/5">
+                  <img 
+                    src={personalInfo.photo} 
+                    alt="Mara Martins"
+                    className="w-full h-full object-cover object-top mix-blend-lighten opacity-90 transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                </div>
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 md:w-24 md:h-24 bg-indigo-100 rounded-full -z-10"></div>
-              <div className="absolute -top-4 -left-4 w-12 h-12 md:w-16 md:h-16 bg-indigo-200 rounded-full -z-10"></div>
+
+              {/* Interactive Quadrants */}
+              {quadrants.map((q, idx) => (
+                <InsightCard key={idx} {...q} />
+              ))}
+
+              {/* Decorative Animated Rings */}
+              <div className="absolute inset-x-[-10%] inset-y-[-10%] border border-white/5 rounded-full pointer-events-none animate-[spin_20s_linear_infinite]" />
+              <div className="absolute inset-x-[-20%] inset-y-[-20%] border border-white/5 rounded-full pointer-events-none animate-[spin_30s_linear_infinite_reverse] opacity-50" />
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="flex justify-center mt-16">
-          <a
-            href="#about"
-            onClick={(e) => scrollToSection(e, '#about')}
-            className="flex flex-col items-center text-gray-400 hover:text-indigo-600 transition-colors duration-200 animate-bounce"
-          >
-            <span className="text-sm mb-2">Scroll to explore</span>
-            <ArrowDown size={20} />
-          </a>
+        {/* Signature Branding */}
+        <div className="mt-24 pt-12 border-t border-white/5 flex justify-between items-center text-white/20 uppercase tracking-[0.4em] text-[10px] font-black">
+           <span>{personalInfo.name}</span>
+           <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-3 hover:text-cyan-400 transition-colors group">
+             <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+             <span className="hidden lg:inline">{personalInfo.email}</span>
+             <span className="lg:hidden">CONTACT</span>
+           </a>
         </div>
       </div>
     </section>

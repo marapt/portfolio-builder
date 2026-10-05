@@ -62,3 +62,4 @@ agenthub/agents/youtube/db
 .cache/
 
 *.pem
+backend/data/local_db.json

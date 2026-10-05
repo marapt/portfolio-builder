@@ -32,6 +32,31 @@ The project encompassed digital marketing assets, print collateral, video conten
       { value: '98%', label: 'Quality Score' },
       { value: '40+', label: 'Languages Supported' }
     ],
+    locales: {
+      pt: {
+        title: 'Localização de Marketing Global',
+        description: 'Liderei a localização de ponta a ponta de campanhas de marketing em mais de 40 idiomas para uma empresa de tecnologia Fortune 500.',
+        overview: `Esta iniciativa abrangente de localização de marketing transformou a forma como uma empresa de tecnologia Fortune 500 abordou a expansão do mercado global. Ao implementar uma estratégia de localização centralizada, alcançamos uma consistência sem precedentes em todos os pontos de contato de marketing.`,
+        challenges: [
+          'Mensagens de marca inconsistentes em mais de 40 mercados regionais',
+          'Processos de aprovação longos causando atrasos de 6 a 8 semanas',
+          'Múltiplos fornecedores com padrões de qualidade variados',
+          'Visibilidade limitada dos gastos de localização e ROI'
+        ],
+        solutions: [
+          'Implementação de Sistema de Gestão de Tradução (TMS) centralizado',
+          'Estabelecimento de fluxos de revisão regional com SLAs claros',
+          'Criação de guias de estilo abrangentes para cada mercado',
+          'Desenvolvimento de painéis em tempo real para métricas de custo e qualidade'
+        ],
+        results: [
+          { value: '60%', label: 'Time-to-Market mais rápido' },
+          { value: '40%', label: 'Redução de Custos' },
+          { value: '98%', label: 'Pontuação de Qualidade' },
+          { value: '40+', label: 'Idiomas Suportados' }
+        ]
+      }
+    },
     technologies: [
       'SDL Trados',
       'memoQ',
@@ -80,6 +105,31 @@ By combining custom-trained NMT engines with intelligent routing and human post-
       { value: '94%', label: 'MTPE Efficiency' },
       { value: '2M+', label: 'Words/Month' }
     ],
+    locales: {
+      pt: {
+        title: 'Motor de Tradução por IA',
+        description: 'Implementação e otimização de fluxos de tradução automática neural, reduzindo o time-to-market em 60%.',
+        overview: `Este projeto transformador introduziu a tradução automática neural (NMT) alimentada por IA em um fluxo de trabalho de localização empresarial.`,
+        challenges: [
+          'Alto volume de conteúdo repetitivo',
+          'Qualidade inconsistente de motores genéricos',
+          'Complexidade de integração tecnológica',
+          'Resistência de linguistas à adoção de IA'
+        ],
+        solutions: [
+          'Implantação de motores NMT treinados sob medida',
+          'Implementação de tradução automática adaptativa',
+          'Roteamento inteligente de conteúdo',
+          'Design de fluxos human-in-the-loop'
+        ],
+        results: [
+          { value: '60%', label: 'Redução de Tempo' },
+          { value: '45%', label: 'Economia de Custos' },
+          { value: '94%', label: 'Eficiência de MTPE' },
+          { value: '2M+', label: 'Palavras/Mês' }
+        ]
+      }
+    },
     technologies: [
       'Neural Machine Translation',
       'TensorFlow',
@@ -104,7 +154,7 @@ By combining custom-trained NMT engines with intelligent routing and human post-
     heroImage: '/miis-ai-series.jpg',
     tags: ['Education', 'AI', 'Localization', 'MIIS', 'Speaker Series'],
     duration: 'Jul 2023 - Jul 2025',
-    teamSize: '90+ Students Mentored',
+    teamSize: '90+ Total Students',
     scope: 'Graduate Program',
     liveUrl: null,
     overview: `As a Visiting Professor at the Middlebury Institute of International Studies (MIIS), one of my main goals is to empower students to hear real life experiences beyond the classroom and my own perspectives or life experiences.
@@ -125,24 +175,64 @@ Through teaching graduate-level courses on Translation and Localization Manageme
       'Created curriculum focusing on Responsible AI adoption and ethical considerations in localization'
     ],
     results: [
-      { value: '90+', label: 'Students Mentored' },
-      { value: '3', label: 'Cohorts Taught' },
+      { value: '90+', label: 'Total Students' },
+      { value: '3', label: 'Courses Taught' },
       { value: '10+', label: 'Industry Speakers' },
       { value: '2 yrs', label: 'Program Duration' }
     ],
+    locales: {
+      pt: {
+        title: 'Ensino no MIIS e Série de Palestras de IA',
+        description: 'Professora Visitante no Middlebury Institute, lecionando cursos de pós-graduação em Gestão de Tradução e Localização.',
+        overview: `Como Professora Visitante no Middlebury Institute of International Studies (MIIS), um dos meus principais objetivos é capacitar os alunos a ouvirem experiências da vida real além da sala de aula.`,
+        challenges: [
+          'Preencher a lacuna entre teoria acadêmica e prática da indústria',
+          'Manter o currículo atualizado com tecnologias de IA em rápida evolução',
+          'Conectar alunos com líderes da indústria para mentoria',
+          'Preparar alunos para uma indústria de localização transformada pela IA'
+        ],
+        solutions: [
+          'Lançamento da Série de Palestras AI in Localization',
+          'Design de cursos que combinam fundamentos teóricos com projetos práticos',
+          'Parcerias com empresas como GitLab, Block, Coupa e Smartling',
+          'Currículo focado em adoção responsável de IA'
+        ],
+        results: [
+          { value: '90+', label: 'Total de Alunos' },
+          { value: '3', label: 'Cursos Lecionados' },
+          { value: '10+', label: 'Palestrantes da Indústria' },
+          { value: '2 anos', label: 'Duração do Programa' }
+        ]
+      }
+    },
     technologies: [
-      'AI/ML in Localization',
-      'Translation Management Systems',
-      'Go-to-Market Strategy',
-      'Program Management',
-      'Smartling',
-      'LLM Applications',
+      'Zoom',
+      'Canvas',
       'Responsible AI'
     ],
+    // Original broad tech list — reusable for other pages:
+    // 'AI/ML in Localization', 'Translation Management Systems', 'Go-to-Market Strategy',
+    // 'Program Management', 'Smartling', 'LLM Applications', 'Responsible AI'
+    technologiesTitle: 'Educational Tools & Infrastructure',
+    technologiesBadge: 'Classroom toolkit',
+    credentialBlock: {
+      institution: 'Middlebury Institute of International Studies at Monterey',
+      role: 'Visiting Professor',
+      url: 'https://www.middlebury.edu/institute/people/mara-martins',
+      archiveUrl: 'https://web.archive.org/web/20250211181739/https://www.middlebury.edu/institute/people/mara-martins',
+      badgeText: "As Published By The Institute",
+      headshot: '/miis-headshot.jpg',
+      bio: [
+        'Professor Martins has been in the localization industry for over fourteen years and has worked with leading companies like Sony, Apple, LinkedIn, and Square. Mara’s career journey offers a wide range of experience from diverse roles in both supplier and client side. Her career path includes roles such as Translator, Project and Program Manager and Localization Leader.',
+        'Mara’s career spans a wide range of fields, including E-commerce, Retail, Marketing, and Customer Support, providing her with valuable insights. She has experience in managing teams and E2E localization processes. Mara also acted as an ambassador for geopolitical localization by educating stakeholders and business partners, emphasizing the critical role of localization within the organizations.',
+        'As a Program Manager at Microsoft Mara led the MS Store E-commerce localization program for over 200 products and 195 languages and managed budgets exceeding $2M. As a Manager at Linkedin and Square, she led the Marketing & Project Managers team. She also strategized and partnered with company leadership on international growth strategy and language support expansion. At Monterey Institute, Professor Martins now focuses on her role as an educator, bringing her industry expertise to the academic setting and is dedicated to help the next generation of localizers build a successful career in Localization.',
+        'Mara’s pedagogical approach is a combination of sharing her own experiences and industry learnings with simulating real-life situations with students to navigate career challenges and providing a toolkit that can lead students to find their own discovery path.'
+      ],
+    },
     gallery: [
-      { url: '/miis-guest-speakers.jpg', caption: 'Guest Speakers: Jose Palomares & Ernesto Cabanes on GTM Strategy' },
-      { url: '/miis-ai-series.jpg', caption: 'AI Speaker Series: Adelina Cristovao & Rodrigo Cristina' },
-      { url: '/miis-smartling.jpg', caption: 'AI Speaker Series: Olga Beregovaya & Marina Sánchez Torrón from Smartling' }
+      { url: '/miis-guest-speakers.jpg', caption: 'Guest Speakers: Jose Palomares & Ernesto Cabanes on GTM Strategy', link: 'https://www.linkedin.com/posts/maramartinspt_as-a-professor-at-miis-one-of-my-main-goals-ugcPost-7317937686097342464-_OIn' },
+      { url: '/miis-ai-series.jpg', caption: 'AI Speaker Series: Adelina Cristovao & Rodrigo Cristina', link: 'https://www.linkedin.com/posts/maramartinspt_id-like-to-give-a-public-thanks-to-our-incredible-share-7325951062819983360-j3dn?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAOLIVwBajugFT0p3mD4pY_GTdLq7wdc2p4' },
+      { url: '/miis-smartling.jpg', caption: 'AI Speaker Series: Olga Beregovaya & Marina Sánchez Torrón from Smartling', link: 'https://www.linkedin.com/posts/maramartinspt_id-like-to-give-a-public-thanks-to-our-incredible-share-7327805130374815744-WLgE' }
     ],
     linkedInPosts: [
       {
@@ -168,16 +258,16 @@ Through teaching graduate-level courses on Translation and Localization Manageme
   
   'polyglotai-translator': {
     id: 'polyglotai-translator',
-    title: 'PolyglotAI Translator',
-    description: 'A universal translation app supporting text, voice, and sign language - powered by AI for seamless global communication.',
+    title: 'AI Polyglots',
+    description: 'Break every language barrier. Everywhere. An experimental platform that allows you to communicate across language barriers using text, voice, sign language, and more.',
     heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop',
     tags: ['AI', 'Translation', 'Accessibility', 'Innovation', 'Open Source'],
     duration: 'Ongoing',
     teamSize: 'Solo Project',
     scope: 'Global',
-    liveUrl: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://where-my-code.emergent.host/',
+    liveUrl: 'https://aipolyglots.com/',
     githubUrl: process.env.REACT_APP_POLYGLOT_GITHUB_URL || 'https://github.com/marapt/PolyglotAI-Web',
-    overview: `PolyglotAI Translator is a groundbreaking universal translation application that breaks down communication barriers through multi-modal translation capabilities. Supporting text, voice, and sign language, this tool represents the future of accessible global communication.
+    overview: `AI Polyglots is an experimental platform that allows you to communicate across language barriers using text, voice, sign language, and more. Translate text, voice, sign language, and messages across 100+ languages. Integrate with WhatsApp, phone calls, websites, and any app through our API.
 
 Built with cutting-edge AI technology, the application provides real-time translation across multiple modalities, making it invaluable for international travelers, deaf and hard-of-hearing communities, and global business communications.
 
@@ -200,6 +290,31 @@ This project is open source and available on GitHub as part of my commitment to 
       { value: 'Real-time', label: 'Processing' },
       { value: 'WCAG', label: 'Accessible' }
     ],
+    locales: {
+      pt: {
+        title: 'AI Polyglots',
+        description: 'Quebre todas as barreiras linguísticas. Em qualquer lugar. Uma plataforma experimental que permite a comunicação através de barreiras linguísticas usando texto, voz, linguagem gestual e muito mais.',
+        overview: `O AI Polyglots é uma plataforma experimental que permite comunicar através de barreiras linguísticas utilizando texto, voz, linguagem gestual e muito mais. Traduza texto, voz, linguagem gestual e mensagens em mais de 100 idiomas. Integre com o WhatsApp, chamadas telefónicas, sites e qualquer aplicação através da nossa API.`,
+        challenges: [
+          'Criação de uma interface unificada para múltiplas modalidades',
+          'Garantia de acessibilidade para usuários com diferentes habilidades',
+          'Manutenção da precisão da tradução em tipos de entrada diversos',
+          'Construção de uma experiência de usuário responsiva e intuitiva'
+        ],
+        solutions: [
+          'Design de interface limpa baseada em modais',
+          'Implementação de recursos de acessibilidade em conformidade com WCAG',
+          'Integração de modelos avançados de IA para cada modalidade',
+          'Criação de design responsivo otimizado para desktop e mobile'
+        ],
+        results: [
+          { value: '3', label: 'Modos de Tradução' },
+          { value: '100+', label: 'Idiomas' },
+          { value: 'Tempo Real', label: 'Processamento' },
+          { value: 'WCAG', label: 'Acessível' }
+        ]
+      }
+    },
     technologies: [
       'React',
       'AI/ML APIs',
@@ -243,6 +358,29 @@ This project is open source and available on GitHub as part of my commitment to 
       { value: 'Live', label: 'Tracking' },
       { value: 'Agile', label: 'Methodology' }
     ],
+    locales: {
+      pt: {
+        title: 'Quadro Scrum Ágil',
+        description: 'Um painel ao vivo que busca dados em tempo real do meu quadro Jira Scrum.',
+        overview: `Esta página integra meu quadro Jira Scrum ao vivo, fornecendo uma visão transparente dos fluxos de trabalho atuais.`,
+        challenges: [
+          'Gestão de dependências de tarefas de alto volume em fusos horários',
+          'Garantia de visibilidade em tempo real para stakeholders',
+          'Manutenção de um backlog limpo durante ciclos rápidos'
+        ],
+        solutions: [
+          'Implementação de fluxos de trabalho Scrum customizados',
+          'Sessões quinzenais de refinamento do backlog',
+          'Integração de painéis de relatórios ao vivo'
+        ],
+        results: [
+          { value: '100%', label: 'Conclusão de Sprints' },
+          { value: '25%', label: 'Aumento de Eficiência' },
+          { value: 'Ao Vivo', label: 'Rastreamento' },
+          { value: 'Ágil', label: 'Metodologia' }
+        ]
+      }
+    },
     technologies: [
       'Jira Software',
       'Atlassian Confluence',
@@ -259,11 +397,11 @@ This project is open source and available on GitHub as part of my commitment to 
 export const projects = [
   {
     id: 'polyglotai-translator',
-    title: 'Polyglot AI',
-    description: 'An all-in-one universal translation platform supporting text, voice, and sign language with deep integrations for WhatsApp and Twilio.',
+    title: 'AI Polyglots',
+    description: 'Break every language barrier. Everywhere. An experimental platform for cross-language communication with deep integrations for WhatsApp and Twilio.',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop',
     tags: ['AI', 'Translation', 'Accessibility'],
-    link: process.env.REACT_APP_POLYGLOT_LIVE_URL || 'https://where-my-code.emergent.host/',
+    link: 'https://aipolyglots.com/',
     featured: true,
     hasDetailPage: true
   },

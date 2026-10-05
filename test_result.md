@@ -250,7 +250,7 @@ frontend:
         - working: true
           agent: "user"
           comment: "User confirmed live integration is working."
-  - task: "Verify Jira-GitHub Smart Link (PMJ-44)"
+  - task: "Verify Jira-GitHub Smart Link (PJM-44)"
     implemented: true
     working: true
     file: "N/A"
@@ -260,7 +260,7 @@ frontend:
     status_history:
         - working: "NA"
           agent: "main"
-          comment: "Awaiting empty commit with key PMJ-44 to verify development panel link in Jira."
+          comment: "Awaiting empty commit with key PJM-44 to verify development panel link in Jira."
         - working: true
           agent: "user"
           comment: "Handshake verified. Commit data successfully reflected in Jira development panel."

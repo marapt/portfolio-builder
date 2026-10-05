@@ -1,0 +1,64 @@
+# Project Reflections & Learnings
+
+This document captures key technical challenges, errors, and resolutions encountered during the portfolio development process.
+
+## 🛡️ Infrastructure & Security
+
+### Secure API Proxy (PJM-46)
+- **Challenge**: Exposed API keys in the frontend were a security risk.
+- **Resolution**: Implemented a FastAPI proxy layer. Sensitive keys (Jira, EmailJS) now reside strictly server-side. The frontend communicates via a shared `INTERNAL_API_KEY` header.
+- **Learning**: Always architect with a "Backend-for-Frontend" (BFF) pattern when dealing with third-party SaaS integrations.
+
+## 🌐 Localization (PJM-10)
+
+### i18n Tech Stack
+- **Implementation**: Used `i18next` and `react-i18next` to build a scalable multi-language Information Architecture.
+- **Hierarchy**: Created a `locales` object hierarchy within `projectsData.js` to allow project-specific translations without bloating generic locale files.
+
+## 🐞 Bug Fixes
+
+### 1. Vercel Build Failure (Syntax Error)
+- **Error**: `Syntax error: Unexpected token, expected ":"` in `ScrumBoardPage.jsx`.
+- **Cause**: A malformed ternary operator within a template literal on the Priority Badge.
+
+#### ❌ The Error (Code Snippet)
+```jsx
+// src/pages/ScrumBoardPage.jsx - Line 277
+<Badge className={`${issue.priority === 'High' ? 'bg-red-50' text-red-500 : 'bg-green-50' text-green-500} border-0`}>
+```
+
+#### ✅ The Fix (Code Snippet)
+```jsx
+// src/pages/ScrumBoardPage.jsx - Line 277 (Corrected)
+<Badge className={`${issue.priority === 'High' ? 'bg-red-50 text-red-500' : 'bg-green-50 text-green-500'} border-0`}>
+```
+
+- **Learning**: Template literals within JSX attributes can be deceptive; always verify that the ternary result is a single valid string.
+
+### 2. Header Alignment & Toggle UI
+- **Issue**: Inserting the Language Switcher caused vertical misalignment and overcrowding in the desktop navigation.
+- **Resolution**: 
+  - Standardized the flex containers to use `items-center` and unified vertical padding.
+  - Refined the Language Switcher into a premium "Glassmorphic Pill" design to reduce visual noise.
+- **Learning**: When adding new interactive elements to a stable header, re-evaluate the container's `gap` and `tracking` to maintain visual balance.
+
+## 🚀 Service Desk & Production (Sprint 2)
+
+### High-Fidelity Lead Intake (PJM-11)
+- **Challenge**: Standard contact forms lacked the professional weight of an AI Strategist persona.
+- **Resolution**: Transformed the form into a "Service Desk" intake system with lead categorization (AI, Strategy, Program Management).
+- **Hardening**: Implemented "Smart Subject Lines" in the backend proxy to automatically categorize inbound leads for easier inbox management.
+
+### Infrastructure "Mono" Fallback (PJM-25)
+- **Problem**: A typo in a production environment variable (`MONO_URL` vs `MONGO_URL`) caused a critical database disconnection during the final cutover.
+- **Resolution**: Implemented triple-redundancy fallbacks in the Python backend to support multiple common naming conventions (`MONGO_URL`, `MONGODB_URI`, `MONO_URL`).
+- **Learning**: Code-level resilience for environment variables can prevent deployment blockers when manual dashboard access is limited or error-prone.
+
+## 🤖 Agentic QA Suite & Security (Sprint 3)
+
+### Autonomous Quality Gates (PJM-88)
+- **Challenge**: Scaling linguistic quality and security audits manually was a bottleneck for the "Stellar" UI.
+- **Resolution**: Implemented a multi-agent fleet (**Sofia, Isabella, Elena, Marcus**) that runs automated checks for structural, semantic, legal, and security integrity.
+- **Security Breakthrough**: Marcus identified a hardcoded secret in the dashboard, leading to a refactor of the governance auth flow into a secure, key-based session system.
+- **Persistence Innovation**: Developed the `LocalDB` fallback system to ensure the interactive dashboard remains functional even when MongoDB is unavailable.
+- **Learning**: Autonomous agents are most effective when they have distinct, standardized roles and report to a central "authoritative" dashboard with human oversight (Governance HQ).

@@ -1,0 +1,249 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "scrum_board": "Quadro Agile",
+    "resume": "Currículo",
+    "testimonials": "Depoimentos",
+    "contact": "Contacto",
+    "experience": "Experiência",
+    "insights": "Perspetivas",
+    "ai_agents": "Agentes de IA"
+  },
+  "hero": {
+    "title": "Arquitetando a Excelência Global",
+    "tagline": "Mara Martins. Líder de Localização e Gestora de Programas de IA.",
+    "description": "Utilizando Inteligência Artificial e Localização Estratégica para impulsionar o crescimento global e o avanço tecnológico para empresas em escala.",
+    "cta_primary": "Ver portfólio",
+    "cta_secondary": "Entre em contacto",
+    "val_ai_title": "Estratégia de IA",
+    "val_ai_desc": "Otimizando workflows globais com integração de LLMs de ponta.",
+    "val_geo_title": "Escala Global",
+    "val_geo_desc": "Expandindo a presença comercial em mais de 40 idiomas e culturas.",
+    "val_pm_title": "Lógica de Programa",
+    "val_pm_desc": "Impulsionando a eficiência através de frameworks estruturados de gestão.",
+    "val_culture_title": "QI Cultural",
+    "val_culture_desc": "Unindo a tecnologia com a experiência humana local.",
+    "privacy_title": "Privacidade e Governança",
+    "imprint_title": "Identificação Jurídica",
+    "legal_intro": "Transparência e integridade de dados são os pilares da minha atuação profissional."
+  },
+  "stats": {
+    "years": "Anos de Experiência",
+    "languages": "Idiomas",
+    "projects": "Projetos Globais",
+    "satisfaction": "Satisfação do Cliente"
+  },
+  "services": {
+    "label": "O QUE EU OFEREÇO",
+    "title": "Meus Serviços",
+    "description": "Da estratégia de localização a soluções baseadas em IA, ajudo organizações a projetar programas escaláveis que alcançam públicos em todo o mundo.",
+    "ai": {
+      "title": "Localização com IA",
+      "desc": "Alcance global mais inteligente e rápido com IA. Aproveitando tecnologias de machine learning e tradução neural de ponta para entregar conteúdo localizado de alta qualidade em escala."
+    },
+    "pm": {
+      "title": "Gestão de Programas",
+      "desc": "Planos claros, execução perfeita. Gestão de programas de localização de ponta a ponta com metodologias comprovadas que garantem entrega no prazo e no orçamento."
+    },
+    "translation": {
+      "title": "Tradução",
+      "desc": "Palavras precisas, conexões confiáveis. Serviços de tradução profissional que capturam nuances, tom e contexto cultural para uma comunicação global autêntica."
+    },
+    "training": {
+      "title": "Formação",
+      "desc": "Habilidades práticas para o sucesso no mundo real. Programas de formação personalizados que capacitam equipas com as melhores práticas de localização e tecnologias emergentes."
+    }
+  },
+  "contact": {
+    "label": "ENTRE EM CONTACTO",
+    "title": "Vamos Conversar",
+    "description": "Pronto para levar sua estratégia de localização para o próximo nível? Adoraria ouvir sobre o seu projeto.",
+    "name": "Nome Completo",
+    "email": "Endereço de E-mail",
+    "message": "Mensagem",
+    "submit": "Enviar Mensagem",
+    "booking_title": "Nota de Agendamento",
+    "booking_desc": "Ao agendar, por favor inclua sua pauta ou tópico para que possamos aproveitar ao máximo nosso tempo juntos.",
+    "success_title": "Mensagem Enviada!",
+    "success_desc": "Obrigado pelo contacto. Retornarei em breve.",
+    "info_title": "Informações de Contacto",
+    "categories": {
+      "strategy": "Estratégia de Localização",
+      "ai": "Integração de IA",
+      "pm": "Gestão de Programas",
+      "other": "Outro"
+    }
+  },
+  "footer": {
+    "quick_links": "Links Úteis",
+    "legal_col": "Informações Legais",
+    "rights": "Todos os direitos reservados.",
+    "back_to_top": "Voltar ao topo",
+    "bio": "Unir a IA com a língua, cultura e estratégia organizacional para o sucesso global.",
+    "california": "Califórnia, EUA"
+  },
+  "privacy": {
+    "title": "Privacidade e Governança de Dados",
+    "intro": "Como consultoria de Gestão de Programas e Localização, a transparência e a integridade dos dados são princípios operacionais fundamentais.",
+    "controller_title": "Responsável pelo Tratamento",
+    "controller_desc": "O responsável pelo tratamento dos dados deste website é Mara Martins. Para qualquer questão relativa aos seus dados, utilize o formulário de contacto ou consulte as Informações Legais.",
+    "collection_title": "Recolha e Finalidade dos Dados",
+    "collection_desc": "Apenas recolhemos dados que nos fornece explicitamente (Nome, E-mail, Detalhes do Projeto) para efeitos de consulta profissional. Não utilizamos cookies de rastreamento para fins de marketing.",
+    "infra_title": "Infraestrutura e Subprocessadores",
+    "infra_desc": "Os seus dados são mantidos num cluster seguro de MongoDB Atlas (região AWS) e processados via Render (Serviços Web). Todos os dados são encriptados em repouso e em trânsito.",
+    "rights_title": "Os Seus Direitos (RGPD)",
+    "rights_desc": "Tem o direito de aceder, retificar ou apagar os seus dados. Os cidadãos da UE podem também apresentar uma reclamação junto da sua autoridade de controlo nacional.",
+    "supervisory_title": "Autoridade de Controlo",
+    "supervisory_desc": "Para este portefólio profissional de consultoria estratégica (atualmente sem atividade comercial em Portugal), a autoridade competente é a Comissão Nacional de Protecção de Dados (CNPD).",
+    "complaints_book": "Livro de Reclamações Eletrónico",
+    "service_unavailable_notice": "Serviço Indisponível: O portal do Livro de Reclamações Eletrónico está a passar por manutenção de segurança externa. Por favor, tente novamente mais tarde.",
+    "last_updated": "Última Atualização"
+  },
+  "imprint": {
+    "label": "Identificação Jurídica",
+    "intro": "Conformidade com os padrões de excelência para consultorias globais.",
+    "base_title": "Matriz Profissional",
+    "role": "Estratégia de Localização e Liderança de IA",
+    "contact_title": "Contacto Directo",
+    "web": "Presença Digital",
+    "disclaimer_title": "Nota de Responsabilidade",
+    "disclaimer_desc": "O conteúdo deste website destina-se a fins informativos para consultoria e recrutamento. Embora garanta o rigor no design 'Stellar' e na implementação de IA, não assumo responsabilidade pelo conteúdo de links externos.",
+    "jurisdiction": "Jurisdição: Califórnia, EUA",
+    "audited": "Auditado e Verificado",
+    "ai_disclosure": "Arquitetado por Mara Martins com suporte de Agentes IA.",
+    "legal_ai_disclaimer": "Aviso: Este site utiliza o agente Elena (Loc Lead) para orientações de conformidade. Este serviço não substitui o aconselhamento jurídico profissional.",
+    "ethics_title": "Ética de IA e Conformidade Global",
+    "ethics_desc": "Este portefólio é governado pelo Mara Martins OS, uma estrutura para colaboração ética de IA. Adiro ao Regulamento da IA da UE (EU AI Act - Transparência e Risco) e às diretrizes de transparência de IA da Califórnia. Cada commit gerado por IA é auditado por um humano antes de chegar à produção."
+  },
+  "dashboard": {
+    "title": "Centro de Comando de Governança de Agentes IA",
+    "subtitle": "Operações em Direto",
+    "desc": "Este é um centro de operações em direto onde giro uma frota de agentes de IA especializados que executam auditorias de qualidade, verificações de conformidade legal, revisões de localização e verificações de implementação para este portefólio — em tempo real. Cada descoberta do agente aparece aqui para minha revisão e aprovação explícita antes de qualquer alteração ser enviada para produção.",
+    "active": "Ativo",
+    "activate_annotation": "Activar Modo de Anotação",
+    "annotation_on": "Modo de Anotação: ACTIVO",
+    "heavy_lifting": "A IA faz o trabalho pesado",
+    "heavy_lifting_desc": "Agentes autónomos executam auditorias contínuas — qualidade linguística, conformidade legal, integridade visual e testes E2E — sem intervenção manual.",
+    "human_control": "O Humano mantém o controlo",
+    "human_control_desc": "Nenhuma decisão de agente chega à produção sem a minha aprovação explícita. Cada descoberta abaixo é revista, aprovada ou bloqueada — por mim.",
+    "gates": "A Governança regula cada implementação",
+    "gates_desc": "O portão de integração abaixo representa a saúde atual da implementação. Verde significa que a suite completa de agentes deu o aval e o site está pronto para ser enviado.",
+    "fleet": "Frota de Agentes Ativa",
+    "fleet_roles": {
+      "loc_lead": "Governança de Localização",
+      "en_linguist": "QA de Inglês Americano",
+      "pt_linguist": "QA de Português Europeu",
+      "lqc_eng": "Verificação de Qualidade Estrutural",
+      "lqa_expert": "QA Semântica e Cultural",
+      "qa_tester": "12 Testes E2E em Direto",
+      "scrum_master": "Sincronização de Ciclo Sprint",
+      "gtm_strat": "Plano de Lançamento Global",
+      "sec_analyst": "Operações de Segurança e Conformidade"
+    },
+    "stats": {
+      "passing": "Aprovado",
+      "warnings": "Avisos",
+      "failures": "Falhas",
+      "pending": "Revisão Pendente"
+    },
+    "merge": {
+      "blocked": "Integração: BLOQUEADA",
+      "cleared": "Integração: AUTORIZADA",
+      "blocked_desc": "Falhas críticas ou avisos não resolvidos detetados. A implementação em produção está suspensa até resolução.",
+      "cleared_desc": "Todos os agentes de governança deram luz verde. O site está estável e pronto para implementação."
+    },
+    "queue": "Fila de Aprovação",
+    "last_audit": "Última Auditoria",
+    "os_version": "Mara Martins OS v1.2",
+    "gov_active": "Governança Ativa",
+    "buttons": {
+      "approve": "Aprovar",
+      "block": "Bloquear",
+      "consult": "Consultar"
+    }
+  },
+  "resume": {
+    "back": "Voltar ao Início",
+    "sections": {
+      "summary": "Resumo Profissional",
+      "experience": "Experiência Profissional",
+      "education": "Educação",
+      "continuing_education": "Formação Contínua",
+      "skills": "Competências",
+      "languages": "Idiomas",
+      "certifications": "Certificações",
+      "awards": "Prémios"
+    },
+    "read_more_linkedin": "Ler mais no LinkedIn",
+    "cta_title": "Vamos colaborar no seu próximo desafio global?",
+    "cta_desc": "Disponível para liderar Programas de Localização, Operações de IA ou funções estratégicas de Business Intelligence."
+  },
+  "common": {
+    "contact": "Contacto",
+    "linkedin": "LinkedIn",
+    "get_in_touch": "Entrar em Contacto",
+    "rolling": "Contínuo",
+    "try_again": "Tentar Novamente"
+  },
+  "scrum": {
+    "title": "Quadro Agile em Direto",
+    "desc": "Sincronização em tempo real com a Jira Cloud. Este quadro demonstra como faço a gestão de fluxos de trabalho complexos com transparência e agilidade de nível empresarial.",
+    "sync": "Sincronizar Dados",
+    "snapshot": "Captura Local",
+    "active_sprint": "Sprint Ativa",
+    "strategic_roadmap": "Roteiro Estratégico",
+    "phase_tag": "Fase 04: Construção",
+    "completion": "Conclusão da Sprint",
+    "ends": "Termina",
+    "no_sprint": "Nenhuma sprint ativa encontrada.",
+    "establishing_tunnel": "Estabelecendo Túnel Seguro para a Jira...",
+    "sync_unavailable": "Sincronização em Direto Indisponível",
+    "error_connect": "Não foi possível ligar à Jira ou obter o estado local do projeto.",
+    "priority": "Prioridade",
+    "current_status": "Estado Atual",
+    "delivery_target": "Meta de Entrega",
+    "executive_summary": "Resumo Executivo",
+    "no_description": "Nenhum resumo estratégico fornecido para este fluxo de trabalho.",
+    "stakeholder_insights": "Insights de Stakeholders",
+    "insight_quote": "A monitorização deste fluxo de trabalho através da automação da Jira mantém a velocidade e garante 100% de transparência arquitetónica em todo o pipeline de localização.",
+    "enterprise_sync": "SINCRONIZAÇÃO EMPRESARIAL ATIVA",
+    "request_access": "SOLICITAR ACESSO TOTAL",
+    "columns": {
+      "todo": "Para Fazer",
+      "progress": "Em Curso",
+      "done": "Concluído"
+    },
+    "phases": {
+      "discovery": "Descoberta",
+      "strategy": "Estratégia e IA",
+      "infra": "Infraestrutura",
+      "production": "Produção",
+      "launch": "Lançamento"
+    }
+  },
+  "gtm": {
+    "label": "Estratégia GTM",
+    "live": "Direto",
+    "title": "Centro de Comando GTM Global",
+    "description": "Dashboard estratégico que acompanha a expansão global do maramartins.com. Monitorização em tempo real de Silicon Valley à APAC, com aprovações por fase e insights sobre IA.",
+    "stats": {
+      "active": "Fases Ativas",
+      "queued": "Em Espera",
+      "blockers": "Bloqueios Abertos",
+      "blog": "Posts de Estratégia"
+    },
+    "tabs": {
+      "phases": "Aprovações de Fase",
+      "blog": "Blog de Estratégia GTM"
+    },
+    "post": {
+      "avery_comms": "Gestor de Comunicação Executiva",
+      "draft_btn": "Rascunhar post LinkedIn via Avery",
+      "drafting": "Avery está a rascunhar...",
+      "copy": "Copiar para Área de Transferência",
+      "copied": "Copiado!"
+    }
+  }
+}

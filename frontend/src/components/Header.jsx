@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, Bot } from 'lucide-react';
 import { Button } from './ui/button';
+import { useTranslation } from 'react-i18next';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { useGovernance } from '../GovernanceContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+  const { isAuditMode } = useGovernance();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,27 +26,31 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setIsMobileMenuOpen(false);
+  };
+
   const navLinks = [
-    { href: '/#about', label: 'About' },
-    { href: '/#services', label: 'Services' },
-    { href: '/#portfolio', label: 'Portfolio' },
-    { href: '/scrum-board', label: 'Scrum Board', isPage: true },
-    { href: '/resume', label: 'Resume', isPage: true },
-    { href: '/#testimonials', label: 'Testimonials' },
-    { href: '/#contact', label: 'Contact' }
+    { href: '/#services', label: t('nav.services') },
+    { href: '/resume', label: t('nav.experience'), isPage: true },
+    { href: '/scrum-board', label: t('nav.insights'), isPage: true },
+    { href: '/#contact', label: t('nav.contact') }
   ];
+
+  const dashboardLink = { href: '/dashboard', label: 'AI Agents', isPage: true };
+  const gtmLink = { href: '/gtm', label: 'GTM', isPage: true };
 
   const handleNavClick = (e, link) => {
     if (link.isPage) {
       setIsMobileMenuOpen(false);
-      return; // Let React Router handle it
+      return;
     }
     
     e.preventDefault();
     const hash = link.href.replace('/', '');
     
     if (location.pathname !== '/') {
-      // Navigate to home first, then scroll
       window.location.href = link.href;
     } else {
       const element = document.querySelector(hash);
@@ -47,84 +61,188 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const languages = [
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'pt', name: 'Português', flag: '🇵🇹' }
+  ];
+
+  const currentLanguage = languages.find(l => l.code === i18n.language.split('-')[0]) || languages[0];
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm'
+          ? 'bg-black/20 backdrop-blur-xl border-b border-white/10 shadow-2xl'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24 transition-all duration-300">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-gray-900">Mara</span>
-            <span className="text-2xl font-light text-indigo-600">Martins</span>
+          <Link to="/" className="flex items-center group">
+            <span className="text-xl font-black text-white tracking-tighter uppercase">Mara</span>
+            <span className="text-xl font-light text-white/70 tracking-tighter ml-1 uppercase">Martins</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden xl:flex items-center space-x-10">
             {navLinks.map((link) => (
               link.isPage ? (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`font-medium transition-colors duration-200 ${
+                  className={`font-black text-[10px] uppercase tracking-[0.3em] transition-all duration-300 relative py-2 group ${
                     location.pathname === link.href 
                       ? 'text-indigo-600' 
-                      : 'text-gray-600 hover:text-indigo-600'
+                      : 'text-gray-400 hover:text-gray-900'
                   }`}
                 >
                   {link.label}
+                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full ${location.pathname === link.href ? 'w-full' : ''}`} />
                 </Link>
               ) : (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link)}
-                  className="text-gray-600 hover:text-indigo-600 font-medium transition-colors duration-200"
+                  className="text-gray-400 hover:text-gray-900 font-black text-[10px] uppercase tracking-[0.3em] transition-all duration-300 relative py-2 group"
                 >
                   {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full" />
                 </a>
               )
             ))}
+
+            {/* AI Agents Dashboard — Ops Tool */}
+            <Link
+              to={dashboardLink.href}
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 font-black text-[9px] uppercase tracking-[0.25em] ${
+                location.pathname === dashboardLink.href
+                  ? 'bg-violet-600/20 border-violet-500/40 text-violet-400'
+                  : 'bg-violet-600/10 border-violet-500/20 text-violet-400/70 hover:bg-violet-600/20 hover:border-violet-500/40 hover:text-violet-400'
+              }`}
+            >
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-violet-500" />
+              </span>
+              <Bot size={10} />
+              {dashboardLink.label}
+            </Link>
+
+            {/* GTM Strategy — Global */}
+            <Link
+              to={gtmLink.href}
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 font-black text-[9px] uppercase tracking-[0.25em] ${
+                location.pathname === gtmLink.href
+                  ? 'bg-rose-600/20 border-rose-500/40 text-rose-400'
+                  : 'bg-rose-600/10 border-rose-500/20 text-rose-400/70 hover:bg-rose-600/20 hover:border-rose-500/40 hover:text-rose-400'
+              }`}
+            >
+              <Globe size={10} />
+              {gtmLink.label}
+            </Link>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:flex items-center space-x-8">
+            {/* LQA Audit Mode Indicator */}
+            {isAuditMode && (
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 animate-pulse">
+                <div className="w-1.5 h-1.5 bg-red-500 rounded-full" />
+                <span className="text-[9px] font-black uppercase tracking-widest text-red-400">Audit Active</span>
+              </div>
+            )}
+
+            {/* Language Switcher - Premium "Pill" Design */}
+            <div className="h-6 w-px bg-gray-100 hidden xl:block"></div>
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="relative flex items-center gap-3 text-gray-500 hover:text-indigo-600 bg-gray-50/50 hover:bg-indigo-50 border border-gray-100/50 hover:border-indigo-100 px-4 py-2 h-10 rounded-full transition-all group outline-none ring-0">
+                  <div className="w-5 h-5 flex items-center justify-center bg-white rounded-full shadow-sm border border-gray-100 group-hover:bg-indigo-600 transition-colors">
+                     <Globe size={10} className="text-gray-400 group-hover:text-white" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em]">{currentLanguage.code}</span>
+                  <ChevronDown size={12} className="opacity-30 group-hover:opacity-100 transition-opacity" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48 p-2 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-gray-100 bg-white/95 backdrop-blur-xl animate-in zoom-in-95 duration-200">
+                <div className="px-3 py-2 border-b border-gray-50 mb-1">
+                   <p className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-300">Select Region</p>
+                </div>
+                {languages.map((lang) => (
+                  <DropdownMenuItem
+                    key={lang.code}
+                    className={`flex items-center justify-between px-3 py-3 rounded-xl cursor-pointer text-[11px] font-black transition-all ${
+                      currentLanguage.code === lang.code ? 'bg-indigo-50 text-indigo-600' : 'text-gray-500 hover:bg-gray-50'
+                    }`}
+                    onClick={() => changeLanguage(lang.code)}
+                  >
+                    <span className="flex items-center gap-3">
+                       <span className="text-lg grayscale-[0.5] group-hover:grayscale-0">{lang.flag}</span>
+                       {lang.name}
+                    </span>
+                    {currentLanguage.code === lang.code && <div className="w-1.5 h-1.5 rounded-full bg-indigo-600" />}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link to="/#contact">
               <Button
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
+                className="bg-gray-900 hover:bg-indigo-600 text-white px-8 h-12 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] transition-all duration-500 shadow-xl shadow-gray-100 hover:shadow-indigo-100 transform hover:-translate-y-0.5 active:scale-95"
               >
-                Let's Connect
+                {t('contact.submit')}
               </Button>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-gray-600"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-4 lg:hidden">
+             <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="p-0 h-10 w-10 flex items-center justify-center rounded-2xl bg-gray-50 border border-gray-100">
+                    <Globe size={16} className="text-indigo-600" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-40 p-1 rounded-2xl bg-white shadow-2xl border-gray-100">
+                  {languages.map((lang) => (
+                    <DropdownMenuItem
+                      key={lang.code}
+                      className="flex items-center gap-3 px-4 py-3 text-[11px] font-black uppercase tracking-wider"
+                      onClick={() => changeLanguage(lang.code)}
+                    >
+                      <span className="text-base">{lang.flag}</span>
+                      {lang.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+            <button
+              className="w-10 h-10 flex items-center justify-center rounded-2xl bg-gray-50 border border-gray-100 text-gray-900"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 py-4">
-            <nav className="flex flex-col space-y-4">
+          <div className="lg:hidden bg-white/95 backdrop-blur-2xl border-t border-gray-100 py-10 absolute left-0 right-0 shadow-[0_30px_60px_rgba(0,0,0,0.1)] animate-in slide-in-from-top duration-500 rounded-b-[3rem]">
+            <nav className="flex flex-col space-y-2 px-8">
+               <p className="text-[9px] font-black uppercase tracking-[0.4em] text-gray-300 mb-6 px-4">Navigation Menu</p>
               {navLinks.map((link) => (
                 link.isPage ? (
                   <Link
                     key={link.href}
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`px-4 py-2 font-medium transition-colors duration-200 ${
+                    className={`px-4 py-4 font-black text-xs uppercase tracking-[0.3em] rounded-2xl transition-all ${
                       location.pathname === link.href 
-                        ? 'text-indigo-600' 
-                        : 'text-gray-600 hover:text-indigo-600'
+                        ? 'bg-indigo-50 text-indigo-600' 
+                        : 'text-gray-500 hover:bg-gray-50'
                     }`}
                   >
                     {link.label}
@@ -134,18 +252,51 @@ const Header = () => {
                     key={link.href}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link)}
-                    className="text-gray-600 hover:text-indigo-600 font-medium px-4 py-2 transition-colors duration-200"
+                    className="text-gray-500 hover:bg-gray-50 font-black text-xs uppercase tracking-[0.3em] px-4 py-4 rounded-2xl transition-all"
                   >
                     {link.label}
                   </a>
                 )
               ))}
-              <div className="px-4 pt-2">
+
+              {/* AI Agents Dashboard — Mobile */}
+              <Link
+                to="/dashboard"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-4 font-black text-xs uppercase tracking-[0.3em] rounded-2xl transition-all ${
+                  location.pathname === '/dashboard'
+                    ? 'bg-violet-50 text-violet-600'
+                    : 'text-violet-400 hover:bg-violet-50'
+                }`}
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500" />
+                </span>
+                <Bot size={14} />
+                AI Agents
+              </Link>
+
+              {/* GTM Dashboard — Mobile */}
+              <Link
+                to="/gtm"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-4 font-black text-xs uppercase tracking-[0.3em] rounded-2xl transition-all ${
+                  location.pathname === '/gtm'
+                    ? 'bg-rose-50 text-rose-600'
+                    : 'text-rose-400 hover:bg-rose-50'
+                }`}
+              >
+                <Globe size={14} />
+                GTM Strategy
+              </Link>
+
+              <div className="pt-8">
                 <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium"
+                    className="w-full bg-indigo-600 hover:bg-black text-white rounded-2xl py-8 font-black uppercase tracking-[0.3em] text-[10px] shadow-2xl shadow-indigo-100"
                   >
-                    Let's Connect
+                    {t('contact.submit')}
                   </Button>
                 </Link>
               </div>
