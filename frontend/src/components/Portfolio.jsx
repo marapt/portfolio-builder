@@ -149,6 +149,37 @@ const Portfolio = () => {
           })}
         </div>
 
+        {/* Technical Architecture Deep-Dive Feature */}
+        <div className="mt-16">
+          <Link to="/case-studies/training-nmt" className="block group">
+            <div className="bg-[#0b101e] border border-slate-800 rounded-[3rem] p-8 lg:p-12 shadow-xl hover:shadow-2xl hover:border-indigo-500/50 transition-all duration-500 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none -z-0"></div>
+              <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div className="lg:col-span-8">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <span className="px-3.5 py-1 rounded-full bg-indigo-950 border border-indigo-700/60 text-indigo-300 text-[10px] font-black uppercase tracking-wider">
+                      Technical Architecture Case Study
+                    </span>
+                    <span className="text-slate-400 text-xs font-semibold">5-Phase Production Methodology</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-4 group-hover:text-indigo-300 transition-colors">
+                    Training & Tuning a Custom Enterprise NMT Engine
+                  </h3>
+                  <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+                    Deep dive into data sanitization (fastText LangID & LaBSE cosine filtering), domain stratification, anti-leakage splitting, transfer learning, and the tripartite metric evaluation framework (BLEU, chrF++, COMET).
+                  </p>
+                </div>
+                <div className="lg:col-span-4 flex lg:justify-end">
+                  <span className="inline-flex items-center gap-3 bg-indigo-600 group-hover:bg-indigo-500 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-wider text-xs shadow-xl shadow-indigo-600/20 transition-all group-hover:translate-x-1">
+                    Read Case Study
+                    <ArrowRight size={16} />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
         {/* CTA */}
         <div className="text-center mt-24">
           <p className="text-gray-400 font-bold text-sm uppercase tracking-widest mb-8">{t('contact.description')}</p>
