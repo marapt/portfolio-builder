@@ -107,6 +107,14 @@ const ProjectDetail = () => {
                     </Button>
                   </a>
                 )}
+                {project.caseStudyUrl && (
+                  <Link to={project.caseStudyUrl}>
+                    <Button className="bg-indigo-600 hover:bg-black text-white px-8 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-100 flex items-center gap-2 transform hover:-translate-y-1">
+                      NMT Architecture Case Study
+                      <ExternalLink size={14} />
+                    </Button>
+                  </Link>
+                )}
                 {project.githubUrl && (
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-10 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 transform hover:-translate-y-1">

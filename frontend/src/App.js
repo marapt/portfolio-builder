@@ -11,6 +11,7 @@ import Privacy from './pages/Privacy';
 import Imprint from './pages/Imprint';
 import Dashboard from './pages/Dashboard';
 import GTMDashboard from './pages/GTMDashboard';
+import TrainingNMTCaseStudy from './pages/TrainingNMTCaseStudy';
 import VideoBubble from './components/VideoBubble';
 
 const ScrollToHash = () => {
@@ -45,6 +46,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/project/:projectId" element={<ProjectDetail />} />
+          <Route path="/case-studies/training-nmt" element={<TrainingNMTCaseStudy />} />
+          <Route path="/case-study/training-nmt" element={<TrainingNMTCaseStudy />} />
+          <Route path="/demos/nmt-pipeline" element={<TrainingNMTCaseStudy />} />
+          <Route path="/nmt-demo" element={<TrainingNMTCaseStudy />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/scrum-board" element={<ScrumBoardPage />} />
           <Route path="/privacy" element={<Privacy />} />
