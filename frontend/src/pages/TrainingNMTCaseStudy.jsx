@@ -44,9 +44,14 @@ import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
+import { useTranslation } from 'react-i18next';
 import NMTInteractiveDemo from '../components/NMTInteractiveDemo';
+import TrainingNMTCaseStudyPt from './TrainingNMTCaseStudyPt';
 
 const TrainingNMTCaseStudy = () => {
+  const { i18n } = useTranslation();
+  const isPt = i18n.language?.startsWith('pt');
+
   const [activeTab, setActiveTab] = useState('all');
   const [activeStep, setActiveStep] = useState(0);
   const [modalImage, setModalImage] = useState(null);
@@ -56,6 +61,10 @@ const TrainingNMTCaseStudy = () => {
       window.scrollTo(0, 0);
     }
   }, []);
+
+  if (isPt) {
+    return <TrainingNMTCaseStudyPt />;
+  }
 
   const stepsData = [
     {
