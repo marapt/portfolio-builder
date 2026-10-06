@@ -102,7 +102,7 @@ By combining custom-trained NMT engines with intelligent routing and human post-
     ],
     results: [
       { value: '60%', label: 'Time Reduction' },
-      { value: '45%', label: 'Cost Savings' },
+      { value: '40%', label: 'Cost Savings' },
       { value: '94%', label: 'MTPE Efficiency' },
       { value: '2M+', label: 'Words/Month' }
     ],
@@ -125,7 +125,7 @@ By combining custom-trained NMT engines with intelligent routing and human post-
         ],
         results: [
           { value: '60%', label: 'Redução de Tempo' },
-          { value: '45%', label: 'Economia de Custos' },
+          { value: '40%', label: 'Economia de Custos' },
           { value: '94%', label: 'Eficiência de MTPE' },
           { value: '2M+', label: 'Palavras/Mês' }
         ]
