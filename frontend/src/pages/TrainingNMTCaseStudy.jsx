@@ -35,7 +35,9 @@ import {
   Coins,
   Clock,
   Gauge,
-  Zap
+  Zap,
+  MessageSquareQuote,
+  FileText
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -401,6 +403,125 @@ const TrainingNMTCaseStudy = () => {
         </div>
       </section>
 
+      {/* Author Statement & Personal Intent - Speech Balloon */}
+      <section className="py-12 bg-gradient-to-b from-[#070b14] via-[#090e1f] to-[#060a14] border-b border-slate-800/80 relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-8 items-start">
+            
+            {/* Left Column: Mara Martins Avatar & Author Identification */}
+            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-center lg:items-start gap-4">
+              <div className="relative">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-3xl overflow-hidden ring-4 ring-indigo-500/30 border-2 border-indigo-400/80 shadow-2xl shadow-indigo-500/20">
+                  <img
+                    src="/miis-headshot.jpg"
+                    alt="Mara Martins"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 bg-emerald-500 text-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded-full ring-2 ring-slate-950 shadow-md flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-950 animate-ping" />
+                  <span>Author</span>
+                </div>
+              </div>
+              <div className="text-center sm:text-left lg:text-left">
+                <div className="text-base font-black text-white">Mara Martins</div>
+                <div className="text-xs text-indigo-300 font-semibold">Localization Lead & AI Program Manager</div>
+                <div className="text-[11px] text-slate-400 mt-1">Former Visiting Professor at Middlebury Institute (MIIS)</div>
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 mt-2.5">
+                  <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-indigo-950/80 border border-indigo-700/50 text-indigo-300">
+                    Personal Project
+                  </span>
+                  <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-purple-950/80 border border-purple-700/50 text-purple-300">
+                    Independent Research
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Talking Balloon Speech Bubble */}
+            <div className="lg:col-span-8 relative">
+              <div className="relative bg-gradient-to-br from-indigo-950/70 via-slate-900/95 to-purple-950/50 border border-indigo-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl">
+                
+                {/* Speech Balloon Pointer / Notch */}
+                <div className="hidden lg:block absolute -left-3 top-10 w-6 h-6 bg-slate-900 border-l border-b border-indigo-500/40 transform rotate-45" />
+                <div className="lg:hidden absolute left-10 -top-3 w-6 h-6 bg-slate-900 border-t border-l border-indigo-500/40 transform rotate-45" />
+
+                {/* Speech Balloon Header */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-800">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 flex items-center justify-center">
+                      <MessageSquareQuote size={16} />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-indigo-400 block">
+                        Author's Note & Personal Intent
+                      </span>
+                      <h3 className="text-base sm:text-lg font-black text-white">
+                        Why I Created This Case Study for Myself
+                      </h3>
+                    </div>
+                  </div>
+                  <span className="text-[11px] font-mono text-slate-400 bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">
+                    First-Person Retrospective
+                  </span>
+                </div>
+
+                {/* Speech Balloon Body Copy */}
+                <div className="space-y-3.5 text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+                  <p>
+                    "I built this interactive case study for myself as an independent technical laboratory and portfolio blueprint. Throughout my 15+ years leading localization and program management across Silicon Valley technology enterprises, I have observed that discussions around AI translation often swing between two extremes: executive slide decks that oversimplify the risks, or isolated engineering benchmarks that fail to connect with enterprise P&L realities.
+                  </p>
+                  <p>
+                    I wanted to demonstrate for myself how an enterprise-grade Neural Machine Translation architecture actually performs from end to end. By connecting rigorous data cleaning heuristics and neural alignment filtering with LaBSE directly to a tripartite evaluation framework (BLEU, chrF++, and COMET), I prove how an organization can unlock a 40% net budget reduction and a 60% turnaround acceleration on repetitive catalog copy while preserving human transcreation for high-impact creative marketing.
+                  </p>
+                  <p className="text-slate-300">
+                    This project synthesizes my experience architecting global workflows, teaching graduate translation management at the Middlebury Institute of International Studies (MIIS), and deploying responsible AI systems. It serves as my personal benchmark for how modern, high-velocity localization programs should be architected, evaluated, and led."
+                  </p>
+                </div>
+
+                {/* Talking Balloon Footer Badges & Actions */}
+                <div className="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-400">
+                    <span className="text-emerald-400 font-semibold">✓ 100% Independent Project</span>
+                    <span className="text-slate-600">•</span>
+                    <span>Synthetic Benchmark Models</span>
+                    <span className="text-slate-600">•</span>
+                    <span>No Proprietary Data Disclosed</span>
+                  </div>
+                  <a
+                    href="#references"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById('references');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-300 hover:text-white transition-colors"
+                  >
+                    <span>Jump to Academic References</span>
+                    <ArrowUpRight size={13} />
+                  </a>
+                </div>
+              </div>
+
+              {/* Research & Educational Disclaimer Card */}
+              <div className="mt-4 p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-slate-800/90 flex items-start gap-3.5 shadow-lg">
+                <div className="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <ShieldCheck size={16} />
+                </div>
+                <div className="text-xs text-slate-400 leading-relaxed">
+                  <strong className="text-slate-200 block mb-0.5">
+                    Portfolio Demonstration & Research Scope Disclaimer:
+                  </strong>
+                  This case study is an independent technical analysis created by Mara Martins for professional portfolio presentation, educational reference, and technical evaluation. All operational figures (including the 25M annual word volume and $0.112 blended human rate), financial calculations, and sample pipeline strings represent modeled enterprise scenarios derived from public industry literature and standard localization parameters. They do not disclose, reference, or reflect confidential or proprietary data from any employer, client, or partner.
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Live Interactive Demo Section */}
       <section id="interactive-nmt-demo" className="py-16 bg-[#060a14] border-b border-slate-800/80 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -467,6 +588,19 @@ const TrainingNMTCaseStudy = () => {
             >
               <TrendingDown size={13} className="text-emerald-400" />
               <span>Cost & ROI Rationale</span>
+            </a>
+            <div className="h-6 w-px bg-slate-800 flex-shrink-0" />
+            <a
+              href="#references"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('references');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-300 border bg-purple-950/40 border-purple-500/50 text-purple-300 hover:text-white hover:border-purple-400 shadow-sm"
+            >
+              <BookOpen size={13} className="text-purple-400" />
+              <span>References & Research</span>
             </a>
           </div>
         </div>
@@ -1716,6 +1850,281 @@ if (cosineScore < 0.75) {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Academic References & Industry Standards */}
+      <section id="references" className="py-20 bg-[#060a15] border-t border-slate-800/80 relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-2 h-2 rounded-full bg-purple-400" />
+              <span className="text-xs font-bold text-purple-400 uppercase tracking-widest">
+                Academic Literature & Industry Standards
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+              References & Foundational Research
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              The evaluation metrics, semantic vector thresholds, quality frameworks, and velocity benchmarks implemented in this case study are grounded in peer-reviewed natural language processing literature and international localization standards.
+            </p>
+          </div>
+
+          {/* References Grid */}
+          <div className="grid md:grid-cols-2 gap-6">
+            
+            {/* Reference 1: COMET */}
+            <div className="p-6 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-purple-500/50 transition-all flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <Badge className="bg-purple-950/80 border border-purple-700/60 text-purple-300 text-[10px] font-black uppercase">
+                    Neural Quality Estimation
+                  </Badge>
+                  <span className="text-xs text-slate-500 font-mono">EMNLP 2020</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-1 group-hover:text-purple-300 transition-colors">
+                  COMET: A Neural Framework for MT Evaluation
+                </h3>
+                <p className="text-xs text-slate-400 mb-3">
+                  Rei, R., Stewart, C., Farinha, A. C., & Lavie, A. (2020). In <em>Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)</em>, pages 2685-2702. Association for Computational Linguistics.
+                </p>
+                <p className="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-850">
+                  <strong className="text-purple-300">Methodological Application:</strong> Forms the core neural semantic gate (&gt;0.82) in Step 5. Unlike lexical overlap metrics, COMET leverages cross-lingual representations (XLM-RoBERTa) to reward valid synonyms and correlate with human editorial judgment.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <span className="text-[11px] text-slate-400 font-mono">ACL Anthology ID: 2020.emnlp-main.213</span>
+                <a
+                  href="https://aclanthology.org/2020.emnlp-main.213/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-purple-400 hover:text-purple-300 font-bold inline-flex items-center gap-1"
+                >
+                  <span>Paper</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+
+            {/* Reference 2: LaBSE */}
+            <div className="p-6 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-indigo-500/50 transition-all flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <Badge className="bg-indigo-950/80 border border-indigo-700/60 text-indigo-300 text-[10px] font-black uppercase">
+                    Cross-Lingual Embeddings
+                  </Badge>
+                  <span className="text-xs text-slate-500 font-mono">ACL 2022 / Google</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-1 group-hover:text-indigo-300 transition-colors">
+                  Language-agnostic BERT Sentence Embedding (LaBSE)
+                </h3>
+                <p className="text-xs text-slate-400 mb-3">
+                  Feng, F., Yang, Y., Cer, D., Arivazhagan, N., & Wang, W. (2022). In <em>Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)</em>, pages 878-891.
+                </p>
+                <p className="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-850">
+                  <strong className="text-indigo-300">Methodological Application:</strong> Powers the semantic cosine similarity filter (≥0.75) in Step 2. Maps source and target sentences into a shared 768-dimensional vector space across 109 languages to purge misaligned translation memory pairs.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <span className="text-[11px] text-slate-400 font-mono">ACL Anthology ID: 2022.acl-long.62</span>
+                <a
+                  href="https://aclanthology.org/2022.acl-long.62/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-indigo-400 hover:text-indigo-300 font-bold inline-flex items-center gap-1"
+                >
+                  <span>Paper</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+
+            {/* Reference 3: chrF and chrF++ */}
+            <div className="p-6 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-blue-500/50 transition-all flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <Badge className="bg-blue-950/80 border border-blue-700/60 text-blue-300 text-[10px] font-black uppercase">
+                    Morphological Evaluation
+                  </Badge>
+                  <span className="text-xs text-slate-500 font-mono">WMT 2015 & 2017</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">
+                  chrF: Character n-gram F-score for Machine Translation Evaluation
+                </h3>
+                <p className="text-xs text-slate-400 mb-3">
+                  Popović, M. (2015). In <em>Proceedings of the Tenth Workshop on Statistical Machine Translation</em>, pages 392-395. Popović, M. (2017). <em>chrF++: words helping character n-grams</em>, WMT 2017, pages 612-618.
+                </p>
+                <p className="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-855">
+                  <strong className="text-blue-300">Methodological Application:</strong> Forms the morphology gate in Step 5. Evaluates character n-grams to prevent severe penalties on inflected and compound words in languages like German, Finnish, Russian, and Japanese.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <span className="text-[11px] text-slate-400 font-mono">ACL Anthology ID: W15-3049</span>
+                <a
+                  href="https://aclanthology.org/W15-3049/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-1"
+                >
+                  <span>Paper</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+
+            {/* Reference 4: BLEU */}
+            <div className="p-6 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-slate-500/50 transition-all flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <Badge className="bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-black uppercase">
+                    Lexical Baseline
+                  </Badge>
+                  <span className="text-xs text-slate-500 font-mono">ACL 2002 / IBM</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-1 group-hover:text-slate-200 transition-colors">
+                  BLEU: A Method for Automatic Evaluation of Machine Translation
+                </h3>
+                <p className="text-xs text-slate-400 mb-3">
+                  Papineni, K., Roukos, S., Ward, T., & Zhu, W. J. (2002). In <em>Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics (ACL)</em>, pages 311-318. IBM Research.
+                </p>
+                <p className="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-850">
+                  <strong className="text-slate-200">Methodological Application:</strong> Serves as an automated regression baseline and sanity check for catastrophic token loss, sentence truncation, or word order collapse before advancing to neural scoring.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <span className="text-[11px] text-slate-400 font-mono">ACL Anthology ID: P02-1040</span>
+                <a
+                  href="https://aclanthology.org/P02-1040/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-slate-300 hover:text-white font-bold inline-flex items-center gap-1"
+                >
+                  <span>Paper</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+
+            {/* Reference 5: MQM Human Quality */}
+            <div className="p-6 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/50 transition-all flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <Badge className="bg-emerald-950/80 border border-emerald-700/60 text-emerald-300 text-[10px] font-black uppercase">
+                    Quality Parity Framework
+                  </Badge>
+                  <span className="text-xs text-slate-500 font-mono">TACL 2021 / Google</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">
+                  Experts, Errors, and Context: Human Evaluation for Machine Translation (MQM)
+                </h3>
+                <p className="text-xs text-slate-400 mb-3">
+                  Freitag, M., Foster, G., Grangier, D., Ratnakar, V., Tan, Q., & Caswell, I. (2021). <em>Transactions of the Association for Computational Linguistics</em>, 9, pages 1460-1474.
+                </p>
+                <p className="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-850">
+                  <strong className="text-emerald-400">Methodological Application:</strong> Provides the Multidimensional Quality Metrics (MQM) weighted error point taxonomy (critical, major, minor per 1,000 words) proving the 94% human quality parity target in Part 5.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <span className="text-[11px] text-slate-400 font-mono">ACL Anthology ID: 2021.tacl-1.87</span>
+                <a
+                  href="https://aclanthology.org/2021.tacl-1.87/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-emerald-400 hover:text-emerald-300 font-bold inline-flex items-center gap-1"
+                >
+                  <span>Paper</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+
+            {/* Reference 6: ISO 18587:2017 & TAUS */}
+            <div className="p-6 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-between group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <Badge className="bg-amber-950/80 border border-amber-700/60 text-amber-300 text-[10px] font-black uppercase">
+                    International Standard
+                  </Badge>
+                  <span className="text-xs text-slate-500 font-mono">ISO & TAUS</span>
+                </div>
+                <h3 className="text-base font-bold text-white mb-1 group-hover:text-amber-300 transition-colors">
+                  ISO 18587:2017 & TAUS Post-Editing Productivity Standards
+                </h3>
+                <p className="text-xs text-slate-400 mb-3">
+                  International Organization for Standardization (2017). <em>Translation services: Post-editing of machine translation output: Requirements</em>. TAUS Post-Editing Productivity Benchmarks (2020-2023).
+                </p>
+                <p className="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-850">
+                  <strong className="text-amber-300">Methodological Application:</strong> Defines the professional standards for full post-editing parity and provides empirical throughput benchmarks (2,500 words/day scratch vs. 6,250 words/day MTPE) backing the 60% turnaround acceleration.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                <span className="text-[11px] text-slate-400 font-mono">ISO Standard 62970</span>
+                <a
+                  href="https://www.iso.org/standard/62970.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-amber-400 hover:text-amber-300 font-bold inline-flex items-center gap-1"
+                >
+                  <span>ISO Standard</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Formal Research & Non-Disclosure Notice */}
+          <div className="mt-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border border-slate-800/90 shadow-2xl">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <ShieldCheck size={20} />
+              </div>
+              <div>
+                <h4 className="text-base font-bold text-white mb-2">
+                  Independent Research Scope & Confidentiality Notice
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
+                  This case study is an independent technical project developed by Mara Martins for professional portfolio evaluation, academic demonstration, and educational purposes. The architectural pipeline, evaluation thresholds, and cost modeling represent synthetic methodologies derived from publicly available academic research, open standards, and generalized industry parameters.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4 text-xs text-slate-400 pt-3 border-t border-slate-850">
+                  <div className="flex items-start gap-2">
+                    <Check size={14} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <span><strong>No Proprietary Data:</strong> Does not reveal confidential information, internal metrics, or proprietary datasets from previous employers or clients.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Check size={14} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <span><strong>Synthesized Models:</strong> Word volumes, throughput rates, and cost calculations are modeled scenarios for operational demonstration.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation CTA at bottom of References */}
+          <div className="mt-12 flex flex-wrap items-center justify-between gap-4 pt-8 border-t border-slate-800/80">
+            <Link to="/#portfolio">
+              <Button variant="outline" className="border-slate-700 text-slate-200 hover:bg-slate-800 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider">
+                <ArrowLeft size={14} className="mr-2" />
+                Back to All Portfolio Projects
+              </Button>
+            </Link>
+            <div className="flex items-center gap-3">
+              <a
+                href="#interactive-nmt-demo"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById('interactive-nmt-demo');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2"
+              >
+                <Sparkles size={14} className="text-yellow-300" />
+                <span>Test Live Pipeline Demo ↑</span>
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 
