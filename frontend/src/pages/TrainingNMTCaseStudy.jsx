@@ -74,7 +74,7 @@ const TrainingNMTCaseStudy = () => {
         },
         {
           name: "Sentence Boundary & Length Ratio Filtering",
-          desc: "Discards extreme paragraph outliers (>100–120 words) that degrade Transformer attention matrices. Enforces strict length-ratio heuristics (0.4 to 2.5) to catch sentence boundary misalignments where single sentences were erroneously paired with entire paragraphs."
+          desc: "Discards extreme paragraph outliers (>100 to 120 words) that degrade Transformer attention matrices. Enforces strict length-ratio heuristics (0.4 to 2.5) to catch sentence boundary misalignments where single sentences were erroneously paired with entire paragraphs."
         },
         {
           name: "Neural Semantic Similarity Pruning (LaBSE / Laser)",
@@ -171,7 +171,7 @@ const TrainingNMTCaseStudy = () => {
       items: [
         {
           name: "Transfer Learning vs. Tabula Rasa",
-          desc: "Leverages pre-trained multilingual foundation models (NLLB, Marian, AutoML) that already possess deep syntactic and grammatical competence, adapting them using 50k–300k curated domain pairs in hours rather than months."
+          desc: "Leverages pre-trained multilingual foundation models (NLLB, Marian, AutoML) that already possess deep syntactic and grammatical competence, adapting them using 50,000 to 300,000 curated domain pairs in hours rather than months."
         },
         {
           name: "Preventing Catastrophic Forgetting",
@@ -216,7 +216,7 @@ const TrainingNMTCaseStudy = () => {
           cons: "Requires GPU compute; operates as a neural model."
         }
       ],
-      executiveQuote: "When evaluating an engine before release, I look at the metrics as a tripartite stack: I use BLEU strictly as an automated sanity check for catastrophic drops in word-order alignment or token loss. I use chrF++ to ensure we aren't suffering morphological or compound-word penalties in complex languages like German, Russian, or Japanese. Crucially for Apple Music editorial, our primary automated gate is COMET. Because COMET evaluates neural semantic embeddings rather than literal word matches, it recognizes when our model uses a valid, culturally resonant synonym. If an engine doesn't hit our target COMET threshold (>0.82), it doesn't advance to human blind testing."
+      executiveQuote: "When evaluating an engine before release, I look at the metrics as a tripartite stack: I use BLEU strictly as an automated sanity check for catastrophic drops in word-order alignment or token loss. I use chrF++ to ensure the model does not suffer morphological or compound-word penalties in complex languages like German, Russian, or Japanese. Crucially for Apple Music editorial, my primary automated gate is COMET. Because COMET evaluates neural semantic embeddings rather than literal word matches, it recognizes when the model uses a valid, culturally resonant synonym. If an engine doesn't hit my target COMET threshold (>0.82), it doesn't advance to human blind testing."
     }
   ];
 
@@ -644,7 +644,7 @@ const TrainingNMTCaseStudy = () => {
               How This Demo Works: Under the Hood
             </h2>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
-              If you are curious or want more detail on how this works, this section is for you. My goal was to build a React application powered by a custom JavaScript regex and heuristic engine that accurately mimics the mathematical boundaries, filtering logic, and n-gram scoring of a production NLP pipeline. The goal is to allow users to experience deep-learning concepts instantly in their browser.
+              For an in-depth view into the underlying architecture, this section details the mechanics under the hood. My goal was to build a React application powered by a custom JavaScript regex and heuristic engine that accurately mimics the mathematical boundaries, filtering logic, and n-gram scoring of a production NLP pipeline, allowing visitors to experience deep-learning concepts instantly in their browser.
             </p>
           </div>
 
@@ -660,7 +660,7 @@ const TrainingNMTCaseStudy = () => {
                   Engine Architecture Rationale
                 </span>
                 <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
-                  Since we can't run massive Python GPU models inside a browser for a portfolio demo, I built a lightweight JavaScript "engine" (<code className="px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 font-mono text-xs border border-indigo-800/60">nmtPipelineEngine.js</code>) that simulates the exact mathematical logic of a real NLP pipeline.
+                  Because running massive Python GPU models inside a browser is impractical for a web portfolio demo, I built a lightweight JavaScript "engine" (<code className="px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 font-mono text-xs border border-indigo-800/60">nmtPipelineEngine.js</code>) that simulates the exact mathematical logic of a real NLP pipeline.
                 </p>
               </div>
             </div>
@@ -694,7 +694,7 @@ const TrainingNMTCaseStudy = () => {
               <div className="grid lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-7 space-y-4 text-sm text-slate-300 leading-relaxed">
                   <p>
-                    If you inspect the <code className="px-1.5 py-0.5 rounded bg-slate-950 text-indigo-300 font-mono text-xs">cleanTagsAndEntities</code> function, it uses targeted Regular Expressions (Regex) to purge noise before tokenization:
+                    In the <code className="px-1.5 py-0.5 rounded bg-slate-950 text-indigo-300 font-mono text-xs">cleanTagsAndEntities</code> function, I used targeted Regular Expressions (Regex) to purge noise before tokenization:
                   </p>
                   <ul className="space-y-3 pl-2">
                     <li className="flex items-start gap-3">
@@ -703,7 +703,7 @@ const TrainingNMTCaseStudy = () => {
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 size={16} className="text-blue-400 flex-shrink-0 mt-0.5" />
-                      <span><strong>Purges Confidential Internal Metadata:</strong> It hunts for internal corporate ticket patterns (like <code className="text-rose-400 font-mono text-xs">rdar://1234567</code> or <code className="text-rose-400 font-mono text-xs">JIRA-9876</code>) and strips them out so you don't leak internal bugs or confidential system URLs into the AI's training weights.</span>
+                      <span><strong>Purges Confidential Internal Metadata:</strong> It detects internal corporate ticket patterns (such as <code className="text-rose-400 font-mono text-xs">rdar://1234567</code> or <code className="text-rose-400 font-mono text-xs">JIRA-9876</code>) and strips them out, preventing internal bugs or confidential system URLs from leaking into the AI's training weights.</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
@@ -938,7 +938,7 @@ if (cosineScore < 0.75) {
 
               <div className="space-y-6 text-sm text-slate-300 leading-relaxed">
                 <p>
-                  This is the heart of the demo—showing why production AI localization requires semantic neural scoring over legacy surface matching:
+                  This is the core of the demo: it demonstrates why production AI localization requires semantic neural scoring over legacy surface matching:
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6">
@@ -949,7 +949,7 @@ if (cosineScore < 0.75) {
                         <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider">calculateBLEU</span>
                         <Badge variant="outline" className="text-[10px] border-slate-700 text-slate-400">Surface N-Gram</Badge>
                       </div>
-                      <h4 className="text-base font-bold text-white mb-2">Word N-Gram Matching (1–4)</h4>
+                      <h4 className="text-base font-bold text-white mb-2">Word N-Gram Matching (1 to 4)</h4>
                       <p className="text-xs text-slate-400 leading-relaxed">
                         I wrote a real n-gram matching algorithm (1 to 4 words). It mathematically proves that BLEU fails for transcreation: if the hypothesis uses a valid, idiomatic synonym, the exact word match fails, and BLEU crashes to 0.
                       </p>
@@ -1007,7 +1007,7 @@ if (cosineScore < 0.75) {
                 Bridging Linguistic Empathy with Computational Rigor
               </h3>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal mb-8">
-                By embedding linguistic expertise directly into the automated data pipeline, we transformed what was once an uncurated, error-prone translation memory into a high-precision, self-sustaining neural asset. The result was not merely a 40% cost reduction on high-volume catalog localization, but the ability to launch worldwide marketing releases across 5 major languages on day one—with brand voice and musical authenticity preserved.
+                By embedding linguistic expertise directly into the automated data pipeline, I transformed what was once an uncurated, error-prone translation memory into a high-precision, self-sustaining neural asset. The result was not merely a 40% cost reduction on high-volume catalog localization, but the ability to launch worldwide marketing releases across 5 major languages on day one, preserving brand voice and musical authenticity.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <a
@@ -1063,7 +1063,7 @@ if (cosineScore < 0.75) {
               Cost Rationale & Metric Proofs: Why This Is a Better Way to Localize
             </h2>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
-              In enterprise localization leadership, mathematical rigor must accompany linguistic excellence. Here is the operational proof, compute breakdown, and financial ROI model justifying our <strong>40% cost reduction</strong> and <strong>60% turnaround velocity</strong> claims—and proving why domain-adapted foundation models fundamentally outperform legacy brute-force translation.
+              In enterprise localization leadership, mathematical rigor must accompany linguistic excellence. Here is the operational proof, compute breakdown, and financial ROI model justifying my <strong>40% cost reduction</strong> and <strong>60% turnaround velocity</strong> model, demonstrating why domain-adapted foundation models fundamentally outperform legacy brute-force translation.
             </p>
           </div>
 
@@ -1078,7 +1078,7 @@ if (cosineScore < 0.75) {
               </h3>
             </div>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-4xl mb-8">
-              In modern AI translation, no single metric is perfect. If you rely on just one, you will inevitably pass bad translations or reject great ones. This methodology deploys a three-pillared quality gate:
+              In modern AI translation, no single metric is perfect. Relying on just one metric inevitably passes bad translations or rejects great ones. In this architecture, I deployed a three-pillared quality gate:
             </p>
 
             <div className="grid lg:grid-cols-3 gap-6">
@@ -1187,7 +1187,7 @@ if (cosineScore < 0.75) {
                 </div>
                 <h4 className="text-base font-bold text-white mb-2">Transfer Learning vs. Tabula Rasa</h4>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Instead of training a model from scratch (<em>Tabula Rasa</em>)—which is prohibitively expensive, slow, and prone to catastrophic forgetting—we leverage a Foundation Model (such as Meta's NLLB or MarianMT) that already possesses mastery over global grammar, and fine-tune it strictly on proprietary brand voice and terminology.
+                  Instead of training a model from scratch (<em>Tabula Rasa</em>), which is prohibitively expensive, slow, and prone to catastrophic forgetting, I leveraged an open foundation model (such as Meta's NLLB or MarianMT) with existing global grammatical mastery, fine-tuning it strictly on proprietary brand voice and terminology.
                 </p>
               </div>
 
@@ -1198,7 +1198,7 @@ if (cosineScore < 0.75) {
                 </div>
                 <h4 className="text-base font-bold text-white mb-2">Ruthless Pre-Ingestion Sanitization</h4>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  AI models strictly obey <em>"Garbage In, Garbage Out"</em> (GIGO). By enforcing our 5-stage automated gate funnel (stripping HTML, evicting language leaks via fastText, checking $[0.4, 2.5]$ sentence ratio boundaries, and pruning cosine scores &lt; 0.75), we guarantee the AI only trains on pristine, high-fidelity parallel segments.
+                  AI models strictly obey <em>"Garbage In, Garbage Out"</em> (GIGO). By enforcing a 5-stage automated gate funnel (stripping HTML, evicting language leaks via fastText, checking sentence ratio boundaries between 0.4 and 2.5, and pruning cosine scores &lt; 0.75), I ensured the model only trains on pristine, high-fidelity parallel segments.
                 </p>
               </div>
 
@@ -1209,7 +1209,7 @@ if (cosineScore < 0.75) {
                 </div>
                 <h4 className="text-base font-bold text-white mb-2">Domain Stratification via Style Tags</h4>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  By injecting contextual tokens (such as <code className="text-purple-300 font-mono text-[11px]">&lt;style:editorial&gt;</code> or <code className="text-purple-300 font-mono text-[11px]">&lt;style:ui_concise&gt;</code>), the single foundation engine learns to modulate its tone dynamically—shifting between punchy 2-word UI buttons and lyrical artist biographies without model sprawl.
+                  By injecting contextual tokens (such as <code className="text-purple-300 font-mono text-[11px]">&lt;style:editorial&gt;</code> or <code className="text-purple-300 font-mono text-[11px]">&lt;style:ui_concise&gt;</code>), the single foundation engine modulates its tone dynamically, shifting between punchy 2-word UI buttons and lyrical artist biographies without model sprawl.
                 </p>
               </div>
             </div>
@@ -1250,7 +1250,7 @@ if (cosineScore < 0.75) {
                   </div>
                   <div className="flex justify-between py-1 border-b border-slate-850">
                     <span className="text-slate-400">Compute Hourly Rate:</span>
-                    <span className="text-emerald-400 font-bold">$4.00 – $8.00 / hr</span>
+                    <span className="text-emerald-400 font-bold">$4.00 to $8.00 / hr</span>
                   </div>
                   <div className="flex justify-between py-1 border-b border-slate-850">
                     <span className="text-slate-400">Training Duration (~150k pairs):</span>
@@ -1304,7 +1304,7 @@ if (cosineScore < 0.75) {
             </div>
           </div>
 
-          {/* Part 4: The 40% Cost Reduction — Exact Mathematical Breakdown */}
+          {/* Part 4: The 40% Cost Reduction: Exact Mathematical Breakdown */}
           <div className="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-emerald-950/60 via-slate-900 to-indigo-950/50 border border-emerald-500/50 shadow-2xl relative overflow-hidden">
             <div className="max-w-5xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold uppercase tracking-widest mb-4">
@@ -1315,7 +1315,7 @@ if (cosineScore < 0.75) {
                 The Exact Math Behind the 40% Net Cost Reduction
               </h3>
               <p className="text-slate-200 text-sm sm:text-base leading-relaxed mb-10 font-normal">
-                This is how the 40% is calculated, step by step, as you would pitch it to a Director of Finance or VP of Operations. Picture an enterprise localization program (think Apple Music or Spotify) running massive global releases.
+                This is how the 40% reduction is calculated, step by step, as I present it to finance leadership and operations executives. Consider an enterprise localization program handling massive global releases:
               </p>
 
               {/* Step 1: Baseline */}
@@ -1366,7 +1366,7 @@ if (cosineScore < 0.75) {
                   <h4 className="text-lg font-bold text-white">The Intervention: Re-Route, Don't Replace</h4>
                 </div>
                 <p className="text-sm text-slate-300 leading-relaxed mb-4 max-w-3xl">
-                  You don't replace human linguists; you re-route the traffic. Those 11.25M rote words go through the domain-adapted NMT engine. Because it clears the <strong>&gt; 0.82 COMET</strong> gate, human linguists only need light post-editing (MTPE), or the engine publishes directly.
+                  I did not replace human linguists; I re-routed the traffic. Those 11.25M rote words are channeled through the domain-adapted NMT engine. Because outputs clear the <strong>&gt; 0.82 COMET</strong> gate, human linguists only perform light post-editing (MTPE), or the engine publishes directly.
                 </p>
                 <div className="overflow-x-auto rounded-2xl border border-slate-800">
                   <table className="w-full text-left text-xs sm:text-sm">
@@ -1449,7 +1449,7 @@ if (cosineScore < 0.75) {
               </div>
 
               <p className="text-[11px] text-slate-400 leading-relaxed mb-8">
-                Investment note: fine-tuning the engine costs roughly $20–$100 per language pair in compute (see Option A / Option B above), a rounding error against $1.125M in annual savings.
+                Investment note: fine-tuning the engine costs roughly $20 to $100 per language pair in compute (see Option A / Option B above), a rounding error against $1.125M in annual savings.
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
@@ -1474,7 +1474,7 @@ if (cosineScore < 0.75) {
             </div>
           </div>
 
-          {/* Part 5: Headline Metrics Justification — Operational Velocity & Quality Proofs */}
+          {/* Part 5: Headline Metrics Justification: Operational Velocity & Quality Proofs */}
           <div id="metrics-justification" className="mt-20 pt-16 border-t border-slate-800/80">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-8 h-8 rounded-xl bg-purple-600/20 text-purple-400 border border-purple-500/30 flex items-center justify-center font-black text-sm">
@@ -1485,7 +1485,7 @@ if (cosineScore < 0.75) {
               </h3>
             </div>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-4xl mb-10 font-normal">
-              In executive briefings and leadership interviews, numbers without transparent derivation lose credibility. Below is the operational and mathematical proof backing our headline metrics—grounded in standard localization benchmarks and explicit scope boundaries.
+              In executive briefings and leadership interviews, numbers without transparent derivation lose credibility. Below is the operational and mathematical proof backing my headline metrics, grounded in standard localization benchmarks and explicit scope boundaries.
             </p>
 
             <div className="space-y-8">
@@ -1509,7 +1509,7 @@ if (cosineScore < 0.75) {
                 {/* Plain-terms analogy */}
                 <div className="bg-slate-950 p-4 rounded-2xl border border-slate-800/90 mb-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
                   <strong className="text-indigo-300 block mb-1">The Core Intuition in Plain Terms:</strong>
-                  Translating from scratch is like writing an entire letter starting from a blank page. Post-editing is like reviewing and lightly correcting a well-formed draft someone already handed you. Reviewing a qualified draft is inherently faster than drafting from scratch.
+                  Translating from scratch is like writing an entire letter starting from a blank page. Post-editing is like reviewing and lightly correcting a well-formed draft someone has already produced. Reviewing a qualified draft is inherently faster than drafting from scratch.
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
@@ -1518,7 +1518,7 @@ if (cosineScore < 0.75) {
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Step 1 • Human Scratch Baseline</span>
                     <div className="text-2xl font-black text-white mb-2">2,500 words/day</div>
                     <p className="text-xs text-slate-400 leading-relaxed mb-3">
-                      Standard industry benchmark for a professional human translator (typically quoted at 2,000–3,000 words/day).
+                      Standard industry benchmark for a professional human translator (typically quoted at 2,000 to 3,000 words/day).
                     </p>
                     <div className="pt-2 border-t border-slate-850 font-mono text-[11px] text-indigo-300">
                       Time per 1,000 words:<br />
@@ -1587,7 +1587,7 @@ if (cosineScore < 0.75) {
                     <strong className="text-white block mb-2">How 94% Parity Is Measured in Production:</strong>
                     Under blind side-by-side linguistic evaluation using the industry-standard <strong>Multidimensional Quality Metrics (MQM)</strong> framework, <strong>94% of translated segments</strong> in the UI and catalog streams met or exceeded the human benchmark release standard with zero edits or minor cosmetic adjustments (e.g. non-breaking spaces or brand casing).
                     <p className="mt-3 text-slate-400 text-xs">
-                      Only <strong>6% of segments</strong> required structural re-translation by a senior linguist, demonstrating that our domain stratification tokens (<code className="text-purple-300 font-mono text-[10px]">&lt;style:ui_concise&gt;</code>) successfully prevent syntactic drift and hallucination.
+                      Only <strong>6% of segments</strong> required structural re-translation by a senior linguist, demonstrating that my domain stratification tokens (<code className="text-purple-300 font-mono text-[10px]">&lt;style:ui_concise&gt;</code>) successfully prevent syntactic drift and hallucination.
                     </p>
                   </div>
 
@@ -1617,7 +1617,7 @@ if (cosineScore < 0.75) {
                     </div>
                     <h4 className="text-xl font-bold text-white mb-3">0.85+ COMET Score Threshold</h4>
                     <p className="text-xs text-slate-300 leading-relaxed mb-4">
-                      Why set the release bar at <strong>0.85+</strong> when the academic threshold for human parity is typically <strong>0.80–0.82</strong>?
+                      Why set the release bar at <strong>0.85+</strong> when the academic threshold for human parity is typically <strong>0.80 to 0.82</strong>?
                     </p>
                     <div className="space-y-3 text-xs text-slate-400">
                       <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80">
@@ -1663,7 +1663,7 @@ if (cosineScore < 0.75) {
                 </div>
               </div>
 
-              {/* 4. Professional Framing: Why We Call It a "Modeled ROI" */}
+              {/* 4. Professional Framing: Why I Frame This as a "Modeled ROI" */}
               <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border border-slate-800 shadow-xl">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-400 border border-amber-500/30 flex items-center justify-center font-bold flex-shrink-0 mt-1">
@@ -1671,10 +1671,10 @@ if (cosineScore < 0.75) {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white mb-2">
-                      Professional Credibility: Why We Frame This as a "Modeled ROI"
+                      Professional Credibility: Why I Frame This as a "Modeled ROI"
                     </h4>
                     <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3">
-                      In professional executive interviews and VP-level strategy reviews, claiming unverified "blanket perfection" immediately triggers skepticism. By openly classifying these figures as a <strong>modeled operational ROI</strong>—backed by stated mathematical parameters (25M annual words, $0.112 blended rate, 45% catalog volume, 2,500 vs. 6,250 wpd)—you demonstrate:
+                      In professional executive interviews and VP-level strategy reviews, claiming unverified "blanket perfection" immediately triggers skepticism. By openly classifying these figures as a <strong>modeled operational ROI</strong> backed by stated mathematical parameters (25M annual words, $0.112 blended rate, 45% catalog volume, 2,500 vs. 6,250 words/day), I demonstrate:
                     </p>
                     <ul className="grid sm:grid-cols-3 gap-3 text-xs text-slate-400 pt-2 border-t border-slate-850">
                       <li className="flex items-center gap-2">

@@ -449,7 +449,7 @@ export const FUNNEL_STAGES_DATA = [
     statusBadge: '35K MISALIGNED DROPPED',
     statusColor: 'bg-amber-900/60 text-amber-300 border-amber-700',
     operationRule: 'Transformer attention preservation and sentence boundary ratio heuristics [0.4, 2.5].',
-    rejectionCriteria: 'Drop segments >120 words to avoid degrading self-attention matrices. Drop pairs where ratio falls outside 0.4–2.5 bounds (sentence-to-paragraph misalignment).',
+    rejectionCriteria: 'Drop segments >120 words to avoid degrading self-attention matrices. Drop pairs where ratio falls outside 0.4 to 2.5 bounds (sentence-to-paragraph misalignment).',
     sampleRaw: 'Play. -> Hier finden Sie alle aktuellen Titel des Albums sowie zusätzliche Bonustitel.',
     sampleSanitized: 'DROPPED (Length ratio 0.09 outside allowed bounds [0.4, 2.5])'
   },

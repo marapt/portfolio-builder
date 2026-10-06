@@ -87,7 +87,7 @@ The project encompassed digital marketing assets, print collateral, video conten
     caseStudyUrl: '/case-studies/training-nmt',
     overview: `This transformative project introduced AI-powered neural machine translation (NMT) into an enterprise localization workflow, fundamentally changing how content was processed and delivered across global markets.
 
-By combining custom-trained NMT engines with intelligent routing and human post-editing workflows, we achieved dramatic improvements in both speed and quality. The system learns continuously from corrections, improving accuracy over time while reducing the human effort required for each content type.`,
+By combining custom-trained NMT engines with intelligent routing and human post-editing workflows, I achieved dramatic improvements in both speed and quality. The system learns continuously from corrections, improving accuracy over time while reducing the human effort required for each content type.`,
     challenges: [
       'High volume of repetitive content requiring translation with limited human resources',
       'Inconsistent quality from generic machine translation engines for specialized terminology',

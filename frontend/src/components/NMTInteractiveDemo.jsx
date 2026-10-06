@@ -270,7 +270,7 @@ const NMTInteractiveDemo = () => {
             NMT Pipeline & Metric Execution Demo
           </h2>
           <p className="text-slate-400 text-sm mt-1 max-w-2xl font-medium">
-            Test real-life translation memory pairs through our 5-stage corpus sanitization funnel and evaluate model outputs against BLEU, chrF++, and COMET.
+            Test real-life translation memory pairs through the 5-stage corpus sanitization funnel and evaluate model outputs against BLEU, chrF++, and COMET.
           </p>
         </div>
 
