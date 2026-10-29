@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import ReactGA from "react-ga4"; 
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { GovernanceProvider } from './GovernanceContext';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import './App.css';
 import HomePage from './pages/HomePage';
 import ProjectDetail from './pages/ProjectDetail';
@@ -58,6 +59,7 @@ function App() {
           <Route path="/gtm" element={<GTMDashboard />} />
         </Routes>
         <VideoBubble />
+        <SpeedInsights />
       </GovernanceProvider>
     </div>
   );
