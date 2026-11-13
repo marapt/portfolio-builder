@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Block logo">
+  <rect width="64" height="64" rx="14" fill="#09090B"/>
+  <rect x="3.5" y="3.5" width="57" height="57" rx="11" fill="none" stroke="#27272A" stroke-width="1.5"/>
+  <!-- Solid faceted 3D isometric Block mark -->
+  <polygon points="32,12 49.3,22 32,32 14.7,22" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+  <polygon points="14.7,22 32,32 32,52 14.7,42" fill="#CBD5E1" stroke="#CBD5E1" stroke-width="1.5" stroke-linejoin="round"/>
+  <polygon points="49.3,22 49.3,42 32,52 32,32" fill="#64748B" stroke="#64748B" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
