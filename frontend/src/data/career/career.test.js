@@ -175,4 +175,141 @@ describe('career timeline placeholder dataset', () => {
       'https://maramartins.com/project/localization-training-program'
     );
   });
+
+  test('Block role preserves verified Investor Day, 3Q22 Shareholder Letter, rebrand metrics, proof links, and archive files', () => {
+    const block = timelineItems.find((item) => item.id === 'block');
+    expect(block).toBeDefined();
+    expect(block.company).toBe('Block (formerly Square, Inc.)');
+    expect(block.title).toBe('Program Management Lead');
+    expect(block.placeholder).toBe(false);
+    expect(block.metrics.map((m) => m.value)).toEqual([
+      '5 → 15 PMs (3×)',
+      '+55% YoY CC GPV*',
+      '9% → 15% Share**',
+    ]);
+    expect(block.metrics.map((m) => m.focus)).toEqual([
+      'Team Scale',
+      'Payment Velocity',
+      'Profit Share',
+    ]);
+    expect(block.metrics.every((m) => m.placeholder === false)).toBe(true);
+    expect(block.metricsFootnote).toContain('Investor Day');
+    expect(block.metricsFootnote).toContain('Q3 2022 Shareholder Letter');
+    expect(block.metricsFootnoteItems).toHaveLength(3);
+    expect(block.metricsFootnoteItems.map((i) => i.marker)).toEqual(['*', '**', '•']);
+    expect(block.metricsFootnoteItems.some((i) => i.title.includes('FY22 9M YTD'))).toBe(true);
+    expect(Array.isArray(block.glossary)).toBe(true);
+    expect(block.glossary.map((g) => g.id)).toEqual(
+      expect.arrayContaining(['gaap', 'ex-bnpl', 'gpv', 'constant-currency', 'periods'])
+    );
+    expect(block.evidence).toBeDefined();
+    expect(block.evidence.sections.map((s) => s.id)).toEqual([
+      'expansion',
+      'rebrand',
+      'markets',
+      'roi',
+    ]);
+    expect(block.evidence.note).toContain('Wayback Machine');
+    expect(block.evidence.note).toContain('PDF archive');
+    expect(block.evidence.snapshots.map((s) => s.src)).toEqual([
+      '/evidence/block-investor-day-slide26.png',
+      '/evidence/block-investor-day-slide31.png',
+      '/evidence/block-q3-2022-expanding-globally.png',
+      '/evidence/block-rebrand-announcement.png',
+      '/evidence/block-square-about-2022.png',
+      '/evidence/block-square-france.png',
+      '/evidence/block-square-spain.png',
+      '/evidence/block-square-canada.png',
+      '/evidence/block-investor-day-slide27.png',
+      '/evidence/block-q3-2022-intl-reconciliation.png',
+      '/evidence/block-q3-2022-intl-gpv.png',
+    ]);
+    const publicDir = path.resolve(__dirname, '../../../public');
+    block.evidence.snapshots.forEach((snap) => {
+      const filePath = path.join(publicDir, snap.src.replace(/^\//, ''));
+      expect(fs.existsSync(filePath)).toBe(true);
+      (snap.extraSlides || []).forEach((extra) => {
+        const extraPath = path.join(publicDir, extra.src.replace(/^\//, ''));
+        expect(fs.existsSync(extraPath)).toBe(true);
+      });
+    });
+    const aboutSnap = block.evidence.snapshots.find(
+      (s) => s.src === '/evidence/block-square-about-2022.png'
+    );
+    expect(aboutSnap.extraSlides.map((e) => e.src)).toEqual([
+      '/evidence/block-square-about-2021.png',
+    ]);
+    expect(fs.existsSync(path.join(publicDir, 'evidence/block-square-about-archive.pdf'))).toBe(
+      true
+    );
+    const slide31Snap = block.evidence.snapshots.find(
+      (s) => s.src === '/evidence/block-investor-day-slide31.png'
+    );
+    expect(slide31Snap.extraSlides.map((e) => e.src)).toEqual([
+      '/evidence/block-investor-day-slide32.png',
+    ]);
+    const roiSection = block.evidence.sections.find((s) => s.id === 'roi');
+    expect(roiSection.reconciliation).toHaveLength(4);
+    const urls = block.evidence.links.map((l) => l.url);
+    expect(urls).toContain('https://squareup.com/us/en/about');
+    expect(urls).toContain(
+      'https://web.archive.org/web/20261108180332/https://squareup.com/us/en/about'
+    );
+    expect(urls).toContain('/evidence/block-square-about-archive.pdf');
+    expect(urls).toContain('https://block.xyz/inside/press-release-block');
+    expect(urls).toContain('https://developer.squareup.com/blog/square-launches-in-france/');
+    expect(urls).toContain(
+      'https://squareup.com/us/es/press/square-announces-official-launch-in-spain-after-successful-early-access-programme'
+    );
+    expect(urls).toContain(
+      'https://www.businesswire.com/news/home/20220428005090/en/Launch-of-Square-Loans-Offers-Quick-Simple-Access-to-Funds-for-Canadian-Businesses'
+    );
+    expect(urls).toContain(
+      'https://s29.q4cdn.com/628966176/files/doc_presentations/2022/05/Square-Block-Investor-Day-2022.pdf'
+    );
+    expect(urls).toContain(
+      'https://s29.q4cdn.com/628966176/files/doc_financials/2022/q3/Block_Shareholder-Letter-3Q22.pdf'
+    );
+  });
+
+  test('ESTG milestone preserves redacted BA/Licentiate certificate assets, institutional links, and archive record without exposing Drive URL', () => {
+    const estg = timelineItems.find((item) => item.id === 'graduation');
+    expect(estg).toBeDefined();
+    expect(estg.placeholder).toBe(false);
+    expect(estg.summary).toContain('organizational psychology, law, economics, and computer science');
+    expect(estg.highlights).toHaveLength(3);
+    expect(estg.highlights[0]).toContain('two-stage 5-year degree program');
+    expect(estg.highlights[0]).not.toMatch(/biet[aá]pico/i);
+    expect(estg.highlights[1]).toContain('Work and Organizational Psychology');
+    expect(estg.highlights[1]).toContain('Introduction to Law');
+    expect(estg.highlights[1]).toContain('Introduction to Economics');
+    expect(estg.highlights[1]).toContain('Computer Science (I–II)');
+    expect(estg.evidence).toBeDefined();
+    expect(estg.evidence.note).toContain('0–20 grading scale');
+    expect(estg.evidence.note).toContain('Wayback Machine');
+    expect(estg.evidence.snapshots.map((s) => s.src)).toEqual([
+      '/evidence/estg-bachelor-certificate-redacted.png',
+      '/evidence/estg-ipleiria-en.png',
+    ]);
+    const publicDir = path.resolve(__dirname, '../../../public');
+    estg.evidence.snapshots.forEach((snap) => {
+      expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
+      (snap.extraSlides || []).forEach((extra) => {
+        expect(fs.existsSync(path.join(publicDir, extra.src.replace(/^\//, '')))).toBe(true);
+      });
+    });
+    expect(estg.evidence.snapshots[0].extraSlides.map((e) => e.src)).toEqual([
+      '/evidence/estg-licentiate-certificate-redacted.png',
+    ]);
+    expect(fs.existsSync(path.join(publicDir, 'evidence/estg-course-certificates-redacted.pdf'))).toBe(
+      true
+    );
+
+    const urls = estg.evidence.links.map((l) => l.url);
+    expect(urls).toContain('https://www.ipleiria.pt/en/');
+    expect(urls).toContain('https://www.ipleiria.pt/en/about-us/schools/estg/');
+    expect(urls).toContain('https://web.archive.org/web/20261030153521/https://www.ipleiria.pt/en/');
+    expect(urls).toContain('/evidence/estg-course-certificates-redacted.pdf');
+    expect(urls.some((u) => u.includes('1UVqB7epqcwLu_4TjSobLelVLWLj0LcTt'))).toBe(false);
+  });
 });

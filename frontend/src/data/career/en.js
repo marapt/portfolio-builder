@@ -40,6 +40,362 @@ export const railYears = [
 
 export const futureYears = ['2027', '2028', '2029+'];
 
+const BLOCK_INVESTOR_DAY_PDF_URL =
+  'https://s29.q4cdn.com/628966176/files/doc_presentations/2022/05/Square-Block-Investor-Day-2022.pdf';
+const BLOCK_Q3_2022_LETTER_URL =
+  'https://s29.q4cdn.com/628966176/files/doc_financials/2022/q3/Block_Shareholder-Letter-3Q22.pdf';
+const BLOCK_SQUARE_ABOUT_URL = 'https://squareup.com/us/en/about';
+const BLOCK_SQUARE_ABOUT_WAYBACK_URL =
+  'https://web.archive.org/web/20261108180332/https://squareup.com/us/en/about';
+const BLOCK_SQUARE_ABOUT_ARCHIVE_PDF_URL = '/evidence/block-square-about-archive.pdf';
+
+const blockGlossary = [
+  {
+    id: 'gaap',
+    term: 'GAAP (All-In Reported)',
+    shortLabel: 'GAAP',
+    definition:
+      'Generally Accepted Accounting Principles — the standard U.S. accounting rules used in Block’s official filings (such as the Q3 2022 Shareholder Letter, p. 29). On a GAAP basis, Square International Gross Profit in FY22 includes contributions from the newly integrated Afterpay (BNPL) platform.',
+  },
+  {
+    id: 'ex-bnpl',
+    term: 'Ex-BNPL (Organic Core Square)',
+    shortLabel: 'Ex-BNPL',
+    definition:
+      'Results excluding Bitcoin and the BNPL (Afterpay) platform. Because BNPL had $0 contribution in FY20 and FY21, Ex-BNPL provides the true apples-to-apples organic growth rate for core Square international products (+42.6% YoY in FY22 9M YTD; +40.7% YoY in FY22 Q3).',
+  },
+  {
+    id: 'bnpl',
+    term: 'BNPL / Afterpay Contribution',
+    shortLabel: 'BNPL',
+    definition:
+      'Buy Now, Pay Later installment capability added across Block’s Square and Cash App ecosystems in FY22 (including Square sellers in Canada and the UK per Q3 2022 Letter, p. 7). BNPL added $123.4M to Square International Gross Profit in FY22 9M YTD and $45.8M in FY22 Q3.',
+  },
+  {
+    id: 'gpv',
+    term: 'GPV (Gross Payment Volume)',
+    shortLabel: 'GPV',
+    definition:
+      'Total dollar value of card and digital payments processed by Square sellers. In FY22 Q3, Square International GPV grew +40% YoY as reported and +55% YoY on a constant-currency basis — outpacing U.S. GPV growth (+17% YoY) by more than 3× (p. 11).',
+  },
+  {
+    id: 'constant-currency',
+    term: 'Constant Currency (CC)',
+    shortLabel: 'Constant Currency',
+    definition:
+      'A foreign-exchange-adjusted growth rate that measures international payment volume as if exchange rates had stayed unchanged year over year. Stripping out 2022 USD currency headwinds shows Square International GPV grew +55% YoY in FY22 Q3 (vs. +40% YoY reported).',
+  },
+  {
+    id: 'gross-profit',
+    term: 'Square International Gross Profit',
+    shortLabel: 'Gross Profit',
+    definition:
+      'Net revenue Square retains from sellers outside the United States after direct processing and product costs. Full-year FY21 reached $220M (9% share); in just the first nine months of FY22 (ended Sep 30, 2022), it reached $200.2M core Ex-BNPL and $323.7M GAAP all-in.',
+  },
+  {
+    id: 'periods',
+    term: 'FY21 · FY22 (9M YTD) · FY22 Q3',
+    shortLabel: 'FY21 / FY22 Periods',
+    definition:
+      'Block’s fiscal year aligns with the calendar year (Jan–Dec). FY21 covers full-year 2021 ($220M baseline). FY22 (9M YTD) covers the nine months ended Sep 30, 2022 — Block’s latest full-period actuals prior to FY22 Q4 close in the Nov 3, 2022 Q3 Letter. FY22 Q3 covers the single July–Sep 2022 quarter ($120.9M all-in / $75.1M Ex-BNPL).',
+  },
+  {
+    id: 'growth-rates',
+    term: 'YoY & CAGR Growth Rates',
+    shortLabel: 'YoY & CAGR',
+    definition:
+      'YoY (Year-over-Year) compares a period against the exact same period 12 months prior to remove seasonal retail swings. CAGR (Compound Annual Growth Rate) measures smoothed annual growth over multiple years (>60% from FY15 to FY21 on Investor Day Slide 27).',
+  },
+  {
+    id: 'parity',
+    term: 'International Product Parity',
+    shortLabel: 'Product Parity',
+    definition:
+      'The share of Square’s 44 U.S. seller products localized and launched across each international market (Investor Day Slide 26: Canada 37, Australia & UK 34, Ireland 29, Japan 26, France 22), further expanded in FY22 with Spain, PayPay QR in Japan, Instant Transfers in Australia, Square Loans in the UK, and BNPL in Canada and the UK.',
+  },
+];
+
+const blockEvidenceSections = [
+  {
+    id: 'expansion',
+    title: '1. Global Market Expansion',
+    badge: '8 Int’l Markets · Investor Day & FY22 Q3',
+    defaultOpen: true,
+    columns: 3,
+    summary:
+      'Anchored localized product-ecosystem delivery across 8 international markets (U.S. baseline: 44 products), spanning Canada (37), Australia (34), UK (34), Ireland (29), Japan (26), France (22), Spain (launched Jan 2022), and the Falkland Islands (Slide 31). Added FY22 product-parity rollouts in Japan (PayPay QR acceptance), Australia (Instant Transfers), the UK (Square Loans and BNPL), and Canada (BNPL).',
+    links: [
+      {
+        label: 'Block Investor Day 2022 Full Deck (77-Slide PDF, May 2022)',
+        url: BLOCK_INVESTOR_DAY_PDF_URL,
+        kind: 'external',
+      },
+      {
+        label: 'Block Q3 2022 Shareholder Letter — Expanding Globally (p. 7, Nov 2022)',
+        url: `${BLOCK_Q3_2022_LETTER_URL}#page=7`,
+        kind: 'external',
+      },
+    ],
+    snapshots: [
+      {
+        marketTag: 'Investor Day · Slide 26 · Product Parity',
+        src: '/evidence/block-investor-day-slide26.png',
+        alt: 'Slide 26 of Block Investor Day 2022 showing Bringing our product ecosystem global across international markets',
+        caption: 'Slide 26 · Ecosystem Product Count (22–37 Int’l)',
+        linkLabel: 'Investor Day PDF',
+        url: BLOCK_INVESTOR_DAY_PDF_URL,
+        fit: 'contain',
+        note: 'Baseline localized product parity across core markets (existing plus FY21 additions): CA 37, AU/UK 34, IE 29, JP 26, and FR 22 (vs. U.S. 44).',
+      },
+      {
+        marketTag: 'Investor Day · Slides 31–32 · Scroll',
+        src: '/evidence/block-investor-day-slide31.png',
+        alt: 'Slide 31 of Block Investor Day 2022 showing Square global market expansion map 2010–2022',
+        caption: 'Slides 31–32 · Global Expansion Map & Timeline',
+        linkLabel: 'PDF (p. 31–32)',
+        expandLabel: 'Open Slides 31–32',
+        primaryLabel: 'Slide 31',
+        scrollAriaLabel: 'Scrollable preview containing Block Investor Day Slides 31 and 32',
+        url: `${BLOCK_INVESTOR_DAY_PDF_URL}#page=31`,
+        fit: 'contain',
+        extraSlides: [
+          {
+            src: '/evidence/block-investor-day-slide32.png',
+            linkLabel: 'Slide 32',
+            alt: 'Slide 32 of Block Investor Day 2022 showing Global market expansion country silhouettes and launch years (2010–2022)',
+          },
+        ],
+        note: 'Chronological rollout across all 8 non-U.S. markets (incl. Falkland Islands), culminating in FY21–FY22 European launches in France, Ireland, and Spain — scroll preview down for Slide 32 market launch years.',
+      },
+      {
+        marketTag: 'Q3 2022 Letter · Page 7 · Parity & Trend',
+        src: '/evidence/block-q3-2022-expanding-globally.png',
+        alt: 'Block Q3 2022 Shareholder Letter Page 7 Expanding globally narrative and 2018 Q3 to 2022 Q3 Gross Profit Outside the U.S. chart',
+        caption: 'Q3 2022 p. 7 · Expanding Globally & Q3 Trend',
+        linkLabel: 'Q3 2022 PDF (p. 7)',
+        url: `${BLOCK_Q3_2022_LETTER_URL}#page=7`,
+        fit: 'contain',
+        note: 'Single-quarter progression rose from $13M (FY18 Q3) and $53M (FY21 Q3) to $121M / 15% all-in ($75M / 11% Ex-BNPL; chart-rounded from $120.9M / $75.1M) in FY22 Q3, alongside Japan, Australia, UK, and Canada rollouts.',
+      },
+    ],
+  },
+  {
+    id: 'rebrand',
+    title: '2. Square → Block Global Rebrand',
+    badge: 'Dec 1, 2021 · Cross-Functional',
+    defaultOpen: false,
+    summary:
+      'Drove global localization readiness for the corporate Square → Block rebrand (Dec 1, 2021) alongside Brand, Product Marketing, Legal, and Regional GTM teams, unifying corporate identity across Square, Cash App, TIDAL, and emerging international operations.',
+    links: [
+      {
+        label: 'Square → Block Rebrand Press Release (Dec 2021)',
+        url: 'https://block.xyz/inside/press-release-block',
+        kind: 'external',
+      },
+    ],
+    snapshots: [
+      {
+        marketTag: 'Press Release · Dec 1, 2021 · Corporate Rebrand',
+        src: '/evidence/block-rebrand-announcement.png',
+        alt: 'Snapshot of Square, Inc. Changes Name to Block announcement on block.xyz',
+        caption: 'Square → Block Global Rebrand Announcement (Dec 1, 2021)',
+        linkLabel: 'Press Release',
+        url: 'https://block.xyz/inside/press-release-block',
+        fit: 'contain',
+        note: 'Delivered during month 2 of tenure across international product, legal, and regional GTM surfaces without disrupting active European market rollouts.',
+      },
+    ],
+  },
+  {
+    id: 'markets',
+    title: '3. Market & Product Launches',
+    badge: '🇫🇷 France · 🇮🇪 Ireland · 🇪🇸 Spain · 🇨🇦 Canada',
+    defaultOpen: false,
+    columns: 2,
+    hideSectionLinks: false,
+    summary:
+      'Supported post-launch ecosystem scaling in FY21 European markets (France and Ireland) while executing FY22 market and financial-product launches in Spain (Jan 2022, later adding Catalan localization), Canada Square Loans (Apr 2022), and Canada BNPL (Q3 2022 Shareholder Letter, p. 7), corroborated by Square’s official 2021–2022 corporate timeline.',
+    headerLinks: [
+      {
+        label: 'Official Square About Timeline (Live)',
+        url: BLOCK_SQUARE_ABOUT_URL,
+        kind: 'external',
+      },
+      {
+        label: 'Wayback Machine Archive (Nov 2026)',
+        url: BLOCK_SQUARE_ABOUT_WAYBACK_URL,
+        kind: 'archive',
+      },
+      {
+        label: 'Saved Full-Page PDF Archive (Local)',
+        url: BLOCK_SQUARE_ABOUT_ARCHIVE_PDF_URL,
+        kind: 'archive',
+      },
+    ],
+    links: [
+      {
+        label: 'Official Square About Timeline (Live)',
+        url: BLOCK_SQUARE_ABOUT_URL,
+        kind: 'external',
+      },
+      {
+        label: 'Wayback Machine Archive (Nov 2026)',
+        url: BLOCK_SQUARE_ABOUT_WAYBACK_URL,
+        kind: 'archive',
+      },
+      {
+        label: 'Saved Full-Page PDF Archive (Local)',
+        url: BLOCK_SQUARE_ABOUT_ARCHIVE_PDF_URL,
+        kind: 'archive',
+      },
+      {
+        label: 'Square Launches in France (Sep 2021)',
+        url: 'https://developer.squareup.com/blog/square-launches-in-france/',
+        kind: 'external',
+      },
+      {
+        label: 'Square Official Launch in Spain (Jan 2022)',
+        url: 'https://squareup.com/us/es/press/square-announces-official-launch-in-spain-after-successful-early-access-programme',
+        kind: 'external',
+      },
+      {
+        label: 'Square Loans Canada Launch (Apr 2022)',
+        url: 'https://www.businesswire.com/news/home/20220428005090/en/Launch-of-Square-Loans-Offers-Quick-Simple-Access-to-Funds-for-Canadian-Businesses',
+        kind: 'external',
+      },
+    ],
+    snapshots: [
+      {
+        marketTag: 'Company Timeline · 2021–2022 · Scroll',
+        src: '/evidence/block-square-about-2022.png',
+        alt: 'Snapshot of Square About corporate timeline (squareup.com/us/en/about) highlighting 2022 milestones including Spain launch and Catalan localization',
+        caption: 'Square About · 2021–2022 Global Milestones',
+        linkLabel: 'Square About Page',
+        expandLabel: 'Open 2021–2022 Timeline',
+        primaryLabel: '2022 Timeline',
+        scrollAriaLabel:
+          'Scrollable preview containing Square About corporate timeline snapshots for 2022 and 2021',
+        url: BLOCK_SQUARE_ABOUT_URL,
+        fit: 'contain',
+        slideBg: 'white',
+        extraSlides: [
+          {
+            src: '/evidence/block-square-about-2021.png',
+            linkLabel: '2021 Timeline',
+            alt: 'Snapshot of Square About corporate timeline (squareup.com/us/en/about) highlighting 2021 milestones: Square to Block rebrand, Square Banking, France expansion, and Ireland expansion',
+          },
+        ],
+        note: 'Official Square corporate history (live page, Nov 2026 Wayback archive & saved PDF preserved): corroborates FY21 France & Ireland expansion (supported via post-launch scaling), Dec 2021 Square → Block rebrand, and FY22 Spain GA + later Catalan localization.',
+      },
+      {
+        marketTag: '🇫🇷 France · Sep 2021 · Post-Launch Scaling',
+        src: '/evidence/block-square-france.png',
+        alt: 'Snapshot of Square Launches in France announcement on developer.squareup.com',
+        caption: 'Square Launches in France (22 Products)',
+        linkLabel: 'Press / Blog',
+        url: 'https://developer.squareup.com/blog/square-launches-in-france/',
+        fit: 'contain',
+        note: 'Launched on Sep 2021 prior to tenure; sustained post-launch localization and developer/product parity scaling to 22 localized products during Nov 2021 – Nov 2022.',
+      },
+      {
+        marketTag: '🇪🇸 Spain · Jan 2022 · New Market Launch',
+        src: '/evidence/block-square-spain.png',
+        alt: 'Snapshot of Square Official Launch in Spain press release on squareup.com',
+        caption: 'Square Official Launch in Spain',
+        linkLabel: 'Press Release',
+        url: 'https://squareup.com/us/es/press/square-announces-official-launch-in-spain-after-successful-early-access-programme',
+        fit: 'contain',
+        note: 'Executed Jan 2022 general availability rollout across Spain following its early-access program, marking Block’s eighth international market.',
+      },
+      {
+        marketTag: '🇨🇦 Canada · Apr 2022 · Loans & BNPL',
+        src: '/evidence/block-square-canada.png',
+        alt: 'Snapshot of Square Loans launch in Canada Business Wire press release',
+        caption: 'Square Loans Launch in Canada (37+ Products)',
+        linkLabel: 'Business Wire',
+        url: 'https://www.businesswire.com/news/home/20220428005090/en/Launch-of-Square-Loans-Offers-Quick-Simple-Access-to-Funds-for-Canadian-Businesses',
+        fit: 'contain',
+        note: 'Delivered Apr 2022 Square Banking rollout followed by Canada BNPL in FY22 Q3 (p. 7), expanding Block’s deepest international suite (37+ products).',
+      },
+    ],
+  },
+  {
+    id: 'roi',
+    title: '4. International Growth & ROI',
+    badge: 'FY21 $220M (9%) → FY22 9M YTD $323.7M / $200.2M Ex-BNPL',
+    defaultOpen: false,
+    columns: 3,
+    summary:
+      'The ROI data below reconciles Block’s May 2022 Investor Day full-year FY21 baseline ($220M; 9% share) with Q3 2022 Shareholder Letter actuals (Nov 3, 2022; data ended Sep 30, 2022 — Block’s latest full-period reporting prior to FY22 Q4 close). Separates each measurement window and product scope (Core Ex-BNPL vs. GAAP including Afterpay/BNPL) alongside +55% YoY constant-currency international GPV growth.',
+    reconciliation: [
+      {
+        period: 'FY21 (Full-Year Baseline)',
+        value: '$220M · 9% Share',
+        detail: 'Pre-BNPL Square International Gross Profit (up from 3% in FY15–16; >60% FY15–21 CAGR) — Investor Day Slide 27.',
+      },
+      {
+        period: 'FY22 9M YTD (Core Ex-BNPL)',
+        value: '$200.2M · +42.6% YoY',
+        detail: 'Organic Square International Gross Profit in Jan–Sep 2022 vs. $140.4M in FY21 9M (excludes Afterpay/BNPL) — Q3 2022 Letter, p. 29.',
+      },
+      {
+        period: 'FY22 9M YTD (GAAP All-In)',
+        value: '$323.7M · +130.5% YoY',
+        detail: 'Total Square International Gross Profit in Jan–Sep 2022, including $123.4M Afterpay/BNPL contribution — Q3 2022 Letter, p. 29.',
+      },
+      {
+        period: 'FY22 Q3 (Quarter + Int’l GPV)',
+        value: '15% Share · +55% CC GPV',
+        detail: '$120.9M all-in (15% share) or $75.1M Ex-BNPL (11%, +40.7% YoY vs. FY21 Q3 $53.4M / 9%); Int’l GPV +55% YoY constant currency — pp. 7, 11, 29.',
+      },
+    ],
+    links: [
+      {
+        label: 'Block Investor Day 2022 Full Deck (77-Slide PDF, May 2022)',
+        url: BLOCK_INVESTOR_DAY_PDF_URL,
+        kind: 'external',
+      },
+      {
+        label: 'Block Q3 2022 Shareholder Letter (34-Page PDF, Nov 3, 2022)',
+        url: BLOCK_Q3_2022_LETTER_URL,
+        kind: 'external',
+      },
+    ],
+    snapshots: [
+      {
+        marketTag: 'Investor Day · Slide 27 · FY21 Baseline',
+        src: '/evidence/block-investor-day-slide27.png',
+        alt: 'Slide 27 of Block Investor Day 2022 showing $220M and 9% international share of Square gross profit',
+        caption: 'Slide 27 · FY21 Annual Baseline ($220M · 9%)',
+        linkLabel: 'Investor Day PDF',
+        url: BLOCK_INVESTOR_DAY_PDF_URL,
+        fit: 'contain',
+        note: 'Full-year FY21 pre-BNPL Square International Gross Profit ($220M; 9% share) at the start of Nov 2021 tenure.',
+      },
+      {
+        marketTag: 'Q3 2022 Letter · Page 29 · Q3 & 9M Bridge',
+        src: '/evidence/block-q3-2022-intl-reconciliation.png',
+        alt: 'Block Q3 2022 Shareholder Letter Page 29 table reconciling Total Square Gross profit International and excluding Bitcoin and BNPL for Three Months and Nine Months Ended September 30, 2022',
+        caption: 'Q3 2022 p. 29 · GAAP vs. Ex-BNPL Bridge',
+        linkLabel: 'Q3 2022 PDF (p. 29)',
+        url: `${BLOCK_Q3_2022_LETTER_URL}#page=29`,
+        fit: 'contain',
+        note: 'Unaudited GAAP reconciliation (rounded to $M from exact $K filings): FY22 9M YTD reached $323.7M (+130.5% YoY) all-in and $200.2M (+42.6% YoY vs. FY21 9M $140.4M) Ex-BNPL; FY22 Q3 reached $120.9M all-in and $75.1M (+40.7% YoY) Ex-BNPL.',
+      },
+      {
+        marketTag: 'Q3 2022 Letter · Page 11 · Int’l GPV',
+        src: '/evidence/block-q3-2022-intl-gpv.png',
+        alt: 'Block Q3 2022 Shareholder Letter Page 11 Geographies section showing 40% reported and 55% constant currency international Square GPV growth',
+        caption: 'Q3 2022 p. 11 · +55% Constant-Currency GPV',
+        linkLabel: 'Q3 2022 PDF (p. 11)',
+        url: `${BLOCK_Q3_2022_LETTER_URL}#page=11`,
+        fit: 'contain',
+        note: 'Geographies disclosure: FY22 Q3 Square International GPV grew +40% YoY reported and +55% YoY in constant currency — outpacing U.S. GPV growth (+17% YoY) by more than 3×.',
+      },
+    ],
+  },
+];
+
 export const timelineItems = [
   {
     id: 'graduation',
@@ -59,10 +415,70 @@ export const timelineItems = [
     endYear: 2007,
     pillars: ['education', 'leadership'],
     summary:
-      'Completed 5-year Translation & Interpretation degree at ESTG (Polytechnic Institute of Leiria), with final-year internship alongside early EU/UK translation foundations.',
+      'Completed 5-year Translation & Interpretation degree (Specialization in Interpreting) at ESTG (Polytechnic Institute of Leiria), pairing 4 working languages and localization technology with complementary coursework in organizational psychology, law, economics, and computer science alongside early EU/UK foundations.',
     highlights: [
-      'Verified via ESTG Official Academic Certificate: Bachelor completed Nov 2005; 5-Year Licentiate completed Oct 2007.',
+      'Degree Path & Credentials: Completed the two-stage 5-year degree program in Translation & Interpretation (Specialization in Interpreting) at ESTG — Polytechnic Institute of Leiria (Bachelor graduated Nov 22, 2005; 5-Year Licentiate completed Oct 23, 2007).',
+      'Complementary Non-Translation Coursework (Org Behavior, Law, Economics & Tech): Completed degree coursework beyond core linguistics in Work and Organizational Psychology, Psychology of Communications, Introduction to Social Sciences, Introduction to Law, Introduction to Economics, Computer Science (I–II), Translation Technologies (I–II), and Scientific Research Methodology.',
+      'Languages, Interpreting & Applied Track: Trained across 4 working languages (Portuguese, English, Spanish, German) plus Contrastive Analysis & Translation (I–VI), Technical Translation (I–II), Comparative Linguistics (I–II), Consecutive & Simultaneous Interpreting, and Year 5 Internship coursework (RTP & EU DGT Brussels).',
     ],
+    evidence: {
+      note: 'Verified via translated English Course Certificate records for Bachelor (graduated Nov 22, 2005) and Licentiate (completed Oct 23, 2007) — original signed & embossed ESTG certificates available upon request. Personal identity details and numeric classification are redacted (Portugal uses a 0–20 grading scale; 10+ passing). The live institutional site (Polytechnic Institute of Leiria, now University of Leiria and Oeste), ESTG school page, Wayback Machine archive (Oct 2026), and local PDF/PNG captures are preserved below.',
+      snapshots: [
+        {
+          marketTag: 'Course Certificates · 2005 & 2007 · Scroll',
+          src: '/evidence/estg-bachelor-certificate-redacted.png',
+          alt: 'Translated English Course Certificate for Bachelor Degree in Translation with specialization in Interpreting at ESTG Polytechnic Institute of Leiria, graduated November 22, 2005 (personal details and numeric score redacted)',
+          caption: 'ESTG Translated Course Certificates (BA & Licentiate, Redacted)',
+          linkLabel: 'Certificates PDF',
+          expandLabel: 'Open BA + Licentiate Certificates',
+          primaryLabel: 'Bachelor (Nov 2005)',
+          scrollAriaLabel:
+            'Scrollable preview containing redacted translated Course Certificates for ESTG Bachelor (Nov 2005) and Licentiate (Oct 2007)',
+          url: '/evidence/estg-course-certificates-redacted.pdf',
+          fit: 'contain',
+          slideBg: 'white',
+          extraSlides: [
+            {
+              src: '/evidence/estg-licentiate-certificate-redacted.png',
+              linkLabel: 'Licentiate (Oct 2007)',
+              alt: 'Translated English Course Certificate for Licentiate Degree in Translation with specialization in Interpreting at ESTG Polytechnic Institute of Leiria, completed October 23, 2007 (personal details and numeric score redacted)',
+            },
+          ],
+          note: 'Translated English Course Certificate record (original signed & sealed ESTG certificates available upon request). Bachelor graduated Nov 22, 2005; Licentiate completed Oct 23, 2007. Family/birthplace details & numeric score redacted (0–20 Portuguese grading scale; 10+ passing).',
+        },
+        {
+          marketTag: 'Official Institution · ipleiria.pt/en',
+          src: '/evidence/estg-ipleiria-en.png',
+          alt: 'Snapshot of Official Polytechnic Institute of Leiria (now University of Leiria and Oeste) English institutional website',
+          caption: 'Saved Webpage Capture · Official Institution (ipleiria.pt)',
+          linkLabel: 'Live Site',
+          url: 'https://www.ipleiria.pt/en/',
+          note: 'Official English institutional portal (now University of Leiria and Oeste, formerly Polytechnic Institute of Leiria), paired with its Oct 2026 Wayback Machine archive link above.',
+        },
+      ],
+      links: [
+        {
+          label: 'Official Institution Site (ipleiria.pt/en)',
+          url: 'https://www.ipleiria.pt/en/',
+          kind: 'external',
+        },
+        {
+          label: 'ESTG — School of Technology & Management',
+          url: 'https://www.ipleiria.pt/en/about-us/schools/estg/',
+          kind: 'external',
+        },
+        {
+          label: 'Wayback Machine Archive (Oct 2026)',
+          url: 'https://web.archive.org/web/20261030153521/https://www.ipleiria.pt/en/',
+          kind: 'archive',
+        },
+        {
+          label: 'Redacted Course Certificates PDF (BA + Licentiate)',
+          url: '/evidence/estg-course-certificates-redacted.pdf',
+          kind: 'archive',
+        },
+      ],
+    },
     placeholder: false,
     evidenceId: 'edu-01',
   },
@@ -568,49 +984,88 @@ export const timelineItems = [
     era: 'tech',
     chipLabel: 'Block',
     subLabel: '2021–2022',
-    company: 'Block, Inc. (Square & Cash App)',
+    company: 'Block (formerly Square, Inc.)',
     countryFlag: '🇺🇸',
     location: 'United States',
     monogram: 'BK',
     logo: '/company-logos/block.svg',
-    title: '[Title per CV — e.g., Program Management Lead / Senior Manager]',
+    title: 'Program Management Lead',
     period: 'Nov 2021 – Nov 2022',
     startYear: 2021,
     endYear: 2022,
     pillars: ['program', 'vendor', 'leadership'],
     summary:
-      'Led global expansion program managers, consolidated fragmented suppliers into a 24/7 Tier-1 pool, and compressed release cycles.',
+      'Scaled the global localization Program Management org 3× (5 → 15 PMs) to deliver the Square → Block corporate rebrand (Dec 2021), scale post-launch operations in France and Ireland, and execute FY22 launches including Spain (Jan 2022) and Square Loans in Canada (Apr 2022).',
     metrics: [
       {
-        value: '-[X]%',
-        label: 'Operational spend & turnaround',
+        value: '5 → 15 PMs (3×)',
+        focus: 'Team Scale',
+        label: 'Localization PM Org Scaled Across 8 International Markets (Up to 37 Products/Market)',
         kind: 'scale',
-        placeholder: true,
-        hint: 'CV: Tier-1 vendor consolidation & PO matching',
+        placeholder: false,
+        hint: 'Source: Resume (5 → 15 reports) & Block Investor Day 2022 Slides 26, 31',
         evidenceId: 'bk-01',
       },
       {
-        value: '[X]d → [Y]d',
-        label: 'Release cycle compression',
+        value: '+55% YoY CC GPV*',
+        focus: 'Payment Velocity',
+        label: 'FY22 Q3 Square Int’l GPV Growth (>3× U.S. +17%); Supported via Rebrand (Dec 2021), France/Ireland Scaling, Spain (Jan 2022) & Canada Loans (Apr 2022)',
         kind: 'velocity',
-        placeholder: true,
-        hint: 'STAR story: release workflow transformation',
+        placeholder: false,
+        hint: 'Source: Block Q3 2022 Shareholder Letter (p. 11 Geographies) & Rebrand/Launch Releases (2021–2022)',
         evidenceId: 'bk-02',
       },
       {
-        value: '[N]',
-        label: 'Exec MBR/QBR dashboards (from [N]s)',
+        value: '9% → 15% Share**',
+        focus: 'Profit Share',
+        label: 'International Share of Square Gross Profit (FY21 Q3 → FY22 Q3; 11% Core Ex-BNPL)**',
         kind: 'quality',
-        placeholder: true,
-        hint: 'Tracker consolidation & RBAC compliance',
+        placeholder: false,
+        hint: 'Source: Block Investor Day Slide 27 (FY21) & Q3 2022 Shareholder Letter (pp. 7, 11, 29)',
         evidenceId: 'bk-03',
       },
     ],
-    highlights: [
-      '[Placeholder: Scaled and coached PM team across multiple international product pillars, Brand, Legal, and Regional GTM.]',
-      '[Placeholder: Integrated Jira + vendor APIs with automated 3-way PO/invoice matching and executive reporting.]',
+    metricsFootnote:
+      '*, ** Reconciled across Block’s May 2022 Investor Day & Q3 2022 Shareholder Letter (Nov 3, 2022) — click to expand metric breakdown.',
+    metricsFootnoteItems: [
+      {
+        marker: '*',
+        title: 'Payment Velocity (Q3 2022 Letter, p. 11)',
+        text: 'FY22 Q3 Square International GPV grew +55% YoY constant currency (+40% YoY reported), outpacing U.S. GPV growth (+17% YoY) by >3×.',
+      },
+      {
+        marker: '**',
+        title: 'Profit Share (Investor Day Slide 27 & Q3 2022 Letter, pp. 7, 29)',
+        text: 'Rose from 9% (FY21 Q3: $53.4M; FY21 baseline: $220M, >60% FY15–FY21 CAGR) to 15% all-in ($120.9M) and 11% core Ex-BNPL ($75.1M, +40.7% YoY) in FY22 Q3.',
+      },
+      {
+        marker: '•',
+        title: 'FY22 9M YTD Context (Ended Sep 30, 2022, pre-Q4 close)',
+        text: 'Core Ex-BNPL International Gross Profit reached $200.2M (+42.6% YoY) and GAAP all-in reached $323.7M (+130.5% YoY) — see Section 4 below for the full 4-period bridge.',
+      },
     ],
-    placeholder: true,
+    glossary: blockGlossary,
+    highlights: [
+      'Org & Execution (Why 3× Scale Mattered): Expanded the global localization PM team from 5 to 15 PMs alongside Brand, Product Marketing, Legal, and Regional GTM to standardize multi-market launch workflows. That operating model enabled concurrent delivery of the Dec 2021 Square → Block rebrand, post-launch European scaling (France and Ireland), Spain general availability (Jan 2022), and Square Loans in Canada (Apr 2022).',
+      {
+        text: 'Business Impact (In-Tenure FY22 Proof): Sustained product-parity localization across 8 international markets — including Japan PayPay QR acceptance, Australia Instant Transfers, UK Square Loans, and Canada/UK BNPL — supporting +55% YoY constant-currency Square International GPV growth in FY22 Q3 (vs. +17% YoY in the U.S.) and lifting Square International Gross Profit from $220M in full-year FY21 to $200.2M core Ex-BNPL (+42.6% YoY) and $323.7M GAAP all-in (+130.5% YoY) in FY22 9M YTD (ended Sep 30, 2022).',
+        url: `${BLOCK_Q3_2022_LETTER_URL}#page=29`,
+        linkLabel: 'Block Q3 2022 Shareholder Letter (pp. 7, 11, 29)',
+      },
+    ],
+    evidence: {
+      note: 'Organized into 4 expandable evidence sections below (Global Market Expansion, Square → Block Rebrand, Market & Product Launches, and International Growth & ROI), reconciling May 2022 Investor Day annual baselines with Q3 2022 Shareholder Letter actuals. Live Square/Block URLs, a Wayback Machine archive (Nov 2026), a saved full-page PDF archive of squareup.com/us/en/about, and local captures are preserved in case public pages change or are retired.',
+      sections: blockEvidenceSections,
+      snapshots: blockEvidenceSections.flatMap((section) => section.snapshots || []),
+      links: Array.from(
+        new Map(
+          blockEvidenceSections
+            .flatMap((section) => section.links || [])
+            .map((link) => [link.url, link])
+        ).values()
+      ),
+    },
+    placeholder: false,
   },
   {
     id: 'miis',

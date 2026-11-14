@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Archive,
+  BookOpen,
   Camera,
   ChevronDown,
   ChevronLeft,
@@ -13,11 +14,42 @@ import {
   EyeOff,
   FileText,
   GraduationCap,
+  Maximize2,
   Plane,
   Sparkles,
+  X,
 } from 'lucide-react';
 import { useCareerData } from '../data/career';
+import AcronymText, {
+  AcronymTooltipProvider,
+  getGlossaryPillTooltipPayload,
+  useAcronymTooltip,
+} from './AcronymText';
 import MetricBadge from './MetricBadge';
+
+const GlossaryPillButton = ({ entry, onOpen }) => {
+  const ctx = useAcronymTooltip();
+  const label = entry.shortLabel || entry.term;
+  const payload = getGlossaryPillTooltipPayload(entry);
+
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        ctx?.hideTip();
+        onOpen(entry.id);
+      }}
+      onMouseEnter={ctx && payload ? (e) => ctx.showTip(e.currentTarget, payload) : undefined}
+      onMouseLeave={ctx ? ctx.scheduleHide : undefined}
+      onFocus={ctx && payload ? (e) => ctx.showTip(e.currentTarget, payload) : undefined}
+      onBlur={ctx ? ctx.scheduleHide : undefined}
+      title={payload ? `${payload.term} = ${payload.expansion}` : entry.definition}
+      className="rounded-full border border-white/15 bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-slate-300 hover:border-cyan-300/50 hover:text-cyan-200 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+    >
+      {label}
+    </button>
+  );
+};
 
 const ACADEMIC_VISUAL = {
   chip: 'border-violet-400/45 bg-violet-500/15 text-violet-100',
@@ -107,6 +139,7 @@ const CareerTimeline = () => {
   const [showFuture, setShowFuture] = useState(true);
   const [selectedId, setSelectedId] = useState('apple-2026');
   const [showHowBuilt, setShowHowBuilt] = useState(false);
+  const [openEvidenceSections, setOpenEvidenceSections] = useState({});
   const [showFoundationsBreakdown, setShowFoundationsBreakdown] = useState(true);
   const [brokenLogos, setBrokenLogos] = useState({});
   const [brokenSnapshots, setBrokenSnapshots] = useState({});
@@ -139,6 +172,98 @@ const CareerTimeline = () => {
 
   const tabRefs = useRef({});
   const panelRef = useRef(null);
+  const glossaryDialogRef = useRef(null);
+  const glossaryPressedOutsideRef = useRef(false);
+  const glossaryTermRefs = useRef({});
+  const [activeGlossaryId, setActiveGlossaryId] = useState(null);
+  const slideViewerDialogRef = useRef(null);
+  const slidePressedOutsideRef = useRef(false);
+  const slideItemRefs = useRef([]);
+  const [activeSnapshotViewer, setActiveSnapshotViewer] = useState(null);
+
+  const openGlossary = (termId = null) => {
+    setActiveGlossaryId(termId);
+    const dialog = glossaryDialogRef.current;
+    if (!dialog) return;
+    if (typeof dialog.showModal === 'function' && !dialog.open) {
+      dialog.showModal();
+    }
+    if (termId) {
+      requestAnimationFrame(() => {
+        glossaryTermRefs.current[termId]?.scrollIntoView({
+          block: 'nearest',
+          behavior: 'smooth',
+        });
+      });
+    }
+  };
+
+  const closeGlossary = () => {
+    const dialog = glossaryDialogRef.current;
+    if (dialog && dialog.open && typeof dialog.close === 'function') {
+      dialog.close();
+    }
+  };
+
+  const openSnapshotViewer = (snap, slideIndex = 0) => {
+    setActiveSnapshotViewer({ snap, slideIndex });
+    const dialog = slideViewerDialogRef.current;
+    if (!dialog) return;
+    if (typeof dialog.showModal === 'function' && !dialog.open) {
+      dialog.showModal();
+    }
+  };
+
+  useEffect(() => {
+    if (!activeSnapshotViewer) return;
+    const dialog = slideViewerDialogRef.current;
+    if (!dialog) return;
+    const { slideIndex } = activeSnapshotViewer;
+    if (slideIndex > 0) {
+      slideItemRefs.current[slideIndex]?.scrollIntoView({
+        block: 'start',
+        behavior: 'smooth',
+      });
+    } else {
+      dialog.scrollTop = 0;
+    }
+  }, [activeSnapshotViewer]);
+
+  const closeSnapshotViewer = () => {
+    const dialog = slideViewerDialogRef.current;
+    if (dialog && dialog.open && typeof dialog.close === 'function') {
+      dialog.close();
+    }
+  };
+
+  const isPointerOutsideDialog = (event, dialog) => {
+    if (!dialog) return false;
+    const rect = dialog.getBoundingClientRect();
+    return (
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom
+    );
+  };
+
+  const getDialogBackdropHandlers = (dialogRef, pressedOutsideRef, onDismiss) => ({
+    onPointerDown: (event) => {
+      if (!('closedBy' in HTMLDialogElement.prototype)) {
+        pressedOutsideRef.current = isPointerOutsideDialog(event, dialogRef.current);
+      }
+    },
+    onPointerUp: (event) => {
+      if (
+        !('closedBy' in HTMLDialogElement.prototype) &&
+        pressedOutsideRef.current &&
+        isPointerOutsideDialog(event, dialogRef.current)
+      ) {
+        onDismiss();
+      }
+      pressedOutsideRef.current = false;
+    },
+  });
 
   const visibleItems = useMemo(
     () => (showFuture ? timelineItems : timelineItems.filter((item) => item.type !== 'future')),
@@ -226,11 +351,224 @@ const CareerTimeline = () => {
     }
   };
 
+  const renderEvidenceLinks = (links) => {
+    if (!Array.isArray(links) || links.length === 0) return null;
+    return (
+      <div className="flex flex-wrap gap-2">
+        {links.map((linkItem) => {
+          const linkClass =
+            'inline-flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] hover:bg-white/[0.12] hover:border-cyan-300/50 px-3 py-1.5 text-xs font-semibold text-cyan-100 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300';
+          const Icon = linkItem.kind === 'archive' ? Archive : ExternalLink;
+
+          if (linkItem.to) {
+            return (
+              <Link key={linkItem.label} to={linkItem.to} className={linkClass}>
+                <Icon size={13} className="text-cyan-300" aria-hidden="true" />
+                <span>{linkItem.label}</span>
+              </Link>
+            );
+          }
+
+          const resolvedUrl =
+            typeof linkItem.url === 'string' && linkItem.url.startsWith('/')
+              ? `${process.env.PUBLIC_URL || ''}${linkItem.url}`
+              : linkItem.url;
+
+          return (
+            <a
+              key={linkItem.label}
+              href={resolvedUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              <Icon size={13} className="text-cyan-300" aria-hidden="true" />
+              <span>{linkItem.label}</span>
+            </a>
+          );
+        })}
+      </div>
+    );
+  };
+
+  const renderSnapshotCards = (snapshots, columns = 2) => {
+    if (!Array.isArray(snapshots) || snapshots.length === 0) return null;
+    const gridClass =
+      snapshots.length === 1 || columns === 1
+        ? 'grid-cols-1'
+        : columns === 3 && snapshots.length >= 3
+          ? 'grid-cols-1 md:grid-cols-3'
+          : 'grid-cols-1 md:grid-cols-2';
+
+    return (
+      <div className={`grid gap-3 ${gridClass}`}>
+        {snapshots.map((snap) => {
+          const publicUrl = process.env.PUBLIC_URL || '';
+          const fullSrc = `${publicUrl}${snap.src}`;
+          const isBroken = brokenSnapshots[snap.src];
+          const extraSlides = Array.isArray(snap.extraSlides) ? snap.extraSlides : [];
+          const hasExtraSlides = extraSlides.length > 0;
+          return (
+            <div
+              key={snap.src}
+              className="rounded-xl border border-white/10 bg-black/30 p-3.5 flex flex-col gap-3 h-full"
+            >
+              <div
+                className={`flex flex-col gap-1.5 ${
+                  columns >= 3 && snapshots.length >= 3 ? 'md:min-h-[4.75rem]' : ''
+                }`}
+              >
+                {snap.marketTag && (
+                  <div>
+                    <span className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cyan-200">
+                      <AcronymText text={snap.marketTag} />
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-start gap-1.5 text-xs font-semibold text-white leading-snug">
+                  <Camera size={13} className="text-cyan-300 shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>
+                    <AcronymText text={snap.caption || 'Saved Reference Snapshot'} />
+                  </span>
+                </div>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px]">
+                  {snap.url && (
+                    <a
+                      href={
+                        typeof snap.url === 'string' && snap.url.startsWith('/')
+                          ? `${publicUrl}${snap.url}`
+                          : snap.url
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-semibold text-slate-200 hover:text-cyan-200 underline underline-offset-4"
+                    >
+                      {snap.linkLabel || 'Source'}
+                      <ExternalLink size={11} aria-hidden="true" />
+                    </a>
+                  )}
+                  {!isBroken &&
+                    (hasExtraSlides ? (
+                      <button
+                        type="button"
+                        onClick={() => openSnapshotViewer(snap, 0)}
+                        className="inline-flex items-center gap-1 font-semibold text-cyan-200 hover:text-white underline underline-offset-4 cursor-pointer"
+                      >
+                        <Maximize2 size={11} aria-hidden="true" />
+                        <span>{snap.expandLabel || 'Open Slides'}</span>
+                      </button>
+                    ) : (
+                      <a
+                        href={fullSrc}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 font-semibold text-cyan-200 hover:text-white underline underline-offset-4"
+                      >
+                        {snap.primaryLabel || 'Full Image'}
+                        <ExternalLink size={11} aria-hidden="true" />
+                      </a>
+                    ))}
+                </div>
+              </div>
+
+              {!isBroken ? (
+                hasExtraSlides ? (
+                  <div
+                    className={`relative shrink-0 overflow-hidden rounded-lg border border-white/10 hover:border-cyan-300/60 transition ${
+                      snap.slideBg === 'white' ? 'bg-white' : 'bg-black'
+                    }`}
+                  >
+                    <div
+                      tabIndex={0}
+                      aria-label={snap.scrollAriaLabel || 'Scrollable slide preview'}
+                      className={`h-56 overflow-y-auto overscroll-contain snap-y snap-mandatory space-y-1 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-400/70 ${
+                        snap.slideBg === 'white' ? 'bg-white' : 'bg-black'
+                      }`}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => openSnapshotViewer(snap, 0)}
+                        aria-label={`Open ${snap.primaryLabel || 'first slide'} and scroll to ${extraSlides.map((e) => e.linkLabel || 'next slide').join(', ')}`}
+                        className="block h-56 w-full snap-start shrink-0 cursor-zoom-in focus:outline-none"
+                      >
+                        <img
+                          src={fullSrc}
+                          alt={snap.alt || `${selectedItem.company} reference webpage snapshot`}
+                          onError={() => markSnapshotBroken(snap.src)}
+                          className={`w-full h-56 object-contain ${
+                            snap.slideBg === 'white' ? 'bg-white p-1' : 'bg-black'
+                          }`}
+                        />
+                      </button>
+                      {extraSlides.map((extra, extraIdx) => (
+                        <button
+                          key={extra.src}
+                          type="button"
+                          onClick={() => openSnapshotViewer(snap, extraIdx + 1)}
+                          aria-label={`Open ${extra.linkLabel || `Slide ${extraIdx + 2}`} in stacked viewer`}
+                          className="block h-56 w-full snap-start shrink-0 border-t border-white/10 cursor-zoom-in focus:outline-none"
+                        >
+                          <img
+                            src={`${publicUrl}${extra.src}`}
+                            alt={extra.alt || `${selectedItem.company} additional evidence slide`}
+                            className={`w-full h-56 object-contain ${
+                              snap.slideBg === 'white' ? 'bg-white p-1' : 'bg-black'
+                            }`}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                    <span className="pointer-events-none absolute bottom-2 right-2 rounded-full border border-cyan-300/40 bg-slate-950/85 px-2 py-0.5 text-[10px] font-semibold text-cyan-200 backdrop-blur-sm">
+                      Scroll ↓ {extraSlides.map((e) => e.linkLabel || 'More').join(', ')}
+                    </span>
+                  </div>
+                ) : (
+                  <a
+                    href={fullSrc}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block shrink-0 overflow-hidden rounded-lg border border-white/10 hover:border-cyan-300/60 transition"
+                  >
+                    <img
+                      src={fullSrc}
+                      alt={snap.alt || `${selectedItem.company} reference webpage snapshot`}
+                      onError={() => markSnapshotBroken(snap.src)}
+                      className={
+                        snap.fit === 'contain'
+                          ? 'w-full h-56 object-contain bg-white p-1.5'
+                          : 'w-full h-56 object-cover object-top'
+                      }
+                    />
+                  </a>
+                )
+              ) : (
+                <p className="rounded-lg border border-dashed border-white/15 bg-white/[0.02] px-3 py-2 text-xs text-slate-400">
+                  Local snapshot image not yet saved at{' '}
+                  <code className="text-slate-200">{snap.src}</code>. Use the official/archive links
+                  above to view or save a local capture.
+                </p>
+              )}
+              {snap.note && (
+                <p className="text-[11px] text-slate-300 leading-relaxed border-t border-white/10 pt-2.5">
+                  <AcronymText text={snap.note} />
+                </p>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
-    <section
-      aria-labelledby="career-timeline-heading"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6"
+    <AcronymTooltipProvider
+      availableGlossaryIds={(selectedItem?.glossary || []).map((g) => g.id)}
+      onOpenGlossary={openGlossary}
     >
+      <section
+        aria-labelledby="career-timeline-heading"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6"
+      >
       {/* Header & Controls */}
       <div className="glass-card rounded-3xl p-6 sm:p-8 border border-white/10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
@@ -640,23 +978,26 @@ const CareerTimeline = () => {
           <div className="space-y-3 max-w-4xl">
             {selectedItem.summaryHeading && (
               <p className="text-sm sm:text-base font-semibold text-white leading-snug">
-                {selectedItem.summaryHeading}
+                <AcronymText text={selectedItem.summaryHeading} />
               </p>
             )}
             <p className="whitespace-pre-line text-slate-200 text-sm sm:text-base leading-relaxed">
-              {selectedItem.summary}
+              <AcronymText text={selectedItem.summary} />
             </p>
             {selectedItem.executionSummary && (
               <div className="pt-1 space-y-2">
                 {selectedItem.executionSummary.heading && (
                   <p className="text-sm sm:text-base font-semibold text-white">
-                    {selectedItem.executionSummary.heading}
+                    <AcronymText text={selectedItem.executionSummary.heading} />
                   </p>
                 )}
                 <ul className="space-y-2 text-sm sm:text-base text-slate-200 leading-relaxed">
                   {selectedItem.executionSummary.items.map((entry) => (
                     <li key={entry.label}>
-                      <span className="font-semibold text-white">{entry.label}</span> {entry.text}
+                      <span className="font-semibold text-white">
+                        <AcronymText text={entry.label} />
+                      </span>{' '}
+                      <AcronymText text={entry.text} />
                     </li>
                   ))}
                 </ul>
@@ -678,6 +1019,63 @@ const CareerTimeline = () => {
                   />
                 ))}
               </div>
+              {Array.isArray(selectedItem.metricsFootnoteItems) &&
+              selectedItem.metricsFootnoteItems.length > 0 ? (
+                <details className="group rounded-xl border border-white/10 bg-white/[0.02] px-3.5 py-2.5 text-xs text-slate-300">
+                  <summary className="flex items-center justify-between gap-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden text-slate-400 hover:text-slate-200 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 rounded">
+                    <span className="italic leading-relaxed">
+                      <AcronymText
+                        text={
+                          selectedItem.metricsFootnote ||
+                          'Metric & filing attribution breakdown'
+                        }
+                        insideInteractive
+                      />
+                    </span>
+                    <ChevronDown
+                      size={14}
+                      aria-hidden="true"
+                      className="text-cyan-300 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                    />
+                  </summary>
+                  <ul className="mt-2.5 space-y-2 border-t border-white/10 pt-2.5">
+                    {selectedItem.metricsFootnoteItems.map((noteItem) => (
+                      <li key={noteItem.title} className="flex items-start gap-2 leading-relaxed">
+                        <span className="font-bold text-cyan-300 shrink-0 min-w-[1rem]">
+                          {noteItem.marker || '•'}
+                        </span>
+                        <span>
+                          <span className="font-semibold text-slate-100">
+                            <AcronymText text={noteItem.title} />:
+                          </span>{' '}
+                          <AcronymText text={noteItem.text} />
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              ) : (
+                selectedItem.metricsFootnote && (
+                  <p className="text-xs text-slate-400 italic leading-relaxed">
+                    <AcronymText text={selectedItem.metricsFootnote} />
+                  </p>
+                )
+              )}
+              {Array.isArray(selectedItem.glossary) && selectedItem.glossary.length > 0 && (
+                <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                  <button
+                    type="button"
+                    onClick={() => openGlossary(null)}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/40 bg-cyan-400/15 px-3 py-1 text-[11px] font-semibold text-cyan-200 hover:bg-cyan-400/25 hover:text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+                  >
+                    <BookOpen size={12} aria-hidden="true" />
+                    <span>Metrics &amp; Terms Guide</span>
+                  </button>
+                  {selectedItem.glossary.slice(0, 6).map((entry) => (
+                    <GlossaryPillButton key={entry.id} entry={entry} onOpen={openGlossary} />
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
@@ -751,7 +1149,7 @@ const CareerTimeline = () => {
           {/* Collapsible "How I built it" Highlights & Proof Evidence */}
           {((Array.isArray(selectedItem.highlights) && selectedItem.highlights.length > 0) ||
             selectedItem.evidence) && (
-            <div className="rounded-2xl border border-white/10 bg-black/25 p-4 sm:p-5">
+            <div className="rounded-2xl border border-cyan-400/20 bg-slate-950/55 shadow-inner p-4 sm:p-5">
               <button
                 type="button"
                 aria-expanded={showHowBuilt}
@@ -785,7 +1183,9 @@ const CareerTimeline = () => {
                         const linkLabel = typeof note === 'object' ? note.linkLabel : null;
                         return (
                           <li key={`${selectedItem.id}-note-${idx}`}>
-                            <span>{text}</span>
+                            <span>
+                              <AcronymText text={text} />
+                            </span>
                             {href && (
                               <>
                                 {' '}
@@ -826,114 +1226,128 @@ const CareerTimeline = () => {
                         </p>
                       )}
 
-                      {Array.isArray(selectedItem.evidence.links) &&
-                        selectedItem.evidence.links.length > 0 && (
-                          <div className="flex flex-wrap gap-2">
-                            {selectedItem.evidence.links.map((linkItem) => {
-                              const linkClass =
-                                'inline-flex items-center gap-1.5 rounded-xl border border-white/15 bg-white/[0.05] hover:bg-white/[0.12] hover:border-cyan-300/50 px-3 py-1.5 text-xs font-semibold text-cyan-100 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300';
-                              const Icon = linkItem.kind === 'archive' ? Archive : ExternalLink;
-
-                              if (linkItem.to) {
-                                return (
-                                  <Link key={linkItem.label} to={linkItem.to} className={linkClass}>
-                                    <Icon size={13} className="text-cyan-300" aria-hidden="true" />
-                                    <span>{linkItem.label}</span>
-                                  </Link>
-                                );
-                              }
-
-                              return (
-                                <a
-                                  key={linkItem.label}
-                                  href={linkItem.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className={linkClass}
+                      {Array.isArray(selectedItem.evidence.sections) &&
+                      selectedItem.evidence.sections.length > 0 ? (
+                        <div className="space-y-2.5">
+                          {selectedItem.evidence.sections.map((section) => {
+                            const sectionKey = `${selectedItem.id}-${section.id}`;
+                            const isOpen =
+                              openEvidenceSections[sectionKey] !== undefined
+                                ? openEvidenceSections[sectionKey]
+                                : Boolean(section.defaultOpen);
+                            return (
+                              <div
+                                key={sectionKey}
+                                className="rounded-xl border border-white/10 bg-white/[0.03] overflow-hidden"
+                              >
+                                <button
+                                  type="button"
+                                  aria-expanded={isOpen}
+                                  onClick={() =>
+                                    setOpenEvidenceSections((prev) => ({
+                                      ...prev,
+                                      [sectionKey]: !isOpen,
+                                    }))
+                                  }
+                                  className="w-full flex items-center justify-between gap-3 px-4 py-3 text-left text-xs sm:text-sm font-semibold text-white hover:bg-white/[0.04] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
                                 >
-                                  <Icon size={13} className="text-cyan-300" aria-hidden="true" />
-                                  <span>{linkItem.label}</span>
-                                </a>
-                              );
-                            })}
-                          </div>
-                        )}
-
-                      {(() => {
-                        const snapshots = selectedItem.evidence.snapshots?.length
-                          ? selectedItem.evidence.snapshots
-                          : selectedItem.evidence.snapshotImage
-                            ? [
-                                {
-                                  src: selectedItem.evidence.snapshotImage,
-                                  alt: selectedItem.evidence.snapshotAlt,
-                                  caption: selectedItem.evidence.snapshotCaption,
-                                },
-                              ]
-                            : [];
-                        if (snapshots.length === 0) return null;
-                        return (
-                          <div
-                            className={`grid gap-3 ${
-                              snapshots.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'
-                            }`}
-                          >
-                            {snapshots.map((snap) => {
-                              const fullSrc = `${process.env.PUBLIC_URL || ''}${snap.src}`;
-                              const isBroken = brokenSnapshots[snap.src];
-                              return (
-                                <div
-                                  key={snap.src}
-                                  className="rounded-xl border border-white/10 bg-black/30 p-3 space-y-2"
-                                >
-                                  <div className="flex items-center justify-between gap-2 text-xs text-slate-300">
-                                    <span className="inline-flex items-center gap-1.5 font-semibold text-white">
-                                      <Camera size={13} className="text-cyan-300 shrink-0" aria-hidden="true" />
-                                      <span>{snap.caption || 'Saved Reference Snapshot'}</span>
+                                  <span className="inline-flex flex-wrap items-center gap-2">
+                                    <span>
+                                      <AcronymText text={section.title} insideInteractive />
                                     </span>
-                                    {!isBroken && (
-                                      <a
-                                        href={fullSrc}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1 text-[11px] font-semibold text-cyan-200 hover:text-white underline underline-offset-4 shrink-0"
-                                      >
-                                        Full Image
-                                        <ExternalLink size={11} aria-hidden="true" />
-                                      </a>
+                                    {section.badge && (
+                                      <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cyan-200">
+                                        <AcronymText text={section.badge} insideInteractive />
+                                      </span>
                                     )}
-                                  </div>
-
-                                  {!isBroken ? (
-                                    <a
-                                      href={fullSrc}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="block overflow-hidden rounded-lg border border-white/10 hover:border-cyan-300/60 transition"
-                                    >
-                                      <img
-                                        src={fullSrc}
-                                        alt={
-                                          snap.alt ||
-                                          `${selectedItem.company} reference webpage snapshot`
-                                        }
-                                        onError={() => markSnapshotBroken(snap.src)}
-                                        className="w-full max-h-64 object-cover object-top"
-                                      />
-                                    </a>
+                                  </span>
+                                  {isOpen ? (
+                                    <ChevronUp size={15} className="text-cyan-200 shrink-0" aria-hidden="true" />
                                   ) : (
-                                    <p className="rounded-lg border border-dashed border-white/15 bg-white/[0.02] px-3 py-2 text-xs text-slate-400">
-                                      Local snapshot image not yet saved at{' '}
-                                      <code className="text-slate-200">{snap.src}</code>. Use the
-                                      official/archive links above to view or save a local capture.
-                                    </p>
+                                    <ChevronDown size={15} className="text-slate-400 shrink-0" aria-hidden="true" />
                                   )}
-                                </div>
-                              );
-                            })}
-                          </div>
-                        );
-                      })()}
+                                </button>
+
+                                {isOpen && (
+                                  <div className="px-4 pb-4 pt-1 space-y-3 border-t border-white/10">
+                                    {section.summary && (
+                                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                        <AcronymText text={section.summary} />
+                                      </p>
+                                    )}
+                                    {section.id === 'roi' &&
+                                      Array.isArray(selectedItem.glossary) &&
+                                      selectedItem.glossary.length > 0 && (
+                                        <div className="flex flex-wrap items-center gap-1.5">
+                                          <button
+                                            type="button"
+                                            onClick={() => openGlossary('gaap')}
+                                            className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/35 bg-cyan-400/10 px-2.5 py-1 text-[11px] font-semibold text-cyan-200 hover:bg-cyan-400/20 hover:text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+                                          >
+                                            <BookOpen size={12} aria-hidden="true" />
+                                            <span>
+                                              <AcronymText
+                                                text="Explain GAAP vs. Ex-BNPL, GPV & Constant Currency"
+                                                insideInteractive
+                                              />
+                                            </span>
+                                          </button>
+                                        </div>
+                                      )}
+                                    {Array.isArray(section.reconciliation) &&
+                                      section.reconciliation.length > 0 && (
+                                        <div
+                                          className={`grid grid-cols-1 gap-2 ${
+                                            section.reconciliation.length >= 4
+                                              ? 'sm:grid-cols-2 xl:grid-cols-4'
+                                              : 'sm:grid-cols-3'
+                                          }`}
+                                        >
+                                          {section.reconciliation.map((row) => (
+                                            <div
+                                              key={row.period}
+                                              className="rounded-lg border border-cyan-400/20 bg-black/25 px-3 py-2.5 flex flex-col gap-1"
+                                            >
+                                              <p className="text-[10px] font-bold uppercase tracking-wider text-cyan-300">
+                                                <AcronymText text={row.period} />
+                                              </p>
+                                              <p className="text-xs font-bold text-white">
+                                                <AcronymText text={row.value} />
+                                              </p>
+                                              <p className="text-[11px] text-slate-300 leading-snug">
+                                                <AcronymText text={row.detail} />
+                                              </p>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      )}
+                                    {!section.hideSectionLinks &&
+                                      renderEvidenceLinks(section.headerLinks || section.links)}
+                                    {renderSnapshotCards(section.snapshots, section.columns)}
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <>
+                          {renderEvidenceLinks(selectedItem.evidence.links)}
+                          {renderSnapshotCards(
+                            selectedItem.evidence.snapshots?.length
+                              ? selectedItem.evidence.snapshots
+                              : selectedItem.evidence.snapshotImage
+                                ? [
+                                    {
+                                      src: selectedItem.evidence.snapshotImage,
+                                      alt: selectedItem.evidence.snapshotAlt,
+                                      caption: selectedItem.evidence.snapshotCaption,
+                                    },
+                                  ]
+                                : []
+                          )}
+                        </>
+                      )}
                     </div>
                   )}
                 </div>
@@ -942,7 +1356,183 @@ const CareerTimeline = () => {
           )}
         </div>
       )}
+
+      {/* Accessible Native Glossary Modal (<dialog>) */}
+      <dialog
+        ref={glossaryDialogRef}
+        closedby="any"
+        aria-labelledby="career-glossary-title"
+        onClose={() => setActiveGlossaryId(null)}
+        {...getDialogBackdropHandlers(
+          glossaryDialogRef,
+          glossaryPressedOutsideRef,
+          closeGlossary
+        )}
+        className="w-[min(92vw,42rem)] max-h-[85vh] overflow-y-auto rounded-2xl border border-white/15 bg-slate-950/95 p-0 text-slate-100 shadow-2xl"
+      >
+        <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-white/10 bg-slate-950/95 px-5 py-4 backdrop-blur">
+          <div className="flex items-center gap-2">
+            <BookOpen size={17} className="text-cyan-300 shrink-0" aria-hidden="true" />
+            <h3 id="career-glossary-title" className="text-base font-bold text-white">
+              Financial Metrics &amp; Reporting Terms Guide
+            </h3>
+          </div>
+          <button
+            type="button"
+            autoFocus
+            onClick={closeGlossary}
+            aria-label="Close glossary"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-slate-300 hover:bg-white/15 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+          >
+            <X size={16} aria-hidden="true" />
+          </button>
+        </div>
+
+        <div className="space-y-3 p-5">
+          <p className="text-xs text-slate-300 leading-relaxed">
+            Plain-English definitions for the financial terms, accounting scopes, and reporting periods cited in {selectedItem?.company || 'this role'}’s official filings.
+          </p>
+          <dl className="space-y-2.5">
+            {(selectedItem?.glossary || []).map((entry) => {
+              const isHighlighted = activeGlossaryId === entry.id;
+              return (
+                <div
+                  key={entry.id}
+                  ref={(el) => {
+                    glossaryTermRefs.current[entry.id] = el;
+                  }}
+                  className={`rounded-xl border px-4 py-3 transition ${
+                    isHighlighted
+                      ? 'border-cyan-300/70 bg-cyan-500/15 ring-1 ring-cyan-300/40'
+                      : 'border-white/10 bg-white/[0.03]'
+                  }`}
+                >
+                  <dt className="text-xs sm:text-sm font-bold text-cyan-200">{entry.term}</dt>
+                  <dd className="mt-1 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    {entry.definition}
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
+        </div>
+      </dialog>
+
+      {/* Accessible Stacked Slide Viewer Modal (<dialog>) */}
+      <dialog
+        ref={slideViewerDialogRef}
+        closedby="any"
+        aria-labelledby="career-slide-viewer-title"
+        onClose={() => {
+          setActiveSnapshotViewer(null);
+          slideItemRefs.current = [];
+        }}
+        {...getDialogBackdropHandlers(
+          slideViewerDialogRef,
+          slidePressedOutsideRef,
+          closeSnapshotViewer
+        )}
+        className="w-[min(95vw,64rem)] max-h-[90vh] overflow-y-auto rounded-2xl border border-white/15 bg-slate-950/95 p-0 text-slate-100 shadow-2xl"
+      >
+        {activeSnapshotViewer?.snap && (() => {
+          const viewerSnap = activeSnapshotViewer.snap;
+          const publicUrl = process.env.PUBLIC_URL || '';
+          const viewerSlides = [
+            {
+              src: viewerSnap.src,
+              label: viewerSnap.primaryLabel || 'Slide 1',
+              alt: viewerSnap.alt || viewerSnap.caption,
+            },
+            ...(viewerSnap.extraSlides || []).map((extra, idx) => ({
+              src: extra.src,
+              label: extra.linkLabel || `Slide ${idx + 2}`,
+              alt: extra.alt || `${viewerSnap.caption} — ${extra.linkLabel || `Slide ${idx + 2}`}`,
+            })),
+          ];
+
+          return (
+            <>
+              <div className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-slate-950/95 px-5 py-3.5 backdrop-blur">
+                <div className="flex items-center gap-2 min-w-0">
+                  <Camera size={16} className="text-cyan-300 shrink-0" aria-hidden="true" />
+                  <h3 id="career-slide-viewer-title" className="text-sm sm:text-base font-bold text-white truncate">
+                    {viewerSnap.caption || 'Slide Viewer'}
+                  </h3>
+                </div>
+                <div className="flex flex-wrap items-center gap-3 text-xs">
+                  {viewerSnap.url && (
+                    <a
+                      href={viewerSnap.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-semibold text-slate-200 hover:text-cyan-200 underline underline-offset-4"
+                    >
+                      <span>{viewerSnap.linkLabel || 'Source PDF'}</span>
+                      <ExternalLink size={12} aria-hidden="true" />
+                    </a>
+                  )}
+                  {viewerSlides.map((slideItem) => (
+                    <a
+                      key={slideItem.src}
+                      href={`${publicUrl}${slideItem.src}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-semibold text-cyan-200 hover:text-white underline underline-offset-4"
+                    >
+                      <span>{slideItem.label} PNG</span>
+                      <ExternalLink size={11} aria-hidden="true" />
+                    </a>
+                  ))}
+                  <button
+                    type="button"
+                    autoFocus
+                    onClick={closeSnapshotViewer}
+                    aria-label="Close slide viewer"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-slate-300 hover:bg-white/15 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+                  >
+                    <X size={16} aria-hidden="true" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="space-y-4 p-4 sm:p-5">
+                {viewerSnap.note && (
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <AcronymText text={viewerSnap.note} />
+                  </p>
+                )}
+                <div className="space-y-4">
+                  {viewerSlides.map((slideItem, idx) => (
+                    <figure
+                      key={slideItem.src}
+                      ref={(el) => {
+                        slideItemRefs.current[idx] = el;
+                      }}
+                      className="rounded-xl border border-white/10 bg-black overflow-hidden"
+                    >
+                      <figcaption className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs font-semibold text-cyan-200">
+                        <span>{slideItem.label}</span>
+                        {idx < viewerSlides.length - 1 && (
+                          <span className="text-[11px] font-normal text-slate-400">
+                            Scroll down for {viewerSlides[idx + 1].label} ↓
+                          </span>
+                        )}
+                      </figcaption>
+                      <img
+                        src={`${publicUrl}${slideItem.src}`}
+                        alt={slideItem.alt}
+                        className="w-full h-auto max-h-[78vh] object-contain bg-black"
+                      />
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            </>
+          );
+        })()}
+      </dialog>
     </section>
+    </AcronymTooltipProvider>
   );
 };
 
