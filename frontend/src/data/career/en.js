@@ -1518,7 +1518,7 @@ export const timelineItems = [
     period: 'Jan 2010 – Mar 2014',
     startYear: 2010,
     endYear: 2014,
-    pillars: ['program', 'vendor', 'leadership'],
+    pillars: ['program', 'leadership'],
     summary:
       'Led UK/EU transcreation delivery teams and multi-market digital, broadcast, and print campaigns across 30+ global markets, promoted within 12 months to Senior Manager.',
     metrics: [
@@ -1787,7 +1787,7 @@ export const timelineItems = [
     period: 'Mar 2015 – Mar 2016',
     startYear: 2015,
     endYear: 2016,
-    pillars: ['program', 'vendor'],
+    pillars: ['program'],
     summary:
       'Scaled enterprise B2B cybersecurity marketing operations, vendor pipelines, and budget governance.',
     metrics: [
@@ -2734,7 +2734,7 @@ export const timelineItems = [
     period: 'May 2026 – Sep 2026 (Contract)',
     startYear: 2026,
     endYear: 2026,
-    pillars: ['program', 'ai'],
+    pillars: ['program', 'vendor', 'ai'],
     summary:
       'Project scope and deliverables are withheld under strict Apple corporate non-disclosure agreements (NDA) for confidential Black Ops initiatives pending authorized public disclosure.',
     metrics: [
@@ -2820,7 +2820,7 @@ export const timelineItems = [
     period: '2028 (Coming Next)',
     startYear: 2028,
     endYear: 2028,
-    pillars: ['ai', 'vendor', 'leadership'],
+    pillars: ['ai', 'leadership'],
     summary:
       'Scaling operational frameworks and human-in-the-loop AI systems for international organizations.',
     targetSkills: ['Executive Governance', 'Global Scale Strategy', 'Org Mentorship'],
@@ -2843,7 +2843,7 @@ export const timelineItems = [
     period: '2029+ (Coming Next)',
     startYear: 2029,
     endYear: 2029,
-    pillars: ['leadership', 'vendor', 'ai', 'program'],
+    pillars: ['leadership', 'ai', 'program'],
     summary:
       'Shaping multi-year international expansion, organizational mentorship, and responsible AI operating models at executive scale.',
     targetSkills: ['P&L & Leadership', 'Executive Enablement', 'Global Expansion'],

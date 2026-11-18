@@ -49,6 +49,9 @@ describe('career timeline placeholder dataset', () => {
     const eduIds = timelineItems.filter((i) => i.pillars.includes('education')).map((i) => i.id);
     expect(eduIds).toEqual(['graduation', 'rtp', 'eu-dgt', 'miis', 'postgrad-education']);
 
+    const vendorIds = timelineItems.filter((i) => i.pillars.includes('vendor')).map((i) => i.id);
+    expect(vendorIds).toEqual(['apple-2014', 'microsoft', 'linkedin', 'block', 'apple-2026']);
+
     const msft = timelineItems.find((i) => i.id === 'microsoft');
     expect(msft.pillars).toContain('program');
 
