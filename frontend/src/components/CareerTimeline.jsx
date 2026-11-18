@@ -351,6 +351,30 @@ const CareerTimeline = () => {
     }
   };
 
+  // Enable arrow-key navigation across the timeline milestones
+  useEffect(() => {
+    const handleGlobalKeyDown = (e) => {
+      const tag = e.target?.tagName?.toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target?.isContentEditable) {
+        return;
+      }
+      if (activeSnapshotViewer) {
+        return;
+      }
+
+      if (e.key === 'ArrowRight' && selectedIndex < visibleItems.length - 1) {
+        e.preventDefault();
+        selectByIndex(selectedIndex + 1, true);
+      } else if (e.key === 'ArrowLeft' && selectedIndex > 0) {
+        e.preventDefault();
+        selectByIndex(selectedIndex - 1, true);
+      }
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, [selectedIndex, visibleItems, activeSnapshotViewer]);
+
   const renderEvidenceLinks = (links) => {
     if (!Array.isArray(links) || links.length === 0) return null;
     return (
@@ -625,15 +649,9 @@ const CareerTimeline = () => {
 
         {/* Pillar Filters */}
         <div className="mt-6 pt-5 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+          <div className="mb-3">
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
               Filter by Leadership Pillar (dims non-matching nodes)
-            </span>
-            <span className="text-xs text-slate-400">
-              Use <kbd className="rounded bg-white/10 px-1.5 py-0.5 text-slate-200">←</kbd>{' '}
-              <kbd className="rounded bg-white/10 px-1.5 py-0.5 text-slate-200">→</kbd> or{' '}
-              <kbd className="rounded bg-white/10 px-1.5 py-0.5 text-slate-200">Prev</kbd> /{' '}
-              <kbd className="rounded bg-white/10 px-1.5 py-0.5 text-slate-200">Next</kbd> to step through
             </span>
           </div>
 
