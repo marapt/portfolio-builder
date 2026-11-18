@@ -9,7 +9,7 @@ const QUARTER_NAMES = {
 
 export const ACRONYM_DEFINITIONS = {
   'Ex-BNPL': {
-    expansion: 'Excluding Buy Now, Pay Later (Afterpay) — organic core results',
+    expansion: 'Excluding Buy Now, Pay Later (Afterpay) for organic core results',
     glossaryId: 'ex-bnpl',
   },
   BNPL: {
@@ -100,6 +100,29 @@ export const ACRONYM_DEFINITIONS = {
   DGT: {
     expansion: 'Directorate-General for Translation (European Commission)',
   },
+  MARCOM: {
+    expansion: 'Marketing Communications',
+    glossaryId: 'marcom',
+  },
+  MSP: {
+    expansion: 'Managed Service Provider (outsourced vendor model)',
+    glossaryId: 'msp',
+  },
+  i18n: {
+    expansion: 'Internationalization (product & engineering readiness for global markets)',
+  },
+  LSP: {
+    expansion: 'Language Service Provider',
+  },
+  OKR: {
+    expansion: 'Objectives and Key Results',
+  },
+  TMS: {
+    expansion: 'Translation Management System',
+  },
+  CMS: {
+    expansion: 'Content Management System',
+  },
 };
 
 export function resolveAcronymDefinition(token) {
@@ -143,7 +166,7 @@ export function getGlossaryPillTooltipPayload(entry) {
 }
 
 const ACRONYM_TOKEN_REGEX =
-  /\b([Ee]x-BNPL|BNPL|GAAP|GPV|CAGR|YoY|YTD|ROI|GTM|CC|USD|QR|SLA|NDA|QA|API|GenAI|AI|HITL|SMB|TLM|PGM|MIIS|DGT|9M|FY\d{2}|Q[1-4])\b/g;
+  /\b([Ee]x-BNPL|BNPL|GAAP|GPV|CAGR|YoY|YTD|ROI|GTM|CC|USD|QR|SLA|NDA|QA|API|GenAI|AI|HITL|SMB|TLM|PGM|MIIS|DGT|MARCOM|MSP|i18n|LSP|OKR|TMS|CMS|9M|FY\d{2}|Q[1-4])\b/g;
 
 const AcronymTooltipContext = createContext(null);
 

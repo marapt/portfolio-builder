@@ -128,7 +128,7 @@ const TYPE_LABELS = {
   group: 'Career Track',
   break: 'Relocation & Transition',
   role: 'Industry Role',
-  future: 'Future Horizon (Placeholder)',
+  future: 'Future Horizon',
 };
 
 const CareerTimeline = () => {
@@ -404,8 +404,9 @@ const CareerTimeline = () => {
       <div className={`grid gap-3 ${gridClass}`}>
         {snapshots.map((snap) => {
           const publicUrl = process.env.PUBLIC_URL || '';
-          const fullSrc = `${publicUrl}${snap.src}`;
-          const isBroken = brokenSnapshots[snap.src];
+          const snapSrc = snap.src || snap.image || '';
+          const fullSrc = `${publicUrl}${snapSrc}`;
+          const isBroken = brokenSnapshots[snapSrc];
           const extraSlides = Array.isArray(snap.extraSlides) ? snap.extraSlides : [];
           const hasExtraSlides = extraSlides.length > 0;
           return (
@@ -584,9 +585,9 @@ const CareerTimeline = () => {
               Interactive Career Timeline
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Explore 20+ years from internships at RTP and EU DGT, roles at Sony Portugal, Sony UK,
-              and Hogarth Worldwide in London — spanning relocations from Portugal to the UK (2007)
-              and UK to Silicon Valley (2014), AI governance, and what comes next.
+              Explore 20+ years from internships at RTP and EU DGT to roles at Sony Portugal, Sony UK,
+              and Hogarth Worldwide in London, spanning relocations from Portugal to the UK (2007)
+              and the UK to Silicon Valley (2014), AI governance, and what comes next.
             </p>
           </div>
 
@@ -926,9 +927,24 @@ const CareerTimeline = () => {
                 <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug">
                   {selectedItem.org || selectedItem.company}
                 </h2>
-                <p className="text-sm sm:text-base font-medium text-cyan-200">
-                  {selectedItem.title}
-                </p>
+                {selectedItem.type !== 'break' && selectedItem.type !== 'degree' && selectedItem.type !== 'future' ? (
+                  <div className="space-y-1.5 pt-0.5">
+                    <p className="text-sm sm:text-base font-medium text-slate-200">
+                      <span className="text-slate-400 font-normal">Official Title: </span>
+                      <span className="text-cyan-200 font-semibold">{selectedItem.officialTitle || selectedItem.title}</span>
+                    </p>
+                    {selectedItem.dutiesBeyondScope && (
+                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        <span className="text-cyan-300 font-semibold">Duties performed beyond the scope of the role: </span>
+                        <span className="text-slate-200">{selectedItem.dutiesBeyondScope}</span>
+                      </p>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-sm sm:text-base font-medium text-cyan-200">
+                    {selectedItem.title}
+                  </p>
+                )}
 
                 {/* Pillar Tags */}
                 <div className="flex flex-wrap gap-2 pt-1">
@@ -981,9 +997,11 @@ const CareerTimeline = () => {
                 <AcronymText text={selectedItem.summaryHeading} />
               </p>
             )}
-            <p className="whitespace-pre-line text-slate-200 text-sm sm:text-base leading-relaxed">
-              <AcronymText text={selectedItem.summary} />
-            </p>
+            {selectedItem.summary && (
+              <p className="whitespace-pre-line text-slate-200 text-sm sm:text-base leading-relaxed">
+                <AcronymText text={selectedItem.summary} />
+              </p>
+            )}
             {selectedItem.executionSummary && (
               <div className="pt-1 space-y-2">
                 {selectedItem.executionSummary.heading && (
@@ -1056,7 +1074,7 @@ const CareerTimeline = () => {
                 </details>
               ) : (
                 selectedItem.metricsFootnote && (
-                  <p className="text-xs text-slate-400 italic leading-relaxed">
+                  <p className="rounded-xl border border-white/10 bg-white/[0.02] px-3.5 py-2.5 text-xs text-slate-300 leading-relaxed">
                     <AcronymText text={selectedItem.metricsFootnote} />
                   </p>
                 )
@@ -1136,7 +1154,7 @@ const CareerTimeline = () => {
                             {sub.badge}
                           </span>
                         )}
-                        <span className="text-slate-400">— {sub.role}</span>
+                        <span className="text-slate-400">· {sub.role}</span>
                       </div>
                       <span className="text-xs font-medium text-cyan-200 shrink-0">{sub.period}</span>
                     </li>
@@ -1147,8 +1165,9 @@ const CareerTimeline = () => {
           )}
 
           {/* Collapsible "How I built it" Highlights & Proof Evidence */}
-          {((Array.isArray(selectedItem.highlights) && selectedItem.highlights.length > 0) ||
-            selectedItem.evidence) && (
+          {selectedItem.type !== 'break' &&
+            ((Array.isArray(selectedItem.highlights) && selectedItem.highlights.length > 0) ||
+              selectedItem.evidence) && (
             <div className="rounded-2xl border border-cyan-400/20 bg-slate-950/55 shadow-inner p-4 sm:p-5">
               <button
                 type="button"
@@ -1281,13 +1300,22 @@ const CareerTimeline = () => {
                                         <div className="flex flex-wrap items-center gap-1.5">
                                           <button
                                             type="button"
-                                            onClick={() => openGlossary('gaap')}
+                                            onClick={() =>
+                                              openGlossary(
+                                                section.glossaryId ||
+                                                  selectedItem.glossary[0]?.id ||
+                                                  'gaap'
+                                              )
+                                            }
                                             className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/35 bg-cyan-400/10 px-2.5 py-1 text-[11px] font-semibold text-cyan-200 hover:bg-cyan-400/20 hover:text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
                                           >
                                             <BookOpen size={12} aria-hidden="true" />
                                             <span>
                                               <AcronymText
-                                                text="Explain GAAP vs. Ex-BNPL, GPV & Constant Currency"
+                                                text={
+                                                  section.glossaryButtonLabel ||
+                                                  'Explain GAAP vs. Ex-BNPL, GPV & Constant Currency'
+                                                }
                                                 insideInteractive
                                               />
                                             </span>
@@ -1446,7 +1474,7 @@ const CareerTimeline = () => {
             ...(viewerSnap.extraSlides || []).map((extra, idx) => ({
               src: extra.src,
               label: extra.linkLabel || `Slide ${idx + 2}`,
-              alt: extra.alt || `${viewerSnap.caption} — ${extra.linkLabel || `Slide ${idx + 2}`}`,
+              alt: extra.alt || `${viewerSnap.caption} · ${extra.linkLabel || `Slide ${idx + 2}`}`,
             })),
           ];
 

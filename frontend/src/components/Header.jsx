@@ -33,6 +33,7 @@ const Header = () => {
 
   const navLinks = [
     { href: '/#services', label: t('nav.services') },
+    { href: '/career', label: t('nav.career') || 'Career', isPage: true },
     { href: '/resume', label: t('nav.experience'), isPage: true },
     { href: '/scrum-board', label: t('nav.insights'), isPage: true },
     { href: '/#contact', label: t('nav.contact') }

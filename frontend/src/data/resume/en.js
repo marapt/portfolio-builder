@@ -1,7 +1,7 @@
 // Resume data for Mara Martins - Updated from LinkedIn profile
 
 export const resumeData = {
-  summary: `Bridging AI with language, culture, and technology to help global companies expand with confidence and impact. With 15+ years in localization, I bring a blend of program management, marketing expertise, and AI innovation — always with a focus on empowering teams and mentoring the next generation of leaders.`,
+  summary: `Bridging AI with language, culture, and technology to help global companies expand with confidence and impact. With 15+ years in localization, I bring a blend of program management, marketing expertise, and AI innovation, always with a focus on empowering teams and mentoring the next generation of leaders.`,
   
   experience: [
     {
@@ -55,16 +55,16 @@ export const resumeData = {
       id: 3,
       company: 'LinkedIn',
       logo: null,
-      role: 'Senior Marketing Manager - Localization',
+      role: 'Senior Localization Marketing Manager',
       location: 'Sunnyvale, California',
       period: 'Mar 2020 - Oct 2021',
       type: 'Full-time',
-      description: 'Managing direct reports and overseeing day-to-day team processes and operational excellence.',
+      description: 'Founded the Marketing Localization Program Management team (2 Loc MKTG PMs), coordinating with up to 15 internal linguists and scaling a 20-vendor Managed Service Provider (MSP) program across 26 languages and 17 priority markets.',
       achievements: [
-        'Managed direct reports annual compensation and career discussions',
-        'Coached and mentored teams to work on high-impact initiatives',
-        'Drove global cross-teams coordination managing a diverse team across multiple timezones',
-        'Supported the growth of LinkedIn International strategy during COVID, including "Stories" and LinkedIn Learning internationalization across 17 markets'
+        'Founded the MARCOM Localization PM team (2 PMs) and built the Marketing Content Vendor Program via a Managed Service Provider (MSP) model scaling up to 20 external vendors, cutting turnaround times by 30%',
+        'Coordinated with up to 15 internal localization linguists alongside Marketing, Product, Engineering, and Editorial Newsrooms across time zones',
+        'Co-led multi-wave international rollouts for LinkedIn Stories (Brazil, Netherlands, UAE, Australia, France, UK, Global) and LinkedIn Learning across 17 markets and 26 languages during COVID-19',
+        'Helped validate product learnings behind the Sep 2021 Stories sunset and pivot to Creator Mode & permanent video, coinciding with LinkedIn surpassing $10B annual revenue (+97% YoY Marketing Solutions peak in Q4 FY21)'
       ]
     },
     {
@@ -100,11 +100,11 @@ export const resumeData = {
       id: 6,
       company: 'Apple',
       logo: null,
-      role: 'Project Manager - Localization',
+      role: 'Localization Project Manager (AppleCare Team)',
       location: 'Cupertino, California',
       period: 'Oct 2014 - Mar 2015',
       type: 'Contract',
-      description: 'A truly dynamic team player taking a leadership role as a Localization Project Manager for Apple.',
+      description: 'A truly dynamic team player taking a leadership role as a Localization Project Manager for Apple (AppleCare Team).',
       achievements: [
         'Responsible for project scope identification, file organizing/processing in Apple CAT tools',
         'Vendor allocation, vendor Q&A, and various project-related administrative tasks'
@@ -128,15 +128,16 @@ export const resumeData = {
       id: 8,
       company: 'Hogarth Worldwide',
       logo: null,
-      role: 'Senior Transcreation Account Manager',
+      role: 'Transcreation Program Manager',
       location: 'London, United Kingdom',
       period: 'Jan 2011 - Jan 2012',
       type: 'Full-time',
-      description: 'Managing an in-house team of up to 10 people for several markets (FR, BE, ES, PT & NL).',
+      description: 'Managed multiple enterprise client accounts and in-house delivery teams (up to 10 specialists) for global brand and flagship product launches across digital, online, and print.',
       achievements: [
-        'Oversaw production of culturally adapted marketing communications for major global brands',
-        'Pro-active interaction with Procurement and AM Teams to build up client portfolio',
-        'Focused on pitches to win new clients and businesses such as for EU institutions'
+        'Managed enterprise client accounts (featuring HTC) for international launches, leading cross-functional coordination across Print production, SEO, Video Studios, VO recording, and Music & TV Licensing departments',
+        'Led end-to-end process management and dedicated delivery teams for WPP Group\'s global brand transformation of HTC ("Change" platform fronted by Robert Downey Jr.) and flagship smartphone rollouts (HTC One M7 and M8)',
+        'Directed client commercial governance, Master Services/Business Agreements (MBAs), Quarterly Business Reviews (QBRs), and operational SLAs across key markets (FR, BE, ES, PT, NL)',
+        'Pro-active interaction with Procurement and Account Management teams to expand client portfolio and win enterprise and institutional pitches'
       ]
     },
     {
@@ -216,24 +217,150 @@ export const resumeData = {
   
   education: [
     {
-      degree: 'University Degree in Translation & Interpretation Studies',
+      degree: 'University Degree in Translation & Interpretation Studies (Licentiate, 5-Year Degree)',
       institution: 'Escola Superior de Tecnologia e Gestão (Polytechnic Institute of Leiria)',
       location: 'Leiria, Portugal',
       year: '2001 - 2007',
-      details: 'Focus on Translation and Interpretation'
+      details: 'Specialization in Interpreting (4 working languages: PT, EN, ES, DE) with coursework in Organizational Psychology, Law, Economics, and Computer Science.',
+      proofUrl: '/evidence/estg-course-certificates-redacted.pdf',
+      proofLabel: 'Course Certificates PDF (Redacted)',
+      waybackUrl: 'https://web.archive.org/web/20261030153521/https://www.ipleiria.pt/en/',
+      waybackLabel: 'IPLeiria Archive (Wayback)'
     }
   ],
   
   onlineLearning: [
     {
-      course: 'AI Python Introduction',
-      provider: 'Coursera',
-      year: '2025 (ongoing)'
+      course: 'Foundations of Project Management',
+      provider: 'Google Career Certificates (Coursera)',
+      year: 'Nov 2026',
+      details: 'Completed November 18, 2026 · Grade: 84.7% · Authorized by Google and offered through Coursera · Credential ID: XVPI1ID021WB',
+      credentialUrl: 'https://coursera.org/share/5dbd532f0b41cdcfa8ba2ab4d1a46771',
+      credentialLabel: 'Verify Credential (Coursera)',
+      proofUrl: '/evidence/cert-google-project-management-foundations.png',
+      proofLabel: 'Certificate Screenshot',
+      secondaryProofUrl: 'https://www.coursera.org/account/accomplishments/verify/XVPI1ID021WB',
+      secondaryProofLabel: 'Coursera Verification Record'
     },
     {
-      course: 'High Impact Presentations',
-      provider: 'Dale Carnegie',
-      year: '2015'
+      course: 'AI Fluency: Framework & Foundations',
+      provider: 'Anthropic Academy (Skilljar)',
+      year: 'Mar 2026',
+      details: 'Completed March 18, 2026 · Verified Certificate ID: nrvuxct3bwur',
+      credentialUrl: 'https://verify.skilljar.com/c/nrvuxct3bwur',
+      credentialLabel: 'Verify Credential (Skilljar)',
+      proofUrl: '/evidence/cert-anthropic-ai-fluency.png',
+      proofLabel: 'Certificate Screenshot'
+    },
+    {
+      course: 'WSP 116: Conversational Intelligence: Increase Your Impact',
+      provider: 'Stanford Continuing Studies (Instructor: Amy Wong)',
+      year: 'Feb 2021',
+      details: 'Completed February 6-7, 2021 · Signed Attendance Certificate (Noah Brennan-Greenbaum, Academic Records Officer)',
+      proofUrl: '/evidence/stanford-wsp116-certificate.pdf',
+      proofLabel: 'Official Stanford Certificate PDF',
+      secondaryProofUrl: '/evidence/stanford-wsp116-certificate.png',
+      secondaryProofLabel: 'Certificate Preview (PNG)'
+    },
+    {
+      course: 'LinkedIn Learning Continuous Education Track (26 Completed Courses · Top 12% Super Learner)',
+      provider: 'LinkedIn Learning',
+      year: '2020 - 2021',
+      details: 'Recognized in the Top 12% of Learners globally on LinkedIn Learning for CY 2020 (#superlearning), with 26 completed learning items across Inclusive Leadership, DEI, Well-Being, and Team Management.',
+      credentialUrl: 'https://www.linkedin.com/posts/maramartinspt_thank-alwaysbelearning-superlearning-share-6762243802985062400-hA8B/',
+      credentialLabel: '#superlearning Post (Feb 2021)',
+      proofUrl: '/evidence/linkedin-learning-completed-library.png',
+      proofLabel: 'Completed Library Snapshot (1-5)',
+      secondaryProofUrl: '/evidence/linkedin-learning-completed-library-2.png',
+      secondaryProofLabel: 'Completed Library Snapshot (6-9)'
+    }
+  ],
+
+  speakingAndCommunity: [
+    {
+      title: 'Fala com Quem Sabe (Ep. #4) - De Portugal para o Mundo: Localização e Adaptação Cultural',
+      organization: 'Women in Localization Portugal (WLPT)',
+      role: 'Featured Speaker (with Salomé Branco)',
+      year: 'May 2025',
+      details: 'Featured conversation on career trajectories in global localization, cultural adaptation, and international program leadership.',
+      url: 'https://www.linkedin.com/pulse/wl-portugal-chapter-0405-2025-conversas-fv6uf/',
+      linkLabel: 'WL Portugal Pulse Recap',
+      secondaryUrl: 'https://womeninlocalization.com/events/?slug=wlpt-de-portugal-para-o-mundo-localizao-e-adaptao-38681',
+      secondaryLabel: 'Official WL Event Page',
+      proofUrl: '/evidence/miis-wlpt-2025-event.png',
+      proofLabel: 'Event Snapshot'
+    },
+    {
+      title: 'AI in Localization Industry Speaker Series',
+      organization: 'Middlebury Institute of International Studies (MIIS)',
+      role: 'Founder & Host',
+      year: '2023 - 2025',
+      details: 'Founded and hosted the institute\'s first AI in Localization speaker series with enterprise leaders from Block, GitLab, Coupa, and Smartling.',
+      url: '/project/localization-training-program',
+      linkLabel: 'MIIS Case Study',
+      secondaryUrl: 'https://web.archive.org/web/20250211181739/https://www.middlebury.edu/institute/people/mara-martins',
+      secondaryLabel: 'MIIS Faculty Profile (Wayback)',
+      proofUrl: '/evidence/miis-faculty-profile.png',
+      proofLabel: 'Faculty Profile Snapshot'
+    },
+    {
+      title: 'ICEM 2022 Annual International Conference - Women in Media & Tech Roundtable',
+      organization: 'International Council for Educational Media & Polytechnic Institute of Santarém',
+      role: 'Invited Roundtable Speaker (Representing Block)',
+      year: 'Oct 2022',
+      details: 'Invited panelist on "The Role of Women in Media and Technology: How Can Digital Media Help Reduce the Gender Gap" (Oct 12-14, 2022, Santarém, Portugal).',
+      url: 'https://web.archive.org/web/20220810055430/https://www.ipsantarem.pt/icem-conference-2022/',
+      linkLabel: 'ICEM 2022 Program (Wayback)',
+      proofUrl: '/evidence/block-icem-2022-conference.png',
+      proofLabel: 'Conference Page Snapshot',
+      secondaryProofUrl: '/evidence/block-icem-2022-timetable.png',
+      secondaryProofLabel: 'Timetable Snapshot'
+    },
+    {
+      title: 'VIII Congresso Nacional RUTIS - O LinkedIn como Forma de Comunicação',
+      organization: 'RUTIS (Associação Rede de Universidades da Terceira Idade)',
+      role: 'Invited Speaker (Panel II: Communication with and for Seniors)',
+      year: 'Mar 2021',
+      details: 'Delivered invited presentation as Senior Localization Marketing Manager at LinkedIn during the 8th National Congress on Innovation in Senior Education.',
+      url: 'https://web.archive.org/web/20221204052225/https://rutis.pt/congresso-nacional-inovacao-na-educacao-para-seniores/',
+      linkLabel: 'RUTIS Congress Program (Wayback)',
+      proofUrl: '/evidence/linkedin-rutis-congresso-2021.png',
+      proofLabel: 'Program Snapshot'
+    },
+    {
+      title: 'LocWorld40 Portugal - Managing Multiple Content Types: Strategies That Work',
+      organization: 'LocWorld40 Estoril (Content Management Track)',
+      role: 'Invited Panelist (Representing Microsoft)',
+      year: 'Jun 2019',
+      details: 'Panelist alongside leaders from Uber and Electronic Arts (EA), moderated by Content Rules, on scaling global content strategy and localization workflows.',
+      url: 'https://web.archive.org/web/20190720095116/https://locworld.com/sessions/managing-multiple-content-types-strategies-that-work/',
+      linkLabel: 'LocWorld40 Session (Wayback)',
+      secondaryUrl: 'https://web.archive.org/web/20190723051914/https://locworld.com/speakers/mara-ferreira-martins/',
+      secondaryLabel: 'Speaker Profile (Wayback)',
+      proofUrl: '/evidence/msft-locworld40-session.png',
+      proofLabel: 'Session Snapshot'
+    },
+    {
+      title: 'The Worldly Marketer Podcast (Episode 143): How Microsoft Achieves Its Best-in-Class Global Brand Status',
+      organization: 'Verbaccino / The Worldly Marketer',
+      role: 'Featured Guest (Sr. Global Marcom Manager, Microsoft)',
+      year: 'Apr 2019',
+      details: 'In-depth interview on global brand management, cultural adaptation, and marketing localization operations across 100+ languages at Microsoft.',
+      url: 'https://web.archive.org/web/20190427211216/https://www.verbaccino.com/podcasts/twm-143-how-microsoft-achieves-its-best-in-class-global-brand-status-w-mara-martins/',
+      linkLabel: 'Podcast Episode (Wayback)',
+      secondaryUrl: 'https://theworldlymarketer.libsyn.com/twm-143-how-microsoft-achieves-its-best-in-class-global-brand-status-w-mara-martins',
+      secondaryLabel: 'Libsyn Audio Page',
+      proofUrl: '/evidence/msft-worldly-marketer-ep143.png',
+      proofLabel: 'Episode Snapshot'
+    },
+    {
+      title: 'Women in Localization - Events Coordinator (PNW) & Global Community Mentor',
+      organization: 'Women in Localization (Pacific Northwest, Silicon Valley & Portugal Chapters)',
+      role: 'Chapter Leadership & Mentor',
+      year: '2019 - 2025',
+      details: 'Served as Events Coordinator for the Pacific Northwest Chapter (Seattle, 2019-2020), Global Community Mentor, and featured speaker for the Portugal Chapter (2025).',
+      url: 'https://www.linkedin.com/pulse/wl-portugal-chapter-0405-2025-conversas-fv6uf/',
+      linkLabel: 'WL Portugal Feature'
     }
   ],
   
@@ -272,9 +399,126 @@ export const resumeData = {
     { language: 'Spanish', level: 'Professional', flag: '🇪🇸' }
   ],
   
-  certifications: [],
+  certifications: [
+    {
+      name: 'Foundations of Project Management',
+      issuer: 'Google Career Certificates (Coursera ID: XVPI1ID021WB)',
+      year: 'Nov 2026',
+      credentialUrl: 'https://coursera.org/share/5dbd532f0b41cdcfa8ba2ab4d1a46771',
+      credentialLabel: 'Verify Credential',
+      proofUrl: '/evidence/cert-google-project-management-foundations.png',
+      proofLabel: 'Certificate PNG'
+    },
+    {
+      name: 'AI Fluency: Framework & Foundations',
+      issuer: 'Anthropic Academy (Certificate ID: nrvuxct3bwur)',
+      year: 'Mar 2026',
+      credentialUrl: 'https://verify.skilljar.com/c/nrvuxct3bwur',
+      credentialLabel: 'Verify Credential',
+      proofUrl: '/evidence/cert-anthropic-ai-fluency.png',
+      proofLabel: 'Certificate PNG'
+    },
+    {
+      name: 'WSP 116: Conversational Intelligence: Increase Your Impact',
+      issuer: 'Stanford Continuing Studies (Instructor: Amy Wong)',
+      year: 'Feb 2021',
+      credentialUrl: '/evidence/stanford-wsp116-certificate.pdf',
+      credentialLabel: 'Official PDF',
+      proofUrl: '/evidence/stanford-wsp116-certificate.png',
+      proofLabel: 'Certificate PNG'
+    },
+    {
+      name: 'Be the Manager People Won\'t Leave',
+      issuer: 'LinkedIn Learning (Laurie Ruettimann)',
+      year: 'Sep 2021',
+      credentialUrl: 'https://www.linkedin.com/learning/be-the-manager-people-won-t-leave-2024',
+      credentialLabel: 'Course Page',
+      proofUrl: '/evidence/linkedin-learning-completed-library-2.png',
+      proofLabel: 'Completed Library Proof'
+    },
+    {
+      name: 'Confronting Bias: Thriving Across Our Differences',
+      issuer: 'LinkedIn Learning (Vernā Myers & Arianna Huffington)',
+      year: 'May 2021',
+      credentialUrl: 'https://www.linkedin.com/learning/certificates/f0f478334e0e2ea775dc61a3d47d2140612eb164d42d3be2f1eaed5f88950496',
+      credentialLabel: 'Verify Certificate',
+      proofUrl: '/evidence/cert-linkedin-confronting-bias.png',
+      proofLabel: 'Certificate PNG'
+    },
+    {
+      name: 'Inclusive Mindset',
+      issuer: 'LinkedIn Learning (Dereca Blackmon)',
+      year: 'Feb 2021',
+      credentialUrl: 'https://www.linkedin.com/learning/certificates/b5f637febd9d33590893573bd0ddfe5e7538becbd07766f1b88072e9bac1f584',
+      credentialLabel: 'Verify Certificate',
+      proofUrl: '/evidence/cert-linkedin-inclusive-mindset.png',
+      proofLabel: 'Certificate PNG'
+    },
+    {
+      name: 'Unconscious Bias',
+      issuer: 'LinkedIn Learning (Stacey Gordon)',
+      year: 'Jan 2021',
+      credentialUrl: 'https://www.linkedin.com/learning/certificates/2e97bf72d99dabd626e38b9667debd20334ce1c1528a44e80d1cfe9fa9c3f21f',
+      credentialLabel: 'Verify Certificate',
+      proofUrl: '/evidence/cert-linkedin-unconscious-bias.png',
+      proofLabel: 'Certificate PNG'
+    },
+    {
+      name: 'Overcoming Imposter Syndrome',
+      issuer: 'LinkedIn Learning (Carolyn Goerner)',
+      year: 'Oct 2020',
+      credentialUrl: 'https://www.linkedin.com/learning/certificates/7262b7c16c4b2e02d1be0ee1e9f04e45b0de8c4f8a1b897527fd58e806413e7a',
+      credentialLabel: 'Verify Certificate',
+      proofUrl: '/evidence/cert-linkedin-imposter-syndrome.png',
+      proofLabel: 'Certificate PNG'
+    },
+    {
+      name: 'Thriving @ Work: Leveraging the Connection between Well-Being and Productivity',
+      issuer: 'LinkedIn Learning (Arianna Huffington & Joey Hubbard)',
+      year: 'Oct 2020',
+      credentialUrl: 'https://www.linkedin.com/learning/certificates/17e6701fa765b32aa29eefd2ff8fd1c189dec5f06ff3ce25ff69eeaf5f81d43d',
+      credentialLabel: 'Verify Certificate',
+      proofUrl: '/evidence/cert-linkedin-thriving-at-work.png',
+      proofLabel: 'Certificate PNG'
+    },
+    {
+      name: 'Ken Blanchard on Servant Leadership',
+      issuer: 'LinkedIn Learning (Ken Blanchard)',
+      year: 'Oct 2020',
+      credentialUrl: 'https://www.linkedin.com/learning/certificates/7af1ce4b9ece31a777c7d6051888a209b267345c582d78ece6f397b5b9d4301a',
+      credentialLabel: 'Verify Certificate',
+      proofUrl: '/evidence/cert-linkedin-servant-leadership.png',
+      proofLabel: 'Certificate PNG'
+    },
+    {
+      name: 'Managing Teams',
+      issuer: 'LinkedIn Learning (Daisy Lovelace)',
+      year: 'Apr 2020',
+      credentialUrl: 'https://www.linkedin.com/learning/managing-teams-2018',
+      credentialLabel: 'Course Page',
+      proofUrl: '/evidence/linkedin-learning-completed-library-2.png',
+      proofLabel: 'Completed Library Proof'
+    },
+    {
+      name: 'Body Language and Women at Work',
+      issuer: 'LinkedIn Learning (Dorie Clark)',
+      year: 'Apr 2020',
+      credentialUrl: 'https://www.linkedin.com/learning/me/my-library/completed',
+      credentialLabel: 'Completed Library',
+      proofUrl: '/evidence/linkedin-learning-completed-library-2.png',
+      proofLabel: 'Completed Library Proof'
+    }
+  ],
   
-  awards: [],
+  awards: [
+    {
+      title: 'Top 12% of Learners Globally (#superlearning)',
+      organization: 'LinkedIn Learning',
+      year: 'CY 2020 (Feb 2021)',
+      url: 'https://www.linkedin.com/posts/maramartinspt_thank-alwaysbelearning-superlearning-share-6762243802985062400-hA8B/',
+      proofUrl: '/evidence/linkedin-superlearning-post.png'
+    }
+  ],
   
   links: {
     linkedin: 'https://www.linkedin.com/in/maramartinspt',

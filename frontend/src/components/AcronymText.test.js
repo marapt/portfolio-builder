@@ -23,5 +23,16 @@ describe('AcronymText definitions', () => {
     expect(resolveAcronymDefinition('SLA')?.expansion).toBe('Service-Level Agreement');
     expect(resolveAcronymDefinition('NDA')?.expansion).toBe('Non-Disclosure Agreement');
     expect(resolveAcronymDefinition('HITL')?.expansion).toBe('Human-in-the-Loop');
+    expect(resolveAcronymDefinition('MARCOM')).toEqual({
+      term: 'MARCOM',
+      expansion: 'Marketing Communications',
+      glossaryId: 'marcom',
+    });
+    expect(resolveAcronymDefinition('MSP')).toEqual({
+      term: 'MSP',
+      expansion: 'Managed Service Provider (outsourced vendor model)',
+      glossaryId: 'msp',
+    });
+    expect(resolveAcronymDefinition('i18n')?.expansion).toMatch(/Internationalization/i);
   });
 });

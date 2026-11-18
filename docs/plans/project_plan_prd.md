@@ -2,21 +2,21 @@
 
 | Field | Detail |
 |---|---|
-| **Project Name** | Portfolio Optimization — Universal Executive Showcase |
-| **Project Key / Sprint** | `PJM` — **Portfolio Optimization Sprint** *(Note: logically functions as Sprint 0/1 of this new Portfolio Optimization initiative; follows Sprint 3 in `docs/project_status.json`. Exact Jira Sprint/Epic structure to be reviewed step-by-step with Mara Martins before any tickets are created.)* |
+| **Project Name** | Portfolio Optimization  -  Universal Executive Showcase |
+| **Project Key / Sprint** | `PJM`  -  **Portfolio Optimization Sprint** *(Note: logically functions as Sprint 0/1 of this new Portfolio Optimization initiative; follows Sprint 3 in `docs/project_status.json`. Exact Jira Sprint/Epic structure to be reviewed step-by-step with Mara Martins before any tickets are created.)* |
 | **Owner / Product Lead** | **Mara Martins** (CEO / Founder per `MARA_MARTINS_OS.md`) |
 | **AI Program & Eng Lead** | **Antigravity** (AI Advisor & Agent Manager) |
-| **Named Agent Team** | **IDE Subagents:** `image-generator`, `research`, `browser`, `self` (Dev Agent)<br>**Existing Repo Fleet (`agents/*.py` & `/dashboard`):** Sarah (`jira_pm_agent.py`), Orchestrator (`orchestrator.py`), Marcus (`security_analyst.py`), Elena (`loc_lead_expert.py` / Compliance), Sofia (`lqc_engine.py`), Isabella (`lqa_engine.py`), David (`linguist_en_us.py`), Tiago (`linguist_pt_pt.py` — P2), Lucas (`tester_agent.py`), Visual Auditor (`visual_auditor.py`), Julia (`gtm_strategy_agent.py`)<br>**Activated (`MARA_MARTINS_OS.md`):** IP Counsel (`ip-counsel`), Strategy Advisor (`strategy-advisor`), Style Guide Agent (`style-guide`) *(General Counsel / Contract Advisor on-call if NDA escalation arises)*<br>**New Agents Needed (Gap Closure):** **FinOps & Token Controller** (`finops-controller`), **Fact & Evidence Auditor** (`fact-auditor`), **WCAG 2.1 AA Accessibility Auditor** (`wcag-auditor`), **Analytics & Telemetry Engineer** (`telemetry-eng`), **KPI & Metrics Steward** (`kpi-steward`), **Delivery & Focus Guardian** (`focus-guardian`) |
-| **Status** | **Human Review & Approval Required — ON HOLD** *(No code changes and no Jira tickets will be created until Mara Martins approves)* |
+| **Named Agent Team** | **IDE Subagents:** `image-generator`, `research`, `browser`, `self` (Dev Agent)<br>**Existing Repo Fleet (`agents/*.py` & `/dashboard`):** Sarah (`jira_pm_agent.py`), Orchestrator (`orchestrator.py`), Marcus (`security_analyst.py`), Elena (`loc_lead_expert.py` / Compliance), Sofia (`lqc_engine.py`), Isabella (`lqa_engine.py`), David (`linguist_en_us.py`), Tiago (`linguist_pt_pt.py`  -  P2), Lucas (`tester_agent.py`), Visual Auditor (`visual_auditor.py`), Julia (`gtm_strategy_agent.py`)<br>**Activated (`MARA_MARTINS_OS.md`):** IP Counsel (`ip-counsel`), Strategy Advisor (`strategy-advisor`), Style Guide Agent (`style-guide`) *(General Counsel / Contract Advisor on-call if NDA escalation arises)*<br>**New Agents Needed (Gap Closure):** **FinOps & Token Controller** (`finops-controller`), **Fact & Evidence Auditor** (`fact-auditor`), **WCAG 2.1 AA Accessibility Auditor** (`wcag-auditor`), **Analytics & Telemetry Engineer** (`telemetry-eng`), **KPI & Metrics Steward** (`kpi-steward`), **Delivery & Focus Guardian** (`focus-guardian`) |
+| **Status** | **Human Review & Approval Required  -  ON HOLD** *(No code changes and no Jira tickets will be created until Mara Martins approves)* |
 | **Pacing Strategy** | **Parallel Build + Prep-Priority Override:** Aim for Nov 23 readiness (AI team builds asynchronously with placeholders while Mara Martins preps); pause/shift focus to interview prep anytime without penalty |
-| **Target Anchor Date** | **First Interview: November 23, 2026** *(Flexible — Overflow moves cleanly to Post-Nov 23 if prep needs priority)* |
+| **Target Anchor Date** | **First Interview: November 23, 2026** *(Flexible  -  Overflow moves cleanly to Post-Nov 23 if prep needs priority)* |
 | **Last Updated** | 2026-11-12 |
-| **Companion Docs** | Technical Design Doc: [implementation_plan.md](./implementation_plan.md) · Resource Utilization Board: [resource_utilization_board.md](./resource_utilization_board.md) · Consistency Audit: [consistency_audit.md](./consistency_audit.md) |
+| **Companion Docs** | Technical Design Doc: [implementation_plan.md](file:///Users/user/.gemini/antigravity/brain/a8ecca47-ef7c-44f0-a7c3-c24545ec0324/implementation_plan.md) · Resource Utilization Board: [resource_utilization_board.md](file:///Users/user/.gemini/antigravity/brain/a8ecca47-ef7c-44f0-a7c3-c24545ec0324/resource_utilization_board.md) |
 
 ---
 
 ## 1. Executive Summary (TL;DR)
-`maramartins.com` currently leads primarily with localization positioning, under-represents Mara Martins's broader technical, operational, and AI program leadership, and lacks a dedicated visual asset built for live interviews. Rather than rebuilding the website (high cost, high schedule risk ahead of **November 23, 2026**), the Human + AI team will add **three standalone, dark-themed ("Stellar") subpages**—`/career` (interactive timeline), `/interview` (zero-scroll live screen-share cockpit), and `/brief` (1-page printable PDF leave-behind)—backed by a **single verified career dataset** anchored to the CV.
+`maramartins.com` currently leads primarily with localization positioning, under-represents Mara Martins's broader technical, operational, and AI program leadership, and lacks a dedicated visual asset built for live interviews. Rather than rebuilding the website (high cost, high schedule risk ahead of **November 23, 2026**), the Human + AI team will add **three standalone, dark-themed ("Stellar") subpages** - `/career` (interactive timeline), `/interview` (zero-scroll live screen-share cockpit), and `/brief` (1-page printable PDF leave-behind) - backed by a **single verified career dataset** anchored to the CV.
 
 > *\*Scope & Cost Caveat (Context for Readers):* Incremental infrastructure cash spend is low because hosting and analytics leverage existing sunk commitments (`maramartins.com` domain + protection at **$36.98/yr** plus existing IDE/AI and hosting plans); however, **total real project cost is NOT $0**. Section 4 tracks direct SaaS/domain spend, Mara Martins's review/content hours, Antigravity + subagent active vs. idle time, and AI token costs against a bounded pre-interview budget.
 
@@ -64,13 +64,13 @@
 | Cost Category | Item / Provider | Billing / Allocation Basis | Estimated Cost | Actual Spent to Date | Notes |
 |---|---|---|---|---|---|
 | **Domain Registration** | `maramartins.com` (`.COM Domain Renewal`) | Bills **02/12/2026** · 1-Year Term | **$21.99 / yr** | $21.99 committed (annual) | Existing domain renewal |
-| **Domain Privacy / Security** | Full Domain Protection — Renewal | Bills **02/12/2026** · 1-Year Term | **$14.99 / yr** | $14.99 committed (annual) | Existing protection renewal |
+| **Domain Privacy / Security** | Full Domain Protection  -  Renewal | Bills **02/12/2026** · 1-Year Term | **$14.99 / yr** | $14.99 committed (annual) | Existing protection renewal |
 | **Hosting & Previews** | Vercel | Monthly plan / usage tier | `[TBD: $0 free tier or pro-rated $/mo]` | `[Check Vercel billing]` | Supports branch previews & rollback |
 | **Analytics** | GA4 (`G-0BB4XSY59N`) + PostHog | Free / usage tier | `[TBD: $0 within free quota]` | $0 overage to date | Existing integrations in `frontend` |
 | **Program Management** | Atlassian Jira (`PJM`) | Free / standard tier | `[TBD: $0 or seat cost]` | $0 incremental | Managed with Sarah (`jira_pm_agent.py`) |
 | **IDE & AI Platform** | Antigravity IDE + Model Usage + Image Gen | Subscription / API token allocation | `[TBD: pro-rated $/mo + token eq.]` | *Phase 0 tokens logged below* | Must be tracked explicitly (not "$0") |
 | **PDF Generation** | Browser `@media print` CSS | Built-in browser capability | $0 | $0 | Avoids third-party PDF API fees |
-| **Direct Annual Domain Subtotal** | — | — | **$36.98 / yr** *(+ SaaS/AI allocation TBD)* | **$36.98 / yr committed** | Exact SaaS/AI dollar rates to be filled in `project_ledger.md` |
+| **Direct Annual Domain Subtotal** |  -  |  -  | **$36.98 / yr** *(+ SaaS/AI allocation TBD)* | **$36.98 / yr committed** | Exact SaaS/AI dollar rates to be filled in `project_ledger.md` |
 
 ### 4.2 Effort, AI Time (Work vs. Idle) & Token Budget (Estimated vs. Actuals)
 
@@ -87,9 +87,9 @@
 
 ### 4.3 How Time, Tokens & Real Costs Will Be Tracked (Jira + Non-Jira)
 Jira tickets alone miss planning discussions, prompt iterations, AI idle/wait periods, and token burn. Tracking therefore uses **two synchronized layers**:
-1. **Jira (`PJM`) — Delivery Tickets Only** *(Reviewed step-by-step with Mara Martins before any ticket is created)*:
+1. **Jira (`PJM`)  -  Delivery Tickets Only** *(Reviewed step-by-step with Mara Martins before any ticket is created)*:
    - Tracks scoped engineering/content tickets, acceptance criteria, `est_hours`, `actual_hours`, and Definition of Done per `docs/scrum_protocol.md`.
-2. **Project Cost, Time & Token Ledger (`docs/content/project_ledger.md`) — Full Team Accounting:**
+2. **Project Cost, Time & Token Ledger (`docs/content/project_ledger.md`)  -  Full Team Accounting:**
    - Captures **all work outside Jira tickets**: Antigravity planning & strategy discussions, subagent runs (`image-generator`, `research`, `browser`, `self`), repo QA fleet executions, **AI active work time vs. idle/human-wait time**, **tokens spent (input/output)**, **equivalent token dollar cost ($)**, and **real SaaS/domain spend (`$36.98/yr` domain + Vercel/IDE pro-rata)**.
 3. **Human Consultation & Budget Extension Gate (No Automatic Scope Cuts):**
    - If Phase 2 (evidence gathering) or any phase approaches its hour, token, or cost estimate, Antigravity **does NOT automatically cut scope or ship partial work**. Instead, Antigravity halts, presents an **Actuals vs. Estimate ROI & Spend Report** to Mara Martins, and requests explicit human approval to extend the time/cost budget or adjust scope.
@@ -99,7 +99,7 @@ Jira tickets alone miss planning discussions, prompt iterations, AI idle/wait pe
 ## 5. Goals, KPIs, Metrics & Dashboard Reporting
 
 > [!WARNING]
-> **Status of Outcome Metrics (`[DRAFT — NEEDS REVISIT BEFORE FINAL APPROVAL]`):**
+> **Status of Outcome Metrics (`[DRAFT  -  NEEDS REVISIT BEFORE FINAL APPROVAL]`):**
 > The Career Outcome metrics below require further design with Mara Martins before final sign-off.
 > **Why the earlier draft metrics had measurement gaps:**
 > - *Dwell time (`≥ 60s`) & `/interview` pageviews:* General GA4 counts cannot tell a recruiter from a random visitor or Mara Martins testing the page. Also, viewing `/interview` on Zoom doesn't prove whether it helped in the conversation.
@@ -114,7 +114,7 @@ Jira tickets alone miss planning discussions, prompt iterations, AI idle/wait pe
 ### 5.1 Goal → KPI → Metric Alignment *(Draft for Review)*
 | Goal | Objective | Candidate KPI *(Needs Revisit)* | Target *(TBD)* | Measurement Mechanism |
 |---|---|---|---|---|
-| **G1: Truthful Positioning Expansion** | Ensure non-localization HMs understand transferable scope | UTM-attributed `/career` visits + pillar filter depth | `[TBD — e.g., ≥ 1 role click per UTM visit]` | GA4/PostHog with `?utm_campaign=` filtering out Mara's own IP/browser |
+| **G1: Truthful Positioning Expansion** | Ensure non-localization HMs understand transferable scope | UTM-attributed `/career` visits + pillar filter depth | `[TBD  -  e.g., ≥ 1 role click per UTM visit]` | GA4/PostHog with `?utm_campaign=` filtering out Mara's own IP/browser |
 | **G2: Single Source of Truth** | Zero drift across editable owned surfaces (CV, LinkedIn, site) | Cross-Platform Consistency Score *(owned surfaces; legacy MIIS page excluded as Won't Fix)* | **100%** resolved rows across owned apps in `consistency_audit.md` | Audit script / Mara Martins sign-off |
 | **G3: Nov 23 Interview Readiness** | Support live screen-share & HM debrief | Live `/interview` share rate + `/brief` attachment rate + next-round signal | `[TBD]` | Structured post-interview debrief log |
 | **G4: Budget, Token & Quality Discipline** | Control spend, hours, tokens, NDA & site stability | Real cash ($), Mara hrs, AI active/idle time, tokens ($), placeholder count | Within approved budget; **0** placeholders in `main`; **0** regressions | `project_ledger.md` + `PJM` + `orchestrator.py` |
@@ -135,7 +135,7 @@ Reporting integrates directly into the existing auth-gated **`/dashboard` (Gover
 2. **Data Integrity & Consistency Card:**
    - 4-Way Consistency Audit % (`CV ↔ LinkedIn ↔ Site ↔ Bio`), Placeholder Count (`0` required on `main`), and Evidence Coverage %.
 3. **Agent QA Gate, Fleet Telemetry & Resource Utilization Board Card:**
-   - Latest pass/warn/fail from `orchestrator.py` (Sofia LQC, Isabella LQA, Marcus Security, Visual Auditor, Lucas Tester) **plus each agent's runtime, active vs. idle time, tokens/$ spent, and Fair-Workload Utilization %** ([resource_utilization_board.md](./resource_utilization_board.md)).
+   - Latest pass/warn/fail from `orchestrator.py` (Sofia LQC, Isabella LQA, Marcus Security, Visual Auditor, Lucas Tester) **plus each agent's runtime, active vs. idle time, tokens/$ spent, and Fair-Workload Utilization %** ([resource_utilization_board.md](file:///Users/user/.gemini/antigravity/brain/a8ecca47-ef7c-44f0-a7c3-c24545ec0324/resource_utilization_board.md)).
 4. **Career Funnel & Interview Log Card (Post-Launch):**
    - UTM-filtered GA4/PostHog events (`career_role_select`, `interview_lens_switch`, `brief_print_click`) paired with the structured post-interview debrief log.
 
@@ -156,7 +156,7 @@ Reporting integrates directly into the existing auth-gated **`/dashboard` (Gover
 | **P1** | REQ-9 | UTM-capable analytics (`?utm_campaign=`, GA4 + PostHog events) & "Portfolio Optimization KPIs" panel in `/dashboard` (cost, AI idle/work, tokens, QA, funnel) | **Analytics & Telemetry Eng *(NEW)***, **FinOps *(NEW)***, Julia | Phase 3 |
 | **P1** | REQ-10 | `docs/INTERVIEW_PLAYBOOK.md` + executive tone/glossary audit (localization roots honored + PgM/Ops/AI expansion) | **Strategy & Style Advisors *(Activated)***, Isabella, David | Phase 3 |
 | **P1** | REQ-11 | **Sprint Post-Mortem & Pre-Close Agent Review Protocol:** Before closing each sprint, Antigravity reminds Mara Martins to convene all agents, revise findings/metrics, and log learnings in `docs/reflections.md` | Antigravity + Full Team + Mara Martins | End of Every Sprint |
-| **P2** | REQ-12 | **Portfolio Build Case Study (`TBD` — Added to To-Do):** Publish step-by-step creation of this Portfolio Optimization (plans, screenshots, Human+AI org, real cost/token/KPI metrics) in Portfolio Projects | Antigravity, `self`, Julia, Mara Martins | Post-Nov 23 |
+| **P2** | REQ-12 | **Portfolio Build Case Study (`TBD`  -  Added to To-Do):** Publish step-by-step creation of this Portfolio Optimization (plans, screenshots, Human+AI org, real cost/token/KPI metrics) in Portfolio Projects | Antigravity, `self`, Julia, Mara Martins | Post-Nov 23 |
 | **P2** | REQ-13 | Additional timeline milestones (certifications, talks, awards), era color coding, auto-play mode | Antigravity, `self` | Post-Nov 23 |
 | **P2** | REQ-14 | Portuguese (`pt-PT`) translations for `career/pt.js` and new pages + optional Header/Footer link | Elena, Tiago (`linguist_pt_pt.py`), Isabella | Post-Nov 23 |
 
@@ -168,7 +168,7 @@ Reporting integrates directly into the existing auth-gated **`/dashboard` (Gover
 > **Parallel Operating Model + Prep-Priority Override:**
 > Because engineering scaffolding (`feature/portfolio-mvp`, `/career`, `/interview`, `/brief`, `/dashboard` KPI panel, and automated tests) can be executed by **Antigravity and subagents** with placeholders while Mara Martins prepares for **Nov 23**, the team aims to proceed on the Nov 23 schedule below.
 > **Override Rule:** Whenever Mara Martins needs to shift focus entirely to interview prep, the AI/portfolio track pauses cleanly at the current milestone and any remaining items roll smoothly to **Post-Nov 23**.
-> **HOLD GATE:** Execution remains on hold—no code is written and **no Jira tickets are created until Mara Martins reviews each step with Antigravity and approves**.
+> **HOLD GATE:** Execution remains on hold - no code is written and **no Jira tickets are created until Mara Martins reviews each step with Antigravity and approves**.
 
 | Milestone | Who Drives | Exit Criteria | Target Window (2026) |
 |---|---|---|---|
@@ -189,8 +189,8 @@ Extends [MARA_MARTINS_OS.md](file:///Users/user/Documents/github/portfolio-build
 
 ```mermaid
 flowchart TD
-  CEO["👑 Mara Martins — CEO / Product Owner (Human)<br/>Final approval, CV/evidence owner, NDA clearance, live interviews"]
-  PM["🤖 Antigravity — AI Advisor, Eng & Program Lead<br/>Architecture, planning, orchestration, builds, sprint-close reminders"]
+  CEO["👑 Mara Martins  -  CEO / Product Owner (Human)<br/>Final approval, CV/evidence owner, NDA clearance, live interviews"]
+  PM["🤖 Antigravity  -  AI Advisor, Eng & Program Lead<br/>Architecture, planning, orchestration, builds, sprint-close reminders"]
   PEER["👤 Peer / Recruiter Reviewer (Human, Optional)<br/>Dry-run feedback on /career & /interview"]
 
   CEO --> PM
@@ -293,8 +293,8 @@ An audit against `MARA_MARTINS_OS.md`, `agents/config/global_regulations.json`, 
 *Note on Budget Impact:* Adding **KPI & Metrics Steward** and **Delivery & Focus Guardian** brings total proposed-role AI time to **~3.25 hrs** (**~9.25 hrs** total AI active work across Phases 0–3, executed mostly asynchronously).
 
 ### 8.4 Processes & Governance Protocols
-1. **Unconditional Human Override & Interview-Pivot Protocol (CEO Sovereignty):** Mara Martins can **overrule, pause, reprioritize, or pivot** the project at any moment (e.g., *"Pause portfolio — pivot 100% to Nov 23 interview prep"*). Upon override, the **Delivery & Focus Guardian** immediately snapshots active branch/ledger state, halts non-essential portfolio tasks with zero penalty, and redirects AI team capacity to interview preparation (STAR stories, company research, mock Q&A) until Mara Martins resumes the build.
-2. **Human-in-the-Loop Gate (`MARA_MARTINS_OS.md`):** No agent or code change ships to `main`—and no Jira ticket is created—without Mara Martins's explicit pre-approval.
+1. **Unconditional Human Override & Interview-Pivot Protocol (CEO Sovereignty):** Mara Martins can **overrule, pause, reprioritize, or pivot** the project at any moment (e.g., *"Pause portfolio  -  pivot 100% to Nov 23 interview prep"*). Upon override, the **Delivery & Focus Guardian** immediately snapshots active branch/ledger state, halts non-essential portfolio tasks with zero penalty, and redirects AI team capacity to interview preparation (STAR stories, company research, mock Q&A) until Mara Martins resumes the build.
+2. **Human-in-the-Loop Gate (`MARA_MARTINS_OS.md`):** No agent or code change ships to `main` - and no Jira ticket is created - without Mara Martins's explicit pre-approval.
 3. **Step-by-Step Jira Governance (Rule #6):** Before execution begins, Antigravity and Mara Martins review every proposed Epic, Sprint, and ticket together before Sarah (`jira_pm_agent.py`) writes to Atlassian Jira (`PJM`).
 4. **Milestone Focus & Anti-Drift Checkpoints:** At the start and end of each work session, the **Delivery & Focus Guardian** checks current work strictly against the active milestone's points and flags any scope drift before building.
 5. **Mandatory End-of-Sprint Review & Post-Mortem (`REQ-11`):** Before closing any sprint, **Antigravity + Delivery & Focus Guardian** remind Mara Martins to convene all participating agents, partner with the **KPI & Metrics Steward** & **FinOps Controller** to produce a **Sprint Findings & Metrics Revision Document**, and record learnings in `docs/reflections.md`.
@@ -315,7 +315,7 @@ An audit against `MARA_MARTINS_OS.md`, `agents/config/global_regulations.json`, 
 ### 8.6 AI Strategy, Usage & Guardrails
 AI serves two distinct roles in this project:
 1. **AI as Delivery Team (How the Team Builds):** Antigravity, IDE subagents, and the `agents/*.py` fleet handle planning, mockups, implementation, QA, and cost/token logging under Mara Martins's oversight.
-2. **AI as Core Portfolio Proof (What the Portfolio Demonstrates):** Pillar 4 (**AI-First Operations & Automation**) showcases Mara Martins's practical leadership in GitHub automation, GenAI/LLM-as-a-Judge evaluation, and Human-in-the-Loop (HITL) governance—including this project itself as a planned P2 Case Study (`REQ-10`).
+2. **AI as Core Portfolio Proof (What the Portfolio Demonstrates):** Pillar 4 (**AI-First Operations & Automation**) showcases Mara Martins's practical leadership in GitHub automation, GenAI/LLM-as-a-Judge evaluation, and Human-in-the-Loop (HITL) governance - including this project itself as a planned P2 Case Study (`REQ-10`).
 3. **Non-Negotiable AI Guardrails:**
    - **Zero Hallucinated Metrics:** AI never invents numbers; every metric links via `evidenceId` to a human-verified row in `career_inventory.md`.
    - **Confidentiality Boundary:** `docs/source/evidence/` is gitignored and never embedded in client bundles or public prompts.
@@ -349,18 +349,18 @@ AI serves two distinct roles in this project:
 
 ## 11. Launch, Rollout & Post-Launch Operations
 
-1. **Stage 1 — Joint Approval & Jira Minting:** Mara Martins & Antigravity review steps together → Sarah (`jira_pm_agent.py`) creates approved tickets.
-2. **Stage 2 — Branch Preview (`feature/portfolio-mvp`):** Build `/career` & `/interview` with placeholders; Mara Martins verifies layout & UX.
-3. **Stage 3 — Consistency, Privacy & QA Gate:** Swap in CV-verified data; run `orchestrator.py` (Sofia, Isabella, Marcus, Lucas, Visual Auditor); verify `noindex` on `/interview`.
-4. **Stage 4 — Pre-Close Agent Review & Quiet Launch (by Nov 21–22):** Antigravity triggers full-agent findings/metrics review with Mara Martins → merge to `main` → live Zoom screen-share rehearsal ahead of **Nov 23**.
-5. **Stage 5 — Sprint Post-Mortem & Case Study (`P2`):** Log learnings in `docs/reflections.md`, update LinkedIn/Middlebury/Chatbase, and capture materials for the Portfolio Optimization Case Study (`REQ-10`).
+1. **Stage 1  -  Joint Approval & Jira Minting:** Mara Martins & Antigravity review steps together → Sarah (`jira_pm_agent.py`) creates approved tickets.
+2. **Stage 2  -  Branch Preview (`feature/portfolio-mvp`):** Build `/career` & `/interview` with placeholders; Mara Martins verifies layout & UX.
+3. **Stage 3  -  Consistency, Privacy & QA Gate:** Swap in CV-verified data; run `orchestrator.py` (Sofia, Isabella, Marcus, Lucas, Visual Auditor); verify `noindex` on `/interview`.
+4. **Stage 4  -  Pre-Close Agent Review & Quiet Launch (by Nov 21–22):** Antigravity triggers full-agent findings/metrics review with Mara Martins → merge to `main` → live Zoom screen-share rehearsal ahead of **Nov 23**.
+5. **Stage 5  -  Sprint Post-Mortem & Case Study (`P2`):** Log learnings in `docs/reflections.md`, update LinkedIn/Middlebury/Chatbase, and capture materials for the Portfolio Optimization Case Study (`REQ-10`).
 
 ---
 
 ## 12. Decision & Business Justification Log (ADR Governance)
 
 ### Proposed Recording Method: 3-Layer "ADR-Lite" + Jira Context Sync
-To ensure every strategic, architectural, and commercial decision—along with its **business justification**—is permanently discoverable (and directly reusable in the P2 **Portfolio Optimization Case Study**, `REQ-12`), the team recommends a **3-layer recording method** aligned with `docs/scrum_protocol.md` Rule #6 (*Context Preservation Rule*):
+To ensure every strategic, architectural, and commercial decision - along with its **business justification** - is permanently discoverable (and directly reusable in the P2 **Portfolio Optimization Case Study**, `REQ-12`), the team recommends a **3-layer recording method** aligned with `docs/scrum_protocol.md` Rule #6 (*Context Preservation Rule*):
 
 | Option Considered | Pros | Cons | Recommendation |
 |---|---|---|---|
@@ -381,7 +381,7 @@ To ensure every strategic, architectural, and commercial decision—along with i
 |---|---|---|---|---|
 | **DEC-001** | 2026-11-12 | **Isolated subpages (`/career`, `/interview`, `/brief`) instead of homepage redesign** | Protects live `maramartins.com` traffic and avoids high rebuild cost/regression risk while delivering interview-specific tools fast; allows instant Vercel rollback. | Mara Martins · **Approved (Design)** |
 | **DEC-002** | 2026-11-12 | **CV is single source of truth; tenure calculated accurately since 2007+** | Eliminates credibility risk from conflicting dates/claims ("14+" vs. "15+" vs. "12+") across interviews and background checks; enforces factual precision. | Mara Martins · **Approved** |
-| **DEC-003** | 2026-11-12 | **Truthful positioning expansion beyond localization** | Preserves authenticity to 2007+ localization domain while unlocking Senior PgM, Operations Leadership, and AI Enablement roles—expanding addressable job market without rebranding falsely. | Mara Martins · **Approved** |
+| **DEC-003** | 2026-11-12 | **Truthful positioning expansion beyond localization** | Preserves authenticity to 2007+ localization domain while unlocking Senior PgM, Operations Leadership, and AI Enablement roles - expanding addressable job market without rebranding falsely. | Mara Martins · **Approved** |
 | **DEC-004** | 2026-11-12 | **Placeholders first (MVP) on `feature/portfolio-mvp`, real data after audit** | Decouples engineering velocity from historical evidence gathering; `Sofia` + `prebuild` guard prevents draft `[X]` numbers from reaching production. | Mara Martins · **Approved (Hold)** |
 | **DEC-005** | 2026-11-12 | **Match existing dark "Stellar" brand theme** | Maintains visual trust if an interviewer clicks from `/interview` or `/career` to the main site; avoids jarring light/dark split. | Mara Martins · **Approved** |
 | **DEC-006** | 2026-11-12 | **English first; `pt-PT` deferred to P2** | Cuts Phase 1 delivery time roughly in half ahead of US-based interviews while `useCareerData()` keeps the architecture i18n-ready. | Mara Martins · **Approved** |

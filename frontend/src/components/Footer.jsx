@@ -16,10 +16,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { href: '#about', label: t('nav.about') },
+    { to: '/career', label: t('nav.career') || 'Career Timeline', isPage: true },
+    { to: '/resume', label: t('nav.experience') || 'Resume', isPage: true },
     { href: '#services', label: t('nav.services') },
     { href: '#portfolio', label: t('nav.portfolio') },
-    { href: '#testimonials', label: t('nav.testimonials') },
     { href: '#contact', label: t('nav.contact') }
   ];
 
@@ -73,14 +73,24 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">{t('footer.quick_links') || 'Quick Links'}</h4>
             <nav className="space-y-2">
               {footerLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className="block text-gray-400 hover:text-indigo-400 transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
+                link.isPage ? (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="block text-gray-400 hover:text-indigo-400 transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => scrollToSection(e, link.href)}
+                    className="block text-gray-400 hover:text-indigo-400 transition-colors duration-200"
+                  >
+                    {link.label}
+                  </a>
+                )
               ))}
             </nav>
           </div>

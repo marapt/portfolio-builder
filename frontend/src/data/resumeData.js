@@ -1,7 +1,7 @@
 // Resume data for Mara Martins - Updated from LinkedIn profile
 
 export const resumeData = {
-  summary: `Bridging AI with language, culture, and technology to help global companies expand with confidence and impact. With 15+ years in localization, I bring a blend of program management, marketing expertise, and AI innovation — always with a focus on empowering teams and mentoring the next generation of leaders.`,
+  summary: `Bridging AI with language, culture, and technology to help global companies expand with confidence and impact. With 15+ years in localization, I bring a blend of program management, marketing expertise, and AI innovation, always with a focus on empowering teams and mentoring the next generation of leaders.`,
   
   experience: [
     {
@@ -64,7 +64,7 @@ export const resumeData = {
         'Managed direct reports annual compensation and career discussions',
         'Coached and mentored teams to work on high-impact initiatives',
         'Drove global cross-teams coordination managing a diverse team across multiple timezones',
-        'Supported the growth of LinkedIn International strategy during COVID, including "Stories" and LinkedIn Learning internationalization across 17 markets'
+        'Supported the growth of LinkedIn International strategy during COVID, including "Stories" (Brazil, Netherlands, UAE, Australia, France, UK, Global) and LinkedIn Learning internationalization across 17 markets'
       ]
     },
     {
@@ -128,15 +128,16 @@ export const resumeData = {
       id: 8,
       company: 'Hogarth Worldwide',
       logo: null,
-      role: 'Senior Transcreation Account Manager',
+      role: 'Transcreation Program Manager',
       location: 'London, United Kingdom',
       period: 'Jan 2011 - Jan 2012',
       type: 'Full-time',
-      description: 'Managing an in-house team of up to 10 people for several markets (FR, BE, ES, PT & NL).',
+      description: 'Managed multiple enterprise client accounts and in-house delivery teams (up to 10 specialists) for global brand and flagship product launches across digital, online, and print.',
       achievements: [
-        'Oversaw production of culturally adapted marketing communications for major global brands',
-        'Pro-active interaction with Procurement and AM Teams to build up client portfolio',
-        'Focused on pitches to win new clients and businesses such as for EU institutions'
+        'Managed enterprise client accounts (featuring HTC) for international launches, leading cross-functional coordination across Print production, SEO, Video Studios, VO recording, and Music & TV Licensing departments',
+        'Led end-to-end process management and dedicated delivery teams for WPP Group\'s global brand transformation of HTC ("Change" platform fronted by Robert Downey Jr.) and flagship smartphone rollouts (HTC One M7 and M8)',
+        'Directed client commercial governance, Master Services/Business Agreements (MBAs), Quarterly Business Reviews (QBRs), and operational SLAs across key markets (FR, BE, ES, PT, NL)',
+        'Pro-active interaction with Procurement and Account Management teams to expand client portfolio and win enterprise and institutional pitches'
       ]
     },
     {
@@ -226,6 +227,18 @@ export const resumeData = {
   
   onlineLearning: [
     {
+      course: 'Foundations of Project Management',
+      provider: 'Google Career Certificates (Coursera)',
+      year: 'Nov 2026',
+      details: 'Completed November 18, 2026 · Grade: 84.7% · Authorized by Google and offered through Coursera · Credential ID: XVPI1ID021WB',
+      credentialUrl: 'https://coursera.org/share/5dbd532f0b41cdcfa8ba2ab4d1a46771',
+      credentialLabel: 'Verify Credential (Coursera)',
+      proofUrl: '/evidence/cert-google-project-management-foundations.png',
+      proofLabel: 'Certificate Screenshot',
+      secondaryProofUrl: 'https://www.coursera.org/account/accomplishments/verify/XVPI1ID021WB',
+      secondaryProofLabel: 'Coursera Verification Record'
+    },
+    {
       course: 'AI Python Introduction',
       provider: 'Coursera',
       year: '2025 (ongoing)'
@@ -272,7 +285,17 @@ export const resumeData = {
     { language: 'Spanish', level: 'Professional', flag: '🇪🇸' }
   ],
   
-  certifications: [],
+  certifications: [
+    {
+      name: 'Foundations of Project Management',
+      issuer: 'Google Career Certificates (Coursera ID: XVPI1ID021WB)',
+      year: 'Nov 2026',
+      credentialUrl: 'https://coursera.org/share/5dbd532f0b41cdcfa8ba2ab4d1a46771',
+      credentialLabel: 'Verify Credential',
+      proofUrl: '/evidence/cert-google-project-management-foundations.png',
+      proofLabel: 'Certificate PNG'
+    }
+  ],
   
   awards: [],
   

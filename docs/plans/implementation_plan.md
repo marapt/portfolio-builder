@@ -1,10 +1,10 @@
 # Technical Design Doc: `maramartins.com` Universal Portfolio Subpages
 
 > [!NOTE]
-> **Companion Document:** This is the **Technical Design Doc (How)** paired with the **Project Plan & PRD (What, Why, Business Case, Metrics, Timeline & Risks)**: [project_plan_prd.md](./project_plan_prd.md).
+> **Companion Document:** This is the **Technical Design Doc (How)** paired with the **Project Plan & PRD (What, Why, Business Case, Metrics, Timeline & Risks)**: [project_plan_prd.md](file:///Users/user/.gemini/antigravity/brain/a8ecca47-ef7c-44f0-a7c3-c24545ec0324/project_plan_prd.md).
 
 ## Goal
-Rework the existing React site in `portfolio-builder/frontend` so it works for any Senior/Staff role in Program Management, Operations, AI Enablement or Localization—without altering the existing homepage. The new subpages are organized around **4 pillars**:
+Rework the existing React site in `portfolio-builder/frontend` so it works for any Senior/Staff role in Program Management, Operations, AI Enablement or Localization - without altering the existing homepage. The new subpages are organized around **4 pillars**:
 1. Program & Delivery
 2. Leadership & Change
 3. Vendor & Financial Governance
@@ -59,7 +59,7 @@ Phase 1 is **English only**. Portuguese is a later phase, but the code will be s
 - **Advantages:** no risk to the live homepage, each page can be built and reviewed on its own, and removing the feature means deleting 3 routes.
 
 ## Step 0 (must be done before any code): consistency check
-All timeline dates and titles come from **your CV**. The comparison against LinkedIn, the site and the Middlebury bio is tracked in [consistency_audit.md](./consistency_audit.md). Anything that doesn't match goes on that file's update list for each app.
+All timeline dates and titles come from **your CV**. The comparison against LinkedIn, the site and the Middlebury bio is tracked in [consistency_audit.md](file:///Users/user/.gemini/antigravity/brain/a8ecca47-ef7c-44f0-a7c3-c24545ec0324/consistency_audit.md). Anything that doesn't match goes on that file's update list for each app.
 
 ## Decisions So Far (round 2)
 - **Your CV is the source of truth.** No facts or dates change until you send proof of the exact timeline. Until then, **the site shows placeholder data** (see §0).
@@ -411,18 +411,18 @@ flowchart TD
 ### Phase 0: Mockups (done, ready for your review)
 **v2: matches your site's look (dark "stellar" style), for `/career` and `/interview`:**
 ````carousel
-![Career Timeline – dark](./mockups/mockup_timeline_dark.jpg)
+![Career Timeline – dark](/Users/user/.gemini/antigravity/brain/a8ecca47-ef7c-44f0-a7c3-c24545ec0324/mockup_timeline_dark_jpg_1794519934272.jpg)
 <!-- slide -->
-![Interview Mode – dark](./mockups/mockup_interview_dark.jpg)
+![Interview Mode – dark](/Users/user/.gemini/antigravity/brain/a8ecca47-ef7c-44f0-a7c3-c24545ec0324/mockup_interview_dark_jpg_1794520010862.jpg)
 ````
 > [!NOTE]
 > The v2 Interview Mode mockup is correct. The v2 timeline mockup still has a mistake from the image generator: the rail squeezes 2020–2022 together. In the real build, every year gets an equal tick.
 
 **v1 (light, replaced by v2):**
 ````carousel
-![Career Timeline mockup](./mockups/mockup_timeline_light_v1.jpg)
+![Career Timeline mockup](/Users/user/.gemini/antigravity/brain/a8ecca47-ef7c-44f0-a7c3-c24545ec0324/mockup_timeline_1794519659091.jpg)
 <!-- slide -->
-![Interview Mode mockup](./mockups/mockup_interview_light_v1.jpg)
+![Interview Mode mockup](/Users/user/.gemini/antigravity/brain/a8ecca47-ef7c-44f0-a7c3-c24545ec0324/mockup_interview_1794519695105.jpg)
 ````
 > [!NOTE]
 > These are AI-generated drafts of the design, so they contain mistakes that **the real build will fix**:
@@ -483,7 +483,7 @@ flowchart LR
 
 - **Rollback Plan:** Because the homepage and backend are untouched, rollback is instant via **Vercel Instant Rollback** to the prior deployment, or by removing the 3 routes in `App.js`.
 
-### Browser checks (local `yarn start` — Lucas / `browser`)
+### Browser checks (local `yarn start`  -  Lucas / `browser`)
 - `/interview` at **1440×900 and 1920×1080**: no scrollbar (`document.documentElement.scrollHeight <= innerHeight`). Lens buttons, `?lens=` URL parameter, keyboard shortcuts `1–5`/`Esc`, and modals all work.
 - `/career`: continuous 2006–2026 + future rail renders evenly, filters dim matching roles, highlights expand, and mobile (390px) falls back to a clean vertical layout.
 - `/brief`: print preview fits on **one page**.

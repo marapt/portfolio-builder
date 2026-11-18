@@ -119,13 +119,13 @@ describe('career timeline placeholder dataset', () => {
     expect(miis).toBeDefined();
     expect(miis.pillars).toEqual(['leadership', 'ai', 'education']);
     expect(miis.title).toBe(
-      'Visiting Professor — Program Management (TLM)'
+      'Visiting Professor, Program Management (TLM)'
     );
     expect(miis.summaryHeading).toBe(
       'Driving Program Growth & Industry Readiness Through Cross-Departmental Initiatives'
     );
     expect(miis.summary).toBe(
-      'Invited as Visiting Professor to modernize the flagship TLM/PGM curriculum, bridging academic training with enterprise program management standards. Spearheaded the first AI Series and forged institutional partnerships across faculty, admissions and careers with partners ranging from SMB to Fortune 500 tech leaders, accelerating cohort growth and professional readiness.'
+      'Invited as Visiting Professor to modernize the flagship TLM/PGM curriculum, bridging academic training with enterprise program management standards. Created and launched the institute\'s first AI Series and forged institutional partnerships across faculty, admissions, and careers with partners ranging from SMB to Fortune 500 tech leaders, accelerating cohort growth and professional readiness.'
     );
     expect(miis.executionSummary.heading).toBe('Execution & Delivery:');
     expect(miis.executionSummary.items.map((item) => item.label)).toEqual([
@@ -139,14 +139,19 @@ describe('career timeline placeholder dataset', () => {
       '95%',
     ]);
     expect(miis.metrics[0].label).toBe('#1 Degree Program at MIIS · ~24% of MIIS Enrollment');
-    expect(miis.metrics[1].label).toBe('120 Active Cohort / Online LPRM Track (15 → 35)');
+    expect(miis.metrics[1].label).toBe('120 Active Cohort / Online LPRM Track (15 to 35 Students)');
     expect(miis.metrics[2].label).toBe('AI in Localization Series Attendance');
     expect(miis.metrics.every((m) => m.placeholder === false)).toBe(true);
     expect(miis.evidence).toBeDefined();
     expect(miis.evidence.note).toContain('Wayback Machine');
+    expect(miis.evidence.sections.map((s) => s.id)).toEqual([
+      'institutional-profile',
+      'professional-development',
+    ]);
     expect(miis.evidence.snapshots.map((s) => s.src)).toEqual([
       '/evidence/miis-faculty-profile.png',
       '/evidence/miis-institutional-data.png',
+      '/evidence/miis-wlpt-2025-event.png',
     ]);
     const publicDir = path.resolve(__dirname, '../../../public');
     miis.evidence.snapshots.forEach((snap) => {
@@ -183,9 +188,9 @@ describe('career timeline placeholder dataset', () => {
     expect(block.title).toBe('Program Management Lead');
     expect(block.placeholder).toBe(false);
     expect(block.metrics.map((m) => m.value)).toEqual([
-      '5 → 15 PMs (3×)',
+      '5 to 15 PMs (3×)',
       '+55% YoY CC GPV*',
-      '9% → 15% Share**',
+      '9% to 15% Share**',
     ]);
     expect(block.metrics.map((m) => m.focus)).toEqual([
       'Team Scale',
@@ -208,6 +213,7 @@ describe('career timeline placeholder dataset', () => {
       'rebrand',
       'markets',
       'roi',
+      'professional-development',
     ]);
     expect(block.evidence.note).toContain('Wayback Machine');
     expect(block.evidence.note).toContain('PDF archive');
@@ -223,6 +229,7 @@ describe('career timeline placeholder dataset', () => {
       '/evidence/block-investor-day-slide27.png',
       '/evidence/block-q3-2022-intl-reconciliation.png',
       '/evidence/block-q3-2022-intl-gpv.png',
+      '/evidence/block-icem-2022-conference.png',
     ]);
     const publicDir = path.resolve(__dirname, '../../../public');
     block.evidence.snapshots.forEach((snap) => {
@@ -311,5 +318,198 @@ describe('career timeline placeholder dataset', () => {
     expect(urls).toContain('https://web.archive.org/web/20261030153521/https://www.ipleiria.pt/en/');
     expect(urls).toContain('/evidence/estg-course-certificates-redacted.pdf');
     expect(urls.some((u) => u.includes('1UVqB7epqcwLu_4TjSobLelVLWLj0LcTt'))).toBe(false);
+  });
+
+  test('linkedin item captures verified Stories rollout waves, MSP operating model, Creator pivot, and MSFT IR earnings assets', () => {
+    const linkedin = timelineItems.find((i) => i.id === 'linkedin');
+    expect(linkedin).toBeDefined();
+    expect(linkedin.placeholder).toBe(false);
+    expect(linkedin.title).toBe('Senior Localization Marketing Manager');
+    expect(linkedin.period).toBe('Mar 2020 – Oct 2021');
+    expect(linkedin.metrics.map((m) => m.value)).toEqual([
+      '26 Langs · 17 Mkts',
+      '-30% Turnaround',
+      '+97% Mktg Solns*',
+    ]);
+    expect(linkedin.metricsFootnote).toContain('Commercial Context (MSFT IR FY21 Q4)');
+    expect(linkedin.metricsFootnote).toContain('Microsoft Investor Relations FY21 Q4 results');
+    expect(linkedin.metricsFootnoteItems).toBeUndefined();
+
+    expect(linkedin.executionSummary.items).toHaveLength(3);
+    expect(linkedin.glossary.length).toBeGreaterThanOrEqual(5);
+    expect(linkedin.glossary.every((g) => Boolean(g.definition && g.shortLabel))).toBe(true);
+    expect(linkedin.evidence).toBeDefined();
+    expect(linkedin.evidence.sections.map((s) => s.id)).toEqual([
+      'rollouts',
+      'operating-model',
+      'creator-pivot',
+      'roi',
+      'professional-development',
+    ]);
+
+    const operatingSection = linkedin.evidence.sections.find((s) => s.id === 'operating-model');
+    expect(operatingSection.reconciliation).toHaveLength(3);
+
+    const roiSection = linkedin.evidence.sections.find((s) => s.id === 'roi');
+    expect(roiSection.glossaryId).toBe('mktg-solutions');
+    expect(roiSection.reconciliation).toHaveLength(6);
+
+    const publicDir = path.resolve(__dirname, '../../../public');
+    const allSnapshots = linkedin.evidence.sections.flatMap((s) => s.snapshots || []);
+    expect(allSnapshots).toHaveLength(14);
+    allSnapshots.forEach((snap) => {
+      expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
+      (snap.extraSlides || []).forEach((extra) => {
+        expect(fs.existsSync(path.join(publicDir, extra.src.replace(/^\//, '')))).toBe(true);
+      });
+    });
+
+    const serialized = JSON.stringify(linkedin);
+    ['Mariana B.', 'John R.', 'Samantha L.', 'Tom W.', 'Sarah M.', 'David H.'].forEach(
+      (excludedName) => {
+        expect(serialized).not.toContain(excludedName);
+      }
+    );
+  });
+
+  test('eu-dgt preserves local permanent Brussels throwback and LinkedIn comment screenshots', () => {
+    const euDgt = timelineItems.find((item) => item.id === 'eu-dgt');
+    expect(euDgt).toBeDefined();
+    expect(euDgt.evidence?.links).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          url: 'https://www.linkedin.com/feed/update/urn:li:share:6783835458033061888/',
+        }),
+      ])
+    );
+
+    const snapshot = euDgt.evidence?.snapshots?.[0];
+    expect(snapshot?.src).toBe('/evidence/eu-dgt-brussels-visitor-photo.png');
+    expect(snapshot?.extraSlides?.[0]?.src).toBe(
+      '/evidence/eu-dgt-carla-linkedin-comment.png'
+    );
+
+    const publicDir = path.join(__dirname, '..', '..', '..', 'public');
+    expect(
+      fs.existsSync(path.join(publicDir, snapshot.src.replace(/^\//, '')))
+    ).toBe(true);
+    expect(
+      fs.existsSync(
+        path.join(publicDir, snapshot.extraSlides[0].src.replace(/^\//, ''))
+      )
+    ).toBe(true);
+  });
+
+  test('postgrad-education milestone and consistent Professional Development & Community Contributions sections verify all credential and conference assets', () => {
+    const publicDir = path.resolve(__dirname, '../../../public');
+
+    const postgrad = timelineItems.find((item) => item.id === 'postgrad-education');
+    expect(postgrad).toBeDefined();
+    expect(postgrad.type).toBe('milestone');
+    expect(postgrad.placeholder).toBe(false);
+    expect(postgrad.evidence.sections.map((s) => s.id)).toEqual([
+      'ai-stanford-credentials',
+      'linkedin-learning-certificates',
+      'superlearning-library',
+    ]);
+
+    const postgradSnaps = postgrad.evidence.sections.flatMap((s) => s.snapshots || []);
+    expect(postgradSnaps).toHaveLength(11);
+    postgradSnaps.forEach((snap) => {
+      expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
+      (snap.extraSlides || []).forEach((extra) => {
+        expect(fs.existsSync(path.join(publicDir, extra.src.replace(/^\//, '')))).toBe(true);
+      });
+    });
+    expect(fs.existsSync(path.join(publicDir, 'evidence/stanford-wsp116-certificate.pdf'))).toBe(
+      true
+    );
+    expect(
+      fs.existsSync(
+        path.join(publicDir, 'evidence/cert-google-project-management-foundations.png')
+      )
+    ).toBe(true);
+
+    const msft = timelineItems.find((item) => item.id === 'microsoft');
+    expect(msft.evidence.sections[0].title).toContain(
+      'Professional Development & Community Contributions'
+    );
+    msft.evidence.sections[0].snapshots.forEach((snap) => {
+      expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
+    });
+  });
+
+  test('Hogarth UK role contains verified metrics, client account highlights, and HTC Change brand evidence', () => {
+    const publicDir = path.resolve(__dirname, '../../../public');
+    const hogarth = timelineItems.find((item) => item.id === 'hogarth-uk');
+    expect(hogarth).toBeDefined();
+    expect(hogarth.placeholder).toBe(false);
+    expect(hogarth.title).toBe('Transcreation Program Manager');
+    expect(hogarth.company).toBe('Hogarth Worldwide (London, United Kingdom)');
+    expect(hogarth.metrics.map((m) => m.value)).toEqual([
+      '30+ mkts',
+      '10+ team',
+      'Digital, Print, ATL',
+    ]);
+    expect(hogarth.evidence).toBeDefined();
+    expect(hogarth.evidence.sections).toHaveLength(1);
+    expect(hogarth.evidence.sections[0].id).toBe('htc-global-brand');
+    expect(hogarth.evidence.sections[0].snapshots).toHaveLength(6);
+
+    hogarth.evidence.sections[0].snapshots.forEach((snap) => {
+      const assetPath = path.join(publicDir, (snap.image || snap.src).replace(/^\//, ''));
+      expect(fs.existsSync(assetPath)).toBe(true);
+      if (Array.isArray(snap.extraSlides)) {
+        snap.extraSlides.forEach((extra) => {
+          expect(fs.existsSync(path.join(publicDir, extra.src.replace(/^\//, '')))).toBe(true);
+        });
+      }
+    });
+  });
+
+  test('RTP internship contains verified metrics, subtitling highlights, and Google Doc internship report evidence', () => {
+    const publicDir = path.resolve(__dirname, '../../../public');
+    const rtp = timelineItems.find((item) => item.id === 'rtp');
+    expect(rtp).toBeDefined();
+    expect(rtp.placeholder).toBe(false);
+    expect(rtp.company).toBe('RTP (Rádio e Televisão de Portugal)');
+    expect(rtp.metrics.map((m) => m.value)).toEqual([
+      '1,100+ hrs/yr',
+      '6 genres',
+      '100% ITC/BBC',
+    ]);
+    expect(rtp.evidence).toBeDefined();
+    expect(rtp.evidence.sections).toHaveLength(2);
+    expect(rtp.evidence.sections[0].id).toBe('rtp-internship-report');
+    expect(rtp.evidence.sections[0].snapshots).toHaveLength(1);
+
+    const assetPath = path.join(
+      publicDir,
+      rtp.evidence.sections[0].snapshots[0].src.replace(/^\//, '')
+    );
+    expect(fs.existsSync(assetPath)).toBe(true);
+  });
+
+  test('Sony Portugal role contains verified metrics, change management highlights, and Google Doc report evidence', () => {
+    const publicDir = path.resolve(__dirname, '../../../public');
+    const sonyPt = timelineItems.find((item) => item.id === 'sony-pt');
+    expect(sonyPt).toBeDefined();
+    expect(sonyPt.placeholder).toBe(false);
+    expect(sonyPt.company).toBe('Sony Portugal (Lisbon, Portugal)');
+    expect(sonyPt.metrics.map((m) => m.value)).toEqual([
+      '39 events',
+      '3 systems',
+      '12,000 hrs*',
+    ]);
+    expect(sonyPt.evidence).toBeDefined();
+    expect(sonyPt.evidence.sections).toHaveLength(3);
+    expect(sonyPt.evidence.sections[0].id).toBe('spt-rtp-change-management');
+    expect(sonyPt.evidence.sections[2].id).toBe('spt-market-scale-benchmark');
+    expect(sonyPt.evidence.sections[0].snapshots).toHaveLength(2);
+
+    sonyPt.evidence.sections[0].snapshots.forEach((snap) => {
+      const assetPath = path.join(publicDir, (snap.image || snap.src).replace(/^\//, ''));
+      expect(fs.existsSync(assetPath)).toBe(true);
+    });
   });
 });

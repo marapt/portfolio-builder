@@ -53,7 +53,7 @@ const MetricBadge = ({ metric, compact = false }) => {
         {metric.placeholder ? (
           <span
             className="inline-flex items-center rounded-md border border-cyan-400/40 bg-cyan-400/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-cyan-200"
-            title={metric.hint || 'Draft placeholder — awaiting CV/evidence verification'}
+            title={metric.hint || 'Draft placeholder, awaiting CV/evidence verification'}
           >
             Draft
           </span>
