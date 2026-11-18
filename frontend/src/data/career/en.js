@@ -2435,14 +2435,19 @@ export const timelineItems = [
     location: 'Google · Stanford · Anthropic · LinkedIn Learning',
     monogram: '🎓',
     title: 'Post-Graduate Continuous Education & Verified Credentials',
-    org: 'Google Career Certificates · Anthropic Academy · Stanford Continuing Studies · LinkedIn Learning',
-    period: '2020 – Nov 2026 (29 Verified Credentials & Completed Courses)',
+    org: 'Google Career Certificates · Anthropic Academy · Stanford Continuing Studies · Tony Robbins / Assessments 24x7 · LinkedIn Learning',
+    period: '2020 – Nov 2026 (30 Verified Credentials & Completed Courses)',
     startYear: 2020,
     endYear: 2026,
     pillars: ['education', 'program', 'ai', 'leadership'],
     summary:
-      'Continuous post-graduate executive, project management, and technical education spanning Google Career Certificates (Foundations of Project Management, Nov 2026), Anthropic Academy (AI Fluency: Framework & Foundations, Mar 2026), Stanford Continuing Studies (WSP 116: Conversational Intelligence, Feb 2021), and a 26-course LinkedIn Learning leadership and DEI track (recognized in the Top 12% of Learners globally for CY 2020). Every included credential below is backed by a live verification URL, signed institutional PDF, or local certificate capture.',
+      'Continuous post-graduate executive, project management, leadership, and technical education spanning Google Career Certificates (Foundations of Project Management, Nov 2026), Anthropic Academy (AI Fluency: Framework & Foundations, Mar 2026), Stanford Continuing Studies (WSP 116: Conversational Intelligence, Feb 2021), Tony Robbins / Assessments 24x7 (Executive DISC & Workplace Motivators Profile, Nov 2026), and a 26-course LinkedIn Learning leadership and DEI track (recognized in the Top 12% of Learners globally for CY 2020). Every included credential below is backed by a live verification URL, signed institutional PDF, or local certificate capture.',
     highlights: [
+      {
+        text: 'Executive Leadership Profile (Nov 18, 2026): Completed Certified DISC & Workplace Motivators Assessment (Tony Robbins / Assessments 24x7). Primary Style: Planner (High follow-through, cross-functional stabilizing presence, structured process refinement, and analytical problem-solving).',
+        url: '/evidence/Ferreira_Martins_Mara_Alexandra_DISC_and_Motivators.pdf',
+        linkLabel: 'Inspect Executive DISC & Motivators Report (PDF)',
+      },
       {
         text: 'Google Career Certificates (Nov 18, 2026): Completed Foundations of Project Management (Coursera Verified Certificate ID: XVPI1ID021WB; Grade: 84.7%).',
         url: 'https://coursera.org/share/5dbd532f0b41cdcfa8ba2ab4d1a46771',
@@ -2476,6 +2481,11 @@ export const timelineItems = [
           summary:
             'Verified executive, project management, and technical credentials in industry project governance (Google Career Certificates, Nov 18, 2026), enterprise AI foundations (Anthropic Academy, Mar 18, 2026), and leadership communication (Stanford Continuing Studies WSP 116, Feb 6–7, 2021).',
           links: [
+            {
+              label: 'Executive Leadership Profile: DISC & Workplace Motivators (PDF)',
+              url: '/evidence/Ferreira_Martins_Mara_Alexandra_DISC_and_Motivators.pdf',
+              kind: 'archive',
+            },
             {
               label: 'Verify Google Foundations of Project Management (Coursera)',
               url: 'https://coursera.org/share/5dbd532f0b41cdcfa8ba2ab4d1a46771',

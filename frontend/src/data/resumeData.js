@@ -287,6 +287,15 @@ export const resumeData = {
   
   certifications: [
     {
+      name: 'Executive Leadership Profile: DISC & Workplace Motivators',
+      issuer: 'Tony Robbins / Assessments 24x7 (Behavioral Style: Planner)',
+      year: 'Nov 2026',
+      credentialUrl: '/evidence/Ferreira_Martins_Mara_Alexandra_DISC_and_Motivators.pdf',
+      credentialLabel: 'View Leadership Report',
+      proofUrl: '/evidence/Ferreira_Martins_Mara_Alexandra_DISC_and_Motivators.pdf',
+      proofLabel: 'Report PDF'
+    },
+    {
       name: 'Foundations of Project Management',
       issuer: 'Google Career Certificates (Coursera ID: XVPI1ID021WB)',
       year: 'Nov 2026',
