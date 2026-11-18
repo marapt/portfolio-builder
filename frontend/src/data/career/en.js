@@ -6,7 +6,7 @@ export const pillars = [
   { id: 'program', label: 'Program & Delivery' },
   { id: 'leadership', label: 'Leadership & Change' },
   { id: 'vendor', label: 'Vendor & Finance' },
-  { id: 'ai', label: 'AI & Automation' },
+  { id: 'ai', label: 'Machine Translation, LLMs and AI' },
   { id: 'education', label: 'Education' },
 ];
 
@@ -24,7 +24,7 @@ export const pillarMeta = {
     badgeClass: 'border-amber-400/30 bg-amber-400/10 text-amber-200',
   },
   ai: {
-    label: 'AI & Automation',
+    label: 'Machine Translation, LLMs and AI',
     badgeClass: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-200',
   },
   education: {
