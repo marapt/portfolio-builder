@@ -1067,7 +1067,7 @@ export const timelineItems = [
     period: 'Aug 2006 – Dec 2006 (Academic Internship)',
     startYear: 2006,
     endYear: 2006,
-    pillars: ['program', 'leadership'],
+    pillars: ['program', 'leadership', 'education'],
     summary:
       'Completed accessibility-focused broadcast subtitling and content adaptation internship at Portugal’s national public broadcaster (RTP Gabinete Multimédia) as part of final-year coursework for the ESTG degree, delivering closed captioning via Teletext Page 188 for deaf and hard-of-hearing audiences.',
     metrics: [
@@ -1198,7 +1198,7 @@ export const timelineItems = [
     period: 'Sep 2006 (Academic Internship)',
     startYear: 2006,
     endYear: 2006,
-    pillars: ['program'],
+    pillars: ['program', 'education'],
     summary:
       'Completed EU institutional terminology traineeship in Brussels during final university coursework toward the 2007 ESTG degree, maintaining multilingual IATE terminology records across EU workflows.',
     metrics: [
@@ -1840,7 +1840,7 @@ export const timelineItems = [
     period: 'Jun 2016 – Apr 2020',
     startYear: 2016,
     endYear: 2020,
-    pillars: ['leadership', 'vendor', 'ai'],
+    pillars: ['program', 'leadership', 'vendor', 'ai'],
     summary:
       'Built a cross-org Center of Excellence, automated API asset ingestion, and governed multi-million-dollar global store & marketing operations.',
     metrics: [
@@ -2799,10 +2799,10 @@ export const timelineItems = [
     endYear: 2027,
     pillars: ['program', 'leadership', 'ai'],
     summary:
-      'Working on my next adventure. More to come, stay tuned! :)',
+      'Preparing the next strategic chapter across enterprise AI governance, program architecture, and global scale.',
     targetSkills: ['AI Program Leadership', 'Global Operations', 'Strategic GTM'],
     highlights: [
-      'Working on my next adventure. More to come, stay tuned! :)',
+      'Exploring opportunities in AI Localization Strategy, Program Leadership, and Operations Enablement.',
     ],
     placeholder: false,
   },
@@ -2822,10 +2822,10 @@ export const timelineItems = [
     endYear: 2028,
     pillars: ['ai', 'vendor', 'leadership'],
     summary:
-      'Working on my next adventure. More to come, stay tuned! :)',
+      'Scaling operational frameworks and human-in-the-loop AI systems for international organizations.',
     targetSkills: ['Executive Governance', 'Global Scale Strategy', 'Org Mentorship'],
     highlights: [
-      'Working on my next adventure. More to come, stay tuned! :)',
+      'Focusing on commercial vendor strategy, LLM evaluation systems, and Center of Excellence leadership.',
     ],
     placeholder: false,
   },
@@ -2845,10 +2845,10 @@ export const timelineItems = [
     endYear: 2029,
     pillars: ['leadership', 'vendor', 'ai', 'program'],
     summary:
-      'Working on my next adventure. More to come, stay tuned! :)',
+      'Shaping multi-year international expansion, organizational mentorship, and responsible AI operating models at executive scale.',
     targetSkills: ['P&L & Leadership', 'Executive Enablement', 'Global Expansion'],
     highlights: [
-      'Working on my next adventure. More to come, stay tuned! :)',
+      'Dedicated to executive leadership, P&L stewardship, and global market expansion.',
     ],
     placeholder: false,
   },

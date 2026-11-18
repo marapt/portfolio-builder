@@ -45,6 +45,20 @@ describe('career timeline placeholder dataset', () => {
     });
   });
 
+  test('education, program, and leadership pillars map correctly to milestone and role items', () => {
+    const eduIds = timelineItems.filter((i) => i.pillars.includes('education')).map((i) => i.id);
+    expect(eduIds).toEqual(['graduation', 'rtp', 'eu-dgt', 'miis', 'postgrad-education']);
+
+    const msft = timelineItems.find((i) => i.id === 'microsoft');
+    expect(msft.pillars).toContain('program');
+
+    const linkedin = timelineItems.find((i) => i.id === 'linkedin');
+    expect(linkedin.pillars).toContain('leadership');
+
+    const block = timelineItems.find((i) => i.id === 'block');
+    expect(block.pillars).toContain('leadership');
+  });
+
   test('timeline includes separate RTP & EU DGT internships, Sony PT, Sony UK, Hogarth UK, graduation, relocation, Apple 2026, and future placeholders', () => {
     const ids = new Set(timelineItems.map((item) => item.id));
     expect(ids.has('rtp')).toBe(true);
