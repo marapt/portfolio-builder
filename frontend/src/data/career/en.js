@@ -1905,7 +1905,7 @@ export const timelineItems = [
         linkLabel: 'LocWorld40 Content Management Archive',
       },
       {
-        text: 'Digital Stores Globalization & DAM Governance: Served as Globalization Program Manager for Microsoft Stores within Microsoft Digital Stores, acting as the central liaison across Design, Product, Legal, Global Readiness, and regional partners to operationalize compliant global campaign delivery. Partnered cross-functionally to enforce DAM imagery catalog metadata, sorting criteria, and labeling aligned with Global Readiness and Legal requirements; established end-to-end data archiving and lifecycle governance bridging internal quality audits/approvals with vendor Human-in-the-Loop (HIL) workflows, training, and sorting standards; and drove tooling and process optimizations, including automated imagery selection for Digital Stores campaigns.',
+        text: 'Digital Stores Globalization & DAM Governance: Served as Globalization Program Manager for Microsoft Stores within the David Porter organization in Microsoft Digital Stores, acting as central liaison across Design, Product, Legal, Global Readiness, and regional partners. While not working on the subsequent COVID-era physical store closures, investment in Digital Stores was continuous; as affirmed by CVP David Porter and CPO Kathleen Hogan, Microsoft prioritized digital innovation across software and hardware. Enforced DAM imagery catalog metadata, sorting criteria, and labeling; established data archiving and lifecycle governance bridging internal quality audits with vendor Human-in-the-Loop (HIL) workflows; and drove tooling optimizations including automated imagery selection.',
         url: 'https://news.microsoft.com/source/2020/06/26/microsoft-store-announces-new-approach-to-retail/',
         linkLabel: 'Microsoft Store Retail Transformation Announcement',
       },
@@ -2206,7 +2206,7 @@ export const timelineItems = [
           defaultOpen: false,
           columns: 1,
           summary:
-            'Served as Globalization Program Manager for Microsoft Stores within Microsoft Digital Stores, acting as the central liaison across Design, Product, Legal, Global Readiness, and regional partners to operationalize compliant global campaign delivery. Partnered cross-functionally to enforce DAM imagery catalog metadata, sorting criteria, and labeling aligned with Global Readiness and Legal requirements; established end-to-end data archiving and lifecycle governance bridging internal quality audits/approvals with vendor Human-in-the-Loop (HIL) workflows, training, and sorting standards; and drove tooling and process optimizations, including automated imagery selection for Digital Stores campaigns.',
+            'Served as Globalization Program Manager for Microsoft Stores within the David Porter organization in Microsoft Digital Stores, acting as the central liaison across Design, Product, Legal, Global Readiness, and regional partners to operationalize compliant global campaign delivery. While not directly working on the subsequent COVID-era initiative to shut down physical retail locations (announced June 26, 2020), investment in Digital Stores was continuous and central to the retail strategy. As affirmed by Microsoft CVP David Porter and Chief People Officer Kathleen Hogan, "the company will continue to invest in digital innovation across software and hardware" through digital storefronts on Microsoft.com, Windows, and Xbox. In this role, enforced DAM imagery catalog metadata, sorting criteria, and labeling aligned with Global Readiness and Legal requirements; established end-to-end data archiving and lifecycle governance bridging internal quality audits/approvals with vendor Human-in-the-Loop (HIL) workflows, training, and sorting standards; and drove tooling and process optimizations, including automated imagery selection for Digital Stores campaigns.',
           links: [
             {
               label: 'Microsoft News: Microsoft Store Announces New Approach to Retail',
@@ -2223,13 +2223,13 @@ export const timelineItems = [
             {
               marketTag: 'MICROSOFT NEWS · DIGITAL STOREFRONT EVOLUTION · JUN 26, 2020',
               src: '/evidence/msft-news-store-digital-retail.png',
-              alt: 'Microsoft Store announces new approach to retail featuring digital storefront transformation',
+              alt: 'Microsoft Store announces new approach to retail highlighting continuous investment in digital storefront innovation across software and hardware',
               caption: 'Microsoft Store Digital Transformation Announcement',
               linkLabel: 'Announcement Archive (Wayback)',
               url: 'https://web.archive.org/web/20261105200125/https://news.microsoft.com/source/2020/06/26/microsoft-store-announces-new-approach-to-retail/',
               fit: 'contain',
               expandLabel: 'Inspect Retail Transformation Announcement',
-              note: 'Public announcement illustrating Microsoft Store transition to digital storefronts serving over 1.2 billion people.',
+              note: 'Official Microsoft announcement affirming continuous investment in digital storefront innovation across software and hardware. (Context Disclaimer: Served in the David Porter Microsoft Stores org within Digital Stores; did not work on the physical retail closures that occurred during COVID).',
             },
           ],
         },
@@ -2238,7 +2238,7 @@ export const timelineItems = [
           title: '6. Consumer Go-To-Market Strategy & Global Seasonal Campaigns',
           badge: 'Consumer GTM System · Sim-Ship vs Phased Launches · Multi-Market Retail',
           defaultOpen: false,
-          columns: 2,
+          columns: 3,
           summary:
             'Supported the Microsoft Consumer Go-To-Market (GTM) strategy as Program Manager leading vendor partner teams to deliver seamless seasonal retail campaigns across all Microsoft Store countries and languages. Governed sim-ship vs phased international rollouts across Product, Marketing, Design, and Legal teams for Tier-1 commercial moments including Spring and Autumn hemisphere-adapted sales, Back to School, and Black Friday/Holiday. Partnered with Senior Leadership, GTM leads, and Data Analytics & Experimentation teams to optimize conversion, track global consumer impressions, and support record-setting digital commerce milestones across 200 markets.',
           snapshots: [
@@ -2269,24 +2269,6 @@ export const timelineItems = [
               expandLabel: 'Inspect Back to School Campaign',
               note: 'Tier-1 seasonal retail campaign execution across PC hardware, Surface, and Xbox gaming catalogs.',
             },
-            {
-              marketTag: 'COMMERCE IMPACT · FY19 RECORD-SETTING MOMENTUM',
-              src: '/evidence/msft-gtm-digital-gaming-momentum.png',
-              alt: 'Microsoft momentum slide showing $6B+ revenue, 23% Y/Y growth, and 22B gaming hours',
-              caption: 'Digital Gaming Commerce Momentum · $6B+ Revenue Impact',
-              fit: 'contain',
-              expandLabel: 'Inspect Gaming Commerce Momentum',
-              note: 'Record-setting digital store performance delivering 23% Y/Y revenue growth and outperforming market growth for 2 years.',
-            },
-            {
-              marketTag: 'NEXT-GEN PLATFORMS · PROJECT SCARLETT & XCLOUD',
-              src: '/evidence/msft-gtm-xbox-roadmap.png',
-              alt: 'Project Scarlett, Halo Infinite, Game Pass, and Project xCloud ecosystem readiness slide',
-              caption: 'Next-Decade Platform Initiatives · Ecosystem Alignment',
-              fit: 'contain',
-              expandLabel: 'Inspect Next-Decade Platform Initiatives',
-              note: 'Multi-product campaign readiness aligning Project Scarlett (Xbox Series X), Game Pass, and cloud gaming initiatives.',
-            },
           ],
         },
         {
@@ -2314,7 +2296,7 @@ export const timelineItems = [
           title: '8. One Microsoft Vision: Xbox Store Integration & Rebrand',
           badge: 'One Microsoft · Xbox Store Merger · Cross-Platform Rebrand Alignment',
           defaultOpen: false,
-          columns: 1,
+          columns: 3,
           summary:
             'Aligned with Satya Nadella’s "One Microsoft" enterprise vision, coordinated across partner teams and the Xbox organization as Program Manager to align the Xbox Store experience and rebrand it to the unified Microsoft Store. Conducted a comprehensive audit of Microsoft Stores across Windows OS, digital web, and the Xbox portal, partnering with Engineering to ensure consistent name rebrand alignment (from Office and Xbox Store to Microsoft Store) and maintain a cohesive look and feel across platforms to simplify the user experience, increase customer adoption, and optimize the consumer purchase funnel.',
           links: [
@@ -2340,6 +2322,24 @@ export const timelineItems = [
               fit: 'contain',
               expandLabel: 'Inspect TechTarget Xbox Store Merger Coverage',
               note: 'Industry report documenting the 2017 merger of the Xbox store into the Windows Store, rebranded as the unified Microsoft Store under the "One Microsoft" strategy.',
+            },
+            {
+              marketTag: 'COMMERCE IMPACT · FY19 RECORD-SETTING MOMENTUM',
+              src: '/evidence/msft-gtm-digital-gaming-momentum.png',
+              alt: 'Microsoft momentum slide showing $6B+ revenue, 23% Y/Y growth, and 22B gaming hours',
+              caption: 'Digital Gaming Commerce Momentum · $6B+ Revenue Impact',
+              fit: 'contain',
+              expandLabel: 'Inspect Gaming Commerce Momentum',
+              note: 'Record-setting digital store performance delivering 23% Y/Y revenue growth and outperforming market growth for 2 years.',
+            },
+            {
+              marketTag: 'NEXT-GEN PLATFORMS · PROJECT SCARLETT & XCLOUD',
+              src: '/evidence/msft-gtm-xbox-roadmap.png',
+              alt: 'Project Scarlett, Halo Infinite, Game Pass, and Project xCloud ecosystem readiness slide',
+              caption: 'Next-Decade Platform Initiatives · Ecosystem Alignment',
+              fit: 'contain',
+              expandLabel: 'Inspect Next-Decade Platform Initiatives',
+              note: 'Multi-product campaign readiness aligning Project Scarlett (Xbox Series X), Game Pass, and cloud gaming initiatives.',
             },
           ],
         },

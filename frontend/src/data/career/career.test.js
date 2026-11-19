@@ -471,11 +471,11 @@ describe('career timeline placeholder dataset', () => {
       )
     ).toBe(true);
     expect(msft.evidence.sections[5].id).toBe('gtm-seasonal-campaigns');
-    expect(msft.evidence.sections[5].snapshots).toHaveLength(5);
+    expect(msft.evidence.sections[5].snapshots).toHaveLength(3);
     expect(msft.evidence.sections[6].id).toBe('adobe-partnership-integration');
     expect(msft.evidence.sections[6].snapshots).toHaveLength(1);
     expect(msft.evidence.sections[7].id).toBe('xbox-store-rebrand');
-    expect(msft.evidence.sections[7].snapshots).toHaveLength(1);
+    expect(msft.evidence.sections[7].snapshots).toHaveLength(3);
     expect(
       msft.evidence.sections[7].links.some((l) =>
         l.url.includes('techtarget.com/news/Microsoft-Store/851509')
