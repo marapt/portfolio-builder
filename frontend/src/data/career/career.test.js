@@ -485,20 +485,28 @@ describe('career timeline placeholder dataset', () => {
     expect(msft.evidence.sections[7].title).toContain(
       'Professional Development & Community Contributions'
     );
+    expect(msft.highlights.length).toBeGreaterThanOrEqual(4);
     expect(
       msft.highlights.some((h) =>
-        typeof h === 'object' && h.text.includes('Adobe Strategic Partnership')
+        (typeof h === 'string' ? h : h.text).includes('Center of Excellence')
       )
     ).toBe(true);
     expect(
       msft.highlights.some((h) =>
-        typeof h === 'object' && h.text.includes('One Microsoft Ecosystem Alignment & Xbox Store Rebrand')
+        (typeof h === 'string' ? h : h.text).includes('Consumer Go-To-Market')
       )
     ).toBe(true);
     expect(
-      msft.highlights.some((h) =>
-        typeof h === 'object' && h.text.includes('Digital Stores Globalization & DAM Governance')
-      )
+      msft.evidence.sections.some((s) => s.id === 'adobe-partnership-integration')
+    ).toBe(true);
+    expect(
+      msft.evidence.sections.some((s) => s.id === 'xbox-store-rebrand')
+    ).toBe(true);
+    expect(
+      msft.evidence.sections.some((s) => s.id === 'ai-dam-automation')
+    ).toBe(true);
+    expect(
+      msft.evidence.sections.some((s) => s.id === 'machine-translation-pilot')
     ).toBe(true);
 
     msft.evidence.sections.forEach((section) => {

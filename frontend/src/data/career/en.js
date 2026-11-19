@@ -1854,8 +1854,6 @@ export const timelineItems = [
     logo: '/company-logos/microsoft.svg',
     title: 'Senior Marcom Manager, Localization & Operations',
     officialTitle: 'Sr. Global Marcom Manager - Localization & Operations',
-    dutiesBeyondScope:
-      'Built an enterprise cross-org Center of Excellence across 200 markets and 100 languages, automated API asset ingestion, and renegotiated multi-year global vendor MSAs.',
     period: 'Jun 2016 – Apr 2020',
     startYear: 2016,
     endYear: 2020,
@@ -1886,44 +1884,10 @@ export const timelineItems = [
       },
     ],
     highlights: [
-      'Established an enterprise cross-organizational Center of Excellence across 200 markets and 100 languages, aligning engineering, brand, regional marketing, and external agencies.',
-      'Managed multi-vendor partner teams (over 15 specialists), governing multi-year vendor agreements, budget allocation, and automated quality metrics.',
-      {
-        text: 'Consumer Go-To-Market (GTM) Strategy & Seasonal Retail Campaigns: Served as Program Manager supporting the Consumer GTM strategy, leading vendor partner teams to deliver Tier-1 seasonal campaigns (Spring/Autumn Sales with dual-hemisphere adaptation, Back to School, Black Friday/Holiday) across all Microsoft Store countries and languages. Planned sim-ship vs phased international launches with Product, Marketing, Design, and Legal teams, and partnered with Senior Leadership, GTM Lead, and Data Analytics & Experimentation teams to optimize conversion and achieve record digital commerce milestones.',
-      },
-      {
-        text: 'Adobe Strategic Partnership & Enterprise Experience Integration: Contributed to Microsoft’s enterprise partnership with Adobe as Program Manager for Microsoft Stores, driving adoption and migration to Adobe Experience solutions (Web & Message Delivery). Managed vendor liaison across multi-quarter rollout waves, reported progress to leadership, and partnered with Engineering, Marketing, and Regional teams to drive process automations and maintain global business continuity.',
-      },
-      {
-        text: 'One Microsoft Ecosystem Alignment & Xbox Store Rebrand: Aligned with Satya Nadella’s "One Microsoft" vision, coordinated as Program Manager across partner teams and the Xbox organization to align the Xbox Store experience and rebrand to the unified Microsoft Store. Conducted a cross-surface audit of Microsoft Stores across Windows OS, digital web, and the Xbox portal, partnering with Engineering to ensure consistent name rebrand alignment (from Office and Xbox Store to Microsoft Store) and maintain a unified look and feel that simplified the user experience, drove adoption, and optimized the consumer purchase journey.',
-        url: 'https://www.techtarget.com/news/Microsoft-Store/851509/',
-        linkLabel: 'TechTarget: Xbox & Microsoft Store Architecture',
-      },
-      {
-        text: 'Microsoft Global Careers Site Revamp (May 2018): Supported the client-side careers web experience revamp with the Global Talent Acquisition team, managing internationalization and delegating integration handovers with external vendors (such as Phenom People for candidate CRM and contractor roles for the external workforce). Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, public data, live pages, and case studies are available.',
-        url: 'https://careers.microsoft.com/v2/global/en/contractor-roles.html',
-        linkLabel: 'Microsoft Careers External Workforce Portal',
-      },
-      {
-        text: 'Geopolitical Readiness & Enterprise Globalization Standards: Served as the Microsoft Stores advocate and cross-functional partner to the central Microsoft Global Readiness lead, receiving formal recognition from the Global Readiness team for strengthening geopolitical readiness and market risk alignment across retail operations. Partnered across teams to shape market sensitivity guidelines and codify reusable globalization practices into public Microsoft Learn documentation, global product delivery methodologies, and the Microsoft Developer Product Inclusion framework.',
-        url: 'https://learn.microsoft.com/en-us/globalization/methodology/global-product-delivery',
-        linkLabel: 'Microsoft Learn Global Product Delivery',
-      },
-      {
-        text: 'Microsoft Store Machine Translation, AI and Vendor Optimization: Led MT and AI pilot programs for Microsoft Stores and managed strategic vendor partnerships including Lionbridge (whose collaboration with Microsoft Translator precedes subsequent Azure AI initiatives). Responsibilities beyond day-to-day global campaigns and seasonal GTM launches included MT production catalog adoption, DAM image geopolitical readiness, and tooling/process optimizations that fundamentally reshaped vendor Statements of Work (SOWs) year-over-year for measurable throughput and cost savings.',
-        url: 'https://www.microsoft.com/en/customers/story/1792260322207475324-lionbridge-technologies-azure-openai-service-other-en-united-states#customers-share-modal-dialog',
-        linkLabel: 'Microsoft Customer Story: Lionbridge AI Partnership',
-      },
-      {
-        text: 'Digital Stores Globalization & DAM Governance: Served as Globalization Program Manager for Microsoft Stores within the David Porter organization in Microsoft Digital Stores, acting as central liaison across Design, Product, Legal, Global Readiness, and regional partners. While not working on the subsequent COVID-era physical store closures, investment in Digital Stores was continuous; as affirmed by CVP David Porter and CPO Kathleen Hogan, Microsoft prioritized digital innovation across software and hardware. Enforced DAM imagery catalog metadata, sorting criteria, and labeling; established data archiving and lifecycle governance bridging internal quality audits with vendor Human-in-the-Loop (HIL) workflows; and drove tooling optimizations including automated imagery selection.',
-        url: 'https://news.microsoft.com/source/2020/06/26/microsoft-store-announces-new-approach-to-retail/',
-        linkLabel: 'Microsoft Store Retail Transformation Announcement',
-      },
-      {
-        text: 'Professional Development & Community Contributions (2019–2020): Represented Microsoft at LocWorld40 Portugal (Estoril, Jun 13, 2019) on the Content Management panel alongside Uber and EA, featured on The Worldly Marketer Podcast Ep. 143 (Apr 24, 2019), and served as Events Coordinator for Women in Localization Pacific Northwest (Seattle).',
-        url: 'https://web.archive.org/web/20190720095116/https://locworld.com/sessions/managing-multiple-content-types-strategies-that-work/',
-        linkLabel: 'LocWorld40 Session (Wayback)',
-      },
+      'Established an enterprise Center of Excellence across 200 markets and 100 languages, unifying digital storefront operations, brand marketing, and regional execution.',
+      'Managed multi-vendor partner teams (15+ specialists across global agencies), governing multi-year agreements, budget allocations, and automated SLA quality metrics.',
+      'Supported the Consumer Go-To-Market (GTM) strategy for Microsoft Stores, orchestrating Tier-1 seasonal campaigns, sim-ship vs phased launches, and cross-functional delivery.',
+      'Championed strategic store initiatives: Xbox Store unified rebrand, Adobe enterprise migrations, Machine Translation pilots, and DAM geopolitical governance (detailed in evidence cards below).',
     ],
     evidence: {
       note: 'Archive & Public Evidence Note: Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, verified public release announcements, platform case studies, and industry conference archives are preserved below.',
@@ -2225,7 +2189,7 @@ export const timelineItems = [
           title: '6. Microsoft Store Machine Translation, AI and Vendor Optimization',
           badge: 'Neural MT Pilot · MS Stores Adoption · Vendor SOW Optimization',
           defaultOpen: false,
-          columns: 2,
+          columns: 1,
           summary:
             'Led Machine Translation (MT), AI, and vendor optimization programs for Microsoft Stores, managing strategic globalization partners including the Lionbridge vendor partnership among other key agencies. Disclaimer: While public customer stories highlight Lionbridge\'s subsequent Azure OpenAI adoption, Lionbridge has long been a foundational vendor partner for Microsoft, with its adoption of Microsoft Translator preceding recent initiatives. Responsibilities beyond day-to-day global campaigns and seasonal GTM launches encompassed MT pilots and production catalog adoption, DAM image geopolitical readiness, and continuous tooling/process optimizations. This program fundamentally reshaped vendor Statements of Work (SOWs) year-over-year, delivering volume scalability, fast turnaround times, and substantial cost savings at enterprise scale.',
           links: [
@@ -2233,16 +2197,6 @@ export const timelineItems = [
               label: 'Microsoft Customer Story: Lionbridge Disruption Using Azure AI & Translation (Official)',
               url: 'https://www.microsoft.com/en/customers/story/1792260322207475324-lionbridge-technologies-azure-openai-service-other-en-united-states#customers-share-modal-dialog',
               kind: 'case-study',
-            },
-            {
-              label: 'LocWorld40 Session Program: Managing Multiple Content Types (Wayback Archive)',
-              url: 'https://web.archive.org/web/20190720095116/https://locworld.com/sessions/managing-multiple-content-types-strategies-that-work/',
-              kind: 'archive',
-            },
-            {
-              label: 'LocWorld40 Speaker Profile (Wayback Archive)',
-              url: 'https://web.archive.org/web/20190723051914/https://locworld.com/speakers/mara-ferreira-martins/',
-              kind: 'archive',
             },
           ],
           snapshots: [
@@ -2256,17 +2210,6 @@ export const timelineItems = [
               fit: 'contain',
               expandLabel: 'Inspect Customer Story',
               note: 'Disclaimer: While Lionbridge subsequent Azure AI adoption is highlighted, Lionbridge has long served as a core vendor partner for Microsoft (using Microsoft Translator for over a decade). As PGM at Microsoft Stores, managed the Lionbridge vendor partnership among others, governing MT pilots, DAM image geopolitical readiness, and tooling optimizations to contribute directly to mutual success.',
-            },
-            {
-              marketTag: 'LOCWORLD40 PORTUGAL · ESTORIL · JUN 13, 2019',
-              src: '/evidence/msft-locworld40-session.png',
-              alt: 'LocWorld40 session page on Managing Multiple Content Types featuring Mara Ferreira Martins',
-              caption: 'LocWorld40 Portugal · Managing Multiple Content Types Panel',
-              linkLabel: 'Session Archive (Wayback)',
-              url: 'https://web.archive.org/web/20190720095116/https://locworld.com/sessions/managing-multiple-content-types-strategies-that-work/',
-              fit: 'contain',
-              expandLabel: 'Inspect LocWorld40 Session',
-              note: 'Invited panelist representing Microsoft alongside Uber and Electronic Arts, sharing MT pilot deployment and multi-tiered content workflows.',
             },
           ],
         },
@@ -2311,7 +2254,7 @@ export const timelineItems = [
           defaultOpen: false,
           columns: 2,
           summary:
-            'Represented Microsoft as an invited panelist at LocWorld40 Portugal (Estoril, Jun 13, 2019) on "Managing Multiple Content Types: Strategies That Work" alongside leaders from Uber and Electronic Arts (EA), featured as the guest on The Worldly Marketer Podcast Episode 143 (Apr 24, 2019), and served as Events Coordinator for the Women in Localization Pacific Northwest Chapter in Seattle (2019–2020).',
+            'I was an invited panelist at LocWorld40 Portugal (Estoril, Jun 13, 2019) on "Managing Multiple Content Types: Strategies That Work" alongside leaders from Uber and Electronic Arts (EA), featured as the guest on The Worldly Marketer Podcast Episode 143 (Apr 24, 2019), and served as Events Coordinator for the Women in Localization Pacific Northwest Chapter in Seattle (2019–2020).',
           links: [
             {
               label: 'LocWorld40 Session Program (Wayback, Jul 2019)',
@@ -2344,7 +2287,7 @@ export const timelineItems = [
               url: 'https://web.archive.org/web/20190720095116/https://locworld.com/sessions/managing-multiple-content-types-strategies-that-work/',
               fit: 'contain',
               expandLabel: 'Inspect LocWorld40 Session Page',
-              note: 'Invited panelist representing Microsoft alongside leaders from Uber and Electronic Arts (EA), moderated by Content Rules.',
+              note: 'Invited panelist sharing multi-tiered content management strategies alongside leaders from Uber and Electronic Arts (EA), moderated by Content Rules.',
             },
             {
               marketTag: 'THE WORLDLY MARKETER PODCAST · EP. 143 · APR 24, 2019',
