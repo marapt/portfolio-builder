@@ -1,12 +1,16 @@
 // Data for the About Me experience in Portuguese: 3-Pillar Google L6 Functional Architecture
 
 export const aboutHero = {
-  eyebrow: 'Liderança Executiva de Programas e Narrativa de Sistemas',
-  title: 'Global Program & Operations Management',
+  eyebrow: 'Gestão de Programas Empresariais & Narrativa de Sistemas',
+  title: 'Líder Global de PgM & Gestora de Operações de Coração - Expansão para a Gestão de Programas Empresariais',
+  titlePrimary: 'Líder Global de PgM & Gestora de Operações de Coração',
+  titleSecondary: 'Expansão para a Gestão de Programas Empresariais',
+  lead:
+    'Com base em anos de expansão de lançamentos globais, fluxos de ferramentas e operações multifuncionais nas principais organizações tecnológicas, trago a liderança de programas de grande escala para a gestão de programas empresariais (PgM): transformando iniciativas ambíguas e multifuncionais em sistemas operacionais previsíveis e resultados mensuráveis entre equipas, sistemas e mercados.',
   tagline:
-    'Desenho de sistemas operacionais escaláveis, fluxos de trabalho com IA e alinhamento multifuncional para concretizar iniciativas globais complexas.',
+    'Com base em anos de expansão de lançamentos globais, fluxos de ferramentas e operações multifuncionais nas principais organizações tecnológicas, trago a liderança de programas de grande escala para a gestão de programas empresariais (PgM): transformando iniciativas ambíguas e multifuncionais em sistemas operacionais previsíveis e resultados mensuráveis entre equipas, sistemas e mercados.',
   quickGrasp:
-    'Liderar na ambiguidade exige mais do que mera coordenação: exige transformar prioridades concorrentes em modelos operacionais claros. Com mais de 20 anos de experiência que abrangem formação em interpretação em Portugal, produção criativa multicanal em Londres e liderança de programas empresariais em Silicon Valley, colaboro com líderes multifuncionais para construir sistemas duradouros, alinhar incentivos e acelerar a execução em equipas globais.',
+    'Com base em anos de expansão de lançamentos globais, fluxos de ferramentas e operações multifuncionais nas principais organizações tecnológicas, trago a liderança de programas de grande escala para a gestão de programas empresariais (PgM): transformando iniciativas ambíguas e multifuncionais em sistemas operacionais previsíveis e resultados mensuráveis entre equipas, sistemas e mercados.',
   originStory: {
     title: 'A Origem: Porque o Acesso e a Clareza me São Essenciais',
     quickGrasp:

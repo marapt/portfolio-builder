@@ -171,19 +171,25 @@ const AboutMe = () => {
       {/* Top Header & Executive Eyebrow */}
       <section className="space-y-6 pt-4 text-left">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/10 pb-8">
-          <div className="space-y-3 max-w-3xl">
+          <div className="space-y-4 max-w-4xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-200">
               <Sparkles size={14} aria-hidden="true" />
               {hero.eyebrow}
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-              {hero.title}
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug">
+              {hero.titlePrimary && hero.titleSecondary ? (
+                <>
+                  <span className="block text-white">{hero.titlePrimary}</span>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-cyan-200 to-violet-300 font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl mt-1.5">
+                    {hero.titleSecondary}
+                  </span>
+                </>
+              ) : (
+                hero.title
+              )}
             </h1>
-            <p className="text-cyan-300/90 text-base sm:text-lg font-medium leading-relaxed">
-              {hero.tagline}
-            </p>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed pt-1">
-              {hero.quickGrasp}
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed pt-1 max-w-3xl">
+              {hero.lead || hero.quickGrasp || hero.tagline}
             </p>
           </div>
 

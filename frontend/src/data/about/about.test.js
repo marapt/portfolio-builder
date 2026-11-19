@@ -9,9 +9,17 @@ describe('About Me dataset & structure', () => {
     });
   });
 
-  test('aboutHero contains exact title, origin story, and scale metrics', () => {
-    expect(aboutEN.aboutHero.title).toBe('Global Program & Operations Management');
-    expect(aboutPT.aboutHero.title).toBe('Global Program & Operations Management');
+  test('aboutHero contains exact title, eyebrow, origin story, and scale metrics', () => {
+    expect(aboutEN.aboutHero.title).toBe(
+      'Global PM Lead & Operations Manager at Heart - Expanding Into Enterprise Program Management'
+    );
+    expect(aboutEN.aboutHero.eyebrow).toBe(
+      'Enterprise Program Management & Systems Narrative'
+    );
+    expect(aboutEN.aboutHero.lead).toContain('broader enterprise PgM');
+    expect(aboutPT.aboutHero.title).toBe(
+      'Líder Global de PgM & Gestora de Operações de Coração - Expansão para a Gestão de Programas Empresariais'
+    );
     expect(aboutEN.aboutHero.originStory.title).toContain('Why Access');
     expect(aboutEN.aboutHero.originStory.quickGrasp).toContain('first computer');
     expect(aboutEN.aboutHero.stats).toHaveLength(4);

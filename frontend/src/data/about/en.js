@@ -1,12 +1,16 @@
 // Data for the About Me experience: 3-Pillar Google L6 Functional Architecture
 
 export const aboutHero = {
-  eyebrow: 'Executive Program Leadership & Systems Narrative',
-  title: 'Global Program & Operations Management',
+  eyebrow: 'Enterprise Program Management & Systems Narrative',
+  title: 'Global PM Lead & Operations Manager at Heart - Expanding Into Enterprise Program Management',
+  titlePrimary: 'Global PM Lead & Operations Manager at Heart',
+  titleSecondary: 'Expanding Into Enterprise Program Management',
+  lead:
+    'Grounded in years of scaling global rollouts, tooling workflows, and cross-functional operations across major tech organizations, I bring high-scale program leadership into broader enterprise PgM: turning ambiguous, cross-org initiatives into predictable operating systems and measurable outcomes across teams, systems, and markets.',
   tagline:
-    'Architecting scalable operating systems, AI-enabled workflows, and cross-functional alignment to deliver complex global initiatives at scale.',
+    'Grounded in years of scaling global rollouts, tooling workflows, and cross-functional operations across major tech organizations, I bring high-scale program leadership into broader enterprise PgM: turning ambiguous, cross-org initiatives into predictable operating systems and measurable outcomes across teams, systems, and markets.',
   quickGrasp:
-    'Leading across ambiguity requires more than coordination: it requires turning competing priorities into clear operating models. Across 20+ years spanning university interpretation in Portugal, multi-market production in London, and enterprise program and operational leadership in Silicon Valley, I partner with cross-functional leaders to design durable systems, align incentives, and accelerate execution across global teams.',
+    'Grounded in years of scaling global rollouts, tooling workflows, and cross-functional operations across major tech organizations, I bring high-scale program leadership into broader enterprise PgM: turning ambiguous, cross-org initiatives into predictable operating systems and measurable outcomes across teams, systems, and markets.',
   originStory: {
     title: 'The Origin: Why Access & Clarity Matter to Me',
     quickGrasp:
