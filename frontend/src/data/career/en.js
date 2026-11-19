@@ -123,7 +123,7 @@ const blockEvidenceSections = [
     defaultOpen: true,
     columns: 3,
     summary:
-      'Anchored localized product-ecosystem delivery across 8 international markets (U.S. baseline: 44 products), spanning Canada (37), Australia (34), UK (34), Ireland (29), Japan (26), France (22), Spain (launched Jan 2022), and the Falkland Islands (Slide 31). Added FY22 product-parity rollouts in Japan (PayPay QR acceptance), Australia (Instant Transfers), the UK (Square Loans and BNPL), and Canada (BNPL).',
+      '• Situation: Rapid global expansion and the Square-to-Block rebrand required scaling localization program capacity across 8 international markets and up to 37 localized products per market.\n\n• System & Governance: Scaled the localization PM org 3x from 5 to 15 FTE PMs (direct reports), establishing cross-functional launch alignment across Brand, Product, Regional GTM, and Legal.\n\n• Outcome: Delivered scheduled market expansions including Spain GA (Jan 2022) and Canada Loans (Apr 2022), supporting +55% YoY constant-currency international GPV growth in FY22 Q3.',
     links: [
       {
         label: 'Block Investor Day 2022 Full Deck (77-Slide PDF, May 2022)',
@@ -487,11 +487,11 @@ const linkedinEvidenceSections = [
   {
     id: 'rollouts',
     title: '1. Multi-Market LinkedIn Stories Rollout & Global Rebrand (2020)',
-    badge: 'Primary Press & LinkedIn Sources · 6 Captures',
+    badge: 'Primary Press & LinkedIn Sources · 7 Captures',
     defaultOpen: true,
     columns: 3,
     summary:
-      'Co-led Localization Program Management inside MARCOM across Marketing, Localization Engineering, Legal, and Editorial News, coordinating sequential country launches from Brazil (Wave 1) through the Netherlands, UAE, Australia, France, the United Kingdom, and the September 2020 global redesign, the first major LinkedIn look and feel refresh in five years. Drove the marketing updates and the localized look and feel across all markets; as manager, owned team capacity and initiatives prioritization, cross-functional alignment while delivering on time in line with MKTG organizational priorities and in alignment with the CEO\'s vision and company direction.',
+      '• Situation: Launching LinkedIn Stories in sequential country waves alongside the first major platform redesign in 5 years required orchestrating localized brand and marketing updates across multiple regions during pandemic shifts.\n\n• System & Governance: Co-led MARCOM Localization Program Management across Marketing, Engineering, Legal, and Editorial News; established sequential release gates from Brazil (Wave 1) through Netherlands, UAE, Australia, France, the Sep 24 Global Redesign, and the UK (Wave 6).\n\n• Outcome: Delivered scheduled multi-wave rollouts across 6 global waves and the September 2020 global redesign, cutting unit turnaround time by 30%.',
     links: [
       {
         label: 'Pete Davies Beta Post (Wayback, Feb 2020)',
@@ -508,6 +508,10 @@ const linkedinEvidenceSections = [
       {
         label: 'Global Redesign Release (Wayback, Sep 2020)',
         url: 'https://web.archive.org/web/20200929140640/https://news.linkedin.com/2020/september/new-design-and-experiences-help-members-build-meaningful-relatio',
+      },
+      {
+        label: 'A New Look for LinkedIn: From the Inside Out (LinkedIn Official Blog)',
+        url: 'https://www.linkedin.com/blog/member/product/a-new-look-for-linkedin-from-the-inside-out',
       },
       {
         label: 'UK Launch: Rachel Tombs (Pulse, Oct 2020)',
@@ -578,6 +582,18 @@ const linkedinEvidenceSections = [
         primaryLabel: 'Global Redesign & Stories Release (Sep 24, 2020)',
       },
       {
+        marketTag: 'LINKEDIN OFFICIAL BLOG · BRAND REFRESH & NEW LOOK',
+        src: '/evidence/linkedin-brand-new-look.png',
+        alt: 'A New Look and Feel for LinkedIn announcement from the LinkedIn Official Blog',
+        caption:
+          'LinkedIn Official Blog (Sep 2020): A New Look for LinkedIn (from the Inside Out) unveils the global brand refresh and modernized member experience.',
+        url: 'https://www.linkedin.com/blog/member/product/a-new-look-for-linkedin-from-the-inside-out',
+        linkLabel: 'LinkedIn Official Blog',
+        expandLabel: 'Inspect LinkedIn Brand Redesign Post',
+        primaryLabel: 'A New Look for LinkedIn (from the Inside Out)',
+        note: 'Official LinkedIn product blog announcement detailing the platform-wide visual refresh and new design architecture ("from the inside out"), modernizing member community engagement across all global web and mobile interfaces.',
+      },
+      {
         marketTag: 'WAVE 6 · UK · OCT 20, 2020',
         src: '/evidence/linkedin-stories-uk.png',
         alt: 'LinkedIn Pulse analysis by Rachel Tombs confirming the UK rollout of LinkedIn Stories in October 2020',
@@ -596,7 +612,7 @@ const linkedinEvidenceSections = [
     defaultOpen: false,
     columns: 2,
     summary:
-      'Started the dedicated Localization Marketing PM team inside MARCOM (growing to 2 Loc MKTG PMs), coordinated cross-functionally with up to 15 internal localization linguists, and built an outsourced marketing content vendor program via a Managed Service Provider (MSP) scaling up to 20 external vendors.',
+      '• Situation: Exponentially growing multi-market campaign volume across 26 languages created capacity bottlenecks that the core team could not absorb alone.\n\n• System & Governance: Founded the MARCOM Localization PM function (scaling to 2 FTE Loc MKTG PMs), partnered daily with 15 internal linguists for tone and regional accuracy, and scaled an outsourced MSP vendor program to 20 partner agencies.\n\n• Outcome: Scaled PM, linguist, and MSP capacity across 26 languages and 17 markets to absorb high-volume launch waves while driving down unit turnaround time by 30%.',
     reconciliation: [
       {
         period: 'ORG FOUNDING · TEAM OF 2 PMs',
@@ -983,6 +999,27 @@ export const timelineItems = [
     pillars: ['education'],
     summary:
       'Completed 5-year Translation & Interpretation degree (Specialization in Interpreting) at ESTG (Polytechnic Institute of Leiria), pairing 4 working languages and localization technology with complementary coursework in organizational psychology, law, economics, and computer science alongside early EU/UK foundations.',
+    executionSummary: {
+      heading: 'Program Arc: Multidisciplinary Academic Foundation & Applied Track',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Built a multidisciplinary foundation across four working languages, localization technology, and organizational/business subjects ahead of international enterprise careers.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Completed a 5-year Licentiate degree in Translation & Interpretation (Specialization in Interpreting; Bachelor Nov 2005, Licentiate Oct 2007) combining linguistic systems with organizational psychology, law, economics, and computer science.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Balanced high-precision linguistic and interpreting rigor with broader business, legal, and technical coursework across a multi-year academic track.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Completed the 5-year Licentiate degree in October 2007, establishing cross-disciplinary and multilingual fluency used across subsequent European and US roles.',
+        },
+      ],
+    },
     highlights: [
       'Degree Path & Credentials: Completed the two-stage 5-year degree program in Translation & Interpretation (Specialization in Interpreting) at ESTG (Polytechnic Institute of Leiria; Bachelor graduated Nov 22, 2005, 5-Year Licentiate completed Oct 23, 2007).',
       'Complementary Non-Translation Coursework (Org Behavior, Law, Economics & Tech): Completed degree coursework beyond core linguistics in Work and Organizational Psychology, Psychology of Communications, Introduction to Social Sciences, Introduction to Law, Introduction to Economics, Computer Science (I–II), Translation Technologies (I–II), and Scientific Research Methodology.',
@@ -1063,13 +1100,32 @@ export const timelineItems = [
     title: 'Translation, Subtitling & Audio-Description Intern',
     officialTitle: 'Translation, Subtitling & Audio-Description Intern',
     dutiesBeyondScope:
-      'Formulated comprehensive broadcast subtitling standards for Gabinete Multimédia benchmarked against BBC/ITC, managing SDH teletext workflows across 6 genres.',
+      'Formulated broadcast subtitling standards for Gabinete Multimédia benchmarked against BBC/ITC, managing SDH teletext workflows across 6 genres.',
     period: 'Aug 2006 – Dec 2006 (Academic Internship)',
     startYear: 2006,
     endYear: 2006,
     pillars: ['program', 'leadership', 'education'],
-    summary:
-      'Completed accessibility-focused broadcast subtitling and content adaptation internship at Portugal’s national public broadcaster (RTP Gabinete Multimédia) as part of final-year coursework for the ESTG degree, delivering closed captioning via Teletext Page 188 for deaf and hard-of-hearing audiences.',
+    executionSummary: {
+      heading: 'Program Arc: Broadcast Accessibility Workflows & SDH Subtitling',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Adapting broadcast programming for deaf and hard-of-hearing audiences required structured captioning and accessibility workflows within public broadcast operations (Gabinete Multimédia).',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Executed subtitling, content adaptation, and Teletext Page 188 closed-captioning workflows at Portugal\'s national public broadcaster.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Aligned accessibility delivery with strict broadcast timing, formatting, and public-media operational constraints.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Delivered accessibility-focused broadcast subtitling and Teletext Page 188 captioning across the August–December 2006 internship.',
+        },
+      ],
+    },
     metrics: [
       {
         value: '1,100+ hrs/yr',
@@ -1149,6 +1205,7 @@ export const timelineItems = [
           title: '2. Subtitling Architecture, ITC/BBC Standards & Transmission Governance',
           badge: 'SDH Page 188 · 1,100+ Hours/Year · 6 Genres',
           defaultOpen: false,
+          columns: 1,
           summary:
             'Comprehensive operational framework documented in the report: (1) SDH Accessibility: Governed broadcast subtitling serving deaf and hard-of-hearing viewers across Portugal via Teletext Page 188, delivering over 1,100 hours per year of accessible programming. (2) Standards Formulation: Established normative subtitling guidelines for RTP Gabinete Multimédia based on UK Independent Television Commission (ITC) and BBC conventions, regulating high-contrast character colors, line balancing without word splits, and acoustic description boxes for off-screen speech and sound effects. (3) Transmission Modes: Controlled live, manual, and automated broadcast transmission pipelines across 6 programming genres (Documentários, Séries, Telenovelas, Entretenimento, Infantil e Juvenil, and Magazines) alongside EPG production records.',
           links: [
@@ -1156,6 +1213,24 @@ export const timelineItems = [
               label: 'Google Docs: Full Report Document (2.8 MB · In Portuguese)',
               url: 'https://docs.google.com/document/d/10oJIFpEdZRgAP0cVpRKtAgGVYjNEqs2n/edit',
               kind: 'document',
+            },
+            {
+              label: 'RTP Acessibilidades: Teletexto Versão Texto (Portal Oficial)',
+              url: 'https://acessibilidades.rtp.pt/teletexto-versao-texto/',
+              kind: 'external',
+            },
+          ],
+          snapshots: [
+            {
+              marketTag: 'RTP ACESSIBILIDADES · TELETEXTO VERSÃO TEXTO',
+              src: '/evidence/rtp-teletexto-acessibilidades.png',
+              alt: 'RTP Acessibilidades Teletexto versão texto portal showing accessible teletext interface and index',
+              caption: 'RTP Acessibilidades · Teletexto Versão Texto & Índice Digital',
+              linkLabel: 'Portal RTP Acessibilidades',
+              url: 'https://acessibilidades.rtp.pt/teletexto-versao-texto/',
+              fit: 'contain',
+              expandLabel: 'Inspect RTP Teletext Accessibility Portal',
+              note: 'Accessible web interface of RTP Teletexto (acessibilidades.rtp.pt) illustrating text-mode teletext designed for screen readers and assistive technology, alongside the digital broadcast index (RTP Acessibilidades Page 190 and SDH subtitling workflows).',
             },
           ],
         },
@@ -1175,6 +1250,13 @@ export const timelineItems = [
           primaryLabel: 'Curricular Internship Report · RTP Gabinete Multimédia',
           fit: 'contain',
           note: 'Full 2.8 MB primary source document archived in Google Docs, detailing teletext subtitling methodologies, ITC/BBC accessibility benchmarks, and RTP broadcast workflow operations.',
+        },
+        {
+          marketTag: 'RTP ACESSIBILIDADES · TELETEXTO VERSÃO TEXTO',
+          src: '/evidence/rtp-teletexto-acessibilidades.png',
+          alt: 'RTP Acessibilidades Teletexto versão texto portal showing accessible teletext interface and index',
+          caption: 'RTP Acessibilidades · Teletexto Versão Texto & Índice Digital',
+          fit: 'contain',
         },
       ],
     },
@@ -1199,8 +1281,27 @@ export const timelineItems = [
     startYear: 2006,
     endYear: 2006,
     pillars: ['program', 'education'],
-    summary:
-      'Completed EU institutional terminology traineeship in Brussels during final university coursework toward the 2007 ESTG degree, maintaining multilingual IATE terminology records across EU workflows.',
+    executionSummary: {
+      heading: 'Program Arc: Multilingual Institutional Terminology Governance',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Maintaining consistent multilingual terminology across institutional workflows required standardized reference practices within a multi-language EU environment.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Contributed to multilingual terminology records in IATE during the EU Directorate-General for Translation traineeship in Brussels alongside final degree coursework.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Applied strict terminology standardization and cross-language consistency within institutional translation processes.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Maintained multilingual IATE terminology records during the September 2006 Brussels traineeship.',
+        },
+      ],
+    },
     metrics: [
       {
         value: '6M+ Terms*',
@@ -1283,13 +1384,32 @@ export const timelineItems = [
     title: 'Translator & International Project Manager',
     officialTitle: 'Translator & International Project Manager',
     dutiesBeyondScope:
-      'Led on-site change management facilitation, bilingual workflow diagram modeling, and 39 training events across DAM, Transmission, and Production for RTP.',
+      'Led on-site change management facilitation, bilingual workflow diagram modeling, and 39 training events across broadcast systems for RTP.',
     period: 'Jan 2007 – Jul 2007',
     startYear: 2007,
     endYear: 2007,
     pillars: ['program'],
-    summary:
-      'Hired by Sony Portugal (SPT) to drive change management, bilingual workflow modeling, and training delivery for the multi-million-euro digital broadcast transformation of RTP (Rádio e Televisão de Portugal) across Digital Asset Management (Blue Order DAM), Transmission (Omnibus), and Production (Petasite/DivArchive). Built for enterprise scale, mirroring Sony’s parallel 12,000-hour automated digital archive capacity deployment at SIC.',
+    executionSummary: {
+      heading: 'Program Arc: Broadcast Transformation & Change Management Delivery',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Digital broadcast transformation at RTP (Blue Order DAM, Omnibus, Petasite/DivArchive) faced language and cultural adoption friction when international UK consultants delivered sessions solely in English.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Created bilingual (EN/PT) broadcast workflow diagrams mapping legacy tape workflows to digital processes and led 39 change management and software training sessions across 226+ delegate engagements.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Bridged UK technical consultants, Sony Portugal, and RTP\'s internal broadcast teams (live sports, newsroom editing, and foreign film acquisition) so adoption moved forward without stalling on language barriers.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Delivered 39 enterprise change management and training workshops across 3 integrated digital broadcast systems, earning formal citation in Sony\'s final report (Ref: SP1207/SP1236/SP5562) for decisive impact on adoption (alongside a 12,000-hour parallel Sony PetaSite archive capacity benchmark at SIC).',
+        },
+      ],
+    },
     metrics: [
       {
         value: '39 events',
@@ -1448,6 +1568,27 @@ export const timelineItems = [
     pillars: ['leadership'],
     summary:
       'Relocated from Lisbon to Basingstoke via internal transfer from Sony Portugal (Jul 2007) to Sony UK (Aug 2007) with zero employment gap, supporting European & Iberia product operations.',
+    executionSummary: {
+      heading: 'Program Arc: Cross-Border Internal Transfer & Operational Continuity',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Transitioning from Portugal to the UK required coordinating an international transfer and supporting European and Iberia operations without disrupting active work.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Executed an internal transfer from Sony Portugal (Jul 2007) to Sony UK (Aug 2007) to support European and Iberia product operations.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Managed cross-border relocation logistics and regional handoffs while keeping operational transition downtime to zero.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Completed the Lisbon-to-Basingstoke transfer with zero employment gap and seamless continuity into Sony UK.',
+        },
+      ],
+    },
     placeholder: false,
   },
   {
@@ -1464,13 +1605,32 @@ export const timelineItems = [
     title: 'Prime-Vox Display Coordinator & Iberia Support',
     officialTitle: 'Prime-Vox Display Coordinator & Iberia Support',
     dutiesBeyondScope:
-      'Directed pan-European localization engineering, multimedia dubbing/VO studios, and technical asset management across 30+ European and global territories.',
+      'Coordinated pan-European product operations, technical documentation, and multimedia localization across European and Iberia markets.',
     period: 'Aug 2007 – Dec 2009',
     startYear: 2007,
     endYear: 2009,
     pillars: ['program', 'leadership'],
-    summary:
-      'Relocated to the UK to coordinate B2B & B2C product rollouts, technical documentation, and cross-functional engineering liaison for the Iberia and European markets.',
+    executionSummary: {
+      heading: 'Program Arc: International B2B/B2C Display & Localization Coordination',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Coordinating B2B and B2C product rollouts, technical documentation, and localization across Iberia and Europe required alignment across regional languages and engineering/studio stakeholders.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Coordinated display rollouts, technical assets, pan-European localization engineering, and multimedia dubbing/voiceover studios across 30+ European and global territories with dedicated commercial support for Spain and Portugal (EN, ES, PT).',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Balanced regional commercial support needs in Iberia and multi-language requirements against engineering, studio, and display rollout schedules across territories.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Supported B2B/B2C display and localization execution across 30+ territories and 3 core languages (EN, ES, PT) from Basingstoke.',
+        },
+      ],
+    },
     metrics: [
       {
         value: '3 Languages',
@@ -1513,13 +1673,32 @@ export const timelineItems = [
     title: 'Transcreation Program Manager',
     officialTitle: 'Senior Transcreation Account Manager',
     dutiesBeyondScope:
-      'Led global client account management (featuring HTC), governed client MBAs and QBRs, and coordinated delivery teams across Print, SEO, Video Studios, and TV Licensing.',
+      'Led global account delivery, commercial client governance (MBAs and QBRs), and cross-discipline teams across Print, SEO, Video Studios, and TV Licensing.',
     period: 'Jan 2010 – Mar 2014',
     startYear: 2010,
     endYear: 2014,
     pillars: ['program', 'leadership'],
-    summary:
-      'Led UK/EU transcreation delivery teams and multi-market digital, broadcast, and print campaigns across 30+ global markets, promoted within 12 months to Senior Manager.',
+    executionSummary: {
+      heading: 'Program Arc: Global Account Delivery & Multi-Discipline Governance',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Multi-market transcreation and campaign delivery across 30+ global markets and multiple production disciplines (Print, SEO, Video Studios, TV Licensing, including HTC) required tight account and delivery governance.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Managed 10+ in-house specialists and multi-market delivery pipelines while running client MBAs and QBRs across UK/EU and global campaigns.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Coordinated specialist production teams (Print, SEO, Video Studios, TV Licensing) and client expectations across 30+ markets and recurring quarterly/annual business reviews.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Earned promotion within 12 months (from Transcreation Account Manager in Jan 2010 to Senior Transcreation Account Manager in Jan 2011) while leading 10+ specialists across 30+ global markets.',
+        },
+      ],
+    },
     metrics: [
       {
         value: '30+ mkts',
@@ -1709,6 +1888,27 @@ export const timelineItems = [
     pillars: ['leadership'],
     summary:
       'Relocated from London to Silicon Valley following Hogarth (Mar 2014); arrived in the US in Mar 2014, with work authorization issued in May 2014 prior to joining Apple in Oct 2014.',
+    executionSummary: {
+      heading: 'Program Arc: Transatlantic Career Transition & US Market Entry',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Moving from London to Silicon Valley after Hogarth (Mar 2014) involved cross-continental transition, work-authorization dependencies, and entering the US technology market.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Coordinated relocation arrival in March 2014, work authorization issued in May 2014, and entry into the US role at Apple in October 2014.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Navigated immigration/work-authorization timelines and market transition before resuming full-time program execution in Cupertino.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Completed the UK-to-US transition between March and October 2014, establishing a Silicon Valley base for subsequent enterprise roles.',
+        },
+      ],
+    },
     placeholder: false,
   },
   {
@@ -1725,48 +1925,67 @@ export const timelineItems = [
     title: 'Localization Project Manager (AppleCare Team)',
     officialTitle: 'Localization Project Manager (AppleCare Team)',
     dutiesBeyondScope:
-      'Led cross-functional engineering, QA, and supplier release triage in Radar under strict Apple non-disclosure agreements for major hardware and software product launches.',
+      'Led cross-functional engineering, QA, and supplier release triage in Radar under strict Apple non-disclosure agreements.',
     period: 'Oct 2014 – Mar 2015',
     startYear: 2014,
     endYear: 2015,
     pillars: ['program', 'vendor'],
-    summary:
-      'Delivered launch-critical global releases for the AppleCare Team inside strict Apple non-disclosure agreements, engineering release gates, and vendor SLA thresholds.',
+    executionSummary: {
+      heading: 'Program Arc: AppleCare Localization Operations & Release Governance',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Supporting launch-critical global releases for the AppleCare Team required executing within strict confidentiality boundaries, engineering release gates, and supplier SLA expectations.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Led cross-functional engineering, QA, and supplier release triage in Radar and coordinated AppleCare localization workflows and CAT file processing under NDA controls.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Maintained release-gate discipline and cross-team triage across engineering, QA, and vendors while safeguarding unannounced details and meeting SLA timelines.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Executed confidential AppleCare release triage and localization workflows in alignment with engineering gates, Radar SLAs, and strict NDA compliance.',
+        },
+      ],
+    },
     metrics: [
       {
-        value: 'Confidential*',
-        label: 'Global markets & product launches supported',
+        value: 'Release Triage',
+        label: 'AppleCare cross-functional release triage & gate governance',
         kind: 'scale',
-        placeholder: true,
-        hint: '*Apple NDA: Detailed launch names and volumes withheld under corporate non-disclosure agreements',
+        placeholder: false,
+        hint: 'AppleCare product support releases delivered under strict corporate non-disclosure agreements',
         evidenceId: 'ap14-01',
       },
       {
-        value: 'Radar SLA*',
-        label: 'Bug triage & Radar turnaround',
+        value: 'Radar SLA',
+        label: 'Bug triage & release-gate velocity in Radar',
         kind: 'velocity',
-        placeholder: true,
-        hint: '*Apple NDA: Radar triage turnaround maintained within strict release-gate SLAs',
+        placeholder: false,
+        hint: 'Radar triage turnaround maintained within strict release-gate SLAs',
         evidenceId: 'ap14-02',
       },
       {
-        value: '100% NDA*',
-        label: 'NDA & release-gate compliance',
+        value: 'NDA Governance',
+        label: 'Strict confidentiality & release compliance',
         kind: 'quality',
-        placeholder: true,
-        hint: '*Apple NDA: Zero disclosure of unannounced products or internal initiatives',
+        placeholder: false,
+        hint: 'Zero disclosure of unannounced products or internal hardware/software specifications',
         evidenceId: 'ap14-03',
       },
     ],
     highlights: [
-      'Confidentiality & NDA Placeholder: Coordinated cross-functional release workflows across engineering, QA, and external suppliers under Apple corporate non-disclosure agreements.',
+      'Coordinated cross-functional AppleCare release workflows across engineering, QA, and external suppliers under Apple corporate non-disclosure agreements.',
       'Enforced NDA-safe asset handoffs for high-visibility hardware/software launches in Cupertino.',
       'Managed project scope, file processing in Apple CAT tools, vendor allocations, and Radar issue tracking.',
     ],
     evidence: {
-      note: 'Confidentiality & NDA Notice: Project specifics, internal tooling, and detailed metrics remain governed by Apple non-disclosure agreements. A placeholder is maintained pending public disclosure authorization.',
+      note: 'Corporate Confidentiality Note: Specific product names, unannounced internal tooling, and quantitative launch volumes remain strictly protected under Apple corporate non-disclosure agreements. Focuses written notes on cross-functional Radar triage, CAT file processing, vendor coordination, and NDA-safe handoffs in Cupertino.',
     },
-    placeholder: true,
+    placeholder: false,
   },
   {
     id: 'infoblox',
@@ -1782,13 +2001,32 @@ export const timelineItems = [
     title: 'Marketing Localization Project Manager',
     officialTitle: 'Marketing Localization Project Manager (via Acclaro)',
     dutiesBeyondScope:
-      'Governed end-to-end globalization and CMS/TMS automation infrastructure across EMEA, LATAM, and APAC regions, driving Go Global, Act Local strategies.',
+      'Governed end-to-end globalization strategy, tiered LQA models, and CMS/TMS API automation across EMEA, LATAM, and APAC regions.',
     period: 'Mar 2015 – Mar 2016',
     startYear: 2015,
     endYear: 2016,
     pillars: ['program'],
-    summary:
-      'Scaled enterprise B2B cybersecurity marketing operations, vendor pipelines, and budget governance.',
+    executionSummary: {
+      heading: 'Program Arc: Enterprise Localization Strategy & Systems Architecture',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Growing B2B cybersecurity marketing localization across 11 languages in EMEA, LATAM, and APAC required a unified strategy, clear service tiers, and connected web/marketing workflows to avoid fragmented manual handoffs.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Authored the Infoblox Localization Strategy (July 2015) defining a multi-tiered localization spectrum and Strategic LQA Model, backed by automated TMS and CMS API connector architecture across Drupal, Eloqua, and Git.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Tailored localization depth, review rigor, and budget allocation by content tier and regional demand rather than applying uniform heavy workflows to every asset.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Established a documented localization strategy, tiered LQA governance model, and integrated Drupal/Eloqua/Git workflow across 11 languages.',
+        },
+      ],
+    },
     metrics: [
       {
         value: '11 Languages',
@@ -1818,7 +2056,7 @@ export const timelineItems = [
       'Engineered Linguistic Quality Assurance (LQA) and in-country review processes, reducing regional friction and accelerating demand-gen white paper delivery.',
     ],
     evidence: {
-      note: 'Primary Source: Infoblox Localization Strategy presentation deck authored by Mara Martins (July 8, 2015). Preserved locally with high-resolution slide captures showing strategy architecture, language tiers, and the end-to-end translation and review workflow.',
+      note: 'Primary Source: Infoblox Localization Strategy presentation authored by Mara Martins (July 8, 2015). Features the strategy presentation cover and Slide 7 workflow architecture diagram, illustrating how content moved across Drupal, Eloqua, Git, and translation workflows across EMEA, LATAM, and APAC.',
       snapshots: [
         {
           marketTag: 'Infoblox Localization Strategy · July 8, 2015 · Mara Martins',
@@ -1836,7 +2074,7 @@ export const timelineItems = [
           caption: 'Infoblox translation process workflow map: auditing manual vs. automated handoffs between Web Engineering, Demand Gen, and in-country reviewers.',
           fit: 'contain',
           expandLabel: 'Inspect Workflow Architecture Map',
-          note: 'Workflow architecture mapping current manual handoffs to design automated TMS/CMS API integration.',
+          note: 'Slide 7 Workflow Architecture: Illustrates how content flowed across Drupal, Eloqua, Git, and localization workflows across 11 languages in EMEA, LATAM, and APAC, eliminating fragmented manual handoffs.',
         },
       ],
     },
@@ -1854,12 +2092,33 @@ export const timelineItems = [
     logo: '/company-logos/microsoft.svg',
     title: 'Senior Marcom Manager, Localization & Operations',
     officialTitle: 'Sr. Global Marcom Manager - Localization & Operations',
+    dutiesBeyondScope:
+      'Led cross-functional Center of Excellence initiatives spanning global storefront operations, automated ingestion pipelines, and multi-vendor agency governance across international storefronts.',
     period: 'Jun 2016 – Apr 2020',
     startYear: 2016,
     endYear: 2020,
     pillars: ['program', 'leadership', 'vendor', 'ai'],
-    summary:
-      'Built a cross-org Center of Excellence, automated API asset ingestion, and governed multi-million-dollar global store & marketing operations.',
+    executionSummary: {
+      heading: 'Program Arc: Center of Excellence, Storefront Operations & Seasonal GTM Governance',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Coordinating global storefront go-to-market operations, localization workflows, and multi-vendor agency execution across 200 markets and 100 languages required clear standards amid complex seasonal schedules and cross-functional dependencies.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Drove Center of Excellence initiatives, storefront operational workflows, automated ingestion pipelines, and geopolitical/globalization readiness standards while governing a 15+ vendor/agency team.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Balanced global campaign consistency and release readiness with regional market requirements, vendor capacity, and cross-functional engineering/marketing timelines.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Delivered global storefront and seasonal GTM programs across 200 markets and 100 languages with disciplined vendor governance and repeatable cross-market execution.',
+        },
+      ],
+    },
     metrics: [
       {
         value: '200 Mkts · 100 Langs',
@@ -1884,13 +2143,13 @@ export const timelineItems = [
       },
     ],
     highlights: [
-      'Established an enterprise Center of Excellence across 200 markets and 100 languages, unifying digital storefront operations, brand marketing, and regional execution.',
+      'Led end-to-end Center of Excellence program initiatives spanning global storefront operations, brand marketing, and regional execution across markets and languages, with specific examples detailed in the portfolio evidence below.',
       'Managed multi-vendor partner teams (15+ specialists across global agencies), governing multi-year agreements, budget allocations, and automated SLA quality metrics.',
       'Supported the Consumer Go-To-Market (GTM) strategy for Microsoft Stores, orchestrating Tier-1 seasonal campaigns, sim-ship vs phased launches, and cross-functional delivery.',
       'Championed strategic store initiatives: Xbox Store unified rebrand, Adobe enterprise migrations, Machine Translation pilots, and DAM geopolitical governance (detailed in evidence cards below).',
     ],
     evidence: {
-      note: 'Archive & Public Evidence Note: Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, verified public release announcements, platform case studies, and industry conference archives are preserved below.',
+      note: 'Archive & Public Evidence Note: Coordinated Center of Excellence program initiatives, storefront operations, and seasonal go-to-market execution across 200 markets and 100 languages. Governed a 15+ vendor/agency team alongside localization workflows, automated ingestion, and global readiness standards. Note on post-tenure coverage: Any reference or capture dated after April 2020 (such as the November 2022 Portugal Black Friday item) is included strictly as a later storefront reference outside the 2016–2020 role window; all hosted image and article URLs point to live public assets.',
       sections: [
         {
           id: 'gtm-seasonal-campaigns',
@@ -1899,34 +2158,99 @@ export const timelineItems = [
           defaultOpen: true,
           columns: 3,
           summary:
-            'Supported the Microsoft Consumer Go-To-Market (GTM) strategy as Program Manager leading vendor partner teams to deliver seamless seasonal retail campaigns across all Microsoft Store countries and languages. Governed sim-ship vs phased international rollouts across Product, Marketing, Design, and Legal teams for Tier-1 commercial moments including Spring and Autumn hemisphere-adapted sales, Back to School, and Black Friday/Holiday. Partnered with Senior Leadership, GTM leads, and Data Analytics & Experimentation teams to optimize conversion, track global consumer impressions, and support record-setting digital commerce milestones across 200 markets.',
+            '• Situation: Delivering high-stakes global retail campaigns across 200 markets and 100 languages required balancing Tier-1 sim-ship deadlines against regional readiness and varying market priorities.\n\n• System & Governance: Led multi-agency vendor teams (15+ specialists) and partnered with Engineering to enforce country/locale fallback hierarchies and sim-ship vs. phased rollout criteria.\n\n• Outcome: Maintained on-schedule launch SLAs across major commercial moments (Black Friday, Back to School, seasonal sales) while cutting operational turnaround time by 25%.',
+          links: [
+            {
+              label: 'Microsoft Store Black Friday Deals Start Today (Windows Experience Blog, Nov 2019)',
+              url: 'https://blogs.windows.com/windowsexperience/2019/11/22/microsoft-store-black-friday-deals-start-today/',
+              kind: 'press-release',
+            },
+            {
+              label: 'Black Friday 2018: Microsoft Unveils Surface and Office Offers (Microsoft Stories UK, Nov 2018)',
+              url: 'https://ukstories.microsoft.com/features/black-friday-2018-microsoft-unveils-surface-and-office-offers/',
+              kind: 'press-release',
+            },
+            {
+              label: 'Microsoft Store Portugal Black Friday · Post-Tenure Storefront Reference (News Center PT, Nov 2022)',
+              url: 'https://news.microsoft.com/pt-pt/2022/11/21/microsoft-celebra-black-friday-com-ofertas-exclusivas-na-loja-online-a-partir-de-hoje/',
+              kind: 'press-release',
+            },
+            {
+              label: 'Announcing Microsoft Store Back-to-School Deals Begin Today (Windows Experience Blog, Jul 2017)',
+              url: 'https://blogs.windows.com/windowsexperience/2017/07/07/announcing-microsoft-store-back-school-deals-begin-today/',
+              kind: 'press-release',
+            },
+            {
+              label: 'Get Ready for Back to School with Microsoft Latest Programs & Deals (Windows Experience Blog, Aug 2017)',
+              url: 'https://blogs.windows.com/windowsexperience/2017/08/01/get-ready-back-school-microsofts-latest-programs-deals/',
+              kind: 'press-release',
+            },
+            {
+              label: 'Microsoft Black Friday Deals Announced (IGN, Nov 2019)',
+              url: 'https://www.ign.com/articles/2019/11/01/microsofts-black-friday-2019-deals-announced',
+              kind: 'external',
+            },
+            {
+              label: 'Microsoft Worldwide Locale & Country Selector Directory',
+              url: 'https://www.microsoft.com/en-us/locale',
+              kind: 'external',
+            },
+          ],
           snapshots: [
             {
-              marketTag: 'MICROSOFT GTM · CONSUMER SYSTEM ARCHITECTURE',
-              src: '/evidence/msft-gtm-consumer-system.png',
-              alt: 'Microsoft Consumer Go-To-Market System overview showing 85B in-product impressions, 2.2B web visits, and ecosystem partners',
-              caption: 'Microsoft Consumer Go-To-Market System · Global Scale',
+              marketTag: 'WINDOWS EXPERIENCE BLOG · NOV 22, 2019',
+              src: '/evidence/msft-campaign-black-friday-us.png',
+              alt: 'Microsoft Store Black Friday deals announcement on Windows Experience Blog',
+              caption: 'Microsoft Store Black Friday Deals Start Today · US Launch',
+              linkLabel: 'Blog Announcement',
+              url: 'https://blogs.windows.com/windowsexperience/2019/11/22/microsoft-store-black-friday-deals-start-today/',
               fit: 'contain',
-              expandLabel: 'Inspect Consumer GTM System',
-              note: 'Enterprise GTM framework supporting 85B impressions, 2.2B annual visits, and multi-market commercial partner alignment.',
+              expandLabel: 'Inspect Black Friday Announcement',
+              note: 'Official Microsoft Store Black Friday launch announcement kicking off Tier-1 holiday seasonal campaign operations across hardware, software, and gaming.',
             },
             {
-              marketTag: 'SEASONAL GTM · HEMISPHERE-ADAPTED CAMPAIGNS',
-              src: '/evidence/msft-gtm-seasonal-spring-autumn.png',
-              alt: 'Microsoft Store Spring and Autumn Sale campaign creatives showing simultaneous northern and southern hemisphere execution',
-              caption: 'Spring & Autumn Seasonal Campaigns · Dual-Hemisphere Delivery',
+              marketTag: 'MICROSOFT STORIES UK · NOV 2018',
+              src: '/evidence/msft-campaign-black-friday-uk.png',
+              alt: 'Microsoft Stories UK feature on Black Friday Surface and Office offers in GBP',
+              caption: 'UK Microsoft Store Black Friday · Multi-Country GBP Offers',
+              linkLabel: 'UK Stories Feature',
+              url: 'https://ukstories.microsoft.com/features/black-friday-2018-microsoft-unveils-surface-and-office-offers/',
               fit: 'contain',
-              expandLabel: 'Inspect Seasonal Campaign Adaptation',
-              note: 'Cross-hemisphere seasonal localization adapting Spring and Autumn messaging simultaneously for global store markets.',
+              expandLabel: 'Inspect UK Black Friday Feature',
+              note: 'Multi-country European seasonal execution detailing UK Microsoft Store deals in GBP (£) across Surface devices, Xbox bundles, and Office subscriptions ahead of the global shopping event.',
             },
             {
-              marketTag: 'SEASONAL GTM · BACK TO SCHOOL CAMPAIGN',
-              src: '/evidence/msft-gtm-seasonal-back-to-school.png',
-              alt: 'Back to School campaign panels featuring Surface Pro, PCs, and Xbox bundles',
-              caption: 'Back to School Tier-1 Retail Campaign',
+              marketTag: 'MICROSOFT NEWS PT · POST-TENURE STOREFRONT REFERENCE (NOV 2022)',
+              src: '/evidence/msft-campaign-black-friday-pt.png',
+              alt: 'Microsoft Portugal News Center Black Friday announcement in Portuguese',
+              caption: 'Microsoft Store Portugal Black Friday · Exclusivas na Loja Online',
+              linkLabel: 'News Center Portugal',
+              url: 'https://news.microsoft.com/pt-pt/2022/11/21/microsoft-celebra-black-friday-com-ofertas-exclusivas-na-loja-online-a-partir-de-hoje/',
               fit: 'contain',
-              expandLabel: 'Inspect Back to School Campaign',
-              note: 'Tier-1 seasonal retail campaign execution across PC hardware, Surface, and Xbox gaming catalogs.',
+              expandLabel: 'Inspect Portugal Black Friday Announcement',
+              note: 'Post-Tenure Storefront Reference (Nov 2022): Included strictly as a later storefront example outside the 2016–2020 role window, illustrating how the multi-region Black Friday framework established during tenure continued to scale digital store offers across Surface, Xbox, and digital software.',
+            },
+            {
+              marketTag: 'WINDOWS EXPERIENCE BLOG · JUL 7, 2017',
+              src: '/evidence/msft-campaign-back-to-school.png',
+              alt: 'Microsoft Store Back-to-School deals begin today announcement on Windows Experience Blog',
+              caption: 'Microsoft Store Back-to-School Deals · Global Education Push',
+              linkLabel: 'Blog Announcement',
+              url: 'https://blogs.windows.com/windowsexperience/2017/07/07/announcing-microsoft-store-back-school-deals-begin-today/',
+              fit: 'contain',
+              expandLabel: 'Inspect Back-to-School Announcement',
+              note: 'Global Back-to-School retail campaign launch coordinating multi-region device availability, education pricing tiers, and student programs across global store markets.',
+            },
+            {
+              marketTag: 'MICROSOFT WORLDWIDE · LOCALE & LANGUAGE ARCHITECTURE',
+              src: '/evidence/msft-locale-selector.png',
+              alt: 'Microsoft Worldwide country and language selector directory',
+              caption: 'Microsoft Worldwide Locale Selector · Global Footprint',
+              linkLabel: 'Microsoft Locale Directory',
+              url: 'https://www.microsoft.com/en-us/locale',
+              fit: 'contain',
+              expandLabel: 'Inspect Global Locale Architecture',
+              note: 'Global storefront directory verifying Microsoft multi-market footprint across 200+ territories and 100+ languages, backed by geolocation routing and localized storefront catalogs.',
             },
           ],
         },
@@ -1983,13 +2307,13 @@ export const timelineItems = [
               note: 'Industry report documenting the 2017 merger of the Xbox store into the Windows Store, rebranded as the unified Microsoft Store under the "One Microsoft" strategy.',
             },
             {
-              marketTag: 'COMMERCE IMPACT · FY19 RECORD-SETTING MOMENTUM',
+              marketTag: 'DIGITAL COMMERCE · STOREFRONT ECOSYSTEM SCALING',
               src: '/evidence/msft-gtm-digital-gaming-momentum.png',
-              alt: 'Microsoft momentum slide showing $6B+ revenue, 23% Y/Y growth, and 22B gaming hours',
-              caption: 'Digital Gaming Commerce Momentum · $6B+ Revenue Impact',
+              alt: 'Digital Gaming Commerce Momentum framework illustrating cross-surface storefront unification across Windows and Xbox, publisher ecosystem alignment, and global catalog scaling across 200 markets',
+              caption: 'Digital Gaming Commerce Momentum · Storefront Ecosystem Scaling',
               fit: 'contain',
-              expandLabel: 'Inspect Gaming Commerce Momentum',
-              note: 'Record-setting digital store performance delivering 23% Y/Y revenue growth and outperforming market growth for 2 years.',
+              expandLabel: 'Inspect Gaming Commerce Momentum Framework',
+              note: 'Strategic commerce architecture illustrating cross-surface storefront unification across Windows and Xbox, publisher catalog alignment, and tier-1 sim-ship launch readiness across 200 markets and 100 languages.',
             },
             {
               marketTag: 'NEXT-GEN PLATFORMS · PROJECT SCARLETT & XCLOUD',
@@ -2189,14 +2513,29 @@ export const timelineItems = [
           title: '6. Microsoft Store Machine Translation, AI and Vendor Optimization',
           badge: 'Neural MT Pilot · MS Stores Adoption · Vendor SOW Optimization',
           defaultOpen: false,
-          columns: 1,
+          columns: 2,
           summary:
-            'Led Machine Translation (MT), AI, and vendor optimization programs for Microsoft Stores, managing strategic globalization partners including the Lionbridge vendor partnership among other key agencies. Disclaimer: While public customer stories highlight Lionbridge\'s subsequent Azure OpenAI adoption, Lionbridge has long been a foundational vendor partner for Microsoft, with its adoption of Microsoft Translator preceding recent initiatives. Responsibilities beyond day-to-day global campaigns and seasonal GTM launches encompassed MT pilots and production catalog adoption, DAM image geopolitical readiness, and continuous tooling/process optimizations. This program fundamentally reshaped vendor Statements of Work (SOWs) year-over-year, delivering volume scalability, fast turnaround times, and substantial cost savings at enterprise scale.',
+            'Led Machine Translation (MT), AI, and vendor optimization programs for Microsoft Stores, managing strategic globalization partners including the Lionbridge vendor partnership among other key agencies. Disclaimer: While public customer stories highlight Lionbridge\'s subsequent Azure OpenAI adoption, Lionbridge has long been a foundational vendor partner for Microsoft, with its adoption of Microsoft Translator preceding recent initiatives. Partnered with the central Microsoft Translator engineering team and coordinated vendor partners to extend language coverage by leveraging Microsoft Store catalog datasets, expanding dialect support, and driving MT adoption across operational store workflows. Beyond day-to-day global campaigns, also spearheaded critical corpus data cleanup and quality remediation following a serious security vulnerability in Microsoft Translator Hub (reported by SecurityWeek and researcher Haider Mahmood), directing vendor linguists to audit, filter, and purge profanity and compromised entries from localized vetted terminology and translation memories. This program fundamentally reshaped vendor Statements of Work (SOWs) year-over-year, delivering volume scalability, fast turnaround times, and substantial cost savings at enterprise scale.',
           links: [
             {
               label: 'Microsoft Customer Story: Lionbridge Disruption Using Azure AI & Translation (Official)',
               url: 'https://www.microsoft.com/en/customers/story/1792260322207475324-lionbridge-technologies-azure-openai-service-other-en-united-states#customers-share-modal-dialog',
               kind: 'case-study',
+            },
+            {
+              label: 'Microsoft Translator Highlights of 2020: Language Expansion & Custom Models (Official Blog)',
+              url: 'https://www.microsoft.com/en-us/translator/blog/2020/12/16/microsoft-translators-highlights-of-2020/',
+              kind: 'blog',
+            },
+            {
+              label: 'SecurityWeek: Microsoft Addresses Serious Vulnerability in Translator Hub (Security Advisory)',
+              url: 'https://www.securityweek.com/microsoft-addresses-serious-vulnerability-translator-hub/',
+              kind: 'press-release',
+            },
+            {
+              label: 'Haider Mahmood Security Disclosure: How I was able to delete 13k+ Microsoft Translator projects (Technical Writeup)',
+              url: 'https://haiderm.com/how-i-was-able-to-delete-13k-microsoft-translator-projects/',
+              kind: 'archive',
             },
           ],
           snapshots: [
@@ -2211,6 +2550,17 @@ export const timelineItems = [
               expandLabel: 'Inspect Customer Story',
               note: 'Disclaimer: While Lionbridge subsequent Azure AI adoption is highlighted, Lionbridge has long served as a core vendor partner for Microsoft (using Microsoft Translator for over a decade). As PGM at Microsoft Stores, managed the Lionbridge vendor partnership among others, governing MT pilots, DAM image geopolitical readiness, and tooling optimizations to contribute directly to mutual success.',
             },
+            {
+              marketTag: 'MICROSOFT TRANSLATOR · HIGHLIGHTS & CORPUS GOVERNANCE',
+              src: '/evidence/msft-translator-highlights-governance.png',
+              alt: 'Microsoft Translator Highlights report detailing language extensions, custom translation models, and corpus cleanup governance',
+              caption: 'Microsoft Translator Highlights · Language Expansion & Data Remediation',
+              linkLabel: 'Translator Blog',
+              url: 'https://www.microsoft.com/en-us/translator/blog/2020/12/16/microsoft-translators-highlights-of-2020/',
+              fit: 'contain',
+              expandLabel: 'Inspect Translator Highlights & Governance',
+              note: 'Contributed by partnering with the lead Microsoft Translator team and coordinating globalization vendors to extend languages via Microsoft Store data. Spearheaded critical corpus data cleanup and profanity purging across vetted terminology following Translator Hub security remediation (disclosed by SecurityWeek and researcher Haider Mahmood).',
+            },
           ],
         },
         {
@@ -2220,7 +2570,7 @@ export const timelineItems = [
           defaultOpen: false,
           columns: 1,
           summary:
-            'Served as Globalization Program Manager for Microsoft Stores within the David Porter organization in Microsoft Digital Stores, acting as the central liaison across Design, Product, Legal, Global Readiness, and regional partners to operationalize compliant global campaign delivery. While not directly working on the subsequent COVID-era initiative to shut down physical retail locations (announced June 26, 2020), investment in Digital Stores was continuous and central to the retail strategy. As affirmed by Microsoft CVP David Porter and Chief People Officer Kathleen Hogan, "the company will continue to invest in digital innovation across software and hardware" through digital storefronts on Microsoft.com, Windows, and Xbox. In this role, enforced DAM imagery catalog metadata, sorting criteria, and labeling aligned with Global Readiness and Legal requirements; established end-to-end data archiving and lifecycle governance bridging internal quality audits/approvals with vendor Human-in-the-Loop (HIL) workflows, training, and sorting standards; and drove tooling and process optimizations, including automated imagery selection for Digital Stores campaigns.',
+            'Served as Globalization Program Manager for Microsoft Stores within the David Porter organization in Microsoft Digital Stores, acting as the central liaison across Design, Product, Legal, Global Readiness, and regional partners to operationalize compliant global campaign delivery. While not directly working on the subsequent COVID-era initiative to shut down physical retail locations (announced June 26, 2020), investment in Digital Stores was continuous and central to the retail strategy. As affirmed by Microsoft CVP David Porter and Chief People Officer Kathleen Hogan, "the company will continue to invest in digital innovation across software and hardware" through digital storefronts on Microsoft.com, Windows, and Xbox.\n\nIn this role, I directly managed DAM governance by enforcing DAM imagery catalog metadata, sorting criteria, and labeling aligned with Global Readiness and Legal requirements; established end-to-end data archiving and lifecycle governance bridging internal quality audits/approvals with vendor Human-in-the-Loop (HIL) workflows, training, and sorting standards; and drove tooling and process optimizations, including automated imagery selection for Digital Stores campaigns.',
           links: [
             {
               label: 'Microsoft News: Microsoft Store Announces New Approach to Retail',
@@ -2333,10 +2683,10 @@ export const timelineItems = [
           fit: 'contain',
         },
         {
-          marketTag: 'COMMERCE IMPACT · FY19 RECORD-SETTING MOMENTUM',
+          marketTag: 'DIGITAL COMMERCE · STOREFRONT ECOSYSTEM SCALING',
           src: '/evidence/msft-gtm-digital-gaming-momentum.png',
-          alt: 'Microsoft momentum slide showing $6B+ revenue, 23% Y/Y growth, and 22B gaming hours',
-          caption: 'Digital Gaming Commerce Momentum · $6B+ Revenue Impact',
+          alt: 'Digital Gaming Commerce Momentum framework illustrating cross-surface storefront unification across Windows and Xbox, publisher ecosystem alignment, and global catalog scaling across 200 markets',
+          caption: 'Digital Gaming Commerce Momentum · Storefront Ecosystem Scaling',
           fit: 'contain',
         },
         {
@@ -2581,26 +2931,29 @@ export const timelineItems = [
     title: 'Senior Localization Marketing Manager',
     officialTitle: 'Senior Localization Marketing Manager',
     dutiesBeyondScope:
-      'Founded and led the Global MARCOM Localization function, built a 20-vendor MSP partner program, managed 2 FTE Localization PGMs, and directed multi-market campaign execution across 26 languages and 17 markets.',
+      'Established and led Global MARCOM Localization operations, unifying multi-market campaign velocity, cross-functional release governance, and global brand consistency.',
     period: 'Mar 2020 – Oct 2021',
     startYear: 2020,
     endYear: 2021,
     pillars: ['program', 'leadership', 'vendor'],
-    summaryHeading:
-      'MARCOM Localization Program Architecture & Multi-Market Launch Execution',
     executionSummary: {
+      heading: 'Program Arc: MARCOM Localization Architecture & Multi-Market Governance',
       items: [
         {
-          label: 'Org Founding & MSP Outsourced Model:',
-          text: 'Founded and spearheaded the Global MARCOM Localization Program Management function during COVID-19 to drive international growth, scaling the core team to 2 FTE Loc MKTG PGMs. Architected a hybrid operational model by directing up to 15 internal linguists and scaling an outsourced MSP vendor program (up to 20 vendors) to handle massive workflow expansion. Directed multi-market campaign execution across 26 languages and 17 markets through strategic cross-functional governance spanning Marketing, Localization Engineering, Legal, and Editorial News.',
+          label: 'Context & Ambiguity:',
+          text: 'Establishing scalable MARCOM localization governance during rapid 2020–2021 remote shifts required aligning multi-market launches across 26 languages and 17 markets without a pre-existing centralized MARCOM localization operating model.',
         },
         {
-          label: 'LinkedIn Stories Multi-Wave Rollout:',
-          text: 'Led the sequential country rollout across Brazil (Apr 14), Netherlands (May 12), UAE (Jun 1), Australia/France (Jun 21–25), and the UK (Oct 20) to the Sep 24, 2020 Global Redesign, providing a real-time COVID-19 community channel while cutting campaign turnaround time by 30%.',
+          label: 'Governance & System Built:',
+          text: 'Built out MARCOM localization program governance, scaled an operating model of 2 FTE Localization Marketing PMs and 20 MSP vendors alongside internal linguists, and structured multi-wave global rollouts.',
         },
         {
-          label: 'Stories to Creator Mode Transition & Commercial Impact:',
-          text: 'Managed campaign and advertiser transitions when Stories sunset on Sep 30, 2021 (1 month before departure) to make room for persistent Creator Mode video tools. That format bridge coincided with Marketing Solutions peaking at +97% YoY (FY21 Q4) as LinkedIn topped $10B+ annual revenue.',
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Sequenced regional launch waves and product/brand updates across Marketing, Localization Engineering, Legal, and external partners to protect quality and speed without over-indexing on one-size-fits-all schedules.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Delivered multi-wave global rollouts across 26 languages and 17 markets with improved turnaround efficiency (while broader LinkedIn revenue and Marketing Solutions growth figures remain separate company-level context).',
         },
       ],
     },
@@ -2618,14 +2971,14 @@ export const timelineItems = [
         evidenceId: 'li-02',
       },
       {
-        value: '+97% Mktg Solns*',
-        label: 'Peak YoY growth (FY21 Q4); LinkedIn hit $10B+ FY21',
+        value: '6 Global Waves',
+        label: 'Sequential multi-market GTM rollouts delivered on schedule',
         kind: 'quality',
         evidenceId: 'li-03',
       },
     ],
     metricsFootnote:
-      '*Commercial Context (MSFT IR FY21 Q4): +97% YoY LinkedIn Marketing Solutions (+91% constant currency) and over $10 billion in annual LinkedIn revenue (+27% FY21). Source: see Microsoft Investor Relations FY21 Q4 results (specifically, July 27, 2021), where Stories, redesigns, and Creator tools operated alongside Marketing Solutions.',
+      '*Commercial Business Context (MSFT IR FY21 Q4): Macro commercial scale supported by MARCOM localization infrastructure. LinkedIn Marketing Solutions achieved peak +97% YoY growth (+91% constant currency) as LinkedIn reached over $10 billion in annual revenue (+27% FY21). Source: Microsoft Investor Relations FY21 Q4 results (specifically, July 27, 2021), where Stories, redesigns, and Creator tools operated alongside Marketing Solutions.',
     glossary: linkedinGlossary,
     highlights: [
       {
@@ -2633,15 +2986,15 @@ export const timelineItems = [
         url: 'https://www.linkedin.com/feed/update/urn:li:share:6813172964327088128/',
         linkLabel: 'View Mar 9, 2020 Tenure Post',
       },
-      'Founded and led the MARCOM Localization Program Management team (growing to 2 Loc MKTG PMs), unifying Marketing, Localization Engineering, Legal, and Editorial News release gates.',
-      'Built an outsourced marketing content vendor program via a Managed Service Provider (MSP) scaling up to 20 vendors alongside up to 15 internal linguists to absorb multi-market launch surges and cut turnaround by 30%.',
+      'Founded and led the MARCOM Localization Program Management team (scaling to 2 FTE Loc MKTG PMs), unifying Marketing, Localization Engineering, Legal, and Editorial News release gates.',
+      'Built an outsourced marketing content vendor program via a Managed Service Provider (MSP) scaling up to 20 vendors alongside up to 15 internal linguists to absorb launch surges and cut turnaround by 30%.',
       'Delivered localized multi-wave GTM launches for LinkedIn Stories (Brazil, Netherlands, UAE, Australia, France, UK) and the September 2020 Global Redesign across 26 languages and 17 markets during COVID-19.',
       'Drove the marketing updates and the localized look and feel across all markets for LinkedIn\'s first major redesign in five years (Sep 24, 2020). As manager, owned team capacity and initiatives prioritization, cross-functional alignment while delivering on time in line with MKTG organizational priorities and in alignment with the CEO\'s vision and company direction (LinkedIn Pressroom announcement).',
       'Guided transition planning for the September 30, 2021 Stories sunset toward persistent Creator Mode video experiences, capturing advertiser ROI and user learnings around profile permanence.',
     ],
     evidence: {
       label: 'Launch Coverage, Org Architecture & Earnings Archives (Apr 2020 – Oct 2021)',
-      note: 'Attribution & Archive Note: Press reports, LinkedIn Pulse posts, Wayback captures, and Microsoft IR filings below verify Mara\'s Stories launch waves, MSP operating scale, Creator pivot rationale, and concurrent FY21 Q1–FY22 Q1 segment performance.',
+      note: 'Attribution & Archive Note: Documented rollout captures across April–October 2020 waves (including Brazil, Netherlands, UAE/MENA, Australia, France, US/Canada, and UK) and related launch/brand coverage. Grouped wave evidence to show end-to-end launch sequencing, regional readiness, and cross-functional coordination across 26 languages and 17 markets, with Microsoft IR filings providing external commercial context.',
       sections: linkedinEvidenceSections,
       snapshots: linkedinEvidenceSections[0].snapshots,
       links: [
@@ -2695,44 +3048,63 @@ export const timelineItems = [
     title: 'Program Management Lead',
     officialTitle: 'Program Management Lead - Localization',
     dutiesBeyondScope:
-      'Scaled PM organization from 5 to 15 reports, directed market expansion across Canada, France, and Spain, and drove +42.6% YoY organic international gross profit growth.',
+      'Directed global localization Program Management org growth and multi-market launch readiness across international seller and developer ecosystems.',
     period: 'Nov 2021 – Nov 2022',
     startYear: 2021,
     endYear: 2022,
     pillars: ['program', 'vendor', 'leadership'],
-    summary:
-      'Scaled the global localization Program Management org threefold (from 5 to 15 PMs) to deliver the Square to Block corporate rebrand (Dec 2021), scale post-launch operations in France and Ireland, and execute FY22 launches including Spain (Jan 2022) and Square Loans in Canada (Apr 2022).',
+    executionSummary: {
+      heading: 'Program Arc: Org Scaling, Multi-Market Expansion & Product Parity Governance',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Scaling a global localization PM organization while supporting concurrent international expansion (8 markets, up to 37 products/market) and the Square-to-Block rebrand created high coordination complexity across product, regional GTM, legal, and brand teams.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Scaled the localization PM organization from 5 to 15 FTE PMs (direct reports) and established structured multi-market launch readiness and cross-functional alignment across regional and product workstreams.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Balanced rapid international rollout timelines and market-specific product requirements (including Spain GA, Square Loans in Canada, European scaling in France and Ireland, and the December 2021 rebrand) against localization capacity and risk controls.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Expanded the localization PM org from 5 to 15 FTE PMs and supported scheduled international market rollouts and product readiness across 8 markets (with Block\'s Investor Day and Q3 2022 GPV/gross profit figures provided as broader company context).',
+        },
+      ],
+    },
     metrics: [
       {
-        value: '5 to 15 PMs (3×)',
-        focus: 'Team Scale',
-        label: 'Localization PM Org Scaled Across 8 International Markets (Up to 37 Products/Market)',
+        value: '5 to 15 FTE PMs',
+        focus: 'Direct Report Scale',
+        label: 'Localization PM Org Scaled 3x (Direct Reports) for Global Operations',
         kind: 'scale',
         placeholder: false,
-        hint: 'Source: Resume (5 to 15 reports) and Block Investor Day 2022 Slides 26, 31',
+        hint: 'Scaled direct-report PM team from 5 to 15 FTEs; Block Investor Day 2022 Slides 26, 31',
         evidenceId: 'bk-01',
       },
       {
-        value: '+55% YoY CC GPV*',
-        focus: 'Payment Velocity',
-        label: 'FY22 Q3 Square Int’l GPV Growth (>3× U.S. +17%); Supported via Rebrand (Dec 2021), France/Ireland Scaling, Spain (Jan 2022) & Canada Loans (Apr 2022)',
+        value: '8 Int’l Markets',
+        focus: 'Market Rollouts',
+        label: 'Expansion Across Core Markets (Square Rebrand, France/Ireland & Spain GA)',
         kind: 'velocity',
         placeholder: false,
-        hint: 'Source: Block Q3 2022 Shareholder Letter (p. 11 Geographies) & Rebrand/Launch Releases (2021–2022)',
+        hint: 'Delivered Square to Block rebrand (Dec 2021), European scaling, and Spain GA (Jan 2022)',
         evidenceId: 'bk-02',
       },
       {
-        value: '9% to 15% Share**',
-        focus: 'Profit Share',
-        label: 'International Share of Square Gross Profit (FY21 Q3 to FY22 Q3; 11% Core Ex-BNPL)**',
+        value: 'Up to 37 Products',
+        focus: 'Product Readiness',
+        label: 'Localized Product Parity per Market (Square Loans, Banking & BNPL)',
         kind: 'quality',
         placeholder: false,
-        hint: 'Source: Block Investor Day Slide 27 (FY21) & Q3 2022 Shareholder Letter (pp. 7, 11, 29)',
+        hint: 'Investor Day Slide 26 (22 to 37 products/market) & Canada Loans/BNPL launches',
         evidenceId: 'bk-03',
       },
     ],
     metricsFootnote:
-      '*, ** Reconciled across Block’s May 2022 Investor Day & Q3 2022 Shareholder Letter (Nov 3, 2022); click to expand metric breakdown.',
+      '*Macro Commercial Context (Block Investor Day & Q3 2022 Shareholder Letter): Scale supported by the localization PM infrastructure. International GPV grew +55% YoY CC in FY22 Q3 (>3x U.S. +17%) as international share of Square Gross Profit expanded from 9% to 15% (11% core Ex-BNPL). Click below for the full 4-period financial reconciliation.',
     metricsFootnoteItems: [
       {
         marker: '*',
@@ -2752,7 +3124,7 @@ export const timelineItems = [
     ],
     glossary: blockGlossary,
     highlights: [
-      'Org & Execution (Why 3× Scale Mattered): Expanded the global localization PM team from 5 to 15 PMs alongside Brand, Product Marketing, Legal, and Regional GTM to standardize multi-market launch workflows. That operating model enabled concurrent delivery of the Dec 2021 Square to Block rebrand, post-launch European scaling (France and Ireland), Spain general availability (Jan 2022), and Square Loans in Canada (Apr 2022).',
+      'Org & Execution (Direct Report Scale): Scaled the global localization PM team from 5 to 15 FTE PMs (direct reports) alongside Brand, Product Marketing, Legal, and Regional GTM to standardize multi-market launch workflows. That operating model enabled concurrent delivery of the Dec 2021 Square to Block rebrand, post-launch European scaling (France and Ireland), Spain general availability (Jan 2022), and Square Loans in Canada (Apr 2022).',
       {
         text: 'Business Impact (In-Tenure FY22 Proof): Sustained product-parity localization across 8 international markets (including Japan PayPay QR acceptance, Australia Instant Transfers, UK Square Loans, and Canada/UK BNPL), supporting +55% YoY constant-currency Square International GPV growth in FY22 Q3 (vs. +17% YoY in the U.S.) and lifting Square International Gross Profit from $220M in full-year FY21 to $200.2M core Ex-BNPL (+42.6% YoY) and $323.7M GAAP all-in (+130.5% YoY) in FY22 9M YTD (ended Sep 30, 2022).',
         url: `${BLOCK_Q3_2022_LETTER_URL}#page=29`,
@@ -2760,7 +3132,7 @@ export const timelineItems = [
       },
     ],
     evidence: {
-      note: 'Organized into 5 expandable evidence sections below (Global Market Expansion, Square to Block Rebrand, Market & Product Launches, International Growth & ROI, and Professional Development & Community Contributions), reconciling May 2022 Investor Day annual baselines with Q3 2022 Shareholder Letter actuals. Live Square/Block URLs, a Wayback Machine archive (Nov 2026), a saved full-page PDF archive of squareup.com/us/en/about, ICEM 2022 conference archives, and local captures are preserved in case public pages change or are retired.',
+      note: 'Includes Block Investor Day (May 2022) and Q3 2022 Shareholder Letter references (including Slide 26, Slides 31–32, and Page 7) alongside market expansion and rebrand milestones. Framed external financial and GPV disclosures explicitly as macro business context supporting the international markets and product lines covered by the program. Preserved via live links, Wayback Machine archives, and saved PDF archive documentation.',
       sections: blockEvidenceSections,
       snapshots: blockEvidenceSections.flatMap((section) => section.snapshots || []),
       links: Array.from(
@@ -2797,19 +3169,23 @@ export const timelineItems = [
     summary:
       'Invited as Visiting Professor to modernize the flagship TLM/PGM curriculum, bridging academic training with enterprise program management standards. Created and launched the institute\'s first AI Series and forged institutional partnerships across faculty, admissions, and careers with partners ranging from SMB to Fortune 500 tech leaders, accelerating cohort growth and professional readiness.',
     executionSummary: {
-      heading: 'Execution & Delivery:',
+      heading: 'Program Arc: Curriculum Modernization & Institutional Partnerships',
       items: [
         {
-          label: 'Strategy & Architecture:',
-          text: 'Architected standardized operational frameworks and program governance models to scale training and readiness across cohorts.',
+          label: 'Context & Ambiguity:',
+          text: 'Modernizing the flagship TLM/PGM curriculum required connecting academic training with current enterprise program management standards and emerging AI workflows.',
         },
         {
-          label: 'Cross-Functional Execution:',
-          text: 'Directed cross-functional operational alignment across executive leadership, admissions, and enterprise tech partners (Block, GitLab, Coupa, Smartling) to unify program delivery.',
+          label: 'Governance & System Built:',
+          text: 'Updated curriculum structure, launched the institute\'s first AI Series, and built partnerships across faculty, admissions, careers, and industry leaders ranging from SMBs to Fortune 500 tech companies.',
         },
         {
-          label: 'Growth & Mentorship:',
-          text: 'Scaled active cohorts through structured operational mentorship, executive speaker series, and operational governance.',
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Aligned academic syllabus/program structure and institutional stakeholders with fast-moving industry practices and AI adoption.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Modernized TLM/PGM curriculum offerings, launched the institute\'s first AI Series, and expanded industry partnerships across SMBs and Fortune 500 tech organizations.',
         },
       ],
     },
@@ -3009,6 +3385,27 @@ export const timelineItems = [
     pillars: ['education', 'program', 'ai', 'leadership'],
     summary:
       'Continuous post-graduate executive, project management, leadership, and technical education spanning Google Career Certificates (Foundations of Project Management, Nov 2026), Anthropic Academy (AI Fluency: Framework & Foundations, Mar 2026), Stanford Continuing Studies (WSP 116: Conversational Intelligence, Feb 2021), Tony Robbins / Assessments 24x7 (Executive DISC & Workplace Motivators Profile, Nov 2026), and a 26-course LinkedIn Learning leadership and DEI track (recognized in the Top 12% of Learners globally for CY 2020). Every included credential below is backed by a live verification URL, signed institutional PDF, or local certificate capture.',
+    executionSummary: {
+      heading: 'Program Arc: Continuous Leadership Upskilling & AI/PGM Credentials',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Rapid shifts in AI workflows, structured program management practices, and leadership expectations required ongoing upskilling beyond day-to-day roles.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Completed 30 verified credentials and courses across Google Career Certificates (Foundations of Project Management, Nov 2026), Anthropic Academy (AI Fluency: Framework & Foundations, Mar 2026), Stanford Continuing Studies (WSP 116: Conversational Intelligence, Feb 2021), Tony Robbins / Assessments 24x7 (Executive DISC & Workplace Motivators Profile, Nov 2026), and LinkedIn Learning leadership/DEI courses (Top 12% of Learners globally for CY 2020).',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Prioritized high-signal project management, AI fluency, and stakeholder communication credentials alongside active program and engineering work.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Built a documented portfolio of 30 verified credentials across AI foundations, project management, executive communication, and leadership.',
+        },
+      ],
+    },
     highlights: [
       {
         text: 'Executive Leadership Profile (Nov 18, 2026): Completed Certified DISC & Workplace Motivators Assessment (Tony Robbins / Assessments 24x7). Primary Style: Planner (High follow-through, cross-functional stabilizing presence, structured process refinement, and analytical problem-solving).',
@@ -3324,20 +3721,39 @@ export const timelineItems = [
     title: 'Senior Program Manager / Producer (Contract)',
     officialTitle: 'Senior Program Manager / Producer (Contract via Mindsource / WPP)',
     dutiesBeyondScope:
-      'Governed high-volume production operations and automated pipeline architectures for unannounced Black Ops initiatives under strict corporate confidentiality.',
+      'Governed high-volume production operations, automated pipeline architectures, and secure cross-functional release gates for confidential, unannounced product programs.',
     period: 'May 2026 – Sep 2026 (Contract)',
     startYear: 2026,
     endYear: 2026,
     pillars: ['program', 'vendor', 'ai'],
-    summary:
-      'Project scope and deliverables are withheld under strict Apple corporate non-disclosure agreements (NDA) for confidential Black Ops initiatives pending authorized public disclosure.',
+    executionSummary: {
+      heading: 'Program Arc: Production Operations & Secure Release Governance',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'High-volume production and automated pipeline operations for confidential, unannounced initiatives demanded strict security, release-gate discipline, and cross-functional coordination.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Governed production operations, automated pipeline architectures, and release gates under strict NDA constraints (100% NDA*).',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Coordinated cross-functional release gates and automated pipeline workflows while protecting unannounced program confidentiality.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Maintained governed production pipelines and release readiness across confidential May–Sep 2026 contract initiatives.',
+        },
+      ],
+    },
     metrics: [
       {
         value: 'Confidential*',
-        label: 'Project scope & deliverables (Black Ops)',
+        label: 'Program scope & deliverables (Unannounced Initiatives)',
         kind: 'scale',
         placeholder: false,
-        hint: '*Apple NDA / Black Ops: Specific project codenames and metrics are withheld under strict non-disclosure obligations',
+        hint: '*Apple NDA: Project codenames and specific metrics are withheld under corporate non-disclosure agreements',
         evidenceId: 'ap26-01',
       },
       {
@@ -3345,7 +3761,7 @@ export const timelineItems = [
         label: 'Automation, verification & production pipelines',
         kind: 'velocity',
         placeholder: false,
-        hint: '*Apple NDA / Black Ops: Pipeline architectures remain confidential until authorized public disclosure',
+        hint: '*Apple NDA: Pipeline architectures remain confidential pending authorized public disclosure',
         evidenceId: 'ap26-02',
       },
       {
@@ -3353,25 +3769,25 @@ export const timelineItems = [
         label: 'Confidentiality & security release compliance',
         kind: 'quality',
         placeholder: false,
-        hint: '*Apple NDA / Black Ops: Zero disclosure of unannounced products or internal initiatives',
+        hint: '*Apple NDA: Strict adherence to corporate confidentiality and secure release protocols',
         evidenceId: 'ap26-03',
       },
     ],
     highlights: [
-      'Confidentiality & NDA: Governed contract operations and high-volume deliverables for unannounced Black Ops initiatives under strict Apple corporate non-disclosure agreements.',
-      'Public Disclosure Policy: Detailed workflows, technical architectures, and impact metrics are withheld until verifiable public references or open-source releases become authorized to share.',
-      'Operational Governance: Maintained 100% compliance with corporate non-disclosure protocols, secure asset handoffs, and cross-functional release gates throughout the engagement.',
+      'Corporate Confidentiality & NDA: Governed contract program operations and deliverable pipelines for confidential unannounced initiatives under strict Apple corporate non-disclosure agreements.',
+      'Public Disclosure Standards: Detailed workflows, technical architectures, and metrics remain confidential until authorized for public release.',
+      'Operational Governance: Maintained 100% compliance with corporate security protocols, secure asset handoffs, and cross-functional release gates throughout the engagement.',
     ],
     evidence: {
-      note: 'Confidentiality & NDA Notice: Given Apple confidentiality policies and active non-disclosure agreements covering unannounced Black Ops projects, project details, codenames, and specific metrics are withheld until authorized public data can be shared.',
+      note: 'Confidentiality & NDA Notice: Given Apple confidentiality policies and active non-disclosure agreements covering unannounced programs, project details, codenames, and specific metrics are withheld until authorized public data can be shared.',
       sections: [
         {
           id: 'apple-confidentiality-notice',
-          title: '1. Confidentiality & Non-Disclosure Notice (Apple Confidential / Black Ops)',
-          badge: 'Apple NDA · Confidential / Black Ops',
+          title: '1. Confidentiality & Non-Disclosure Notice (Apple Confidential)',
+          badge: 'Apple NDA · Confidential Initiatives',
           defaultOpen: true,
           summary:
-            'Given Apple confidentiality obligations and work on unannounced Black Ops projects, project specifics, architectures, and metrics are withheld pending authorized public disclosure.',
+            'Given Apple confidentiality obligations and work on unannounced product programs, project specifics, architectures, and metrics are withheld pending authorized public disclosure.',
         },
       ],
     },
@@ -3387,17 +3803,41 @@ export const timelineItems = [
     countryFlag: '🌐',
     location: 'USA / Global',
     monogram: '🎯',
-    title: 'Working on my next adventure. More to come, stay tuned! :)',
+    title: 'AI Program Leadership, Global Operations & Strategic GTM',
     period: '2027 (Coming Next)',
     startYear: 2027,
     endYear: 2027,
     pillars: ['program', 'leadership', 'ai'],
     summary:
-      'Preparing the next strategic chapter across enterprise AI governance, program architecture, and global scale.',
+      'Focusing 2027 strategic priorities on enterprise AI program leadership, global operations governance, and international GTM delivery.',
+    executionSummary: {
+      heading: 'Program Arc: AI Program Leadership & Global Operations',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Enterprise organizations scaling AI-enabled workflows and multi-market programs face complex governance, quality assurance, and cross-functional alignment challenges.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Structures forward focus across three stages: 2027 (AI program leadership, global operations, strategic GTM), 2028 (human-in-the-loop AI governance, global scale strategy, org mentorship), and 2029+ (cross-org enablement, international expansion, responsible AI operating models).',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Prioritizes sustainable governance, risk controls, and human oversight over unvetted automation or short-term volume spikes.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Provides a clear, realistic multi-year direction focused on operational rigor, AI governance, and scalable cross-functional execution.',
+        },
+      ],
+    },
     targetSkills: ['AI Program Leadership', 'Global Operations', 'Strategic GTM'],
     highlights: [
-      'Exploring opportunities in AI Localization Strategy, Program Leadership, and Operations Enablement.',
+      'Exploring opportunities in AI Program Leadership, Multi-Region Scale, and Operations Enablement.',
     ],
+    evidence: {
+      note: 'Forward Horizon Note: Clearly labeled as forward-looking strategic focus areas (2027, 2028, 2029+) distinct from completed historical roles and verified credentials.',
+    },
     placeholder: false,
   },
   {
@@ -3410,17 +3850,41 @@ export const timelineItems = [
     countryFlag: '🌐',
     location: 'USA / Global',
     monogram: '✦',
-    title: 'Working on my next adventure. More to come, stay tuned! :)',
+    title: 'Executive Governance, Global Scale Strategy & Org Mentorship',
     period: '2028 (Coming Next)',
     startYear: 2028,
     endYear: 2028,
     pillars: ['ai', 'leadership'],
     summary:
-      'Scaling operational frameworks and human-in-the-loop AI systems for international organizations.',
+      'Scaling international governance frameworks, human-in-the-loop AI workflows, and organizational mentorship.',
+    executionSummary: {
+      heading: 'Program Arc: Scalable International Governance & Human-in-the-Loop AI',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Enterprise organizations scaling AI-enabled workflows and multi-market programs face complex governance, quality assurance, and cross-functional alignment challenges.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Centers 2028 stage focus on human-in-the-loop AI governance, global scale strategy, and organizational mentorship across international operating models.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Prioritizes sustainable governance, risk controls, and human oversight over unvetted automation or short-term volume spikes.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Provides a clear, realistic multi-year direction focused on operational rigor, AI governance, and scalable cross-functional execution.',
+        },
+      ],
+    },
     targetSkills: ['Executive Governance', 'Global Scale Strategy', 'Org Mentorship'],
     highlights: [
-      'Focusing on commercial vendor strategy, LLM evaluation systems, and Center of Excellence leadership.',
+      'Focusing on cross-regional governance, LLM evaluation systems, and Center of Excellence leadership.',
     ],
+    evidence: {
+      note: 'Forward Horizon Note: Clearly labeled as forward-looking strategic focus areas (2027, 2028, 2029+) distinct from completed historical roles and verified credentials.',
+    },
     placeholder: false,
   },
   {
@@ -3433,17 +3897,41 @@ export const timelineItems = [
     countryFlag: '🌐',
     location: 'Global Executive Scope',
     monogram: '★',
-    title: 'Working on my next adventure. More to come, stay tuned! :)',
+    title: 'Executive Enablement, Global Expansion & Responsible AI Scale',
     period: '2029+ (Coming Next)',
     startYear: 2029,
     endYear: 2029,
     pillars: ['leadership', 'ai', 'program'],
     summary:
-      'Shaping multi-year international expansion, organizational mentorship, and responsible AI operating models at executive scale.',
-    targetSkills: ['P&L & Leadership', 'Executive Enablement', 'Global Expansion'],
+      'Centering long-term direction on cross-functional enablement, global expansion, and responsible AI scale across global teams.',
+    executionSummary: {
+      heading: 'Program Arc: Executive Enablement & Responsible AI Expansion',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Enterprise organizations scaling AI-enabled workflows and multi-market programs face complex governance, quality assurance, and cross-functional alignment challenges.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Focuses 2029+ executive stage scope on cross-org enablement, international expansion, and responsible AI operating models.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Prioritizes sustainable governance, risk controls, and human oversight over unvetted automation or short-term volume spikes.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Provides a clear, realistic multi-year direction focused on operational rigor, AI governance, and scalable cross-functional execution.',
+        },
+      ],
+    },
+    targetSkills: ['Executive Enablement', 'Global Expansion', 'Responsible AI Scale'],
     highlights: [
-      'Dedicated to executive leadership, P&L stewardship, and global market expansion.',
+      'Dedicated to cross-functional enablement, global expansion, and responsible AI operating models.',
     ],
+    evidence: {
+      note: 'Forward Horizon Note: Clearly labeled as forward-looking strategic focus areas (2027, 2028, 2029+) distinct from completed historical roles and verified credentials.',
+    },
     placeholder: false,
   },
 ];

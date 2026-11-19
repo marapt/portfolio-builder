@@ -289,7 +289,7 @@ const ProjectDetail = () => {
             </div>
 
             <div className="bg-white rounded-[3rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-50">
-              {/* Navy header bar — MIIS branding */}
+              {/* Navy header bar: MIIS branding */}
               <div className="bg-[#003366] px-12 py-8 flex items-center justify-between">
                 <div className="flex items-center gap-5">
                   {/* MIIS shield badge */}
@@ -330,7 +330,7 @@ const ProjectDetail = () => {
                   {project.credentialBlock.headshot ? (
                     <img
                       src={project.credentialBlock.headshot}
-                      alt="Mara Martins — Middlebury Institute Faculty"
+                      alt="Mara Martins - Middlebury Institute Faculty"
                       className="w-44 h-52 object-cover object-top rounded-2xl shadow-xl ring-4 ring-white"
                     />
                   ) : (

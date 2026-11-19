@@ -592,7 +592,7 @@ const CareerTimeline = () => {
     >
       <section
         aria-labelledby="career-timeline-heading"
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 pb-36 sm:pb-44"
       >
       {/* Header & Controls */}
       <div className="glass-card rounded-3xl p-6 sm:p-8 border border-white/10">
@@ -609,9 +609,7 @@ const CareerTimeline = () => {
               Interactive Career Timeline
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Explore 20+ years from internships at RTP and EU DGT to roles at Sony Portugal, Sony UK,
-              and Hogarth Worldwide in London, spanning relocations from Portugal to the UK (2007)
-              and the UK to Silicon Valley (2014), AI governance, and what comes next.
+              Trace 20+ years of global program leadership, localization architecture, and AI-enabled operational scale across enterprise platforms: from agency and retail foundations in Europe to program leadership at Microsoft, LinkedIn, and Block. Select any milestone or filter by leadership pillar to explore the governance models, rollouts, and evidence behind each chapter.
             </p>
           </div>
 
@@ -732,7 +730,8 @@ const CareerTimeline = () => {
                           : 'text-slate-400 border border-transparent'
                     }`}
                   >
-                    <span>{year}</span>
+                    <span className="hidden xl:inline">{year}</span>
+                    <span className="xl:hidden">'{String(year).slice(2)}</span>
                     {inSelected && (
                       <span
                         aria-hidden="true"
@@ -953,7 +952,7 @@ const CareerTimeline = () => {
                     </p>
                     {selectedItem.dutiesBeyondScope && (
                       <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        <span className="text-cyan-300 font-semibold">Duties performed beyond the scope of the role: </span>
+                        <span className="text-cyan-300 font-semibold">Expanded Leadership Scope: </span>
                         <span className="text-slate-200">{selectedItem.dutiesBeyondScope}</span>
                       </p>
                     )}
@@ -1009,7 +1008,7 @@ const CareerTimeline = () => {
           </div>
 
           {/* Summary */}
-          <div className="space-y-3 max-w-4xl">
+          <div className="space-y-2 max-w-4xl">
             {selectedItem.summaryHeading && (
               <p className="text-sm sm:text-base font-semibold text-white leading-snug">
                 <AcronymText text={selectedItem.summaryHeading} />
@@ -1021,22 +1020,22 @@ const CareerTimeline = () => {
               </p>
             )}
             {selectedItem.executionSummary && (
-              <div className="pt-1 space-y-2">
+              <div className="pt-1.5 pb-0.5 space-y-1.5 border-t border-white/10 mt-1">
                 {selectedItem.executionSummary.heading && (
-                  <p className="text-sm sm:text-base font-semibold text-white">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-cyan-300">
                     <AcronymText text={selectedItem.executionSummary.heading} />
                   </p>
                 )}
-                <ul className="space-y-2 text-sm sm:text-base text-slate-200 leading-relaxed">
+                <div className="space-y-1 text-xs sm:text-sm leading-relaxed">
                   {selectedItem.executionSummary.items.map((entry) => (
-                    <li key={entry.label}>
-                      <span className="font-semibold text-white">
-                        <AcronymText text={entry.label} />
+                    <p key={entry.label} className="text-slate-300">
+                      <span className="text-cyan-200 font-semibold">
+                        {entry.label.replace(/:$/, '')}:
                       </span>{' '}
                       <AcronymText text={entry.text} />
-                    </li>
+                    </p>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
           </div>
@@ -1308,7 +1307,7 @@ const CareerTimeline = () => {
                                 {isOpen && (
                                   <div className="px-4 pb-4 pt-1 space-y-3 border-t border-white/10">
                                     {section.summary && (
-                                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed whitespace-pre-line">
                                         <AcronymText text={section.summary} />
                                       </p>
                                     )}

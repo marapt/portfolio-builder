@@ -14,8 +14,8 @@
 - **Program & Delivery Pillar (`program`):** Must include Microsoft (`microsoft`) alongside other major delivery roles.
 - **Leadership Pillar (`leadership`):** Must include LinkedIn (`linkedin`) and Block (`block`).
 - **Future Horizon Nodes (`future-2027`, `future-2028`, `future-2029`):**
-  - The signature title is: `"Working on my next adventure. More to come, stay tuned! :)"`.
-  - NEVER duplicate this title string inside `summary` or `highlights`. Pair each node with distinct forward-looking copy.
+  - Anchor each node on focused forward-looking strategic themes (AI Program Leadership, Global Scale Strategy, Executive Enablement).
+  - NEVER duplicate title strings inside `summary` or `highlights`. Pair each node with distinct forward-looking copy.
 
 ## 3. Token Efficiency for Audits & Subagents
 - When auditing datasets, copy, links, or visual assets, NEVER launch browser or screenshot subagents.

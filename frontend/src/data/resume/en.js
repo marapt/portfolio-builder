@@ -9,209 +9,226 @@ export const resumeData = {
       company: 'Career Transition',
       logo: null,
       role: 'Open to New Opportunities',
-      location: 'San Francisco Bay Area',
-      period: 'Jul 2025 - Present',
-      type: 'Career Break',
-      description: 'Following the announcement of MIIS closure by June 2027, I am actively seeking new opportunities in AI Localization Strategy, Program Management, and Education.',
+      location: 'San Francisco Bay Area, CA',
+      period: 'Sep 2026 - Present',
+      type: 'Career Transition',
+      description: 'Actively exploring senior program leadership (L6/Staff PGM) roles across enterprise AI program governance, global launch operations, and multi-market scale.',
       achievements: [
-        'Leveraging 15+ years of experience in localization and program management',
-        'Open to roles in AI/Localization leadership, GTM strategy, and education',
-        'Available for full-time positions, consulting, or advisory roles'
+        'Targeting senior program management (L6/Staff PGM) leadership roles across enterprise AI orchestration, global launch operations, and international scale',
+        'Leveraging 15+ years driving cross-functional governance, multi-vendor ecosystems (up to 20 MSP vendors), and multi-market product readiness across 200 markets and 100 languages',
+        'Available for full-time executive program leadership, strategic advisory, or enterprise transformation initiatives'
       ],
       linkedInPost: 'https://www.linkedin.com/posts/maramartinspt_middlebury-to-close-miis-by-june-2027-the-share-7367252461322977280-JJ6m'
     },
     {
       id: 1,
-      company: 'Middlebury Institute of International Studies',
+      company: 'Apple',
       logo: null,
-      role: 'Visiting Professor',
-      location: 'Monterey, California',
-      period: 'Jul 2023 - Jul 2025',
-      type: 'Full-time',
-      description: 'Teaching graduate-level courses on Translation and Localization Management Program and advocating for Responsible AI adoption in Localization.',
+      role: 'Senior Program Manager / Producer (Contract via Mindsource / WPP)',
+      location: 'Cupertino / Bay Area, CA',
+      period: 'May 2026 - Sep 2026',
+      type: 'Contract',
+      description: 'Governed high-volume production operations, automated pipeline architecture, and secure cross-functional release gates for confidential, unannounced product programs under strict Apple non-disclosure agreements.',
       achievements: [
-        'Designed and launched the institute\'s first AI Event Series "AI in Localization" by collaborating with industry leaders (GitLab, Block, Coupa, Smartling)',
-        'Designed and taught graduate-level courses on Global Program Management, AI adoption in Localization, and Automation',
-        'Mentored 90+ students across three cohorts, guiding teams to build E2E market ready localization and GLM workflows'
+        'Directed high-volume digital production operations and automated pipeline architecture for confidential, unannounced global initiatives under strict Apple NDA controls',
+        'Enforced rigorous cross-functional release gates across Engineering, Production, Creative, and external supplier workstreams to guarantee release integrity',
+        'Governed supplier delivery handoffs and QA verification velocity within strict security and release-gate SLA timelines'
       ]
     },
     {
       id: 2,
-      company: 'Block',
+      company: 'Career Transition',
       logo: null,
-      role: 'Program Management Lead - Localization',
-      location: 'United States',
-      period: 'Nov 2021 - Nov 2022',
-      type: 'Full-time',
-      description: 'Led a team of Program Managers responsible for supporting the global expansion of Square\'s ecosystem of products.',
+      role: 'Academic Transition & Executive Career Break',
+      location: 'San Francisco Bay Area, CA',
+      period: 'Jul 2025 - May 2026',
+      type: 'Career Break',
+      description: 'Planned transatlantic career transition following MIIS tenure and institutional closure announcement; pursued advanced certifications in Generative AI, LLM evaluation, and executive program governance.',
       achievements: [
-        'Led a team of Program Managers (5 reports and expanded to 15 reports)',
-        'Supported vendors delivering multilingual marketing campaigns and product launches across 10+ markets',
-        'Partnered cross-functionally with Brand, Product Marketing, Legal, and Regional teams',
-        'Introduced scalable workflows and quality frameworks to accelerate go-to-market readiness'
+        'Completed structured transition planning following the Middlebury Institute institutional restructuring announcement (MIIS closure by June 2027)',
+        'Earned advanced credentials in Generative AI and Program Management (including Google Project Management and Anthropic AI Fluency)',
+        'Advised international localization professionals and led industry sessions with Women in Localization Portugal (WLPT)'
       ]
     },
     {
       id: 3,
-      company: 'LinkedIn',
+      company: 'Middlebury Institute of International Studies',
       logo: null,
-      role: 'Senior Localization Marketing Manager',
-      location: 'Sunnyvale, California',
-      period: 'Mar 2020 - Oct 2021',
+      role: 'Visiting Professor, Translation and Localization Management',
+      location: 'Monterey, CA',
+      period: 'Jul 2023 - Jul 2025',
       type: 'Full-time',
-      description: 'Founded the Marketing Localization Program Management team (2 Loc MKTG PMs), coordinating with up to 15 internal linguists and scaling a 20-vendor Managed Service Provider (MSP) program across 26 languages and 17 priority markets.',
+      description: 'Modernized graduate TLM/PGM curriculum, launched the institute\'s first "AI in Localization" series, and built cross-functional partnerships across faculty, admissions, careers, and industry leaders while mentoring cohorts of students.',
       achievements: [
-        'Founded the MARCOM Localization PM team (2 PMs) and built the Marketing Content Vendor Program via a Managed Service Provider (MSP) model scaling up to 20 external vendors, cutting turnaround times by 30%',
-        'Coordinated with up to 15 internal localization linguists alongside Marketing, Product, Engineering, and Editorial Newsrooms across time zones',
-        'Co-led multi-wave international rollouts for LinkedIn Stories (Brazil, Netherlands, UAE, Australia, France, UK, Global) and LinkedIn Learning across 17 markets and 26 languages during COVID-19',
-        'Helped validate product learnings behind the Sep 2021 Stories sunset and pivot to Creator Mode & permanent video, coinciding with LinkedIn surpassing $10B annual revenue (+97% YoY Marketing Solutions peak in Q4 FY21)'
+        'Architected and launched the institute\'s inaugural "AI in Localization" conference series, establishing enterprise partnerships with executives from Block, GitLab, Coupa, and Smartling',
+        'Modernized graduate curricula in Global Program Management, Advanced Localization Systems, and Responsible AI Workflows, achieving 90%+ student course satisfaction',
+        'Built cross-functional partnerships across faculty, admissions, careers, and industry leaders, mentoring 90+ graduate candidates across 3 cohorts on E2E globalization workflows'
       ]
     },
     {
       id: 4,
-      company: 'Microsoft',
+      company: 'Block',
       logo: null,
-      role: 'Sr. Global Marcom Manager - Localization & Operations',
-      location: 'Greater Seattle Area',
-      period: 'Jun 2016 - Mar 2020',
+      role: 'Program Management Lead - Localization',
+      location: 'San Francisco, CA (Remote)',
+      period: 'Nov 2021 - Nov 2022',
       type: 'Full-time',
-      description: 'Driving the overall localization program execution, strategy and innovation of MSCOM and Store.',
+      description: 'Scaled the global localization PM organization from 5 to 15 FTE PM direct reports and aligned cross-functional launch readiness across 8 international markets and up to 37 products per market (including the Square-to-Block rebrand and regional launches), with broader Block GPV and gross profit figures framed separately as company context.',
       achievements: [
-        'Managed multi-vendor team talent (team of over 15 people) and global product offering for 200 markets (100 languages)',
-        'Served as Stores advocate for Geopolitical Readiness, receiving formal recognition from the Global Readiness team and shaping enterprise globalization standards on Microsoft Learn',
-        'Responsible for efficient budget management and key priorities allocation',
-        'Ensured customer flawless experiences and business impact across the globe'
+        'Scaled the global localization Program Management team from 5 to 15 FTE PM direct reports, structuring team capacity, PM career pathways, and cross-functional release governance',
+        'Orchestrated end-to-end international launch readiness across 8 markets and up to 37 products per market, governing release gates for Spain GA (Jan 2022), Square Loans in Canada (Apr 2022), and European market scaling',
+        'Governed localized brand, web, and product readiness for the corporate transition from Square to Block (Dec 2021) across international seller and developer ecosystems',
+        'Standardized multi-market GTM operating rhythms across Product, Regional Marketing, Legal, Risk, and Engineering, with broader Block GPV (+55% YoY CC international GPV in Q3 2022) and gross profit share framed separately as company context'
       ]
     },
     {
       id: 5,
-      company: 'Infoblox (via Acclaro)',
+      company: 'LinkedIn',
       logo: null,
-      role: 'Marketing Localization Project Manager',
-      location: 'Santa Clara, California',
-      period: 'Mar 2015 - Jun 2016',
-      type: 'Contract',
-      description: 'Localization Project Manager responsible for ensuring operational excellence for cross-functional globalization programs.',
+      role: 'Senior Localization Marketing Manager',
+      location: 'Sunnyvale, CA (Remote · COVID-19)',
+      period: 'Mar 2020 - Oct 2021',
+      type: 'Full-time',
+      description: 'Founded the MARCOM localization PM function, scaled a 20-vendor MSP model (with 2 FTE Loc MKTG PMs and internal linguistic support) to achieve ~30% faster turnaround, and coordinated multi-wave global rollouts across 26 languages and 17 markets (keeping LinkedIn\'s overall revenue/growth metrics distinct as macro context).',
       achievements: [
-        'Ensured operational excellence for cross-functional globalization programs for EMEA, LATAM and APAC',
-        'Innovation enthusiast and advocate for Go Global, Act Local strategies'
+        'Founded the Global MARCOM Localization PM function (scaling to 2 FTE Loc MKTG PMs), unifying release gates across Marketing, Localization Engineering, Legal, and Editorial Newsrooms',
+        'Scaled a 20-vendor Managed Service Provider (MSP) model alongside internal linguistic support (up to 15 linguists), absorbing launch surges and achieving ~30% faster campaign turnaround',
+        'Coordinated multi-wave global rollouts for LinkedIn Stories across 6 global waves (Brazil, Netherlands, UAE, Australia, France, UK) and the September 2020 Global Redesign in 26 languages and 17 markets during COVID-19',
+        'Governed cross-functional alignment for the September 2021 Stories sunset toward Creator Mode, keeping LinkedIn\'s overall revenue ($10B+ FY21) and Marketing Solutions (+97% YoY) metrics distinct as macro company context'
       ]
     },
     {
       id: 6,
-      company: 'Apple',
+      company: 'Microsoft',
       logo: null,
-      role: 'Localization Project Manager (AppleCare Team)',
-      location: 'Cupertino, California',
-      period: 'Oct 2014 - Mar 2015',
-      type: 'Contract',
-      description: 'A truly dynamic team player taking a leadership role as a Localization Project Manager for Apple (AppleCare Team).',
+      role: 'Sr. Global Marcom Manager - Localization & Operations',
+      location: 'Redmond / Greater Seattle Area, WA',
+      period: 'Jun 2016 - Apr 2020',
+      type: 'Full-time',
+      description: 'Drove Center of Excellence initiatives, storefront operations, automated ingestion/workflows, and 15+ vendor/agency governance across 200 markets and 100 languages, supported by geopolitical and globalization readiness standards.',
       achievements: [
-        'Responsible for project scope identification, file organizing/processing in Apple CAT tools',
-        'Vendor allocation, vendor Q&A, and various project-related administrative tasks'
+        'Drove Center of Excellence program initiatives and governed multi-agency operations for a 15+ vendor/agency team, establishing automated SLA and quality scorecards across international digital storefronts',
+        'Instituted country/locale fallback hierarchies, automated ingestion workflows, and sim-ship vs. phased international rollout criteria with Engineering for Tier-1 retail moments',
+        'Maintained on-schedule GTM launch SLAs while cutting operational turnaround time by 25% across 200 markets and 100 languages',
+        'Championed Geopolitical Readiness for Microsoft Stores, earning formal recognition from the central Global Readiness team and contributing to enterprise globalization standards on Microsoft Learn'
       ]
     },
     {
       id: 7,
-      company: 'Career Break / Relocation',
+      company: 'Infoblox (via Acclaro)',
       logo: null,
-      role: 'UK to USA Transition',
-      location: 'International',
-      period: 'Jan 2012 - Oct 2014',
-      type: 'Career Break',
-      description: 'Career break for international relocation from United Kingdom to United States.',
+      role: 'Marketing Localization Project Manager',
+      location: 'Santa Clara, CA',
+      period: 'Mar 2015 - Jun 2016',
+      type: 'Contract',
+      description: 'Governed B2B cybersecurity marketing localization strategy, tiered LQA frameworks, and automated CMS/TMS API architectures across EMEA, LATAM, and APAC regions.',
       achievements: [
-        'Relocated from London, UK to San Francisco Bay Area, USA',
-        'Obtained work authorization and established professional network in the US market'
+        'Authored the enterprise Infoblox Localization Strategy (July 2015), establishing a multi-tiered localization spectrum and Strategic LQA Model for 11 languages across EMEA, LATAM, and APAC',
+        'Designed automated API connector architecture integrating Drupal CMS, Eloqua marketing automation, and Git with modern Translation Management Systems (TMS)',
+        'Replaced fragmented manual handoffs with structured review workflows, accelerating demand-generation white paper delivery and reducing regional review friction'
       ]
     },
     {
       id: 8,
-      company: 'Hogarth Worldwide',
+      company: 'Apple',
       logo: null,
-      role: 'Transcreation Program Manager',
-      location: 'London, United Kingdom',
-      period: 'Jan 2011 - Jan 2012',
-      type: 'Full-time',
-      description: 'Managed multiple enterprise client accounts and in-house delivery teams (up to 10 specialists) for global brand and flagship product launches across digital, online, and print.',
+      role: 'Localization Project Manager (AppleCare Team)',
+      location: 'Cupertino, CA',
+      period: 'Oct 2014 - Mar 2015',
+      type: 'Contract',
+      description: 'Executed launch-critical release triage, Radar bug velocity, and localization file processing for the AppleCare Team under strict corporate non-disclosure agreements.',
       achievements: [
-        'Managed enterprise client accounts (featuring HTC) for international launches, leading cross-functional coordination across Print production, SEO, Video Studios, VO recording, and Music & TV Licensing departments',
-        'Led end-to-end process management and dedicated delivery teams for WPP Group\'s global brand transformation of HTC ("Change" platform fronted by Robert Downey Jr.) and flagship smartphone rollouts (HTC One M7 and M8)',
-        'Directed client commercial governance, Master Services/Business Agreements (MBAs), Quarterly Business Reviews (QBRs), and operational SLAs across key markets (FR, BE, ES, PT, NL)',
-        'Pro-active interaction with Procurement and Account Management teams to expand client portfolio and win enterprise and institutional pitches'
+        'Led cross-functional engineering, QA, and supplier release triage in Radar under strict Apple non-disclosure agreements and release-gate SLAs',
+        'Coordinated AppleCare localization workflows, CAT file processing, and supplier handoffs in Cupertino across worldwide market milestones',
+        'Enforced strict confidentiality and NDA controls for unannounced hardware and software product support documentation'
       ]
     },
     {
       id: 9,
-      company: 'Hogarth Worldwide',
+      company: 'Career Break / Relocation',
       logo: null,
-      role: 'Transcreation Account Manager',
-      location: 'London, United Kingdom',
-      period: 'Jan 2010 - Jan 2011',
-      type: 'Full-time',
-      description: 'Responsible for the quality of culturally adapted marketing communications in multiple industries.',
+      role: 'UK to USA Transition',
+      location: 'London, UK to Silicon Valley, CA, USA',
+      period: 'Mar 2014 - Oct 2014',
+      type: 'Career Break',
+      description: 'Transatlantic relocation from London to Silicon Valley following Hogarth Worldwide tenure; arrived in US in March 2014, secured work authorization in May 2014, and transitioned into the US technology sector.',
       achievements: [
-        'Pre-screening a team of translators managing the transcreation process',
-        'Ensuring correct tone and message of brands in local markets',
-        'Planning and executing complex schedules to accommodate client needs',
-        'Acting as brand ambassador for Medical major brands in Portuguese market'
+        'Executed transatlantic relocation from London to Silicon Valley following successful completion of Hogarth program commitments (Mar 2014)',
+        'Secured US work authorization (May 2014) and built professional Silicon Valley technology network prior to joining Apple in October 2014'
       ]
     },
     {
       id: 10,
+      company: 'Hogarth Worldwide',
+      logo: null,
+      role: 'Transcreation Program Manager & Senior Account Manager',
+      location: 'London, United Kingdom',
+      period: 'Jan 2010 - Mar 2014',
+      type: 'Full-time',
+      description: 'Governed enterprise client accounts and in-house delivery teams (up to 10 specialists) for global brand campaigns and flagship smartphone hardware launches across digital, video, and print.',
+      achievements: [
+        'Promoted within 12 months from Account Manager (Jan 2010) to Senior Account / Program Manager (Jan 2011), directing multi-market delivery teams of up to 10 specialists across 30+ global markets',
+        'Led end-to-end transcreation delivery for WPP Group\'s global HTC account, including the multi-million dollar "Change" brand platform (fronted by Robert Downey Jr.) and international hardware rollouts for the flagship HTC One (M7) and HTC One (M8, launched Mar 25, 2014)',
+        'Coordinated complex cross-discipline production spanning Print, SEO, Video Studios, voiceover (VO) recording, and Music & TV Licensing',
+        'Directed client commercial governance, Master Services Agreements (MBAs), Quarterly Business Reviews (QBRs), and operational SLAs across European and global markets'
+      ]
+    },
+    {
+      id: 11,
       company: 'Sony UK',
       logo: null,
       role: 'B2B & B2C Prime-vox Display Coordinator',
       location: 'Basingstoke, United Kingdom',
       period: 'Aug 2007 - Jan 2010',
       type: 'Full-time',
-      description: 'Responsible for Customer Service Support for Iberia Market.',
+      description: 'Managed B2B and B2C commercial display operations, warranty support, and multilingual communications across the Iberian market.',
       achievements: [
-        'Active facilitator providing business customer satisfaction',
-        'Translator and Interpreter (English, Spanish and Portuguese)'
+        'Facilitated B2B/B2C display operations, customer escalation resolution, and service partner coordination across Spain and Portugal',
+        'Delivered professional trilingual translation and interpreting (English, Spanish, Portuguese) for technical product documentation and service bulletins'
       ]
     },
     {
-      id: 11,
+      id: 12,
       company: 'Sony Portugal',
       logo: null,
       role: 'Translator and International Project Manager',
       location: 'Lisbon, Portugal',
       period: 'Jan 2007 - Jul 2007',
       type: 'Full-time',
-      description: 'Self-assured management and workflow of projects and events as an Interpreter/Translator.',
+      description: 'Led bilingual broadcast workflow diagrams and software training sessions for digital asset management transformation at RTP.',
       achievements: [
-        'Translating and modifying course materials and products to suit a Portuguese language environment',
-        'Interpreter for Digital Asset Management Production and Transmission within RTP',
-        'Product localization for Sony Snap Lab'
-      ]
-    },
-    {
-      id: 12,
-      company: 'RTP (Rádio e Televisão de Portugal)',
-      logo: null,
-      role: 'Translation/Subtitling and Audio-description Internship',
-      location: 'Lisbon, Portugal',
-      period: 'Jan 2006 - Oct 2006',
-      type: 'Internship',
-      description: 'Text adaptation, subtitling of television programs for accessibility.',
-      achievements: [
-        'Subtitling of television programs such as novels, competitions, news',
-        'Focused on accessibility for people with hard of hearing difficulties'
+        'Created bilingual (EN/PT) broadcast workflow diagrams and led 39 change management and training sessions across 226+ delegate engagements for RTP digital broadcast transformation',
+        'Served as primary bilingual interpreter and technical liaison between UK software consultants and Portuguese broadcast operators',
+        'Localized software interfaces and documentation for Sony Snap Lab digital imaging systems'
       ]
     },
     {
       id: 13,
+      company: 'RTP (Rádio e Televisão de Portugal)',
+      logo: null,
+      role: 'Translation/Subtitling and Audio-description Internship',
+      location: 'Lisbon, Portugal',
+      period: 'Aug 2006 - Dec 2006',
+      type: 'Internship',
+      description: 'Executed broadcast subtitling, content adaptation, and Teletext Page 188 closed-captioning for deaf and hard-of-hearing audiences at Portugal\'s national public broadcaster.',
+      achievements: [
+        'Delivered closed-caption subtitling and accessibility adaptation for broadcast television programming via Teletext Page 188, contributing to an annual volume of 1,100+ hours',
+        'Adapted and synchronized multilingual content across 6 genres (documentaries, series, soap operas, news, entertainment, children\'s programs)',
+        'Ensured 100% compliance with international BBC and ITC broadcast subtitling and SDH accessibility standards'
+      ]
+    },
+    {
+      id: 14,
       company: 'European Union - DG Translation',
       logo: null,
       role: 'EU Terminology Traineeship',
       location: 'Brussels, Belgium',
       period: 'Sep 2006',
       type: 'Internship',
-      description: 'IATE database management at the Directorate-General for Translation.',
+      description: 'Supported IATE (Inter-Active Terminology for Europe) database management and EU institutional terminology harmonization.',
       achievements: [
-        'Introduction of terms, content management and update',
-        'Translation and Localization process'
+        'Conducted terminology research, verification, and database updating in the central IATE terminology repository',
+        'Harmonized institutional multilingual terminology in Portuguese, English, Spanish, and German in compliance with EU translation directives'
       ]
     }
   ],

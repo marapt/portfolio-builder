@@ -315,7 +315,7 @@ const PhaseCard = ({ phase, expanded, onToggle }) => {
                 )}
                 {phase.approved && <span className="text-[9px] bg-emerald-400/10 text-emerald-400 px-1.5 py-0.5 rounded-full font-black uppercase tracking-widest">✓ Approved</span>}
               </div>
-              <h3 className="text-white font-black tracking-tight">{phase.name} <span className="text-white/30 font-light">— {phase.subtitle}</span></h3>
+              <h3 className="text-white font-black tracking-tight">{phase.name} <span className="text-white/30 font-light">: {phase.subtitle}</span></h3>
               <p className="text-white/30 text-xs mt-0.5">{phase.markets.slice(0, 3).join(' · ')}{phase.markets.length > 3 ? ` +${phase.markets.length - 3}` : ''}</p>
             </div>
           </div>
@@ -340,7 +340,7 @@ const PhaseCard = ({ phase, expanded, onToggle }) => {
             <div className="space-y-2">
               <p className="text-[9px] font-black uppercase tracking-widest text-white/30 flex items-center gap-1"><AlertTriangle size={9} /> Blockers</p>
               {phase.blockers.length === 0
-                ? <p className="text-xs text-emerald-400">✓ No blockers — phase is clear</p>
+                ? <p className="text-xs text-emerald-400">✓ No blockers: phase is clear</p>
                 : phase.blockers.map(b => <p key={b} className="text-xs text-amber-400/70">⚠ {b}</p>)
               }
             </div>
@@ -352,18 +352,18 @@ const PhaseCard = ({ phase, expanded, onToggle }) => {
                 <Unlock size={11} /> Approve Phase {phase.id} Launch
               </button>
               <button className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-red-400/10 border border-red-400/20 text-red-400 text-[10px] font-black uppercase tracking-widest hover:bg-red-400/20 transition-all">
-                <Lock size={11} /> Hold — Blockers Outstanding
+                <Lock size={11} /> Hold: Blockers Outstanding
               </button>
             </div>
           )}
           {phase.approved && (
             <div className="text-center py-2 text-[10px] font-black uppercase tracking-widest text-emerald-400">
-              ✅ Phase {phase.id} Approved — Live on maramartins.com
+              ✅ Phase {phase.id} Approved · Live on maramartins.com
             </div>
           )}
           {phase.status === 'FUTURE' && (
             <div className="text-center py-2 text-[10px] font-black uppercase tracking-widest text-white/20">
-              ⏳ Future Vision — Awaiting strategy definition
+              ⏳ Future Vision: Awaiting strategy definition
             </div>
           )}
         </div>
@@ -611,7 +611,7 @@ const GTMDashboard = () => {
         {activeTab === 'blog' && (
           <div className="space-y-4">
             <p className="text-[10px] font-black uppercase tracking-widest text-white/20 flex items-center gap-2">
-              <BookOpen size={10} /> GTM Strategy Journal — Professional Decision Log
+              <BookOpen size={10} /> GTM Strategy Journal: Professional Decision Log
             </p>
             {BLOG_POSTS.map(post => (
               <BlogPost

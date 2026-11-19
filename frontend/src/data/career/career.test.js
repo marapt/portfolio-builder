@@ -144,11 +144,15 @@ describe('career timeline placeholder dataset', () => {
     expect(miis.summary).toBe(
       'Invited as Visiting Professor to modernize the flagship TLM/PGM curriculum, bridging academic training with enterprise program management standards. Created and launched the institute\'s first AI Series and forged institutional partnerships across faculty, admissions, and careers with partners ranging from SMB to Fortune 500 tech leaders, accelerating cohort growth and professional readiness.'
     );
-    expect(miis.executionSummary.heading).toBe('Execution & Delivery:');
+    expect(miis.executionSummary.heading).toBe(
+      'Program Arc: Curriculum Modernization & Institutional Partnerships'
+    );
+    expect(miis.executionSummary.items).toHaveLength(4);
     expect(miis.executionSummary.items.map((item) => item.label)).toEqual([
-      'Strategy & Architecture:',
-      'Cross-Functional Execution:',
-      'Growth & Mentorship:',
+      'Context & Ambiguity:',
+      'Governance & System Built:',
+      'Cross-Functional Trade-Offs:',
+      'Measurable Outcome:',
     ]);
     expect(miis.metrics.map((m) => m.value)).toEqual([
       '90–120 PMs Upskilled',
@@ -205,15 +209,19 @@ describe('career timeline placeholder dataset', () => {
     expect(block.title).toBe('Program Management Lead');
     expect(block.placeholder).toBe(false);
     expect(block.metrics.map((m) => m.value)).toEqual([
-      '5 to 15 PMs (3×)',
-      '+55% YoY CC GPV*',
-      '9% to 15% Share**',
+      '5 to 15 FTE PMs',
+      '8 Int’l Markets',
+      'Up to 37 Products',
     ]);
     expect(block.metrics.map((m) => m.focus)).toEqual([
-      'Team Scale',
-      'Payment Velocity',
-      'Profit Share',
+      'Direct Report Scale',
+      'Market Rollouts',
+      'Product Readiness',
     ]);
+    expect(block.executionSummary.heading).toBe(
+      'Program Arc: Org Scaling, Multi-Market Expansion & Product Parity Governance'
+    );
+    expect(block.executionSummary.items).toHaveLength(4);
     expect(block.metrics.every((m) => m.placeholder === false)).toBe(true);
     expect(block.metricsFootnote).toContain('Investor Day');
     expect(block.metricsFootnote).toContain('Q3 2022 Shareholder Letter');
@@ -346,13 +354,13 @@ describe('career timeline placeholder dataset', () => {
     expect(linkedin.metrics.map((m) => m.value)).toEqual([
       '26 Langs · 17 Mkts',
       '-30% Turnaround',
-      '+97% Mktg Solns*',
+      '6 Global Waves',
     ]);
-    expect(linkedin.metricsFootnote).toContain('Commercial Context (MSFT IR FY21 Q4)');
+    expect(linkedin.metricsFootnote).toContain('Commercial Business Context (MSFT IR FY21 Q4)');
     expect(linkedin.metricsFootnote).toContain('Microsoft Investor Relations FY21 Q4 results');
     expect(linkedin.metricsFootnoteItems).toBeUndefined();
 
-    expect(linkedin.executionSummary.items).toHaveLength(3);
+    expect(linkedin.executionSummary.items).toHaveLength(4);
     expect(linkedin.glossary.length).toBeGreaterThanOrEqual(5);
     expect(linkedin.glossary.every((g) => Boolean(g.definition && g.shortLabel))).toBe(true);
     expect(linkedin.evidence).toBeDefined();
@@ -373,13 +381,18 @@ describe('career timeline placeholder dataset', () => {
 
     const publicDir = path.resolve(__dirname, '../../../public');
     const allSnapshots = linkedin.evidence.sections.flatMap((s) => s.snapshots || []);
-    expect(allSnapshots).toHaveLength(14);
+    expect(allSnapshots).toHaveLength(15);
     allSnapshots.forEach((snap) => {
       expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
       (snap.extraSlides || []).forEach((extra) => {
         expect(fs.existsSync(path.join(publicDir, extra.src.replace(/^\//, '')))).toBe(true);
       });
     });
+    expect(
+      linkedin.evidence.sections[0].links.some((l) =>
+        l.url.includes('a-new-look-for-linkedin-from-the-inside-out')
+      )
+    ).toBe(true);
 
     const serialized = JSON.stringify(linkedin);
     ['Mariana B.', 'John R.', 'Samantha L.', 'Tom W.', 'Sarah M.', 'David H.'].forEach(
@@ -448,14 +461,25 @@ describe('career timeline placeholder dataset', () => {
     ).toBe(true);
 
     const msft = timelineItems.find((item) => item.id === 'microsoft');
+    expect(msft.executionSummary.items).toHaveLength(4);
     expect(msft.evidence.sections[0].id).toBe('gtm-seasonal-campaigns');
     expect(msft.evidence.sections[0].title).toContain(
       'Consumer Go-To-Market Strategy'
     );
-    expect(msft.evidence.sections[0].snapshots).toHaveLength(3);
+    expect(msft.evidence.sections[0].snapshots).toHaveLength(5);
     msft.evidence.sections[0].snapshots.forEach((snap) => {
       expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
     });
+    expect(
+      msft.evidence.sections[0].links.some((l) =>
+        l.url.includes('news.microsoft.com/pt-pt')
+      )
+    ).toBe(true);
+    expect(
+      msft.evidence.sections[0].links.some((l) =>
+        l.url.includes('microsoft.com/en-us/locale')
+      )
+    ).toBe(true);
     expect(msft.evidence.sections).toHaveLength(8);
     expect(msft.evidence.sections[1].id).toBe('adobe-partnership-integration');
     expect(msft.evidence.sections[1].snapshots).toHaveLength(1);
@@ -561,12 +585,20 @@ describe('career timeline placeholder dataset', () => {
     expect(rtp.evidence.sections).toHaveLength(2);
     expect(rtp.evidence.sections[0].id).toBe('rtp-internship-report');
     expect(rtp.evidence.sections[0].snapshots).toHaveLength(1);
+    expect(rtp.evidence.sections[1].id).toBe('rtp-workflow-standards');
+    expect(rtp.evidence.sections[1].snapshots).toHaveLength(1);
 
     const assetPath = path.join(
       publicDir,
       rtp.evidence.sections[0].snapshots[0].src.replace(/^\//, '')
     );
     expect(fs.existsSync(assetPath)).toBe(true);
+
+    const assetPath2 = path.join(
+      publicDir,
+      rtp.evidence.sections[1].snapshots[0].src.replace(/^\//, '')
+    );
+    expect(fs.existsSync(assetPath2)).toBe(true);
   });
 
   test('Sony Portugal role contains verified metrics, change management highlights, and Google Doc report evidence', () => {

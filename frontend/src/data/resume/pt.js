@@ -6,74 +6,212 @@ export const resumeData = {
       id: 0,
       company: 'Transição de Carreira',
       role: 'Aberta a Novas Oportunidades',
-      location: 'Área da Baía de São Francisco',
-      period: 'Jul 2025 - Presente',
-      type: 'Pausa na Carreira',
-      description: 'Após o anúncio do encerramento do MIIS até Junho de 2027, estou a procurar ativamente novas oportunidades em Estratégia de Localização por IA, Gestão de Programas e Educação.',
+      location: 'Área da Baía de São Francisco, CA',
+      period: 'Set 2026 - Presente',
+      type: 'Transição de Carreira',
+      description: 'Em exploração ativa de funções de liderança sénior de programas (L6/Staff PGM) em governação de programas de IA empresarial, operações globais de lançamento e escala multi-mercado.',
       achievements: [
-        'Aproveitamento de 15+ anos de experiência em localização e gestão de programas',
-        'Aberta a funções de liderança em IA/Localização, estratégia GTM e educação',
-        'Disponível para cargos a tempo inteiro, consultoria ou funções de aconselhamento'
+        'Foco em funções de liderança em gestão sénior de programas (L6/Staff PGM) em orquestração de IA empresarial, operações globais de lançamento e escala internacional',
+        'Mais de 15 anos de liderança em governação inter-funcional, ecossistemas multi-fornecedor (até 20 fornecedores MSP) e prontidão de produto em 200 mercados e 100 línguas',
+        'Disponível para cargos executivos de liderança de programas, consultoria estratégica ou iniciativas de transformação empresarial'
       ],
       linkedInPost: 'https://www.linkedin.com/posts/maramartinspt_middlebury-to-close-miis-by-june-2027-the-share-7367252461322977280-JJ6m'
     },
     {
       id: 1,
-      company: 'Middlebury Institute of International Studies',
-      role: 'Professora Convidada',
-      location: 'Monterey, Califórnia',
-      period: 'Jul 2023 - Jul 2025',
-      type: 'Tempo Inteiro',
-      description: 'Leccionação de cursos de pós-graduação no Programa de Gestão de Tradução e Localização e defesa da adopção de IA Responsável na Localização.',
+      company: 'Apple',
+      role: 'Senior Program Manager / Producer (Contrato via Mindsource / WPP)',
+      location: 'Cupertino / Área da Baía de São Francisco, CA',
+      period: 'Mai 2026 - Set 2026',
+      type: 'Contrato',
+      description: 'Governação de operações de produção de elevado volume, arquitetura de pipelines automatizados e marcos de lançamento inter-funcionais seguros para programas confidenciais sob acordos estritos de confidencialidade da Apple.',
       achievements: [
-        'Conceção e lançamento da primeira série de eventos de IA do instituto "IA na Localização" através da colaboração com líderes da indústria (GitLab, Block, Coupa, Smartling)',
-        'Conceção e ensino de cursos de pós-graduação sobre Gestão de Programas Globais, adopção de IA em Localização e Automação',
-        'Mentoria de 90+ estudantes em três coortes, guiando equipas na construção de fluxos de trabalho E2E prontos para o mercado e GLM'
+        'Direção de operações digitais de produção de grande escala e arquitetura de pipelines automatizados para iniciativas globais confidenciais sob estrita conformidade com acordos de confidencialidade da Apple',
+        'Aplicação de marcos de lançamento rigorosos entre Engenharia, Produção, Criativo e fornecedores externos para garantir a integridade de lançamento',
+        'Governação de entregas de fornecedores e velocidade de validação de QA dentro de prazos estritos de segurança e SLAs'
       ]
     },
     {
       id: 2,
-      company: 'Block',
-      role: 'Líder de Gestão de Programas - Localização',
-      location: 'Estados Unidos',
-      period: 'Nov 2021 - Nov 2022',
-      type: 'Tempo Inteiro',
-      description: 'Liderança de uma equipa de Gestores de Programas responsáveis pelo apoio à expansão global do ecossistema de produtos da Square.',
+      company: 'Transição de Carreira',
+      role: 'Transição Académica e Pausa Executiva na Carreira',
+      location: 'Área da Baía de São Francisco, CA',
+      period: 'Jul 2025 - Mai 2026',
+      type: 'Pausa na Carreira',
+      description: 'Transição planeada após funções docentes no MIIS e anúncio de reestruturação institucional; conclusão de certificações avançadas em IA Generativa, avaliação de LLMs e governação de programas executivos.',
       achievements: [
-        'Liderança de uma equipa de Gestores de Programas (5 reportes directos e expansão para 15)',
-        'Apoio a fornecedores na entrega de campanhas de marketing multilingues e lançamentos de produtos em 10+ mercados',
-        'Parceria inter-funcional com equipas de Marca, Marketing de Produto, Legal e Regionais',
-        'Introdução de fluxos de trabalho escaláveis e infraestruturas de qualidade para acelerar a prontidão de mercado'
+        'Conclusão de plano estruturado de transição após anúncio de reestruturação institucional do Middlebury Institute (encerramento do MIIS até junho de 2027)',
+        'Obtenção de credenciais avançadas em IA Generativa e Gestão de Programas (incluindo Google Project Management e Anthropic AI Fluency)',
+        'Mentoria de profissionais internacionais de localização e dinamização de sessões da indústria na Women in Localization Portugal (WLPT)'
       ]
     },
     {
       id: 3,
-      company: 'LinkedIn',
-      role: 'Gestora Sénior de Marketing de Localização',
-      location: 'Sunnyvale, Califórnia',
-      period: 'Mar 2020 - Out 2021',
+      company: 'Middlebury Institute of International Studies',
+      role: 'Professora Convidada, Gestão de Tradução e Localização',
+      location: 'Monterey, CA',
+      period: 'Jul 2023 - Jul 2025',
       type: 'Tempo Inteiro',
-      description: 'Criação da equipa de Gestão de Programas de Localização de Marketing (2 PMs), coordenação com até 15 linguistas internos e implementação de programa de até 20 fornecedores em modelo MSP para 26 línguas e 17 mercados.',
+      description: 'Modernização curricular de TLM/PGM de pós-graduação, lançamento da primeira série "IA na Localização" do instituto e estabelecimento de parcerias inter-funcionais com docentes, admissões, carreiras e líderes da indústria.',
       achievements: [
-        'Fundação da equipa de PMs de Localização MARCOM (2 PMs) e criação do programa de fornecedores para conteúdo de marketing via modelo Managed Service Provider (até 20 fornecedores), reduzindo tempos de entrega em 30%',
-        'Coordenação entre até 15 linguistas internos e equipas de Marketing, Produto, Engenharia e Redações em múltiplos fusos horários',
-        'Coliderança nos lançamentos internacionais por ondas do LinkedIn Stories (Brasil, Países Baixos, EAU, Austrália, França, Reino Unido e Global) e LinkedIn Learning em 17 mercados e 26 línguas durante a COVID-19',
-        'Contributo para as aprendizagens que originaram a evolução de Stories para Creator Mode e vídeo permanente (Set 2021), coincidindo com os >$10B de receita anual do LinkedIn (+97% homólogo em Marketing Solutions no T4 FY21)'
+        'Conceção e lançamento da série inaugural de eventos "IA na Localização", estabelecendo parcerias empresariais com executivos da Block, GitLab, Coupa e Smartling',
+        'Modernização de planos de estudo de pós-graduação em Gestão de Programas Globais, Sistemas Avançados de Localização e Fluxos de Trabalho de IA Responsável, atingindo 90%+ de satisfação dos alunos',
+        'Parcerias inter-funcionais com docentes, admissões e saídas profissionais, orientando 90+ candidatos de pós-graduação em 3 coortes em fluxos de globalização E2E'
       ]
     },
     {
       id: 4,
+      company: 'Block',
+      role: 'Líder de Gestão de Programas - Localização',
+      location: 'São Francisco, CA (Remoto)',
+      period: 'Nov 2021 - Nov 2022',
+      type: 'Tempo Inteiro',
+      description: 'Escalonamento da organização global de PMs de localização de 5 para 15 reportes diretos FTE e coordenação de prontidão de lançamento em 8 mercados internacionais e até 37 produtos por mercado (incluindo o rebrand Square para Block e lançamentos regionais), com os valores de GPV e lucro bruto da Block enquadrados separadamente como contexto macro da empresa.',
+      achievements: [
+        'Escalonamento da equipa global de Program Managers de Localização de 5 para 15 reportes diretos FTE, estruturando capacidade, planos de carreira de PMs e governação inter-funcional de lançamentos',
+        'Orquestração de prontidão de lançamentos internacionais em 8 mercados e até 37 produtos por mercado, garantindo marcos de entrega para o lançamento de Espanha (Jan 2022), Square Loans no Canadá (Abr 2022) e expansão europeia',
+        'Governação de marca localizada, web e prontidão de produto para a transição corporativa de Square para Block (Dez 2021) nos ecossistemas internacionais de comerciantes e programadores',
+        'Normalização de ritmos operacionais de GTM entre Produto, Marketing Regional, Legal, Risco e Engenharia, com os dados de GPV internacional da Block (+55% homólogo no T3 FY22) e quota de lucro bruto apresentados como contexto empresarial alargado'
+      ]
+    },
+    {
+      id: 5,
+      company: 'LinkedIn',
+      role: 'Gestora Sénior de Marketing de Localização',
+      location: 'Sunnyvale, CA (Remoto · COVID-19)',
+      period: 'Mar 2020 - Out 2021',
+      type: 'Tempo Inteiro',
+      description: 'Fundação da função de PM de localização MARCOM, escalonamento de modelo MSP com 20 fornecedores (com 2 FTE PMs de Loc MKTG e apoio linguístico interno) para obter entregas ~30% mais rápidas, e coordenação de lançamentos globais por ondas em 26 línguas e 17 mercados (mantendo as métricas de receita e crescimento do LinkedIn distintas como contexto macro).',
+      achievements: [
+        'Fundação da função de PM de Localização MARCOM Global (escalando para 2 FTE Loc MKTG PMs), unificando marcos de lançamento entre Marketing, Engenharia de Localização, Legal e Redações Editoriais',
+        'Escalonamento de modelo de Managed Service Provider (MSP) com 20 fornecedores e apoio linguístico interno (até 15 linguistas), absorvendo picos de volume e atingindo entregas ~30% mais rápidas',
+        'Coordenação de lançamentos globais por ondas para o LinkedIn Stories em 6 ondas internacionais (Brasil, Países Baixos, EAU, Austrália, França, Reino Unido) e Redesenho Global de setembro de 2020 em 26 línguas e 17 mercados durante a COVID-19',
+        'Governação do alinhamento inter-funcional na transição do Stories para Creator Mode em setembro de 2021, mantendo os resultados globais do LinkedIn (>10B$ no FY21 e pico de +97% em Marketing Solutions) claramente enquadrados como contexto corporativo'
+      ]
+    },
+    {
+      id: 6,
       company: 'Microsoft',
       role: 'Gestora Sénior de Marcom Global - Localização e Operações',
-      location: 'Área de Seattle',
-      period: 'Jun 2016 - Mar 2020',
+      location: 'Redmond / Área de Seattle, WA',
+      period: 'Jun 2016 - Abr 2020',
       type: 'Tempo Inteiro',
-      description: 'Direção da execução do programa global de localização, estratégia e inovação do MSCOM e Store.',
+      description: 'Dinamização de iniciativas de Centro de Excelência, operações de lojas digitais, ingestão e fluxos automatizados e governação de 15+ fornecedores/agências em 200 mercados e 100 línguas, sustentada por normas de prontidão geopolítica e globalização.',
       achievements: [
-        'Gestão de talento de equipa multi-fornecedor (equipa de mais de 15 pessoas) e oferta de produtos globais para 200 mercados (100 línguas)',
-        'Atuação como interlocutora da Microsoft Stores para Geopolitical Readiness, recebendo reconhecimento formal da equipa de Global Readiness e definindo normas de globalização no Microsoft Learn',
-        'Responsável pela gestão eficiente do orçamento e alocação de prioridades principais',
-        'Garantia de experiências de cliente impecáveis e impacto de negócio em todo o mundo'
+        'Dinamização de iniciativas de Centro de Excelência e governação de operações de agências para uma equipa de 15+ fornecedores, definindo scorecards automatizados de SLA e qualidade em lojas digitais internacionais',
+        'Definição de hierarquias de contingência país/idioma, fluxos automatizados de ingestão e critérios de sim-ship versus lançamento faseado com Engenharia para grandes momentos de retalho (Black Friday, Regresso às Aulas, campanhas sazonais)',
+        'Manutenção de cumprimento de SLAs de lançamento GTM e redução dos tempos operacionais de entrega em 25% em 200 mercados e 100 línguas',
+        'Defesa ativa da Prontidão Geopolítica na Microsoft Stores, com reconhecimento formal da equipa central de Global Readiness e contributo para as normas de globalização no Microsoft Learn'
+      ]
+    },
+    {
+      id: 7,
+      company: 'Infoblox (via Acclaro)',
+      role: 'Marketing Localization Project Manager',
+      location: 'Santa Clara, CA',
+      period: 'Mar 2015 - Jun 2016',
+      type: 'Contrato',
+      description: 'Governação da estratégia de localização de marketing B2B de cibersegurança, modelos de LQA por níveis e arquiteturas de API entre CMS e TMS nas regiões EMEA, LATAM e APAC.',
+      achievements: [
+        'Autoria da Estratégia de Localização da Infoblox (julho de 2015), definindo um espectro de localização por níveis e Modelo Estratégico de LQA para 11 línguas nas regiões EMEA, LATAM e APAC',
+        'Conceção de arquitetura de conectores de API automatizados integrando Drupal CMS, automação de marketing Eloqua e Git com Sistemas de Gestão de Tradução (TMS) modernos',
+        'Substituição de entregas manuais fragmentadas por fluxos de revisão estruturados, acelerando a disponibilização de white papers de geração de procura e reduzindo o atrito de revisão regional'
+      ]
+    },
+    {
+      id: 8,
+      company: 'Apple',
+      role: 'Localization Project Manager (Equipa AppleCare)',
+      location: 'Cupertino, CA',
+      period: 'Out 2014 - Mar 2015',
+      type: 'Contrato',
+      description: 'Execução de triagem crítica de lançamentos, velocidade de resolução de bugs no Radar e processamento de ficheiros de localização para a equipa AppleCare sob estritos acordos de confidencialidade corporativa.',
+      achievements: [
+        'Liderança de triagem inter-funcional de lançamentos de engenharia, QA e fornecedores no Radar sob acordos estritos de confidencialidade da Apple e SLAs de lançamento',
+        'Coordenação de fluxos de trabalho de localização AppleCare, processamento de ficheiros CAT e entregas de fornecedores em Cupertino para marcos mundiais de produto',
+        'Aplicação de controlos rigorosos de confidencialidade e NDA para documentação de suporte a produtos de hardware e software não anunciados'
+      ]
+    },
+    {
+      id: 9,
+      company: 'Transição de Carreira e Mudança',
+      role: 'Transição de Carreira e Mudança do Reino Unido para os EUA',
+      location: 'Londres, Reino Unido para Silicon Valley, CA, EUA',
+      period: 'Mar 2014 - Out 2014',
+      type: 'Pausa na Carreira',
+      description: 'Mudança transatlântica de Londres para Silicon Valley após funções na Hogarth Worldwide; chegada aos EUA em março de 2014, obtenção de autorização de trabalho em maio de 2014 e entrada no setor de tecnologia dos EUA.',
+      achievements: [
+        'Execução de mudança transatlântica de Londres para Silicon Valley após conclusão bem-sucedida dos compromissos de programa na Hogarth (março de 2014)',
+        'Obtenção de autorização de trabalho nos EUA (maio de 2014) e consolidação de rede profissional em Silicon Valley antes de ingressar na Apple em outubro de 2014'
+      ]
+    },
+    {
+      id: 10,
+      company: 'Hogarth Worldwide',
+      role: 'Transcreation Program Manager e Senior Account Manager',
+      location: 'Londres, Reino Unido',
+      period: 'Jan 2010 - Mar 2014',
+      type: 'Tempo Inteiro',
+      description: 'Governação de contas empresariais de clientes e equipas internas de entrega (até 10 especialistas) para campanhas globais de marca e lançamentos de smartphones de topo em formato digital, vídeo e imprensa.',
+      achievements: [
+        'Promoção em 12 meses de Account Manager (Jan 2010) a Senior Account / Program Manager (Jan 2011), liderando equipas de entrega de até 10 especialistas em mais de 30 mercados mundiais',
+        'Liderança da entrega de transcriação para a conta global da HTC no WPP Group, incluindo a plataforma multimilionária "Change" (com Robert Downey Jr.) e lançamentos mundiais de hardware do HTC One M7 e HTC One M8 (lançado a 25 de março de 2014)',
+        'Coordenação de produção inter-disciplinar complexa abrangendo Impressão, SEO, Estúdios de Vídeo, gravação de voz (VO) e Licenciamento de Música e TV',
+        'Direção de governação comercial de clientes, acordos de prestação de serviços (MBAs), reuniões trimestrais de negócio (QBRs) e SLAs operacionais em mercados europeus e globais'
+      ]
+    },
+    {
+      id: 11,
+      company: 'Sony UK',
+      role: 'Coordenadora de Ecrãs Prime-vox B2B e B2C',
+      location: 'Basingstoke, Reino Unido',
+      period: 'Ago 2007 - Jan 2010',
+      type: 'Tempo Inteiro',
+      description: 'Gestão de operações de ecrãs comerciais B2B e B2C, suporte a garantias e comunicações multilingues para o mercado ibérico.',
+      achievements: [
+        'Facilitação de operações de ecrãs B2B/B2C, resolução de escalamentos de clientes e coordenação com parceiros de assistência técnica em Espanha e Portugal',
+        'Tradução e interpretação profissional trilingue (inglês, espanhol, português) para documentação técnica de produto e boletins de serviço'
+      ]
+    },
+    {
+      id: 12,
+      company: 'Sony Portugal',
+      role: 'Tradutora e Gestora de Projetos Internacionais',
+      location: 'Lisboa, Portugal',
+      period: 'Jan 2007 - Jul 2007',
+      type: 'Tempo Inteiro',
+      description: 'Criação de diagramas bilingues de fluxos de transmissão e sessões de formação de software para transformação de gestão de ativos digitais na RTP.',
+      achievements: [
+        'Criação de diagramas bilingues (EN/PT) de fluxos de transmissão e dinamização de 39 sessões de gestão de mudança e formação para mais de 226 participantes na digitalização da RTP',
+        'Interpretação bilingue principal e ligação técnica entre consultores britânicos de software e operadores de transmissão portugueses',
+        'Localização de interfaces de software e documentação para os sistemas de imagem digital Sony Snap Lab'
+      ]
+    },
+    {
+      id: 13,
+      company: 'RTP (Rádio e Televisão de Portugal)',
+      role: 'Estágio de Tradução, Legendagem e Audiodescrição',
+      location: 'Lisboa, Portugal',
+      period: 'Ago 2006 - Dez 2006',
+      type: 'Estágio',
+      description: 'Execução de legendagem de emissão, adaptação de conteúdos e legendagem fechada via Teletexto Página 188 para públicos surdos na estação pública de televisão de Portugal.',
+      achievements: [
+        'Entrega de legendagem fechada e adaptação de acessibilidade para programação televisiva via Teletexto Página 188, contribuindo para um volume anual superior a 1.100 horas',
+        'Adaptação e sincronização de conteúdos multilingues em 6 géneros (documentários, séries, telenovelas, informação, entretenimento, programas infantis)',
+        'Garantia de 100% de conformidade com as normas internacionais de legendagem e acessibilidade SDH da BBC e ITC'
+      ]
+    },
+    {
+      id: 14,
+      company: 'União Europeia - DG Tradução',
+      role: 'Estágio de Terminologia da UE',
+      location: 'Bruxelas, Bélgica',
+      period: 'Set 2006',
+      type: 'Estágio',
+      description: 'Apoio à gestão da base de dados IATE (Inter-Active Terminology for Europe) e harmonização terminológica institucional da UE.',
+      achievements: [
+        'Investigação terminológica, verificação e atualização da base de dados central IATE',
+        'Harmonização de terminologia institucional multilingue em português, inglês, espanhol e alemão em conformidade com as diretivas de tradução da UE'
       ]
     }
   ],

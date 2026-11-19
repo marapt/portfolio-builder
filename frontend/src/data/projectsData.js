@@ -211,7 +211,7 @@ Through teaching graduate-level courses on Translation and Localization Manageme
       'Canvas',
       'Responsible AI'
     ],
-    // Original broad tech list — reusable for other pages:
+    // Original broad tech list (reusable for other pages):
     // 'AI/ML in Localization', 'Translation Management Systems', 'Go-to-Market Strategy',
     // 'Program Management', 'Smartling', 'LLM Applications', 'Responsible AI'
     technologiesTitle: 'Educational Tools & Infrastructure',
