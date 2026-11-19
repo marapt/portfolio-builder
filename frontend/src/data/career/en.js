@@ -998,7 +998,7 @@ export const timelineItems = [
     endYear: 2007,
     pillars: ['education'],
     summary:
-      'Completed 5-year Translation & Interpretation degree (Specialization in Interpreting) at ESTG (Polytechnic Institute of Leiria), pairing 4 working languages and localization technology with complementary coursework in organizational psychology, law, economics, and computer science alongside early EU/UK foundations.',
+      'Five-year multidisciplinary degree pairing conference interpreting across four working languages (PT, EN, ES, DE) and translation technology with foundational coursework in organizational psychology, law, economics, and computer science.',
     executionSummary: {
       heading: 'Program Arc: Multidisciplinary Academic Foundation & Applied Track',
       items: [
@@ -1008,7 +1008,7 @@ export const timelineItems = [
         },
         {
           label: 'Governance & System Built:',
-          text: 'Completed a 5-year Licentiate degree in Translation & Interpretation (Specialization in Interpreting; Bachelor Nov 2005, Licentiate Oct 2007) combining linguistic systems with organizational psychology, law, economics, and computer science.',
+          text: 'Completed a 5-year Licentiate degree in Translation & Interpretation (Specialization in Interpreting; Bachelor Nov 2005, Licentiate Oct 2007) combining linguistic systems with organizational behavior, law, economics, and computer science.',
         },
         {
           label: 'Cross-Functional Trade-Offs:',
@@ -1016,7 +1016,7 @@ export const timelineItems = [
         },
         {
           label: 'Measurable Outcome:',
-          text: 'Completed the 5-year Licentiate degree in October 2007, establishing cross-disciplinary and multilingual fluency used across subsequent European and US roles.',
+          text: 'Graduated with Bachelor in November 2005 and completed the 5-year Licentiate in October 2007, establishing cross-disciplinary and multilingual fluency for European and international roles.',
         },
       ],
     },
@@ -1110,7 +1110,7 @@ export const timelineItems = [
       items: [
         {
           label: 'Context & Ambiguity:',
-          text: 'Adapting broadcast programming for deaf and hard-of-hearing audiences required structured captioning and accessibility workflows within public broadcast operations (Gabinete Multimédia).',
+          text: 'Five-month national public broadcast accessibility internship in Lisbon (Gabinete Multimédia, Aug–Dec 2006), serving deaf and hard-of-hearing audiences via Teletext Page 188 during the final-year academic practicum window (concurrent with the September 2006 EU DGT Brussels traineeship).',
         },
         {
           label: 'Governance & System Built:',
@@ -1268,7 +1268,7 @@ export const timelineItems = [
     era: 'early-eu',
     chipLabel: 'EU DGT 🎓',
     subLabel: 'Sep 2006 · Internship',
-    company: 'EU DGT (EU Directorate-General for Translation)',
+    company: 'European Commission - EU Directorate-General for Translation (Brussels, Belgium)',
     countryFlag: '🇧🇪',
     location: 'Brussels, Belgium',
     monogram: 'DGT',
@@ -1286,7 +1286,7 @@ export const timelineItems = [
       items: [
         {
           label: 'Context & Ambiguity:',
-          text: 'Maintaining consistent multilingual terminology across institutional workflows required standardized reference practices within a multi-language EU environment.',
+          text: 'Intensive one-month institutional terminology traineeship at the European Commission in Brussels (Sep 2006), conducted during the final-year academic practicum window alongside the RTP broadcast internship.',
         },
         {
           label: 'Governance & System Built:',
@@ -1389,6 +1389,8 @@ export const timelineItems = [
     startYear: 2007,
     endYear: 2007,
     pillars: ['program'],
+    summary:
+      'Led bilingual change management and systems training across 39 enterprise sessions, bridging UK consultants and broadcast engineering teams at Portugal\'s national broadcaster.',
     executionSummary: {
       heading: 'Program Arc: Broadcast Transformation & Change Management Delivery',
       items: [
@@ -1561,13 +1563,13 @@ export const timelineItems = [
     countryFlag: '🇵🇹→🇬🇧',
     location: 'Lisbon, PT to Basingstoke, UK',
     monogram: '✈',
-    title: 'Portugal to United Kingdom Internal Transfer & Relocation',
+    title: 'Portugal to United Kingdom Relocation & Onboarding Transition · Aug 2007',
     period: 'Jul 2007 – Aug 2007',
     startYear: 2007,
     endYear: 2007,
     pillars: ['leadership'],
     summary:
-      'Relocated from Lisbon to Basingstoke via internal transfer from Sony Portugal (Jul 2007) to Sony UK (Aug 2007) with zero employment gap, supporting European & Iberia product operations.',
+      'One-month transition and relocation window (Aug 2007) bridging Sony Portugal and Sony UK with zero employment gap, supporting European & Iberia product operations.',
     executionSummary: {
       heading: 'Program Arc: Cross-Border Internal Transfer & Operational Continuity',
       items: [
@@ -1597,7 +1599,7 @@ export const timelineItems = [
     era: 'uk',
     chipLabel: 'Sony UK',
     subLabel: '2007–2009',
-    company: 'Sony UK (Basingstoke, United Kingdom)',
+    company: 'Sony (UK)',
     countryFlag: '🇬🇧',
     location: 'Basingstoke, United Kingdom',
     monogram: 'SN',
@@ -1881,13 +1883,13 @@ export const timelineItems = [
     countryFlag: '🇬🇧→🇺🇸',
     location: 'London, UK to Silicon Valley, USA',
     monogram: '✈',
-    title: 'UK to USA Career Transition & Relocation',
+    title: 'Transatlantic Relocation & US Technology Market Entry · Mar–Oct 2014',
     period: 'Mar 2014 – Oct 2014',
     startYear: 2014,
     endYear: 2014,
     pillars: ['leadership'],
     summary:
-      'Relocated from London to Silicon Valley following Hogarth (Mar 2014); arrived in the US in Mar 2014, with work authorization issued in May 2014 prior to joining Apple in Oct 2014.',
+      'Seven-month transition window following Hogarth (Mar 2014): arrived in Silicon Valley in March 2014, received US work authorization in May 2014, and onboarded at AppleCare in October 2014.',
     executionSummary: {
       heading: 'Program Arc: Transatlantic Career Transition & US Market Entry',
       items: [
@@ -1922,7 +1924,7 @@ export const timelineItems = [
     location: 'Cupertino, CA, USA',
     monogram: 'AP',
     logo: '/company-logos/apple.svg',
-    title: 'Localization Project Manager (AppleCare Team)',
+    title: 'Apple · Localization Project Manager (AppleCare Team · 2014–2015)',
     officialTitle: 'Localization Project Manager (AppleCare Team)',
     dutiesBeyondScope:
       'Led cross-functional engineering, QA, and supplier release triage in Radar under strict Apple non-disclosure agreements.',
@@ -2006,6 +2008,8 @@ export const timelineItems = [
     startYear: 2015,
     endYear: 2016,
     pillars: ['program'],
+    summary:
+      'Directed global marketing localization strategy across 11 languages (EMEA, LATAM, APAC), architecting automated TMS/CMS API connectors across Drupal, Eloqua, and Git alongside tiered LQA governance.',
     executionSummary: {
       heading: 'Program Arc: Enterprise Localization Strategy & Systems Architecture',
       items: [
@@ -2098,6 +2102,8 @@ export const timelineItems = [
     startYear: 2016,
     endYear: 2020,
     pillars: ['program', 'leadership', 'vendor', 'ai'],
+    summary:
+      'Drove Center of Excellence initiatives, global storefront operations, automated ingestion pipelines, and multi-vendor agency governance (15+ team) across 200 markets and 100 languages.',
     executionSummary: {
       heading: 'Program Arc: Center of Excellence, Storefront Operations & Seasonal GTM Governance',
       items: [
@@ -2149,7 +2155,7 @@ export const timelineItems = [
       'Championed strategic store initiatives: Xbox Store unified rebrand, Adobe enterprise migrations, Machine Translation pilots, and DAM geopolitical governance (detailed in evidence cards below).',
     ],
     evidence: {
-      note: 'Archive & Public Evidence Note: Coordinated Center of Excellence program initiatives, storefront operations, and seasonal go-to-market execution across 200 markets and 100 languages. Governed a 15+ vendor/agency team alongside localization workflows, automated ingestion, and global readiness standards. Note on post-tenure coverage: Any reference or capture dated after April 2020 (such as the November 2022 Portugal Black Friday item) is included strictly as a later storefront reference outside the 2016–2020 role window; all hosted image and article URLs point to live public assets.',
+      note: 'Archive & Public Evidence Note: Coordinated Center of Excellence program initiatives, storefront operations, and seasonal go-to-market execution across 200 markets and 100 languages. Governed a 15+ vendor/agency team alongside localization workflows, automated ingestion, and global readiness standards.\n\nNote on post-tenure coverage: Any reference or capture dated after April 2020 (such as the November 2022 Portugal Black Friday item) is included strictly as a later storefront reference outside the 2016–2020 role window; all hosted image and article URLs point to live public assets.',
       sections: [
         {
           id: 'gtm-seasonal-campaigns',
@@ -2936,6 +2942,8 @@ export const timelineItems = [
     startYear: 2020,
     endYear: 2021,
     pillars: ['program', 'leadership', 'vendor'],
+    summary:
+      'Founded MARCOM localization program governance, scaling an operating model of 2 FTE PMs, 20 MSP vendors, and internal linguists to cut turnaround by ~30% across 26 languages and 17 markets.',
     executionSummary: {
       heading: 'Program Arc: MARCOM Localization Architecture & Multi-Market Governance',
       items: [
@@ -3053,6 +3061,8 @@ export const timelineItems = [
     startYear: 2021,
     endYear: 2022,
     pillars: ['program', 'vendor', 'leadership'],
+    summary:
+      'Scaled the global localization PM organization from 5 to 15 FTE PM direct reports, governing multi-market launch readiness across 8 international markets and up to 37 products per market.',
     executionSummary: {
       heading: 'Program Arc: Org Scaling, Multi-Market Expansion & Product Parity Governance',
       items: [
@@ -3371,7 +3381,7 @@ export const timelineItems = [
     id: 'postgrad-education',
     type: 'milestone',
     era: 'ai',
-    chipLabel: 'Post-Grad 🎓',
+    chipLabel: 'Post-Grad',
     subLabel: '2020–2026 · Credentials',
     company: 'Post-Graduate Continuous Education',
     countryFlag: '🇺🇸',
@@ -3384,7 +3394,7 @@ export const timelineItems = [
     endYear: 2026,
     pillars: ['education', 'program', 'ai', 'leadership'],
     summary:
-      'Continuous post-graduate executive, project management, leadership, and technical education spanning Google Career Certificates (Foundations of Project Management, Nov 2026), Anthropic Academy (AI Fluency: Framework & Foundations, Mar 2026), Stanford Continuing Studies (WSP 116: Conversational Intelligence, Feb 2021), Tony Robbins / Assessments 24x7 (Executive DISC & Workplace Motivators Profile, Nov 2026), and a 26-course LinkedIn Learning leadership and DEI track (recognized in the Top 12% of Learners globally for CY 2020). Every included credential below is backed by a live verification URL, signed institutional PDF, or local certificate capture.',
+      'Concurrent post-graduate credential track completed in parallel with full-time enterprise leadership roles, spanning Google Career Certificates (Foundations of Project Management, Nov 2026), Anthropic Academy (AI Fluency: Framework & Foundations, Mar 2026), Stanford Continuing Studies (WSP 116: Conversational Intelligence, Feb 2021), Tony Robbins / Assessments 24x7 (Executive DISC & Workplace Motivators Profile, Nov 2026), and a 26-course LinkedIn Learning leadership and DEI track (recognized in the Top 12% of Learners globally for CY 2020). Every credential is backed by a live verification URL, signed institutional PDF, or local certificate capture.',
     executionSummary: {
       heading: 'Program Arc: Continuous Leadership Upskilling & AI/PGM Credentials',
       items: [
@@ -3718,7 +3728,7 @@ export const timelineItems = [
     location: 'Bay Area, CA, USA',
     monogram: 'A26',
     logo: '/company-logos/apple.svg',
-    title: 'Senior Program Manager / Producer (Contract)',
+    title: 'Apple · Senior Program Manager / Producer (Contract via Mindsource / WPP)',
     officialTitle: 'Senior Program Manager / Producer (Contract via Mindsource / WPP)',
     dutiesBeyondScope:
       'Governed high-volume production operations, automated pipeline architectures, and secure cross-functional release gates for confidential, unannounced product programs.',
@@ -3802,7 +3812,7 @@ export const timelineItems = [
     company: 'Next Chapter · 2027',
     countryFlag: '🌐',
     location: 'USA / Global',
-    monogram: '🎯',
+    monogram: '🌐',
     title: 'AI Program Leadership, Global Operations & Strategic GTM',
     period: '2027 (Coming Next)',
     startYear: 2027,
@@ -3849,7 +3859,7 @@ export const timelineItems = [
     company: 'Scale Horizon · 2028',
     countryFlag: '🌐',
     location: 'USA / Global',
-    monogram: '✦',
+    monogram: '🌐',
     title: 'Executive Governance, Global Scale Strategy & Org Mentorship',
     period: '2028 (Coming Next)',
     startYear: 2028,
@@ -3896,7 +3906,7 @@ export const timelineItems = [
     company: 'Executive Vision · 2029+',
     countryFlag: '🌐',
     location: 'Global Executive Scope',
-    monogram: '★',
+    monogram: '🌐',
     title: 'Executive Enablement, Global Expansion & Responsible AI Scale',
     period: '2029+ (Coming Next)',
     startYear: 2029,

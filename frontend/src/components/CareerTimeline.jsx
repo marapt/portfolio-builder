@@ -600,7 +600,7 @@ const CareerTimeline = () => {
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-200">
               <Compass size={14} aria-hidden="true" />
-              2006 – 2026 &amp; Beyond · Career Arc
+              2001 – 2029+ · Career Arc
             </div>
             <h1
               id="career-timeline-heading"
@@ -609,7 +609,7 @@ const CareerTimeline = () => {
               Interactive Career Timeline
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Trace 20+ years of global program leadership, localization architecture, and AI-enabled operational scale across enterprise platforms: from agency and retail foundations in Europe to program leadership at Microsoft, LinkedIn, and Block. Select any milestone or filter by leadership pillar to explore the governance models, rollouts, and evidence behind each chapter.
+              Trace 25+ years of academic foundation and global program leadership: from university interpretation studies and European broadcast/agency operations to senior program leadership at Microsoft, LinkedIn, and Block, through future AI governance horizons. Select any milestone or filter by leadership pillar to explore the governance models, rollouts, and evidence behind each chapter.
             </p>
           </div>
 
@@ -685,7 +685,7 @@ const CareerTimeline = () => {
         {/* Continuous Year Axis */}
         <div>
           <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2">
-            <span>Continuous Chronology (2006 – 2026)</span>
+            <span>Continuous Chronology (2006 – 2026 · Academic Foundation from 2001)</span>
             <div className="flex flex-wrap items-center gap-4">
               <span className="inline-flex items-center gap-1.5 text-slate-200">
                 <span className="inline-block h-2 w-4 rounded-sm border border-white/30 bg-white/15" />
@@ -894,11 +894,11 @@ const CareerTimeline = () => {
           role="tabpanel"
           aria-labelledby={`tab-${selectedItem.id}`}
           tabIndex={0}
-          className="glass-card rounded-3xl p-6 sm:p-8 border border-white/15 space-y-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+          className="glass-card rounded-3xl p-6 sm:p-8 border border-white/15 space-y-6 min-w-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
         >
           {/* Top Row: Monogram + Identity + Prev/Next */}
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-            <div className="flex items-start gap-4 sm:gap-5">
+            <div className="flex items-start gap-4 sm:gap-5 min-w-0 flex-1">
               <div
                 aria-hidden="true"
                 className={`h-14 w-14 sm:h-16 sm:w-16 shrink-0 rounded-2xl flex items-center justify-center text-lg sm:text-xl font-extrabold tracking-tight border overflow-hidden p-2 ${selectedVisual.detailBox}`}
@@ -911,7 +911,7 @@ const CareerTimeline = () => {
                 )}
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-1.5 min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className={`inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider ${selectedVisual.labelText}`}>
                     {(selectedItem.type === 'internship' || selectedItem.type === 'milestone') && (
