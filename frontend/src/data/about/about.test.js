@@ -11,14 +11,14 @@ describe('About Me dataset & structure', () => {
 
   test('aboutHero contains exact title, eyebrow, origin story, and scale metrics', () => {
     expect(aboutEN.aboutHero.title).toBe(
-      'Global PM Lead & Operations Manager at Heart - Expanding Into Enterprise Program Management'
+      'Global PM Lead & Operations Manager at heart - Expanding Into Enterprise Program Management'
     );
     expect(aboutEN.aboutHero.eyebrow).toBe(
       'Enterprise Program Management & Systems Narrative'
     );
     expect(aboutEN.aboutHero.lead).toContain('broader enterprise PgM');
     expect(aboutPT.aboutHero.title).toBe(
-      'Líder Global de PgM & Gestora de Operações de Coração - Expansão para a Gestão de Programas Empresariais'
+      'Líder Global de PgM & Gestora de Operações de coração - Expansão para a Gestão de Programas Empresariais'
     );
     expect(aboutEN.aboutHero.originStory.title).toBe(
       'My Journey: Language + Tech = Access = User-First'
@@ -30,15 +30,18 @@ describe('About Me dataset & structure', () => {
       'A Minha Jornada: Língua + Tecnologia = Acesso = Foco no Utilizador'
     );
     expect(aboutEN.aboutHero.personalityTraits).toBeDefined();
-    expect(aboutEN.aboutHero.personalityTraits.sectionTitle).toBe('My Personality');
-    expect(aboutEN.aboutHero.personalityTraits.traits).toHaveLength(4);
+    expect(aboutEN.aboutHero.personalityTraits.eyebrow).toBe('MY PERSONALITY');
+    expect(aboutEN.aboutHero.personalityTraits.title).toBe('How I Work, Lead & Collaborate');
+    expect(aboutEN.aboutHero.personalityTraits.traits).toHaveLength(6);
     expect(aboutEN.aboutHero.personalityTraits.traits.map((t) => t.title)).toEqual([
-      'DISC Planner Style',
-      'Grounded & High-Ownership',
-      'Curious & Pragmatic',
-      'Empathetic Across Boundaries',
+      'Steady Under Pressure',
+      'Candid & Accountable',
+      'Curious & Adaptable',
+      'Constructive in Conflict',
+      'Clear Over Clever',
+      'Generous Multiplier',
     ]);
-    expect(aboutPT.aboutHero.personalityTraits.traits).toHaveLength(4);
+    expect(aboutPT.aboutHero.personalityTraits.traits).toHaveLength(6);
   });
 
   test('functionalPillars defines exactly 3 Google L6 calibrated pillars', () => {
