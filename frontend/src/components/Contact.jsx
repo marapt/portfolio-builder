@@ -58,8 +58,10 @@ const Contact = () => {
       }
     } catch (error) {
       setIsLoading(false);
-      alert("Failed to send. Please try again or email me directly.");
-      console.error('Contact Error:', error);
+      console.warn('Contact API unavailable, redirecting to direct email fallback:', error);
+      const subject = encodeURIComponent(`Portfolio Inquiry: ${formData.category || 'General'} - ${formData.name || 'Visitor'}`);
+      const body = encodeURIComponent(`Hello Mara,\n\n${formData.message}\n\nFrom: ${formData.name} (${formData.email})`);
+      window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
     }
   };
 

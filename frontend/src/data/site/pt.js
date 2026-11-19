@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Mara Martins",
   title: "Especialista em Estratégia de Localização e IA",
   tagline: "Ligando a IA com a linguagem, cultura e tecnologia para ajudar empresas globais a expandirem-se com confiança e impacto.",
-  bio: "Com mais de 15 anos em localização, trago uma combinação de gestão de programas, perícia em marketing e inovação em IA — sempre com foco na capacitação de equipas e mentoria da próxima geração de líderes. Resido em Mountain View, Califórnia, EUA.",
+  bio: "Com mais de 15 anos em localização, trago uma combinação de gestão de programas, perícia em marketing e inovação em IA, sempre com foco na capacitação de equipas e mentoria da próxima geração de líderes. Resido em Mountain View, Califórnia, EUA.",
   email: "marapt@gmail.com",
   location: "Mountain View, Califórnia, EUA",
   photo: "https://avatars.githubusercontent.com/u/233815337?v=4",

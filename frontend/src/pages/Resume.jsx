@@ -14,7 +14,10 @@ import {
   CheckCircle,
   Brain,
   Linkedin,
-  Mail
+  Mail,
+  ExternalLink,
+  FileCheck,
+  Mic
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
@@ -197,14 +200,40 @@ const Resume = () => {
                   {resumeData.education.map((edu, index) => (
                     <Card key={index} className="border border-gray-100 shadow-sm">
                       <CardContent className="p-6">
-                        <div className="flex items-start justify-between">
+                        <div className="flex items-start justify-between gap-4">
                           <div>
                             <h3 className="text-lg font-semibold text-gray-900">{edu.degree}</h3>
                             <p className="text-indigo-600 font-medium">{edu.institution}</p>
                             <p className="text-sm text-gray-500 mt-1">{edu.location}</p>
                             <p className="text-sm text-gray-600 mt-2">{edu.details}</p>
+                            {(edu.proofUrl || edu.waybackUrl) && (
+                              <div className="flex flex-wrap items-center gap-3 mt-3">
+                                {edu.proofUrl && (
+                                  <a
+                                    href={edu.proofUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-600 hover:text-indigo-800 bg-indigo-50 px-2.5 py-1 rounded-md"
+                                  >
+                                    <FileCheck size={13} />
+                                    {edu.proofLabel || 'Certificate Proof'}
+                                  </a>
+                                )}
+                                {edu.waybackUrl && (
+                                  <a
+                                    href={edu.waybackUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-600 hover:text-indigo-600 bg-gray-100 px-2.5 py-1 rounded-md"
+                                  >
+                                    <ExternalLink size={13} />
+                                    {edu.waybackLabel || 'Wayback Archive'}
+                                  </a>
+                                )}
+                              </div>
+                            )}
                           </div>
-                          <Badge className="bg-indigo-100 text-indigo-700 hover:bg-indigo-100">
+                          <Badge className="bg-indigo-100 text-indigo-700 hover:bg-indigo-100 shrink-0">
                             {edu.year}
                           </Badge>
                         </div>
@@ -214,7 +243,7 @@ const Resume = () => {
                 </div>
               </div>
               
-              {/* Online Learning */}
+              {/* Post-Graduate Continuous Education */}
               {resumeData.onlineLearning && resumeData.onlineLearning.length > 0 && (
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
@@ -227,14 +256,138 @@ const Resume = () => {
                   <div className="space-y-4">
                     {resumeData.onlineLearning.map((course, index) => (
                       <Card key={index} className="border border-gray-100 shadow-sm">
-                        <CardContent className="p-4">
-                          <div className="flex items-center justify-between">
+                        <CardContent className="p-5">
+                          <div className="flex items-start justify-between gap-4">
                             <div>
                               <h3 className="font-semibold text-gray-900">{course.course}</h3>
-                              <p className="text-sm text-gray-500">{course.provider}</p>
+                              <p className="text-sm text-indigo-600 font-medium">{course.provider}</p>
+                              {course.details && (
+                                <p className="text-xs text-gray-600 mt-1.5">{course.details}</p>
+                              )}
+                              {(course.credentialUrl || course.proofUrl || course.secondaryProofUrl) && (
+                                <div className="flex flex-wrap items-center gap-2.5 mt-3">
+                                  {course.credentialUrl && (
+                                    <a
+                                      href={course.credentialUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-600 hover:text-indigo-800 bg-indigo-50 px-2.5 py-1 rounded-md"
+                                    >
+                                      <ExternalLink size={13} />
+                                      {course.credentialLabel || 'Verify Credential'}
+                                    </a>
+                                  )}
+                                  {course.proofUrl && (
+                                    <a
+                                      href={course.proofUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 hover:text-emerald-900 bg-emerald-50 px-2.5 py-1 rounded-md"
+                                    >
+                                      <FileCheck size={13} />
+                                      {course.proofLabel || 'Certificate Proof'}
+                                    </a>
+                                  )}
+                                  {course.secondaryProofUrl && (
+                                    <a
+                                      href={course.secondaryProofUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-600 hover:text-indigo-600 bg-gray-100 px-2.5 py-1 rounded-md"
+                                    >
+                                      <FileCheck size={13} />
+                                      {course.secondaryProofLabel || 'Additional Proof'}
+                                    </a>
+                                  )}
+                                </div>
+                              )}
                             </div>
-                            <Badge variant="outline" className="border-gray-200">
+                            <Badge variant="outline" className="border-gray-200 shrink-0">
                               {course.year}
+                            </Badge>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Professional Development & Community Contributions */}
+              {resumeData.speakingAndCommunity && resumeData.speakingAndCommunity.length > 0 && (
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                      <Mic size={20} className="text-indigo-600" />
+                    </div>
+                    {t('resume.sections.speaking_community')}
+                  </h2>
+
+                  <div className="space-y-4">
+                    {resumeData.speakingAndCommunity.map((item, index) => (
+                      <Card key={index} className="border border-gray-100 shadow-sm">
+                        <CardContent className="p-5">
+                          <div className="flex items-start justify-between gap-4">
+                            <div>
+                              <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                              <p className="text-sm text-indigo-600 font-medium">{item.organization}</p>
+                              {item.role && (
+                                <p className="text-xs font-medium text-gray-500 mt-0.5">{item.role}</p>
+                              )}
+                              {item.details && (
+                                <p className="text-sm text-gray-600 mt-2">{item.details}</p>
+                              )}
+                              {(item.url || item.secondaryUrl || item.proofUrl || item.secondaryProofUrl) && (
+                                <div className="flex flex-wrap items-center gap-2.5 mt-3">
+                                  {item.url && (
+                                    <a
+                                      href={item.url}
+                                      target={item.url.startsWith('/') ? '_self' : '_blank'}
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-600 hover:text-indigo-800 bg-indigo-50 px-2.5 py-1 rounded-md"
+                                    >
+                                      <ExternalLink size={13} />
+                                      {item.linkLabel || 'Event Reference'}
+                                    </a>
+                                  )}
+                                  {item.secondaryUrl && (
+                                    <a
+                                      href={item.secondaryUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 hover:text-indigo-600 bg-gray-100 px-2.5 py-1 rounded-md"
+                                    >
+                                      <ExternalLink size={13} />
+                                      {item.secondaryLabel || 'Archive Link'}
+                                    </a>
+                                  )}
+                                  {item.proofUrl && (
+                                    <a
+                                      href={item.proofUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 hover:text-emerald-900 bg-emerald-50 px-2.5 py-1 rounded-md"
+                                    >
+                                      <FileCheck size={13} />
+                                      {item.proofLabel || 'Evidence Snapshot'}
+                                    </a>
+                                  )}
+                                  {item.secondaryProofUrl && (
+                                    <a
+                                      href={item.secondaryProofUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-600 hover:text-indigo-600 bg-gray-100 px-2.5 py-1 rounded-md"
+                                    >
+                                      <FileCheck size={13} />
+                                      {item.secondaryProofLabel || 'Program Snapshot'}
+                                    </a>
+                                  )}
+                                </div>
+                              )}
+                            </div>
+                            <Badge variant="outline" className="border-gray-200 shrink-0">
+                              {item.year}
                             </Badge>
                           </div>
                         </CardContent>
@@ -348,7 +501,33 @@ const Resume = () => {
                         <div key={index} className="border-l-2 border-indigo-200 pl-4">
                           <h4 className="font-medium text-gray-900 text-sm">{cert.name}</h4>
                           <p className="text-xs text-gray-500">{cert.issuer}</p>
-                          <p className="text-xs text-indigo-600">{cert.year}</p>
+                          <p className="text-xs text-indigo-600 font-medium">{cert.year}</p>
+                          {(cert.credentialUrl || cert.proofUrl) && (
+                            <div className="flex flex-wrap items-center gap-2 mt-1.5">
+                              {cert.credentialUrl && (
+                                <a
+                                  href={cert.credentialUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1 text-[11px] font-medium text-indigo-600 hover:text-indigo-800 underline underline-offset-2"
+                                >
+                                  <ExternalLink size={11} />
+                                  {cert.credentialLabel || 'Verify Credential'}
+                                </a>
+                              )}
+                              {cert.proofUrl && (
+                                <a
+                                  href={cert.proofUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-700 hover:text-emerald-900 underline underline-offset-2"
+                                >
+                                  <FileCheck size={11} />
+                                  {cert.proofLabel || 'Screenshot'}
+                                </a>
+                              )}
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -374,6 +553,32 @@ const Resume = () => {
                           <div>
                             <h4 className="font-medium text-gray-900 text-sm">{award.title}</h4>
                             <p className="text-xs text-gray-500">{award.organization}, {award.year}</p>
+                            {(award.url || award.proofUrl) && (
+                              <div className="flex flex-wrap items-center gap-2 mt-1.5">
+                                {award.url && (
+                                  <a
+                                    href={award.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1 text-[11px] font-medium text-indigo-600 hover:text-indigo-800 underline underline-offset-2"
+                                  >
+                                    <ExternalLink size={11} />
+                                    LinkedIn Post
+                                  </a>
+                                )}
+                                {award.proofUrl && (
+                                  <a
+                                    href={award.proofUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1 text-[11px] font-medium text-emerald-700 hover:text-emerald-900 underline underline-offset-2"
+                                  >
+                                    <FileCheck size={11} />
+                                    Snapshot
+                                  </a>
+                                )}
+                              </div>
+                            )}
                           </div>
                         </div>
                       ))}

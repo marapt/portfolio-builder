@@ -33,6 +33,7 @@ const Header = () => {
 
   const navLinks = [
     { href: '/#services', label: t('nav.services') },
+    { href: '/career', label: t('nav.career') || 'Career', isPage: true },
     { href: '/resume', label: t('nav.experience'), isPage: true },
     { href: '/scrum-board', label: t('nav.insights'), isPage: true },
     { href: '/#contact', label: t('nav.contact') }
@@ -77,21 +78,21 @@ const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24 transition-all duration-300">
+        <div className="flex items-center justify-between gap-8 xl:gap-14 h-24 transition-all duration-300">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center group shrink-0 mr-6 xl:mr-12">
             <span className="text-xl font-black text-white tracking-tighter uppercase">Mara</span>
             <span className="text-xl font-light text-white/70 tracking-tighter ml-1 uppercase">Martins</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center space-x-10">
+          <nav className="hidden xl:flex items-center space-x-5 xl:space-x-7">
             {navLinks.map((link) => (
               link.isPage ? (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`font-black text-[10px] uppercase tracking-[0.3em] transition-all duration-300 relative py-2 group ${
+                  className={`font-black text-[10px] uppercase tracking-[0.16em] transition-all duration-300 relative py-2 group ${
                     location.pathname === link.href 
                       ? 'text-indigo-600' 
                       : 'text-gray-400 hover:text-gray-900'
@@ -105,7 +106,7 @@ const Header = () => {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link)}
-                  className="text-gray-400 hover:text-gray-900 font-black text-[10px] uppercase tracking-[0.3em] transition-all duration-300 relative py-2 group"
+                  className="text-gray-400 hover:text-gray-900 font-black text-[10px] uppercase tracking-[0.16em] transition-all duration-300 relative py-2 group"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full" />
@@ -113,10 +114,10 @@ const Header = () => {
               )
             ))}
 
-            {/* AI Agents Dashboard — Ops Tool */}
+            {/* AI Agents Dashboard (Ops Tool) */}
             <Link
               to={dashboardLink.href}
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 font-black text-[9px] uppercase tracking-[0.25em] ${
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 font-black text-[9px] uppercase tracking-[0.2em] shrink-0 ${
                 location.pathname === dashboardLink.href
                   ? 'bg-violet-600/20 border-violet-500/40 text-violet-400'
                   : 'bg-violet-600/10 border-violet-500/20 text-violet-400/70 hover:bg-violet-600/20 hover:border-violet-500/40 hover:text-violet-400'
@@ -130,10 +131,10 @@ const Header = () => {
               {dashboardLink.label}
             </Link>
 
-            {/* GTM Strategy — Global */}
+            {/* GTM Strategy (Global) */}
             <Link
               to={gtmLink.href}
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 font-black text-[9px] uppercase tracking-[0.25em] ${
+              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 font-black text-[9px] uppercase tracking-[0.2em] shrink-0 ${
                 location.pathname === gtmLink.href
                   ? 'bg-rose-600/20 border-rose-500/40 text-rose-400'
                   : 'bg-rose-600/10 border-rose-500/20 text-rose-400/70 hover:bg-rose-600/20 hover:border-rose-500/40 hover:text-rose-400'
@@ -144,7 +145,7 @@ const Header = () => {
             </Link>
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 shrink-0">
             {/* LQA Audit Mode Indicator */}
             {isAuditMode && (
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 animate-pulse">
@@ -188,9 +189,9 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link to="/#contact">
+            <Link to="/#contact" className="shrink-0">
               <Button
-                className="bg-gray-900 hover:bg-indigo-600 text-white px-8 h-12 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] transition-all duration-500 shadow-xl shadow-gray-100 hover:shadow-indigo-100 transform hover:-translate-y-0.5 active:scale-95"
+                className="bg-gray-900 hover:bg-indigo-600 text-white whitespace-nowrap shrink-0 px-6 xl:px-8 h-12 rounded-2xl font-black text-[10px] uppercase tracking-[0.16em] transition-all duration-500 shadow-xl shadow-gray-100 hover:shadow-indigo-100 transform hover:-translate-y-0.5 active:scale-95"
               >
                 {t('contact.submit')}
               </Button>
@@ -259,7 +260,7 @@ const Header = () => {
                 )
               ))}
 
-              {/* AI Agents Dashboard — Mobile */}
+              {/* AI Agents Dashboard (Mobile) */}
               <Link
                 to="/dashboard"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -277,7 +278,7 @@ const Header = () => {
                 AI Agents
               </Link>
 
-              {/* GTM Dashboard — Mobile */}
+              {/* GTM Dashboard (Mobile) */}
               <Link
                 to="/gtm"
                 onClick={() => setIsMobileMenuOpen(false)}

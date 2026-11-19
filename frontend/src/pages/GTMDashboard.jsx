@@ -78,16 +78,16 @@ const BLOG_POSTS = [
     id: 'gtm-001',
     date: 'April 2026',
     phase: 1,
-    title: 'Why Silicon Valley First — The Strategic Logic of en-US as Home Base',
+    title: 'Why Silicon Valley First: The Strategic Logic of en-US as Home Base',
     category: 'Market Strategy',
     excerpt: 'When building a global portfolio, the instinct might be to launch everywhere at once. The discipline is in choosing one market to own completely before expanding.',
-    content: `The decision to anchor Phase 1 in Silicon Valley wasn't arbitrary — it's where the highest density of Localization, Program Management, and AI Strategy leadership sits. Companies like Google, Apple, LinkedIn, and HP (all part of my professional history) are headquartered within 50 miles of each other.
+    content: `The decision to anchor Phase 1 in Silicon Valley wasn't arbitrary. It is where the highest density of Localization, Program Management, and AI Strategy leadership sits. Companies like Google, Apple, LinkedIn, and HP (all part of my professional history) are headquartered within 50 miles of each other.
 
 Starting with en-US also means starting in the language I communicate most precisely in for a professional context. It allows me to establish a baseline quality standard that all subsequent locales are measured against.
 
-The principle: **perfect one market before opening the next**. This isn't caution — it's precision. A portfolio that is exceptional in one language is more powerful than one that is mediocre in five.
+The principle: **perfect one market before opening the next**. This isn't caution; it's precision. A portfolio that is exceptional in one language is more powerful than one that is mediocre in five.
 
-**Key decision**: Use maramartins.com as the canonical en-US home. The pt-PT locale lives as an alternate, not a translation — with distinct CTAs, distinct audiences, and distinct success metrics.`,
+**Key decision**: Use maramartins.com as the canonical en-US home. The pt-PT locale lives as an alternate, not a translation, with distinct CTAs, distinct audiences, and distinct success metrics.`,
     tags: ['Market Entry', 'en-US', 'Strategy'],
     status: 'Published',
   },
@@ -97,7 +97,7 @@ The principle: **perfect one market before opening the next**. This isn't cautio
     phase: 2,
     title: 'The EU/pt-PT Launch Gate: What Has to Be True Before Phase 2 Opens',
     category: 'Governance',
-    excerpt: 'Phase 2 is not a date on a calendar. It is a checklist of conditions — and every condition gate is enforced by the agent fleet.',
+    excerpt: 'Phase 2 is not a date on a calendar. It is a checklist of conditions, and every condition gate is enforced by the agent fleet.',
     content: `The EU/pt-PT expansion targets a fundamentally different audience than Phase 1. Portuguese and EU-based companies evaluating a senior Localization leader will scrutinise the language quality of a portfolio in a way that English-speaking US recruiters will not.
 
 This creates a higher bar: the pt-PT locale must pass a full LQC + LQA cycle, the site must comply with GDPR (not just in spirit but in technical implementation), and the hreflang tags must be in place so Google.pt serves the correct version to Portuguese visitors.
@@ -122,14 +122,14 @@ None of these gates open automatically. Each requires a human decision. This is 
     content: `The LATAM expansion presents a genuine strategic fork that requires a decision rather than a default.
 
 **Option A: es-419 (Latin American Spanish)**
-- Reaches Mexico, Colombia, Argentina — the largest LATAM tech hubs
+- Reaches Mexico, Colombia, and Argentina (the largest LATAM tech hubs)
 - Broader addressable audience
 - Requires a new linguist agent and style guide from scratch
 
 **Option B: pt-BR (Brazilian Portuguese)**  
 - Leverages existing Portuguese language infrastructure (pt-PT as base)
 - Brazil is LATAM's largest economy and growing tech market
-- Risk: pt-BR and pt-PT are meaningfully different — the LQA engine would need LATAM-specific prohibited terms
+- Risk: pt-BR and pt-PT are meaningfully different, so the LQA engine would need LATAM-specific prohibited terms
 
 **The decision criteria:**
 1. Where is the strongest demand signal from inbound contacts?
@@ -147,13 +147,13 @@ This entry will be updated once Phase 1 metrics have run for 90 days and a deman
     title: 'APAC Entry: CJK Rendering, Cultural Localization, and the Long Game',
     category: 'Future Vision',
     excerpt: 'The APAC expansion is the most technically complex and strategically deliberate phase. It will not be rushed.',
-    content: `APAC entry — whether Taiwan, Japan, or Singapore — requires a different kind of preparation than any previous phase.
+    content: `APAC entry (whether Taiwan, Japan, or Singapore) requires a different kind of preparation than any previous phase.
 
-**Technical complexity**: CJK character sets (Chinese, Japanese, Korean) have different typographic requirements. Line-height, font-loading, character encoding, and text layout all need explicit engineering attention. The Stellar UI was not designed with CJK rendering in mind — this must be assessed before anything else.
+**Technical complexity**: CJK character sets (Chinese, Japanese, Korean) have different typographic requirements. Line-height, font-loading, character encoding, and text layout all need explicit engineering attention. The Stellar UI was not designed with CJK rendering in mind, so this must be assessed before anything else.
 
-**Cultural complexity**: Japanese professional culture has specific expectations around formality, hierarchy, and brand presentation that require genuine local expertise — not just translation. A linguist agent for ja-JP would need to encode rules that a Western professional might not intuit.
+**Cultural complexity**: Japanese professional culture has specific expectations around formality, hierarchy, and brand presentation that require genuine local expertise rather than simple translation. A linguist agent for ja-JP would need to encode rules that a Western professional might not intuit.
 
-**The long game principle**: APAC is where the portfolio becomes a gateway for potential company building — not just career opportunities. The networks I want to reach in APAC are those of senior technology leaders at Tier 1 semiconductor and hardware companies.
+**The long game principle**: APAC is where the portfolio becomes a gateway for potential company building, not just career opportunities. The networks I want to reach in APAC are those of senior technology leaders at Tier 1 semiconductor and hardware companies.
 
 This phase opens only when: (1) the business vision is defined, (2) the technical infrastructure is ready, and (3) a qualified specialist linguist is available for the target locale.`,
     tags: ['APAC', 'CJK', 'Japan', 'Taiwan', 'Future Vision'],
@@ -168,7 +168,7 @@ This phase opens only when: (1) the business vision is defined, (2) the technica
     excerpt: 'A deep dive into how I transitioned the Portfolio Command Center from static mockups to a live, persistent, AI-governed ecosystem operating in real-time.',
     content: `<audio controls class="w-full mt-2 mb-4 rounded-xl border border-white/10" src="/assets/blog/narration_draft.wav">Your browser does not support the audio element.</audio>
 
-When building a portfolio, it’s easy to settle for the illusion of functionality — static strings, mocked API calls, and fake loading spinners. But as a leader in Localization Engineering and Program Logic, I wanted to showcase **actual operational orchestration**.
+When building a portfolio, it’s easy to settle for the illusion of functionality: static strings, mocked API calls, and fake loading spinners. But as a leader in Localization Engineering and Program Logic, I wanted to showcase **actual operational orchestration**.
 
 <img src="/assets/blog/vscode_agent.png" class="w-full rounded-2xl border border-white/10 my-4 shadow-lg shadow-violet-500/20" alt="VS Code paired with AI Agent" />
 
@@ -315,7 +315,7 @@ const PhaseCard = ({ phase, expanded, onToggle }) => {
                 )}
                 {phase.approved && <span className="text-[9px] bg-emerald-400/10 text-emerald-400 px-1.5 py-0.5 rounded-full font-black uppercase tracking-widest">✓ Approved</span>}
               </div>
-              <h3 className="text-white font-black tracking-tight">{phase.name} <span className="text-white/30 font-light">— {phase.subtitle}</span></h3>
+              <h3 className="text-white font-black tracking-tight">{phase.name} <span className="text-white/30 font-light">: {phase.subtitle}</span></h3>
               <p className="text-white/30 text-xs mt-0.5">{phase.markets.slice(0, 3).join(' · ')}{phase.markets.length > 3 ? ` +${phase.markets.length - 3}` : ''}</p>
             </div>
           </div>
@@ -340,7 +340,7 @@ const PhaseCard = ({ phase, expanded, onToggle }) => {
             <div className="space-y-2">
               <p className="text-[9px] font-black uppercase tracking-widest text-white/30 flex items-center gap-1"><AlertTriangle size={9} /> Blockers</p>
               {phase.blockers.length === 0
-                ? <p className="text-xs text-emerald-400">✓ No blockers — phase is clear</p>
+                ? <p className="text-xs text-emerald-400">✓ No blockers: phase is clear</p>
                 : phase.blockers.map(b => <p key={b} className="text-xs text-amber-400/70">⚠ {b}</p>)
               }
             </div>
@@ -352,18 +352,18 @@ const PhaseCard = ({ phase, expanded, onToggle }) => {
                 <Unlock size={11} /> Approve Phase {phase.id} Launch
               </button>
               <button className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-red-400/10 border border-red-400/20 text-red-400 text-[10px] font-black uppercase tracking-widest hover:bg-red-400/20 transition-all">
-                <Lock size={11} /> Hold — Blockers Outstanding
+                <Lock size={11} /> Hold: Blockers Outstanding
               </button>
             </div>
           )}
           {phase.approved && (
             <div className="text-center py-2 text-[10px] font-black uppercase tracking-widest text-emerald-400">
-              ✅ Phase {phase.id} Approved — Live on maramartins.com
+              ✅ Phase {phase.id} Approved · Live on maramartins.com
             </div>
           )}
           {phase.status === 'FUTURE' && (
             <div className="text-center py-2 text-[10px] font-black uppercase tracking-widest text-white/20">
-              ⏳ Future Vision — Awaiting strategy definition
+              ⏳ Future Vision: Awaiting strategy definition
             </div>
           )}
         </div>
@@ -611,7 +611,7 @@ const GTMDashboard = () => {
         {activeTab === 'blog' && (
           <div className="space-y-4">
             <p className="text-[10px] font-black uppercase tracking-widest text-white/20 flex items-center gap-2">
-              <BookOpen size={10} /> GTM Strategy Journal — Professional Decision Log
+              <BookOpen size={10} /> GTM Strategy Journal: Professional Decision Log
             </p>
             {BLOG_POSTS.map(post => (
               <BlogPost
