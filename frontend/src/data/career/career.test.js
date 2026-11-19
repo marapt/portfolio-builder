@@ -454,7 +454,7 @@ describe('career timeline placeholder dataset', () => {
     msft.evidence.sections[0].snapshots.forEach((snap) => {
       expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
     });
-    expect(msft.evidence.sections).toHaveLength(6);
+    expect(msft.evidence.sections).toHaveLength(8);
     expect(msft.evidence.sections[1].id).toBe('careers-site-revamp');
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('phenom.com'))).toBe(true);
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('globenewswire.com'))).toBe(true);
@@ -472,6 +472,30 @@ describe('career timeline placeholder dataset', () => {
     ).toBe(true);
     expect(msft.evidence.sections[5].id).toBe('gtm-seasonal-campaigns');
     expect(msft.evidence.sections[5].snapshots).toHaveLength(5);
+    expect(msft.evidence.sections[6].id).toBe('adobe-partnership-integration');
+    expect(msft.evidence.sections[6].snapshots).toHaveLength(1);
+    expect(msft.evidence.sections[7].id).toBe('xbox-store-rebrand');
+    expect(msft.evidence.sections[7].snapshots).toHaveLength(1);
+    expect(
+      msft.evidence.sections[7].links.some((l) =>
+        l.url.includes('techtarget.com/news/Microsoft-Store/851509')
+      )
+    ).toBe(true);
+    expect(
+      msft.highlights.some((h) =>
+        typeof h === 'object' && h.text.includes('Adobe Strategic Partnership')
+      )
+    ).toBe(true);
+    expect(
+      msft.highlights.some((h) =>
+        typeof h === 'object' && h.text.includes('One Microsoft Ecosystem Alignment & Xbox Store Rebrand')
+      )
+    ).toBe(true);
+    expect(
+      msft.highlights.some((h) =>
+        typeof h === 'object' && h.text.includes('Digital Stores Globalization & DAM Governance')
+      )
+    ).toBe(true);
 
     msft.evidence.sections.forEach((section) => {
       if (Array.isArray(section.snapshots)) {

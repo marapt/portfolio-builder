@@ -1889,6 +1889,9 @@ export const timelineItems = [
       'Established an enterprise cross-organizational Center of Excellence across 200 markets and 100 languages, aligning engineering, brand, regional marketing, and external agencies.',
       'Managed multi-vendor partner teams (over 15 specialists), governing multi-year vendor agreements, budget allocation, and automated quality metrics.',
       {
+        text: 'Adobe Strategic Partnership & Enterprise Experience Integration: Contributed to Microsoft’s enterprise partnership with Adobe as Program Manager for Microsoft Stores, driving adoption and migration to Adobe Experience solutions (Web & Message Delivery). Managed vendor liaison across multi-quarter rollout waves, reported progress to leadership, and partnered with Engineering, Marketing, and Regional teams to drive process automations and maintain global business continuity.',
+      },
+      {
         text: 'Consumer Go-To-Market (GTM) Strategy & Seasonal Retail Campaigns: Served as Program Manager supporting the Consumer GTM strategy, leading vendor partner teams to deliver Tier-1 seasonal campaigns (Spring/Autumn Sales with dual-hemisphere adaptation, Back to School, Black Friday/Holiday) across all Microsoft Store countries and languages. Planned sim-ship vs phased international launches with Product, Marketing, Design, and Legal teams, and partnered with Senior Leadership, GTM Lead, and Data Analytics & Experimentation teams to optimize conversion and achieve record digital commerce milestones.',
       },
       {
@@ -1902,9 +1905,14 @@ export const timelineItems = [
         linkLabel: 'LocWorld40 Content Management Archive',
       },
       {
-        text: 'AI-Driven DAM Repositories & Web Automation at Scale: Spearheaded training of enterprise DAM (Digital Image Repositories) to enhance automated tools for digital campaigns, web marketing, and continuous globalization process automation at scale. Albeit proprietary architecture and operational metrics cannot be shared due to corporate confidentiality and NDA, public coverage of Microsoft Store’s strategic digital transformation illustrates this global operational scope.',
+        text: 'Digital Stores Globalization & DAM Governance: Served as Globalization Program Manager for Microsoft Stores within Microsoft Digital Stores, acting as the central liaison across Design, Product, Legal, Global Readiness, and regional partners to operationalize compliant global campaign delivery. Partnered cross-functionally to enforce DAM imagery catalog metadata, sorting criteria, and labeling aligned with Global Readiness and Legal requirements; established end-to-end data archiving and lifecycle governance bridging internal quality audits/approvals with vendor Human-in-the-Loop (HIL) workflows, training, and sorting standards; and drove tooling and process optimizations, including automated imagery selection for Digital Stores campaigns.',
         url: 'https://news.microsoft.com/source/2020/06/26/microsoft-store-announces-new-approach-to-retail/',
         linkLabel: 'Microsoft Store Retail Transformation Announcement',
+      },
+      {
+        text: 'One Microsoft Ecosystem Alignment & Xbox Store Rebrand: Aligned with Satya Nadella’s "One Microsoft" vision, coordinated as Program Manager across partner teams and the Xbox organization to align the Xbox Store experience and rebrand to the unified Microsoft Store. Governed cross-platform experience parity, decoupled input mechanics (resolving dynamically to console controller, PC mouse, or touch prompts across devices), and enforced TV title-safe layout margins across 38 global markets.',
+        url: 'https://www.techtarget.com/news/Microsoft-Store/851509/',
+        linkLabel: 'TechTarget: Xbox & Microsoft Store Architecture',
       },
       {
         text: 'Microsoft Global Careers Site Revamp (May 2018): Supported the client-side careers web experience revamp with the Global Talent Acquisition team, managing internationalization and delegating integration handovers with external vendors (such as Phenom People for candidate CRM and contractor roles for the external workforce). Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, public data, live pages, and case studies are available.',
@@ -2193,12 +2201,12 @@ export const timelineItems = [
         },
         {
           id: 'ai-dam-automation',
-          title: '5. AI-Driven DAM Repositories & Digital Web Automation at Scale',
-          badge: 'Digital Image Repositories · Campaign Automation · Retail Transformation',
+          title: '5. Digital Stores Globalization & DAM Governance',
+          badge: 'Digital Stores · DAM Imagery Lifecycle · Vendor HIL Workflows',
           defaultOpen: false,
           columns: 1,
           summary:
-            'Spearheaded AI and DAM (Digital Image Repositories) training to enhance automated tools for digital campaigns, web marketing, and globalization process automation at scale. Albeit proprietary models and operational datasets cannot be shared due to corporate confidentiality and NDA, public reporting on Microsoft Store’s strategic digital transformation illustrates the scale and strategic vision of these digital operations.',
+            'Served as Globalization Program Manager for Microsoft Stores within Microsoft Digital Stores, acting as the central liaison across Design, Product, Legal, Global Readiness, and regional partners to operationalize compliant global campaign delivery. Partnered cross-functionally to enforce DAM imagery catalog metadata, sorting criteria, and labeling aligned with Global Readiness and Legal requirements; established end-to-end data archiving and lifecycle governance bridging internal quality audits/approvals with vendor Human-in-the-Loop (HIL) workflows, training, and sorting standards; and drove tooling and process optimizations, including automated imagery selection for Digital Stores campaigns.',
           links: [
             {
               label: 'Microsoft News: Microsoft Store Announces New Approach to Retail',
@@ -2278,6 +2286,60 @@ export const timelineItems = [
               fit: 'contain',
               expandLabel: 'Inspect Next-Decade Platform Initiatives',
               note: 'Multi-product campaign readiness aligning Project Scarlett (Xbox Series X), Game Pass, and cloud gaming initiatives.',
+            },
+          ],
+        },
+        {
+          id: 'adobe-partnership-integration',
+          title: '7. Adobe Strategic Partnership & Enterprise Experience Integration',
+          badge: 'One Microsoft · Adobe Experience Solutions · Web & Message Delivery',
+          defaultOpen: false,
+          columns: 1,
+          summary:
+            'Contributed to the enterprise-wide Microsoft partnership with Adobe as Program Manager for Microsoft Stores, driving adoption and migration to Adobe Experience solutions across multi-quarter waves (assessment, planning, workload preparation, and web/message delivery launches). Managed vendor liaison and progress reporting across multiple quarters, collaborating with Engineering, Marketing, and Regional teams on process optimizations and automations to ensure business continuity globally while phasing out legacy platforms.',
+          snapshots: [
+            {
+              marketTag: 'ADOBE PARTNERSHIP · ONE MICROSOFT TIMELINE',
+              src: '/evidence/msft-adobe-partnership-timeline.png',
+              alt: 'Adobe timeline working together as One Microsoft showing multi-quarter workload deployment phases',
+              caption: 'Adobe Solutions Adoption Timeline · Working Together as One Microsoft',
+              fit: 'contain',
+              expandLabel: 'Inspect Adobe Adoption Timeline',
+              note: 'Enterprise rollout roadmap from initial deal signing and workload preparation to Web & Message Delivery launches across global store operations.',
+            },
+          ],
+        },
+        {
+          id: 'xbox-store-rebrand',
+          title: '8. One Microsoft Vision: Xbox Store Integration & Rebrand',
+          badge: 'One Microsoft · Xbox Store Merger · Cross-Platform Experience Parity',
+          defaultOpen: false,
+          columns: 1,
+          summary:
+            'Aligned with Satya Nadella’s "One Microsoft" enterprise vision, coordinated across cross-functional partner teams and the Xbox organization to align the Xbox Store experience and rebrand it to the unified Microsoft Store. Overcame critical cross-platform release divergence across Xbox console TV UI, Windows desktop, and mobile web storefronts: decoupled device input mechanics (resolving dynamically to "Press A", "Click", or "Tap" tokens), enforced surface-specific TV title-safe margins, and eliminated localization defects to achieve day-and-date launches across 38 global markets.',
+          links: [
+            {
+              label: 'TechTarget: Microsoft Store Evolution & Xbox Store Merger',
+              url: 'https://www.techtarget.com/news/Microsoft-Store/851509/',
+              kind: 'external',
+            },
+            {
+              label: 'TechTarget Definition Archive (Wayback Machine)',
+              url: 'https://web.archive.org/web/https://www.techtarget.com/news/Microsoft-Store/851509/',
+              kind: 'archive',
+            },
+          ],
+          snapshots: [
+            {
+              marketTag: 'TECHTARGET CIO · 2017 ONE MICROSOFT STORE REBRAND',
+              src: '/evidence/msft-techtarget-xbox-rebrand.png',
+              alt: 'TechTarget coverage of 2017 Xbox store merger and unified Microsoft Store rebrand',
+              caption: 'TechTarget News · 2017 Xbox Store Merger & Microsoft Store Rebrand',
+              linkLabel: 'Article Archive (Wayback)',
+              url: 'https://web.archive.org/web/https://www.techtarget.com/news/Microsoft-Store/851509/',
+              fit: 'contain',
+              expandLabel: 'Inspect TechTarget Xbox Store Merger Coverage',
+              note: 'Industry report documenting the 2017 merger of the Xbox store into the Windows Store, rebranded as the unified Microsoft Store under the "One Microsoft" strategy.',
             },
           ],
         },
@@ -2415,6 +2477,22 @@ export const timelineItems = [
           url: 'https://web.archive.org/web/20190427211216/https://www.verbaccino.com/podcasts/twm-143-how-microsoft-achieves-its-best-in-class-global-brand-status-w-mara-martins/',
           fit: 'contain',
         },
+        {
+          marketTag: 'ADOBE PARTNERSHIP · ONE MICROSOFT TIMELINE',
+          src: '/evidence/msft-adobe-partnership-timeline.png',
+          alt: 'Adobe timeline working together as One Microsoft showing multi-quarter workload deployment phases',
+          caption: 'Adobe Solutions Adoption Timeline · Working Together as One Microsoft',
+          fit: 'contain',
+        },
+        {
+          marketTag: 'TECHTARGET CIO · 2017 ONE MICROSOFT STORE REBRAND',
+          src: '/evidence/msft-techtarget-xbox-rebrand.png',
+          alt: 'TechTarget coverage of 2017 Xbox store merger and unified Microsoft Store rebrand',
+          caption: 'TechTarget News · 2017 Xbox Store Merger & Microsoft Store Rebrand',
+          linkLabel: 'Article Archive (Wayback)',
+          url: 'https://web.archive.org/web/https://www.techtarget.com/news/Microsoft-Store/851509/',
+          fit: 'contain',
+        },
       ],
       links: [
         {
@@ -2516,6 +2594,16 @@ export const timelineItems = [
           label: 'The Worldly Marketer Ep. 143 Audio (Libsyn)',
           url: 'https://theworldlymarketer.libsyn.com/twm-143-how-microsoft-achieves-its-best-in-class-global-brand-status-w-mara-martins',
           kind: 'external',
+        },
+        {
+          label: 'TechTarget: Microsoft Store Evolution & Xbox Store Merger',
+          url: 'https://www.techtarget.com/news/Microsoft-Store/851509/',
+          kind: 'external',
+        },
+        {
+          label: 'TechTarget Definition Archive (Wayback Machine)',
+          url: 'https://web.archive.org/web/https://www.techtarget.com/news/Microsoft-Store/851509/',
+          kind: 'archive',
         },
       ],
     },
