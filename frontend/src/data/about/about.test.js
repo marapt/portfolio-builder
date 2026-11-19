@@ -42,6 +42,9 @@ describe('About Me dataset & structure', () => {
       'Generous Multiplier',
     ]);
     expect(aboutPT.aboutHero.personalityTraits.traits).toHaveLength(6);
+    aboutEN.aboutHero.personalityTraits.traits.forEach((t) => {
+      expect(t.l6Scope).toMatch(/^Goal:/);
+    });
   });
 
   test('functionalPillars defines exactly 3 Google L6 calibrated pillars', () => {
