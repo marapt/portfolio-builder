@@ -306,7 +306,22 @@ export const resumeData = {
     }
   ],
   
-  awards: [],
+  awards: [
+    {
+      title: 'Global Readiness Award - Lead of Geopolitical Readiness (Microsoft Stores)',
+      organization: 'Microsoft Global Readiness Team',
+      year: '2019',
+      details: 'Recognized for establishing enterprise globalization standards, geopolitical readiness frameworks, and global product delivery methodologies across Microsoft Stores, published across Microsoft Learn and Developer Product Inclusion.',
+      url: 'https://learn.microsoft.com/en-us/globalization/methodology/global-product-delivery'
+    },
+    {
+      title: 'Top 12% of Learners Globally (#superlearning)',
+      organization: 'LinkedIn Learning',
+      year: 'CY 2020 (Feb 2021)',
+      url: 'https://www.linkedin.com/posts/maramartinspt_thank-alwaysbelearning-superlearning-share-6762243802985062400-hA8B/',
+      proofUrl: '/evidence/linkedin-superlearning-post.png'
+    }
+  ],
   
   links: {
     linkedin: 'https://www.linkedin.com/in/maramartinspt',

@@ -71,6 +71,7 @@ export const resumeData = {
       description: 'Direção da execução do programa global de localização, estratégia e inovação do MSCOM e Store.',
       achievements: [
         'Gestão de talento de equipa multi-fornecedor (equipa de mais de 15 pessoas) e oferta de produtos globais para 200 mercados (100 línguas)',
+        'Distinguida com o Prémio da Equipa de Global Readiness como Responsável de Geopolitical Readiness da Microsoft Stores, estabelecendo normas de globalização corporativas publicadas no Microsoft Learn',
         'Responsável pela gestão eficiente do orçamento e alocação de prioridades principais',
         'Garantia de experiências de cliente impecáveis e impacto de negócio em todo o mundo'
       ]
@@ -382,6 +383,13 @@ export const resumeData = {
   ],
 
   awards: [
+    {
+      title: 'Prémio de Global Readiness - Responsável de Geopolitical Readiness (Microsoft Stores)',
+      organization: 'Microsoft Global Readiness Team',
+      year: '2019',
+      details: 'Distinguida pelo estabelecimento de normas empresariais de globalização, estruturas de conformidade geopolítica e metodologias de entrega global de produtos na Microsoft Stores, publicadas no Microsoft Learn e no Developer Product Inclusion.',
+      url: 'https://learn.microsoft.com/en-us/globalization/methodology/global-product-delivery'
+    },
     {
       title: 'Top 12% Mundial de Formandos (#superlearning)',
       organization: 'LinkedIn Learning',

@@ -454,12 +454,15 @@ describe('career timeline placeholder dataset', () => {
     msft.evidence.sections[0].snapshots.forEach((snap) => {
       expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
     });
-    expect(msft.evidence.sections).toHaveLength(2);
+    expect(msft.evidence.sections).toHaveLength(3);
     expect(msft.evidence.sections[1].id).toBe('careers-site-revamp');
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('phenom.com'))).toBe(true);
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('globenewswire.com'))).toBe(true);
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('contractor-roles.html'))).toBe(true);
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('talentnet.community'))).toBe(true);
+    expect(msft.evidence.sections[2].id).toBe('geopolitical-readiness-standards');
+    expect(msft.evidence.sections[2].links.some((l) => l.url.includes('global-product-delivery'))).toBe(true);
+    expect(msft.evidence.sections[2].links.some((l) => l.url.includes('productinclusion/globalization'))).toBe(true);
   });
 
   test('Hogarth UK role contains verified metrics, client account highlights, and HTC Change brand evidence', () => {

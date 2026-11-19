@@ -1878,16 +1878,21 @@ export const timelineItems = [
         evidenceId: 'ms-02',
       },
       {
-        value: 'Careers & Store GTM',
-        label: 'Global brand platforms & Phenom career site deployment',
+        value: 'Global Readiness Lead',
+        label: 'Geopolitical readiness award & globalization standards',
         kind: 'quality',
-        hint: 'GlobeNewswire May 2018 & MS Store continuous delivery',
+        hint: 'Global Readiness Team Award · Microsoft Learn & Developer Inclusion Standards',
         evidenceId: 'ms-03',
       },
     ],
     highlights: [
       'Established an enterprise cross-organizational Center of Excellence across 200 markets and 100 languages, aligning engineering, brand, regional marketing, and external agencies.',
       'Managed multi-vendor partner teams (over 15 specialists), governing multi-year vendor agreements, budget allocation, and automated quality metrics.',
+      {
+        text: 'Lead of Geopolitical Readiness for Microsoft Stores (Global Readiness Team Award): Honored by the Global Readiness team for establishing enterprise globalization standards and geopolitical compliance across Microsoft Stores, contributing to world-readiness frameworks and global product delivery methodologies shared industry-wide on Microsoft Learn and Microsoft Developer Product Inclusion.',
+        url: 'https://learn.microsoft.com/en-us/globalization/methodology/global-product-delivery',
+        linkLabel: 'Microsoft Learn Global Product Delivery',
+      },
       {
         text: 'Microsoft Global Careers Site Revamp (May 2018): Supported the client-side careers web experience revamp with the Global Talent Acquisition team, managing internationalization and delegating integration handovers with external vendors (such as Phenom People for candidate CRM and contractor roles for the external workforce). Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, public data, live pages, and case studies are available.',
         url: 'https://careers.microsoft.com/v2/global/en/contractor-roles.html',
@@ -1988,6 +1993,32 @@ export const timelineItems = [
             },
           ],
         },
+        {
+          id: 'geopolitical-readiness-standards',
+          title: '3. Geopolitical Readiness Leadership & Microsoft Globalization Standards',
+          badge: 'Global Readiness Award · Microsoft Learn · Developer Product Inclusion',
+          defaultOpen: false,
+          columns: 1,
+          summary:
+            'Received an award from the Microsoft Global Readiness team as Lead of Geopolitical Readiness for Microsoft Stores. Spearheaded cross-organizational geopolitical readiness, market sensitivity guidelines, and the establishment of corporate globalization standards shared publicly with the rest of the world through Microsoft Learn documentation, global product delivery methodologies, and the Microsoft Developer Product Inclusion framework.',
+          links: [
+            {
+              label: 'Microsoft Learn: Global Product Delivery Methodology',
+              url: 'https://learn.microsoft.com/en-us/globalization/methodology/global-product-delivery',
+              kind: 'external',
+            },
+            {
+              label: 'Microsoft Learn: Globalization Documentation & Standards Hub',
+              url: 'https://learn.microsoft.com/en-us/globalization/',
+              kind: 'external',
+            },
+            {
+              label: 'Microsoft Developer: Product Inclusion & Globalization Guidelines',
+              url: 'https://developer.microsoft.com/en-us/games/resources/productinclusion/globalization/',
+              kind: 'external',
+            },
+          ],
+        },
       ],
       snapshots: [
         {
@@ -2010,6 +2041,21 @@ export const timelineItems = [
         },
       ],
       links: [
+        {
+          label: 'Microsoft Learn: Global Product Delivery Methodology',
+          url: 'https://learn.microsoft.com/en-us/globalization/methodology/global-product-delivery',
+          kind: 'external',
+        },
+        {
+          label: 'Microsoft Learn: Globalization Documentation & Standards Hub',
+          url: 'https://learn.microsoft.com/en-us/globalization/',
+          kind: 'external',
+        },
+        {
+          label: 'Microsoft Developer: Product Inclusion & Globalization Guidelines',
+          url: 'https://developer.microsoft.com/en-us/games/resources/productinclusion/globalization/',
+          kind: 'external',
+        },
         {
           label: 'Microsoft Careers: External Workforce / Contractor Roles Portal',
           url: 'https://careers.microsoft.com/v2/global/en/contractor-roles.html',

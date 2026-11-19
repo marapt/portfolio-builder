@@ -78,6 +78,7 @@ export const resumeData = {
       description: 'Driving the overall localization program execution, strategy and innovation of MSCOM and Store.',
       achievements: [
         'Managed multi-vendor team talent (team of over 15 people) and global product offering for 200 markets (100 languages)',
+        'Received Global Readiness Team Award as Lead of Geopolitical Readiness for Microsoft Stores, setting corporate globalization standards published on Microsoft Learn',
         'Responsible for efficient budget management and key priorities allocation',
         'Ensured customer flawless experiences and business impact across the globe'
       ]
@@ -520,6 +521,13 @@ export const resumeData = {
   ],
   
   awards: [
+    {
+      title: 'Global Readiness Award - Lead of Geopolitical Readiness (Microsoft Stores)',
+      organization: 'Microsoft Global Readiness Team',
+      year: '2019',
+      details: 'Recognized for establishing enterprise globalization standards, geopolitical readiness frameworks, and global product delivery methodologies across Microsoft Stores, published across Microsoft Learn and Developer Product Inclusion.',
+      url: 'https://learn.microsoft.com/en-us/globalization/methodology/global-product-delivery'
+    },
     {
       title: 'Top 12% of Learners Globally (#superlearning)',
       organization: 'LinkedIn Learning',
