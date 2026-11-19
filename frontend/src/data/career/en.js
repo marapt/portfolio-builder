@@ -1964,11 +1964,16 @@ export const timelineItems = [
           defaultOpen: false,
           columns: 1,
           summary:
-            'Partnered with the Global Talent Acquisition team on the client-side revamp of Microsoft Careers (including specialized portals such as External Workforce / contractor roles). Directed internationalization of the web experience and managed integration handoffs and delegations with outsourced platform vendors who governed the backend CRM (Phenom People). Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, verified public announcements, live portal experiences, and platform case studies detail the launch.',
+            'Partnered with the Global Talent Acquisition team on the client-side revamp of Microsoft Careers (including specialized portals such as External Workforce / contractor roles and US talent community networks). Directed internationalization of the web experience and managed integration handoffs and delegations with outsourced platform vendors who governed the backend CRM (Phenom People) and specialized talent ecosystems. Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, verified public announcements, live portal experiences, and platform case studies detail the launch.',
           links: [
             {
               label: 'Microsoft Careers: External Workforce / Contractor Roles Portal',
               url: 'https://careers.microsoft.com/v2/global/en/contractor-roles.html',
+              kind: 'external',
+            },
+            {
+              label: 'Microsoft US Talent Community (TalentNet Portal - US specific)',
+              url: 'https://us.microsoft.talentnet.community/',
               kind: 'external',
             },
             {
@@ -2008,6 +2013,11 @@ export const timelineItems = [
         {
           label: 'Microsoft Careers: External Workforce / Contractor Roles Portal',
           url: 'https://careers.microsoft.com/v2/global/en/contractor-roles.html',
+          kind: 'external',
+        },
+        {
+          label: 'Microsoft US Talent Community (TalentNet Portal - US specific)',
+          url: 'https://us.microsoft.talentnet.community/',
           kind: 'external',
         },
         {

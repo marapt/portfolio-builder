@@ -459,6 +459,7 @@ describe('career timeline placeholder dataset', () => {
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('phenom.com'))).toBe(true);
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('globenewswire.com'))).toBe(true);
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('contractor-roles.html'))).toBe(true);
+    expect(msft.evidence.sections[1].links.some((l) => l.url.includes('talentnet.community'))).toBe(true);
   });
 
   test('Hogarth UK role contains verified metrics, client account highlights, and HTC Change brand evidence', () => {
