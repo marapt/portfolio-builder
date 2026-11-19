@@ -19,11 +19,41 @@ export const aboutHero = {
       'Na Microsoft, LinkedIn, Block, MIIS e Apple, essa equação evoluiu para uma disciplina operacional: converter atritos linguísticos e estruturais em modelos operacionais escaláveis, fluxos de ferramentas automatizados e governação ágil, onde equipas globais executam com rapidez, autonomia e confiança.',
   },
   stats: [
-    { value: '200 Mkts · 100 Langs', label: 'Governação global de plataformas e operações (Microsoft)' },
-    { value: '3x Escala de Equipa', label: 'Multiplicação da equipa de PMs de 5 para 15 liderados (Block)' },
-    { value: '67% Redução Ciclo', label: 'Piloto de tradução automática reduziu tempos de 15 para 5 dias' },
-    { value: 'Estilo DISC Planner', label: 'Estilo certificado: estruturado, com foco em continuidade' },
+    { value: 'Estilo DISC Planner', label: 'Acompanhamento estruturado e estabilizador' },
+    { value: 'Segura & Sentido de Posse', label: 'Calma sob pressão, focada em resultados' },
+    { value: 'Curiosa & Pragmática', label: 'Em constante aprendizagem com foco na clareza' },
+    { value: 'Empatia Além das Fronteiras', label: 'Sintonizada com o contexto tácito entre equipas' },
   ],
+  personalityTraits: {
+    sectionTitle: 'A Minha Personalidade',
+    sectionSubtitle: 'Como funciono: o caráter, a atitude e os instintos naturais que levo para cada reunião.',
+    traits: [
+      {
+        slot: 'Personalidade',
+        title: 'Estilo DISC Planner',
+        description: 'Acompanhamento estruturado e estabilizador que transforma pontas soltas em passos claros seguintes.',
+        icon: 'Compass',
+      },
+      {
+        slot: 'Caráter',
+        title: 'Segura & Elevado Sentido de Posse',
+        description: 'Calma sob pressão, comunicação direta e responsável pelos resultados em vez da aparência.',
+        icon: 'ShieldCheck',
+      },
+      {
+        slot: 'Atitude',
+        title: 'Curiosa & Pragmática',
+        description: 'Em constante aprendizagem, especialmente em IA e novas metodologias de trabalho, com foco na clareza prática.',
+        icon: 'Zap',
+      },
+      {
+        slot: 'Mentalidade Cultural',
+        title: 'Empatia Além das Fronteiras',
+        description: 'Naturalmente sintonizada com o contexto tácito e diferentes perspetivas entre culturas e equipas.',
+        icon: 'Languages',
+      },
+    ],
+  },
 };
 
 export const functionalPillars = [

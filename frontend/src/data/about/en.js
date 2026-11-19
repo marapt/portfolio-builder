@@ -19,11 +19,41 @@ export const aboutHero = {
       'Across Microsoft, LinkedIn, Block, MIIS, and Apple, this equation evolved into an operational discipline: turning linguistic and structural friction into scalable operating models, automated tooling pipelines, and clear governance where global teams can execute with speed, autonomy, and confidence.',
   },
   stats: [
-    { value: '200 Mkts · 100 Langs', label: 'Global storefront & operational governance (Microsoft)' },
-    { value: '3x Team Scaling', label: 'Scaled localization PM org from 5 to 15 direct reports (Block)' },
-    { value: '67% Cycle Cut', label: 'Machine translation pilot reduced turnaround from 15 to 5 days' },
-    { value: 'DISC Planner Style', label: 'Certified style: structured, stabilizing follow-through' },
+    { value: 'DISC Planner Style', label: 'Structured, stabilizing follow-through' },
+    { value: 'Grounded & High-Ownership', label: 'Calm under pressure, accountable for outcomes' },
+    { value: 'Curious & Pragmatic', label: 'Always learning with a bias toward clarity' },
+    { value: 'Empathetic Across Boundaries', label: 'Naturally attuned to unspoken context' },
   ],
+  personalityTraits: {
+    sectionTitle: 'My Personality',
+    sectionSubtitle: "How I'm wired: the character, attitude, and natural instincts I bring into every room.",
+    traits: [
+      {
+        slot: 'Personality',
+        title: 'DISC Planner Style',
+        description: 'Structured, stabilizing follow-through that turns loose threads into clear next steps.',
+        icon: 'Compass',
+      },
+      {
+        slot: 'Character',
+        title: 'Grounded & High-Ownership',
+        description: 'Calm under pressure, direct in communication, and accountable for outcomes rather than optics.',
+        icon: 'ShieldCheck',
+      },
+      {
+        slot: 'Attitude',
+        title: 'Curious & Pragmatic',
+        description: 'Always learning, especially around AI and new ways of working, with a bias toward practical clarity.',
+        icon: 'Zap',
+      },
+      {
+        slot: 'Cultural Mindset',
+        title: 'Empathetic Across Boundaries',
+        description: 'Naturally attuned to unspoken context and different perspectives across cultures and teams.',
+        icon: 'Languages',
+      },
+    ],
+  },
 };
 
 export const functionalPillars = [

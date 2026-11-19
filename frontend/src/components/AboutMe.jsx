@@ -215,22 +215,48 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* Executive Stats Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-          {hero.stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="glass-card rounded-2xl p-4 sm:p-5 border border-white/10 text-left transition-all hover:border-cyan-400/30"
-            >
-              <div className="text-lg sm:text-xl font-black text-cyan-300 tracking-tight">
-                {stat.value}
-              </div>
-              <div className="text-xs text-slate-400 font-medium mt-1 leading-snug">
-                {stat.label}
-              </div>
+        {/* My Personality Traits Section */}
+        {hero.personalityTraits && (
+          <div className="space-y-4 pt-2 text-left">
+            <div className="space-y-1">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-400">
+                {hero.personalityTraits.sectionTitle}
+              </span>
+              <p className="text-xs sm:text-sm text-slate-400 font-medium leading-relaxed">
+                {hero.personalityTraits.sectionSubtitle}
+              </p>
             </div>
-          ))}
-        </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              {hero.personalityTraits.traits.map((trait, idx) => {
+                const TraitIcon = iconMap[trait.icon] || Compass;
+                return (
+                  <div
+                    key={idx}
+                    className="glass-card rounded-2xl p-4 sm:p-5 border border-white/10 text-left transition-all hover:border-cyan-400/30 flex flex-col justify-between space-y-3"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-300">
+                          {trait.slot}
+                        </span>
+                        <div className="text-cyan-400/80">
+                          <TraitIcon size={14} />
+                        </div>
+                      </div>
+                      <div className="text-sm sm:text-base font-bold text-white tracking-tight leading-snug">
+                        {trait.title}
+                      </div>
+                    </div>
+                    <div className="text-xs text-slate-300 font-normal leading-relaxed">
+                      {trait.description}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {/* Origin Story Card: Expandable */}
         <div className="glass-card rounded-3xl p-6 sm:p-7 border border-cyan-500/20 bg-gradient-to-br from-cyan-950/20 via-transparent to-violet-950/20 text-left space-y-4">

@@ -29,13 +29,16 @@ describe('About Me dataset & structure', () => {
     expect(aboutPT.aboutHero.originStory.title).toBe(
       'A Minha Jornada: Língua + Tecnologia = Acesso = Foco no Utilizador'
     );
-    expect(aboutEN.aboutHero.stats).toHaveLength(4);
-    expect(aboutEN.aboutHero.stats.map((s) => s.value)).toEqual([
-      '200 Mkts · 100 Langs',
-      '3x Team Scaling',
-      '67% Cycle Cut',
+    expect(aboutEN.aboutHero.personalityTraits).toBeDefined();
+    expect(aboutEN.aboutHero.personalityTraits.sectionTitle).toBe('My Personality');
+    expect(aboutEN.aboutHero.personalityTraits.traits).toHaveLength(4);
+    expect(aboutEN.aboutHero.personalityTraits.traits.map((t) => t.title)).toEqual([
       'DISC Planner Style',
+      'Grounded & High-Ownership',
+      'Curious & Pragmatic',
+      'Empathetic Across Boundaries',
     ]);
+    expect(aboutPT.aboutHero.personalityTraits.traits).toHaveLength(4);
   });
 
   test('functionalPillars defines exactly 3 Google L6 calibrated pillars', () => {
