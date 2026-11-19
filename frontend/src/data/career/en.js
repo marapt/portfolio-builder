@@ -2111,6 +2111,15 @@ export const timelineItems = [
           ],
           snapshots: [
             {
+              marketTag: 'MICROSOFT GLOBAL READINESS · 2017 RECOGNITION AWARD',
+              src: '/evidence/msft-global-readiness-award.png',
+              alt: 'Microsoft Global Readiness 2017 crystal globe trophy awarded to Mara Ferreira Martins',
+              caption: 'Microsoft Global Readiness · 2017 Recognition Award Trophy',
+              fit: 'contain',
+              expandLabel: 'Inspect Award Trophy',
+              note: 'Crystal globe trophy laser-engraved with "Global Readiness", "2017", and "Mara Ferreira Martins" on a Microsoft Stores brass base plate.',
+            },
+            {
               marketTag: 'MICROSOFT LEARN · GLOBAL PRODUCT DELIVERY',
               src: '/evidence/msft-learn-global-product-delivery.png',
               alt: 'Microsoft Learn Global Product Delivery methodology guidelines',
@@ -2215,6 +2224,13 @@ export const timelineItems = [
         },
       ],
       snapshots: [
+        {
+          marketTag: 'MICROSOFT GLOBAL READINESS · 2017 RECOGNITION AWARD',
+          src: '/evidence/msft-global-readiness-award.png',
+          alt: 'Microsoft Global Readiness 2017 crystal globe trophy awarded to Mara Ferreira Martins',
+          caption: 'Microsoft Global Readiness · 2017 Recognition Award Trophy',
+          fit: 'contain',
+        },
         {
           marketTag: 'MICROSOFT LEARN · GLOBAL PRODUCT DELIVERY',
           src: '/evidence/msft-learn-global-product-delivery.png',
