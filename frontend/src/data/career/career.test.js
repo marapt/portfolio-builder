@@ -448,39 +448,43 @@ describe('career timeline placeholder dataset', () => {
     ).toBe(true);
 
     const msft = timelineItems.find((item) => item.id === 'microsoft');
+    expect(msft.evidence.sections[0].id).toBe('gtm-seasonal-campaigns');
     expect(msft.evidence.sections[0].title).toContain(
-      'Professional Development & Community Contributions'
+      'Consumer Go-To-Market Strategy'
     );
+    expect(msft.evidence.sections[0].snapshots).toHaveLength(3);
     msft.evidence.sections[0].snapshots.forEach((snap) => {
       expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
     });
     expect(msft.evidence.sections).toHaveLength(8);
-    expect(msft.evidence.sections[1].id).toBe('careers-site-revamp');
-    expect(msft.evidence.sections[1].links.some((l) => l.url.includes('phenom.com'))).toBe(true);
-    expect(msft.evidence.sections[1].links.some((l) => l.url.includes('globenewswire.com'))).toBe(true);
-    expect(msft.evidence.sections[1].links.some((l) => l.url.includes('contractor-roles.html'))).toBe(true);
-    expect(msft.evidence.sections[1].links.some((l) => l.url.includes('talentnet.community'))).toBe(true);
-    expect(msft.evidence.sections[2].id).toBe('geopolitical-readiness-standards');
-    expect(msft.evidence.sections[2].links.some((l) => l.url.includes('global-product-delivery'))).toBe(true);
-    expect(msft.evidence.sections[2].links.some((l) => l.url.includes('productinclusion/globalization'))).toBe(true);
-    expect(msft.evidence.sections[3].id).toBe('machine-translation-pilot');
-    expect(msft.evidence.sections[4].id).toBe('ai-dam-automation');
+    expect(msft.evidence.sections[1].id).toBe('adobe-partnership-integration');
+    expect(msft.evidence.sections[1].snapshots).toHaveLength(1);
+    expect(msft.evidence.sections[2].id).toBe('xbox-store-rebrand');
+    expect(msft.evidence.sections[2].snapshots).toHaveLength(3);
     expect(
-      msft.evidence.sections[4].links.some((l) =>
-        l.url.includes('microsoft-store-announces-new-approach-to-retail')
-      )
-    ).toBe(true);
-    expect(msft.evidence.sections[5].id).toBe('gtm-seasonal-campaigns');
-    expect(msft.evidence.sections[5].snapshots).toHaveLength(3);
-    expect(msft.evidence.sections[6].id).toBe('adobe-partnership-integration');
-    expect(msft.evidence.sections[6].snapshots).toHaveLength(1);
-    expect(msft.evidence.sections[7].id).toBe('xbox-store-rebrand');
-    expect(msft.evidence.sections[7].snapshots).toHaveLength(3);
-    expect(
-      msft.evidence.sections[7].links.some((l) =>
+      msft.evidence.sections[2].links.some((l) =>
         l.url.includes('techtarget.com/news/Microsoft-Store/851509')
       )
     ).toBe(true);
+    expect(msft.evidence.sections[3].id).toBe('careers-site-revamp');
+    expect(msft.evidence.sections[3].links.some((l) => l.url.includes('phenom.com'))).toBe(true);
+    expect(msft.evidence.sections[3].links.some((l) => l.url.includes('globenewswire.com'))).toBe(true);
+    expect(msft.evidence.sections[3].links.some((l) => l.url.includes('contractor-roles.html'))).toBe(true);
+    expect(msft.evidence.sections[3].links.some((l) => l.url.includes('talentnet.community'))).toBe(true);
+    expect(msft.evidence.sections[4].id).toBe('geopolitical-readiness-standards');
+    expect(msft.evidence.sections[4].links.some((l) => l.url.includes('global-product-delivery'))).toBe(true);
+    expect(msft.evidence.sections[4].links.some((l) => l.url.includes('productinclusion/globalization'))).toBe(true);
+    expect(msft.evidence.sections[5].id).toBe('machine-translation-pilot');
+    expect(msft.evidence.sections[6].id).toBe('ai-dam-automation');
+    expect(
+      msft.evidence.sections[6].links.some((l) =>
+        l.url.includes('microsoft-store-announces-new-approach-to-retail')
+      )
+    ).toBe(true);
+    expect(msft.evidence.sections[7].id).toBe('professional-development');
+    expect(msft.evidence.sections[7].title).toContain(
+      'Professional Development & Community Contributions'
+    );
     expect(
       msft.highlights.some((h) =>
         typeof h === 'object' && h.text.includes('Adobe Strategic Partnership')
