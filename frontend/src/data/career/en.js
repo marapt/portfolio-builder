@@ -1864,33 +1864,35 @@ export const timelineItems = [
       'Built a cross-org Center of Excellence, automated API asset ingestion, and governed multi-million-dollar global store & marketing operations.',
     metrics: [
       {
-        value: '$[X]M',
-        label: 'Budget governed across [N]+ markets',
+        value: '200 Mkts · 100 Langs',
+        label: 'Global product offering & marcom localization',
         kind: 'scale',
-        placeholder: true,
-        hint: 'CV: Microsoft budget & market count (verify 40+ vs 195 langs)',
+        hint: 'Primary CV & verified records: 200 markets, 100 languages',
         evidenceId: 'ms-01',
       },
       {
-        value: '-[X]%',
-        label: 'Cycle time via API asset ingestion',
+        value: '15+ Vendor Team',
+        label: 'Multi-vendor team talent & agency governance',
         kind: 'velocity',
-        placeholder: true,
-        hint: 'STAR story: hours/quarter saved',
+        hint: 'Primary CV: Managed multi-vendor talent team of over 15 people',
         evidenceId: 'ms-02',
       },
       {
-        value: '>[X]% / $[X]K',
-        label: 'Stakeholder NPS & cost avoidance',
+        value: 'Careers & Store GTM',
+        label: 'Global brand platforms & Phenom career site deployment',
         kind: 'quality',
-        placeholder: true,
-        hint: 'Performance review / MSA negotiation records',
+        hint: 'GlobeNewswire May 2018 & MS Store continuous delivery',
         evidenceId: 'ms-03',
       },
     ],
     highlights: [
-      '[Placeholder: Established cross-org Center of Excellence aligning engineering, brand, regional marketing, and external agencies.]',
-      '[Placeholder: Renegotiated multi-year vendor MSAs for volume/innovation discounts and pioneered automated quality scoring.]',
+      'Established an enterprise cross-organizational Center of Excellence across 200 markets and 100 languages, aligning engineering, brand, regional marketing, and external agencies.',
+      'Managed multi-vendor partner teams (over 15 specialists), governing multi-year vendor agreements, budget allocation, and automated quality metrics.',
+      {
+        text: 'Microsoft Global Careers Site Revamp (May 2018): Supported the global revamp of the Microsoft Careers platform partnering across Marketing, Talent Acquisition, and outsourced vendor Phenom People to deploy hyper-personalized, multilingual candidate journeys worldwide (albeit specific internal operational metrics cannot be shared due to corporate confidentiality, public data and case studies are available).',
+        url: 'https://www.globenewswire.com/news-release/2018/05/24/1511616/0/en/microsoft-deploys-new-career-site-on-the-phenom-people-platform.html',
+        linkLabel: 'GlobeNewswire Press Release (May 2018)',
+      },
       {
         text: 'Professional Development & Community Contributions (2019–2020): Represented Microsoft at LocWorld40 Portugal (Estoril, Jun 13, 2019) on the Content Management panel alongside Uber and EA, featured on The Worldly Marketer Podcast Ep. 143 (Apr 24, 2019), and served as Events Coordinator for Women in Localization Pacific Northwest (Seattle).',
         url: 'https://web.archive.org/web/20190720095116/https://locworld.com/sessions/managing-multiple-content-types-strategies-that-work/',
@@ -1898,7 +1900,7 @@ export const timelineItems = [
       },
     ],
     evidence: {
-      note: 'Archive Note: Conference session programs, speaker profiles, and podcast interviews from Mara\'s Microsoft tenure are preserved below via Wayback Machine archives (2019) and local page snapshots.',
+      note: 'Archive & Public Evidence Note: Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, verified public release announcements, platform case studies, and industry conference archives are preserved below.',
       sections: [
         {
           id: 'professional-development',
@@ -1955,6 +1957,27 @@ export const timelineItems = [
             },
           ],
         },
+        {
+          id: 'careers-site-revamp',
+          title: '2. Microsoft Global Careers Site Revamp (Phenom People Platform)',
+          badge: 'GlobeNewswire · Phenom Case Study · Global Talent Acquisition',
+          defaultOpen: false,
+          columns: 1,
+          summary:
+            'Supported the global revamp and internationalization of the Microsoft Careers portal on the Phenom People Talent Relationship Marketing platform, partnering across Marketing, Talent Acquisition, and external vendor teams to deliver AI-driven personalized candidate journeys for job seekers worldwide. Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, verified public announcements and platform case studies detail the launch and capabilities.',
+          links: [
+            {
+              label: 'GlobeNewswire Press Release: Microsoft Deploys New Career Site on Phenom People (May 24, 2018)',
+              url: 'https://www.globenewswire.com/news-release/2018/05/24/1511616/0/en/microsoft-deploys-new-career-site-on-the-phenom-people-platform.html',
+              kind: 'external',
+            },
+            {
+              label: 'Phenom Blog: Check Out Microsoft’s Career Site Powered by Phenom People',
+              url: 'https://www.phenom.com/blog/check-out-microsofts-career-site-powered-by-phenom-people',
+              kind: 'external',
+            },
+          ],
+        },
       ],
       snapshots: [
         {
@@ -1977,6 +2000,16 @@ export const timelineItems = [
         },
       ],
       links: [
+        {
+          label: 'GlobeNewswire: Microsoft Deploys New Career Site on Phenom People (May 2018)',
+          url: 'https://www.globenewswire.com/news-release/2018/05/24/1511616/0/en/microsoft-deploys-new-career-site-on-the-phenom-people-platform.html',
+          kind: 'external',
+        },
+        {
+          label: 'Phenom Blog: Check Out Microsoft’s Career Site Powered by Phenom People',
+          url: 'https://www.phenom.com/blog/check-out-microsofts-career-site-powered-by-phenom-people',
+          kind: 'external',
+        },
         {
           label: 'LocWorld40 Session Program (Wayback, Jul 2019)',
           url: 'https://web.archive.org/web/20190720095116/https://locworld.com/sessions/managing-multiple-content-types-strategies-that-work/',
