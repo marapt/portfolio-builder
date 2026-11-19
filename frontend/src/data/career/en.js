@@ -1889,9 +1889,9 @@ export const timelineItems = [
       'Established an enterprise cross-organizational Center of Excellence across 200 markets and 100 languages, aligning engineering, brand, regional marketing, and external agencies.',
       'Managed multi-vendor partner teams (over 15 specialists), governing multi-year vendor agreements, budget allocation, and automated quality metrics.',
       {
-        text: 'Microsoft Global Careers Site Revamp (May 2018): Supported the global revamp of the Microsoft Careers platform partnering across Marketing, Talent Acquisition, and outsourced vendor Phenom People to deploy hyper-personalized, multilingual candidate journeys worldwide (albeit specific internal operational metrics cannot be shared due to corporate confidentiality, public data and case studies are available).',
-        url: 'https://www.globenewswire.com/news-release/2018/05/24/1511616/0/en/microsoft-deploys-new-career-site-on-the-phenom-people-platform.html',
-        linkLabel: 'GlobeNewswire Press Release (May 2018)',
+        text: 'Microsoft Global Careers Site Revamp (May 2018): Supported the client-side careers web experience revamp with the Global Talent Acquisition team, managing internationalization and delegating integration handovers with external vendors (such as Phenom People for candidate CRM and contractor roles for the external workforce). Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, public data, live pages, and case studies are available.',
+        url: 'https://careers.microsoft.com/v2/global/en/contractor-roles.html',
+        linkLabel: 'Microsoft Careers External Workforce Portal',
       },
       {
         text: 'Professional Development & Community Contributions (2019–2020): Represented Microsoft at LocWorld40 Portugal (Estoril, Jun 13, 2019) on the Content Management panel alongside Uber and EA, featured on The Worldly Marketer Podcast Ep. 143 (Apr 24, 2019), and served as Events Coordinator for Women in Localization Pacific Northwest (Seattle).',
@@ -1959,13 +1959,18 @@ export const timelineItems = [
         },
         {
           id: 'careers-site-revamp',
-          title: '2. Microsoft Global Careers Site Revamp (Phenom People Platform)',
-          badge: 'GlobeNewswire · Phenom Case Study · Global Talent Acquisition',
+          title: '2. Microsoft Global Careers Site Revamp & External Workforce Experience',
+          badge: 'Microsoft Careers · Phenom Platform · Global Talent Acquisition',
           defaultOpen: false,
           columns: 1,
           summary:
-            'Supported the global revamp and internationalization of the Microsoft Careers portal on the Phenom People Talent Relationship Marketing platform, partnering across Marketing, Talent Acquisition, and external vendor teams to deliver AI-driven personalized candidate journeys for job seekers worldwide. Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, verified public announcements and platform case studies detail the launch and capabilities.',
+            'Partnered with the Global Talent Acquisition team on the client-side revamp of Microsoft Careers (including specialized portals such as External Workforce / contractor roles). Directed internationalization of the web experience and managed integration handoffs and delegations with outsourced platform vendors who governed the backend CRM (Phenom People). Albeit specific internal operational metrics cannot be shared due to corporate confidentiality, verified public announcements, live portal experiences, and platform case studies detail the launch.',
           links: [
+            {
+              label: 'Microsoft Careers: External Workforce / Contractor Roles Portal',
+              url: 'https://careers.microsoft.com/v2/global/en/contractor-roles.html',
+              kind: 'external',
+            },
             {
               label: 'GlobeNewswire Press Release: Microsoft Deploys New Career Site on Phenom People (May 24, 2018)',
               url: 'https://www.globenewswire.com/news-release/2018/05/24/1511616/0/en/microsoft-deploys-new-career-site-on-the-phenom-people-platform.html',
@@ -2000,6 +2005,11 @@ export const timelineItems = [
         },
       ],
       links: [
+        {
+          label: 'Microsoft Careers: External Workforce / Contractor Roles Portal',
+          url: 'https://careers.microsoft.com/v2/global/en/contractor-roles.html',
+          kind: 'external',
+        },
         {
           label: 'GlobeNewswire: Microsoft Deploys New Career Site on Phenom People (May 2018)',
           url: 'https://www.globenewswire.com/news-release/2018/05/24/1511616/0/en/microsoft-deploys-new-career-site-on-the-phenom-people-platform.html',
