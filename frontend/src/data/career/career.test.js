@@ -454,7 +454,7 @@ describe('career timeline placeholder dataset', () => {
     msft.evidence.sections[0].snapshots.forEach((snap) => {
       expect(fs.existsSync(path.join(publicDir, snap.src.replace(/^\//, '')))).toBe(true);
     });
-    expect(msft.evidence.sections).toHaveLength(5);
+    expect(msft.evidence.sections).toHaveLength(6);
     expect(msft.evidence.sections[1].id).toBe('careers-site-revamp');
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('phenom.com'))).toBe(true);
     expect(msft.evidence.sections[1].links.some((l) => l.url.includes('globenewswire.com'))).toBe(true);
@@ -470,6 +470,8 @@ describe('career timeline placeholder dataset', () => {
         l.url.includes('microsoft-store-announces-new-approach-to-retail')
       )
     ).toBe(true);
+    expect(msft.evidence.sections[5].id).toBe('gtm-seasonal-campaigns');
+    expect(msft.evidence.sections[5].snapshots).toHaveLength(5);
 
     msft.evidence.sections.forEach((section) => {
       if (Array.isArray(section.snapshots)) {
