@@ -1,293 +1,215 @@
-// Data for the About Me experience: blending professional leadership and personal narrative
+// Data for the About Me experience: 3-Pillar Google L6 Functional Architecture
 
 export const aboutHero = {
-  eyebrow: 'Personal & Professional Narrative',
-  title: 'Active Translator, Systems Thinker & Operational Bridge',
+  eyebrow: 'Executive Program Leadership & Systems Narrative',
+  title: 'Global Program & Operations Management',
   tagline:
-    'Bridging AI, language, culture, and operational systems to scale global programs with clarity and empathy.',
+    'Architecting scalable operating systems, AI-enabled workflows, and cross-functional alignment to deliver complex global initiatives at scale.',
   quickGrasp:
-    'A former manager once called me a "smooth operator" whenever cross-team friction needed to be cleared and momentum built. With 20+ years spanning university interpretation in Portugal, multi-market creative production in London, and enterprise program leadership across Silicon Valley, I view cross-functional leadership as an act of active translation: decoding incentives, removing friction, and aligning diverse personalities around shared ownership.',
+    'Leading across ambiguity requires more than coordination: it requires turning competing priorities into clear operating models. Across 20+ years spanning university interpretation in Portugal, multi-market production in London, and enterprise program and operational leadership in Silicon Valley, I partner with cross-functional leaders to design durable systems, align incentives, and accelerate execution across global teams.',
   originStory: {
     title: 'The Origin: Why Access & Clarity Matter to Me',
     quickGrasp:
-      'I got my first computer in college in my twenties. Manuals were in English or awkward Portuguese, and search results in my native language were scarce. That early struggle taught me that technology only connects people when it is accessible, clear, and delivered in their own language.',
+      'When I got my first computer in college in Portugal, technical manuals were mostly in English or awkward Portuguese, and reliable information in my native language was scarce. Experiencing that gap firsthand taught me a lasting lesson: technology only creates real value when complex systems are clear, accessible, and designed around how people actually work.',
     deepDive:
-      'That foundational realization in Portugal became the throughline of my entire career across Microsoft, LinkedIn, Block, MIIS, and Apple: making complex information accessible across borders and building durable operational systems so global teams can execute with confidence.',
+      'That insight became the operating lens behind my work across Microsoft, LinkedIn, Block, MIIS, and Apple: moving from removing language barriers to building repeatable operational workflows, governance, and AI-enabled systems that help large, distributed organizations execute with speed and clarity.',
   },
   stats: [
-    { value: '4 Working Langs', label: 'Portuguese, English, Spanish, German' },
-    { value: '20+ Years', label: 'Continuous academic and enterprise delivery' },
-    { value: '30+ Credentials', label: 'Verified continuous education & leadership track' },
-    { value: 'DISC Planner', label: 'Certified style: structured, stabilizing follow-through' },
+    { value: '200 Mkts · 100 Langs', label: 'Global storefront & operational governance (Microsoft)' },
+    { value: '3x Team Scaling', label: 'Scaled localization PM org from 5 to 15 direct reports (Block)' },
+    { value: '67% Cycle Cut', label: 'Machine translation pilot reduced turnaround from 15 to 5 days' },
+    { value: 'DISC Planner Style', label: 'Certified style: structured, stabilizing follow-through' },
   ],
 };
 
-export const whyHireMe = {
-  sectionTitle: 'Why Work With Me',
-  sectionSubtitle: 'Executive value proposition: bringing calm structure, momentum, and operational rigor to complex programs',
-  quickGrasp:
-    'I thrive at bringing order and momentum to ambiguous, multi-team operations. Rather than just coordinating tickets, I partner with engineering, product, and business leads to build durable operating models, scale vendor ecosystems, and cut manual bottlenecks.',
-  pillars: [
-    {
-      id: 'extended-workforce',
-      icon: 'Users',
-      tag: 'Vendor & Extended Workforce',
-      title: 'Extended Workforce & Vendor Ecosystem Governance',
-      quickGrasp:
-        'Governed multi-agency and MSP models across 200 markets and 100 languages, turning open-ended vendor spend into performance-based SLAs and transparent scorecards.',
-      deepDive: [
-        'Structured master service agreements (MSAs) and performance-based SOWs with 5% to 10% YoY program optimizations and clear quality benchmarks (95%+ delivery output).',
-        'Deployed 24/7 Follow-the-Sun operational models and Human-in-the-Loop quality frameworks (such as TAUS DQF) across global teams.',
-        'At LinkedIn, founded the MARCOM localization program and scaled a 20-vendor MSP model alongside 2 FTE PMs, absorbing launch surges and reducing turnaround time by 30%.',
-      ],
-    },
-    {
-      id: 'scaling-orgs',
-      icon: 'TrendingUp',
-      tag: 'Org Growth & Change',
-      title: 'Scaling Program Management Teams from Ambiguity to Rhythm',
-      quickGrasp:
-        'Scaled high-performing PM organizations from the ground up, establishing repeatable operating cadences during rapid growth and company-wide pivots.',
-      deepDive: [
-        'At Block, scaled the global localization PM organization 3x from 5 to 15 FTE direct reports, managing launch readiness across 8 international markets and up to 37 products per market.',
-        'Navigated major corporate milestones: the Square-to-Block rebrand (Dec 2021), European expansion (France, Ireland, Spain GA), and Canadian banking rollouts.',
-        'Built clear career paths, onboarded distributed talent remotely, and established predictable quarterly operating rhythms.',
-      ],
-    },
-    {
-      id: 'technical-modernization',
-      icon: 'Cpu',
-      tag: 'AI & Workflow Modernization',
-      title: 'Workflow Automation & Practical AI Enablement',
-      quickGrasp:
-        'Bridging operations and engineering to eliminate spreadsheet toil: architecting API connectors, issue-triage automation, and evaluation pipelines.',
-      deepDive: [
-        'At Microsoft, deployed a Machine Translation pilot into marketing operations, reducing operational turnaround time from 15 days to 5 days across high-volume pipelines.',
-        'Designed API ingestion pipelines connecting Drupal, Eloqua, Salesforce, and Git to modern TMS systems at Infoblox, cutting fragmented manual handoffs.',
-        'On May to September 2026 contract at Apple via Mindsource/WPP, governed high-accountability production operations and Radar release triage across 20+ countries under strict NDA.',
-      ],
-    },
-    {
-      id: 'bridge-academia',
-      icon: 'GraduationCap',
-      tag: 'Curriculum & Mentorship',
-      title: 'The Bridge: Enterprise Leadership to Graduate Mentorship',
-      quickGrasp:
-        'Compressed 15+ years of real-world enterprise lessons into graduate curriculum, mentoring 90+ students and launching the first AI in Localization series.',
-      deepDive: [
-        'Invited as Visiting Professor at the Middlebury Institute of International Studies (MIIS) from Jul 2023 to Jul 2025 to modernize the flagship TLM/PGM program.',
-        'Created and hosted the institute inaugural "AI in Localization" series, bridging enterprise leaders (Block, GitLab, Coupa, Smartling) with graduate cohorts.',
-        'When Middlebury decided to wind down the Monterey campus, completed a deliberate transition back to enterprise tech, sharpening hands-on generative AI fluency.',
-      ],
-    },
-  ],
-};
-
-export const workStyle = {
-  sectionTitle: 'Work Style & Operating Habits',
-  sectionSubtitle: 'How I operate autonomously and keep cross-functional teams moving with momentum',
-  corePhilosophy:
-    'I view an L6 operational governance role not as adding administrative overhead, but as clarifying guardrails, removing bottlenecks, and eliminating manual toil so cross-functional teams can do their best work.',
-  principles: [
-    {
-      id: 'friction-removal',
-      icon: 'Zap',
-      title: 'Governance as an Accelerator, Not Bureaucracy',
-      tag: 'Systems-First',
-      quickGrasp:
-        'Structure should speed teams up rather than slow them down. I focus on clarifying ownership, defining clear SOW/SLA guardrails, and automating checks so teams avoid late rework.',
-      deepDive: [
-        'Proactively diagnose workflow bottlenecks across product, engineering, finance, and legal handoffs before they create launch friction.',
-        'Adopt a strict Minimum Viable Governance (MVG) standard: implement the critical 20% of controls that mitigate 80% of operational risk, keeping processes lean.',
-        'Replace multi-layered manual sign-offs with clear pre-production release criteria and automated verification gates.',
-      ],
-    },
-    {
-      id: 'signal-over-noise',
-      icon: 'MessageSquare',
-      title: 'Context and Intent Over Meeting Bloat',
-      tag: 'Communication',
-      quickGrasp:
-        'High-velocity teams drown in status meetings. I share structured context asynchronously, pair focused syncs with written pre-reads, and protect team focus for deep work.',
-      deepDive: [
-        'Institute collaborative pre-reads and written decision memos so sync meetings are reserved strictly for trade-offs and decisions.',
-        'Give reflective thinkers and introverted team members equal influence alongside fast verbal deciders through structured written feedback channels.',
-        'Eliminate repetitive status meetings by providing automated dashboard telemetry, transparent scorecards, and asynchronous milestone updates.',
-      ],
-    },
-    {
-      id: 'telemetry-judgment',
-      icon: 'Compass',
-      title: 'Telemetry Paired with Human Empathy',
-      tag: 'Decision-Making',
-      quickGrasp:
-        'Ground operational decisions in shared metrics and SLAs, but pair numbers with emotional intelligence to understand the real human pressures behind team performance.',
-      deepDive: [
-        'Anchor operational reviews in concrete data, delivery cycle times, and unit economics rather than subjective impressions.',
-        'Recognize that operational friction often signals competing incentives or unclear dependencies rather than personal resistance.',
-        'Maintain high psychological safety and blameless retrospectives so extended teams and external partners surface risks early without fear of blame.',
-      ],
-    },
-  ],
-};
-
-export const partnerArchetypes = {
-  sectionTitle: 'How I Partner Across Personalities',
-  sectionSubtitle: 'Cross-functional collaboration through active translation: decoding incentives, pressures, and communication styles',
-  premise:
-    'In complex organizations spanning Engineering, Finance, Legal, and external suppliers, what feels like personality friction is almost always structural friction in disguise. I adapt my communication, evidence, and pacing to match what each partner is held accountable to protect.',
-  archetypes: [
-    {
-      id: 'engineering',
-      name: 'The Analytical & Technical Partner',
-      roleContext: 'Core Engineering, Technical Leads & gTech',
-      avatar: '⚙️',
-      color: 'cyan',
-      tag: 'Data & Architecture',
-      quickGrasp:
-        'Driven by system integrity, clean architecture, and edge-case reliability. Skeptical of vague operational roadmaps or abstract process requests.',
-      approach: 'Meet them in their domain with structured logic, system flows, and technical clarity.',
-      tactics: [
-        'Bring data schemas, workflow diagrams, and concrete edge-case logic instead of high-level slide decks.',
-        'Translate operational requirements into clear user stories, API integration contracts, and testable acceptance criteria.',
-        'Respect engineering bandwidth by doing homework upfront and presenting structured options with defined technical trade-offs.',
-      ],
-      quote:
-        '"When I partner with engineering leads, I lead with workflow logic, API boundaries, and concrete failure modes so operational expectations are unambiguous."',
-    },
-    {
-      id: 'finance-legal',
-      name: 'The Risk & Fiscal Guardian',
-      roleContext: 'Procurement, Global People Ops (GPO), Finance & Legal',
-      avatar: '🛡️',
-      color: 'emerald',
-      tag: 'Compliance & Unit Economics',
-      quickGrasp:
-        'Driven by compliance, auditability, cost efficiency, and risk avoidance. Highly cautious of open-ended commitments or loose contracts.',
-      approach: 'Anchor every proposal in spend visibility, compliance boundaries, and measurable ROI.',
-      tactics: [
-        'Establish disciplined SOW/SLA boundaries, PO hygiene, invoice audit rhythms, and clear vendor rate card governance.',
-        'Present proposals with clear financial impact, cost avoidance models, and compliance guardrails.',
-        'Provide auditable documentation and proactive risk logs well ahead of quarterly budget and procurement reviews.',
-      ],
-      quote:
-        '"With procurement, finance, and legal partners, I speak their language: auditability, risk mitigation, and transparent unit economics."',
-    },
-    {
-      id: 'product-growth',
-      name: 'The High-Velocity Driver',
-      roleContext: 'Product Managers, Growth Leads & Launch Operations',
-      avatar: '🚀',
-      color: 'violet',
-      tag: 'Speed to Market',
-      quickGrasp:
-        'Driven by rapid time-to-market, feature adoption, and competitive momentum. Views heavy governance as friction that slows execution down.',
-      approach: 'Frame governance as an accelerator that protects speed by preventing late fire drills.',
-      tactics: [
-        'Demonstrate how automated pre-launch checks and localized asset readiness prevent post-launch rollbacks and customer friction.',
-        'Offer tiered service models (P0/P1/P2) so tier-1 launches receive full rigor while lower-tier experiments move quickly with lightweight checks.',
-        'Establish pre-aligned rollout criteria (sim-ship vs. phased rollouts) so release decisions happen without last-minute panic.',
-      ],
-      quote:
-        '"I show launch leads that well-designed guardrails are like brakes on a race car: they exist so the team can drive faster without crashing."',
-    },
-    {
-      id: 'vendors-extended',
-      name: 'The Extended & Matrixed Partner',
-      roleContext: 'MSP Vendors, Third-Party Agencies & Distributed Teams',
-      avatar: '🤝',
-      color: 'amber',
-      tag: 'Psychological Safety',
-      quickGrasp:
-        'Often hesitant to flag problems early due to fear of blame, contractual penalties, or hierarchy friction.',
-      approach: 'Cultivate deep psychological safety, transparent scorecards, and blameless retrospectives.',
-      tactics: [
-        'Establish transparent, mutually agreed scorecards where issues are treated as systemic opportunities rather than vendor failures.',
-        'Run blameless post-mortems after high-pressure launches, focusing on process and tooling improvements rather than fault-finding.',
-        'Treat extended teams as true operational partners by sharing broader business context and celebrating collective wins.',
-      ],
-      quote:
-        '"External suppliers do their best work when they know bottlenecks can be flagged early without fear of blame or punitive friction."',
-    },
-  ],
-};
-
-export const superpowersAndGrowth = {
-  sectionTitle: 'Superpowers & Growth Edge',
-  sectionSubtitle: 'Authentic self-awareness: where I create outsized leverage and how I actively calibrate my instincts',
-  strengths: [
-    {
-      id: 'ambiguity-to-structure',
-      type: 'Superpower',
-      badge: 'Operational Architecture',
-      title: 'Turning Ambiguity into Scalable Operating Models',
-      quickGrasp:
-        'Operating autonomously in decentralized or fragmented setups to establish structured ownership, clear SLAs, and repeatable rhythms without adding bureaucracy.',
-      deepDive: [
-        'When entering environments with inconsistent vendor terms, unstandardized handoffs, or undefined workflows, I diagnose root bottlenecks and architect clear, lightweight governance frameworks.',
-        'At Microsoft, built Center of Excellence storefront operations and ingestion pipelines across 200 markets and 100 languages, establishing repeatable playbooks that governed a 15+ vendor team.',
-        'At Block, scaled the localization PM organization from 5 to 15 direct reports and aligned launch readiness across 8 international markets with up to 37 products per market.',
-      ],
-    },
-    {
-      id: 'technical-translation',
-      type: 'Superpower',
-      badge: 'Technical & Operational Translation',
-      title: 'Bridging Engineering, Operations & AI Pipelines',
-      quickGrasp:
-        'Moving beyond status tracking or ticket routing to bridge technical and operational worlds: mapping API handoffs, automating ingestion, and evaluating AI/LLM workflows.',
-      deepDive: [
-        'Rather than acting as a traditional project coordinator, I dive into workflow architecture, API connectors (Drupal, Eloqua, Git), and machine translation evaluation pipelines to eliminate manual toil.',
-        'Authored comprehensive globalization strategies and LQA models that connect engineering pipelines with international content operations.',
-        'Created and hosted the Middlebury Institute inaugural "AI in Localization" series, bridging enterprise leaders (Block, GitLab, Coupa, Smartling) with graduate students and faculty.',
-      ],
-    },
-  ],
-  weakness: {
-    id: 'calibrated-weakness',
-    type: 'Growth Edge (Calibrated)',
-    badge: 'Minimum Viable Governance (MVG)',
-    title: 'Calibrating Upfront Design vs. Early Launch',
+export const functionalPillars = [
+  {
+    id: 'program-delivery',
+    number: '01',
+    title: 'Program & Cross-Org Delivery',
+    subtitle: 'Scaling Complex Multi-Team Execution',
+    color: 'violet',
+    avatar: '🎯',
     quickGrasp:
-      'My drive for thoroughness used to push me to design 100% of the architecture and map every theoretical edge case before launch. I have actively calibrated this by adopting Minimum Viable Governance.',
-    deepDive: [
-      'The Reflection: Earlier in my career, my instinct was to solve every theoretical edge case on paper before launching. In fast-paced tech environments, this upfront design could delay initial rollout and create unnecessary friction.',
-      'The Calibration: I now apply a strict Minimum Viable Governance (MVG) approach: defining the critical 20% of controls, compliance gates, and SLAs that mitigate 80% of operational risk, launching early, and iterating based on live operational telemetry.',
-      'The Result: Faster time-to-market, lighter initial processes, and governance models that evolve through real user and partner feedback rather than hypothetical assumptions.',
+      'I bring structure and clarity to high-ambiguity, multi-team initiatives by defining charters, dependencies, operating cadences, and measurable milestones across global stakeholders.',
+    sections: {
+      whyWorkWithMe: {
+        title: 'Why Work With Me',
+        text: 'I bring structure and clarity to high-ambiguity, multi-team initiatives by defining charters, dependencies, operating cadences, and measurable milestones across global stakeholders.',
+        highlights: [
+          'Step into fast-moving, multi-stakeholder spaces and establish clear priorities, decision rights, and repeatable workflows so teams do not lose cycles to ambiguity.',
+          'At Block, scaled the localization PM organization from 5 to 15 direct reports while navigating the corporate Square-to-Block rebrand across 8 international markets.',
+          'At LinkedIn, founded MARCOM localization program management, scaling a 20-vendor MSP model alongside 2 FTE PMs across 26 languages and 17 markets.',
+        ],
+      },
+      workStyle: {
+        title: 'Work Style & Habits',
+        text: 'I spot bottlenecks and scope drift early, facilitate transparent trade-offs, and keep momentum moving without relying on last-minute heroics.',
+        highlights: [
+          'Pair lightweight structure with crisp status visibility, surfacing dependencies and blockers early before they derail launch dates.',
+          'Institute collaborative written pre-reads and async review channels so live syncs stay reserved strictly for decisions and trade-offs.',
+          'Stay calm under pressure, follow through cleanly, and leave teams with durable operational systems rather than heroics.',
+        ],
+      },
+      partnerArchetypes: {
+        title: 'Partner Archetypes',
+        text: 'I align Engineering, Product, Operations, and regional leads around shared goals and clear decision rights.',
+        highlights: [
+          'Product & Engineering Leads: Translate strategic roadmaps and global requirements into testable release criteria, protecting engineering velocity.',
+          'Operations & Extended Partners: Align standards, handoffs, and transparent scorecards so distributed teams operate with psychological safety.',
+          'Regional Stakeholders: Bridge global standardization with market-specific realities across EMEA, LATAM, and APAC.',
+        ],
+      },
+      strengthsAndGrowth: {
+        title: 'Strengths & Growth Edge',
+        text: 'Known for calm execution under pressure and cross-functional alignment; I continuously tune how much process structure to introduce upfront so guardrails speed up teams rather than slow them down.',
+        highlights: [
+          'Superpower: Systems thinking, cross-functional alignment, and calm execution during high-stakes corporate transitions.',
+          'Calibrated Growth Edge: Minimum Viable Governance (MVG) - tuning how much process to introduce upfront so guardrails enable momentum rather than feeling heavy.',
+        ],
+      },
+    },
+    proofLinks: [
+      { label: 'Block 3x Org Scale & 8-Market Expansion', to: '/career', anchor: 'block' },
+      { label: 'LinkedIn MARCOM Multi-Wave Rollout', to: '/career', anchor: 'linkedin' },
     ],
   },
-};
+  {
+    id: 'product-ai-strategy',
+    number: '02',
+    title: 'Product & AI Workflow Strategy',
+    subtitle: 'Shaping High-Leverage Solutions & Automation',
+    color: 'cyan',
+    avatar: '⚡',
+    quickGrasp:
+      'I connect real user and operational friction to practical product and AI workflow solutions: moving from clear problem framing and rapid prototyping to scalable adoption.',
+    sections: {
+      whyWorkWithMe: {
+        title: 'Why Work With Me',
+        text: 'I connect real user and operational friction to practical product and AI workflow solutions: moving from clear problem framing and rapid prototyping to scalable adoption.',
+        highlights: [
+          'Rather than patching isolated bottlenecks, I design scalable processes, governance, and AI-enabled workflows that multiply output across teams.',
+          'At Microsoft, deployed a Machine Translation pilot into marketing operations, reducing operational turnaround time from 15 days to 5 days across high-volume pipelines.',
+          'At Infoblox, authored the global localization roadmap and engineered automated API ingestion pipelines connecting Drupal, Eloqua, Salesforce, and Git to modern TMS systems.',
+        ],
+      },
+      workStyle: {
+        title: 'Work Style & Habits',
+        text: 'I test assumptions early, design repeatable workflows, and integrate AI and automation to cut manual toil and accelerate iteration.',
+        highlights: [
+          'Actively integrate AI and workflow automation into everyday execution to reduce manual overhead and free teams for higher-order judgment.',
+          'Establish prompt evaluation guardrails, Human-in-the-Loop quality frameworks, and automated pre-production verification checks.',
+          'Focus on scalable systems that eliminate spreadsheet drag and manual ticket handoffs.',
+        ],
+      },
+      partnerArchetypes: {
+        title: 'Partner Archetypes',
+        text: 'I partner closely with Product, Engineering, Design, and operational teams to balance user impact, technical feasibility, and global scalability.',
+        highlights: [
+          'Core Engineering & Technical Leads: Meet them in their domain with system logic, data telemetry, API boundaries, and concrete failure modes.',
+          'Product & UX Leads: Frame governance as an accelerator that prevents late rollbacks through automated pre-release verification.',
+          'Operations Leads: Design intuitive interfaces and automated tooling so teams adopt new workflows with minimal training friction.',
+        ],
+      },
+      strengthsAndGrowth: {
+        title: 'Strengths & Growth Edge',
+        text: 'Strong at turning complex workflows into clear, actionable solutions; I stay intentional about prioritizing the highest-leverage bets and delegating execution details as initiatives mature.',
+        highlights: [
+          'Superpower: Technical and operational translation: bridging engineering data schemas with international business goals.',
+          'Calibrated Growth Edge: Selective delegation: focusing personal energy on the highest-leverage architectural bets while empowering team leads to own domain execution.',
+        ],
+      },
+    },
+    proofLinks: [
+      { label: 'Microsoft MT Turnaround Cut (15 to 5 Days)', to: '/career', anchor: 'microsoft' },
+      { label: 'Infoblox TMS/CMS API Architecture', to: '/career', anchor: 'infoblox' },
+      { label: 'AI in Localization Speaker Series (MIIS)', to: '/project/localization-training-program' },
+    ],
+  },
+  {
+    id: 'operational-enablement',
+    number: '03',
+    title: 'Operational Enablement & Governance',
+    subtitle: 'Building Repeatable Systems & Guardrails',
+    color: 'emerald',
+    avatar: '🛡️',
+    quickGrasp:
+      'I build scalable operating models, clear ownership structures, and fit-for-purpose governance that help growing organizations operate consistently across teams and markets.',
+    sections: {
+      whyWorkWithMe: {
+        title: 'Why Work With Me',
+        text: 'I build scalable operating models, clear ownership structures, and fit-for-purpose governance that help growing organizations operate consistently across teams and markets.',
+        highlights: [
+          'Establish structured operating cadences, transparent scorecards, and audit-ready governance across multi-vendor and extended-workforce programs.',
+          'At Microsoft, led Center of Excellence program initiatives spanning global storefront operations and ingestion pipelines across 200 markets and 100 languages, governing a 15+ agency team.',
+          'On contract at Apple via Mindsource/WPP (May to Sep 2026), governed production deliverable pipelines and Radar release triage across 20+ countries under strict NDA.',
+        ],
+      },
+      workStyle: {
+        title: 'Work Style & Habits',
+        text: 'I turn ad-hoc practices into documented playbooks, clear metrics, and early risk checks that sustain quality after launch.',
+        highlights: [
+          'Structure master service agreements (MSAs) and performance-based SOWs with 5% to 10% YoY program optimizations and clear quality benchmarks (95%+ delivery output).',
+          'Deploy 24/7 Follow-the-Sun operational rhythms and Human-in-the-Loop review models (such as TAUS DQF) across global teams.',
+          'Pair shared operational telemetry with sound business judgment, replacing subjective consensus with auditable metrics.',
+        ],
+      },
+      partnerArchetypes: {
+        title: 'Partner Archetypes',
+        text: 'I work alongside executive sponsors, program/product leaders, and operational teams to align standards, clarify handoffs, and drive adoption.',
+        highlights: [
+          'Procurement, Finance & Legal: Speak their language: auditability, risk mitigation, PO/invoice hygiene, and transparent unit economics.',
+          'Executive Sponsors: Distill complex multi-team operations into decision-ready MBR/QBR dashboards with clear trade-off choices.',
+          'MSP Vendors & External Suppliers: Cultivate deep psychological safety, blameless retrospectives, and scorecards where issues are treated as systemic opportunities.',
+        ],
+      },
+      strengthsAndGrowth: {
+        title: 'Strengths & Growth Edge',
+        text: 'Excels at bringing clarity, cross-cultural nuance, and durable structure to complex operations; I keep governance lightweight and enabling so teams retain autonomy and speed.',
+        highlights: [
+          'Superpower: Transforming fragmented or decentralized setups into structured, lightweight governance models that scale without bureaucracy.',
+          'Calibrated Growth Edge: Minimum Viable Governance: deploying the critical 20% of controls that mitigate 80% of operational risk, launching early, and iterating based on live telemetry.',
+        ],
+      },
+    },
+    proofLinks: [
+      { label: 'Microsoft Center of Excellence & Storefront Operations', to: '/career', anchor: 'microsoft' },
+      { label: 'AppleCare Release Triage & Radar SLAs', to: '/career', anchor: 'apple-2014' },
+      { label: 'Apple 2026 Production Operations (Contract)', to: '/career', anchor: 'apple-2026' },
+    ],
+  },
+];
 
 export const personalSide = {
-  sectionTitle: 'The Personal Side',
-  sectionSubtitle: 'What fuels my perspective, leadership philosophy, and energy beyond day-to-day program delivery',
+  sectionTitle: 'Beyond the Resume',
+  sectionSubtitle: 'What fuels my perspective, leadership philosophy, and energy as a multiplier across organizations',
   pillars: [
     {
       id: 'polyglot-cultural',
       icon: 'Languages',
       title: 'Polyglot Fluency & Cultural Empathy',
       quickGrasp:
-        'Language is more than vocabulary; it is a lens into how different cultures prioritize trust, urgency, and directness. Operating across Portuguese, English, Spanish, German, and French shaped my active translation leadership style.',
+        'Operating fluently across Portuguese, English, Spanish, German, and French shaped my leadership style into active translation: listening for unspoken assumptions, regional nuances, and cultural context in high-stakes global decisions.',
       details:
-        'Growing up in Portugal, studying conference interpreting, and living in London before settling in Silicon Valley gave me a natural instinct to listen for unspoken assumptions, regional nuances, and cultural context in every meeting.',
+        'Growing up in Portugal, training in conference interpretation, and living in London before settling in Silicon Valley gave me a natural instinct for how different cultures build trust, balance urgency, and navigate direct communication.',
     },
     {
       id: 'lifelong-learning',
       icon: 'BookOpen',
       title: 'Continuous Learning (#superlearning)',
       quickGrasp:
-        'Recognized among LinkedIn Top 12% Super Learners globally, holding 30+ verified credentials in AI fluency, project management, and executive communication.',
+        'Recognized among LinkedIn Top 12% Super Learners globally, holding 30+ verified credentials across Anthropic AI fluency, Google Project Management, Stanford executive communication, and certified DISC profiling.',
       details:
-        'From Anthropic Academy AI foundations and Google Project Management to Stanford executive communication and Tony Robbins certified DISC profiling, I invest continuously in sharpening my craft and staying on the leading edge of technology.',
+        'I treat learning as an active operational lever: immediately translating emerging AI frameworks, project management standards, and communication methodologies into everyday team execution and workflow improvements.',
     },
     {
       id: 'mentorship-community',
       icon: 'Users',
-      title: 'Mentorship & Community Leadership',
+      title: 'Mentorship & Org Multiplier',
       quickGrasp:
-        'Passionate about empowering the next generation of program managers and women in technology, bridging academic programs with enterprise expectations.',
+        'Passionate about raising the bar across teams and empowering the next generation of program managers, bridging academic training with enterprise expectations.',
       details:
-        'As Visiting Professor at the Middlebury Institute of International Studies (MIIS), modernized the TLM/PGM curriculum, advised graduate cohorts, and hosted industry leaders. Active contributor and speaker for Women in Localization.',
+        'As Visiting Professor at the Middlebury Institute of International Studies (MIIS) from Jul 2023 to Jul 2025, modernized the flagship TLM/PGM curriculum, advised 90+ graduate students, and launched the first AI in Localization series. Active speaker and contributor for Women in Localization.',
     },
   ],
 };

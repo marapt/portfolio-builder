@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import {
-  Compass,
   Users,
-  TrendingUp,
   Cpu,
   GraduationCap,
   Zap,
-  MessageSquare,
   Languages,
   BookOpen,
   ChevronDown,
@@ -15,39 +13,64 @@ import {
   Sparkles,
   ShieldCheck,
   CheckCircle2,
-  Quote,
   Layers,
   HeartHandshake,
   Maximize2,
   Minimize2,
+  ArrowRight,
+  Target,
+  Compass,
 } from 'lucide-react';
 import {
   aboutHero as aboutHeroEN,
-  whyHireMe as whyHireMeEN,
-  workStyle as workStyleEN,
-  partnerArchetypes as partnerArchetypesEN,
-  superpowersAndGrowth as superpowersAndGrowthEN,
+  functionalPillars as functionalPillarsEN,
   personalSide as personalSideEN,
 } from '../data/about/en';
 import {
   aboutHero as aboutHeroPT,
-  whyHireMe as whyHireMePT,
-  workStyle as workStylePT,
-  partnerArchetypes as partnerArchetypesPT,
-  superpowersAndGrowth as superpowersAndGrowthPT,
+  functionalPillars as functionalPillarsPT,
   personalSide as personalSidePT,
 } from '../data/about/pt';
 
 const iconMap = {
   Users,
-  TrendingUp,
   Cpu,
   GraduationCap,
   Zap,
-  MessageSquare,
   Compass,
   Languages,
   BookOpen,
+  ShieldCheck,
+  HeartHandshake,
+  Target,
+  Layers,
+};
+
+const pillarColorMap = {
+  violet: {
+    badge: 'border-violet-400/30 bg-violet-400/10 text-violet-200',
+    border: 'border-violet-500/25 hover:border-violet-400/40',
+    glow: 'from-violet-950/25 via-slate-900/40 to-slate-950/40',
+    accentText: 'text-violet-400',
+    subCardBg: 'bg-violet-950/15 border-violet-500/15',
+    pill: 'bg-violet-400/10 hover:bg-violet-400/20 text-violet-200 border-violet-400/30',
+  },
+  cyan: {
+    badge: 'border-cyan-400/30 bg-cyan-400/10 text-cyan-200',
+    border: 'border-cyan-500/25 hover:border-cyan-400/40',
+    glow: 'from-cyan-950/25 via-slate-900/40 to-slate-950/40',
+    accentText: 'text-cyan-400',
+    subCardBg: 'bg-cyan-950/15 border-cyan-500/15',
+    pill: 'bg-cyan-400/10 hover:bg-cyan-400/20 text-cyan-200 border-cyan-400/30',
+  },
+  emerald: {
+    badge: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-200',
+    border: 'border-emerald-500/25 hover:border-emerald-400/40',
+    glow: 'from-emerald-950/25 via-slate-900/40 to-slate-950/40',
+    accentText: 'text-emerald-400',
+    subCardBg: 'bg-emerald-950/15 border-emerald-500/15',
+    pill: 'bg-emerald-400/10 hover:bg-emerald-400/20 text-emerald-200 border-emerald-400/30',
+  },
 };
 
 const AboutMe = () => {
@@ -55,32 +78,31 @@ const AboutMe = () => {
   const isPt = i18n.language && i18n.language.startsWith('pt');
 
   const hero = isPt ? aboutHeroPT : aboutHeroEN;
-  const why = isPt ? whyHireMePT : whyHireMeEN;
-  const style = isPt ? workStylePT : workStyleEN;
-  const archetypes = isPt ? partnerArchetypesPT : partnerArchetypesEN;
-  const superpowers = isPt ? superpowersAndGrowthPT : superpowersAndGrowthEN;
+  const pillars = isPt ? functionalPillarsPT : functionalPillarsEN;
   const personal = isPt ? personalSidePT : personalSideEN;
 
-  // Active section filter tabs
+  // Active pillar filter tab
   const [activeTab, setActiveTab] = useState('all');
 
   // Track expanded cards by ID
   const [expandedCards, setExpandedCards] = useState({
     'origin-story': false,
-    'extended-workforce': false,
-    'scaling-orgs': false,
-    'technical-modernization': false,
-    'bridge-academia': false,
-    'friction-removal': false,
-    'signal-over-noise': false,
-    'telemetry-judgment': false,
-    engineering: false,
-    'finance-legal': false,
-    'product-growth': false,
-    'vendors-extended': false,
-    'ambiguity-to-structure': false,
-    'technical-translation': false,
-    'calibrated-weakness': false,
+    // Pillar 1
+    'program-delivery-whyWorkWithMe': false,
+    'program-delivery-workStyle': false,
+    'program-delivery-partnerArchetypes': false,
+    'program-delivery-strengthsAndGrowth': false,
+    // Pillar 2
+    'product-ai-strategy-whyWorkWithMe': false,
+    'product-ai-strategy-workStyle': false,
+    'product-ai-strategy-partnerArchetypes': false,
+    'product-ai-strategy-strengthsAndGrowth': false,
+    // Pillar 3
+    'operational-enablement-whyWorkWithMe': false,
+    'operational-enablement-workStyle': false,
+    'operational-enablement-partnerArchetypes': false,
+    'operational-enablement-strengthsAndGrowth': false,
+    // Personal Side
     'polyglot-cultural': false,
     'lifelong-learning': false,
     'mentorship-community': false,
@@ -105,12 +127,43 @@ const AboutMe = () => {
   };
 
   const navTabs = [
-    { id: 'all', label: isPt ? 'Visão Geral' : 'All Sections' },
-    { id: 'why', label: isPt ? 'Porque Colaborar' : 'Why Work With Me' },
-    { id: 'style', label: isPt ? 'Estilo de Trabalho' : 'Work Style & Habits' },
-    { id: 'archetypes', label: isPt ? 'Parcerias & Perfis' : 'Partner Archetypes' },
-    { id: 'superpowers', label: isPt ? 'Superpoderes' : 'Strengths & Growth' },
-    { id: 'personal', label: isPt ? 'Lado Pessoal' : 'Personal Journey' },
+    { id: 'all', label: isPt ? 'Todos os Pilares' : 'All Pillars' },
+    ...pillars.map((p) => ({
+      id: p.id,
+      label: `${p.number} · ${p.title}`,
+    })),
+    { id: 'personal', label: isPt ? '04 · Além do Currículo' : '04 · Beyond the Resume' },
+  ];
+
+  const subSectionConfig = [
+    {
+      key: 'whyWorkWithMe',
+      icon: Target,
+      label: isPt ? 'Proposta de Valor' : 'Why Work With Me',
+      expandLabel: isPt ? 'Ver métricas e impacto' : 'View proof & metrics',
+      collapseLabel: isPt ? 'Recolher métricas' : 'Collapse proof',
+    },
+    {
+      key: 'workStyle',
+      icon: Zap,
+      label: isPt ? 'Estilo de Trabalho' : 'Work Style & Habits',
+      expandLabel: isPt ? 'Ver regras práticas' : 'View operating rules',
+      collapseLabel: isPt ? 'Recolher regras' : 'Collapse rules',
+    },
+    {
+      key: 'partnerArchetypes',
+      icon: Users,
+      label: isPt ? 'Perfis de Parceria' : 'Partner Archetypes',
+      expandLabel: isPt ? 'Ver alinhamento por área' : 'View cross-org alignment',
+      collapseLabel: isPt ? 'Recolher alinhamento' : 'Collapse alignment',
+    },
+    {
+      key: 'strengthsAndGrowth',
+      icon: ShieldCheck,
+      label: isPt ? 'Superpoderes & Crescimento' : 'Strengths & Growth Edge',
+      expandLabel: isPt ? 'Ver calibração e foco' : 'View growth calibration',
+      collapseLabel: isPt ? 'Recolher calibração' : 'Collapse calibration',
+    },
   ];
 
   return (
@@ -226,392 +279,147 @@ const AboutMe = () => {
         </div>
       </nav>
 
-      {/* SECTION 1: Why Work With Me */}
-      {(activeTab === 'all' || activeTab === 'why') && (
-        <section className="space-y-6 text-left" id="why-work-with-me">
-          <div className="space-y-1.5">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-cyan-400">
-              01 · {isPt ? 'Proposta Executiva' : 'Executive Value Proposition'}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              {why.sectionTitle}
-            </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-3xl leading-relaxed">
-              {why.quickGrasp}
-            </p>
-          </div>
+      {/* 3 CORE FUNCTIONAL PILLARS */}
+      <div className="space-y-12">
+        {pillars
+          .filter((pillar) => activeTab === 'all' || activeTab === pillar.id)
+          .map((pillar) => {
+            const colors = pillarColorMap[pillar.color] || pillarColorMap.violet;
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {why.pillars.map((pillar) => {
-              const Icon = iconMap[pillar.icon] || Users;
-              const isExpanded = expandedCards[pillar.id];
-
-              return (
-                <div
-                  key={pillar.id}
-                  className="glass-card rounded-3xl p-6 sm:p-7 border border-white/10 flex flex-col justify-between transition-all hover:border-cyan-400/30"
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2.5 rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-300">
-                          <Icon size={20} />
-                        </div>
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-400">
-                          {pillar.tag}
+            return (
+              <section
+                key={pillar.id}
+                id={pillar.id}
+                className={`glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border ${colors.border} bg-gradient-to-br ${colors.glow} text-left space-y-8 transition-all shadow-2xl`}
+              >
+                {/* Pillar Header */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
+                  <div className="flex items-start gap-4">
+                    <span className="text-3xl sm:text-4xl p-2.5 rounded-2xl bg-white/5 border border-white/10 shrink-0" role="img" aria-label={pillar.title}>
+                      {pillar.avatar}
+                    </span>
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className={`text-[11px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${colors.badge}`}>
+                          {pillar.number} · {isPt ? 'Pilar Funcional' : 'Core Pillar'}
                         </span>
                       </div>
-                      <button
-                        onClick={() => toggleCard(pillar.id)}
-                        className="text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1 px-3 py-1.5 rounded-lg border border-white/10 hover:border-cyan-400/40 bg-white/5 transition-all cursor-pointer"
-                        aria-expanded={isExpanded}
+                      <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                        {pillar.title}
+                      </h2>
+                      <p className={`text-sm sm:text-base font-semibold ${colors.accentText}`}>
+                        {pillar.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Quick Grasp Banner */}
+                <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 text-sm sm:text-base text-slate-200 leading-relaxed">
+                  <span className="font-bold text-white block mb-1">
+                    {isPt ? 'Resumo Executivo:' : 'Executive Summary:'}
+                  </span>
+                  {pillar.quickGrasp}
+                </div>
+
+                {/* 4 Internal Dimensions: 2x2 Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                  {subSectionConfig.map(({ key, icon: SubIcon, label, expandLabel, collapseLabel }) => {
+                    const sectionData = pillar.sections[key];
+                    if (!sectionData) return null;
+                    const cardKey = `${pillar.id}-${key}`;
+                    const isExpanded = expandedCards[cardKey];
+
+                    return (
+                      <div
+                        key={key}
+                        className={`glass-card rounded-2xl p-5 sm:p-6 border ${colors.subCardBg} flex flex-col justify-between transition-all hover:border-white/20`}
                       >
-                        {isExpanded ? (
-                          <>
-                            {isPt ? 'Fechar' : 'Close'} <ChevronUp size={14} />
-                          </>
-                        ) : (
-                          <>
-                            {isPt ? 'Detalhes' : 'Deep Dive'} <ChevronDown size={14} />
-                          </>
-                        )}
-                      </button>
-                    </div>
+                        <div className="space-y-3.5">
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-2.5">
+                              <div className="p-2 rounded-xl bg-white/5 border border-white/10 text-slate-300">
+                                <SubIcon size={16} />
+                              </div>
+                              <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
+                                {label}
+                              </span>
+                            </div>
+                            <button
+                              onClick={() => toggleCard(cardKey)}
+                              className="text-xs font-bold text-slate-300 hover:text-white flex items-center gap-1 px-2.5 py-1 rounded-lg border border-white/10 hover:border-white/30 bg-white/5 transition-all cursor-pointer"
+                              aria-expanded={isExpanded}
+                            >
+                              <span>{isExpanded ? collapseLabel : expandLabel}</span>
+                              {isExpanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+                            </button>
+                          </div>
 
-                    <h3 className="text-lg font-bold text-white tracking-tight">
-                      {pillar.title}
-                    </h3>
-
-                    <p className="text-sm text-slate-300 leading-relaxed font-normal">
-                      {pillar.quickGrasp}
-                    </p>
-                  </div>
-
-                  {isExpanded && (
-                    <div className="mt-5 pt-5 border-t border-white/10 space-y-2.5 bg-black/20 -mx-6 -mb-6 p-6 rounded-b-3xl">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                        {isPt ? 'Evidências & Impacto em Produção' : 'Proven Levers & Enterprise Metrics'}
-                      </span>
-                      <ul className="space-y-2 pt-1">
-                        {pillar.deepDive.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            <CheckCircle2 size={15} className="text-cyan-400 shrink-0 mt-0.5" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* SECTION 2: Work Style & Operating Habits */}
-      {(activeTab === 'all' || activeTab === 'style') && (
-        <section className="space-y-6 text-left" id="work-style">
-          <div className="space-y-1.5">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-violet-400">
-              02 · {isPt ? 'Hábitos e Ritmo' : 'Operating Rhythm & Habits'}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              {style.sectionTitle}
-            </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-3xl leading-relaxed">
-              {style.corePhilosophy}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {style.principles.map((principle) => {
-              const Icon = iconMap[principle.icon] || Zap;
-              const isExpanded = expandedCards[principle.id];
-
-              return (
-                <div
-                  key={principle.id}
-                  className="glass-card rounded-3xl p-6 border border-white/10 flex flex-col justify-between transition-all hover:border-violet-400/30"
-                >
-                  <div className="space-y-3.5">
-                    <div className="flex items-center justify-between">
-                      <div className="p-2.5 rounded-xl bg-violet-400/10 border border-violet-400/20 text-violet-300">
-                        <Icon size={20} />
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-violet-400 px-2.5 py-1 rounded-full bg-violet-400/10 border border-violet-400/20">
-                        {principle.tag}
-                      </span>
-                    </div>
-
-                    <h3 className="text-base font-bold text-white tracking-tight">
-                      {principle.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                      {principle.quickGrasp}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 mt-4 border-t border-white/10">
-                    <button
-                      onClick={() => toggleCard(principle.id)}
-                      className="w-full flex items-center justify-between text-xs font-bold text-violet-300 hover:text-white py-1 transition-all cursor-pointer"
-                      aria-expanded={isExpanded}
-                    >
-                      <span>{isExpanded ? (isPt ? 'Recolher detalhes' : 'Collapse details') : (isPt ? 'Ver regras práticas' : 'View operating rules')}</span>
-                      {isExpanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
-                    </button>
-
-                    {isExpanded && (
-                      <ul className="mt-3 space-y-2 pt-3 border-t border-white/10 text-xs text-slate-300">
-                        {principle.deepDive.map((rule, idx) => (
-                          <li key={idx} className="flex items-start gap-2 leading-relaxed">
-                            <span className="text-violet-400 mt-0.5">•</span>
-                            <span>{rule}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* SECTION 3: How I Partner Across Personalities */}
-      {(activeTab === 'all' || activeTab === 'archetypes') && (
-        <section className="space-y-6 text-left" id="partner-archetypes">
-          <div className="space-y-1.5">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-cyan-400">
-              03 · {isPt ? 'Colaboração Multifuncional' : 'Cross-Functional Partnership'}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              {archetypes.sectionTitle}
-            </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-3xl leading-relaxed">
-              {archetypes.premise}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {archetypes.archetypes.map((arch) => {
-              const isExpanded = expandedCards[arch.id];
-              const borderColors = {
-                cyan: 'hover:border-cyan-400/40',
-                emerald: 'hover:border-emerald-400/40',
-                violet: 'hover:border-violet-400/40',
-                amber: 'hover:border-amber-400/40',
-              };
-
-              return (
-                <div
-                  key={arch.id}
-                  className={`glass-card rounded-3xl p-6 sm:p-7 border border-white/10 transition-all ${borderColors[arch.color] || 'hover:border-cyan-400/30'} flex flex-col justify-between`}
-                >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl" role="img" aria-label={arch.name}>
-                          {arch.avatar}
-                        </span>
-                        <div>
-                          <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
-                            {arch.name}
+                          <h3 className="text-base font-bold text-white tracking-tight">
+                            {sectionData.title}
                           </h3>
-                          <span className="text-xs text-slate-400 font-medium">
-                            {arch.roleContext}
-                          </span>
+
+                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                            {sectionData.text}
+                          </p>
                         </div>
+
+                        {/* Expandable Highlights / Evidence */}
+                        {isExpanded && (
+                          <div className="mt-4 pt-4 border-t border-white/10 space-y-2 bg-black/25 -mx-5 -mb-5 p-5 rounded-b-2xl">
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-2">
+                              {isPt ? 'Evidências & Ações Concretas' : 'Proven Levers & Concrete Impact'}
+                            </span>
+                            <ul className="space-y-2">
+                              {sectionData.highlights.map((item, idx) => (
+                                <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-300 leading-relaxed">
+                                  <CheckCircle2 size={14} className={`${colors.accentText} shrink-0 mt-0.5`} />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300">
-                        {arch.tag}
-                      </span>
-                    </div>
-
-                    <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                      <strong className="text-white block mb-1">
-                        {isPt ? 'Incentivo Principal & Ceticismo:' : 'Underlying Pressure & Concern:'}
-                      </strong>
-                      {arch.quickGrasp}
-                    </div>
-
-                    <div className="text-xs sm:text-sm text-cyan-200/90 font-medium">
-                      <span className="text-slate-400 font-bold">{isPt ? 'Como Adapto:' : 'How I Adapt:'} </span>
-                      {arch.approach}
-                    </div>
-                  </div>
-
-                  <div className="mt-5 pt-4 border-t border-white/10">
-                    <button
-                      onClick={() => toggleCard(arch.id)}
-                      className="w-full flex items-center justify-between text-xs font-bold text-cyan-300 hover:text-white py-1 transition-all cursor-pointer"
-                      aria-expanded={isExpanded}
-                    >
-                      <span>
-                        {isExpanded
-                          ? (isPt ? 'Recolher táticas & exemplo' : 'Collapse tactics & example')
-                          : (isPt ? 'Ver táticas concretas & citação' : 'View concrete tactics & quote')}
-                      </span>
-                      {isExpanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
-                    </button>
-
-                    {isExpanded && (
-                      <div className="mt-4 space-y-3.5 pt-3 border-t border-white/10">
-                        <ul className="space-y-2 text-xs text-slate-300">
-                          {arch.tactics.map((tactic, idx) => (
-                            <li key={idx} className="flex items-start gap-2 leading-relaxed">
-                              <CheckCircle2 size={14} className="text-cyan-400 shrink-0 mt-0.5" />
-                              <span>{tactic}</span>
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="bg-black/30 rounded-xl p-3.5 border-l-2 border-cyan-400 text-xs italic text-slate-300 leading-relaxed flex items-start gap-2">
-                          <Quote size={14} className="text-cyan-400 shrink-0 mt-0.5" />
-                          <span>{arch.quote}</span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
 
-      {/* SECTION 4: Superpowers & Growth Edge */}
-      {(activeTab === 'all' || activeTab === 'superpowers') && (
-        <section className="space-y-6 text-left" id="superpowers">
-          <div className="space-y-1.5">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-emerald-400">
-              04 · {isPt ? 'Autoconhecimento Executivo' : 'Executive Self-Awareness'}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              {superpowers.sectionTitle}
-            </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-3xl leading-relaxed">
-              {superpowers.sectionSubtitle}
-            </p>
-          </div>
+                {/* Proof Links Footer */}
+                {pillar.proofLinks && pillar.proofLinks.length > 0 && (
+                  <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                      {isPt ? 'Evidências & Casos Práticos:' : 'Enterprise Proof & Career Case Studies:'}
+                    </span>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {pillar.proofLinks.map((link, idx) => {
+                        const targetUrl = link.anchor ? `${link.to}#${link.anchor}` : link.to;
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-            {/* Strengths */}
-            {superpowers.strengths.map((str) => {
-              const isExpanded = expandedCards[str.id];
-
-              return (
-                <div
-                  key={str.id}
-                  className="glass-card rounded-3xl p-6 sm:p-7 border border-emerald-500/20 bg-emerald-950/10 flex flex-col justify-between transition-all hover:border-emerald-400/40"
-                >
-                  <div className="space-y-3.5">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400 px-2.5 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20">
-                        <ShieldCheck size={12} />
-                        {str.badge}
-                      </span>
+                        return (
+                          <Link
+                            key={idx}
+                            to={targetUrl}
+                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition-all shadow-sm ${colors.pill}`}
+                          >
+                            <span>{link.label}</span>
+                            <ArrowRight size={13} />
+                          </Link>
+                        );
+                      })}
                     </div>
-
-                    <h3 className="text-lg font-bold text-white tracking-tight">
-                      {str.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                      {str.quickGrasp}
-                    </p>
                   </div>
+                )}
+              </section>
+            );
+          })}
+      </div>
 
-                  <div className="mt-5 pt-4 border-t border-white/10">
-                    <button
-                      onClick={() => toggleCard(str.id)}
-                      className="w-full flex items-center justify-between text-xs font-bold text-emerald-300 hover:text-white py-1 transition-all cursor-pointer"
-                      aria-expanded={isExpanded}
-                    >
-                      <span>
-                        {isExpanded ? (isPt ? 'Recolher exemplos' : 'Collapse proof') : (isPt ? 'Ver exemplos em escala' : 'View scale proof')}
-                      </span>
-                      {isExpanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
-                    </button>
-
-                    {isExpanded && (
-                      <ul className="mt-3 space-y-2 pt-3 border-t border-white/10 text-xs text-slate-300">
-                        {str.deepDive.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-2 leading-relaxed">
-                            <span className="text-emerald-400 mt-0.5">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* Calibrated Weakness / Growth Edge */}
-            {(() => {
-              const weak = superpowers.weakness;
-              const isExpanded = expandedCards[weak.id];
-
-              return (
-                <div className="glass-card rounded-3xl p-6 sm:p-7 border border-amber-500/25 bg-amber-950/10 flex flex-col justify-between transition-all hover:border-amber-400/40">
-                  <div className="space-y-3.5">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-amber-300 px-2.5 py-1 rounded-full bg-amber-400/10 border border-amber-400/20">
-                        <Layers size={12} />
-                        {weak.badge}
-                      </span>
-                    </div>
-
-                    <h3 className="text-lg font-bold text-white tracking-tight">
-                      {weak.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                      {weak.quickGrasp}
-                    </p>
-                  </div>
-
-                  <div className="mt-5 pt-4 border-t border-white/10">
-                    <button
-                      onClick={() => toggleCard(weak.id)}
-                      className="w-full flex items-center justify-between text-xs font-bold text-amber-300 hover:text-white py-1 transition-all cursor-pointer"
-                      aria-expanded={isExpanded}
-                    >
-                      <span>
-                        {isExpanded ? (isPt ? 'Recolher calibração' : 'Collapse calibration') : (isPt ? 'Ver calibração e resultado' : 'View calibration & outcome')}
-                      </span>
-                      {isExpanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
-                    </button>
-
-                    {isExpanded && (
-                      <ul className="mt-3 space-y-2 pt-3 border-t border-white/10 text-xs text-slate-300">
-                        {weak.deepDive.map((item, idx) => (
-                          <li key={idx} className="flex items-start gap-2 leading-relaxed">
-                            <span className="text-amber-400 mt-0.5">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              );
-            })()}
-          </div>
-        </section>
-      )}
-
-      {/* SECTION 5: The Personal Side */}
+      {/* SECTION 4: Beyond the Resume (Personal Side) */}
       {(activeTab === 'all' || activeTab === 'personal') && (
         <section className="space-y-6 text-left" id="personal-side">
           <div className="space-y-1.5">
             <span className="text-xs font-black uppercase tracking-[0.18em] text-cyan-400">
-              05 · {isPt ? 'Além do Currículo' : 'Beyond the Resume'}
+              04 · {isPt ? 'Além do Currículo' : 'Beyond the Resume'}
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
               {personal.sectionTitle}
