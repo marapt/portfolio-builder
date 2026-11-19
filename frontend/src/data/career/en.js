@@ -1910,7 +1910,7 @@ export const timelineItems = [
         linkLabel: 'Microsoft Store Retail Transformation Announcement',
       },
       {
-        text: 'One Microsoft Ecosystem Alignment & Xbox Store Rebrand: Aligned with Satya Nadella’s "One Microsoft" vision, coordinated as Program Manager across partner teams and the Xbox organization to align the Xbox Store experience and rebrand to the unified Microsoft Store. Governed cross-platform experience parity, decoupled input mechanics (resolving dynamically to console controller, PC mouse, or touch prompts across devices), and enforced TV title-safe layout margins across 38 global markets.',
+        text: 'One Microsoft Ecosystem Alignment & Xbox Store Rebrand: Aligned with Satya Nadella’s "One Microsoft" vision, coordinated as Program Manager across partner teams and the Xbox organization to align the Xbox Store experience and rebrand to the unified Microsoft Store. Conducted a cross-surface audit of Microsoft Stores across Windows OS, digital web, and the Xbox portal, partnering with Engineering to ensure consistent name rebrand alignment (from Office and Xbox Store to Microsoft Store) and maintain a unified look and feel that simplified the user experience, drove adoption, and optimized the consumer purchase journey.',
         url: 'https://www.techtarget.com/news/Microsoft-Store/851509/',
         linkLabel: 'TechTarget: Xbox & Microsoft Store Architecture',
       },
@@ -2312,11 +2312,11 @@ export const timelineItems = [
         {
           id: 'xbox-store-rebrand',
           title: '8. One Microsoft Vision: Xbox Store Integration & Rebrand',
-          badge: 'One Microsoft · Xbox Store Merger · Cross-Platform Experience Parity',
+          badge: 'One Microsoft · Xbox Store Merger · Cross-Platform Rebrand Alignment',
           defaultOpen: false,
           columns: 1,
           summary:
-            'Aligned with Satya Nadella’s "One Microsoft" enterprise vision, coordinated across cross-functional partner teams and the Xbox organization to align the Xbox Store experience and rebrand it to the unified Microsoft Store. Overcame critical cross-platform release divergence across Xbox console TV UI, Windows desktop, and mobile web storefronts: decoupled device input mechanics (resolving dynamically to "Press A", "Click", or "Tap" tokens), enforced surface-specific TV title-safe margins, and eliminated localization defects to achieve day-and-date launches across 38 global markets.',
+            'Aligned with Satya Nadella’s "One Microsoft" enterprise vision, coordinated across partner teams and the Xbox organization as Program Manager to align the Xbox Store experience and rebrand it to the unified Microsoft Store. Conducted a comprehensive audit of Microsoft Stores across Windows OS, digital web, and the Xbox portal, partnering with Engineering to ensure consistent name rebrand alignment (from Office and Xbox Store to Microsoft Store) and maintain a cohesive look and feel across platforms to simplify the user experience, increase customer adoption, and optimize the consumer purchase funnel.',
           links: [
             {
               label: 'TechTarget: Microsoft Store Evolution & Xbox Store Merger',
