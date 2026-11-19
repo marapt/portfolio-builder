@@ -20,8 +20,15 @@ describe('About Me dataset & structure', () => {
     expect(aboutPT.aboutHero.title).toBe(
       'Líder Global de PgM & Gestora de Operações de Coração - Expansão para a Gestão de Programas Empresariais'
     );
-    expect(aboutEN.aboutHero.originStory.title).toContain('Why Access');
-    expect(aboutEN.aboutHero.originStory.quickGrasp).toContain('first computer');
+    expect(aboutEN.aboutHero.originStory.title).toBe(
+      'My Journey: Language + Tech = Access = User-First'
+    );
+    expect(aboutEN.aboutHero.originStory.quickGrasp).toContain(
+      "clarity isn't cosmetic: it's access"
+    );
+    expect(aboutPT.aboutHero.originStory.title).toBe(
+      'A Minha Jornada: Língua + Tecnologia = Acesso = Foco no Utilizador'
+    );
     expect(aboutEN.aboutHero.stats).toHaveLength(4);
     expect(aboutEN.aboutHero.stats.map((s) => s.value)).toEqual([
       '200 Mkts · 100 Langs',

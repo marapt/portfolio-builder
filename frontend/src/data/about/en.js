@@ -12,11 +12,11 @@ export const aboutHero = {
   quickGrasp:
     'Grounded in years of scaling global rollouts, tooling workflows, and cross-functional operations across major tech organizations, I bring high-scale program leadership into broader enterprise PgM: turning ambiguous, cross-org initiatives into predictable operating systems and measurable outcomes across teams, systems, and markets.',
   originStory: {
-    title: 'The Origin: Why Access & Clarity Matter to Me',
+    title: 'My Journey: Language + Tech = Access = User-First',
     quickGrasp:
-      'When I got my first computer in college in Portugal, technical manuals were mostly in English or awkward Portuguese, and reliable information in my native language was scarce. Experiencing that gap firsthand taught me a lasting lesson: technology only creates real value when complex systems are clear, accessible, and designed around how people actually work.',
+      "Growing up in Portugal with scarce native language tech resources taught me early that clarity isn't cosmetic: it's access. That equation (language + tech = access = user-first) became my north star: designing clear systems, workflows, and cross-functional alignment that make complex global initiatives work smoothly for the people building, operating, and using them.",
     deepDive:
-      'That insight became the operating lens behind my work across Microsoft, LinkedIn, Block, MIIS, and Apple: moving from removing language barriers to building repeatable operational workflows, governance, and AI-enabled systems that help large, distributed organizations execute with speed and clarity.',
+      'Across Microsoft, LinkedIn, Block, MIIS, and Apple, this equation evolved into an operational discipline: turning linguistic and structural friction into scalable operating models, automated tooling pipelines, and clear governance where global teams can execute with speed, autonomy, and confidence.',
   },
   stats: [
     { value: '200 Mkts · 100 Langs', label: 'Global storefront & operational governance (Microsoft)' },

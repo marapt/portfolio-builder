@@ -12,11 +12,11 @@ export const aboutHero = {
   quickGrasp:
     'Com base em anos de expansão de lançamentos globais, fluxos de ferramentas e operações multifuncionais nas principais organizações tecnológicas, trago a liderança de programas de grande escala para a gestão de programas empresariais (PgM): transformando iniciativas ambíguas e multifuncionais em sistemas operacionais previsíveis e resultados mensuráveis entre equipas, sistemas e mercados.',
   originStory: {
-    title: 'A Origem: Porque o Acesso e a Clareza me São Essenciais',
+    title: 'A Minha Jornada: Língua + Tecnologia = Acesso = Foco no Utilizador',
     quickGrasp:
-      'Tive o meu primeiro computador na faculdade em Portugal. Os manuais técnicos vinham em inglês ou num português truncado, e a informação rigorosa no meu idioma nativo era escassa. Essa experiência ensinou-me uma lição duradoura: a tecnologia só cria valor genuíno quando sistemas complexos são claros, acessíveis e desenhados à volta do modo como as pessoas realmente trabalham.',
+      'Crescer em Portugal com recursos tecnológicos escassos na minha língua materna ensinou-me cedo que a clareza não é cosmética: é acesso. Essa equação (língua + tecnologia = acesso = foco no utilizador) tornou-se a minha bússola: conceber sistemas claros, fluxos de trabalho e alinhamento multifuncional que fazem com que iniciativas globais complexas funcionem sem atritos para quem as constrói, opera e utiliza.',
     deepDive:
-      'Essa constatação tornou-se o fio condutor de toda a minha carreira na Microsoft, LinkedIn, Block, MIIS e Apple: evoluir da remoção de barreiras linguísticas para a criação de fluxos operacionais estruturados, governação e sistemas potenciados por IA que ajudam grandes organizações distribuídas a executar com rapidez e clareza.',
+      'Na Microsoft, LinkedIn, Block, MIIS e Apple, essa equação evoluiu para uma disciplina operacional: converter atritos linguísticos e estruturais em modelos operacionais escaláveis, fluxos de ferramentas automatizados e governação ágil, onde equipas globais executam com rapidez, autonomia e confiança.',
   },
   stats: [
     { value: '200 Mkts · 100 Langs', label: 'Governação global de plataformas e operações (Microsoft)' },
