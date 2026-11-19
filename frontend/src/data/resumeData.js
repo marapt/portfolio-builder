@@ -308,10 +308,10 @@ export const resumeData = {
   
   awards: [
     {
-      title: 'Global Readiness Award - Lead of Geopolitical Readiness (Microsoft Stores)',
+      title: 'Global Readiness Recognition - Geopolitical Readiness & Globalization Standards',
       organization: 'Microsoft Global Readiness Team',
       year: '2019',
-      details: 'Recognized for establishing enterprise globalization standards, geopolitical readiness frameworks, and global product delivery methodologies across Microsoft Stores, published across Microsoft Learn and Developer Product Inclusion.',
+      details: 'Recognized by the central Global Readiness team for strengthening geopolitical readiness across Microsoft Stores and codifying reusable globalization practices into Microsoft Learn and Developer Product Inclusion.',
       url: 'https://learn.microsoft.com/en-us/globalization/methodology/global-product-delivery'
     },
     {
