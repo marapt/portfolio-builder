@@ -558,16 +558,24 @@ export const operationalDomains = [
       },
       {
         id: 'bit-1',
-        title: 'Telemetria Integrada e Acompanhamento de SLAs em Tempo Real',
-        subtitle: 'Visibilidade completa sobre todas as fases: admissão, triagem, execução e entrega.',
-        metrics: '100% Visibilidade dos Fluxos · Alertas Imediatos',
+        title: 'BI para Operações de Lançamento Global e Localização',
+        subtitle:
+          'Telemetria etapa a etapa unificando TMS de fornecedores e Jira com alertas proativos de SLA.',
+        tag: 'BI & Telemetria',
+        proofAnchor: 'microsoft',
+        metrics: '20+ Partes Interessadas · >50% Redução de Pedidos de Estado',
         star: {
-          situation: 'As equipas não tinham forma de acompanhar o estado exato dos seus pedidos nos fluxos internacionais.',
-          task: 'Construir um painel centralizado de telemetria com acompanhamento em tempo real e análises de desempenho.',
-          action: 'Reuni dados de várias ferramentas (Jira, GitHub e sistemas de tradução) num portal único e acessível.',
-          result: 'Disponibilizei informação a mais de 100 colaboradores, reduzindo em 80% as mensagens sobre o estado dos trabalhos.',
+          situation:
+            'As partes interessadas em produto, engenharia, localização e equipas regionais não dispunham de visibilidade de ponta a ponta sobre onde cada pedido se encontrava entre admissão, triagem, tradução e lançamento, provocando estrangulamentos não detetados até prazos críticos e gerando frequentes pedidos ad-hoc de ponto de situação.',
+          task:
+            'Coordenei a integração de APIs de fornecedores, desenhei e estruturei a arquitetura visual de gráficos para um portal centralizado de telemetria e BI que acompanhava o rendimento etapa a etapa e o cumprimento de SLAs ao longo de todo o ciclo de vida do pedido, capacitando equipas com visibilidade em regime de autoatendimento e alertas de estrangulamento.',
+          action:
+            'Colaborei com lideranças de engenharia, operações e fornecedores para padronizar definições de etapas e metas de SLA em admissão, triagem, localização/tradução e implementação; agreguei eventos em tempo real desde ferramentas CAT de fornecedores (TMS) até ferramentas internas da Microsoft como o Jira num portal unificado; e configurei alertas automatizados para pedidos pendentes e quebras de SLA para permitir intervenção precoce.',
+          result:
+            'Disponibilizei a mais de 20 partes interessadas visibilidade em tempo real sobre cada etapa do fluxo, reduzindo o desgaste ao diminuir em mais de metade as consultas de estado, acelerando a resolução de estrangulamentos antes dos prazos de corte e transformando o acompanhamento subjetivo em governação objetiva de SLAs.',
         },
-        l6Principle: 'A telemetria de operações transforma impressões subjetivas em decisões sustentadas por dados reais.',
+        l6Principle:
+          'A telemetria operacional transforma frustrações subjetivas em dados objetivos e acionáveis.',
       },
     ],
   },

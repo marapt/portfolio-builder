@@ -558,16 +558,24 @@ export const operationalDomains = [
       },
       {
         id: 'bit-1',
-        title: 'End-to-End Pipeline Telemetry & SLA Tracking',
-        subtitle: 'Real-time throughput metrics across intake, triage, translation, and deployment.',
-        metrics: '100% Pipeline Visibility · Real-Time Alerts',
+        title: 'Global Release & Localization Operations BI',
+        subtitle:
+          'Unified stage-by-stage telemetry connecting Vendor TMS and Jira into proactive SLA alerting.',
+        tag: 'BI & Telemetry',
+        proofAnchor: 'microsoft',
+        metrics: '20+ Stakeholders · >50% Query Reduction · Automated Alerts',
         star: {
-          situation: 'Stakeholders lacked visibility into where individual requests were stuck in the global release pipeline.',
-          task: 'Build a centralized business intelligence dashboard delivering live status and throughput analytics.',
-          action: 'Aggregated cross-system events from Jira, GitHub, and vendor TMS into a live telemetry portal.',
-          result: 'Gave 100+ cross-functional stakeholders self-service visibility, cutting status query emails by 80%.',
+          situation:
+            'Cross-functional stakeholders across product, engineering, localization, and regional teams lacked end-to-end visibility into where individual requests stood across intake, triage, translation, and deployment, which caused bottlenecks to go unnoticed until deadlines tightened and triggered frequent ad-hoc status inquiries.',
+          task:
+            'Coordinated vendor APIs integration, designed and architected the visual graph framework for a centralized business intelligence telemetry portal that tracked live stage-by-stage throughput and SLA adherence across the full request lifecycle, empowering stakeholders with self-service visibility and proactive bottleneck alerts.',
+          action:
+            'Partnered with engineering, operations, and vendor leads to standardize stage definitions and SLA targets across intake, triage, localization/translation, and deployment; aggregated real-time event and status data from Vendor CAT tools like Translation Management Systems (TMS) to internal Microsoft tools like Jira into a unified telemetry portal; and configured automated alerts for aging requests and SLA threshold breaches so owners could intervene early.',
+          result:
+            'Gave over 20 cross-functional stakeholders real-time self-service visibility across every pipeline stage, reducing churn by cutting queries on status by more than half, speeding up bottleneck triage before release cutoffs, and turning subjective status chasing into objective SLA governance.',
         },
-        l6Principle: 'Operational telemetry transforms subjective frustration into objective, actionable data.',
+        l6Principle:
+          'Operational telemetry transforms subjective frustration into objective, actionable data.',
       },
     ],
   },
