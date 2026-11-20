@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google L6 Senior Program Manager - Master Interview Practice Cards</title>
+<style>
+  :root {
+    --primary: #4f46e5;
+    --primary-light: #eef2ff;
+    --slate-900: #0f172a;
+    --slate-800: #1e293b;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-100: #f1f5f9;
+    --emerald-700: #047857;
+    --emerald-50: #ecfdf5;
+    --amber-700: #b45309;
+    --amber-50: #fffbeb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: #f8fafc; color: var(--slate-900); padding: 24px; line-height: 1.5; }
+  .header { max-width: 1200px; margin: 0 auto 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; }
+  .header h1 { font-size: 24px; font-weight: 800; color: var(--slate-900); }
+  .header p { font-size: 14px; color: var(--slate-600); }
+  .controls { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+  button { background: var(--primary); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s; }
+  button:hover { opacity: 0.9; }
+  button.secondary { background: white; color: var(--slate-700); border: 1px solid #cbd5e1; }
+  .filters { max-width: 1200px; margin: 0 auto 24px; display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
+  .filter-pill { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: white; border: 1px solid #cbd5e1; cursor: pointer; white-space: nowrap; }
+  .filter-pill.active { background: var(--primary); color: white; border-color: var(--primary); }
+  
+  .cards-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(560px, 1fr)); gap: 20px; }
+  
+  .card { background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); display: flex; flex-col; justify-content: space-between; page-break-inside: avoid; break-inside: avoid; margin-bottom: 16px; }
+  .card-top { margin-bottom: 12px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; }
+  .card-badge { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 6px; background: var(--primary-light); color: var(--primary); margin-bottom: 8px; }
+  .card-title { font-size: 16px; font-weight: 700; color: var(--slate-900); line-height: 1.35; }
+  
+  .star-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 12px; font-size: 13px; }
+  .star-row { background: #f8fafc; padding: 10px 12px; border-radius: 6px; border-left: 3px solid #cbd5e1; }
+  .star-row.s { border-color: #3b82f6; }
+  .star-row.t { border-color: #8b5cf6; }
+  .star-row.a { border-color: #06b6d4; }
+  .star-row.r { border-color: #10b981; background: var(--emerald-50); }
+  .star-label { font-weight: 800; font-size: 11px; text-transform: uppercase; margin-bottom: 2px; }
+  .star-row.s .star-label { color: #2563eb; }
+  .star-row.t .star-label { color: #7c3aed; }
+  .star-row.a .star-label { color: #0891b2; }
+  .star-row.r .star-label { color: var(--emerald-700); }
+  
+  .metric-highlight { font-weight: 700; color: #065f46; background: #d1fae5; padding: 1px 4px; border-radius: 4px; }
+  .l6-rule { margin-top: 12px; padding: 8px 12px; background: var(--amber-50); border: 1px solid #fde68a; border-radius: 6px; font-size: 12px; color: var(--amber-700); font-weight: 500; }
+  .l6-rule strong { font-weight: 700; }
+  
+  @media print {
+    body { padding: 0; background: white; }
+    .controls, .filters, .no-print { display: none !important; }
+    .cards-grid { display: block; }
+    .card { page-break-inside: avoid; break-inside: avoid; border: 1.5px solid #000; box-shadow: none; margin-bottom: 24px; padding: 16px; }
+    .star-row { background: transparent !important; border-left: 3px solid #000; padding: 6px 8px; }
+    .star-row.r { background: #f0fdf4 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header no-print">
+  <div>
+    <h1>Google L6 Senior Program Manager: Master Practice Cards</h1>
+    <p>Operational Enablement & Governance, Google Search &bull; 39 Practice Flashcards</p>
+  </div>
+  <div class="controls">
+    <button onclick="window.print()">🖨️ Print Flashcards (PDF)</button>
+    <button class="secondary" onclick="toggleAllDetails()">Toggle Full Details</button>
+  </div>
+</div>
+
+<div class="filters no-print">
+  <div class="filter-pill active" onclick="filterTopic('all', this)">All Topics (39)</div>
+  <div class="filter-pill" onclick="filterTopic('1', this)">1. Intro & Fit (Q1-8)</div>
+  <div class="filter-pill" onclick="filterTopic('2', this)">2. Vendor & xWS (Q9-12)</div>
+  <div class="filter-pill" onclick="filterTopic('3', this)">3. PM & Metrics (Q13-15)</div>
+  <div class="filter-pill" onclick="filterTopic('4', this)">4. Priorities & SLAs (Q16-20)</div>
+  <div class="filter-pill" onclick="filterTopic('5', this)">5. Leadership & Conflict (Q21-27)</div>
+  <div class="filter-pill" onclick="filterTopic('6', this)">6. Risk & Failures (Q28-34)</div>
+  <div class="filter-pill" onclick="filterTopic('7', this)">7. AI & Hypotheticals (Q35-39)</div>
+</div>
+
+<div class="cards-grid" id="cardsGrid">
+
+  <div class="card" data-topic="1">
+    <div class="card-top">
+      <span class="card-badge">Topic 1 &bull; Q1</span>
+      <h2 class="card-title">Why should I hire you? Tell me about yourself!</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>Option 1 (if intros warm up)</strong> A former manager at Microsoft once called me a &#x27;smooth operator&#x27; whenever cross-team friction needed to be cleared and momentum built. That captures how I approach program leadership: I pair a bias for action with genuine partnership so stakeholders across engineering, product, operations, and vendors move together rather than in silos. Across Microsoft, LinkedIn, Block, MIIS, and my May–September 2026 Apple contract, I&#x27;ve focused on turning ambiguous cross-functional work into clear operating models, reliable SLAs, and practical automation making me a dependable partner for scaling operational enablement and governance in Search Operations.<br><br><strong>Option 2</strong> I&#x27;m a Senior Program Manager focused on operational enablement, vendor and extended-workforce governance, and workflow automation across complex global programs. Over the past 12+ years - spanning Microsoft, LinkedIn, Block, MIIS, and a May–September 
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="1">
+    <div class="card-top">
+      <span class="card-badge">Topic 1 &bull; Q2</span>
+      <h2 class="card-title">Corporate - Academia - Contractor? Why this transition?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>After scaling localization PM and vendor/launch governance at Block (Nov 2021 – Nov 2022), I joined MIIS as a Visiting Professor (Jul 2023 – Jul 2025\) to teach graduate program management and launch an AI in Localization series while mentoring 90+ students - followed by Middlebury&#x27;s decision to wind down the Monterey graduate programs.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>As I pivoted back into enterprise technology, I wanted to deepen hands-on AI and workflow automation skills and test my operational rigor in a live, high-accountability corporate environment before settling into a long-term leadership role.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>I used my transition period to build practical AI/automation fluency and took a May–September 2026 contract at Apple via Mindsource and WPP across 20+ countries under strict NDA - focusing on cross-functional coordination, issue/Radar triage, tooling, and a clean end-of-contract handover.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>That arc sharpened both my hands-on AI/workflow fluency and my focus on high-scale operational execution, leading me directly to pursue a long-term L6 Operational Enablement and Governance role in Google Search Operations.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="1">
+    <div class="card-top">
+      <span class="card-badge">Topic 1 &bull; Q3</span>
+      <h2 class="card-title">Why should we hire you? / Why Google Search Operations / Why I’m a strong fit</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>Search Operations involves coordinating across complex dependencies, external/extended workforces, and evolving workflows where unclear handoffs or missing guardrails slow teams down.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>My objective in operational enablement and governance roles is to align stakeholders across engineering, product, legal, procurement, and regional teams while keeping delivery reliable and compliant.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>Across past roles, I&#x27;ve governed vendor/agency/MSP relationships and SLAs, scaled PM orgs and operating models, partnered on technical/workflow bottlenecks (such as CMS/TMS/API touchpoints, bug triage, and human-in-the-loop quality checks), and documented clear processes and handoffs.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>I bring a practical mix of governance discipline, cross-functional influence, and hands-on AI/workflow fluency that helps teams move faster with fewer blind spots.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="1">
+    <div class="card-top">
+      <span class="card-badge">Topic 1 &bull; Q4</span>
+      <h2 class="card-title">And why are you a good candidate for this role?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>Across Microsoft, LinkedIn, Block, MIIS, and my May–September 2026 contract at Apple, I&#x27;ve worked in fast-moving environments where scaling operations, governing extended workforces/vendors, and coordinating across engineering, product, legal, and regional teams are constant priorities.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>For a Google Search Operations L6 role in operational enablement and governance, the goal is to turn ambiguous or manual multi-team workflows into clear, repeatable operating models with strong guardrails and accountability.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>I focus on clarifying ownership and boundaries early, partnering with cross-functional and engineering leads on practical workflows, tooling, and quality/compliance checks, and establishing sustainable governance and handoffs rather than ad-hoc heroics.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Teams gain clearer operational visibility, smoother cross-functional handoffs, and durable processes that hold up at scale - whether scaling a localization PM org from 5 to 15 direct reports at Block or building repeatable workflows and clean handoffs at Apple.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="1">
+    <div class="card-top">
+      <span class="card-badge">Topic 1 &bull; Q5</span>
+      <h2 class="card-title">Why do you want to work for Google and/or this role?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>When I first used a computer and Google Search in college in my twenties, manuals were often in English or awkward Portuguese, search results in my language were limited, and the experience felt unnecessarily difficult.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>That early friction shaped what I&#x27;ve cared about across 12+ years in global program leadership and operations: making sure complex technology and information systems work reliably across languages, regions, and real user needs - and, for this L6 role in Google Search Operations, I want to bring that mindset into operational enablement and governance.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>Across roles at Microsoft, LinkedIn, Block, MIIS, and my May–September 2026 contract at Apple, I&#x27;ve turned messy, multi-team operations into clear processes, vendor/extended-workforce governance, and quality/automation workflows - connecting cross-functional partners so global delivery doesn&#x27;t break down at the edges.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>That combination of user empathy, operational rigor, and governance is why Search Operations resonates with me: it lets me contribute to making information more accessible and reliable at scale while building durable systems that help teams execute cleanly.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="1">
+    <div class="card-top">
+      <span class="card-badge">Topic 1 &bull; Q6</span>
+      <h2 class="card-title">Are you worried that you’ve been out of corporate too long?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>In fast-moving organizations - and especially in Google Search Operations where generative AI and global scale create constant operational shifts - teams need leaders who can ramp quickly without a long learning curve.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>My focus after my two years as a Visiting Professor at MIIS (July 2023 – July 2025\) was to deepen hands-on AI and workflow automation skills and prove immediate execution in a live corporate environment before committing long-term to an L6 enablement and governance role.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>From May to September 2026, I stepped into an Apple contract via Mindsource/WPP across 20+ countries under strict NDA - ramping quickly to coordinate across engineering, legal, and regional teams in Radar, build scripts to streamline issue/bug triage, and support release readiness, while also working closely with industry practitioners during my MIIS tenure.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>I&#x27;m ready to contribute right away by pairing calm operational structure with practical AI and workflow automation - starting with listening, mapping where manual handoffs or approval bottlenecks slow teams down, and partnering across engineering, operations, and procurement/workforce leads so Search Operations can scale reliably.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="1">
+    <div class="card-top">
+      <span class="card-badge">Topic 1 &bull; Q7</span>
+      <h2 class="card-title">Explain your career trajectory to date.</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>Over more than a decade across global organizations and academic program leadership - spanning Sony, Hogarth Worldwide, Apple, Infoblox, Microsoft, LinkedIn, Block, and MIIS - I have moved from hands-on delivery into enterprise program leadership, operational governance, and workflow enablement.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>My focus across each stage has been bringing structure to complex, multi-stakeholder environments - aligning cross-functional teams, governing vendors and extended workforces, and building repeatable processes and quality/automation guardrails that scale without breaking down.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>Early on at Sony and Hogarth, I built foundational discipline in cross-border coordination, client/agency delivery, and SLAs. At Microsoft, LinkedIn, and Block, I scaled program operations, vendor/agency models, and cross-functional release/readiness governance - including growing a localization PM organization from 5 to 15 direct reports at Block and establishing MARCOM localization governance across 26 languages and 17 markets at LinkedIn. At MIIS (2023–2025), I designed graduate curriculum, launched an AI in Localization series, and mentored 90+ students, before deepening hands-on AI/automation skills and stepping into a May–September 2026 Apple contract via Mindsource/WPP across 20+ countries under strict NDA.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>That progression prepared me for an L6 Operational Enablement and Governance role in Google Search Operations, where I can combine structured governance, cross-functional alignment, and practical AI/workflow enablement to help teams execute reliably at scale.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="1">
+    <div class="card-top">
+      <span class="card-badge">Topic 1 &bull; Q8</span>
+      <h2 class="card-title">Where do you see yourself in 5 years?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>Across my career in global program operations, vendor/extended-workforce governance, and graduate teaching/mentorship, I&#x27;ve focused on building clear operating models and helping teams and emerging program leaders scale effectively.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Over the next five years at Google - starting from a strong L6 Operational Enablement and Governance foundation in Search Operations - my goal is to grow into broader operational leadership where I can shape scalable governance, AI-assisted workflows, and strong cross-functional partnerships.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>I plan to focus on building durable operating standards that connect cross-functional teams, extended workforces, and practical automation/evaluation guardrails - while continuing to mentor program managers and support inclusive, collaborative leadership across teams.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>In five years, I hope to be a trusted operational leader at Google known for simplifying complex workflows, strengthening operational resilience as products evolve, and helping both programs and people grow at scale.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="2">
+    <div class="card-top">
+      <span class="card-badge">Topic 2 &bull; Q9</span>
+      <h2 class="card-title">Tell me more about your experience with Extended Workforce Governance (xWS) and Vendor Strategy?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Microsoft (Jun. 2016 – Apr. 2020), working within Marcom on global operations for Microsoft Stores across 40+ international markets - alongside broader vendor and extended-workforce governance across roles like LinkedIn and Block - supporting global campaigns, launches, and regional operations required coordinating a large multi-tiered external vendor ecosystem.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>In an L6 Operational Enablement and Governance role in Google Search Operations, my objective in vendor and extended-workforce (xWS) governance is to replace fragmented, one-off vendor arrangements with clear SOWs/SLAs, aligned commercial and operational metrics, and strong cross-functional partnerships across Procurement, Finance, and delivery teams.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Audit Contracts &amp; Standardize SOW/SLA Structure:** Audited existing vendor agreements and workstreams to eliminate duplicate/fragmented terms, standardizing SOW expectations, performance tiers, and recurring review cadences.     2. **Partner with Procurement &amp; Finance on Commercials:** Worked closely with Procurement and Finance on contract renewals, rate structure/bulk-volume alignment, and budget-vs.-actual tracking.     3. **Connect Governance to Operational Execution:** Paired contractual governance with clear operational handoffs, scorecards, and cross-functional alignment across engineering, product, and regional/vendor leads.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Contributed to a **<span class="metric-highlight">35%</span> reduction in operational cycle times at Microsoft (with \&gt;<span class="metric-highlight">90%</span> NPS)** and similar structured vendor/SLA improvements across multi-market programs - giving leadership predictable capacity, spend visibility, and reliable execution at scale.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="2">
+    <div class="card-top">
+      <span class="card-badge">Topic 2 &bull; Q10</span>
+      <h2 class="card-title">Vendor Governance, SLA Architecture &amp; Spend Optimization (Block Case Study)</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Block (Nov. 2021 – Nov. 2022), software delivery cycles were expanding into 15+ international markets, while operations across multi-tiered external vendors were fragmented - leading to unpredictable turnaround times, rising vendor costs, and inconsistent quality that put release windows at risk.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Establish a structured vendor operating model, clear SLAs and scorecards, and recurring budget/capacity governance without slowing delivery.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Standardize SOWs &amp; Contractual Tiers:** Audited existing SOW structures and standardized clear performance-based tiers across suppliers.     2. **Roll Out Scorecards &amp; MBRs/QBRs:** Instituted regular supplier scorecards tracking turnaround, quality/defect trends, and SLA adherence across monthly and quarterly business reviews.     3. **Streamline Intake &amp; Handoffs:** Integrated automated AI-assisted workflows into intake and handoff stages to reduce manual bottlenecks between Core Engineering and external teams.     4. **Establish Budget &amp; Capacity Gates:** Partnered with Core Engineering, Product Growth, and Procurement on recurring reviews to align capacity planning and spend against approved budgets.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Delivered a **<span class="metric-highlight">30%</span> reduction in turnaround time and operational spend** across 15+ international markets, enforced <span class="metric-highlight">100%</span> feature parity at launches, and created a repeatable vendor capacity governance model.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="2">
+    <div class="card-top">
+      <span class="card-badge">Topic 2 &bull; Q11</span>
+      <h2 class="card-title">Vendor Management - Breach of Contract</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>In multi-market operations relying on external vendors and extended workforces, a core supplier experienced sustained SLA misses over a 30-day period - creating delivery and launch risk while also carrying deep institutional familiarity with our workflows and history.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Protect immediate launch and operational continuity, enforce clear vendor accountability, and make a disciplined decision on long-term supplier viability rather than reacting impulsively.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Protect Delivery via Backup Capacity:** Partnered with Procurement to shift roughly 30% of active volume temporarily to a pre-qualified secondary partner so critical timelines stayed protected.     2. **Enforce Remediation &amp; Evaluate Long-Term Viability:** Led an executive alignment session with vendor leadership to put a structured 30-day remediation plan in place with concrete SLA and quality milestones - weighing the value of retaining five years of institutional knowledge against the risk of continued underperformance.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>The vendor executed the remediation plan and stabilized, allowing us to restore volume on clear metrics while avoiding disruptive replacement costs and maintaining supply-chain SLA reliability.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="2">
+    <div class="card-top">
+      <span class="card-badge">Topic 2 &bull; Q12</span>
+      <h2 class="card-title">Center of Excellence (Localization) at Microsoft</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Microsoft (Jun. 2016 – Apr. 2020), supporting global marketing and localization operations across 40+ international markets meant working with multiple external language/vendor partners across regional teams - where fragmented SOW terms, inconsistent SLAs, manual tracking/reconciliation, and uneven visibility created operational drag and cost friction.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Establish a unified Localization Governance Center of Excellence, centralize procurement terms, align cross-functional engineering and localization workflows, and build automated API telemetry.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Governance &amp; Standardized SOWs/SLAs:** Secured leadership buy-in for a CoE; standardized SOW structures and recurring MBR/QBR cadences.     2. **Procurement &amp; Commercial Alignment:** Audited active LSP suppliers alongside global Procurement, consolidated MSAs, and negotiated an enterprise &quot;bulk-of-work&quot; volume discount.     3. **Workflow Mapping &amp; Engineering/Finance Integration:** Mapped system workflows in Microsoft Visio, partnered with Core Engineering on automated API ingestion pipelines replacing self-reported spreadsheets, and integrated automated QA scoring via TAUS DQF.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Reduced operational cycle times by **<span class="metric-highlight">35%</span>** across 40+ markets (campaigns cut from <span class="metric-highlight">15 days</span> to <span class="metric-highlight">9 days</span>; intake cut from <span class="metric-highlight">3 days</span> to under 24 hours), unlocked **\<span class="metric-highlight">$700</span>,000 in cost avoidance** on a \<span class="metric-highlight">$2M</span> annual allocation, eliminated invoice reconciliation delays, and sustained **\&gt;<span class="metric-highlight">90%</span> CSAT/NPS**.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="3">
+    <div class="card-top">
+      <span class="card-badge">Topic 3 &bull; Q13</span>
+      <h2 class="card-title">Tell me about a time you managed a program from E2E?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Microsoft (Jun. 2016 – Apr. 2020), global marketing and localization operations for Microsoft Stores across 40+ international markets relied on regional teams managing separate SOWs, rate cards, and SLAs - leading to fragmented brand/tone consistency, manual invoice/reporting friction, and duplicated vendor spend.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Drive an end-to-end operating model - from discovery and commercial alignment to workflow/telemetry enablement and recurring governance - without disrupting live campaign launches.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>* **Phase 1 - Discovery &amp; Governance Alignment:** Audited vendor agreements with Procurement, gathered stakeholder feedback, and aligned leadership on a standardized SOW/tier structure.     * **Phase 2 - Commercial &amp; SLA Restructuring:** Consolidated MSAs with volume/rate alignment and tied SLAs to clear turnaround and quality thresholds.     * **Phase 3 - Workflow Mapping &amp; Telemetry Integration:** Mapped workflows in Visio and partnered with Engineering on automated API ingestion/tracking pipelines.     * **Phase 4 - Change Management &amp; Ongoing Controls:** Introduced TAUS DQF quality scoring, ran team/vendor enablement, and established recurring MBR/QBR scorecards and spend gates with Finance.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Reduced end-to-end cycle times by **<span class="metric-highlight">35%</span>** (\~<span class="metric-highlight">14 days</span> to \~<span class="metric-highlight">9 days</span>), unlocked **\<span class="metric-highlight">$700K</span> in cost avoidance** on a \<span class="metric-highlight">$2M</span> program allocation, and sustained **\&gt;<span class="metric-highlight">90%</span> CSAT/NPS** across 40+ markets.  | Market Tier | Decentralized Allocation | Central Pooled Allocation | Cycle Time Reduction | Cost Avoidance Unlocked | | :---- | :---- | :---- | :---- | :---- | | **Tier 1 (Primary \- 10 Locales)** | \<span class="metric-highlight">$1</span>,000,000 | \<span class="metric-highlight">$650</span>,000 | <span class="metric-highlight">14 days</span> → <span class="metric-highlight">8 days</span> (<span class="metric-highlight">43%</span>) | \<span class="metric-highlight">$350</span>,000 | | **Tier 2 (Secondary \- 15 Locales)** | \<span class="metric-highlight">$600</span>,000 | \<span class="metric-highlight">$400</span>,000 | <span class="metric-highlight">14 days</span> → <span class="metric-highlight">9 days</span> (<span class="metric-highlight">36%</span>) | \<span class="metric-highlight">$200</span>,000 | | **Tier 3 (Long-Tail \- 15+ Locales)** | \<span class="metric-highlight">$400</span>,000 | \<span class="metric-highlight">$250</span>,000 | <span class="metric-highlight">14 days</span> → <span class="metric-highlight">10 days</span> (<span class="metric-highlight">28%</span>) | \<span class="metric-highlight">$150</span>,000 | | **Total Program** | **\<span class="metric-highlight">$2</span>,000,000** | **\<span class="metric-highlight">$1</span>,300,000** | **<span class="metric-highlight">14 days</span> → <span class="metric-highlight">9 days</span> (<span class="metric-highlight">35%</span> avg)** | **\<span class="metric-highlight">$700</span>,000 Total** |</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="3">
+    <div class="card-top">
+      <span class="card-badge">Topic 3 &bull; Q14</span>
+      <h2 class="card-title">How do you measure success? / Tell me about a time you used data to make decisions.</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Microsoft (Jun. 2016 – Apr. 2020), global marketing and localization operations across 40+ international markets faced rising vendor costs and uneven delivery schedules, while regional teams and vendors debated root causes using anecdotal complaints.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Replace subjective impressions with verifiable data to pinpoint systemic bottlenecks, restructure vendor terms and tracking, and optimize a \$2M program allocation.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>Audited cycle time and cost data across workflow stages (revealing 45% of drag came from manual spreadsheet extraction and rate cards varied by up to 28%); partnered with Procurement on bulk MSA rates; integrated TAUS DQF objective defect scoring; partnered with Core Engineering on automated API status/telemetry pipelines.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Cut operational cycle times by **<span class="metric-highlight">35%</span>**, unlocked **\<span class="metric-highlight">$700</span>,000 in cost avoidance** on a \<span class="metric-highlight">$2M</span> budget, and sustained **\&gt;<span class="metric-highlight">90%</span> NPS** across 40+ markets.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="3">
+    <div class="card-top">
+      <span class="card-badge">Topic 3 &bull; Q15</span>
+      <h2 class="card-title">What metrics would you use if hired for this role? (Search Operational Enablement &amp; Governance)</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>Four-Part Balanced Scorecard:</strong><br><br>1. <strong>Operational Velocity &amp; Handoff Latency:</strong> End-to-end task/build cycle time (from engineering data drop/model checkpoint to operational readiness/staging); pipeline handshake/ingestion latency between Core Engineering, internal tooling, and xWS queues; throughput per sprint.  <br>2. <strong>Quality, Evaluation &amp; Guardrail Health:</strong> Defect leakage rate into staging/production; Inter-Rater Agreement &amp; consistency (Krippendorff&#x27;s Alpha / Cohen&#x27;s Kappa) among HITL evaluators; pre-production guardrail calibration (false-positive blocking rates on automated CI/CD checks).  <br>3. <strong>Extended Workforce (xWS) &amp; Resource Optimization:</strong> Vendor SLA adherence &amp; breach %; capacity utilization &amp; burn vs. forecast against approved budgets; unit cost &amp; cost avoidance per evaluated entity/task.  <br>4. <strong>Toil Reduction &amp; Governance Adoption:</strong> Toil reduction 
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="4">
+    <div class="card-top">
+      <span class="card-badge">Topic 4 &bull; Q16</span>
+      <h2 class="card-title">How do you manage timelines in multiple projects? What is your approach if you see a timeline being pushed?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>Across multi-market and cross-functional programs (Microsoft, LinkedIn, Block, and May–Sep 2026 Apple contract), several initiatives run simultaneously with tight release cut-offs.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Keep concurrent timelines visible and prioritized day-to-day, and when a timeline slips, contain downstream impact quickly, preserve quality, and align stakeholders on clear trade-offs.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Manage Concurrent Timelines Proactively:** Centralize cross-project dependencies in a unified view (Radar/Jira); tier milestones into **P0** (hard commitments/compliance gates/freezes), **P1** (operational improvements), and **P2** (non-blocking enhancements); use async telemetry while reserving live syncs for active blockers.     2. **Assess Float vs. Critical-Path Blast Radius:** Absorb minor variance inside schedule float without false alarms; immediately size downstream impact if the critical path is hit.     3. **Compress Bottlenecks or Negotiate Trade-Offs:** Fast-track via parallel staging/pre-work or crash via shifting capacity; negotiate via the Iron Triangle (Scope, Schedule, Resources) such as deferring P2 scope.     4. **Pre-Escalate Early with a Plan:** Alert impacted upstream/downstream owners early with the proposed option set and decision needed.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Protects launch and operational commitments without chaotic thrashing.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="4">
+    <div class="card-top">
+      <span class="card-badge">Topic 4 &bull; Q17</span>
+      <h2 class="card-title">Tell me about a time when you missed a deadline and what actions you took.</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Microsoft (Jun. 2016 – Apr. 2020), a primary third-party vendor hit an unannounced staffing gap and missed an interim delivery gate by 48 hours on 6 regional market asset packages (out of 40+ markets) tied to a firm holiday promotional window.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Own the slip transparently, mitigate the blast radius so the remaining 34 markets launched on time, and recover the 6 affected markets quickly.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Immediate Radical Transparency:** Notified Product and Regional Marketing leads within 2 hours with exact impact and recovery steps.     2. **Decoupled Deployment Tracks:** Separated the 34 ready markets so they launched on schedule without waiting on the 6 delayed packages.     3. **Overflow Capacity Re-Routing:** Shifted the bottlenecked volume to a pre-vetted tier-2 backup vendor with expedited 24-hour turnaround commitments.     4. **Post-Mortem &amp; Preventative Control:** Ran a blameless post-mortem, enforced SLA accountability with Procurement, and deployed automated early-warning telemetry flagging vendor capacity deficits at the 25% turnaround mark.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Staged the 6 delayed markets within 36 hours of the original window with zero consumer-facing holiday loss, and prevented repeat bottlenecks across subsequent campaigns.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="4">
+    <div class="card-top">
+      <span class="card-badge">Topic 4 &bull; Q18</span>
+      <h2 class="card-title">Tell me about a time when you had to prioritize your needs over your engineering team&#x27;s needs.</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>During high-visibility multi-market release readiness on my May–Sep 2026 contract at Apple (across 20+ countries and 25M+ content units), Core Engineering wanted to push last-minute UI feature refinements right up to the final build freeze, compressing downstream localization, compliance metadata checks, and staging validation.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Enforce strict operational cut-offs and gatekeeping protocols to safeguard release compliance and prevent defect leakage without stalling non-UI engineering progress.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>Convened alignment with Engineering leadership using prior cycle data showing post-freeze fixes were 4x more costly; instituted a hard **String &amp; Asset Freeze 72 hours ahead of final code cut-off**; deployed automated GitHub linting/validation so non-UI backend refactoring continued unimpeded while routing non-critical UI tweaks to a follow-on dot-release.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Achieved **<span class="metric-highlight">100%</span> compliance and zero defect leakage** across all 20+ launch markets while shipping the core launch on schedule.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="4">
+    <div class="card-top">
+      <span class="card-badge">Topic 4 &bull; Q19</span>
+      <h2 class="card-title">Which map features would you prioritize in Maps? (Roads vs. POIs vs. Indoor Navigation)</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>Utility-Frequency-Coverage Matrix &amp; Resource Allocation:</strong><br><br>1. <strong>Priority 1 (\~60% focus) - Core Road Network, Routing &amp; Live Conditions (Trust &amp; Safety Foundation):</strong> Accurate road geometry, closures, routing logic, and live traffic/transit signals are table stakes. A routing error strands a driver and breaks core trust.  <br>2. <strong>Priority 2 (\~30% focus) - POIs &amp; Local Entity Freshness (High-Frequency Utility &amp; Discovery):</strong> Businesses, landmarks, addresses, and operating hours drive daily engagement and local search utility. Prioritize scalable verification via user signals, Street View imagery, and merchant integrations.  <br>3. <strong>Priority 3 (\~10% focus) - Indoor Navigation &amp; Specialized Layers (Targeted, ROI-Driven):</strong> High data collection and maintenance friction with lower daily active usage. Deploy selectively on an ROI-driven basis in top global transit hubs (mega-airports/major venues) where 
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="4">
+    <div class="card-top">
+      <span class="card-badge">Topic 4 &bull; Q20</span>
+      <h2 class="card-title">If there was a critical need for a team member to work on Saturday during off-time, how would you manage the request as their indirect manager?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>Urgent weekend release/operational issues occasionally arise across multi-market programs where a specific individual&#x27;s context is needed.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Verify true necessity first, protect psychological safety and voluntary opt-in, align with their direct manager on recovery time, provide active air cover, and prevent recurrence.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Validate True Operational Necessity First:** Check whether the work can wait until Monday, use an automated fallback, or be handled by existing on-call/extended coverage.     2. **Align with the Direct Manager Up Front:** Coordinate on priorities and guarantee reciprocal comp time (e.g., an equivalent half-day or full day off the following week).     3. **Make a Clear, Low-Pressure 1:1 Request:** Share transparent context on why their expertise matters, downstream impact, and exact narrow time window - making clear it is strictly voluntary with zero guilt or penalty if they decline.     4. **Provide Air Cover &amp; Drive Prevention Afterward:** Stay online alongside them to unblock issues and handle executive updates, then run a post-mortem the following week to tighten pre-production gatekeeping. *(And bring custard tarts as a thank-you\!)*</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Protects trust, psychological safety, and long-term team sustainability.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="5">
+    <div class="card-top">
+      <span class="card-badge">Topic 5 &bull; Q21</span>
+      <h2 class="card-title">Emergent Leadership - Leading without authority (Apple Contract)</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>During my May–September 2026 contract at Apple via Mindsource and WPP (under strict NDA and need-to-know boundaries), I started without formal authority over adjacent teams or an assigned desk, and initial work assignments were slow to materialize while teams faced tight launch pressure.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Earn trust through strict compliance and reliability, unblock stretched teams where appropriate, and build repeatable workflows and clean handoffs before my contract ended.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **NDA-Safe Outreach &amp; Unblocking Delivery:** Aligned with my manager on NDA-safe outreach, volunteered to support an overwhelmed launch manager, and built scripts to parse Radar tickets for testing and regional teams so all P0 bugs were resolved ahead of launch.     2. **Peer Connection &amp; AI Prototype Guardrails:** Started a Slack channel connecting fellow new hires to share operational tips, and collaborated with an Apple colleague on an early AI training prototype - immediately pulling back broader sharing until Apple IT and GenAI security policies vetted it.     3. **Repeatable Workflows &amp; Transition Handoff:** Documented open items, Radar triage status, and operational context cleanly so the team carried the work through to its October launch seamlessly.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Delivered practical triage support, clearer visibility, and documented handoffs without compromising confidentiality or IT/GenAI guardrails.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="5">
+    <div class="card-top">
+      <span class="card-badge">Topic 5 &bull; Q22</span>
+      <h2 class="card-title">Turning Skeptical Senior Leadership into Advocates through Change Management (Block)</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Block (Nov 2021 – Nov 2022), rapid expansion across 15+ markets via acquisitions left localization and launch workflows understaffed and fragmented, making senior leaders cautious about cost and business continuity risk.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Scale the localization PM team from 5 to 15 FTE PMs while addressing leadership concerns and establishing repeatable governance.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>Instead of pushing a top-down mandate, co-designed a Business Change Management Plan with local/regional leads across 4 pillars: **Mission &amp; Vision** (MBR/QBR cadences), **Resources** (auditing HR ladder brackets, team restructuring, xWS/vendor model), **Process** (Launch Center, testing/bug management, Follow-the-Sun model, data tracking), and **Tools** (CRM consolidation \+ DAM setup).</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Turned initial leadership skepticism into active Director and VP advocacy while cutting turnaround time and operational spend by **<span class="metric-highlight">30%</span>**.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="5">
+    <div class="card-top">
+      <span class="card-badge">Topic 5 &bull; Q23</span>
+      <h2 class="card-title">How would you resolve conflict and ambiguity in a project?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Microsoft (Jun. 2016 – Apr. 2020\) across 40+ international markets, technical and operational stakeholders pushed back on a phased CRM transition out of fear developers would get trapped in manual data triage and dual-system maintenance.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Resolve ambiguity and competing incentives so we could move forward safely without trapping engineering in ongoing manual rework.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>Treat conflict as a structure and incentive problem:     1. **Clarify Scope &amp; Ownership:** Establish a Program Charter and RACI matrix defining explicit in-scope/out-of-scope boundaries.     2. **Diagnose Real Incentives:** Identify the underlying fear behind resistance (developer toil and dual maintenance).     3. **Separate One-Time Work from Steady State:** Map routing workflows in Visio, use xWS support for one-time data audit/staging, keep legacy CRM data read-only, and phase cutover by market tier (English → Tier 1 → Tier 2/3) with a time-boxed 60-day deprecation SLA.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Eliminated engineering friction, avoided **\<span class="metric-highlight">$500K</span> in re-translation costs**, and kept cross-functional teams aligned on launch readiness.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="5">
+    <div class="card-top">
+      <span class="card-badge">Topic 5 &bull; Q24</span>
+      <h2 class="card-title">Imagine you&#x27;re working with a lot of engineers. How would you approach communications?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>Four Practical Habits:</strong><br><br>1. <strong>Async-First Clarity (Respect Flow State):</strong> Use concise written briefs, Jira user stories, and explicit acceptance criteria to protect uninterrupted blocks of maker time; reserve live syncs for high-ambiguity trade-offs or urgent blockers.  <br>2. <strong>System Constraints &amp; Edge Cases Over Code:</strong> Frame operational context, Microsoft Visio architecture flows, API payload needs, edge cases, and failure modes rather than prescribing low-level code.  <br>3. <strong>Trade-Offs &amp; Early Dependency Alignment:</strong> Surface operational deadlines, latency trade-offs, and release gates early so teams avoid last-minute release thrash.  <br>4. <strong>Respect for System Health:</strong> Partner with engineering leads around technical debt, error budgets, and reliability guardrails so operational requests don&#x27;t cannibalize refactoring sprints.
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="5">
+    <div class="card-top">
+      <span class="card-badge">Topic 5 &bull; Q25</span>
+      <h2 class="card-title">Give an example of when you have had to explain a complex issue that is often misunderstood.</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>In AI-enabled and multi-market operational workflows (both when designing AI/program governance curriculum at MIIS and across global delivery pipelines), stakeholders often treat quality as a single binary pass/fail score or assume automation alone guarantees readiness.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Align technical and non-technical partners on realistic guardrails without an all-or-nothing shortcut.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>Break verification into three distinct, risk-tiered layers: (1) automated structural/formatting checks; (2) model-assisted/semantic checks; and (3) targeted human-in-the-loop (HITL) review where nuance, edge cases, cultural context, or compliance risk is highest.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Helped technical and non-technical partners agree on clear guardrails and focus human judgment where it actually matters.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="5">
+    <div class="card-top">
+      <span class="card-badge">Topic 5 &bull; Q26</span>
+      <h2 class="card-title">Have you ever come across a low-performing resource in a project? How did you deal with the situation?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Block (Nov 2021 – Nov 2022), a long-tenured team member demanded promotion/role transfer despite expectations around leveling and performance differing from leadership and HR&#x27;s assessment.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Evaluate performance objectively, offer fair support and clarity, and protect team delivery and cross-functional trust.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>Partnered with my manager and HR to audit track record and set clear, documented goals via regular 1:1s and a Development Plan; assigned cross-functional initiatives supervised by multiple senior managers for objective multi-rater visibility; when core deliverables still failed and cross-team friction grew despite extensive coaching, documented and administered a formal PIP with HR, followed by structured role handover and IT/security access offboarding when the employee declined and exited.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Maintained ethical due process, fairness, and compliance while protecting team delivery and cross-functional trust.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="5">
+    <div class="card-top">
+      <span class="card-badge">Topic 5 &bull; Q27</span>
+      <h2 class="card-title">How do you work with people of all personalities? / Work Style / Strengths &amp; Weaknesses</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>Active Translation Strategy by Stakeholder Archetype:</strong><br><br>* <br><br>| Stakeholder Archetype | Translation &amp; Collaboration Strategy |<br>| :---- | :---- |<br>| <strong>Analytical &amp; Technical Partners (Engineering / gTech)</strong> | Meet them with concrete logic, edge-case boundaries, data/telemetry context, Visio flows, and clear integration specs rather than vague process asks. |<br>| <strong>Fiscal, Risk &amp; Contracting Partners (GPO / Finance / Legal)</strong> | Anchor proposals in clear SOW/SLA terms, PO/invoice and access hygiene, compliance guardrails, and cost/capacity efficiency. |<br>| <strong>Launch &amp; Operational Partners (Product / xWS / Ops Leads)</strong> | Frame governance and automated checks as accelerators that prevent late fire drills and rollbacks while scaling repeatable playbooks; use blameless post-mortems for psychological safety. |<br><br>*   <br>  <strong>Strength 1 - Turning Ambiguity into Scalable Operating Models:</strong> O
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="6">
+    <div class="card-top">
+      <span class="card-badge">Topic 6 &bull; Q28</span>
+      <h2 class="card-title">Failure - Vendor Underperforming (Block)</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>At Block (Nov. 2021 – Nov. 2022\) across 15+ international markets, a tier-1 vendor handling asset testing and internationalization began missing turnaround SLAs (latency up 20%) and breaching our 5% defect-leakage threshold.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Diagnose the root cause from data, protect launch schedules and quality, and enforce vendor accountability without disrupting active releases.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Diagnostic via Telemetry &amp; Root-Cause Inquiry:** Audited scorecards and uncovered post-acquisition staff turnover and onboarding gaps on custom tooling.     2. **Contingency Routing:** Shifted \~30% of incoming volume to a pre-qualified secondary vendor immediately.     3. **Structured Remediation (30-Day PIP):** Aligned executives on weekly checkpoints, updated technical playbooks, a dedicated account team, and a senior QA lead reviewing outgoing packages at vendor expense.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Defect rates dropped back below threshold within **<span class="metric-highlight">4 weeks</span>**, and full SLA adherence recovered within **<span class="metric-highlight">90 days</span>**, allowing volume restoration.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="6">
+    <div class="card-top">
+      <span class="card-badge">Topic 6 &bull; Q29</span>
+      <h2 class="card-title">Failure - Data breach on a project. How would you address the problem with the client?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>Four-Phase Incident Response:</strong><br><br>1. <strong>Rapid Triage, Containment &amp; Legal Alignment (0–4 Hours):</strong> Convene Security Incident Response (SIRT), Legal/Privacy, and Engineering leads to verify facts, confirm containment, identify exposed data categories, and align on regulatory notification mandates (e.g., GDPR 72-hour rule).  <br>2. <strong>Direct, Factual Stakeholder Briefing (Within 24 Hours):</strong> Brief the client executive sponsor/CISO with verified facts - what happened, what is contained, what remains under investigation - without speculation.  <br>3. <strong>Structured 4-Part Incident Readout:</strong> Deliver a written briefing covering (a) Verified Scope (affected vs. confirmed unaffected), (b) Plain-Language Root Cause, (c) Containment Actions Taken (credential/API token revocation, firewall adjustments), and (d) Customer Protection Plan.  <br>4. <strong>Follow-Through &amp; Systemic Hardening:</strong> Drive independent security audit, au
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="6">
+    <div class="card-top">
+      <span class="card-badge">Topic 6 &bull; Q30</span>
+      <h2 class="card-title">RISK - What&#x27;s a risk that you&#x27;ve identified and dealt with in a project?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>During high-visibility multi-market releases across 20+ countries (Apple / LinkedIn), asynchronous regional marketing/compliance asset delivery risked colliding with engineering code freezes.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Identify release-blocking and defect-leakage risks early and prevent late asset issues from stalling releases or shipping unvetted copy.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Risk &amp; Dependency Matrix:** Built a matrix in Radar tying critical-path assets to engineering freeze milestones.     2. **Automated CI/CD Linting:** Partnered with Engineering on GitHub automations checking structural/encoding errors before staging.     3. **Asynchronous Fallback Protocol:** Established pre-approved legal/editorial fallback tiers (within 48 hours of freeze) so unresolved edge assets reverted to approved defaults without blocking the core OS build.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Zero release cut-off delays and zero critical defect leakage across 25M+ content units.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="6">
+    <div class="card-top">
+      <span class="card-badge">Topic 6 &bull; Q31</span>
+      <h2 class="card-title">CHANGE - You&#x27;re working on a project and learn something new that forces you to change course. How do you manage?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>While serving as Visiting Professor at MIIS (Jul 2023 – Jul 2025), rapid commercial LLM updates mid-term shifted model behavior and rendered initial evaluation benchmarks obsolete.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Adapt the curriculum and evaluation approach mid-stream without derailing milestones or confusing industry partners and students.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Rapid 48-Hour Impact Assessment:** Measured delta in latency, cost-per-call, and HITL QA needs.     2. **Transparent Trade-Offs with Partners:** Aligned with industry partners (Block, GitLab) on shifting to dynamic, model-agnostic criteria.     3. **Modular Re-Architecting:** Updated pipelines into modular Python/FastAPI sprints with config-driven model swapping so governance workflows adapted without full rebuilds.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Successfully transitioned 90+ students/professionals into a future-proof, model-agnostic governance framework.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="6">
+    <div class="card-top">
+      <span class="card-badge">Topic 6 &bull; Q32</span>
+      <h2 class="card-title">RISK - What would you do if you encountered a supply issue?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>4-Step Supply &amp; Capacity Shortfall Playbook:</strong><br><br>1. <strong>Immediate Triage &amp; Impact Containment:</strong> Assess blast radius - critical path vs. secondary enhancements; bandwidth gap vs. SLA breach vs. tooling outage.  <br>2. <strong>Capacity Rebalancing Across Suppliers:</strong> Partner with Procurement to reroute overflow/critical volume to pre-vetted tier-2 partners under existing MSA pricing and SLA terms.  <br>3. <strong>Scope Prioritization with Product &amp; Engineering:</strong> Enforce P0/P1/P2 tiering - protect launch-blocking core flows (P0) and defer non-critical assets (P2).  <br>4. <strong>Root-Cause Review, Governance &amp; Forecasting:</strong> Review metrics in MBRs, enforce SLA remedies/SOW updates, and recalibrate capacity forecasting models.
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="6">
+    <div class="card-top">
+      <span class="card-badge">Topic 6 &bull; Q33</span>
+      <h2 class="card-title">FAILURE - Tell me about a mistake you made in your role. How did you manage the situation and learn from it?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>During my May–Sep 2026 contract at Apple (20+ countries, 25M+ content units), our automated GitHub pre-validation script was tuned too aggressively on edge-case metadata formatting, triggering false-positive blockers during a high-velocity pre-launch staging window and creating a review backlog.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Own the miscalibration immediately, unblock delivery safely, and institute a lasting guardrail so false positives don&#x27;t stall releases again.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Immediate Accountability:** Flagged and owned the threshold over-tuning directly in our cross-functional sync without blaming the script or reviewers.     2. **Rapid De-Escalation:** Worked with our technical lead within 2 hours to hotfix non-critical metadata gates into advisory warnings while keeping strict blockers on critical security, compliance, and core UI assets.     3. **Clear Telemetry &amp; &quot;Shadow Staging&quot; Standard:** Published incident status unblocking staging within 4 hours, and instituted a mandatory **Shadow Staging protocol** - running new automated gates silently for two sprints to calibrate false-positive rates before hard enforcement.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Unblocked staging with zero launch delay and established a permanent governance ergonomics standard.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="6">
+    <div class="card-top">
+      <span class="card-badge">Topic 6 &bull; Q34</span>
+      <h2 class="card-title">FAILURE - What if Google Maps lost all data and there is no backup plan?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>5-Phase Staged Operational Reboot:</strong><br><br>1. <strong>Triage, Containment &amp; Degraded Mode:</strong> Convene SIRT, Engineering, Legal, and partner leads; halt outward mutations that propagate bad data; deploy degraded/fallback UX and transparent partner/user communications.  <br>2. <strong>Cold-Start Baseline Reconstruction:</strong> Partner with Engineering and Legal/Licensing to rebuild a baseline from vetted public/municipal datasets, licensed feeds, and recoverable caches (core roads/geometry first).  <br>3. <strong>Risk-Prioritized HITL &amp; xWS Verification:</strong> Mobilize extended workforce raters focused first on major metro hubs, critical transit corridors, and emergency routing paths.  <br>4. <strong>Telemetry &amp; Crowdsourced Feedback Loops:</strong> Re-introduce anonymized device telemetry and merchant/user updates behind automated abuse/confidence thresholds.  <br>5. <strong>Post-Mortem &amp; Governance Hardening:</strong> Institute immutable air-g
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="7">
+    <div class="card-top">
+      <span class="card-badge">Topic 7 &bull; Q35</span>
+      <h2 class="card-title">AI Expansion Case - Expanding from US English to 30 Global Locales on a Flat \$10M Budget &amp; 8-Week Onboarding Bottleneck</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>Expanding from US English to 30 global locales across Tier 1 (10 core revenue markets), Tier 2 (10 high-growth LATAM/SEA markets), and Tier 3 (10 South Asia/MENA locales with highest LLM hallucination rates) triples evaluation volume from 2M to 6M tasks/year on a flat \$10M budget (currently \$5/task via 100% manual dual-rater review across 6 vendors), while vendor rater onboarding takes 8 weeks (4 weeks SOW/PO approvals across xWS, GPO, Finance \+ 4 weeks tool/access provisioning across gTech/Security).</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div>Scale to 30 locales within the \$10M envelope, slash onboarding lead time, and protect evaluation quality - especially in high-hallucination Tier 3 markets.</div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Risk-Tiered Evaluation &amp; Phased Rollout:** Replace blanket 100% manual dual-rater review with risk-tiered sampling and calibrated review - concentrating human rater budget on high-risk, ambiguous, and high-hallucination Tier 3/edge-case slices while using automated filtering/model-assisted checks on low-risk slices and staging market waves.     2. **Parallelizing &amp; Standardizing Onboarding:** Standardize SOW/PO templates and SLAs with xWS, GPO, and Finance to eliminate one-off approvals (cutting the first 4 weeks), while running Role-Based Access Control (RBAC) provisioning in parallel with gTech/Security (cutting the second 4 weeks).     3. **Vendor Governance &amp; Velocity Visibility:** Tie vendor scorecards and MBRs/QBRs to onboarding lead times, SLA adherence, and inter-rater calibration via live dashboards.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Stays within the flat \<span class="metric-highlight">$10M</span> budget, protects high-hallucination Tier 3 quality rather than blindly cutting it, compresses onboarding via parallel RBAC and standardized SOWs, and gives leadership live visibility.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="7">
+    <div class="card-top">
+      <span class="card-badge">Topic 7 &bull; Q36</span>
+      <h2 class="card-title">Tell me about a time engineering stopped launches and you had to negotiate and resolve misalignment between stakeholders (Plus Follow-Up on Dual Systems).</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div class="star-grid">
+        <div class="star-row s"><div class="star-label">Situation</div><div>During a major global CRM migration for Microsoft Stores across 40+ markets, legacy schema/language mismatches triggered a three-way deadlock: Engineering wanted a full launch freeze and full catalog re-localization (\$500K unbudgeted cost), Localization opposed the \$500K waste, and Regional Marketing opposed freezing revenue-generating campaigns.   * **Action:**     1. **Content &amp; TM Audit:** Audited legacy catalog against Translation Memories, proving deprecated records could migrate as-is - eliminating **\$500,000** in re-translation spend.     2. **Telemetry &amp; A/B Revenue Experiment:** Used historical revenue telemetry and targeted A/B testing to prove a blanket freeze risked millions in quarterly revenue.     3. **Phased Tiered Migration:** Aligned VPs on rolling out waves by tier (English → Tier 1 → Tier 2/3).   * **Follow-Up (Convincing Engineering Lead on Temporary Dual Systems):** Diagnosed that Engineering feared manual data cleanup and indefinite dual-system maintenance. Resolved by: (1) Mapping routing workflows in Visio and using xWS ops to audit, tag, and stage records so developers never touched manual cleanup; (2) Putting legacy CRM into read-only mode for archived content; (3) Setting a time-boxed 60-day deprecation SLA by market tier.   * **Result:** Saved \$500K, protected 100% of Tier-1 launch revenue, and completed migration smoothly without engineering burnout.</div></div>
+        <div class="star-row t"><div class="star-label">Task</div><div></div></div>
+        <div class="star-row a"><div class="star-label">Action</div><div>1. **Content &amp; TM Audit:** Audited legacy catalog against Translation Memories, proving deprecated records could migrate as-is - eliminating **\$500,000** in re-translation spend.     2. **Telemetry &amp; A/B Revenue Experiment:** Used historical revenue telemetry and targeted A/B testing to prove a blanket freeze risked millions in quarterly revenue.     3. **Phased Tiered Migration:** Aligned VPs on rolling out waves by tier (English → Tier 1 → Tier 2/3).   * **Follow-Up (Convincing Engineering Lead on Temporary Dual Systems):** Diagnosed that Engineering feared manual data cleanup and indefinite dual-system maintenance. Resolved by: (1) Mapping routing workflows in Visio and using xWS ops to audit, tag, and stage records so developers never touched manual cleanup; (2) Putting legacy CRM into read-only mode for archived content; (3) Setting a time-boxed 60-day deprecation SLA by market tier.</div></div>
+        <div class="star-row r"><div class="star-label">Result (L6 Impact)</div><div>Saved \<span class="metric-highlight">$500K</span>, protected <span class="metric-highlight">100%</span> of Tier-1 launch revenue, and completed migration smoothly without engineering burnout.</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="7">
+    <div class="card-top">
+      <span class="card-badge">Topic 7 &bull; Q37</span>
+      <h2 class="card-title">You have 30 minutes with a VP. What topics do you cover?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>30-Minute Decision &amp; Alignment Architecture:</strong><br><br>1. <strong>Minutes 0–5 - Framing &amp; North Star Snapshot:</strong> Tight portfolio health snapshot (cycle time, SLA adherence, quality guardrails, cost/capacity efficiency) and single primary objective of the meeting.  <br>2. <strong>Minutes 5–15 - High-Stakes Trade-Offs &amp; Decisions:</strong> Present 1–2 concrete decisions needing VP tie-breaking (e.g., xWS capacity shifts, procurement thresholds, cross-functional priority deadlocks) with 2 viable options, trade-offs, and my clear recommendation.  <br>3. <strong>Minutes 15–23 - 3–6 Month Horizon Risks &amp; Mitigations:</strong> Flag 1–2 emerging risks (AI evaluation latency shifts, international compliance changes, contractor policy updates) alongside mitigations already underway.  <br>4. <strong>Minutes 23–30 - Top-Down Alignment:</strong> Ask: <em>&quot;What shifts in top-level company priorities or leadership concerns should our operational governance fr
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="7">
+    <div class="card-top">
+      <span class="card-badge">Topic 7 &bull; Q38</span>
+      <h2 class="card-title">What is the first thing you would change about your company / Google Search if you were made CEO today?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>Operational Simplicity Charter &amp; Search AI Guardrails (&quot;Listen, Anchor, Accelerate&quot;):</strong><br><br>* <strong>Enterprise Velocity Lens (CEO):</strong> Attack cross-functional decision latency and operational drag via three moves:  <br>  1. <em>Operational Simplicity Charter:</em> Audit multi-step approvals across Engineering, Legal, and Ops, converting low-risk checkboxes into automated/self-service guardrails.  <br>  2. <em>Elevate Shared, Timely Telemetry:</em> Replace lagging QBR slide decks with live operational metrics.  <br>  3. <em>Align Around Velocity \+ Trust:</em> Pair shipping velocity with verifiable quality and safety guardrails.  <br>* <strong>Google Search Lens:</strong> Scale AI-powered and multimodal Search experiences (AI Overviews) with disciplined trust, latency, and multi-market readiness guardrails:  <br>  1. <em>Scalable HITL &amp; Red-Teaming Loops:</em> Embed real-time, API-integrated evaluation directly into deployment pipelines (espec
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" data-topic="7">
+    <div class="card-top">
+      <span class="card-badge">Topic 7 &bull; Q39</span>
+      <h2 class="card-title">Estimation / Fermi Problem - How many windows are in NYC?</h2>
+    </div>
+    
+    <div class="card-body">
+
+      <div style="font-size: 13px; line-height: 1.6; color: var(--slate-700);">
+        <strong>Step-by-Step Bucket Decomposition &amp; Sanity Check:</strong><br><br>* <strong>Step 1 - Residential Windows:</strong> 8,000,000 residents ÷ 2.5 people/household \= 3,200,000 housing units. At \~6 windows/unit \+ \~1 common-area window/unit (7 effective windows/unit) \= <strong>22,400,000 residential windows</strong>.  <br>* <strong>Step 2 - Commercial, Institutional &amp; Mixed-Use Windows:</strong> \~1,000,000 office windows (1 window per 4 commuters across \~4M workers) \+ \~10,000,000 windows across retail storefronts, hotels, schools, hospitals, and high-rise glass towers \= <strong>11,000,000 commercial windows</strong>.  <br>* <strong>Step 3 - Total &amp; Sanity Check:</strong> 22,400,000 \+ 11,000,000 \= <strong>33,400,000 windows</strong> (practical range: <strong>30M–35M windows</strong>). Top-down sanity check: \~4 windows per resident across 8M residents \= 32M windows, confirming order-of-magnitude accuracy.
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function filterTopic(topicId, el) {
+  document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    if (topicId === 'all' || card.getAttribute('data-topic') === topicId) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function toggleAllDetails() {
+  // Simple toggle for compact vs detailed view
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(c => {
+    c.classList.toggle('compact');
+  });
+}
+</script>
+
+</body>
+</html>

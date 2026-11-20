@@ -18,7 +18,7 @@ const Footer = () => {
   const footerLinks = [
     { to: '/about', label: t('nav.about') || 'About', isPage: true },
     { to: '/career', label: t('nav.career') || 'Career Timeline', isPage: true },
-    { to: '/resume', label: t('nav.experience') || 'Resume', isPage: true },
+    { to: '/resume', label: t('nav.resume') || t('nav.experience') || 'Resume', isPage: true },
     { href: '#services', label: t('nav.services') },
     { href: '#portfolio', label: t('nav.portfolio') },
     { href: '#contact', label: t('nav.contact') }

@@ -112,9 +112,11 @@ describe('About Me dataset & structure', () => {
     });
   });
 
-  test('closingInvitation contains 3 action buttons including Experiences and zero dashes', () => {
+  test('closingInvitation contains 3 action buttons including Resume and zero dashes', () => {
     expect(aboutEN.closingInvitation.actions).toHaveLength(3);
     expect(aboutPT.closingInvitation.actions).toHaveLength(3);
+    expect(aboutEN.closingInvitation.actions[1].label).toBe('View Resume');
+    expect(aboutPT.closingInvitation.actions[1].label).toBe('Ver Currículo');
     expect(aboutEN.closingInvitation.actions[1].to).toBe('/resume');
     expect(aboutEN.closingInvitation.lead).not.toContain('—');
   });
