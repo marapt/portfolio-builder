@@ -122,7 +122,9 @@ export const functionalPillars = [
       {
         title: 'Como mantenho os sistemas saudáveis',
         description:
-          'Transformo práticas informais em manuais documentados, métricas claras e controlos precoces de risco que sustentam a qualidade pós-lançamento: ajustando a profundidade do processo para que as salvaguardas acelerem as equipas em vez de as travar. A minha área de crescimento é manter a vigilância para não desenhar estruturas em excesso precocemente, escolhendo um alinhamento ágil inicial e expandindo a governação apenas à medida que a escala real o exige.',
+          'Transformo práticas informais em manuais documentados, métricas claras e controlos precoces de risco que sustentam a qualidade pós-lançamento: ajustando a profundidade do processo para que as salvaguardas acelerem as equipas em vez de as travar.',
+        growthEdge:
+          'A minha área de crescimento é manter a vigilância para não desenhar estruturas em excesso precocemente, escolhendo um alinhamento ágil inicial e expandindo a governação apenas à medida que a escala real o exige.',
       },
     ],
   },
@@ -147,7 +149,9 @@ export const functionalPillars = [
       {
         title: 'Multiplicadora de Pessoas & Talento',
         description:
-          'Com base no Estilo DISC Planner e numa mentalidade generosa de mentoria, oriento talento, transfiro conhecimento abertamente e ajudo as equipas a manterem-se calmas e ligadas sob pressão. Por me importar profundamente com a clareza e a qualidade, mantenho-me intencional em concentrar o meu foco onde acrescento maior alavancagem, capacitando os parceiros para liderarem a execução de ponta a ponta.',
+          'Com base no Estilo DISC Planner e numa mentalidade generosa de mentoria, oriento talento, transfiro conhecimento abertamente e ajudo as equipas a manterem-se calmas e ligadas sob pressão.',
+        growthEdge:
+          'Por me importar profundamente com a clareza e a qualidade, mantenho-me intencional em concentrar o meu foco onde acrescento maior alavancagem, capacitando os parceiros para liderarem a execução de ponta a ponta.',
       },
     ],
   },

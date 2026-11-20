@@ -346,6 +346,19 @@ const AboutMe = () => {
                         <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                           {item.description}
                         </p>
+
+                        {/* Dedicated Growth Edge Callout if present */}
+                        {item.growthEdge && (
+                          <div className="mt-3 pt-3 border-t border-white/10 rounded-xl bg-white/[0.03] p-3 border border-white/5 space-y-1.5">
+                            <span className="text-[10px] font-black uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
+                              <Sparkles size={12} className="text-amber-300 shrink-0" />
+                              {isPt ? 'Área de Crescimento & Calibração' : 'Growth Edge & Calibration'}
+                            </span>
+                            <p className="text-xs text-slate-200 leading-relaxed font-medium italic">
+                              "{item.growthEdge}"
+                            </p>
+                          </div>
+                        )}
                       </div>
 
                       {/* If item has proofLinks (e.g. Pillar 04) */}

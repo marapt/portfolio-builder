@@ -122,7 +122,9 @@ export const functionalPillars = [
       {
         title: 'How I keep systems healthy',
         description:
-          'I turn ad-hoc practices into documented playbooks, clear metrics, and early risk checks that sustain quality after launch: while tuning process depth so guardrails speed up teams rather than slow them down. My growth edge is staying vigilant not to over-engineer structure early on, choosing lightweight alignment first and expanding governance only as real scale demands it.',
+          'I turn ad-hoc practices into documented playbooks, clear metrics, and early risk checks that sustain quality after launch: while tuning process depth so guardrails speed up teams rather than slow them down.',
+        growthEdge:
+          'My growth edge is staying vigilant not to over-engineer structure early on, choosing lightweight alignment first and expanding governance only as real scale demands it.',
       },
     ],
   },
@@ -147,7 +149,9 @@ export const functionalPillars = [
       {
         title: 'People & Talent Multiplier',
         description:
-          'Grounded in a DISC Planner Style and a generous mentoring mindset, I coach talent, transfer knowledge openly, and help teams stay calm and connected under pressure. Because I care deeply about clarity and quality, I stay intentional about focusing where I add the most leverage and empowering partners to own execution end to end.',
+          'Grounded in a DISC Planner Style and a generous mentoring mindset, I coach talent, transfer knowledge openly, and help teams stay calm and connected under pressure.',
+        growthEdge:
+          'Because I care deeply about clarity and quality, I stay intentional about focusing where I add the most leverage and empowering partners to own execution end to end.',
       },
     ],
   },

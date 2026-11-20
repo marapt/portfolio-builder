@@ -78,6 +78,16 @@ describe('About Me dataset & structure', () => {
 
     expect(enVal.items.every((it) => Array.isArray(it.proofLinks) && it.proofLinks.length >= 2)).toBe(true);
     expect(ptVal.items.every((it) => Array.isArray(it.proofLinks) && it.proofLinks.length >= 2)).toBe(true);
+
+    const enP2 = aboutEN.functionalPillars.find((p) => p.id === 'work-style-habits');
+    const enP3 = aboutEN.functionalPillars.find((p) => p.id === 'connections-presence');
+    const ptP2 = aboutPT.functionalPillars.find((p) => p.id === 'work-style-habits');
+    const ptP3 = aboutPT.functionalPillars.find((p) => p.id === 'connections-presence');
+
+    expect(enP2.items[2].growthEdge).toContain('over-engineer structure early on');
+    expect(enP3.items[2].growthEdge).toContain('add the most leverage');
+    expect(ptP2.items[2].growthEdge).toBeDefined();
+    expect(ptP3.items[2].growthEdge).toBeDefined();
   });
 
   test('personalSide covers 3 dimensions of personal background and community impact', () => {
