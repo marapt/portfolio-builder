@@ -234,14 +234,14 @@ export const closingInvitation = {
   eyebrow: "WHAT'S NEXT",
   title: "Let's Connect",
   lead:
-    'If you would like to look closer at specific roles, past programs, or leadership scope, explore my Career and Experience pages. If something here resonated and you want to compare notes on a role, a complex initiative, or working together, reach out anytime via Contact.',
+    'If you would like to look closer at specific roles, past programs, or leadership scope, explore my Career and Resume pages. If something here resonated and you want to compare notes on a role, a complex initiative, or working together, reach out anytime via Contact.',
   leadParagraphs: [
-    'If you would like to look closer at specific roles, past programs, or leadership scope, explore my Career and Experience pages.',
+    'If you would like to look closer at specific roles, past programs, or leadership scope, explore my Career and Resume pages.',
     'If something here resonated and you want to compare notes on a role, a complex initiative, or working together, reach out anytime via Contact.',
   ],
   actions: [
     { label: 'Explore Career Timeline', to: '/career', primary: false },
-    { label: 'View Experience', to: '/resume', primary: false },
+    { label: 'View Resume', to: '/resume', primary: false },
     { label: 'Get in Touch', to: '/#contact', primary: true },
   ],
 };

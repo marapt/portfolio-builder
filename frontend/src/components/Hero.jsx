@@ -78,7 +78,8 @@ const Hero = () => {
       description: t('hero.val_geo_desc'), 
       icon: Globe, 
       position: "-bottom-8 -right-8 lg:-bottom-16 lg:-right-16",
-      targetId: "#resume"
+      targetId: "/resume",
+      isPage: true
     },
     { 
       label: t('hero.val_pm_title'), 
