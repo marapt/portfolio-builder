@@ -228,8 +228,8 @@ const AboutMe = () => {
 
         {/* My Personality Traits Section */}
         {hero.personalityTraits && (
-          <div className="glass-card rounded-3xl p-6 sm:p-8 lg:p-9 border border-white/10 bg-gradient-to-br from-slate-900/60 via-slate-950/80 to-slate-900/60 text-center space-y-6 shadow-2xl">
-            <div className="space-y-1.5 max-w-2xl mx-auto">
+          <div className="glass-card rounded-3xl p-6 sm:p-8 lg:p-9 border border-white/10 bg-gradient-to-br from-slate-900/60 via-slate-950/80 to-slate-900/60 text-left space-y-6 shadow-2xl">
+            <div className="space-y-1.5 max-w-3xl">
               <span className="text-[11px] font-black uppercase tracking-[0.2em] text-cyan-400">
                 {hero.personalityTraits.eyebrow || 'MY PERSONALITY'}
               </span>
@@ -467,7 +467,31 @@ const AboutMe = () => {
             {closing.title}
           </h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal pt-0.5">
-            {closing.lead}
+            {isPt ? (
+              <>
+                Se desejar conhecer em detalhe funções específicas, programas anteriores ou o âmbito da minha liderança, explore as páginas de{' '}
+                <Link to="/career" className="text-cyan-300 hover:text-white font-medium underline underline-offset-4 decoration-cyan-400/40 hover:decoration-cyan-300 transition-colors">
+                  Carreira e Experiência
+                </Link>
+                . Se algo aqui fez sentido e quer trocar ideias sobre uma oportunidade, uma iniciativa complexa ou uma colaboração, entre em{' '}
+                <a href="/#contact" className="text-cyan-300 hover:text-white font-medium underline underline-offset-4 decoration-cyan-400/40 hover:decoration-cyan-300 transition-colors">
+                  contacto
+                </a>{' '}
+                a qualquer momento.
+              </>
+            ) : (
+              <>
+                If you would like to look closer at specific roles, past programs, or leadership scope, explore my{' '}
+                <Link to="/career" className="text-cyan-300 hover:text-white font-medium underline underline-offset-4 decoration-cyan-400/40 hover:decoration-cyan-300 transition-colors">
+                  Career and Experience
+                </Link>{' '}
+                pages. If something here resonated and you want to compare notes on a role, a complex initiative, or working together, reach out anytime via{' '}
+                <a href="/#contact" className="text-cyan-300 hover:text-white font-medium underline underline-offset-4 decoration-cyan-400/40 hover:decoration-cyan-300 transition-colors">
+                  Contact
+                </a>
+                .
+              </>
+            )}
           </p>
         </div>
 
