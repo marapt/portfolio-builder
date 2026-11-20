@@ -492,17 +492,25 @@ export const operationalDomains = [
     description: 'Unit economics modeling, PO/invoice reconciliation, and compounding efficiency gains.',
     subCards: [
       {
-        id: 'fom-1',
-        title: 'Automated PO Reconciliation & Spend Forecasting',
-        subtitle: 'Eliminating manual invoicing friction and budget variance across multi-million spend.',
-        metrics: '0% Budget Variance · Automated Reconciliation',
+        id: 'fom-block',
+        title: 'Scalable Spend Governance & Distributed PM Budget Accountability',
+        subtitle:
+          'Transitioning from a single-resource manual bottleneck to distributed PM budget ownership and interactive fiscal dashboards.',
+        tag: 'Finance & OPEX',
+        proofAnchor: 'block',
+        metrics: 'Block · 30 to 5-Day Invoicing Lag · 5-10% SOW Variance Control',
         star: {
-          situation: 'Manual invoice tracking caused delayed vendor payments and unpredictable quarter-end accrual adjustments.',
-          task: 'Automate PO tracking and align real-time deliverable receipt with financial ledger systems.',
-          action: 'Integrated vendor task completion telemetry with automated ERP invoicing reconciliation.',
-          result: 'Reduced invoicing lag from 30 days to 48 hours and achieved near-zero quarterly budget variance.',
+          situation:
+            'When joining Block, localization financial management relied on a single resource handling vendor management through heavily manual processes and invoicing cross-checks. This operating model could not scale with planned market expansion or growing transaction volume.',
+          task:
+            'Replace the single-point manual bottleneck with a scalable financial operating model by partnering with HR to expand PM responsibilities into end-to-end budget management (estimating, reconciling, monitoring, and reporting) and equipping teams with visual, interactive fiscal reporting.',
+          action:
+            'Partnered with HR to formally expand the PM role to own functional budget estimating, reconciliation, monitoring, and reporting; co-led the creation of visual, interactive fiscal dashboards with direct-report PMs, Engineering, Finance, Senior Leads, and Vendors so PMs could self-monitor and report spend transparently rather than relying on manual cross-checks.',
+          result:
+            'Replaced a single-resource manual bottleneck with distributed PM budget accountability and interactive cross-functional fiscal visibility across PMs, Engineering, Finance, leadership, and vendors, establishing a scalable spend-governance foundation ready for market expansion (reducing invoicing lag from 30 days to 5 days) and enabling us to become budget compliant with a 5-10% quarterly budget variance factored into negotiated SOWs.',
         },
-        l6Principle: 'Financial operational excellence builds trust with Finance and secures continuous program funding.',
+        l6Principle:
+          'Scaling financial governance requires pairing role clarity and cross-functional dashboards with decentralized ownership, not adding manual bottlenecks to a single person.',
       },
     ],
   },

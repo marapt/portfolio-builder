@@ -492,17 +492,25 @@ export const operationalDomains = [
     description: 'Economia unitária, estimativas orçamentais, conciliação de encomendas e eficiência contínua.',
     subCards: [
       {
-        id: 'fom-1',
-        title: 'Reconciliação Automática de Faturas e Previsão de Despesas',
-        subtitle: 'Eliminar erros manuais de faturação e desvios orçamentais em projetos de milhões de euros.',
-        metrics: '0% Desvio Orçamental · Faturação Ágil',
+        id: 'fom-block',
+        title: 'Governação Orçamental Escalável e Responsabilidade Financeira Distribuída',
+        subtitle:
+          'Transição de um estrangulamento manual centrado numa única pessoa para ownership orçamental distribuída pelos PMs e dashboards interativos.',
+        tag: 'Finanças & OPEX',
+        proofAnchor: 'block',
+        metrics: 'Block · Processamento de Faturas de 30 para 5 Dias · Margem de 5-10% em SOWs',
         star: {
-          situation: 'A gestão manual de faturas provocava atrasos nos pagamentos a parceiros e desvios nas previsões trimestrais.',
-          task: 'Automatizar a validação de encomendas e relacionar a receção real de entregas com a contabilidade.',
-          action: 'Liguei a confirmação de entregas na plataforma de operações aos sistemas de gestão financeira.',
-          result: 'Reduzi o tempo de processamento de 30 dias para 48 horas e alcancei precisão orçamental quase perfeita.',
+          situation:
+            'Ao integrar a Block, a gestão financeira de localização dependia de um único colaborador a gerir parceiros através de processos manuais e validações cruzadas de faturas. Este modelo não tinha capacidade de escalar face aos planos de expansão internacional e ao volume crescente de transações.',
+          task:
+            'Substituir o ponto único de estrangulamento manual por um modelo financeiro operacional escalável, estabelecendo uma parceria com os RH para expandir as responsabilidades dos PMs para a gestão orçamental ponta a ponta (estimativa, reconciliação, monitorização e reporte) e dotando as equipas de relatórios fiscais visuais e interativos.',
+          action:
+            'Colaborei com os RH para formalizar a expansão das funções dos PMs, integrando a estimativa, reconciliação, monitorização e reporte orçamental; coliderei a criação de dashboards fiscais interativos com PMs diretos, Engenharia, Finanças, Liderança Sénior e Fornecedores para permitir auto-monitorização e reporte transparente de despesas sem recurso a verificações manuais.',
+          result:
+            'Substituição de um ponto único de estrangulamento por responsabilidade orçamental distribuída entre os PMs e visibilidade fiscal interativa entre PMs, Engenharia, Finanças, liderança e fornecedores, estabelecendo uma base sólida de governação de despesas preparada para a expansão (reduzindo o tempo de faturação de 30 para 5 dias) e garantindo conformidade orçamental com uma margem de variação de 5-10% integrada nos SOWs negociados.',
         },
-        l6Principle: 'O rigor financeiro gera confiança com a Direção Financeira e garante investimento contínuo nos programas.',
+        l6Principle:
+          'Escalar a governação financeira exige associar clareza de funções e dashboards transversais a uma titularidade descentralizada, em vez de sobrecarregar uma única pessoa com estrangulamentos manuais.',
       },
     ],
   },
