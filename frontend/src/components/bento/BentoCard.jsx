@@ -147,7 +147,7 @@ export const BentoCard = ({
                   {card.proofAnchor.toUpperCase()}
                 </span>
               ) : (
-                <span className="text-[11px] text-slate-400">Google L6 Calibrated</span>
+                <span className="text-[11px] text-slate-400">Executive Playbook</span>
               )}
 
               <span className="text-indigo-400 flex items-center gap-1 font-medium group-hover:translate-x-0.5 transition-transform">

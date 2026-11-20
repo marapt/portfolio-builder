@@ -10,7 +10,6 @@ export const bentoHero = {
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
     { label: 'Operational Domains', value: '10 Categories' },
     { label: 'Interactive Cards', value: '25+ STAR Models' },
-    { label: 'Calibration', value: 'Google L6 Calibrated' },
   ],
 };
 

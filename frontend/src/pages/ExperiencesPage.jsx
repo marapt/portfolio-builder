@@ -99,7 +99,7 @@ const ExperiencesPage = () => {
               </p>
 
               {/* Quick Stat Badges */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-8">
                 {(hero.quickStats || []).map((stat, idx) => (
                   <div
                     key={idx}
