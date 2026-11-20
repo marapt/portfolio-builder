@@ -5,39 +5,52 @@ import './BentoCard.css';
 
 const colorThemes = {
   violet: {
-    badge: 'bg-violet-500/10 text-violet-300 border-violet-500/30',
-    border: 'border-violet-500/30 hover:border-violet-400/60',
-    glow: 'from-violet-500/10 via-purple-500/5 to-transparent',
+    badge: 'bg-violet-500/20 text-violet-300 border-violet-500/40',
+    border: 'border-slate-700/80 hover:border-violet-400/80',
+    topBorder: 'border-t-violet-400',
     accentText: 'text-violet-400',
-    btn: 'bg-violet-600/20 hover:bg-violet-600/30 text-violet-300 border-violet-500/30',
+    btn: 'bg-violet-600/30 hover:bg-violet-600/50 text-violet-200 border-violet-500/40',
+    glow: 'shadow-violet-500/10',
   },
   emerald: {
-    badge: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30',
-    border: 'border-emerald-500/30 hover:border-emerald-400/60',
-    glow: 'from-emerald-500/10 via-teal-500/5 to-transparent',
+    badge: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+    border: 'border-slate-700/80 hover:border-emerald-400/80',
+    topBorder: 'border-t-emerald-400',
     accentText: 'text-emerald-400',
-    btn: 'bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border-emerald-500/30',
+    btn: 'bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-200 border-emerald-500/40',
+    glow: 'shadow-emerald-500/10',
   },
   sky: {
-    badge: 'bg-sky-500/10 text-sky-300 border-sky-500/30',
-    border: 'border-sky-500/30 hover:border-sky-400/60',
-    glow: 'from-sky-500/10 via-blue-500/5 to-transparent',
+    badge: 'bg-sky-500/20 text-sky-300 border-sky-500/40',
+    border: 'border-slate-700/80 hover:border-sky-400/80',
+    topBorder: 'border-t-sky-400',
     accentText: 'text-sky-400',
-    btn: 'bg-sky-600/20 hover:bg-sky-600/30 text-sky-300 border-sky-500/30',
+    btn: 'bg-sky-600/30 hover:bg-sky-600/50 text-sky-200 border-sky-500/40',
+    glow: 'shadow-sky-500/10',
   },
   amber: {
-    badge: 'bg-amber-500/10 text-amber-300 border-amber-500/30',
-    border: 'border-amber-500/30 hover:border-amber-400/60',
-    glow: 'from-amber-500/10 via-orange-500/5 to-transparent',
+    badge: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+    border: 'border-slate-700/80 hover:border-amber-400/80',
+    topBorder: 'border-t-amber-400',
     accentText: 'text-amber-400',
-    btn: 'bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 border-amber-500/30',
+    btn: 'bg-amber-600/30 hover:bg-amber-600/50 text-amber-200 border-amber-500/40',
+    glow: 'shadow-amber-500/10',
   },
   indigo: {
-    badge: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/30',
-    border: 'border-indigo-500/30 hover:border-indigo-400/60',
-    glow: 'from-indigo-500/10 via-blue-500/5 to-transparent',
+    badge: 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40',
+    border: 'border-slate-700/80 hover:border-indigo-400/80',
+    topBorder: 'border-t-indigo-400',
     accentText: 'text-indigo-400',
-    btn: 'bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 border-indigo-500/30',
+    btn: 'bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border-indigo-500/40',
+    glow: 'shadow-indigo-500/10',
+  },
+  rose: {
+    badge: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
+    border: 'border-slate-700/80 hover:border-rose-400/80',
+    topBorder: 'border-t-rose-400',
+    accentText: 'text-rose-400',
+    btn: 'bg-rose-600/30 hover:bg-rose-600/50 text-rose-200 border-rose-500/40',
+    glow: 'shadow-rose-500/10',
   },
 };
 
@@ -79,11 +92,10 @@ export const BentoCard = ({
       onKeyDown={handleKeyDown}
     >
       <div className={`bento-card-inner ${isFlipped ? 'flipped' : ''}`}>
-        {/* FRONT FACE */}
+        {/* FRONT FACE (Elevated Surface with High Contrast) */}
         <div
-          className={`bento-card-face bento-card-front bg-slate-900/90 backdrop-blur-md p-6 border ${theme.border} transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-indigo-500/10`}
+          className={`bento-card-face bento-card-front bg-gradient-to-br from-slate-800/95 via-slate-850 to-slate-900/95 p-6 border ${theme.border} transition-all duration-300 shadow-xl hover:shadow-2xl hover:border-indigo-400/60 cursor-pointer`}
           onClick={handleFlip}
-          style={{ cursor: 'pointer' }}
         >
           {/* Top Row: Domain / Tag and Flip Cue */}
           <div>
@@ -115,13 +127,13 @@ export const BentoCard = ({
           </div>
 
           {/* Bottom Area: Key Metrics Pill & Proof Anchor */}
-          <div className="pt-4 border-t border-slate-800/80">
+          <div className="pt-4 border-t border-slate-700/60">
             {card.metrics && (
               <div className="mb-3">
                 <span className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold block mb-1">
                   Validated Impact
                 </span>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-medium">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-medium">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                   <span>{card.metrics}</span>
                 </div>
@@ -130,7 +142,7 @@ export const BentoCard = ({
 
             <div className="flex items-center justify-between text-xs text-slate-400">
               {card.proofAnchor ? (
-                <span className="inline-flex items-center gap-1 font-mono text-[11px] text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700/60">
+                <span className="inline-flex items-center gap-1 font-mono text-[11px] text-slate-200 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
                   <Building2 className="w-3 h-3 text-indigo-400" />
                   {card.proofAnchor.toUpperCase()}
                 </span>
@@ -146,13 +158,13 @@ export const BentoCard = ({
           </div>
         </div>
 
-        {/* BACK FACE (STAR MODEL) */}
+        {/* BACK FACE (Flipped STAR Model with High-Contrast Background & Accents) */}
         <div
-          className={`bento-card-face bento-card-back bg-slate-950 p-6 border ${theme.border} shadow-2xl flex flex-col justify-between`}
+          className={`bento-card-face bento-card-back bg-gradient-to-b from-slate-800/95 via-slate-850 to-slate-900/95 p-6 border border-slate-700/80 border-t-2 ${theme.topBorder} shadow-2xl ring-1 ring-white/10 flex flex-col justify-between`}
         >
           {/* Header Row */}
           <div>
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-700/80 mb-3">
               <span className={`text-xs font-bold uppercase tracking-wider ${theme.accentText}`}>
                 STAR Framework
               </span>
@@ -169,10 +181,10 @@ export const BentoCard = ({
 
             <h4 className="text-sm font-bold text-white mb-3 line-clamp-1">{card.title}</h4>
 
-            {/* STAR Content Grid */}
+            {/* STAR Content Grid with Contrasting Card Insets */}
             <div className="space-y-2.5 text-xs">
               {star.situation && (
-                <div className="bg-slate-900/80 rounded-lg p-2.5 border-l-2 border-amber-500">
+                <div className="bg-slate-900/90 rounded-lg p-2.5 border-l-2 border-amber-500 border border-slate-800/80">
                   <span className="font-bold text-amber-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Situation
                   </span>
@@ -181,7 +193,7 @@ export const BentoCard = ({
               )}
 
               {star.task && (
-                <div className="bg-slate-900/80 rounded-lg p-2.5 border-l-2 border-sky-500">
+                <div className="bg-slate-900/90 rounded-lg p-2.5 border-l-2 border-sky-500 border border-slate-800/80">
                   <span className="font-bold text-sky-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Task
                   </span>
@@ -190,7 +202,7 @@ export const BentoCard = ({
               )}
 
               {star.action && (
-                <div className="bg-slate-900/80 rounded-lg p-2.5 border-l-2 border-indigo-500">
+                <div className="bg-slate-900/90 rounded-lg p-2.5 border-l-2 border-indigo-500 border border-slate-800/80">
                   <span className="font-bold text-indigo-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Action
                   </span>
@@ -199,7 +211,7 @@ export const BentoCard = ({
               )}
 
               {star.result && (
-                <div className="bg-slate-900/80 rounded-lg p-2.5 border-l-2 border-emerald-500">
+                <div className="bg-emerald-950/40 rounded-lg p-2.5 border-l-2 border-emerald-500 border border-emerald-500/30">
                   <span className="font-bold text-emerald-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Result & Impact
                   </span>
@@ -210,7 +222,7 @@ export const BentoCard = ({
 
             {/* L6 Principle Callout */}
             {card.l6Principle && (
-              <div className="mt-3 p-2.5 rounded-lg bg-indigo-950/30 border border-indigo-500/30 flex items-start gap-2">
+              <div className="mt-3 p-2.5 rounded-lg bg-indigo-950/40 border border-indigo-500/40 flex items-start gap-2">
                 <Lightbulb className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
                 <p className="text-[11px] text-indigo-200 italic leading-snug">
                   {card.l6Principle}
@@ -221,7 +233,7 @@ export const BentoCard = ({
 
           {/* Footer Action: Anchor jump if available */}
           {card.proofAnchor && (
-            <div className="pt-3 mt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
+            <div className="pt-3 mt-3 border-t border-slate-700/80 flex items-center justify-between text-[11px]">
               <span className="text-slate-400">Career Link:</span>
               <Link
                 to={`/career#${card.proofAnchor}`}

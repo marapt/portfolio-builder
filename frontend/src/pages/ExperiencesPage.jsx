@@ -16,13 +16,11 @@ import {
 } from '../data/bento/pt';
 import {
   Sparkles,
-  Trello,
-  ExternalLink,
   Layers,
   ArrowRight,
   RotateCw,
-  Award,
-  CheckCircle2,
+  FileText,
+  Mail,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -125,26 +123,32 @@ const ExperiencesPage = () => {
                   className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/20"
                 >
                   <RotateCw className="w-4 h-4" />
-                  <span>{allFlipped ? (isPt ? 'Voltar aos Cartões' : 'Reset to Summary') : (isPt ? 'Virar Todos para STAR' : 'Flip All to STAR')}</span>
+                  <span>
+                    {allFlipped
+                      ? isPt
+                        ? 'Voltar aos Cartões'
+                        : 'Reset to Summary'
+                      : isPt
+                      ? 'Virar Todos para STAR'
+                      : 'Flip All to STAR'}
+                  </span>
                 </button>
-
-                <a
-                  href="https://trello.com/b/wXWgwV5q/my-trello-board"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700"
-                >
-                  <Trello className="w-4 h-4 text-sky-400" />
-                  <span>{isPt ? 'Quadro Trello de Conteúdo' : 'Content Trello Board'}</span>
-                  <ExternalLink className="w-3 h-3 text-slate-400" />
-                </a>
 
                 <Link
                   to="/career"
-                  className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-slate-900/60 hover:bg-slate-800 text-slate-300 border border-slate-800"
+                  className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-slate-900/80 hover:bg-slate-850 text-slate-200 border border-slate-700/80 shadow-md"
                 >
                   <Layers className="w-4 h-4 text-indigo-400" />
-                  <span>{isPt ? 'Ver Linha do Tempo' : 'Career Timeline'}</span>
+                  <span>{isPt ? 'Linha do Tempo' : 'Career Timeline'}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+
+                <Link
+                  to="/resume"
+                  className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-slate-900/80 hover:bg-slate-850 text-slate-200 border border-slate-700/80 shadow-md"
+                >
+                  <FileText className="w-4 h-4 text-emerald-400" />
+                  <span>{isPt ? 'Currículo' : 'Resume'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -171,39 +175,38 @@ const ExperiencesPage = () => {
             allFlipped={allFlipped}
           />
 
-          {/* TRELLO SYNC & GOVERNANCE BRIDGE */}
-          <section className="bg-gradient-to-r from-slate-900 via-indigo-950/30 to-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 text-center relative overflow-hidden">
+          {/* EXECUTIVE ENGAGEMENT CTA */}
+          <section className="bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 text-center relative overflow-hidden shadow-2xl">
             <div className="max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20 mb-3">
-                <Trello className="w-3.5 h-3.5" />
-                <span>{isPt ? 'Integração Contínua Trello' : 'Continuous Trello Ingestion'}</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-3">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>{isPt ? 'Liderança Estratégica & Execução' : 'Strategic Leadership & Alignment'}</span>
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                 {isPt
-                  ? 'Gostaria de sugerir ou adicionar novos cartões operacionais?'
-                  : 'Curating Custom Operational Frameworks & Subcards?'}
+                  ? 'Interessado em aprofundar estes modelos operacionais?'
+                  : 'Looking to dive deeper into these operational systems?'}
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 {isPt
-                  ? 'Os cartões deste Bento Box podem ser sincronizados diretamente a partir do quadro Trello de Governação. Adicione novos cartões nas respetivas listas para expandir até 10 subcartões por domínio.'
-                  : 'Cards in this Bento Box are designed for direct synchronization with the Governance Trello Board. Add new cards into respective lists to scale up to 10 subcards per operational domain.'}
+                  ? 'Cada modelo STAR reflete desafios reais resolvidos em organizações globais de grande escala. Vamos conversar sobre como aplicar estes princípios ao seu ecossistema.'
+                  : 'Every STAR playbook reflects proven execution models delivered across complex global programs. Connect to explore how these operational frameworks can scale your organization.'}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <a
-                  href="https://trello.com/b/wXWgwV5q/my-trello-board"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-sky-500/20 transition-all"
-                >
-                  <Trello className="w-4 h-4" />
-                  <span>{isPt ? 'Abrir Trello Board' : 'Open Trello Board'}</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
                 <Link
                   to="/#contact"
+                  className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-indigo-500/20 transition-all"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>{isPt ? 'Fale Comigo' : 'Get in Touch'}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  to="/career"
                   className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs sm:text-sm flex items-center gap-2 border border-slate-700 transition-all"
                 >
-                  <span>{isPt ? 'Fale Comigo' : 'Get in Touch'}</span>
+                  <Layers className="w-4 h-4 text-indigo-400" />
+                  <span>{isPt ? 'Explorar Carreira' : 'Explore Career Timeline'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
