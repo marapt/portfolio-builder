@@ -4,8 +4,9 @@
 export const bentoHero = {
   eyebrow: 'SISTEMAS OPERACIONAIS E MODELOS STAR',
   title: 'Experiências',
+  subheading: 'Exemplos do Modelo STAR',
   subtitle:
-    'Um Bento Box multimodal interativo que apresenta estruturas empresariais comprovadas, modelos de governação de fornecedores e manuais de execução STAR testados no terreno.',
+    'Um manual operacional interativo que apresenta estruturas empresariais comprovadas, modelos de governação de fornecedores e metodologias de execução STAR testadas no terreno.',
   quickStats: [
     { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
     { label: 'Domínios Operacionais', value: '10 Categorias' },

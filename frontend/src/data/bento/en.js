@@ -4,8 +4,9 @@
 export const bentoHero = {
   eyebrow: 'OPERATIONAL SYSTEMS & STAR PLAYBOOKS',
   title: 'Experiences',
+  subheading: 'STAR Framework Examples',
   subtitle:
-    'An interactive multimodal Bento Box showcasing proven enterprise frameworks, extended workforce governance models, and field-tested STAR execution playbooks.',
+    'An interactive operational playbook showcasing proven enterprise governance models, extended workforce systems, and field-tested STAR execution playbooks.',
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
     { label: 'Operational Domains', value: '10 Categories' },

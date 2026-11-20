@@ -37,8 +37,8 @@ const ExperiencesPage = () => {
 
   useEffect(() => {
     document.title = isPt
-      ? 'Experiências · Bento Box Multimodal | Mara Martins'
-      : 'Experiences · Multimodal Bento Box | Mara Martins';
+      ? 'Experiências · Exemplos do Modelo STAR | Mara Martins'
+      : 'Experiences · STAR Framework Examples | Mara Martins';
   }, [isPt]);
 
   const handleToggleFlip = (cardId) => {
@@ -90,7 +90,7 @@ const ExperiencesPage = () => {
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 leading-tight">
                 {hero.title}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-emerald-400 text-2xl sm:text-4xl mt-1">
-                  Multimodal Bento Box
+                  {hero.subheading || (isPt ? 'Exemplos do Modelo STAR' : 'STAR Framework Examples')}
                 </span>
               </h1>
 
