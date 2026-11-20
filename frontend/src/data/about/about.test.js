@@ -112,6 +112,13 @@ describe('About Me dataset & structure', () => {
     });
   });
 
+  test('closingInvitation contains 3 action buttons including Experiences and zero dashes', () => {
+    expect(aboutEN.closingInvitation.actions).toHaveLength(3);
+    expect(aboutPT.closingInvitation.actions).toHaveLength(3);
+    expect(aboutEN.closingInvitation.actions[1].to).toBe('/resume');
+    expect(aboutEN.closingInvitation.lead).not.toContain('—');
+  });
+
   test('strictly zero clausal em-dashes (—) in both EN and PT about datasets', () => {
     const rawEn = JSON.stringify(aboutEN);
     const rawPt = JSON.stringify(aboutPT);
