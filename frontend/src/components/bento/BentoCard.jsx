@@ -104,7 +104,7 @@ export const BentoCard = ({
                 className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
               >
                 <Sparkles className="w-3 h-3" />
-                {card.tag || domainTitle || 'Operational Playbook'}
+                {card.tag || domainTitle || 'Operational Card'}
               </span>
               <button
                 type="button"
@@ -147,11 +147,11 @@ export const BentoCard = ({
                   {card.proofAnchor.toUpperCase()}
                 </span>
               ) : (
-                <span className="text-[11px] text-slate-400">Executive Playbook</span>
+                <span className="text-[11px] text-slate-400">Executive Card</span>
               )}
 
               <span className="text-indigo-400 flex items-center gap-1 font-medium group-hover:translate-x-0.5 transition-transform">
-                Read playbook
+                View STAR card
                 <ArrowRight className="w-3 h-3" />
               </span>
             </div>

@@ -189,8 +189,8 @@ const ExperiencesPage = () => {
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 {isPt
-                  ? 'Cada modelo STAR reflete desafios reais resolvidos em organizações globais de grande escala. Vamos conversar sobre como aplicar estes princípios ao seu ecossistema.'
-                  : 'Every STAR playbook reflects proven execution models delivered across complex global programs. Connect to explore how these operational frameworks can scale your organization.'}
+                  ? 'Cada cartão STAR reflete desafios reais resolvidos em organizações globais de grande escala. Vamos conversar sobre como aplicar estes princípios ao seu ecossistema.'
+                  : 'Every STAR card reflects proven execution models delivered across complex global programs. Connect to explore how these operational frameworks can scale your organization.'}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link

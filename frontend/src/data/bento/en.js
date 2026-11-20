@@ -2,15 +2,15 @@
 // Sourced directly from validated STAR models and Google L6 Operational Governance Frameworks
 
 export const bentoHero = {
-  eyebrow: 'OPERATIONAL SYSTEMS & STAR PLAYBOOKS',
+  eyebrow: 'OPERATIONAL SYSTEMS & STAR CARDS',
   title: 'Experiences',
   subheading: 'STAR Framework Examples',
   subtitle:
-    'An interactive operational playbook showcasing proven enterprise governance models, extended workforce systems, and field-tested STAR execution playbooks.',
+    'An interactive operational system showcasing proven enterprise governance models, extended workforce architectures, and field-tested STAR cards.',
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
     { label: 'Operational Domains', value: '10 Categories' },
-    { label: 'Interactive Cards', value: '25+ STAR Models' },
+    { label: 'Interactive Cards', value: '25+ STAR Cards' },
   ],
 };
 
@@ -131,7 +131,7 @@ export const topPillars = [
       {
         id: 'sp-3',
         title: 'Vendor Breach & 30-Day Corrective Action (CAP)',
-        subtitle: 'Systemic remediation playbook for chronic delivery slippage and quality dips.',
+        subtitle: 'Systemic remediation framework for chronic delivery slippage and quality dips.',
         tag: 'Vendor Escalation',
         metrics: '14-Day Recovery · Zero Launch Disruption',
         proofAnchor: 'block',

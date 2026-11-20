@@ -97,7 +97,7 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip }) => {
                       </span>
                       <span className="text-slate-600">·</span>
                       <span className="text-xs text-slate-400 font-mono">
-                        {pillar.subCards?.length || 0} STAR Playbooks
+                        {pillar.subCards?.length || 0} STAR Cards
                       </span>
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">

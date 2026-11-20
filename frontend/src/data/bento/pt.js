@@ -2,15 +2,15 @@
 // Baseado diretamente em modelos STAR validados e Estruturas de Governação Operacional Google L6
 
 export const bentoHero = {
-  eyebrow: 'SISTEMAS OPERACIONAIS E MODELOS STAR',
+  eyebrow: 'SISTEMAS OPERACIONAIS E CARTÕES STAR',
   title: 'Experiências',
   subheading: 'Exemplos do Modelo STAR',
   subtitle:
-    'Um manual operacional interativo que apresenta estruturas empresariais comprovadas, modelos de governação de fornecedores e metodologias de execução STAR testadas no terreno.',
+    'Um sistema operacional interativo que apresenta estruturas comprovadas de governação empresarial, arquiteturas de workforce alargado e cartões STAR testados no terreno.',
   quickStats: [
     { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
     { label: 'Domínios Operacionais', value: '10 Categorias' },
-    { label: 'Cartões Interativos', value: '25+ Modelos STAR' },
+    { label: 'Cartões Interativos', value: '25+ Cartões STAR' },
   ],
 };
 

@@ -114,7 +114,7 @@ export const BentoDomainGrid = ({
             Specialized Operational Domains
           </h2>
           <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-            Granular execution playbooks spanning content pipelines, AI model evaluation, continuous vendor accountability, compliance controls, and unit economics.
+            Granular STAR cards spanning content pipelines, AI model evaluation, continuous vendor accountability, compliance controls, and unit economics.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export const BentoDomainGrid = ({
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search playbooks by metric, situation, action, or L6 principle..."
+            placeholder="Search STAR cards by metric, situation, action, or principle..."
             className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
           />
           {searchQuery && (
@@ -202,7 +202,7 @@ export const BentoDomainGrid = ({
       {filteredDomains.length === 0 ? (
         <div className="bg-slate-900/40 rounded-2xl p-12 text-center border border-slate-800">
           <FolderOpen className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-          <h3 className="text-lg font-bold text-white mb-1">No matching playbooks found</h3>
+          <h3 className="text-lg font-bold text-white mb-1">No matching STAR cards found</h3>
           <p className="text-sm text-slate-400 max-w-md mx-auto">
             Try adjusting your search terms or selecting 'All Domains' to explore the full library.
           </p>
@@ -231,7 +231,7 @@ export const BentoDomainGrid = ({
                         </span>
                         <span className="text-slate-600">·</span>
                         <span className="text-xs text-slate-400 font-mono">
-                          {domain.subCards?.length || 0} Playbooks
+                          {domain.subCards?.length || 0} STAR Cards
                         </span>
                       </div>
                       <h3 className="text-xl font-bold text-white tracking-tight">
