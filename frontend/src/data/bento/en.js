@@ -536,6 +536,27 @@ export const operationalDomains = [
           'Prototyping visual clarity first and pairing live telemetry with local market context turns raw campaign velocity into faster, coordinated execution.',
       },
       {
+        id: 'bit-vendor-governance',
+        title: 'Vendor Capacity, SLA and Operational Cost Governance',
+        subtitle:
+          'Unified Power BI dashboards connecting vendor throughput, on-time delivery SLAs, and operational budget guardrails.',
+        tag: 'Vendor Operations',
+        proofAnchor: 'microsoft',
+        metrics: '5 Vendor Workstreams · 30-Day SLA & 3-Mo Forecast Visibility',
+        star: {
+          situation:
+            'Managing vendor capacity, output, SLA adherence (including on-time delivery), and operational costs across active initiatives lacked a consolidated operational view, making it harder for teams to balance supplier workloads against budget guardrails.',
+          task:
+            'Design Power BI dashboards that unified vendor capacity, output, SLA performance (on-time delivery), and operational cost metrics to guide proactive capacity planning and budget governance.',
+          action:
+            'Collaborated with internal stakeholders to align on capacity utilization, throughput, on-time delivery SLA thresholds, and cost drivers; created visual views linking supplier output and SLA compliance directly to budget burn and capacity headroom across 5 suppliers and vendor workstreams.',
+          result:
+            'Gave program and budget owners real-time visibility into capacity bottlenecks, SLA adherence, and spend trajectory, improving on-time delivery visibility across all tracked deliverables and supporting tighter budget variance control, enabling up to 30 days compliance visibility and 3 months forecasting visibility without over-allocating supplier capacity.',
+        },
+        l6Principle:
+          'When operational throughput, SLA health, and cost live in one view, governance shifts from reactive firefighting to disciplined resource and budget stewardship.',
+      },
+      {
         id: 'bit-1',
         title: 'End-to-End Pipeline Telemetry & SLA Tracking',
         subtitle: 'Real-time throughput metrics across intake, triage, translation, and deployment.',

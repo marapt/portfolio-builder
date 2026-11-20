@@ -536,6 +536,27 @@ export const operationalDomains = [
           'Prototipar a clareza visual primeiro e associar telemetria em tempo real ao contexto local transforma a velocidade de campanha em execução coordenada.',
       },
       {
+        id: 'bit-vendor-governance',
+        title: 'Capacidade de Fornecedores, SLAs e Governação de Custos Operacionais',
+        subtitle:
+          'Dashboards Power BI unificados integrando capacidade de fornecedores, SLAs de entrega e limites orçamentais.',
+        tag: 'Operações de Fornecedores',
+        proofAnchor: 'microsoft',
+        metrics: '5 Fornecedores · Visibilidade de SLAs a 30 Dias e Previsões a 3 Meses',
+        star: {
+          situation:
+            'A gestão de capacidade de fornecedores, volume de entregas, cumprimento de SLAs (incluindo pontualidade) e custos operacionais em iniciativas ativas não dispunha de uma visão consolidada, dificultando o equilíbrio da carga de trabalho dos parceiros face aos limites orçamentais.',
+          task:
+            'Desenhar dashboards no Power BI que unificassem capacidade de fornecedores, volume, desempenho de SLAs (pontualidade nas entregas) e métricas de custos operacionais para orientar o planeamento proativo e a governação orçamental.',
+          action:
+            'Colaborei com partes interessadas internas para alinhar a utilização de capacidade, volume de trabalho, limites de SLAs de entrega pontual e fatores de custo; criei visualizações ligando a produção de parceiros e a conformidade de SLAs diretamente à execução orçamental e margem de capacidade em 5 fluxos de fornecedores.',
+          result:
+            'Proporcionei aos responsáveis de programas e orçamento visibilidade em tempo real sobre estrangulamentos de capacidade, cumprimento de SLAs e trajetória de despesas, melhorando a visibilidade de entregas pontuais e permitindo um controlo orçamental mais rigoroso, com visibilidade de conformidade até 30 dias e previsões a 3 meses sem sobrecarregar fornecedores.',
+        },
+        l6Principle:
+          'Quando o volume operacional, a saúde dos SLAs e os custos coexistem numa única visão, a governação evolui da reação a urgências para uma gestão disciplinada de recursos e orçamento.',
+      },
+      {
         id: 'bit-1',
         title: 'Telemetria Integrada e Acompanhamento de SLAs em Tempo Real',
         subtitle: 'Visibilidade completa sobre todas as fases: admissão, triagem, execução e entrega.',
