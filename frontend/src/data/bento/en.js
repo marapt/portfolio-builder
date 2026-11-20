@@ -515,6 +515,27 @@ export const operationalDomains = [
     description: 'Real-time pipeline analytics, predictive bottleneck modeling, and stakeholder dashboards.',
     subCards: [
       {
+        id: 'bit-bf',
+        title: 'Real-Time Global Campaign Telemetry (Black Friday)',
+        subtitle:
+          'Unified real-time Power BI performance dashboards across global and local markets.',
+        tag: 'BI & Telemetry',
+        proofAnchor: 'microsoft',
+        metrics: '40+ Mkts · 24-48h Turnaround',
+        star: {
+          situation:
+            'During high-velocity global events like Black Friday, internal stakeholders lacked unified, real-time visibility into campaign delivery and performance across global and local markets, risking delayed course-corrections when regional pacing or conversion trends shifted mid-event.',
+          task:
+            'Partner with internal teams to build Power BI reporting dashboards that delivered real-time global and per-market campaign performance visibility, supported by clear visual mockups before development.',
+          action:
+            'Partnered cross-functionally with internal teams to standardize KPI definitions and global-to-local market rollups; designed visual graphic mockups upfront to align stakeholders on hierarchy and data presentation before building; and built Power BI dashboards tracking live global and market-specific performance across 40+ markets with near-real-time refresh cycles (e.g. every 60 minutes).',
+          result:
+            'Replaced fragmented manual status checks with a single source of truth across global and local market teams during peak Black Friday windows, cutting reporting turnaround time from 3-5 days into 24-48 hours and enabling faster mid-campaign adjustments across regional stakeholders for underperforming campaigns.',
+        },
+        l6Principle:
+          'Prototyping visual clarity first and pairing live telemetry with local market context turns raw campaign velocity into faster, coordinated execution.',
+      },
+      {
         id: 'bit-1',
         title: 'End-to-End Pipeline Telemetry & SLA Tracking',
         subtitle: 'Real-time throughput metrics across intake, triage, translation, and deployment.',

@@ -515,6 +515,27 @@ export const operationalDomains = [
     description: 'Análise de fluxos em tempo real, deteção preventiva de estrangulamentos e painéis para liderança.',
     subCards: [
       {
+        id: 'bit-bf',
+        title: 'Telemetria em Tempo Real para Campanhas Globais (Black Friday)',
+        subtitle:
+          'Dashboards Power BI em tempo real unificando o desempenho de campanhas em mercados globais e locais.',
+        tag: 'BI & Telemetria',
+        proofAnchor: 'microsoft',
+        metrics: '40+ Mercados · 24-48h Turnaround',
+        star: {
+          situation:
+            'Durante eventos globais de alta velocidade como a Black Friday, as partes interessadas internas não tinham visibilidade unificada e em tempo real sobre a entrega e desempenho de campanhas nos mercados globais e locais, arriscando correções de curso tardias quando o ritmo regional mudava a meio do evento.',
+          task:
+            'Colaborar com equipas internas para construir dashboards no Power BI com visibilidade de desempenho global e por mercado em tempo real, suportados por mockups visuais claros antes do desenvolvimento.',
+          action:
+            'Estabeleci parcerias multifuncionais para padronizar definições de KPIs e agregações de mercado globais e locais; desenhei mockups visuais antecipadamente para alinhar hierarquias de dados antes da construção; e implementei dashboards Power BI com atualização quase em tempo real (a cada 60 minutos) cobrindo mais de 40 mercados.',
+          result:
+            'Substituição de verificações manuais fragmentadas por uma fonte única de verdade durante a Black Friday, reduzindo o tempo de reporte de 3-5 dias para 24-48 horas e permitindo ajustes rápidos a campanhas com baixo desempenho.',
+        },
+        l6Principle:
+          'Prototipar a clareza visual primeiro e associar telemetria em tempo real ao contexto local transforma a velocidade de campanha em execução coordenada.',
+      },
+      {
         id: 'bit-1',
         title: 'Telemetria Integrada e Acompanhamento de SLAs em Tempo Real',
         subtitle: 'Visibilidade completa sobre todas as fases: admissão, triagem, execução e entrega.',
