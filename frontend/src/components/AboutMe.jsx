@@ -132,10 +132,10 @@ const AboutMe = () => {
 
   const navTabs = [
     { id: 'all', label: isPt ? 'Todos os Pilares' : 'All Pillars' },
-    ...pillars.map((p) => ({
-      id: p.id,
-      label: `${p.number} · ${p.title}`,
-    })),
+    { id: 'why-work-with-me', label: isPt ? '01 · Porque Trabalhar Comigo' : '01 · Why Work With Me' },
+    { id: 'work-style-habits', label: isPt ? '02 · Estilo de Trabalho' : '02 · Work Style & Habits' },
+    { id: 'connections-presence', label: isPt ? '03 · Conexões & Presença' : '03 · Connections & Presence' },
+    { id: 'value-and-leverage', label: isPt ? '04 · Valor & Alavancagem' : '04 · Value & Leverage' },
     { id: 'personal', label: isPt ? '05 · Além do Currículo' : '05 · Beyond the Resume' },
   ];
 
@@ -274,13 +274,13 @@ const AboutMe = () => {
       </section>
 
       {/* Navigation Filter Pills */}
-      <nav aria-label="About Sections" className="sticky top-24 z-30 pt-2 pb-3 backdrop-blur-xl bg-slate-950/60 border-y border-white/10 -mx-4 px-4 sm:mx-0 sm:px-0 sm:rounded-2xl">
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+      <nav aria-label="About Sections" className="sticky top-24 z-30 pt-2 pb-3 backdrop-blur-xl bg-slate-950/70 border-y border-white/10 -mx-4 px-4 sm:mx-0 sm:px-3 sm:rounded-2xl">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 scroll-smooth pr-8 sm:pr-4">
           {navTabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer shrink-0 ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-cyan-500 to-violet-600 text-white shadow-lg shadow-cyan-500/20'
                   : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border border-white/10'
@@ -335,11 +335,11 @@ const AboutMe = () => {
                       className={`glass-card rounded-2xl p-5 sm:p-6 border ${colors.subCardBg} flex flex-col justify-between transition-all hover:border-white/20`}
                     >
                       <div className="space-y-3">
-                        <div className="flex items-center gap-2">
-                          <span className={`text-xs font-black px-2 py-0.5 rounded-md border ${colors.badge}`}>
+                        <div className="flex items-start gap-2.5 min-h-[2.25rem]">
+                          <span className={`text-xs font-black px-2 py-0.5 rounded-md border ${colors.badge} shrink-0 mt-0.5`}>
                             0{itemIdx + 1}
                           </span>
-                          <h3 className="text-base font-bold text-white tracking-tight">
+                          <h3 className="text-base font-bold text-white tracking-tight leading-snug">
                             {item.title}
                           </h3>
                         </div>

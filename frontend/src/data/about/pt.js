@@ -90,12 +90,12 @@ export const functionalPillars = [
           'Trago estrutura e clareza a iniciativas complexas de múltiplas equipas através da definição de mandatos, dependências, ritmos operacionais e metas mensuráveis entre partes interessadas globais.',
       },
       {
-        title: 'Estratégia de Produto & Fluxos de IA',
+        title: 'Estratégia de Produto & IA',
         description:
           'Ligo o atrito real do utilizador e das operações a soluções práticas de produto e fluxos de IA: passando da definição clara do problema e prototipagem rápida à adoção em escala.',
       },
       {
-        title: 'Capacitação Operacional & Governação',
+        title: 'Operações & Governação',
         description:
           'Construo modelos operacionais escaláveis, estruturas claras de responsabilidade e governação adaptada que ajudam organizações em crescimento a operar com consistência entre equipas e mercados.',
       },
@@ -122,7 +122,7 @@ export const functionalPillars = [
       {
         title: 'Como mantenho os sistemas saudáveis',
         description:
-          'Transformo práticas informais em manuais documentados, métricas claras e controlos precoces de risco que sustentam a qualidade pós-lançamento: ajustando a profundidade do processo para que as salvaguardas acelerem as equipas em vez de as travar.',
+          'Transformo práticas informais em manuais documentados, métricas claras e controlos precoces de risco que sustentam a qualidade pós-lançamento: ajustando a profundidade do processo para que as salvaguardas acelerem as equipas em vez de as travar. A minha área de crescimento é manter a vigilância para não desenhar estruturas em excesso precocemente, escolhendo um alinhamento ágil inicial e expandindo a governação apenas à medida que a escala real o exige.',
       },
     ],
   },
@@ -135,19 +135,19 @@ export const functionalPillars = [
     avatar: '🤝',
     items: [
       {
-        title: 'Alinhamento multifuncional e regional',
+        title: 'Alinhamento Multifuncional',
         description:
           'Alinho Engenharia, Produto, Design, Operações e líderes regionais em torno de metas comuns, direitos claros de decisão e contexto cultural tácito.',
       },
       {
-        title: 'Parceria frontal e construtiva',
+        title: 'Parceria Construtiva',
         description:
           'Falo com franqueza desde cedo, resolvo atritos de forma construtiva e colaboro com patrocinadores executivos e parceiros para transformar prioridades concorrentes em escolhas partilhadas.',
       },
       {
-        title: 'Multiplicadora de pessoas e talento',
+        title: 'Multiplicadora de Pessoas & Talento',
         description:
-          'Com base no Estilo DISC Planner e numa mentalidade generosa de mentoria, oriento talento, transfiro conhecimento abertamente e ajudo as equipas a manterem-se calmas e ligadas sob pressão.',
+          'Com base no Estilo DISC Planner e numa mentalidade generosa de mentoria, oriento talento, transfiro conhecimento abertamente e ajudo as equipas a manterem-se calmas e ligadas sob pressão. Por me importar profundamente com a clareza e a qualidade, mantenho-me intencional em concentrar o meu foco onde acrescento maior alavancagem, capacitando os parceiros para liderarem a execução de ponta a ponta.',
       },
     ],
   },

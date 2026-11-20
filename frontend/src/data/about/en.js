@@ -80,7 +80,7 @@ export const functionalPillars = [
     id: 'why-work-with-me',
     number: '01',
     title: 'Why You Should Work With Me',
-    focus: 'How you tackle ambiguity, align moving parts, and move complex work forward.',
+    focus: 'How I tackle ambiguity, align moving parts, and move complex work forward.',
     color: 'cyan',
     avatar: '🎯',
     items: [
@@ -90,12 +90,12 @@ export const functionalPillars = [
           'I bring structure and clarity to high-ambiguity, multi-team initiatives by defining charters, dependencies, operating cadences, and measurable milestones across global stakeholders.',
       },
       {
-        title: 'Product & AI Workflow Strategy',
+        title: 'Product & AI Strategy',
         description:
           'I connect real user and operational friction to practical product and AI workflow solutions: moving from clear problem framing and rapid prototyping to scalable adoption.',
       },
       {
-        title: 'Operational Enablement & Governance',
+        title: 'Operations & Governance',
         description:
           'I build scalable operating models, clear ownership structures, and fit-for-purpose governance that help growing organizations operate consistently across teams and markets.',
       },
@@ -122,7 +122,7 @@ export const functionalPillars = [
       {
         title: 'How I keep systems healthy',
         description:
-          'I turn ad-hoc practices into documented playbooks, clear metrics, and early risk checks that sustain quality after launch: while tuning process depth so guardrails speed up teams rather than slow them down.',
+          'I turn ad-hoc practices into documented playbooks, clear metrics, and early risk checks that sustain quality after launch: while tuning process depth so guardrails speed up teams rather than slow them down. My growth edge is staying vigilant not to over-engineer structure early on, choosing lightweight alignment first and expanding governance only as real scale demands it.',
       },
     ],
   },
@@ -135,19 +135,19 @@ export const functionalPillars = [
     avatar: '🤝',
     items: [
       {
-        title: 'Cross-functional & regional alignment',
+        title: 'Cross-Org Alignment',
         description:
           'I align Engineering, Product, Design, Operations, and regional leads around shared goals, clear decision rights, and unspoken cultural context.',
       },
       {
-        title: 'Candid & constructive partnership',
+        title: 'Constructive Partnership',
         description:
           'I speak truth early, navigate friction constructively, and work alongside executive sponsors and partners to turn competing priorities into shared choices.',
       },
       {
-        title: 'People & talent multiplier',
+        title: 'People & Talent Multiplier',
         description:
-          'Grounded in a DISC Planner Style and a generous mentoring mindset, I coach talent, transfer knowledge openly, and help teams stay calm and connected under pressure.',
+          'Grounded in a DISC Planner Style and a generous mentoring mindset, I coach talent, transfer knowledge openly, and help teams stay calm and connected under pressure. Because I care deeply about clarity and quality, I stay intentional about focusing where I add the most leverage and empowering partners to own execution end to end.',
       },
     ],
   },
