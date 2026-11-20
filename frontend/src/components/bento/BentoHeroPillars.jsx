@@ -79,34 +79,34 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip }) => {
           return (
             <div
               key={pillar.id}
-              className="bg-slate-900/40 rounded-2xl p-6 md:p-8 border border-slate-800/80 backdrop-blur-sm relative overflow-hidden"
+              className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 border border-gray-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] hover:shadow-[0_30px_70px_rgba(99,102,241,0.08)] transition-all duration-500 relative overflow-hidden group"
             >
-              {/* Subtle Background Accent Gradient */}
-              <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+              {/* Subtle Ambient Gradient */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-50/60 rounded-full blur-3xl -z-10 pointer-events-none" />
 
               {/* Pillar Title Banner */}
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800/60">
-                <div className="flex items-start sm:items-center gap-3">
-                  <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60 text-indigo-400 shrink-0">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8 pb-5 border-b border-gray-100">
+                <div className="flex items-start sm:items-center gap-4">
+                  <div className="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-100 text-indigo-600 shadow-sm shrink-0">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-mono text-xs font-semibold text-indigo-400">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-mono text-xs font-bold text-indigo-600 uppercase tracking-wider">
                         PILLAR {pillar.number}
                       </span>
-                      <span className="text-slate-600">·</span>
-                      <span className="text-xs text-slate-400 font-mono">
+                      <span className="text-gray-300">·</span>
+                      <span className="text-xs text-gray-500 font-mono font-medium">
                         {pillar.subCards?.length || 0} STAR Cards
                       </span>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                    <h3 className="text-xl md:text-2xl font-black text-gray-900 tracking-tight">
                       {pillar.title}
                     </h3>
                   </div>
                 </div>
 
-                <p className="text-sm text-slate-300 max-w-xl lg:text-right">
+                <p className="text-sm text-gray-600 max-w-xl lg:text-right font-normal leading-relaxed">
                   {pillar.subtitle}
                 </p>
               </div>
