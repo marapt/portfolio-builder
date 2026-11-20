@@ -47,40 +47,37 @@ describe('About Me dataset & structure', () => {
     });
   });
 
-  test('functionalPillars defines exactly 3 Google L6 calibrated pillars', () => {
-    expect(aboutEN.functionalPillars).toHaveLength(3);
-    expect(aboutPT.functionalPillars).toHaveLength(3);
+  test('functionalPillars defines exactly 4 calibrated pillars with 3 items each', () => {
+    expect(aboutEN.functionalPillars).toHaveLength(4);
+    expect(aboutPT.functionalPillars).toHaveLength(4);
 
-    const pillarIds = aboutEN.functionalPillars.map((p) => p.id);
-    expect(pillarIds).toEqual([
-      'program-delivery',
-      'product-ai-strategy',
-      'operational-enablement',
-    ]);
-
-    const requiredSections = [
-      'whyWorkWithMe',
-      'workStyle',
-      'partnerArchetypes',
-      'strengthsAndGrowth',
+    const expectedPillarIds = [
+      'why-work-with-me',
+      'work-style-habits',
+      'connections-presence',
+      'value-and-leverage',
     ];
+
+    expect(aboutEN.functionalPillars.map((p) => p.id)).toEqual(expectedPillarIds);
+    expect(aboutPT.functionalPillars.map((p) => p.id)).toEqual(expectedPillarIds);
 
     [aboutEN.functionalPillars, aboutPT.functionalPillars].forEach((pillarList) => {
       pillarList.forEach((pillar) => {
-        expect(pillar.title.length).toBeGreaterThan(10);
-        expect(pillar.quickGrasp.length).toBeGreaterThan(25);
-        expect(pillar.proofLinks.length).toBeGreaterThanOrEqual(2);
-
-        requiredSections.forEach((secKey) => {
-          const sec = pillar.sections[secKey];
-          expect(sec).toBeDefined();
-          expect(sec.title.length).toBeGreaterThan(3);
-          expect(sec.text.length).toBeGreaterThan(20);
-          expect(Array.isArray(sec.highlights)).toBe(true);
-          expect(sec.highlights.length).toBeGreaterThanOrEqual(2);
+        expect(pillar.title.length).toBeGreaterThan(5);
+        expect(pillar.focus.length).toBeGreaterThan(15);
+        expect(pillar.items).toHaveLength(3);
+        pillar.items.forEach((item) => {
+          expect(item.title.length).toBeGreaterThan(3);
+          expect(item.description.length).toBeGreaterThan(20);
         });
       });
     });
+
+    const enVal = aboutEN.functionalPillars.find((p) => p.id === 'value-and-leverage');
+    const ptVal = aboutPT.functionalPillars.find((p) => p.id === 'value-and-leverage');
+
+    expect(enVal.items.every((it) => Array.isArray(it.proofLinks) && it.proofLinks.length >= 2)).toBe(true);
+    expect(ptVal.items.every((it) => Array.isArray(it.proofLinks) && it.proofLinks.length >= 2)).toBe(true);
   });
 
   test('personalSide covers 3 dimensions of personal background and community impact', () => {

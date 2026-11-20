@@ -53,7 +53,7 @@ export const aboutHero = {
       {
         id: 'constructive-in-conflict',
         title: 'Construtiva no Conflito',
-        description: 'Ultrapassar o atrito para construir melhores soluções de trabalho.',
+        description: 'Praticar a escuta ativa para uma compreensão profunda. Ultrapassar o atrito para construir em conjunto melhores soluções de trabalho.',
         l6Scope: 'Objetivo: Mediação colaborativa & otimização de fluxos',
         icon: 'Handshake',
       },
@@ -77,158 +77,117 @@ export const aboutHero = {
 
 export const functionalPillars = [
   {
-    id: 'program-delivery',
+    id: 'why-work-with-me',
     number: '01',
-    title: 'Program & Cross-Org Delivery',
-    subtitle: 'Escala de Execução Complexa Multiequipas',
-    color: 'violet',
-    avatar: '🎯',
-    quickGrasp:
-      'Trago estrutura e clareza a iniciativas multiequipas de elevada ambiguidade, definindo mandatos, dependências, rotinas operacionais e marcos mensuráveis entre partes interessadas globais.',
-    sections: {
-      whyWorkWithMe: {
-        title: 'Porque me Deve Contratar',
-        text: 'Trago estrutura e clareza a iniciativas multiequipas de elevada ambiguidade, definindo mandatos, dependências, rotinas operacionais e marcos mensuráveis entre partes interessadas globais.',
-        highlights: [
-          'Integro ambientes acelerados e multifacetados, estabelecendo prioridades claras, direitos de decisão e fluxos repetíveis para que as equipas não percam tempo em indefinições.',
-          'Na Block, multipliquei por 3x a organização de gestão de programas de localização de 5 para 15 liderados diretos durante a transição da marca Square para Block em 8 mercados internacionais.',
-          'No LinkedIn, fundei a governação de localização MARCOM, escalando um modelo de MSP com 20 agências e 2 gestores dedicados em 26 línguas e 17 mercados.',
-        ],
-      },
-      workStyle: {
-        title: 'Estilo de Trabalho e Hábitos',
-        text: 'Identifico estrangulamentos e desvios de âmbito precocemente, facilito soluções de compromisso transparentes e mantenho o ritmo sem recorrer a heroísmos de última hora.',
-        highlights: [
-          'Uno uma estrutura ágil a uma visibilidade límpida do estado dos projetos, antecipando dependências e bloqueios antes que afetem datas de lançamento.',
-          'Instituo documentos colaborativos de leitura prévia e canais assíncronos de revisão para que as reuniões síncronas se foquem exclusivamente em decisões.',
-          'Mantenho a calma sob pressão, asseguro um acompanhamento rigoroso e deixo às equipas sistemas operacionais duradouros.',
-        ],
-      },
-      partnerArchetypes: {
-        title: 'Perfis de Parceria',
-        text: 'Alinho Engenharia, Produto, Operações e líderes regionais em torno de metas comuns e direitos de decisão bem definidos.',
-        highlights: [
-          'Líderes de Produto e Engenharia: Traduzo planos estratégicos e requisitos globais em critérios de validação testáveis, protegendo a velocidade de engenharia.',
-          'Operações e Parceiros Externos: Alinho normas, entregas e painéis de desempenho transparentes para que equipas distribuídas operem com segurança psicológica.',
-          'Partes Interessadas Regionais: Faço a ponte entre a padronização global e as realidades locais específicas nas regiões EMEA, LATAM e APAC.',
-        ],
-      },
-      strengthsAndGrowth: {
-        title: 'Superpoderes e Área de Crescimento',
-        text: 'Rehecida pela execução serena sob pressão e alinhamento multifuncional; calibro continuamente o nível de estrutura a introduzir de início para que as regras acelerem as equipas em vez de as travar.',
-        highlights: [
-          'Superpoder: Pensamento sistémico, alinhamento multifuncional e execução serena em transições corporativas de alta visibilidade.',
-          'Área de Crescimento Calibrada: Governação Mínima Viável (MVG) - afinar o volume de processos iniciais para que os limites assegurem ímpeto e não peso burocrático.',
-        ],
-      },
-    },
-    proofLinks: [
-      { label: 'Block: Escala de Equipa 3x e Expansão em 8 Mercados', to: '/career', anchor: 'block' },
-      { label: 'LinkedIn: Lançamento Global Multivagas MARCOM', to: '/career', anchor: 'linkedin' },
-    ],
-  },
-  {
-    id: 'product-ai-strategy',
-    number: '02',
-    title: 'Product & AI Workflow Strategy',
-    subtitle: 'Desenho de Soluções de Alto Impacto e Automação',
+    title: 'Porque Deve Trabalhar Comigo',
+    focus: 'Como abordo a ambiguidade, alinho partes móveis e faço avançar iniciativas complexas.',
     color: 'cyan',
-    avatar: '⚡',
-    quickGrasp:
-      'Ligo os atritos reais de utilizadores e operações a soluções práticas de produto e fluxos de IA: desde a formulação clara de problemas e prototipagem rápida até à adoção em escala.',
-    sections: {
-      whyWorkWithMe: {
-        title: 'Porque me Deve Contratar',
-        text: 'Ligo os atritos reais de utilizadores e operações a soluções práticas de produto e fluxos de IA: desde a formulação clara de problemas e prototipagem rápida até à adoção em escala.',
-        highlights: [
-          'Em vez de remendar estrangulamentos pontuais, desenho processos escaláveis, governação e fluxos apoiados por IA que multiplicam a capacidade de resposta das equipas.',
-          'Na Microsoft, implementei um piloto de Tradução Automática nas operações de marketing, reduzindo o tempo de entrega de 15 para 5 dias em volumes de escala elevada.',
-          'Na Infoblox, liderei a estratégia global e desenhei fluxos de ingestão por API ligando Drupal, Eloqua, Salesforce e Git a plataformas modernas de tradução.',
-        ],
+    avatar: '🎯',
+    items: [
+      {
+        title: 'Gestão de Programas & Entrega Multifuncional',
+        description:
+          'Trago estrutura e clareza a iniciativas complexas de múltiplas equipas através da definição de mandatos, dependências, ritmos operacionais e metas mensuráveis entre partes interessadas globais.',
       },
-      workStyle: {
-        title: 'Estilo de Trabalho e Hábitos',
-        text: 'Testo pressupostos precocemente, desenho fluxos repetíveis e integro IA e automação para eliminar tarefas manuais e acelerar a iteração.',
-        highlights: [
-          'Integro proativamente IA e automação no dia a dia operacional para reduzir tarefas manuais e libertar equipas para pensamento crítico e decisão.',
-          'Defino critérios de avaliação de prompts, modelos de validação com supervisão humana e verificações automatizadas de pré-produção.',
-          'Foco-me em sistemas escaláveis que eliminam o arrasto de folhas de cálculo manuais e a triagem dispersa de tarefas.',
-        ],
+      {
+        title: 'Estratégia de Produto & Fluxos de IA',
+        description:
+          'Ligo o atrito real do utilizador e das operações a soluções práticas de produto e fluxos de IA: passando da definição clara do problema e prototipagem rápida à adoção em escala.',
       },
-      partnerArchetypes: {
-        title: 'Perfis de Parceria',
-        text: 'Colaboro estreitamente com Produto, Engenharia, Design e Operações para equilibrar impacto no utilizador, viabilidade técnica e escalabilidade global.',
-        highlights: [
-          'Engenharia Principal e Líderes Técnicos: Conecto-me na sua área de especialidade com lógica de sistemas, telemetria de dados, contratos de API e análise de falhas.',
-          'Líderes de Produto e Design: Enquadro a governação como acelerador que evita cancelamentos tardios através de validações automáticas.',
-          'Operações: Desenho ferramentas intuitivas e processos claros para que as equipas adotem novas tecnologias com o mínimo de atrito.',
-        ],
+      {
+        title: 'Capacitação Operacional & Governação',
+        description:
+          'Construo modelos operacionais escaláveis, estruturas claras de responsabilidade e governação adaptada que ajudam organizações em crescimento a operar com consistência entre equipas e mercados.',
       },
-      strengthsAndGrowth: {
-        title: 'Superpoderes e Área de Crescimento',
-        text: 'Destaco-me por transformar fluxos complexos em soluções claras e acionáveis; mantenho o foco intencional nas apostas de maior impacto e delego os pormenores de execução à medida que os projetos amadurecem.',
-        highlights: [
-          'Superpoder: Tradução técnica e operacional: unir modelos de dados de engenharia a objetivos estratégicos de negócio internacional.',
-          'Área de Crescimento Calibrada: Delegação seletiva: concentrar a energia nas decisões arquiteturais decisivas, capacitando os líderes de equipa para assumirem a execução com total autonomia.',
-        ],
-      },
-    },
-    proofLinks: [
-      { label: 'Microsoft: Redução de Ciclo de Tradução Automática (15 para 5 Dias)', to: '/career', anchor: 'microsoft' },
-      { label: 'Infoblox: Arquitetura de Conectores API e TMS/CMS', to: '/career', anchor: 'infoblox' },
-      { label: 'Série de Palestras IA na Localização (MIIS)', to: '/project/localization-training-program' },
     ],
   },
   {
-    id: 'operational-enablement',
+    id: 'work-style-habits',
+    number: '02',
+    title: 'Estilo de Trabalho, Atitude & Hábitos',
+    focus: 'O meu ritmo operacional diário, mentalidade e equilíbrio entre rigor e velocidade.',
+    color: 'violet',
+    avatar: '⚡',
+    items: [
+      {
+        title: 'Como conduzo a execução',
+        description:
+          'Identifico estrangulamentos e desvios de âmbito precocemente, facilito cedências transparentes e mantenho o ritmo sem depender de heroísmos de última hora.',
+      },
+      {
+        title: 'Como aplico IA e testo ideias',
+        description:
+          'Testo pressupostos cedo, desenho fluxos repetíveis e integro IA e automação para eliminar tarefas manuais e acelerar a iteração.',
+      },
+      {
+        title: 'Como mantenho os sistemas saudáveis',
+        description:
+          'Transformo práticas informais em manuais documentados, métricas claras e controlos precoces de risco que sustentam a qualidade pós-lançamento: ajustando a profundidade do processo para que as salvaguardas acelerem as equipas em vez de as travar.',
+      },
+    ],
+  },
+  {
+    id: 'connections-presence',
     number: '03',
-    title: 'Operational Enablement & Governance',
-    subtitle: 'Construção de Sistemas Repetíveis e Limites Seguros',
+    title: 'Como me Apresento & Crio Ligações',
+    focus: 'Presença humana, construção de relações e colaboração multifuncional.',
     color: 'emerald',
-    avatar: '🛡️',
-    quickGrasp:
-      'Construo modelos operacionais escaláveis, estruturas de responsabilidade claras e governação adequada que ajudam organizações em crescimento a operar com consistência em múltiplas equipas e mercados.',
-    sections: {
-      whyWorkWithMe: {
-        title: 'Porque me Deve Contratar',
-        text: 'Construo modelos operacionais escaláveis, estruturas de responsabilidade claras e governação adequada que ajudam organizações em crescimento a operar com consistência em múltiplas equipas e mercados.',
-        highlights: [
-          'Estabeleço rotinas operacionais estruturadas, indicadores transparentes e governação pronta para auditoria em programas multiequipas e com fornecedores externos.',
-          'Na Microsoft, liderei iniciativas de Centros de Excelência abrangendo operações de lojas e automação de ingestão em 200 mercados e 100 línguas, governando uma equipa de agências com mais de 15 pessoas.',
-          'No contrato na Apple via Mindsource/WPP (maio a setembro de 2026), geri a produção de entregas confidenciais e triagem de lançamentos em Radar em mais de 20 países sob estrito acordo de confidencialidade.',
+    avatar: '🤝',
+    items: [
+      {
+        title: 'Alinhamento multifuncional e regional',
+        description:
+          'Alinho Engenharia, Produto, Design, Operações e líderes regionais em torno de metas comuns, direitos claros de decisão e contexto cultural tácito.',
+      },
+      {
+        title: 'Parceria frontal e construtiva',
+        description:
+          'Falo com franqueza desde cedo, resolvo atritos de forma construtiva e colaboro com patrocinadores executivos e parceiros para transformar prioridades concorrentes em escolhas partilhadas.',
+      },
+      {
+        title: 'Multiplicadora de pessoas e talento',
+        description:
+          'Com base no Estilo DISC Planner e numa mentalidade generosa de mentoria, oriento talento, transfiro conhecimento abertamente e ajudo as equipas a manterem-se calmas e ligadas sob pressão.',
+      },
+    ],
+  },
+  {
+    id: 'value-and-leverage',
+    number: '04',
+    title: 'Que Valor Posso Trazer-lhe',
+    focus: 'Alavancagem empresarial concreta fundamentada no meu percurso profissional.',
+    color: 'amber',
+    avatar: '🚀',
+    items: [
+      {
+        title: 'Escala organizacional e multimercado',
+        description:
+          'Liderança comprovada na expansão de lançamentos globais, lojas internacionais e equipas multifuncionais: tais como a Escala 3x da Equipa e Expansão em 8 Mercados na Block, o Lançamento MARCOM em Vagas no LinkedIn e o Centro de Excelência e Lojas Internacionais na Microsoft.',
+        proofLinks: [
+          { label: 'Block: Escala de Equipa (3x) & Expansão Internacional', to: '/career', anchor: 'block' },
+          { label: 'LinkedIn: Lançamento Global MARCOM em Vagas', to: '/career', anchor: 'linkedin' },
+          { label: 'Microsoft: Centro de Excelência e Lojas Internacionais', to: '/career', anchor: 'microsoft' },
         ],
       },
-      workStyle: {
-        title: 'Estilo de Trabalho e Hábitos',
-        text: 'Transformo práticas informais em guias documentados, métricas transparentes e verificações precoces de risco que sustentam a qualidade após o lançamento.',
-        highlights: [
-          'Estruturo contratos-quadro (MSAs) e acordos de serviço baseados em desempenho com 5% a 10% de poupança ano a ano e índices de qualidade superiores a 95%.',
-          'Implemento modelos operacionais contínuos (Follow-the-Sun 24/7) e estruturas de revisão com intervenção humana em equipas globais.',
-          'Uno a telemetria operacional ao discernimento prático de negócio, substituindo consensos subjetivos por métricas auditáveis.',
+      {
+        title: 'Rapidez operacional e clareza técnica',
+        description:
+          'Impacto prático na otimização de operações e ferramentas: incluindo a Redução de Ciclo de MT na Microsoft (15 para 5 Dias), a Arquitetura de APIs TMS/CMS na Infoblox e a Série de Palestras sobre IA em Localização (MIIS).',
+        proofLinks: [
+          { label: 'Microsoft: Redução Ciclo MT (15 para 5 dias)', to: '/career', anchor: 'microsoft' },
+          { label: 'Infoblox: Arquitetura de APIs TMS/CMS', to: '/career', anchor: 'infoblox' },
+          { label: 'Série de Palestras sobre IA em Localização (MIIS)', to: '/project/localization-training-program' },
         ],
       },
-      partnerArchetypes: {
-        title: 'Perfis de Parceria',
-        text: 'Colaboro lado a lado com patrocinadores executivos, líderes de programas/produtos e equipas operacionais para alinhar normas, clarificar transferências de trabalho e promover a adesão.',
-        highlights: [
-          'Aprovisionamento, Finanças e Jurídico: Falo a sua língua: rastreabilidade, mitigação de risco, higiene de ordens de compra e custos unitários claros.',
-          'Patrocinadores Executivos: Sintetizo operações multiequipas complexas em painéis executivos de MBR/QBR orientados para decisões com opções de compromisso nítidas.',
-          'Fornecedores Externos e Agências MSP: Promovo segurança psicológica genuína, retrospetivas sem culpabilização e indicadores onde incidentes são tratados como oportunidades de evolução.',
+      {
+        title: 'Governação operacional e fiabilidade',
+        description:
+          'Execução de alta confiança em triagem de lançamentos, SLAs e operações de produção: refletida na Triagem de Lançamentos e SLAs Radar no AppleCare e nas Operações de Produção Apple 2026 (Contrato).',
+        proofLinks: [
+          { label: 'AppleCare: Triagem de Lançamentos e Prazos Radar', to: '/career', anchor: 'apple-2014' },
+          { label: 'Apple 2026: Operações de Produção Confidenciais (Contrato)', to: '/career', anchor: 'apple-2026' },
         ],
       },
-      strengthsAndGrowth: {
-        title: 'Superpoderes e Área de Crescimento',
-        text: 'Excelente a trazer clareza, sensibilidade intercultural e estrutura duradoura a operações complexas; mantenho a governação leve e capacitadora para que as equipas preservem autonomia e velocidade.',
-        highlights: [
-          'Superpoder: Transformar ecossistemas fragmentados ou descentralizados em modelos de governação estruturados e ágeis que escalam sem burocracia.',
-          'Área de Crescimento Calibrada: Governação Mínima Viável: implementar os 20% fundamentais de controlos que mitigam 80% do risco operacional, lançar rapidamente e aperfeiçoar com telemetria em tempo real.',
-        ],
-      },
-    },
-    proofLinks: [
-      { label: 'Microsoft: Centro de Excelência e Lojas Internacionais', to: '/career', anchor: 'microsoft' },
-      { label: 'AppleCare: Triagem de Lançamentos e Prazos Radar', to: '/career', anchor: 'apple-2014' },
-      { label: 'Apple 2026: Operações de Produção Confidenciais (Contrato)', to: '/career', anchor: 'apple-2026' },
     ],
   },
 ];

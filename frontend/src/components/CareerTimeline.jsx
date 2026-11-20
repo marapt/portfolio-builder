@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Archive,
   BookOpen,
@@ -135,9 +135,47 @@ const CareerTimeline = () => {
   const { pillars, pillarMeta, railYears, futureYears, timelineItems, isFallbackLanguage } =
     useCareerData();
 
+  const location = useLocation();
+
   const [activePillar, setActivePillar] = useState('all');
   const [showFuture, setShowFuture] = useState(true);
-  const [selectedId, setSelectedId] = useState('apple-2026');
+  const panelRef = useRef(null);
+  const tabRefs = useRef({});
+
+  const [selectedId, setSelectedId] = useState(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hashId = window.location.hash.replace('#', '');
+      if (timelineItems.some((item) => item.id === hashId)) {
+        return hashId;
+      }
+    }
+    return 'apple-2026';
+  });
+
+  useEffect(() => {
+    if (location.hash) {
+      const hashId = location.hash.replace('#', '');
+      const targetItem = timelineItems.find((item) => item.id === hashId);
+      if (targetItem) {
+        setSelectedId(hashId);
+        if (targetItem.type === 'future' && !showFuture) {
+          setShowFuture(true);
+        }
+        setActivePillar((curr) => {
+          if (curr === 'all') return curr;
+          if (Array.isArray(targetItem.pillars) && !targetItem.pillars.includes(curr)) {
+            return 'all';
+          }
+          return curr;
+        });
+        setTimeout(() => {
+          if (panelRef.current && typeof panelRef.current.scrollIntoView === 'function') {
+            panelRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 120);
+      }
+    }
+  }, [location.hash, timelineItems, showFuture]);
   const [showHowBuilt, setShowHowBuilt] = useState(false);
   const [openEvidenceSections, setOpenEvidenceSections] = useState({});
   const [showFoundationsBreakdown, setShowFoundationsBreakdown] = useState(true);
@@ -170,8 +208,6 @@ const CareerTimeline = () => {
     return <span className={textClassName}>{item.monogram}</span>;
   };
 
-  const tabRefs = useRef({});
-  const panelRef = useRef(null);
   const glossaryDialogRef = useRef(null);
   const glossaryPressedOutsideRef = useRef(false);
   const glossaryTermRefs = useRef({});

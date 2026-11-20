@@ -53,7 +53,7 @@ export const aboutHero = {
       {
         id: 'constructive-in-conflict',
         title: 'Constructive in Conflict',
-        description: 'Moving past friction to build better working solutions.',
+        description: 'Practice active listening for deep understanding. Moving past friction to build better working solutions together.',
         l6Scope: 'Goal: Collaborative mediation & workflow optimization',
         icon: 'Handshake',
       },
@@ -77,158 +77,117 @@ export const aboutHero = {
 
 export const functionalPillars = [
   {
-    id: 'program-delivery',
+    id: 'why-work-with-me',
     number: '01',
-    title: 'Program & Cross-Org Delivery',
-    subtitle: 'Scaling Complex Multi-Team Execution',
-    color: 'violet',
-    avatar: '🎯',
-    quickGrasp:
-      'I bring structure and clarity to high-ambiguity, multi-team initiatives by defining charters, dependencies, operating cadences, and measurable milestones across global stakeholders.',
-    sections: {
-      whyWorkWithMe: {
-        title: 'Why Work With Me',
-        text: 'I bring structure and clarity to high-ambiguity, multi-team initiatives by defining charters, dependencies, operating cadences, and measurable milestones across global stakeholders.',
-        highlights: [
-          'Step into fast-moving, multi-stakeholder spaces and establish clear priorities, decision rights, and repeatable workflows so teams do not lose cycles to ambiguity.',
-          'At Block, scaled the localization PM organization from 5 to 15 direct reports while navigating the corporate Square-to-Block rebrand across 8 international markets.',
-          'At LinkedIn, founded MARCOM localization program management, scaling a 20-vendor MSP model alongside 2 FTE PMs across 26 languages and 17 markets.',
-        ],
-      },
-      workStyle: {
-        title: 'Work Style & Habits',
-        text: 'I spot bottlenecks and scope drift early, facilitate transparent trade-offs, and keep momentum moving without relying on last-minute heroics.',
-        highlights: [
-          'Pair lightweight structure with crisp status visibility, surfacing dependencies and blockers early before they derail launch dates.',
-          'Institute collaborative written pre-reads and async review channels so live syncs stay reserved strictly for decisions and trade-offs.',
-          'Stay calm under pressure, follow through cleanly, and leave teams with durable operational systems rather than heroics.',
-        ],
-      },
-      partnerArchetypes: {
-        title: 'Partner Archetypes',
-        text: 'I align Engineering, Product, Operations, and regional leads around shared goals and clear decision rights.',
-        highlights: [
-          'Product & Engineering Leads: Translate strategic roadmaps and global requirements into testable release criteria, protecting engineering velocity.',
-          'Operations & Extended Partners: Align standards, handoffs, and transparent scorecards so distributed teams operate with psychological safety.',
-          'Regional Stakeholders: Bridge global standardization with market-specific realities across EMEA, LATAM, and APAC.',
-        ],
-      },
-      strengthsAndGrowth: {
-        title: 'Strengths & Growth Edge',
-        text: 'Known for calm execution under pressure and cross-functional alignment; I continuously tune how much process structure to introduce upfront so guardrails speed up teams rather than slow them down.',
-        highlights: [
-          'Superpower: Systems thinking, cross-functional alignment, and calm execution during high-stakes corporate transitions.',
-          'Calibrated Growth Edge: Minimum Viable Governance (MVG) - tuning how much process to introduce upfront so guardrails enable momentum rather than feeling heavy.',
-        ],
-      },
-    },
-    proofLinks: [
-      { label: 'Block 3x Org Scale & 8-Market Expansion', to: '/career', anchor: 'block' },
-      { label: 'LinkedIn MARCOM Multi-Wave Rollout', to: '/career', anchor: 'linkedin' },
-    ],
-  },
-  {
-    id: 'product-ai-strategy',
-    number: '02',
-    title: 'Product & AI Workflow Strategy',
-    subtitle: 'Shaping High-Leverage Solutions & Automation',
+    title: 'Why You Should Work With Me',
+    focus: 'How you tackle ambiguity, align moving parts, and move complex work forward.',
     color: 'cyan',
-    avatar: '⚡',
-    quickGrasp:
-      'I connect real user and operational friction to practical product and AI workflow solutions: moving from clear problem framing and rapid prototyping to scalable adoption.',
-    sections: {
-      whyWorkWithMe: {
-        title: 'Why Work With Me',
-        text: 'I connect real user and operational friction to practical product and AI workflow solutions: moving from clear problem framing and rapid prototyping to scalable adoption.',
-        highlights: [
-          'Rather than patching isolated bottlenecks, I design scalable processes, governance, and AI-enabled workflows that multiply output across teams.',
-          'At Microsoft, deployed a Machine Translation pilot into marketing operations, reducing operational turnaround time from 15 days to 5 days across high-volume pipelines.',
-          'At Infoblox, authored the global localization roadmap and engineered automated API ingestion pipelines connecting Drupal, Eloqua, Salesforce, and Git to modern TMS systems.',
-        ],
+    avatar: '🎯',
+    items: [
+      {
+        title: 'Program & Cross-Org Delivery',
+        description:
+          'I bring structure and clarity to high-ambiguity, multi-team initiatives by defining charters, dependencies, operating cadences, and measurable milestones across global stakeholders.',
       },
-      workStyle: {
-        title: 'Work Style & Habits',
-        text: 'I test assumptions early, design repeatable workflows, and integrate AI and automation to cut manual toil and accelerate iteration.',
-        highlights: [
-          'Actively integrate AI and workflow automation into everyday execution to reduce manual overhead and free teams for higher-order judgment.',
-          'Establish prompt evaluation guardrails, Human-in-the-Loop quality frameworks, and automated pre-production verification checks.',
-          'Focus on scalable systems that eliminate spreadsheet drag and manual ticket handoffs.',
-        ],
+      {
+        title: 'Product & AI Workflow Strategy',
+        description:
+          'I connect real user and operational friction to practical product and AI workflow solutions: moving from clear problem framing and rapid prototyping to scalable adoption.',
       },
-      partnerArchetypes: {
-        title: 'Partner Archetypes',
-        text: 'I partner closely with Product, Engineering, Design, and operational teams to balance user impact, technical feasibility, and global scalability.',
-        highlights: [
-          'Core Engineering & Technical Leads: Meet them in their domain with system logic, data telemetry, API boundaries, and concrete failure modes.',
-          'Product & UX Leads: Frame governance as an accelerator that prevents late rollbacks through automated pre-release verification.',
-          'Operations Leads: Design intuitive interfaces and automated tooling so teams adopt new workflows with minimal training friction.',
-        ],
+      {
+        title: 'Operational Enablement & Governance',
+        description:
+          'I build scalable operating models, clear ownership structures, and fit-for-purpose governance that help growing organizations operate consistently across teams and markets.',
       },
-      strengthsAndGrowth: {
-        title: 'Strengths & Growth Edge',
-        text: 'Strong at turning complex workflows into clear, actionable solutions; I stay intentional about prioritizing the highest-leverage bets and delegating execution details as initiatives mature.',
-        highlights: [
-          'Superpower: Technical and operational translation: bridging engineering data schemas with international business goals.',
-          'Calibrated Growth Edge: Selective delegation: focusing personal energy on the highest-leverage architectural bets while empowering team leads to own domain execution.',
-        ],
-      },
-    },
-    proofLinks: [
-      { label: 'Microsoft MT Turnaround Cut (15 to 5 Days)', to: '/career', anchor: 'microsoft' },
-      { label: 'Infoblox TMS/CMS API Architecture', to: '/career', anchor: 'infoblox' },
-      { label: 'AI in Localization Speaker Series (MIIS)', to: '/project/localization-training-program' },
     ],
   },
   {
-    id: 'operational-enablement',
+    id: 'work-style-habits',
+    number: '02',
+    title: 'Work Style, Attitude & Habits',
+    focus: 'Your daily operating cadence, mindset, and how you balance rigor with speed.',
+    color: 'violet',
+    avatar: '⚡',
+    items: [
+      {
+        title: 'How I run execution',
+        description:
+          'I spot bottlenecks and scope drift early, facilitate transparent trade-offs, and keep momentum moving without relying on last-minute heroics.',
+      },
+      {
+        title: 'How I use AI & test ideas',
+        description:
+          'I test assumptions early, design repeatable workflows, and integrate AI and automation to cut manual toil and accelerate iteration.',
+      },
+      {
+        title: 'How I keep systems healthy',
+        description:
+          'I turn ad-hoc practices into documented playbooks, clear metrics, and early risk checks that sustain quality after launch: while tuning process depth so guardrails speed up teams rather than slow them down.',
+      },
+    ],
+  },
+  {
+    id: 'connections-presence',
     number: '03',
-    title: 'Operational Enablement & Governance',
-    subtitle: 'Building Repeatable Systems & Guardrails',
+    title: 'How I Show Up & Build Connections',
+    focus: 'Your human presence, relationship building, and cross-functional collaboration.',
     color: 'emerald',
-    avatar: '🛡️',
-    quickGrasp:
-      'I build scalable operating models, clear ownership structures, and fit-for-purpose governance that help growing organizations operate consistently across teams and markets.',
-    sections: {
-      whyWorkWithMe: {
-        title: 'Why Work With Me',
-        text: 'I build scalable operating models, clear ownership structures, and fit-for-purpose governance that help growing organizations operate consistently across teams and markets.',
-        highlights: [
-          'Establish structured operating cadences, transparent scorecards, and audit-ready governance across multi-vendor and extended-workforce programs.',
-          'At Microsoft, led Center of Excellence program initiatives spanning global storefront operations and ingestion pipelines across 200 markets and 100 languages, governing a 15+ agency team.',
-          'On contract at Apple via Mindsource/WPP (May to Sep 2026), governed production deliverable pipelines and Radar release triage across 20+ countries under strict NDA.',
+    avatar: '🤝',
+    items: [
+      {
+        title: 'Cross-functional & regional alignment',
+        description:
+          'I align Engineering, Product, Design, Operations, and regional leads around shared goals, clear decision rights, and unspoken cultural context.',
+      },
+      {
+        title: 'Candid & constructive partnership',
+        description:
+          'I speak truth early, navigate friction constructively, and work alongside executive sponsors and partners to turn competing priorities into shared choices.',
+      },
+      {
+        title: 'People & talent multiplier',
+        description:
+          'Grounded in a DISC Planner Style and a generous mentoring mindset, I coach talent, transfer knowledge openly, and help teams stay calm and connected under pressure.',
+      },
+    ],
+  },
+  {
+    id: 'value-and-leverage',
+    number: '04',
+    title: 'What Value I Bring to You',
+    focus: 'Concrete enterprise leverage grounded in your track record.',
+    color: 'amber',
+    avatar: '🚀',
+    items: [
+      {
+        title: 'Multi-market & org scale',
+        description:
+          'Proven leadership scaling global rollouts, storefronts, and cross-functional teams: such as Block 3x Org Scale & 8-Market Expansion, LinkedIn MARCOM Multi-Wave Rollout, and Microsoft Center of Excellence & Storefront Operations.',
+        proofLinks: [
+          { label: 'Block 3x Org Scale & 8-Market Expansion', to: '/career', anchor: 'block' },
+          { label: 'LinkedIn MARCOM Multi-Wave Rollout', to: '/career', anchor: 'linkedin' },
+          { label: 'Microsoft Center of Excellence & Storefront Operations', to: '/career', anchor: 'microsoft' },
         ],
       },
-      workStyle: {
-        title: 'Work Style & Habits',
-        text: 'I turn ad-hoc practices into documented playbooks, clear metrics, and early risk checks that sustain quality after launch.',
-        highlights: [
-          'Structure master service agreements (MSAs) and performance-based SOWs with 5% to 10% YoY program optimizations and clear quality benchmarks (95%+ delivery output).',
-          'Deploy 24/7 Follow-the-Sun operational rhythms and Human-in-the-Loop review models (such as TAUS DQF) across global teams.',
-          'Pair shared operational telemetry with sound business judgment, replacing subjective consensus with auditable metrics.',
+      {
+        title: 'Workflow speed & technical clarity',
+        description:
+          'Hands-on impact streamlining operations and tooling: including Microsoft MT Turnaround Cut (15 to 5 Days), Infoblox TMS/CMS API Architecture, and AI in Localization Speaker Series (MIIS).',
+        proofLinks: [
+          { label: 'Microsoft MT Turnaround Cut (15 to 5 Days)', to: '/career', anchor: 'microsoft' },
+          { label: 'Infoblox TMS/CMS API Architecture', to: '/career', anchor: 'infoblox' },
+          { label: 'AI in Localization Speaker Series (MIIS)', to: '/project/localization-training-program' },
         ],
       },
-      partnerArchetypes: {
-        title: 'Partner Archetypes',
-        text: 'I work alongside executive sponsors, program/product leaders, and operational teams to align standards, clarify handoffs, and drive adoption.',
-        highlights: [
-          'Procurement, Finance & Legal: Speak their language: auditability, risk mitigation, PO/invoice hygiene, and transparent unit economics.',
-          'Executive Sponsors: Distill complex multi-team operations into decision-ready MBR/QBR dashboards with clear trade-off choices.',
-          'MSP Vendors & External Suppliers: Cultivate deep psychological safety, blameless retrospectives, and scorecards where issues are treated as systemic opportunities.',
+      {
+        title: 'Operational governance & reliability',
+        description:
+          'High-trust execution across release triage, SLAs, and production operations: reflected in AppleCare Release Triage & Radar SLAs and Apple 2026 Production Operations (Contract).',
+        proofLinks: [
+          { label: 'AppleCare Release Triage & Radar SLAs', to: '/career', anchor: 'apple-2014' },
+          { label: 'Apple 2026 Production Operations (Contract)', to: '/career', anchor: 'apple-2026' },
         ],
       },
-      strengthsAndGrowth: {
-        title: 'Strengths & Growth Edge',
-        text: 'Excels at bringing clarity, cross-cultural nuance, and durable structure to complex operations; I keep governance lightweight and enabling so teams retain autonomy and speed.',
-        highlights: [
-          'Superpower: Transforming fragmented or decentralized setups into structured, lightweight governance models that scale without bureaucracy.',
-          'Calibrated Growth Edge: Minimum Viable Governance: deploying the critical 20% of controls that mitigate 80% of operational risk, launching early, and iterating based on live telemetry.',
-        ],
-      },
-    },
-    proofLinks: [
-      { label: 'Microsoft Center of Excellence & Storefront Operations', to: '/career', anchor: 'microsoft' },
-      { label: 'AppleCare Release Triage & Radar SLAs', to: '/career', anchor: 'apple-2014' },
-      { label: 'Apple 2026 Production Operations (Contract)', to: '/career', anchor: 'apple-2026' },
     ],
   },
 ];

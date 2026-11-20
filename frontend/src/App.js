@@ -22,7 +22,10 @@ const ScrollToHash = () => {
   useEffect(() => {
     if (hash) {
       const id = hash.replace('#', '');
-      const element = document.getElementById(id);
+      const element =
+        document.getElementById(id) ||
+        document.getElementById(`panel-${id}`) ||
+        document.getElementById(`tab-${id}`);
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
