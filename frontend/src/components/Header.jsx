@@ -34,6 +34,7 @@ const Header = () => {
   const navLinks = [
     { href: '/about', label: t('nav.about') || 'About', isPage: true },
     { href: '/career', label: t('nav.career') || 'Career', isPage: true },
+    { href: '/experiences', label: t('nav.experiences') || 'Experiences', isPage: true },
     { href: '/resume', label: t('nav.resume') || t('nav.experience') || 'Resume', isPage: true },
     { href: '/#services', label: t('nav.services') },
     { href: '/scrum-board', label: t('nav.insights') || 'Insights', isPage: true },

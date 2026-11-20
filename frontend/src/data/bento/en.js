@@ -1,0 +1,532 @@
+// Data for the Multimodal Bento Box: Experiences Page (EN)
+// Sourced directly from validated STAR models and Google L6 Operational Governance Frameworks
+
+export const bentoHero = {
+  eyebrow: 'OPERATIONAL SYSTEMS & STAR PLAYBOOKS',
+  title: 'Experiences',
+  subtitle:
+    'An interactive multimodal Bento Box showcasing proven enterprise frameworks, extended workforce governance models, and field-tested STAR execution playbooks.',
+  quickStats: [
+    { label: 'Strategic Pillars', value: '4 Top Pillars' },
+    { label: 'Operational Domains', value: '10 Categories' },
+    { label: 'Interactive Cards', value: '25+ STAR Models' },
+    { label: 'Calibration', value: 'Google L6 Calibrated' },
+  ],
+};
+
+export const topPillars = [
+  {
+    id: 'portfolio-governance',
+    number: '01',
+    title: 'Portfolio Governance and Framework Design',
+    subtitle: 'Architecting scalable operating systems, release trains, and cross-functional alignment.',
+    icon: 'Layers',
+    color: 'violet',
+    subCards: [
+      {
+        id: 'pg-1',
+        title: 'Global Release Train & Multi-Market Governance',
+        subtitle: 'Enterprise release train coordination across 45+ international storefront markets.',
+        tag: 'Portfolio Governance',
+        metrics: '45+ Mkts · Zero Launch Slips',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'At Microsoft, global releases across 45+ international markets suffered from fragmented intake and uncoordinated regional marketing handoffs, putting critical launch windows at risk.',
+          task:
+            'Establish an end-to-end Release Train governance model aligning Product, Engineering, Geopolitical Content, and regional operations under unified milestone gates.',
+          action:
+            'Designed a synchronized 6-week cadence with strict T-minus operational readiness checkpoints; integrated automated pre-flight compliance checks; instituted cross-functional Launch Retrospectives.',
+          result:
+            'Achieved 100% on-time launch delivery across 45+ markets with zero critical geopolitical blockers, establishing the benchmark Rhythm of the Business (ROB) scorecard.',
+        },
+        l6Principle: 'Minimum Viable Governance (MVG) accelerates engineering velocity by eliminating ad-hoc friction.',
+      },
+      {
+        id: 'pg-2',
+        title: 'Minimum Viable Governance (MVG) Architecture',
+        subtitle: 'Balancing developer velocity with regulatory compliance and cross-system parity.',
+        tag: 'Framework Design',
+        metrics: 'Dual-System Parity · 100% Audit Pass',
+        proofAnchor: 'block',
+        star: {
+          situation:
+            'Engineering teams paused feature rollout due to fears that compliance checkpoints would slow sprint velocity, while operations faced audit exposure across international payment flows.',
+          task:
+            'Reconcile engineering autonomy with regulatory compliance by designing lightweight, automated governance guardrails.',
+          action:
+            'Mapped existing CI/CD pipelines to embed asynchronous compliance validation via Jira/GitHub API webhooks; decoupled non-blocking administrative audits from release-blocking security gates.',
+          result:
+            'Preserved continuous engineering release cycles while maintaining 100% audit compliance across multi-jurisdictional fintech requirements.',
+        },
+        l6Principle: 'Governance must be built directly into developer workflows rather than imposed as an external hurdle.',
+      },
+      {
+        id: 'pg-3',
+        title: 'Multi-Stream Timeline Slip & Dependency Triage',
+        subtitle: 'Proactive critical-path recovery across decoupled hardware and software dependencies.',
+        tag: 'Dependency Triage',
+        metrics: '2-Week Slip Recovered · Critical Path Protected',
+        proofAnchor: 'apple-2014',
+        star: {
+          situation:
+            'A core upstream localization API slipped by two weeks, threatening a synchronized worldwide software and support documentation milestone.',
+          task:
+            'Recover schedule slippage without compromising QA depth or overloading cross-functional teams.',
+          action:
+            'Conducted critical-path dependency analysis; isolated non-blocking string freezes; staged rolling handoffs across 24/7 Follow-the-Sun vendor shifts; prioritized Tier-1 core user flows.',
+          result:
+            'Absorbed the entire 2-week schedule slip with zero customer-facing launch delay and zero regression defects in localized production builds.',
+        },
+        l6Principle: 'Schedule management requires decoupled staging and proactive float allocation rather than reactive crunch.',
+      },
+    ],
+  },
+  {
+    id: 'supplier-performance',
+    number: '02',
+    title: 'Supplier Performance and Vendor Governance',
+    subtitle: 'Extended workforce (xWS) consolidation, outcome-based SOWs, and continuous SLAs.',
+    icon: 'Users',
+    color: 'cyan',
+    subCards: [
+      {
+        id: 'sp-1',
+        title: 'Global Tier-1 Vendor Ecosystem Consolidation',
+        subtitle: 'Restructuring decentralized regional suppliers into a high-performance partner pool.',
+        tag: 'xWS Architecture',
+        metrics: '30% Cost Cut · 15+ Mkts Unified',
+        proofAnchor: 'block',
+        star: {
+          situation:
+            'At Block across 15+ international markets, 8 regional teams independently contracted local agencies on ad-hoc Time-and-Materials SOWs, creating redundant management overhead and 14-day turnaround delays.',
+          task:
+            'Consolidate supplier ecosystem, automate PO/invoice reconciliation, and establish predictable quality SLAs across multi-million-dollar annual spend.',
+          action:
+            'Partnered with Global Procurement to run an RFP consolidating fragmented agencies into a concentrated Tier-1 vendor pool; implemented 24/7 Follow-the-Sun workflows; restructured contracts to outcome-based deliverables.',
+          result:
+            'Delivered a verified 30% reduction in turnaround time and operational spend, enforced 100% feature parity at launch, and created a repeatable vendor capacity model.',
+        },
+        l6Principle: 'Consolidating vendor leverage unlocks economies of scale and enforces accountable contractual SLAs.',
+      },
+      {
+        id: 'sp-2',
+        title: 'Outcome-Based MSA & SOW Architecture',
+        subtitle: 'Building annual productivity gains and quality thresholds into supplier contracts.',
+        tag: 'Commercial Strategy',
+        metrics: '5-10% YoY Compounding Savings · 95% SLA',
+        proofAnchor: 'linkedin',
+        star: {
+          situation:
+            'Legacy vendor master service agreements (MSAs) lacked efficiency incentives, resulting in steadily escalating annual translation and operations costs as product surface expanded.',
+          task:
+            'Restructure supplier commercial models to align vendor profitability with technical innovation and workflow automation.',
+          action:
+            'Authored performance-based SOWs incorporating compounding 5–10% YoY productivity/AI savings; embedded strict 95% quality and turnaround SLAs tied to contractual credits; instituted quarterly business reviews (QBRs).',
+          result:
+            'Captured sustained double-digit cost efficiency while elevating vendor partner NPS and establishing strategic co-innovation partnerships.',
+        },
+        l6Principle: 'Contracts should reward vendors for implementing AI and tooling efficiencies rather than billing hourly friction.',
+      },
+      {
+        id: 'sp-3',
+        title: 'Vendor Breach & 30-Day Corrective Action (CAP)',
+        subtitle: 'Systemic remediation playbook for chronic delivery slippage and quality dips.',
+        tag: 'Vendor Escalation',
+        metrics: '14-Day Recovery · Zero Launch Disruption',
+        proofAnchor: 'block',
+        star: {
+          situation:
+            'A strategic external vendor partner fell below contractual quality thresholds for three consecutive sprint cycles during a major multi-market expansion phase.',
+          task:
+            'Remediate vendor performance immediately without breaking continuous release delivery or destabilizing partner relationship.',
+          action:
+            'Issued formal notice backed by objective scorecard telemetry; initiated a mandatory 30-day Corrective Action Plan (CAP) with daily operational standups; parallelized volume allocation to backup Tier-1 vendors.',
+          result:
+            'Vendor successfully restored quality SLA to 98% within 14 days, avoiding costly contract termination and preventing any downstream launch impact.',
+        },
+        l6Principle: 'Address vendor failures with transparent objective telemetry and structured remediation before contractual severance.',
+      },
+    ],
+  },
+  {
+    id: 'operations-change',
+    number: '03',
+    title: 'Operations & Change Management',
+    subtitle: 'Leading without formal authority, overcoming stakeholder skepticism, and cultural empathy.',
+    icon: 'RefreshCw',
+    color: 'emerald',
+    subCards: [
+      {
+        id: 'oc-1',
+        title: 'Turning Skeptical Regional Leaders into Advocates',
+        subtitle: 'Overcoming operational resistance through baseline telemetry and shared ownership.',
+        tag: 'Change Leadership',
+        metrics: '8 Regions Aligned · 100% Buy-In',
+        proofAnchor: 'block',
+        star: {
+          situation:
+            'Regional market leads resisted transitioning from bespoke local agencies to a unified global operating model, fearing loss of nuanced cultural quality and autonomy.',
+          task:
+            'Build cross-functional consensus and leadership buy-in across 8 distributed regional organizations.',
+          action:
+            'Ran transparent baseline quality audits comparing local vs centralized output; launched a 30-day pilot giving regional leads direct co-ownership of scorecard criteria; shared weekly telemetry dashboards.',
+          result:
+            'Converted skeptical regional stakeholders into active program champions, securing unanimous approval for the global operating model.',
+        },
+        l6Principle: 'Influence without authority is won by sharing data transparently and giving stakeholders co-authorship of change.',
+      },
+      {
+        id: 'oc-2',
+        title: 'Emergent Leadership in High-Urgency Environments',
+        subtitle: 'Stepping into operational voids to establish triage clarity and multi-org alignment.',
+        tag: 'Influence Without Authority',
+        metrics: 'Intake SLAs Halved · 100% Cross-Org Clarity',
+        proofAnchor: 'apple-2026',
+        star: {
+          situation:
+            'During a fast-paced production contract, multiple engineering and design tracks were submitting competing unvetted requests without clear priority criteria, creating friction and missed handoffs.',
+          task:
+            'Step into the operational vacuum without formal managerial authority to establish structured triage and calm operating rhythm.',
+          action:
+            'Mapped end-to-end request lifecycle; established a centralized intake dashboard with explicit P0–P3 SLAs; coached cross-functional leads on asynchronous pre-reads and structured triage.',
+          result:
+            'Reduced request turnaround time by 50%, eliminated cross-team escalations, and established a durable intake system adopted across the broader group.',
+        },
+        l6Principle: 'Leadership is defined by solving unowned ambiguity and establishing calm clarity for the whole team.',
+      },
+      {
+        id: 'oc-3',
+        title: 'Agile Course Correction & Blameless 5-Whys Culture',
+        subtitle: 'Transforming technical discoveries and operational errors into durable system resilience.',
+        tag: 'Operational Resilience',
+        metrics: 'Root Cause Fixed · 0 Recurrence',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'A third-party tooling migration unexpectedly broke character encoding in legacy downstream database tables, corrupting non-Latin localized test strings.',
+          task:
+            'Contain production risk, resolve technical debt, and establish systemic safeguards without finger-pointing.',
+          action:
+            'Halted affected deployment pipelines within 30 minutes; conducted a blameless 5-Whys retrospective with engineering and vendor leads; implemented automated regex linting checks in pre-commit hooks.',
+          result:
+            'Fully restored string pipelines with zero customer impact, permanently eliminating the root cause and fostering high psychological safety across teams.',
+        },
+        l6Principle: 'Blameless retrospectives convert operational failures into permanent system resilience.',
+      },
+    ],
+  },
+  {
+    id: 'executive-health',
+    number: '04',
+    title: 'Executive Health and Impact Reporting',
+    subtitle: 'Leading vs. lagging telemetry, VP briefings, and unit economics modeling.',
+    icon: 'Activity',
+    color: 'amber',
+    subCards: [
+      {
+        id: 'eh-1',
+        title: 'Leading vs. Lagging Telemetry Dashboards',
+        subtitle: 'Predicting launch bottlenecks before they become executive escalations.',
+        tag: 'Telemetry Architecture',
+        metrics: '99% Predictive Accuracy · Zero Surprise Slips',
+        proofAnchor: 'block',
+        star: {
+          situation:
+            'Executive leadership previously relied on lagging post-launch milestone retrospectives, discovering budget overruns and quality slips only after releases had occurred.',
+          task:
+            'Design an executive operational telemetry model providing real-time visibility into pipeline health and leading bottleneck indicators.',
+          action:
+            'Built a dual-tier dashboard tracking leading metrics (intake velocity, PR review lag, vendor capacity %) alongside lagging KPIs (on-time delivery, defect density, spend variance); established weekly flash digests.',
+          result:
+            'Enabled leadership to spot and mitigate capacity constraints 3 weeks before release freeze, cutting surprise launch delays to zero.',
+        },
+        l6Principle: 'Leading indicators provide decision leverage; lagging indicators only provide an autopsy.',
+      },
+      {
+        id: 'eh-2',
+        title: 'VP Executive Briefing Framework (30-Minute Model)',
+        subtitle: 'Structuring high-leverage decision briefings for C-suite and VP stakeholders.',
+        tag: 'Executive Presence',
+        metrics: '30-Min High-Impact Cadence · Fast Sign-Offs',
+        proofAnchor: 'miis',
+        star: {
+          situation:
+            'Cross-functional operational reviews were frequently bogged down in tactical granularities, exhausting VP time without securing decisions on critical blockers.',
+          task:
+            'Architect a crisp, high-leverage executive briefing framework tailored for senior leadership.',
+          action:
+            'Instituted a 4-part agenda: 5 min OKR alignment & wins; 10 min strategic opportunities; 10 min critical unowned risks needing executive decision; 5 min next steps and clear RACI ownership.',
+          result:
+            'Streamlined executive sign-offs, cut meeting overhead by 40%, and earned direct praise for executive clarity and structured operational leadership.',
+        },
+        l6Principle: 'Executive communication must lead with strategic trade-offs and decisions needed rather than tactical process details.',
+      },
+      {
+        id: 'eh-3',
+        title: 'AI-Enabled Unit Economics & Scale Optimization',
+        subtitle: 'Compressing evaluation costs while protecting edge-case and low-resource quality.',
+        tag: 'Unit Economics',
+        metrics: '$5 to $1.67/Unit · $10M Flat Budget Protected',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'Global evaluation volume tripled from 2M to 6M tasks under a flat $10M budget envelope, while legacy 100% manual dual-rater review cost $5/task and choked onboarding.',
+          task:
+            'Scale evaluation throughput 3x within existing budget while protecting quality in high-hallucination language markets.',
+          action:
+            'Designed a risk-tiered evaluation model reserving 100% human review for complex/high-risk edge cases while deploying model-assisted pre-checks on high-confidence slices; standardized vendor onboarding templates.',
+          result:
+            'Compressed blended cost per evaluation task from $5 to $1.67, stayed strictly within the $10M budget, and compressed onboarding lead time from 8 weeks to 2 weeks.',
+        },
+        l6Principle: 'Scale is achieved not by cutting quality, but by risk-tiering human expertise where it provides the highest return.',
+      },
+    ],
+  },
+];
+
+export const operationalDomains = [
+  {
+    id: 'content-operations',
+    number: '01',
+    title: 'Content Operations',
+    shortName: 'Content Ops',
+    icon: 'FileText',
+    description: 'High-velocity digital asset supply chains, CMS/TMS integration, and multi-market editorial release trains.',
+    subCards: [
+      {
+        id: 'co-1',
+        title: 'Digital Asset Supply Chain Automation',
+        subtitle: 'Linking engineering repositories with global Marcom content systems.',
+        metrics: '67% Cycle Cut · Automated API Handoffs',
+        star: {
+          situation: 'Manual handoffs between code repositories and content CMS created severe release lag.',
+          task: 'Automate content extraction, validation, and delivery pipeline.',
+          action: 'Architected automated GitHub webhook pipeline feeding content into localization engines.',
+          result: 'Cut turnaround time from 15 to 5 business days with zero manual file copying errors.',
+        },
+        l6Principle: 'Automating content plumbing lets creative teams focus purely on messaging quality.',
+      },
+      {
+        id: 'co-2',
+        title: 'Geopolitical Readiness & Brand Compliance',
+        subtitle: 'Cross-market content validation preventing cultural and geopolitical missteps.',
+        metrics: '200+ Mkts Protected · 0 Brand Violations',
+        star: {
+          situation: 'Multi-market storefront assets risked geopolitical and regulatory brand exposure.',
+          task: 'Establish pre-flight editorial clearance gates without slowing publishing velocity.',
+          action: 'Implemented standardized geopolitical clearance scorecards integrated with Legal and PR.',
+          result: 'Cleared 200+ global storefront markets with 100% compliance across international guidelines.',
+        },
+        l6Principle: 'Geopolitical compliance must be preventative and automated rather than reactive.',
+      },
+    ],
+  },
+  {
+    id: 'eval-feedback',
+    number: '02',
+    title: 'Evaluation and Feedback at Scale',
+    shortName: 'Eval & Feedback',
+    icon: 'CheckSquare',
+    description: 'Human-in-the-loop validation, rater calibration, and high-throughput feedback loops.',
+    subCards: [
+      {
+        id: 'ef-1',
+        title: 'Risk-Tiered Sampling & Rater Calibration',
+        subtitle: 'Focusing human expertise on ambiguous edge cases and high-hallucination slices.',
+        metrics: '3x Volume Scaled · 98% Inter-Rater Reliability',
+        star: {
+          situation: 'Blanket manual dual-rater evaluation was unsustainable under surging model outputs.',
+          task: 'Design an adaptive evaluation architecture that scales with volume without budget spikes.',
+          action: 'Instituted stratified sampling based on uncertainty scores, directing human raters to low-confidence bands.',
+          result: 'Maintained 98% inter-rater calibration while reducing total manual evaluation burden by 60%.',
+        },
+        l6Principle: 'Human evaluation should be reserved for high-leverage ambiguity and strategic edge cases.',
+      },
+    ],
+  },
+  {
+    id: 'ai-data-training',
+    number: '03',
+    title: 'AI Data and Training',
+    shortName: 'AI Data & Training',
+    icon: 'Cpu',
+    description: 'LLM fine-tuning datasets, prompt engineering, MTPE optimization, and model safety.',
+    subCards: [
+      {
+        id: 'ai-1',
+        title: 'MTPE Turnaround Acceleration (15 to 5 Days)',
+        subtitle: 'Enterprise machine translation post-editing optimization and domain tuning.',
+        metrics: '67% Cycle Time Cut · 99.2% Quality SLA',
+        star: {
+          situation: 'Legacy translation memory workflows took 15 business days for major software releases.',
+          task: 'Accelerate localization delivery by integrating trained neural MT engines with human-in-the-loop review.',
+          action: 'Fine-tuned custom domain MT engines on historical approved bilingual corpora; established post-editing guidelines.',
+          result: 'Compressed delivery cycles to 5 days while meeting or exceeding human translation quality scores.',
+        },
+        l6Principle: 'AI workflow acceleration requires rigorous domain fine-tuning and standardized human review rubrics.',
+      },
+    ],
+  },
+  {
+    id: 'testing-response',
+    number: '04',
+    title: 'Testing + Real-Time Response',
+    shortName: 'Testing & Real-Time',
+    icon: 'Zap',
+    description: 'SLA incident triage, 24/7 Follow-the-Sun response, and automated regression testing.',
+    subCards: [
+      {
+        id: 'tr-1',
+        title: '24/7 Follow-the-Sun Incident Triage',
+        subtitle: 'Decoupled multi-regional shift handoffs ensuring continuous operational coverage.',
+        metrics: '<30 Min P0 Triage · 24/7 Active Handoffs',
+        star: {
+          situation: 'Critical release blockers identified in European evening hours stalled until US morning.',
+          task: 'Architect a 24/7 Follow-the-Sun operational handoff model across global vendor hubs.',
+          action: 'Standardized daily asynchronous shift handoff briefs and automated P0 escalation webhooks.',
+          result: 'Eliminated overnight idle delays and achieved sub-30-minute response SLAs for critical blockers.',
+        },
+        l6Principle: 'Follow-the-Sun operations require standardized asynchronous handoff artifacts to prevent context loss.',
+      },
+    ],
+  },
+  {
+    id: 'global-language',
+    number: '05',
+    title: 'Global Language Services',
+    shortName: 'Language Services',
+    icon: 'Languages',
+    description: 'Linguistic quality frameworks, terminology Centers of Excellence, and cultural adaptation.',
+    subCards: [
+      {
+        id: 'gl-1',
+        title: 'Enterprise Terminology Center of Excellence (CoE)',
+        subtitle: 'Unifying global corporate voice across distributed product ecosystems.',
+        metrics: '100% Global Parity · 26+ Languages',
+        star: {
+          situation: 'Inconsistent terminology across product, marketing, and support eroded brand trust internationally.',
+          task: 'Centralize enterprise terminology governance into an accessible self-service platform.',
+          action: 'Built a cloud-based terminology portal with automated linting extensions for engineering and marketing.',
+          result: 'Achieved 100% brand terminology parity across 26 languages and cut linguistic bug filings by 45%.',
+        },
+        l6Principle: 'Terminology consistency is a core product quality attribute, not an afterthought.',
+      },
+    ],
+  },
+  {
+    id: 'strategy-enablement',
+    number: '06',
+    title: 'Strategy Enablement and Vendor Management',
+    shortName: 'Strategy Enablement',
+    icon: 'TrendingUp',
+    description: 'Commercial partner strategy, capability roadmaps, and vendor innovation programs.',
+    subCards: [
+      {
+        id: 'se-1',
+        title: 'MSP Partner Program & Strategic Sourcing',
+        subtitle: 'Scaling specialized agency bandwidth while maintaining strict enterprise governance.',
+        metrics: '20-Vendor Partner Ecosystem · 100% Capacity Scale',
+        star: {
+          situation: 'Core internal team capacity was constrained during massive COVID-19 remote work expansion.',
+          task: 'Build a scalable Managed Service Provider (MSP) ecosystem without growing internal FTE headcount.',
+          action: 'Architected a hybrid operational model onboarding vetted MSP partners with standardized SLAs and security controls.',
+          result: 'Successfully scaled throughput by 300% to support global campaign rollouts across 17 international markets.',
+        },
+        l6Principle: 'Strategic vendor ecosystems act as elastic multipliers for core engineering and product teams.',
+      },
+    ],
+  },
+  {
+    id: 'supplier-partner',
+    number: '07',
+    title: 'Supplier and Partner Governance',
+    shortName: 'Supplier Governance',
+    icon: 'ShieldCheck',
+    description: 'Extended workforce (xWS) security, RBAC access controls, and compliance audits.',
+    subCards: [
+      {
+        id: 'spg-1',
+        title: 'Extended Workforce (xWS) Access & Offboarding',
+        subtitle: 'Zero-trust contractor security protocols and automated lifecycle management.',
+        metrics: '100% Access Audit Compliance · 0 Security Leaks',
+        star: {
+          situation: 'Dispersed regional vendor contractors created access control vulnerabilities upon offboarding.',
+          task: 'Implement rigorous Role-Based Access Control (RBAC) and automated offboarding verification.',
+          action: 'Partnered with Infosec to link vendor SOW end dates directly to identity management revocation webhooks.',
+          result: 'Enforced 100% access deprovisioning compliance within 1 hour of contract completion with zero data leaks.',
+        },
+        l6Principle: 'Vendor governance must treat access security as an automated systemic constraint.',
+      },
+    ],
+  },
+  {
+    id: 'operational-controls',
+    number: '08',
+    title: 'Operational Controls and Compliance',
+    shortName: 'Controls & Compliance',
+    icon: 'Lock',
+    description: 'Regulatory compliance, living risk registries, and audit readiness.',
+    subCards: [
+      {
+        id: 'occ-1',
+        title: 'Living Risk Registry & Tripwire Monitoring',
+        subtitle: 'Continuous probability x impact tracking with pre-negotiated contingency triggers.',
+        metrics: '100% Risks Triaged · Zero Unmitigated Breaches',
+        star: {
+          situation: 'Projects frequently encountered unforecasted supply and technical blockers that derailed schedules.',
+          task: 'Deploy a dynamic risk registry framework actively managed throughout the program lifecycle.',
+          action: 'Instituted monthly risk scoring with explicit leading tripwires that trigger automated contingency plans.',
+          result: 'Proactively mitigated 12 critical program risks with zero schedule slips across multi-quarter roadmaps.',
+        },
+        l6Principle: 'Risk management is an active operational rhythm, not a static planning document.',
+      },
+    ],
+  },
+  {
+    id: 'finance-opex',
+    number: '09',
+    title: 'Finance and OPEX Management',
+    shortName: 'Finance & OPEX',
+    icon: 'DollarSign',
+    description: 'Unit economics modeling, PO/invoice reconciliation, and compounding efficiency gains.',
+    subCards: [
+      {
+        id: 'fom-1',
+        title: 'Automated PO Reconciliation & Spend Forecasting',
+        subtitle: 'Eliminating manual invoicing friction and budget variance across multi-million spend.',
+        metrics: '0% Budget Variance · Automated Reconciliation',
+        star: {
+          situation: 'Manual invoice tracking caused delayed vendor payments and unpredictable quarter-end accrual adjustments.',
+          task: 'Automate PO tracking and align real-time deliverable receipt with financial ledger systems.',
+          action: 'Integrated vendor task completion telemetry with automated ERP invoicing reconciliation.',
+          result: 'Reduced invoicing lag from 30 days to 48 hours and achieved near-zero quarterly budget variance.',
+        },
+        l6Principle: 'Financial operational excellence builds trust with Finance and secures continuous program funding.',
+      },
+    ],
+  },
+  {
+    id: 'bi-telemetry',
+    number: '10',
+    title: 'Operational Business Intelligence',
+    shortName: 'BI & Telemetry',
+    icon: 'BarChart3',
+    description: 'Real-time pipeline analytics, predictive bottleneck modeling, and stakeholder dashboards.',
+    subCards: [
+      {
+        id: 'bit-1',
+        title: 'End-to-End Pipeline Telemetry & SLA Tracking',
+        subtitle: 'Real-time throughput metrics across intake, triage, translation, and deployment.',
+        metrics: '100% Pipeline Visibility · Real-Time Alerts',
+        star: {
+          situation: 'Stakeholders lacked visibility into where individual requests were stuck in the global release pipeline.',
+          task: 'Build a centralized business intelligence dashboard delivering live status and throughput analytics.',
+          action: 'Aggregated cross-system events from Jira, GitHub, and vendor TMS into a live telemetry portal.',
+          result: 'Gave 100+ cross-functional stakeholders self-service visibility, cutting status query emails by 80%.',
+        },
+        l6Principle: 'Operational telemetry transforms subjective frustration into objective, actionable data.',
+      },
+    ],
+  },
+];
