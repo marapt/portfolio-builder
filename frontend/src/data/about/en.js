@@ -2,8 +2,8 @@
 
 export const aboutHero = {
   eyebrow: 'Enterprise Program Management & Systems Narrative',
-  title: 'Global PM Lead & Operations Manager at heart - Expanding Into Enterprise Program Management',
-  titlePrimary: 'Global PM Lead & Operations Manager at heart',
+  title: 'Global PM Lead & Operations Manager at heart, Expanding Into Enterprise Program Management',
+  titlePrimary: 'Global PM Lead & Operations Manager at heart,',
   titleSecondary: 'Expanding Into Enterprise Program Management',
   lead:
     'Grounded in years of scaling global rollouts, tooling workflows, and cross-functional operations across major tech organizations, I bring high-scale program leadership into broader enterprise PgM: turning ambiguous, cross-org initiatives into predictable operating systems and measurable outcomes across teams, systems, and markets.',
@@ -105,7 +105,7 @@ export const functionalPillars = [
     id: 'work-style-habits',
     number: '02',
     title: 'Work Style, Attitude & Habits',
-    focus: 'Your daily operating cadence, mindset, and how you balance rigor with speed.',
+    focus: 'My daily operating cadence, mindset, and how I balance rigor with speed.',
     color: 'violet',
     avatar: '⚡',
     items: [
@@ -132,7 +132,7 @@ export const functionalPillars = [
     id: 'connections-presence',
     number: '03',
     title: 'How I Show Up & Build Connections',
-    focus: 'Your human presence, relationship building, and cross-functional collaboration.',
+    focus: 'My human presence, relationship building, and cross-functional collaboration.',
     color: 'emerald',
     avatar: '🤝',
     items: [
@@ -159,7 +159,7 @@ export const functionalPillars = [
     id: 'value-and-leverage',
     number: '04',
     title: 'What Value I Bring to You',
-    focus: 'Concrete enterprise leverage grounded in your track record.',
+    focus: 'Concrete enterprise leverage grounded in my track record.',
     color: 'amber',
     avatar: '🚀',
     items: [
@@ -227,5 +227,16 @@ export const personalSide = {
       details:
         'As Visiting Professor at the Middlebury Institute of International Studies (MIIS) from Jul 2023 to Jul 2025, modernized the flagship TLM/PGM curriculum, advised 90+ graduate students, and launched the first AI in Localization series. Active speaker and contributor for Women in Localization.',
     },
+  ],
+};
+
+export const closingInvitation = {
+  eyebrow: "WHAT'S NEXT",
+  title: "Let's Connect",
+  lead:
+    'If you would like to look closer at specific roles, past programs, or leadership scope, explore my Career and Experience pages. If something here resonated and you want to compare notes on a role, a complex initiative, or working together, reach out anytime via Contact.',
+  actions: [
+    { label: 'Explore Career Timeline', to: '/career', primary: false },
+    { label: 'Get in Touch', to: '/#contact', primary: true },
   ],
 };

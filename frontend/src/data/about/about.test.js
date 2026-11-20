@@ -3,7 +3,7 @@ import * as aboutPT from './pt';
 
 describe('About Me dataset & structure', () => {
   test('en and pt exports match expected structure', () => {
-    ['aboutHero', 'functionalPillars', 'personalSide'].forEach((exportName) => {
+    ['aboutHero', 'functionalPillars', 'personalSide', 'closingInvitation'].forEach((exportName) => {
       expect(aboutEN[exportName]).toBeDefined();
       expect(aboutPT[exportName]).toBeDefined();
     });
@@ -11,14 +11,14 @@ describe('About Me dataset & structure', () => {
 
   test('aboutHero contains exact title, eyebrow, origin story, and scale metrics', () => {
     expect(aboutEN.aboutHero.title).toBe(
-      'Global PM Lead & Operations Manager at heart - Expanding Into Enterprise Program Management'
+      'Global PM Lead & Operations Manager at heart, Expanding Into Enterprise Program Management'
     );
     expect(aboutEN.aboutHero.eyebrow).toBe(
       'Enterprise Program Management & Systems Narrative'
     );
     expect(aboutEN.aboutHero.lead).toContain('broader enterprise PgM');
     expect(aboutPT.aboutHero.title).toBe(
-      'Líder Global de PgM & Gestora de Operações de coração - Expansão para a Gestão de Programas Empresariais'
+      'Líder Global de PgM & Gestora de Operações de coração, Expansão para a Gestão de Programas Empresariais'
     );
     expect(aboutEN.aboutHero.originStory.title).toBe(
       'My Journey: Language + Tech = Access = User-First'
@@ -88,6 +88,11 @@ describe('About Me dataset & structure', () => {
     expect(enP3.items[2].growthEdge).toContain('add the most leverage');
     expect(ptP2.items[2].growthEdge).toBeDefined();
     expect(ptP3.items[2].growthEdge).toBeDefined();
+
+    expect(aboutEN.functionalPillars[0].focus).toContain('How I tackle');
+    expect(aboutEN.functionalPillars[1].focus).toContain('My daily operating');
+    expect(aboutEN.functionalPillars[2].focus).toContain('My human presence');
+    expect(aboutEN.functionalPillars[3].focus).toContain('grounded in my track');
   });
 
   test('personalSide covers 3 dimensions of personal background and community impact', () => {

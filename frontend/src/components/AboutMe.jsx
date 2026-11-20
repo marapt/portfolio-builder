@@ -31,11 +31,13 @@ import {
   aboutHero as aboutHeroEN,
   functionalPillars as functionalPillarsEN,
   personalSide as personalSideEN,
+  closingInvitation as closingInvitationEN,
 } from '../data/about/en';
 import {
   aboutHero as aboutHeroPT,
   functionalPillars as functionalPillarsPT,
   personalSide as personalSidePT,
+  closingInvitation as closingInvitationPT,
 } from '../data/about/pt';
 
 const iconMap = {
@@ -100,6 +102,7 @@ const AboutMe = () => {
   const hero = isPt ? aboutHeroPT : aboutHeroEN;
   const pillars = isPt ? functionalPillarsPT : functionalPillarsEN;
   const personal = isPt ? personalSidePT : personalSideEN;
+  const closing = isPt ? closingInvitationPT : closingInvitationEN;
 
   // Active pillar filter tab
   const [activeTab, setActiveTab] = useState('all');
@@ -453,6 +456,45 @@ const AboutMe = () => {
           </div>
         </section>
       )}
+
+      {/* SECTION 6: Closing Invitation / Let's Connect */}
+      <section className="glass-card rounded-3xl p-7 sm:p-9 lg:p-10 border border-white/10 bg-gradient-to-br from-cyan-950/30 via-slate-900/60 to-violet-950/30 text-left space-y-6 shadow-2xl">
+        <div className="space-y-2.5 max-w-3xl">
+          <span className="text-[11px] font-black uppercase tracking-[0.2em] text-cyan-400">
+            {closing.eyebrow}
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+            {closing.title}
+          </h2>
+          <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal pt-0.5">
+            {closing.lead}
+          </p>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 pt-1">
+          {closing.actions.map((act, idx) =>
+            act.primary ? (
+              <a
+                key={idx}
+                href={act.to}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 text-white text-xs sm:text-sm font-bold shadow-lg shadow-cyan-500/20 hover:opacity-95 transition-all"
+              >
+                <span>{act.label}</span>
+                <ArrowRight size={14} />
+              </a>
+            ) : (
+              <Link
+                key={idx}
+                to={act.to}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white text-xs sm:text-sm font-bold border border-white/15 transition-all"
+              >
+                <span>{act.label}</span>
+                <ArrowRight size={14} />
+              </Link>
+            )
+          )}
+        </div>
+      </section>
     </div>
   );
 };

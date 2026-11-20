@@ -2,8 +2,8 @@
 
 export const aboutHero = {
   eyebrow: 'Gestão de Programas Empresariais & Narrativa de Sistemas',
-  title: 'Líder Global de PgM & Gestora de Operações de coração - Expansão para a Gestão de Programas Empresariais',
-  titlePrimary: 'Líder Global de PgM & Gestora de Operações de coração',
+  title: 'Líder Global de PgM & Gestora de Operações de coração, Expansão para a Gestão de Programas Empresariais',
+  titlePrimary: 'Líder Global de PgM & Gestora de Operações de coração,',
   titleSecondary: 'Expansão para a Gestão de Programas Empresariais',
   lead:
     'Com base em anos de expansão de lançamentos globais, fluxos de ferramentas e operações multifuncionais nas principais organizações tecnológicas, trago a liderança de programas de grande escala para a gestão de programas empresariais (PgM): transformando iniciativas ambíguas e multifuncionais em sistemas operacionais previsíveis e resultados mensuráveis entre equipas, sistemas e mercados.',
@@ -132,7 +132,7 @@ export const functionalPillars = [
     id: 'connections-presence',
     number: '03',
     title: 'Como me Apresento & Crio Ligações',
-    focus: 'Presença humana, construção de relações e colaboração multifuncional.',
+    focus: 'A minha presença humana, construção de relações e colaboração multifuncional.',
     color: 'emerald',
     avatar: '🤝',
     items: [
@@ -227,5 +227,16 @@ export const personalSide = {
       details:
         'Como Professora Convidada no Middlebury Institute of International Studies (MIIS) de julho de 2023 a julho de 2025, modernizei o mestrado em Gestão de Programas, orientei mais de 90 estudantes e criei a série de palestras sobre IA. Sou oradora e membro ativo na Women in Localization.',
     },
+  ],
+};
+
+export const closingInvitation = {
+  eyebrow: 'PRÓXIMOS PASSOS',
+  title: 'Vamos Conversar',
+  lead:
+    'Se desejar conhecer em detalhe funções específicas, programas anteriores ou o âmbito da minha liderança, explore as páginas de Carreira e Experiência. Se algo aqui fez sentido e quer trocar ideias sobre uma oportunidade, uma iniciativa complexa ou uma colaboração, entre em contacto a qualquer momento.',
+  actions: [
+    { label: 'Explorar Linha de Carreira', to: '/career', primary: false },
+    { label: 'Entrar em Contacto', to: '/#contact', primary: true },
   ],
 };
