@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { RotateCw, CheckCircle2, ArrowRight, Sparkles, Building2, Lightbulb } from 'lucide-react';
+import {
+  RotateCw,
+  CheckCircle2,
+  Building2,
+  Lightbulb,
+  Sparkles,
+  Maximize2,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './BentoCard.css';
 
@@ -52,6 +59,38 @@ const colorThemes = {
     btn: 'bg-rose-600/30 hover:bg-rose-600/50 text-rose-200 border-rose-500/40',
     glow: 'shadow-rose-500/10',
   },
+  teal: {
+    badge: 'bg-teal-500/20 text-teal-300 border-teal-500/40',
+    border: 'border-slate-700/80 hover:border-teal-400/80',
+    topBorder: 'border-t-teal-400',
+    accentText: 'text-teal-400',
+    btn: 'bg-teal-600/30 hover:bg-teal-600/50 text-teal-200 border-teal-500/40',
+    glow: 'shadow-teal-500/10',
+  },
+  purple: {
+    badge: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
+    border: 'border-slate-700/80 hover:border-purple-400/80',
+    topBorder: 'border-t-purple-400',
+    accentText: 'text-purple-400',
+    btn: 'bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 border-purple-500/40',
+    glow: 'shadow-purple-500/10',
+  },
+  cyan: {
+    badge: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40',
+    border: 'border-slate-700/80 hover:border-cyan-400/80',
+    topBorder: 'border-t-cyan-400',
+    accentText: 'text-cyan-400',
+    btn: 'bg-cyan-600/30 hover:bg-cyan-600/50 text-cyan-200 border-cyan-500/40',
+    glow: 'shadow-cyan-500/10',
+  },
+  blue: {
+    badge: 'bg-blue-500/20 text-blue-300 border-blue-500/40',
+    border: 'border-slate-700/80 hover:border-blue-400/80',
+    topBorder: 'border-t-blue-400',
+    accentText: 'text-blue-400',
+    btn: 'bg-blue-600/30 hover:bg-blue-600/50 text-blue-200 border-blue-500/40',
+    glow: 'shadow-blue-500/10',
+  },
 };
 
 export const BentoCard = ({
@@ -60,6 +99,7 @@ export const BentoCard = ({
   isFlippedControlled,
   onToggleFlip,
   domainTitle,
+  onExpand,
 }) => {
   const [internalFlipped, setInternalFlipped] = useState(false);
   const isFlipped = isFlippedControlled !== undefined ? isFlippedControlled : internalFlipped;
@@ -73,10 +113,18 @@ export const BentoCard = ({
     }
   };
 
+  const handleCardClick = (e) => {
+    if (onExpand) {
+      onExpand(card, color, domainTitle);
+    } else {
+      handleFlip(e);
+    }
+  };
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      handleFlip(e);
+      handleCardClick(e);
     }
   };
 
@@ -88,16 +136,16 @@ export const BentoCard = ({
       className="bento-card-container group w-full"
       tabIndex={0}
       role="region"
-      aria-label={`${card.title}. Press Enter to ${isFlipped ? 'collapse' : 'flip'} STAR details.`}
+      aria-label={`${card.title}. Click to expand STAR details, or press Flip.`}
       onKeyDown={handleKeyDown}
     >
       <div className={`bento-card-inner ${isFlipped ? 'flipped' : ''}`}>
         {/* FRONT FACE (Elevated Surface with High Contrast) */}
         <div
           className={`bento-card-face bento-card-front bg-gradient-to-br from-slate-800/95 via-slate-850 to-slate-900/95 p-6 border ${theme.border} transition-all duration-300 shadow-xl hover:shadow-2xl hover:border-indigo-400/60 cursor-pointer`}
-          onClick={handleFlip}
+          onClick={handleCardClick}
         >
-          {/* Top Row: Domain / Tag and Flip Cue */}
+          {/* Top Row: Domain / Tag and Actions */}
           <div>
             <div className="flex items-center justify-between gap-2 mb-3">
               <span
@@ -106,15 +154,31 @@ export const BentoCard = ({
                 <Sparkles className="w-3 h-3" />
                 {card.tag || domainTitle || 'Operational Card'}
               </span>
-              <button
-                type="button"
-                onClick={handleFlip}
-                aria-label="Flip card for STAR details"
-                className={`p-1.5 rounded-lg border text-xs font-medium flex items-center gap-1 transition-colors ${theme.btn}`}
-              >
-                <RotateCw className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">Flip STAR</span>
-              </button>
+
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={handleFlip}
+                  aria-label="Flip card for quick view"
+                  className={`p-1.5 rounded-lg border text-xs font-medium flex items-center gap-1 transition-colors ${theme.btn}`}
+                >
+                  <RotateCw className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">Flip</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (onExpand) onExpand(card, color, domainTitle);
+                  }}
+                  aria-label="Expand card to full modal view"
+                  className="p-1.5 rounded-lg border text-xs font-medium flex items-center gap-1 bg-slate-800/90 hover:bg-slate-700 text-slate-200 border-slate-700 transition-colors shadow-sm"
+                >
+                  <Maximize2 className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">Expand</span>
+                </button>
+              </div>
             </div>
 
             {/* Title & Subtitle */}
@@ -126,7 +190,7 @@ export const BentoCard = ({
             </p>
           </div>
 
-          {/* Bottom Area: Key Metrics Pill & Proof Anchor */}
+          {/* Bottom Area: Key Metrics Pill & Expand Trigger */}
           <div className="pt-4 border-t border-slate-700/60">
             {card.metrics && (
               <div className="mb-3">
@@ -150,17 +214,25 @@ export const BentoCard = ({
                 <span className="text-[11px] text-slate-400">Executive Card</span>
               )}
 
-              <span className="text-indigo-400 flex items-center gap-1 font-medium group-hover:translate-x-0.5 transition-transform">
-                View STAR card
-                <ArrowRight className="w-3 h-3" />
-              </span>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (onExpand) onExpand(card, color, domainTitle);
+                }}
+                className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 font-semibold group-hover:translate-x-0.5 transition-all"
+              >
+                <span>Read Full STAR</span>
+                <Maximize2 className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
         </div>
 
-        {/* BACK FACE (Flipped STAR Model with High-Contrast Background & Accents) */}
+        {/* BACK FACE (Flipped STAR Model with Quick Peek) */}
         <div
-          className={`bento-card-face bento-card-back bg-gradient-to-b from-slate-800/95 via-slate-850 to-slate-900/95 p-6 border border-slate-700/80 border-t-2 ${theme.topBorder} shadow-2xl ring-1 ring-white/10 flex flex-col justify-between`}
+          className={`bento-card-face bento-card-back bg-gradient-to-b from-slate-800/95 via-slate-850 to-slate-900/95 p-6 border border-slate-700/80 border-t-2 ${theme.topBorder} shadow-2xl ring-1 ring-white/10 flex flex-col justify-between cursor-pointer`}
+          onClick={handleCardClick}
         >
           {/* Header Row */}
           <div>
@@ -168,15 +240,30 @@ export const BentoCard = ({
               <span className={`text-xs font-bold uppercase tracking-wider ${theme.accentText}`}>
                 STAR Framework
               </span>
-              <button
-                type="button"
-                onClick={handleFlip}
-                aria-label="Return to card summary"
-                className="px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium flex items-center gap-1.5 transition-colors border border-slate-700"
-              >
-                <RotateCw className="w-3 h-3" />
-                <span>Summary</span>
-              </button>
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (onExpand) onExpand(card, color, domainTitle);
+                  }}
+                  aria-label="Expand to full reading view"
+                  className="px-2 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium flex items-center gap-1 transition-colors border border-slate-700"
+                >
+                  <Maximize2 className="w-3 h-3" />
+                  <span>Expand</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleFlip}
+                  aria-label="Return to card front"
+                  className="px-2 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium flex items-center gap-1 transition-colors border border-slate-700"
+                >
+                  <RotateCw className="w-3 h-3" />
+                  <span>Front</span>
+                </button>
+              </div>
             </div>
 
             <h4 className="text-sm font-bold text-white mb-3 line-clamp-1">{card.title}</h4>
@@ -188,7 +275,7 @@ export const BentoCard = ({
                   <span className="font-bold text-amber-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Situation
                   </span>
-                  <p className="text-slate-300 leading-relaxed">{star.situation}</p>
+                  <p className="text-slate-300 leading-relaxed line-clamp-3">{star.situation}</p>
                 </div>
               )}
 
@@ -197,7 +284,7 @@ export const BentoCard = ({
                   <span className="font-bold text-sky-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Task
                   </span>
-                  <p className="text-slate-300 leading-relaxed">{star.task}</p>
+                  <p className="text-slate-300 leading-relaxed line-clamp-3">{star.task}</p>
                 </div>
               )}
 
@@ -206,7 +293,7 @@ export const BentoCard = ({
                   <span className="font-bold text-indigo-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Action
                   </span>
-                  <p className="text-slate-300 leading-relaxed">{star.action}</p>
+                  <p className="text-slate-300 leading-relaxed line-clamp-3">{star.action}</p>
                 </div>
               )}
 
@@ -215,7 +302,7 @@ export const BentoCard = ({
                   <span className="font-bold text-emerald-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Result & Impact
                   </span>
-                  <p className="text-slate-200 font-medium leading-relaxed">{star.result}</p>
+                  <p className="text-slate-200 font-medium leading-relaxed line-clamp-3">{star.result}</p>
                 </div>
               )}
             </div>
@@ -224,27 +311,21 @@ export const BentoCard = ({
             {card.l6Principle && (
               <div className="mt-3 p-2.5 rounded-lg bg-indigo-950/40 border border-indigo-500/40 flex items-start gap-2">
                 <Lightbulb className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                <p className="text-[11px] text-indigo-200 italic leading-snug">
+                <p className="text-[11px] text-indigo-200 italic leading-snug line-clamp-2">
                   {card.l6Principle}
                 </p>
               </div>
             )}
           </div>
 
-          {/* Footer Action: Anchor jump if available */}
-          {card.proofAnchor && (
-            <div className="pt-3 mt-3 border-t border-slate-700/80 flex items-center justify-between text-[11px]">
-              <span className="text-slate-400">Career Link:</span>
-              <Link
-                to={`/career#${card.proofAnchor}`}
-                className="text-indigo-400 hover:text-indigo-300 font-semibold inline-flex items-center gap-1"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <span>View in Career Timeline</span>
-                <ArrowRight className="w-3 h-3" />
-              </Link>
-            </div>
-          )}
+          {/* Footer Action */}
+          <div className="pt-3 mt-3 border-t border-slate-700/80 flex items-center justify-between text-[11px]">
+            <span className="text-slate-400">Click to read full STAR</span>
+            <span className="text-indigo-400 font-semibold inline-flex items-center gap-1">
+              <span>Open Expand</span>
+              <Maximize2 className="w-3 h-3" />
+            </span>
+          </div>
         </div>
       </div>
     </div>

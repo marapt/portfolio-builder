@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BentoHeroPillars from '../components/bento/BentoHeroPillars';
 import BentoDomainGrid from '../components/bento/BentoDomainGrid';
+import BentoCardModal from '../components/bento/BentoCardModal';
 import {
   bentoHero as bentoHeroEN,
   topPillars as topPillarsEN,
@@ -33,6 +34,7 @@ const ExperiencesPage = () => {
 
   const [flippedCards, setFlippedCards] = useState({});
   const [allFlipped, setAllFlipped] = useState(false);
+  const [expandedCard, setExpandedCard] = useState(null);
 
   useEffect(() => {
     document.title = isPt
@@ -145,6 +147,9 @@ const ExperiencesPage = () => {
             pillars={pillars}
             flippedCards={flippedCards}
             onToggleFlip={handleToggleFlip}
+            onExpand={(card, color, domainTitle) =>
+              setExpandedCard({ ...card, color, domainTitle })
+            }
           />
 
           {/* TIER 2: 10 SPECIALIZED OPERATIONAL DOMAINS */}
@@ -155,6 +160,9 @@ const ExperiencesPage = () => {
             onFlipAll={handleFlipAll}
             onResetAll={handleResetAll}
             allFlipped={allFlipped}
+            onExpand={(card, color, domainTitle) =>
+              setExpandedCard({ ...card, color, domainTitle })
+            }
           />
 
           {/* EXECUTIVE ENGAGEMENT CTA */}
@@ -195,6 +203,16 @@ const ExperiencesPage = () => {
             </div>
           </section>
         </div>
+
+        {/* EXPANDED POP-UP STAR CARD MODAL */}
+        {expandedCard && (
+          <BentoCardModal
+            card={expandedCard}
+            color={expandedCard.color}
+            domainTitle={expandedCard.domainTitle}
+            onClose={() => setExpandedCard(null)}
+          />
+        )}
       </main>
 
       <Footer />

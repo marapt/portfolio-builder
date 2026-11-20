@@ -30,18 +30,108 @@ const domainIcons = {
   BarChart3,
 };
 
-const domainColors = [
-  'indigo',
-  'violet',
-  'sky',
-  'emerald',
-  'amber',
-  'rose',
-  'indigo',
-  'violet',
-  'emerald',
-  'sky',
-];
+const domainThemeMap = {
+  'content-operations': {
+    color: 'sky',
+    pillActive: 'bg-sky-600 text-white shadow-lg shadow-sky-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-sky-50/40 to-white',
+    boxBorder: 'border-sky-200/80 hover:border-sky-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(14,165,233,0.08)]',
+    ambientGlow: 'bg-sky-100/60',
+    iconBadge: 'bg-sky-100 border-sky-200 text-sky-700',
+    textAccent: 'text-sky-600',
+  },
+  'eval-feedback': {
+    color: 'emerald',
+    pillActive: 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-emerald-50/40 to-white',
+    boxBorder: 'border-emerald-200/80 hover:border-emerald-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(16,185,129,0.08)]',
+    ambientGlow: 'bg-emerald-100/60',
+    iconBadge: 'bg-emerald-100 border-emerald-200 text-emerald-700',
+    textAccent: 'text-emerald-600',
+  },
+  'ai-data-training': {
+    color: 'violet',
+    pillActive: 'bg-violet-600 text-white shadow-lg shadow-violet-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-violet-50/40 to-white',
+    boxBorder: 'border-violet-200/80 hover:border-violet-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(139,92,246,0.08)]',
+    ambientGlow: 'bg-violet-100/60',
+    iconBadge: 'bg-violet-100 border-violet-200 text-violet-700',
+    textAccent: 'text-violet-600',
+  },
+  'testing-response': {
+    color: 'rose',
+    pillActive: 'bg-rose-600 text-white shadow-lg shadow-rose-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-rose-50/40 to-white',
+    boxBorder: 'border-rose-200/80 hover:border-rose-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(244,63,94,0.08)]',
+    ambientGlow: 'bg-rose-100/60',
+    iconBadge: 'bg-rose-100 border-rose-200 text-rose-700',
+    textAccent: 'text-rose-600',
+  },
+  'global-language': {
+    color: 'indigo',
+    pillActive: 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-indigo-50/40 to-white',
+    boxBorder: 'border-indigo-200/80 hover:border-indigo-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(99,102,241,0.08)]',
+    ambientGlow: 'bg-indigo-100/60',
+    iconBadge: 'bg-indigo-100 border-indigo-200 text-indigo-700',
+    textAccent: 'text-indigo-600',
+  },
+  'strategy-enablement': {
+    color: 'amber',
+    pillActive: 'bg-amber-600 text-white shadow-lg shadow-amber-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-amber-50/40 to-white',
+    boxBorder: 'border-amber-200/80 hover:border-amber-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(245,158,11,0.08)]',
+    ambientGlow: 'bg-amber-100/60',
+    iconBadge: 'bg-amber-100 border-amber-200 text-amber-700',
+    textAccent: 'text-amber-600',
+  },
+  'supplier-partner': {
+    color: 'teal',
+    pillActive: 'bg-teal-600 text-white shadow-lg shadow-teal-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-teal-50/40 to-white',
+    boxBorder: 'border-teal-200/80 hover:border-teal-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(20,184,166,0.08)]',
+    ambientGlow: 'bg-teal-100/60',
+    iconBadge: 'bg-teal-100 border-teal-200 text-teal-700',
+    textAccent: 'text-teal-600',
+  },
+  'operational-controls': {
+    color: 'purple',
+    pillActive: 'bg-purple-600 text-white shadow-lg shadow-purple-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-purple-50/40 to-white',
+    boxBorder: 'border-purple-200/80 hover:border-purple-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(168,85,247,0.08)]',
+    ambientGlow: 'bg-purple-100/60',
+    iconBadge: 'bg-purple-100 border-purple-200 text-purple-700',
+    textAccent: 'text-purple-600',
+  },
+  'finance-opex': {
+    color: 'cyan',
+    pillActive: 'bg-cyan-600 text-white shadow-lg shadow-cyan-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-cyan-50/40 to-white',
+    boxBorder: 'border-cyan-200/80 hover:border-cyan-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(6,182,212,0.08)]',
+    ambientGlow: 'bg-cyan-100/60',
+    iconBadge: 'bg-cyan-100 border-cyan-200 text-cyan-700',
+    textAccent: 'text-cyan-600',
+  },
+  'bi-telemetry': {
+    color: 'blue',
+    pillActive: 'bg-blue-600 text-white shadow-lg shadow-blue-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-blue-50/40 to-white',
+    boxBorder: 'border-blue-200/80 hover:border-blue-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(59,130,246,0.08)]',
+    ambientGlow: 'bg-blue-100/60',
+    iconBadge: 'bg-blue-100 border-blue-200 text-blue-700',
+    textAccent: 'text-blue-600',
+  },
+};
 
 export const BentoDomainGrid = ({
   domains,
@@ -50,6 +140,7 @@ export const BentoDomainGrid = ({
   onFlipAll,
   onResetAll,
   allFlipped,
+  onExpand,
 }) => {
   const [selectedDomainId, setSelectedDomainId] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -154,14 +245,14 @@ export const BentoDomainGrid = ({
           )}
         </div>
 
-        {/* Category Filter Pills (10 Domains) */}
+        {/* Category Filter Pills (10 Domains with Topic-Specific Colors) */}
         <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/60">
           <button
             type="button"
             onClick={() => setSelectedDomainId('all')}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
               selectedDomainId === 'all'
-                ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/20'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/20'
                 : 'bg-slate-800/70 text-slate-400 hover:text-white border border-slate-700/60'
             }`}
           >
@@ -171,9 +262,10 @@ export const BentoDomainGrid = ({
             </span>
           </button>
 
-          {domains.map((domain, index) => {
+          {domains.map((domain) => {
             const Icon = domainIcons[domain.icon] || FileText;
             const isSelected = selectedDomainId === domain.id;
+            const theme = domainThemeMap[domain.id] || domainThemeMap['content-operations'];
             const count = domain.subCards?.length || 0;
 
             return (
@@ -183,7 +275,7 @@ export const BentoDomainGrid = ({
                 onClick={() => setSelectedDomainId(domain.id)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
                   isSelected
-                    ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/20'
+                    ? theme.pillActive
                     : 'bg-slate-800/70 text-slate-400 hover:text-white border border-slate-700/60'
                 }`}
               >
@@ -209,38 +301,41 @@ export const BentoDomainGrid = ({
         </div>
       ) : (
         <div className="space-y-12">
-          {filteredDomains.map((domain, index) => {
+          {filteredDomains.map((domain) => {
             const Icon = domainIcons[domain.icon] || FileText;
-            const color = domainColors[index % domainColors.length];
+            const theme = domainThemeMap[domain.id] || domainThemeMap['content-operations'];
 
             return (
               <div
                 key={domain.id}
-                className="bg-slate-900/30 rounded-2xl p-6 md:p-8 border border-slate-800/70 backdrop-blur-sm"
+                className={`${theme.boxBg} rounded-3xl p-6 md:p-8 lg:p-10 border ${theme.boxBorder} ${theme.boxShadow} transition-all duration-500 relative overflow-hidden group`}
               >
+                {/* Subtle Themed Ambient Gradient */}
+                <div className={`absolute top-0 right-0 w-96 h-96 ${theme.ambientGlow} rounded-full blur-3xl -z-10 pointer-events-none`} />
+
                 {/* Domain Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-800/60">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60 text-emerald-400">
-                      <Icon className="w-5 h-5" />
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-5 border-b border-gray-100">
+                  <div className="flex items-start sm:items-center gap-4">
+                    <div className={`p-3.5 rounded-2xl ${theme.iconBadge} shadow-sm shrink-0`}>
+                      <Icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs font-semibold text-emerald-400">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className={`font-mono text-xs font-bold ${theme.textAccent} uppercase tracking-wider`}>
                           DOMAIN {domain.number}
                         </span>
-                        <span className="text-slate-600">·</span>
-                        <span className="text-xs text-slate-400 font-mono">
+                        <span className="text-gray-300">·</span>
+                        <span className="text-xs text-gray-500 font-mono font-medium">
                           {domain.subCards?.length || 0} STAR Cards
                         </span>
                       </div>
-                      <h3 className="text-xl font-bold text-white tracking-tight">
+                      <h3 className="text-xl md:text-2xl font-black text-gray-900 tracking-tight">
                         {domain.title}
                       </h3>
                     </div>
                   </div>
 
-                  <p className="text-xs md:text-sm text-slate-400 max-w-md sm:text-right">
+                  <p className="text-xs md:text-sm text-gray-600 max-w-md sm:text-right font-normal leading-relaxed">
                     {domain.description}
                   </p>
                 </div>
@@ -251,12 +346,13 @@ export const BentoDomainGrid = ({
                     <BentoCard
                       key={card.id}
                       card={card}
-                      color={color}
+                      color={theme.color}
                       domainTitle={domain.title}
                       isFlippedControlled={
                         flippedCards ? !!flippedCards[card.id] : undefined
                       }
                       onToggleFlip={onToggleFlip}
+                      onExpand={onExpand}
                     />
                   ))}
                 </div>
