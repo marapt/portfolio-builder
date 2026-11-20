@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard';
 import GTMDashboard from './pages/GTMDashboard';
 import TrainingNMTCaseStudy from './pages/TrainingNMTCaseStudy';
 import CareerPage from './pages/CareerPage';
+import AboutPage from './pages/AboutPage';
 import VideoBubble from './components/VideoBubble';
 
 const ScrollToHash = () => {
@@ -21,7 +22,10 @@ const ScrollToHash = () => {
   useEffect(() => {
     if (hash) {
       const id = hash.replace('#', '');
-      const element = document.getElementById(id);
+      const element =
+        document.getElementById(id) ||
+        document.getElementById(`panel-${id}`) ||
+        document.getElementById(`tab-${id}`);
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
@@ -58,6 +62,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/gtm" element={<GTMDashboard />} />
           <Route path="/career" element={<CareerPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
         <VideoBubble />
       </GovernanceProvider>

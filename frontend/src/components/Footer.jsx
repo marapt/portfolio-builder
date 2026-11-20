@@ -118,7 +118,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-xs">
-            © {currentYear} {personalInfo.name}. {t('footer.rights') || 'All rights reserved.'}
+            {`© ${currentYear} ${(personalInfo.name || 'Mara Martins').trim()}. ${t('footer.rights') || 'All rights reserved.'}`}
           </p>
           <div className="flex items-center gap-6 text-xs text-gray-500">
             <Link to="/privacy" className="hover:text-indigo-400 transition-colors">{t('hero.privacy_title')}</Link>
