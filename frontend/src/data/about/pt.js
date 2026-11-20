@@ -2,8 +2,8 @@
 
 export const aboutHero = {
   eyebrow: 'Gestão de Programas Empresariais & Narrativa de Sistemas',
-  title: 'Líder Global de PgM & Gestora de Operações de coração, Expansão para a Gestão de Programas Empresariais',
-  titlePrimary: 'Líder Global de PgM & Gestora de Operações de coração,',
+  title: 'Líder Global de PgM & Gestora de Operações de coração - Expansão para a Gestão de Programas Empresariais',
+  titlePrimary: 'Líder Global de PgM & Gestora de Operações de coração',
   titleSecondary: 'Expansão para a Gestão de Programas Empresariais',
   lead:
     'Com base em anos de expansão de lançamentos globais, fluxos de ferramentas e operações multifuncionais nas principais organizações tecnológicas, trago a liderança de programas de grande escala para a gestão de programas empresariais (PgM): transformando iniciativas ambíguas e multifuncionais em sistemas operacionais previsíveis e resultados mensuráveis entre equipas, sistemas e mercados.',
