@@ -469,17 +469,25 @@ export const operationalDomains = [
     description: 'Conformidade regulamentar, gestão dinâmica de riscos e auditorias contínuas.',
     subCards: [
       {
-        id: 'occ-1',
-        title: 'Registo Dinâmico de Riscos e Monitorização de Alertas',
-        subtitle: 'Acompanhamento contínuo de probabilidade e impacto com planos preventivos de contingência.',
-        metrics: '100% Riscos Triados · Zero Falhas Críticas',
+        id: 'occ-workforce-portal',
+        title: 'Portal de Força de Trabalho Global e Conformidade com Leis Laborais',
+        subtitle:
+          'Modernização do portal de carreiras e força de trabalho da Microsoft para cumprir leis laborais e eliminar fricções operacionais.',
+        tag: 'Controlos & Conformidade',
+        proofAnchor: 'microsoft',
+        metrics: 'Microsoft · Conformidade Laboral · Fluxos Integrados',
         star: {
-          situation: 'Projetos deparavam-se frequentemente com imprevistos técnicos e operacionais que desviavam os prazos.',
-          task: 'Implementar um registo vivo de riscos gerido ativamente ao longo de todas as fases dos programas.',
-          action: 'Defini avaliações mensais de risco com indicadores que despoletam automaticamente planos de contingência.',
-          result: 'Antecipei e resolvi 12 riscos críticos sem qualquer atraso nos cronogramas previstos.',
+          situation:
+            'Para garantir conformidade legal com leis laborais e de trabalho temporário/contingente, a equipa de Procurement pretendia modernizar o Careers Website e o Workforce Portal, exigindo o alinhamento de partes interessadas, fluxos de conteúdo/operações e visibilidade de recrutamento sem transferências fragmentadas ou estrangulamentos manuais.',
+          task:
+            'Ajudei a desenvolver e operacionalizar a globalização da experiência do Careers Website e Workforce Portal para que as equipas de programas tivessem fluxos claros, admissão estruturada e execução operacional fiável a nível global.',
+          action:
+            'Colaborei com equipas de produto, engenharia e operações para mapear fluxos de trabalho ponta a ponta, alinhar requisitos e vistas de acompanhamento, e estabelecer transferências operacionais estruturadas entre o Careers Website e o Workforce Portal.',
+          result:
+            'Entreguei uma plataforma coesa de Careers Website e Workforce Portal que otimizou a coordenação entre equipas e a visibilidade operacional nos fluxos de gestão e contratação de força de trabalho.',
         },
-        l6Principle: 'A gestão de riscos é uma disciplina operacional contínua e não um documento estático.',
+        l6Principle:
+          'Grandes portais e sistemas de gestão de força de trabalho triunfam quando o desenho de fluxos, a titularidade clara e a visibilidade operacional são concebidos desde o primeiro dia.',
       },
     ],
   },

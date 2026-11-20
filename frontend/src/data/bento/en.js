@@ -469,17 +469,25 @@ export const operationalDomains = [
     description: 'Regulatory compliance, living risk registries, and audit readiness.',
     subCards: [
       {
-        id: 'occ-1',
-        title: 'Living Risk Registry & Tripwire Monitoring',
-        subtitle: 'Continuous probability x impact tracking with pre-negotiated contingency triggers.',
-        metrics: '100% Risks Triaged · Zero Unmitigated Breaches',
+        id: 'occ-workforce-portal',
+        title: 'Contingent Workforce Portal & Labour Compliance Globalization',
+        subtitle:
+          'Revamping Microsoft\'s Careers Website and Workforce Portal to satisfy contingent labour laws and streamline operational handoffs.',
+        tag: 'Controls & Compliance',
+        proofAnchor: 'microsoft',
+        metrics: 'Microsoft · Global Labour Compliance · Cross-Team Workflows',
         star: {
-          situation: 'Projects frequently encountered unforecasted supply and technical blockers that derailed schedules.',
-          task: 'Deploy a dynamic risk registry framework actively managed throughout the program lifecycle.',
-          action: 'Instituted monthly risk scoring with explicit leading tripwires that trigger automated contingency plans.',
-          result: 'Proactively mitigated 12 critical program risks with zero schedule slips across multi-quarter roadmaps.',
+          situation:
+            'In order to be legally compliant with Temporary Contingent Workforce and Labour Laws, the Procurement team wanted to revamp its Careers Website and Workforce Portal, which required aligning cross-functional stakeholders, content and operational workflows, and candidate or staffing visibility without fragmented handoffs, unclear status tracking, or manual bottlenecks across teams.',
+          task:
+            'Helped develop and operationalize the globalization of the Careers Website and Workforce Portal experience so stakeholders and workforce program teams had clear workflows, structured intake and visibility, and reliable operational execution at global scale.',
+          action:
+            'Partnered across product, engineering, and operational stakeholders to map end-to-end portal and workforce workflows, align on clear requirements and tracking views, and establish structured operational handoffs and visibility across the Careers Website and Workforce Portal.',
+          result:
+            'Delivered a cohesive Careers Website and Workforce Portal capability that streamlined cross-team coordination and operational visibility across workforce and hiring enablement workflows.',
         },
-        l6Principle: 'Risk management is an active operational rhythm, not a static planning document.',
+        l6Principle:
+          'Strong portals and workforce systems succeed when workflow design, clear ownership, and operational visibility are built in from the start.',
       },
     ],
   },
