@@ -191,11 +191,11 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* Foundational Story Section: Title Outside the Box */}
-        <div className="space-y-3.5 text-left pt-2">
-          <div className="space-y-1">
-            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-cyan-400">
-              <HeartHandshake size={13} />
+        {/* Foundational Story Section: Title Inside the Box */}
+        <div className="glass-card rounded-3xl p-6 sm:p-8 border border-cyan-500/20 bg-gradient-to-br from-cyan-950/20 via-slate-900/40 to-violet-950/20 text-left space-y-4 shadow-2xl">
+          <div className="space-y-1.5">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-[0.2em] text-cyan-400">
+              <HeartHandshake size={14} />
               {isPt ? 'História de Origem' : 'Foundational Story'}
             </span>
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
@@ -203,30 +203,28 @@ const AboutMe = () => {
             </h2>
           </div>
 
-          <div className="glass-card rounded-3xl p-6 sm:p-7 border border-cyan-500/20 bg-gradient-to-br from-cyan-950/20 via-transparent to-violet-950/20 space-y-4">
-            <div className="flex items-start justify-between gap-4">
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal flex-1">
-                {hero.originStory.quickGrasp}
-              </p>
-              <button
-                onClick={() => toggleCard('origin-story')}
-                className="shrink-0 p-2 rounded-xl border border-white/10 hover:border-cyan-400/40 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-all cursor-pointer"
-                aria-expanded={expandedCards['origin-story']}
-                aria-label="Toggle origin story details"
-              >
-                {expandedCards['origin-story'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-              </button>
-            </div>
-
-            {expandedCards['origin-story'] && (
-              <div className="pt-3 border-t border-white/10 text-sm text-cyan-100/90 leading-relaxed bg-cyan-950/30 rounded-2xl p-4">
-                {hero.originStory.deepDive}
-              </div>
-            )}
+          <div className="flex items-start justify-between gap-4 pt-1">
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal flex-1">
+              {hero.originStory.quickGrasp}
+            </p>
+            <button
+              onClick={() => toggleCard('origin-story')}
+              className="shrink-0 p-2 rounded-xl border border-white/10 hover:border-cyan-400/40 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-all cursor-pointer"
+              aria-expanded={expandedCards['origin-story']}
+              aria-label="Toggle origin story details"
+            >
+              {expandedCards['origin-story'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
           </div>
+
+          {expandedCards['origin-story'] && (
+            <div className="pt-3 border-t border-white/10 text-sm text-cyan-100/90 leading-relaxed bg-cyan-950/30 rounded-2xl p-4">
+              {hero.originStory.deepDive}
+            </div>
+          )}
         </div>
 
-        {/* My Personality Traits Section */}
+        {/* My Personality Traits Section: Title Inside the Box */}
         {hero.personalityTraits && (
           <div className="glass-card rounded-3xl p-6 sm:p-8 lg:p-9 border border-white/10 bg-gradient-to-br from-slate-900/60 via-slate-950/80 to-slate-900/60 text-left space-y-6 shadow-2xl">
             <div className="space-y-1.5 max-w-3xl">
@@ -397,17 +395,28 @@ const AboutMe = () => {
 
       {/* SECTION 5: Beyond the Resume (Personal Side) */}
       {(activeTab === 'all' || activeTab === 'personal') && (
-        <section className="space-y-6 text-left" id="personal-side">
-          <div className="space-y-1.5">
-            <span className="text-xs font-black uppercase tracking-[0.18em] text-cyan-400">
-              05 · {isPt ? 'Além do Currículo' : 'Beyond the Resume'}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              {personal.sectionTitle}
-            </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-3xl leading-relaxed">
-              {personal.sectionSubtitle}
-            </p>
+        <section
+          id="personal-side"
+          className="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border border-cyan-500/25 hover:border-cyan-400/40 bg-gradient-to-br from-cyan-950/25 via-slate-900/40 to-slate-950/40 text-left space-y-8 transition-all shadow-2xl"
+        >
+          {/* Section Header Inside Box */}
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
+            <div className="flex items-start gap-4">
+              <span className="text-3xl sm:text-4xl p-2.5 rounded-2xl bg-white/5 border border-white/10 shrink-0" role="img" aria-label="Beyond the Resume">
+                🌟
+              </span>
+              <div className="space-y-1 max-w-3xl">
+                <span className="text-xs font-black uppercase tracking-[0.18em] text-cyan-400">
+                  05 · {isPt ? 'Além do Currículo' : 'Beyond the Resume'}
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                  {personal.sectionTitle}
+                </h2>
+                <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed">
+                  {personal.sectionSubtitle}
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -418,7 +427,7 @@ const AboutMe = () => {
               return (
                 <div
                   key={item.id}
-                  className="glass-card rounded-3xl p-6 border border-white/10 flex flex-col justify-between transition-all hover:border-cyan-400/30"
+                  className="rounded-2xl p-6 border border-white/10 bg-slate-900/40 hover:bg-slate-900/70 hover:border-cyan-400/30 flex flex-col justify-between transition-all"
                 >
                   <div className="space-y-3.5">
                     <div className="p-2.5 w-fit rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-300">

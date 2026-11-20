@@ -225,7 +225,7 @@ export const personalSide = {
       quickGrasp:
         'Passionate about raising the bar across teams and empowering the next generation of program managers, bridging academic training with enterprise expectations.',
       details:
-        'As Visiting Professor at the Middlebury Institute of International Studies (MIIS) from Jul 2023 to Jul 2025, modernized the flagship TLM/PGM curriculum, advised 90+ graduate students, and launched the first AI in Localization series. Active speaker and contributor for Women in Localization.',
+        'As Visiting Professor at the Middlebury Institute of International Studies (MIIS) from Jul 2023 to Jul 2025, modernized the flagship TLM/PgM curriculum, advised 90+ graduate students, and launched the first AI in Localization series. Active speaker and contributor for Women in Localization.',
     },
   ],
 };
