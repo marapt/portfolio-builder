@@ -577,6 +577,27 @@ export const operationalDomains = [
         l6Principle:
           'Operational telemetry transforms subjective frustration into objective, actionable data.',
       },
+      {
+        id: 'bit-workforce-capacity',
+        title: 'FTE & Temporary Workforce Capacity Balancing',
+        subtitle:
+          'Low-friction 0-to-1 capacity tracking and contingent workforce balancing across rapid team scaling.',
+        tag: 'Workforce Operations',
+        proofAnchor: 'block',
+        metrics: 'LinkedIn & Block · 1 to 5 Contingent Scale · 5 to 10 PGMs',
+        star: {
+          situation:
+            'At LinkedIn (managing 2 FTE direct reports and 15 linguists) and Block (scaling from 5 PMs to 10 PGMs amid market expansion), overwhelmed teams faced constant firefighting between reactive bug triage and new deliverables, while zero baseline telemetry existed to measure true workload or compare internal FTE capacity against temporary workers.',
+          task:
+            'Build a low-friction 0-to-1 capacity and work-allocation tracking model to relieve team overload, balance work across internal FTEs and temporary workers, and create an objective business case for expanding contingent capacity to support market expansion.',
+          action:
+            'Leveraged existing Jira workflows as an interim tracking layer, separating time spent on bug triage versus new project deliverables and logging off-Jira tasks inside Jira without adding administrative drag. Used those workload signals to rebalance work between FTEs and temporary workers, and at Block launched a dedicated contingent worker program scaling contractors from 1 to 5 to supplement FTE capacity for market expansion.',
+          result:
+            'Established immediate visibility into true workload and FTE versus temporary workforce allocation across both LinkedIn and Block, relieving team overload, scaling Block\'s temporary contractor pool from 1 to 5 alongside 5 PMs to 10 PGMs to support market expansion, and creating a repeatable data-backed capacity model.',
+        },
+        l6Principle:
+          'Turning existing operational signals into clear capacity visibility protects overwhelmed teams and backs resource requests with objective evidence.',
+      },
     ],
   },
 ];

@@ -577,6 +577,27 @@ export const operationalDomains = [
         l6Principle:
           'A telemetria operacional transforma frustrações subjetivas em dados objetivos e acionáveis.',
       },
+      {
+        id: 'bit-workforce-capacity',
+        title: 'Equilíbrio de Capacidade entre Colaboradores Internos e Trabalho Temporário',
+        subtitle:
+          'Modelo de capacidade 0-a-1 de baixa fricção e gestão de trabalho contingente em fases de rápida expansão.',
+        tag: 'Operações de Equipas',
+        proofAnchor: 'block',
+        metrics: 'LinkedIn & Block · Escala Contingente de 1 a 5 · 5 para 10 PGMs',
+        star: {
+          situation:
+            'No LinkedIn (a gerir 2 colaboradores diretos internos e 15 linguistas) e na Block (com crescimento de 5 PMs para 10 PGMs em plena expansão internacional), as equipas sobrecarregadas enfrentavam constantes urgências entre a triagem reativa de erros e novas entregas, sem qualquer telemetria de base para medir a carga real de trabalho ou comparar a capacidade de colaboradores internos face a trabalhadores temporários.',
+          task:
+            'Construir um modelo de monitorização de capacidade e alocação de trabalho 0-a-1 de baixa fricção para aliviar a sobrecarga da equipa, equilibrar tarefas entre colaboradores internos e temporários, e fundamentar com dados a expansão da capacidade contingente de apoio aos novos mercados.',
+          action:
+            'Utilizei fluxos de trabalho existentes no Jira como camada intercalar de monitorização, separando o tempo dedicado à resolução de erros face a novas entregas e registando tarefas fora do Jira sem burocracia excessiva. Utilizei esses sinais de volume de trabalho para reequilibrar tarefas entre internos e temporários e, na Block, criei um programa dedicado de contratação temporária, escalando de 1 para 5 prestadores de serviços para complementar a equipa interna.',
+          result:
+            'Estabeleci visibilidade imediata sobre a carga real de trabalho e a distribuição entre recursos internos e temporários no LinkedIn e na Block, aliviando a equipa, escalando a bolsa de prestadores da Block de 1 para 5 em paralelo com o crescimento de 5 PMs para 10 PGMs, e estabelecendo um modelo sustentado e replicável de capacidade.',
+        },
+        l6Principle:
+          'Transformar sinais operacionais já existentes em visibilidade clara de capacidade protege as equipas e apoia os pedidos de recursos com evidências objetivas.',
+      },
     ],
   },
 ];
