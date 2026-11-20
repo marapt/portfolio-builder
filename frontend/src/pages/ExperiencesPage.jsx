@@ -18,7 +18,6 @@ import {
   Sparkles,
   Layers,
   ArrowRight,
-  RotateCw,
   FileText,
   Mail,
 } from 'lucide-react';
@@ -37,8 +36,8 @@ const ExperiencesPage = () => {
 
   useEffect(() => {
     document.title = isPt
-      ? 'Minhas Experiências · Exemplos do Modelo STAR | Mara Martins'
-      : 'My Experiences · STAR Framework Examples | Mara Martins';
+      ? 'Minhas Experiências · Modelos STAR | Mara Martins'
+      : 'My Experiences · STAR Frameworks | Mara Martins';
   }, [isPt]);
 
   const handleToggleFlip = (cardId) => {
@@ -90,7 +89,7 @@ const ExperiencesPage = () => {
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 leading-tight">
                 {hero.title}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-emerald-400 text-2xl sm:text-4xl mt-1">
-                  {hero.subheading || (isPt ? 'Exemplos do Modelo STAR' : 'STAR Framework Examples')}
+                  {hero.subheading || (isPt ? 'Modelos STAR' : 'STAR Frameworks')}
                 </span>
               </h1>
 
@@ -117,28 +116,11 @@ const ExperiencesPage = () => {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3">
-                <button
-                  type="button"
-                  onClick={allFlipped ? handleResetAll : handleFlipAll}
-                  className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/20"
-                >
-                  <RotateCw className="w-4 h-4" />
-                  <span>
-                    {allFlipped
-                      ? isPt
-                        ? 'Voltar aos Cartões'
-                        : 'Reset to Summary'
-                      : isPt
-                      ? 'Virar Todos para STAR'
-                      : 'Flip All to STAR'}
-                  </span>
-                </button>
-
                 <Link
                   to="/career"
-                  className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-slate-900/80 hover:bg-slate-850 text-slate-200 border border-slate-700/80 shadow-md"
+                  className="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/20"
                 >
-                  <Layers className="w-4 h-4 text-indigo-400" />
+                  <Layers className="w-4 h-4" />
                   <span>{isPt ? 'Linha do Tempo' : 'Career Timeline'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

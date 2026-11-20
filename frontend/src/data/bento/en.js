@@ -4,7 +4,7 @@
 export const bentoHero = {
   eyebrow: 'OPERATIONAL SYSTEMS & STAR CARDS',
   title: 'My Experiences',
-  subheading: 'STAR Framework Examples',
+  subheading: 'STAR Frameworks',
   subtitle:
     'An interactive operational system showcasing proven enterprise governance models, extended workforce architectures, and field-tested STAR cards.',
   quickStats: [
