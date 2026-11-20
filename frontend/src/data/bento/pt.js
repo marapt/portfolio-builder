@@ -3,7 +3,7 @@
 
 export const bentoHero = {
   eyebrow: 'SISTEMAS OPERACIONAIS E CARTÕES STAR',
-  title: 'Experiências',
+  title: 'As Minhas Experiências',
   subheading: 'Exemplos do Modelo STAR',
   subtitle:
     'Um sistema operacional interativo que apresenta estruturas comprovadas de governação empresarial, arquiteturas de workforce alargado e cartões STAR testados no terreno.',

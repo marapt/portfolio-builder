@@ -37,8 +37,8 @@ const ExperiencesPage = () => {
 
   useEffect(() => {
     document.title = isPt
-      ? 'Experiências · Exemplos do Modelo STAR | Mara Martins'
-      : 'Experiences · STAR Framework Examples | Mara Martins';
+      ? 'Minhas Experiências · Exemplos do Modelo STAR | Mara Martins'
+      : 'My Experiences · STAR Framework Examples | Mara Martins';
   }, [isPt]);
 
   const handleToggleFlip = (cardId) => {
