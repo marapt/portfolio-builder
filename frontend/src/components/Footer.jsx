@@ -16,6 +16,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
+    { to: '/about', label: t('nav.about') || 'About', isPage: true },
     { to: '/career', label: t('nav.career') || 'Career Timeline', isPage: true },
     { to: '/resume', label: t('nav.experience') || 'Resume', isPage: true },
     { href: '#services', label: t('nav.services') },
