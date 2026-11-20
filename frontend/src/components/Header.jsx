@@ -32,10 +32,11 @@ const Header = () => {
   };
 
   const navLinks = [
-    { href: '/#services', label: t('nav.services') },
+    { href: '/about', label: t('nav.about') || 'About', isPage: true },
     { href: '/career', label: t('nav.career') || 'Career', isPage: true },
-    { href: '/resume', label: t('nav.experience'), isPage: true },
-    { href: '/scrum-board', label: t('nav.insights'), isPage: true },
+    { href: '/resume', label: t('nav.experience') || 'Experience', isPage: true },
+    { href: '/#services', label: t('nav.services') },
+    { href: '/scrum-board', label: t('nav.insights') || 'Insights', isPage: true },
     { href: '/#contact', label: t('nav.contact') }
   ];
 

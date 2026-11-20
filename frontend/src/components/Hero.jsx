@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Linkedin, Twitter, Github, Globe, Brain, Layout, Heart, ArrowUpRight } from 'lucide-react';
 import { Button } from './ui/button';
@@ -6,14 +7,19 @@ import { personalInfo as personalInfoEN } from '../data/site/en';
 import { personalInfo as personalInfoPT } from '../data/site/pt';
 import aiGlassIcon from '../assets/branding/ai-glass-icon.png';
 
-const InsightCard = ({ label, description, icon: Icon, position, targetId, isPrimary }) => {
+const InsightCard = ({ label, description, icon: Icon, position, targetId, isPrimary, isPage }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
-  const scrollToSection = (e) => {
+  const handleAction = (e) => {
     e.preventDefault();
-    const element = document.querySelector(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isPage) {
+      navigate(targetId);
+    } else {
+      const element = document.querySelector(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -29,15 +35,18 @@ const InsightCard = ({ label, description, icon: Icon, position, targetId, isPri
           {description}
         </p>
         <button 
-          onClick={scrollToSection}
-          className="mt-3 flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-cyan-400 hover:text-white transition-colors"
+          onClick={handleAction}
+          className="mt-3 flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-cyan-400 hover:text-white transition-colors cursor-pointer"
         >
           {label === "QI Cultural" || label === "Cultural IQ" ? "Saiba Mais" : "Learn More"} <ArrowUpRight size={10} />
         </button>
       </div>
 
       {/* Main Card */}
-      <div className={`glass-card p-4 lg:p-5 rounded-3xl shadow-2xl cursor-pointer pulse-glow ${isPrimary ? 'bg-violet-600/10' : 'bg-white/5'}`}>
+      <div 
+        onClick={handleAction}
+        className={`glass-card p-4 lg:p-5 rounded-3xl shadow-2xl cursor-pointer pulse-glow ${isPrimary ? 'bg-violet-600/10' : 'bg-white/5'}`}
+      >
         <div className="flex flex-col items-center gap-2">
           {Icon && (
             <div className={`p-2 rounded-xl ${isPrimary ? 'bg-violet-600/20' : 'bg-white/10'}`}>
@@ -83,7 +92,8 @@ const Hero = () => {
       description: t('hero.val_culture_desc'), 
       icon: Heart, 
       position: "-top-8 -left-8 lg:-top-16 lg:-left-16",
-      targetId: "#about"
+      targetId: "/about",
+      isPage: true
     }
   ];
 
