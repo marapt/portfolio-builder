@@ -235,6 +235,10 @@ export const closingInvitation = {
   title: 'Vamos Conversar',
   lead:
     'Se desejar conhecer em detalhe funções específicas, programas anteriores ou o âmbito da minha liderança, explore as páginas de Carreira e Experiência. Se algo aqui fez sentido e quer trocar ideias sobre uma oportunidade, uma iniciativa complexa ou uma colaboração, entre em contacto a qualquer momento.',
+  leadParagraphs: [
+    'Se desejar conhecer em detalhe funções específicas, programas anteriores ou o âmbito da minha liderança, explore as páginas de Carreira e Experiência.',
+    'Se algo aqui fez sentido e quer trocar ideias sobre uma oportunidade, uma iniciativa complexa ou uma colaboração, entre em contacto a qualquer momento.',
+  ],
   actions: [
     { label: 'Explorar Linha de Carreira', to: '/career', primary: false },
     { label: 'Ver Experiência', to: '/resume', primary: false },

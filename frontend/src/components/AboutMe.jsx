@@ -459,16 +459,24 @@ const AboutMe = () => {
 
       {/* SECTION 6: Closing Invitation / Let's Connect */}
       <section className="glass-card rounded-3xl p-7 sm:p-9 lg:p-10 border border-white/10 bg-gradient-to-br from-cyan-950/30 via-slate-900/60 to-violet-950/30 text-left space-y-6 shadow-2xl">
-        <div className="space-y-2.5 w-full">
+        <div className="space-y-3 w-full">
           <span className="text-[11px] font-black uppercase tracking-[0.2em] text-cyan-400">
             {closing.eyebrow}
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
             {closing.title}
           </h2>
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal pt-0.5 max-w-4xl">
-            {closing.lead}
-          </p>
+          <div className="space-y-2 text-sm sm:text-base text-slate-300 leading-relaxed font-normal pt-0.5 w-full">
+            {closing.leadParagraphs ? (
+              closing.leadParagraphs.map((para, idx) => (
+                <p key={idx} className="w-full [text-wrap:pretty]">
+                  {para}
+                </p>
+              ))
+            ) : (
+              <p className="w-full [text-wrap:pretty]">{closing.lead}</p>
+            )}
+          </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-3 pt-1">
