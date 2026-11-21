@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
     { label: 'Operational Domains', value: '6 Categories' },
-    { label: 'Interactive Cards', value: '26 STAR Cards' },
+    { label: 'Interactive Cards', value: '27 STAR Cards' },
   ],
 };
 
@@ -281,6 +281,27 @@ export const topPillars = [
             },
             l6Principle:
               'Strong portals and workforce systems succeed when workflow design, clear ownership, and operational visibility are built in from the start.',
+          },
+          {
+            id: 'occ-block-temp-workers',
+            title: 'Block Temporary Workers Program Proposal',
+            subtitle:
+              'Auditing FTE capacity, extending internal portal governance, and securing funding across five expansion markets.',
+            tag: 'Workforce Governance',
+            proofAnchor: 'block',
+            metrics: 'Block · 5 Markets Expanded · 5 Contingent FTEs · 4-Wk Hiring',
+            star: {
+              situation:
+                'At Block, rapid growth objectives across five additional markets and concurrent org-wide initiatives created tension with day-to-day business continuity. Existing FTE capacity and team structures could not absorb the surge without risking operational bottlenecks or compliance gaps.',
+              task:
+                'Partnered with cross-functional leads to audit current FTE staff and temporary staffing needs with senior management and HR, define required skill sets, propose a formal Temporary Work Program for Globalization, and secure executive funding and sign-off.',
+              action:
+                'Mapped workload pressures, skill gaps, and business-continuity risks across the five expansion markets; led a structured staffing audit with senior management and HR to formalize contingent needs; and presented a comprehensive program proposal outlining role profiles, governance guardrails, and budget. Concurrently orchestrated five operational integrations: 1) extended an existing partner org\'s Temp Worker Portal to globalization operations; 2) expanded the specialized agency pool to four domain-expert vendors; 3) partnered with IT on secure identity, onboarding, and offboarding admin; 4) established a standardized Master Agreement and SOW with HR and agencies; and 5) aligned with Legal on international labor laws and contractor compliance.',
+              result:
+                'Established a dedicated Temporary Work Program for Globalization with approved funding and predictable capacity planning across five expansion markets while safeguarding business continuity: expanded vendor pool to 4 agencies, secured funding approval for 5 extra temporary workers, accelerated hiring cycles from 4-8 weeks down to 4 weeks, and successfully launched all five target markets on time and on budget.',
+            },
+            l6Principle:
+              'Proactive workforce governance and cross-functional portal extensions expand capacity elastically while safeguarding compliance and team health.',
           },
         ],
       },

@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
     { label: 'Domínios Operacionais', value: '6 Categorias' },
-    { label: 'Cartões Interativos', value: '26 Cartões STAR' },
+    { label: 'Cartões Interativos', value: '27 Cartões STAR' },
   ],
 };
 
@@ -281,6 +281,27 @@ export const topPillars = [
             },
             l6Principle:
               'Grandes portais e sistemas de gestão de força de trabalho triunfam quando o desenho de fluxos, a titularidade clara e a visibilidade operacional são concebidos desde o primeiro dia.',
+          },
+          {
+            id: 'occ-block-temp-workers',
+            title: 'Proposta de Programa de Trabalhadores Temporários da Block',
+            subtitle:
+              'Auditoria à capacidade interna, extensão de portais transversais e financiamento para cinco mercados de expansão.',
+            tag: 'Governação de Equipas',
+            proofAnchor: 'block',
+            metrics: 'Block · 5 Mercados Expandidos · 5 Recursos Contingentes · Contratação em 4 Semanas',
+            star: {
+              situation:
+                'Na Block, os objetivos de crescimento acelerado em cinco novos mercados e iniciativas concorrentes da organização geraram forte tensão com a continuidade do negócio diário. A capacidade existente de colaboradores internos (FTEs) e as estruturas de equipa não conseguiam absorver a sobrecarga sem colocar em risco prazos operacionais ou gerar falhas de conformidade legal.',
+              task:
+                'Colaborar com lideranças multifuncionais para liderar uma auditoria com a gestão sénior e RH sobre equipas internas e necessidades de contratação temporária, definir perfis de competências necessários, propor um Programa formal de Trabalho Temporário para Globalização e assegurar a aprovação e financiamento da liderança.',
+              action:
+                'Mapeei a pressão de trabalho, lacunas de competências e riscos de continuidade nos cinco mercados de expansão; liderei uma auditoria estruturada com a gestão sénior e RH para formalizar os requisitos de trabalho temporário; e apresentei uma proposta abrangente definindo perfis funcionais, salvaguardas de governação e necessidades orçamentais. Concomitantemente, liderei cinco parcerias operacionais: 1) estendi o Portal de Trabalhadores Temporários de outra organização interna à equipa de globalização; 2) ampliei o leque de agências de recrutamento especializadas para 4 fornecedores homologados; 3) colaborei com TI na segurança de onboarding/offboarding, identidades e acessos; 4) elaborei um Acordo-Quadro e SOW uniformizado com os RH e agências; e 5) alinhei com o departamento jurídico o enquadramento estrito da legislação laboral internacional.',
+              result:
+                'Implementação de um Programa de Trabalho Temporário dedicado à Globalização com financiamento aprovado e capacidade planeada em cinco mercados de expansão com salvaguarda da continuidade: alargamento do leque de agências para 4 parceiros especializados, aprovação executiva para 5 profissionais temporários adicionais, aceleração dos prazos de contratação de 4-8 semanas para 4 semanas e lançamento de todos os cinco mercados no prazo e dentro do orçamento.',
+            },
+            l6Principle:
+              'A governação proativa de equipas e a extensão transversal de plataformas expandem a capacidade elástica enquanto protegem a conformidade laboral e a sustentabilidade das equipas.',
           },
         ],
       },
