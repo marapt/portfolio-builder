@@ -327,7 +327,7 @@ export const topPillars = [
           },
           {
             id: 'occ-block-temp-workers',
-            title: 'Block Temporary Workers Program Proposal',
+            title: 'Block - Temporary Workers Program Proposal',
             subtitle:
               'Auditing FTE capacity, extending internal portal governance, and securing funding across five expansion markets.',
             tag: 'Workforce Governance',

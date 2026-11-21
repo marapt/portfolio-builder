@@ -327,7 +327,7 @@ export const topPillars = [
           },
           {
             id: 'occ-block-temp-workers',
-            title: 'Proposta de Programa de Trabalhadores Temporários da Block',
+            title: 'Block - Proposta de Programa de Trabalhadores Temporários',
             subtitle:
               'Auditoria à capacidade interna, extensão de portais transversais e financiamento para cinco mercados de expansão.',
             tag: 'Governação de Equipas',
