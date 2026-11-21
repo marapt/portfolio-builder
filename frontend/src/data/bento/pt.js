@@ -272,6 +272,27 @@ export const topPillars = [
         l6Principle:
           'A governação de intake escala com sucesso quando as validações e a triagem prioritária são integradas nativamente nas ferramentas que os parceiros já utilizam sem fricção.',
       },
+      {
+        id: 'oc-microsoft-content-schema',
+        title: 'Microsoft - Content Schema and Metadata Ops',
+        subtitle:
+          'Definição de schemas unificados de metadados em JSON/XML e validações pré-voo entre Produto, Marketing e Engenharia.',
+        tag: 'Arquitetura de Metadados',
+        metrics: '100% Conformidade de Schema · 40+ Idiomas · 200+ Mercados',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'Na Microsoft Stores, as equipas de Produto, Marketing e Engenharia descreviam os mesmos lançamentos de produtos com modelos de dados incompatíveis. Um SKU no catálogo de Produto não tinha as flags de encaminhamento por mercado exigidas pelo CMS da Engenharia, enquanto as campanhas de Marketing no Eloqua usavam tags de texto livre que não mapeavam para os metadados de Pesquisa ou conformidade Legal. A falta de contexto forçava triagens manuais e causava inconsistências de nomenclatura em mais de 40 mercados.',
+          task:
+            'Enquanto PGM responsável pela Globalização na Microsoft Stores e membro do Centro de Excelência (CoE) de Marcom, definir um schema sistemático de conteúdos e metadados que normalizasse ativos estruturados e não estruturados em todas as organizações, garantindo encaminhamento, conformidade e contexto de localização automáticos.',
+          action:
+            'Auditei campos de dados em sete repositórios e criei um formato unificado JSON/XML com atributos obrigatórios (market_tier, content_modality, legal_lock_status, source_locale, parent_sku_id) alinhado com Produto, Engenharia, Legal e fornecedores. Colaborei com equipas de SEO e Engenharia para implementar regras que dissociaram tags de código/UI, variáveis dinâmicas de preços e palavras-chave de SEO do texto traduzível, salvaguardando termos de marca protegidos. Integrei com Engenharia validações automáticas pré-voo nos conectores API, sinalizando payloads malformados ou incompletos imediatamente aos autores antes da entrada em localização.',
+          result:
+            'Alcancei encaminhamento automatizado e baseado em regras para mais de 40 idiomas e 200+ mercados, eliminando a triagem manual de gestores de projetos em atualizações rotineiras de catálogo e campanhas. Preparei o Hub de Globalização para o futuro com dados limpos e estruturados, estabelecendo a base necessária para a migração para a Adobe Experience Cloud e camadas de extração do Azure Cognitive Services.',
+        },
+        l6Principle:
+          'As operações de conteúdo em escala funcionam quando schemas padronizados garantem higiene de dados na ingestão, em vez de corrigir falhas nas fases finais.',
+      },
     ],
     extendedSubsections: [
       {

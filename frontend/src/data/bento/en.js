@@ -272,6 +272,27 @@ export const topPillars = [
         l6Principle:
           'Intake governance scales when validation gates and priority triage are integrated natively into existing partner tools with zero operational friction.',
       },
+      {
+        id: 'oc-microsoft-content-schema',
+        title: 'Microsoft - Content Schema and Metadata Ops',
+        subtitle:
+          'Establishing unified JSON/XML metadata schemas and pre-flight validation gates across Product, Marketing, and Engineering.',
+        tag: 'Metadata Architecture',
+        metrics: '100% Schema Compliance · 40+ Languages · 200+ Mkts',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'At Microsoft Stores, Product, Marketing, and Engineering teams described identical product launches using incompatible data models. A SKU in the Product catalog lacked locale-routing flags required by Engineering\'s CMS, while Eloqua Demand Gen campaigns used free-text tags incompatible with MS Store Search metadata and Legal compliance rules. Missing context forced manual triage and created inconsistent product naming across 40+ markets.',
+          task:
+            'As the PGM leading Globalization for Microsoft Stores and member of the Marcom Center of Excellence (CoE), define a systematic content and metadata schema normalizing structured and unstructured assets across all three organizations to ensure automatic routing, compliance, and localization context.',
+          action:
+            'Audited data fields across seven repositories and established a unified JSON/XML schema standardizing mandatory attributes (market_tier, content_modality, legal_lock_status, source_locale, parent_sku_id) with Product, Engineering, Legal, and vendor leads. Partnered with SEO, Engineering, and web developers to enforce schema rules decoupling UI/code tags, dynamic pricing variables, and search keywords from translatable copy, protecting brand-locked terminology. Partnered with Engineering to build automated pre-flight schema checks into API connectors, instantly rejecting malformed or incomplete payloads back to authors before localization entry.',
+          result:
+            'Achieved automated, rule-based routing across 40+ languages and 200+ markets, eliminating manual PM triage for routine catalog and campaign releases. Future-proofed the Globalization Hub with clean structured data, providing the foundational metadata layer required for subsequent Adobe Experience Cloud migration and Azure Cognitive Services extraction pipelines.',
+        },
+        l6Principle:
+          'Enterprise content operations scale when standardized metadata schemas enforce data hygiene at ingestion rather than patching errors downstream.',
+      },
     ],
     extendedSubsections: [
       {
