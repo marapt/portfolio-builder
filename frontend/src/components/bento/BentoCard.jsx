@@ -8,6 +8,7 @@ import {
   Maximize2,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getCompanyBrand } from '../../data/bento/brandMap';
 import './BentoCard.css';
 
 const colorThemes = {
@@ -130,6 +131,7 @@ export const BentoCard = ({
 
   const theme = colorThemes[color] || colorThemes.indigo;
   const star = card.star || {};
+  const company = getCompanyBrand(card.proofAnchor);
 
   return (
     <div
@@ -142,17 +144,17 @@ export const BentoCard = ({
       <div className={`bento-card-inner ${isFlipped ? 'flipped' : ''}`}>
         {/* FRONT FACE (Elevated Surface with High Contrast) */}
         <div
-          className={`bento-card-face bento-card-front bg-gradient-to-br from-slate-800/95 via-slate-850 to-slate-900/95 p-6 border ${theme.border} transition-all duration-300 shadow-xl hover:shadow-2xl hover:border-indigo-400/60 cursor-pointer`}
+          className={`bento-card-face bento-card-front bg-gradient-to-br from-slate-800/95 via-slate-850 to-slate-900/95 p-6 border ${theme.border} transition-all duration-300 shadow-xl hover:shadow-2xl hover:border-indigo-400/60 cursor-pointer flex flex-col justify-between`}
           onClick={handleCardClick}
         >
           {/* Top Row: Domain / Tag and Actions */}
           <div>
-            <div className="flex items-center justify-between gap-2 mb-3">
+            <div className="flex items-center justify-between gap-2 mb-3.5">
               <span
                 className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
               >
-                <Sparkles className="w-3 h-3" />
-                {card.tag || domainTitle || 'Operational Card'}
+                <Sparkles className="w-3 h-3 shrink-0" />
+                <span className="truncate max-w-[140px] sm:max-w-[180px]">{card.tag || domainTitle || 'Operational Card'}</span>
               </span>
 
               <div className="flex items-center gap-1.5">
@@ -181,34 +183,44 @@ export const BentoCard = ({
               </div>
             </div>
 
-            {/* Title & Subtitle */}
-            <h3 className="text-lg font-bold text-white group-hover:text-indigo-200 transition-colors leading-snug mb-2">
+            {/* Title & Subtitle with improved vertical breathing room */}
+            <h3 className="text-lg font-bold text-white group-hover:text-indigo-200 transition-colors leading-snug tracking-tight mt-1 mb-3.5">
               {card.title}
             </h3>
-            <p className="text-sm text-slate-300 line-clamp-3 mb-4 leading-relaxed">
+            <p className="text-sm text-slate-300/90 line-clamp-3 mb-4 leading-relaxed font-normal">
               {card.subtitle}
             </p>
           </div>
 
           {/* Bottom Area: Key Metrics Pill & Expand Trigger */}
-          <div className="pt-4 border-t border-slate-700/60">
+          <div className="pt-4 border-t border-slate-700/60 mt-auto">
             {card.metrics && (
-              <div className="mb-3">
-                <span className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold block mb-1">
+              <div className="mb-3.5">
+                <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-1">
                   Validated Impact
                 </span>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-medium">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-medium shadow-sm">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                   <span>{card.metrics}</span>
                 </div>
               </div>
             )}
 
-            <div className="flex items-center justify-between text-xs text-slate-400">
-              {card.proofAnchor ? (
-                <span className="inline-flex items-center gap-1 font-mono text-[11px] text-slate-200 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
-                  <Building2 className="w-3 h-3 text-indigo-400" />
-                  {card.proofAnchor.toUpperCase()}
+            <div className="flex items-center justify-between text-xs text-slate-400 pt-0.5">
+              {company ? (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700/80 text-xs font-medium text-slate-200 shadow-sm">
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="w-4 h-4 rounded-sm object-contain shrink-0"
+                    loading="lazy"
+                  />
+                  <span className="font-semibold text-slate-200 tracking-tight">{company.name}</span>
+                </span>
+              ) : card.proofAnchor ? (
+                <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-slate-200 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
+                  <Building2 className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                  <span>{card.proofAnchor.toUpperCase()}</span>
                 </span>
               ) : (
                 <span className="text-[11px] text-slate-400">Executive Card</span>
@@ -220,7 +232,7 @@ export const BentoCard = ({
                   e.stopPropagation();
                   if (onExpand) onExpand(card, color, domainTitle);
                 }}
-                className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 font-semibold group-hover:translate-x-0.5 transition-all"
+                className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 font-semibold group-hover:translate-x-0.5 transition-all text-xs"
               >
                 <span>Read Full STAR</span>
                 <Maximize2 className="w-3.5 h-3.5" />
@@ -237,9 +249,17 @@ export const BentoCard = ({
           {/* Header Row */}
           <div>
             <div className="flex items-center justify-between pb-3 border-b border-slate-700/80 mb-3">
-              <span className={`text-xs font-bold uppercase tracking-wider ${theme.accentText}`}>
-                STAR Framework
-              </span>
+              <div className="flex items-center gap-2">
+                <span className={`text-xs font-bold uppercase tracking-wider ${theme.accentText}`}>
+                  STAR Framework
+                </span>
+                {company && (
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-800/80 border border-slate-700/60 text-[11px] text-slate-300">
+                    <img src={company.logo} alt="" className="w-3.5 h-3.5 rounded-sm object-contain" />
+                    <span className="font-medium">{company.name}</span>
+                  </span>
+                )}
+              </div>
               <div className="flex items-center gap-1.5">
                 <button
                   type="button"

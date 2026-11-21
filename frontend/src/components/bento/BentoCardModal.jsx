@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, CheckCircle2, Building2, Lightbulb, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getCompanyBrand } from '../../data/bento/brandMap';
 
 const colorThemes = {
   violet: {
@@ -86,6 +87,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
 
   const theme = colorThemes[color] || colorThemes.indigo;
   const star = card.star || {};
+  const company = getCompanyBrand(card.proofAnchor);
 
   return (
     <div
@@ -109,9 +111,9 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
           <X className="w-5 h-5" />
         </button>
 
-        {/* Top Header: Badge, Metric Pill, and Title */}
+        {/* Top Header: Badge, Metric Pill, Company Logo and Title */}
         <div className="mb-6 pr-10">
-          <div className="flex flex-wrap items-center gap-2.5 mb-3">
+          <div className="flex flex-wrap items-center gap-2.5 mb-3.5">
             <span
               className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
             >
@@ -126,18 +128,27 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
               </span>
             )}
 
-            {card.proofAnchor && (
+            {company ? (
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-semibold text-slate-200 shadow-sm">
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  className="w-4 h-4 rounded-sm object-contain shrink-0"
+                />
+                <span>{company.name}</span>
+              </span>
+            ) : card.proofAnchor ? (
               <span className="inline-flex items-center gap-1 font-mono text-xs text-slate-200 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
                 <Building2 className="w-3.5 h-3.5 text-indigo-400" />
                 {card.proofAnchor.toUpperCase()}
               </span>
-            )}
+            ) : null}
           </div>
 
-          <h3 id="modal-card-title" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
+          <h3 id="modal-card-title" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug mt-3 mb-2.5">
             {card.title}
           </h3>
-          <p className="text-sm sm:text-base text-slate-300 mt-2 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
             {card.subtitle}
           </p>
         </div>

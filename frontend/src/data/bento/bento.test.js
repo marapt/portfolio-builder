@@ -1,5 +1,8 @@
+import fs from 'fs';
+import path from 'path';
 import { bentoHero as bentoHeroEN, topPillars as topPillarsEN, operationalDomains as operationalDomainsEN } from './en';
 import { bentoHero as bentoHeroPT, topPillars as topPillarsPT, operationalDomains as operationalDomainsPT } from './pt';
+import { companyBrandMap, getCompanyBrand } from './brandMap';
 
 describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
   const expectedPillarIds = [
@@ -183,5 +186,36 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
 
     expect(enJson).not.toContain('\u2014');
     expect(ptJson).not.toContain('\u2014');
+  });
+
+  test('All proofAnchors map to valid company brands with existing vector SVG logos', () => {
+    const allCards = [];
+
+    // Collect pillar core and extended cards
+    topPillarsEN.forEach((p) => {
+      allCards.push(...p.subCards);
+      (p.extendedSubsections || []).forEach((sub) => {
+        allCards.push(...sub.subCards);
+      });
+    });
+
+    // Collect domain cards
+    operationalDomainsEN.forEach((d) => {
+      allCards.push(...d.subCards);
+    });
+
+    const publicDir = path.resolve(__dirname, '../../../public');
+
+    allCards.forEach((card) => {
+      if (card.proofAnchor) {
+        const brand = getCompanyBrand(card.proofAnchor);
+        expect(brand).toBeDefined();
+        expect(brand.name).toBeTruthy();
+        expect(brand.logo).toBeTruthy();
+
+        const logoFilePath = path.join(publicDir, brand.logo);
+        expect(fs.existsSync(logoFilePath)).toBe(true);
+      }
+    });
   });
 });
