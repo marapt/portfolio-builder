@@ -401,7 +401,7 @@ export const topPillars = [
       },
       {
         id: 'eh-2',
-        title: 'Revisões Anuais de Desempenho + MBRs/QBRs',
+        title: 'Block and Microsoft - Revisões Anuais de Desempenho + MBRs/QBRs',
         subtitle:
           'Alinhar equipas internas e fornecedores em torno de OKRs, agir sobre decisões de risco e celebrar conquistas.',
         tag: 'Governação Executiva',

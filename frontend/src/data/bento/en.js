@@ -401,7 +401,7 @@ export const topPillars = [
       },
       {
         id: 'eh-2',
-        title: 'Annual Performance Reviews + MBRs/QBRs',
+        title: 'Block and Microsoft - Annual Performance Reviews + MBRs/QBRs',
         subtitle:
           'Aligning internal teams and vendors around OKRs, acting on risk decisions, and celebrating wins.',
         tag: 'Executive Governance',
