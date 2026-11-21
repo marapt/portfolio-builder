@@ -447,17 +447,25 @@ export const operationalDomains = [
       "Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.).\nPartner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.",
     subCards: [
       {
-        id: 'spg-1',
-        title: 'Extended Workforce (xWS) Access & Offboarding',
-        subtitle: 'Zero-trust contractor security protocols and automated lifecycle management.',
-        metrics: '100% Access Audit Compliance · 0 Security Leaks',
+        id: 'spg-rfp-governance',
+        title: 'Global Vendor RFP, MSA/SOW Governance & SLA Accountability',
+        subtitle:
+          'Leading first competitive RFP in 5+ years, establishing unified MSAs/SOWs, and enforcing MBR/QBR scorecards.',
+        tag: 'Supplier Governance',
+        proofAnchor: 'microsoft',
+        metrics: '10% YoY Savings · 15% Efficiency · 95% Quality Threshold',
         star: {
-          situation: 'Dispersed regional vendor contractors created access control vulnerabilities upon offboarding.',
-          task: 'Implement rigorous Role-Based Access Control (RBAC) and automated offboarding verification.',
-          action: 'Partnered with Infosec to link vendor SOW end dates directly to identity management revocation webhooks.',
-          result: 'Enforced 100% access deprovisioning compliance within 1 hour of contract completion with zero data leaks.',
+          situation:
+            'At Microsoft (within MSCOM across 40+ international markets), the organization had not run a new globalization vendor RFP in over five years, leaving vendor sourcing, SLA accountability, procurement cycles, and payment/SOW governance stagnant as scale and market needs evolved; similarly, across multi-market programs at Block (15+ markets), fragmented vendor agreements and manual billing/reconciliation steps created cost friction and inconsistent accountability.',
+          task:
+            'Lead a competitive RFP and overhaul supplier governance alongside Procurement, Legal, and Finance: expanding vetted supplier options, validating incumbent performance, standardizing MSAs/SOWs and KPI/SLA scorecards (tracked through MBRs/QBRs), and tightening procurement and payment workflows without disrupting global delivery.',
+          action:
+            'Proposed and led a structured RFP with Procurement and cross-functional stakeholders to evaluate market readiness, innovation, and continuity; guided committee vetting and approval to expand the pool of approved suppliers while validating incumbent partners; and partnered with Procurement, Legal, and Finance to standardize MSA/SOW tiers, KPI/SLA scorecards, recurring MBRs/QBRs, and cleaner PO/payment workflows.',
+          result:
+            'Expanded the approved supplier pool in Procurement while validating incumbent vendor capability, strengthened ongoing KPI/SLA accountability through MBRs/QBRs and standardized MSAs/SOWs, and improved operational speed and cost predictability by negotiating new clauses including 10% YoY cost savings, 15% operations optimization through innovation, and increasing quality thresholds to 95% across T1-T2 markets and 90% for Rest of World.',
         },
-        l6Principle: 'Vendor governance must treat access security as an automated systemic constraint.',
+        l6Principle:
+          'Periodic competitive RFPs, clear MSAs/SOWs, and disciplined MBR/QBR accountability protect business continuity while driving continuous innovation and commercial leverage.',
       },
     ],
   },

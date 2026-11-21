@@ -447,17 +447,25 @@ export const operationalDomains = [
       'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.).\nParceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento.',
     subCards: [
       {
-        id: 'spg-1',
-        title: 'Gestão Segura de Acessos e Desativação de Fornecedores',
-        subtitle: 'Protocolos de segurança e automação da desativação de permissões de parceiros externos.',
-        metrics: '100% Conformidade em Segurança · 0 Falhas de Acesso',
+        id: 'spg-rfp-governance',
+        title: 'RFP Global de Fornecedores, Governação de MSAs/SOWs e Cumprimento de SLAs',
+        subtitle:
+          'Liderança do primeiro RFP em mais de 5 anos, padronização de MSAs/SOWs e implementação de scorecards MBR/QBR.',
+        tag: 'Governação de Fornecedores',
+        proofAnchor: 'microsoft',
+        metrics: '10% Poupança Anual · 15% Eficiência · 95% Limiar de Qualidade',
         star: {
-          situation: 'Prestadores de serviços dispersos criavam vulnerabilidades no cancelamento de acessos após os projetos.',
-          task: 'Implementar gestão rigorosa de acessos por função e desativação imediata no término dos contratos.',
-          action: 'Trabalhei com a Segurança da Informação para ligar o término dos contratos à revogação automática de acessos.',
-          result: 'Garantida a desativação de 100% das permissões em menos de 1 hora após a conclusão dos contratos.',
+          situation:
+            'Na Microsoft (MSCOM em mais de 40 mercados internacionais), a organização não realizava um RFP competitivo para parceiros de globalização há mais de cinco anos, deixando o fornecimento, a responsabilização por SLAs, os ciclos de compras e a governação de SOWs estagnados face à evolução do negócio; de forma similar, em programas multimercado na Block (15+ mercados), acordos fragmentados e validações manuais de faturas causavam atrito de custos e disparidade de desempenho.',
+          task:
+            'Liderar um RFP competitivo e reestruturar a governação de parceiros em conjunto com Procurement, Legal e Finanças: expandir as opções de fornecedores qualificados, validar o desempenho dos parceiros em funções, padronizar MSAs/SOWs e scorecards de KPIs/SLAs (acompanhados via MBRs/QBRs) e otimizar fluxos de contratação e pagamento sem perturbar a entrega global.',
+          action:
+            'Propus e liderei um RFP estruturado com Procurement e equipas transversais para avaliar maturidade de mercado, inovação e continuidade; orientei a avaliação do comité para aprovar novos fornecedores enquanto validava os parceiros incumbentes; e colaborei com Procurement, Legal e Finanças para padronizar níveis de MSAs/SOWs, métricas de SLA, reuniões periódicas MBR/QBR e fluxos claros de encomendas e liquidação.',
+          result:
+            'Ampliei o leque de fornecedores aprovados em Procurement enquanto validei a capacidade dos parceiros incumbentes, reforcei a responsabilização contínua de SLAs através de MBRs/QBRs e MSAs/SOWs uniformizados, e aumentei a velocidade operacional e a previsibilidade de custos com cláusulas inovadoras, incluindo 10% de poupança anual, 15% de otimização operacional e limiares de qualidade de 95% em mercados Tier 1-Tier 2 e 90% no restante globo.',
         },
-        l6Principle: 'A governação de fornecedores deve tratar a segurança de acessos como uma regra de sistema automática.',
+        l6Principle:
+          'RFPs competitivos periódicos, MSAs/SOWs transparentes e uma disciplina rigorosa de MBRs/QBRs salvaguardam a continuidade do negócio enquanto impulsionam inovação e poder negocial.',
       },
     ],
   },
