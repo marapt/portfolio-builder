@@ -20,7 +20,7 @@ export const topPillars = [
     number: '01',
     title: 'Portfolio Governance and Framework Design',
     subtitle:
-      'Design, standardize and scale operating models and review cadences across all pillars.\nEstablish structured intake, resource allocation and program prioritization processes.',
+      'Design, standardize and scale operating models and review cadences across all pillars. Establish structured intake, resource allocation and program prioritization processes.',
     icon: 'Layers',
     color: 'violet',
     subCards: [
@@ -88,7 +88,7 @@ export const topPillars = [
     number: '02',
     title: 'Supplier Performance and Vendor Governance',
     subtitle:
-      'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.).\nPartner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.',
+      'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.). Partner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.',
     icon: 'Users',
     color: 'cyan',
     subCards: [
@@ -190,7 +190,7 @@ export const topPillars = [
     number: '03',
     title: 'Operational Enablement and Process Optimization',
     subtitle:
-      'Identify bottlenecks across cross-functional partners / organizations and workflows. Introduce tooling and workflow automations (process automation and integrations).\nAnd lead operational policy integrations and/or deployments (program governance, resource compliance and program data compliance).',
+      'Identify bottlenecks across cross-functional partners, organizations, and workflows. Introduce tooling and workflow automations (process automation and integrations), and lead operational policy integrations and deployments (program governance, resource compliance, and program data compliance).',
     icon: 'RefreshCw',
     color: 'emerald',
     subCards: [
@@ -313,7 +313,7 @@ export const topPillars = [
     number: '04',
     title: 'Executive Health and Impact Reporting',
     subtitle:
-      'Maintain an Executive Health Index for Program Operations and Governance, surfacing spend, SLA compliance, resource capacity allocation and success metrics for Leadership.\nBridge operational metrics with Organization Vision, Mission, Goals, and OKRs.',
+      'Maintain an Executive Health Index for Program Operations and Governance, surfacing spend, SLA compliance, resource capacity allocation, and success metrics for Leadership. Bridge operational metrics with Organization Vision, Mission, Goals, and OKRs.',
     icon: 'Activity',
     color: 'amber',
     subCards: [

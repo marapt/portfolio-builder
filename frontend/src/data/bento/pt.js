@@ -20,7 +20,7 @@ export const topPillars = [
     number: '01',
     title: 'Governação de Portfólio e Desenho de Estruturas',
     subtitle:
-      'Desenhar, padronizar e escalar modelos operacionais e cadências de revisão em todos os pilares.\nEstabelecer processos estruturados de admissão, alocação de recursos e priorização de programas.',
+      'Desenhar, padronizar e escalar modelos operacionais e cadências de revisão em todos os pilares. Estabelecer processos estruturados de admissão, alocação de recursos e priorização de programas.',
     icon: 'Layers',
     color: 'violet',
     subCards: [
@@ -88,7 +88,7 @@ export const topPillars = [
     number: '02',
     title: 'Desempenho de Fornecedores e Governação de Parceiros',
     subtitle:
-      'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.).\nParceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento.',
+      'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.). Parceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento.',
     icon: 'Users',
     color: 'cyan',
     subCards: [
@@ -190,7 +190,7 @@ export const topPillars = [
     number: '03',
     title: 'Capacitação Operacional e Otimização de Processos',
     subtitle:
-      'Identificar estrangulamentos entre parceiros multifuncionais, organizações e fluxos de trabalho. Introduzir ferramentas e automação de fluxos (automação e integração de processos).\nLiderar a integração e implementação de políticas operacionais (governação de programas, conformidade de recursos e conformidade de dados).',
+      'Identificar estrangulamentos entre parceiros multifuncionais, organizações e fluxos de trabalho. Introduzir ferramentas e automação de fluxos (automação e integração de processos), e liderar a integração e implementação de políticas operacionais (governação de programas, conformidade de recursos e conformidade de dados).',
     icon: 'RefreshCw',
     color: 'emerald',
     subCards: [
@@ -313,7 +313,7 @@ export const topPillars = [
     number: '04',
     title: 'Monitorização Executiva e Relatórios de Impacto',
     subtitle:
-      'Manter um Índice de Saúde Executiva para Operações e Governação de Programas, evidenciando despesas, cumprimento de SLAs, alocação de capacidade de recursos e métricas de sucesso para a Liderança.\nFazer a ponte entre métricas operacionais e a Visão, Missão, Objetivos e OKRs da Organização.',
+      'Manter um Índice de Saúde Executiva para Operações e Governação de Programas, evidenciando despesas, cumprimento de SLAs, alocação de capacidade de recursos e métricas de sucesso para a Liderança. Fazer a ponte entre métricas operacionais e a Visão, Missão, Objetivos e OKRs da Organização.',
     icon: 'Activity',
     color: 'amber',
     subCards: [

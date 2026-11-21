@@ -314,12 +314,12 @@ export const BentoDomainGrid = ({
                 <div className={`absolute top-0 right-0 w-96 h-96 ${theme.ambientGlow} rounded-full blur-3xl -z-10 pointer-events-none`} />
 
                 {/* Domain Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-5 border-b border-gray-100">
-                  <div className="flex items-start sm:items-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8 pb-5 border-b border-gray-100">
+                  <div className="flex items-start sm:items-center gap-4 min-w-0">
                     <div className={`p-3.5 rounded-2xl ${theme.iconBadge} shadow-sm shrink-0`}>
                       <Icon className="w-6 h-6" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="flex items-center gap-2 mb-1">
                         <span className={`font-mono text-xs font-bold ${theme.textAccent} uppercase tracking-wider`}>
                           DOMAIN {domain.number}
@@ -335,7 +335,7 @@ export const BentoDomainGrid = ({
                     </div>
                   </div>
 
-                  <p className="text-xs md:text-sm text-gray-600 max-w-xl sm:text-right font-normal leading-relaxed whitespace-pre-line">
+                  <p className="text-xs md:text-sm text-gray-600 text-left font-normal leading-relaxed max-w-xl xl:max-w-2xl [text-wrap:pretty]">
                     {domain.description}
                   </p>
                 </div>
