@@ -520,6 +520,27 @@ export const operationalDomains = [
         l6Principle:
           'Scaling financial governance requires pairing role clarity and cross-functional dashboards with decentralized ownership, not adding manual bottlenecks to a single person.',
       },
+      {
+        id: 'fom-microsoft',
+        title: 'Microsoft Procurement, SOWs & Master Agreement Governance',
+        subtitle:
+          'Standardizing SOW templates, volume discounting, and MSA commercial terms across 40+ international markets.',
+        tag: 'Finance & OPEX',
+        proofAnchor: 'microsoft',
+        metrics: '$500K Cost Avoidance · 35% Cycle Time Cut · 40+ Markets',
+        star: {
+          situation:
+            'At Microsoft (Jun. 2016 - Apr. 2020), supporting global marketing and localization operations across 40+ international markets meant working with multiple external language/vendor partners across regional teams where decentralized SOWs, inconsistent rate cards, ad-hoc SLAs, and manual tracking/invoicing cross-checks created cost friction and slow approvals.',
+          task:
+            'Partnered with Procurement and cross-functional stakeholders to audit supplier coverage, standardize SOWs and performance-based SLA tiers, and negotiate Master Services Agreement (MSA) commercial terms to protect budget and improve cycle times across a multi-million annual program allocation.',
+          action:
+            'Partnered with global Procurement to audit active localization suppliers, align cross-functional localization leads on unified SOW templates and performance-based contractual tiers, and review/negotiate MSA terms including enterprise bulk-of-work volume discounts; paired commercial terms with standardized SLAs, scorecards, and monthly/quarterly operational burn and capacity reviews with Finance and Engineering.',
+          result:
+            'Reduced vendor cycle times by 35% (15 to 9 days) across 40+ international markets (including cutting campaign/product localization launches from 15 days to 9 days), unlocked $500,000 in cost avoidance on the multi-million annual Microsoft Store allocation for reinvestment into high-growth markets, and sustained >90% CSAT/NPS alongside auditable 30-day invoice payment compliance.',
+        },
+        l6Principle:
+          'Pairing standardized SOWs, bulk commercial leverage, and transparent burn telemetry turns vendor spend into predictable capacity and budget efficiency.',
+      },
     ],
   },
   {

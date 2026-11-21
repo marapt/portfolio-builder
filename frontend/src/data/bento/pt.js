@@ -520,6 +520,27 @@ export const operationalDomains = [
         l6Principle:
           'Escalar a governação financeira exige associar clareza de funções e dashboards transversais a uma titularidade descentralizada, em vez de sobrecarregar uma única pessoa com estrangulamentos manuais.',
       },
+      {
+        id: 'fom-microsoft',
+        title: 'Aquisições Microsoft, Gestão de SOWs e Acordos Globais',
+        subtitle:
+          'Padronização de modelos de SOW, descontos por volume e termos comerciais de MSA em mais de 40 mercados.',
+        tag: 'Finanças & OPEX',
+        proofAnchor: 'microsoft',
+        metrics: '$500K Custos Evitados · -35% Tempo de Ciclo · 40+ Mercados',
+        star: {
+          situation:
+            'Na Microsoft (jun. 2016 a abr. 2020), o suporte a operações de marketing global e localização em mais de 40 mercados internacionais implicava trabalhar com múltiplos parceiros externos de tradução e fornecedores em equipas regionais, onde SOWs descentralizados, tabelas de preços inconsistentes, SLAs ad-hoc e validações manuais de faturas causavam atrito de custos e atrasos nas aprovações.',
+          task:
+            'Estabelecer parceria com Procurement e partes interessadas multifuncionais para auditar a cobertura de fornecedores, padronizar SOWs e níveis de SLA baseados em desempenho, e negociar termos comerciais de Master Services Agreements (MSA) para proteger o orçamento e encurtar prazos de entrega num programa anual multimilionário.',
+          action:
+            'Colaborei com o departamento global de Procurement para auditar fornecedores ativos, alinhar equipas de localização em torno de modelos unificados de SOW e níveis contratuais orientados a resultados, e rever/negociar termos de MSA incluindo descontos por volume em escala corporativa; associei os termos comerciais a SLAs padronizados, scorecards e revisões mensais/trimestrais de capacidade e execução orçamental com Finanças e Engenharia.',
+          result:
+            'Reduzi os tempos de ciclo de fornecedores em 35% (de 15 para 9 dias) em mais de 40 mercados internacionais (incluindo lançamentos de campanhas e produtos cortados de 15 para 9 dias), desbloqueei 500.000 dólares em custos evitados no orçamento anual multimilionário da Microsoft Store para reinvestimento em mercados de alto crescimento, e mantive níveis superiores a 90% de CSAT/NPS com conformidade de pagamento a 30 dias.',
+        },
+        l6Principle:
+          'Associar SOWs padronizados, capacidade negocial por volume e telemetria transparente de despesa transforma o investimento em parceiros em capacidade previsível e rigor orçamental.',
+      },
     ],
   },
   {
