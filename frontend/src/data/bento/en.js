@@ -9,8 +9,8 @@ export const bentoHero = {
     'Showcasing my experience in enterprise governance models, extended workforce vendor management and field-tested processes through structured STAR cards.',
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
-    { label: 'Operational Domains', value: '9 Categories' },
-    { label: 'Interactive Cards', value: '25+ STAR Cards' },
+    { label: 'Operational Domains', value: '7 Categories' },
+    { label: 'Interactive Cards', value: '26 STAR Cards' },
   ],
 };
 
@@ -150,38 +150,40 @@ export const topPillars = [
         l6Principle: 'Address vendor failures with transparent objective telemetry and structured remediation before contractual severance.',
       },
     ],
-    extendedSubsection: {
-      id: 'supplier-partner',
-      number: '07',
-      title: 'Supplier and Partner Governance',
-      shortName: 'Supplier Governance',
-      icon: 'ShieldCheck',
-      description:
-        'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.).\nPartner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.',
-      subCards: [
-        {
-          id: 'spg-rfp-governance',
-          title: 'Global Vendor RFP, MSA/SOW Governance & SLA Accountability',
-          subtitle:
-            'Leading first competitive RFP in 5+ years, establishing unified MSAs/SOWs, and enforcing MBR/QBR scorecards.',
-          tag: 'Supplier Governance',
-          proofAnchor: 'microsoft',
-          metrics: '10% YoY Savings · 15% Efficiency · 95% Quality Threshold',
-          star: {
-            situation:
-              'At Microsoft (within MSCOM across 40+ international markets), the organization had not run a new globalization vendor RFP in over five years, leaving vendor sourcing, SLA accountability, procurement cycles, and payment/SOW governance stagnant as scale and market needs evolved; similarly, across multi-market programs at Block (15+ markets), fragmented vendor agreements and manual billing/reconciliation steps created cost friction and inconsistent accountability.',
-            task:
-              'Lead a competitive RFP and overhaul supplier governance alongside Procurement, Legal, and Finance: expanding vetted supplier options, validating incumbent performance, standardizing MSAs/SOWs and KPI/SLA scorecards (tracked through MBRs/QBRs), and tightening procurement and payment workflows without disrupting global delivery.',
-            action:
-              'Proposed and led a structured RFP with Procurement and cross-functional stakeholders to evaluate market readiness, innovation, and continuity; guided committee vetting and approval to expand the pool of approved suppliers while validating incumbent partners; and partnered with Procurement, Legal, and Finance to standardize MSA/SOW tiers, KPI/SLA scorecards, recurring MBRs/QBRs, and cleaner PO/payment workflows.',
-            result:
-              'Expanded the approved supplier pool in Procurement while validating incumbent vendor capability, strengthened ongoing KPI/SLA accountability through MBRs/QBRs and standardized MSAs/SOWs, and improved operational speed and cost predictability by negotiating new clauses including 10% YoY cost savings, 15% operations optimization through innovation, and increasing quality thresholds to 95% across T1-T2 markets and 90% for Rest of World.',
+    extendedSubsections: [
+      {
+        id: 'supplier-partner',
+        number: '07',
+        title: 'Supplier and Partner Governance',
+        shortName: 'Supplier Governance',
+        icon: 'ShieldCheck',
+        description:
+          'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.).\nPartner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.',
+        subCards: [
+          {
+            id: 'spg-rfp-governance',
+            title: 'Global Vendor RFP, MSA/SOW Governance & SLA Accountability',
+            subtitle:
+              'Leading first competitive RFP in 5+ years, establishing unified MSAs/SOWs, and enforcing MBR/QBR scorecards.',
+            tag: 'Supplier Governance',
+            proofAnchor: 'microsoft',
+            metrics: '10% YoY Savings · 15% Efficiency · 95% Quality Threshold',
+            star: {
+              situation:
+                'At Microsoft (within MSCOM across 40+ international markets), the organization had not run a new globalization vendor RFP in over five years, leaving vendor sourcing, SLA accountability, procurement cycles, and payment/SOW governance stagnant as scale and market needs evolved; similarly, across multi-market programs at Block (15+ markets), fragmented vendor agreements and manual billing/reconciliation steps created cost friction and inconsistent accountability.',
+              task:
+                'Lead a competitive RFP and overhaul supplier governance alongside Procurement, Legal, and Finance: expanding vetted supplier options, validating incumbent performance, standardizing MSAs/SOWs and KPI/SLA scorecards (tracked through MBRs/QBRs), and tightening procurement and payment workflows without disrupting global delivery.',
+              action:
+                'Proposed and led a structured RFP with Procurement and cross-functional stakeholders to evaluate market readiness, innovation, and continuity; guided committee vetting and approval to expand the pool of approved suppliers while validating incumbent partners; and partnered with Procurement, Legal, and Finance to standardize MSA/SOW tiers, KPI/SLA scorecards, recurring MBRs/QBRs, and cleaner PO/payment workflows.',
+              result:
+                'Expanded the approved supplier pool in Procurement while validating incumbent vendor capability, strengthened ongoing KPI/SLA accountability through MBRs/QBRs and standardized MSAs/SOWs, and improved operational speed and cost predictability by negotiating new clauses including 10% YoY cost savings, 15% operations optimization through innovation, and increasing quality thresholds to 95% across T1-T2 markets and 90% for Rest of World.',
+            },
+            l6Principle:
+              'Periodic competitive RFPs, clear MSAs/SOWs, and disciplined MBR/QBR accountability protect business continuity while driving continuous innovation and commercial leverage.',
           },
-          l6Principle:
-            'Periodic competitive RFPs, clear MSAs/SOWs, and disciplined MBR/QBR accountability protect business continuity while driving continuous innovation and commercial leverage.',
-        },
-      ],
-    },
+        ],
+      },
+    ],
   },
   {
     id: 'operations-change',
@@ -316,6 +318,154 @@ export const topPillars = [
             'Compressed blended cost per evaluation task from $5 to $1.67, stayed strictly within the $10M budget, and compressed onboarding lead time from 8 weeks to 2 weeks.',
         },
         l6Principle: 'Scale is achieved not by cutting quality, but by risk-tiering human expertise where it provides the highest return.',
+      },
+    ],
+    extendedSubsections: [
+      {
+        id: 'finance-opex',
+        number: '09',
+        title: 'Finance and OPEX Management',
+        shortName: 'Finance & OPEX',
+        icon: 'DollarSign',
+        description: 'Unit economics modeling, PO/invoice reconciliation, and compounding efficiency gains.',
+        subCards: [
+          {
+            id: 'fom-block',
+            title: 'Scalable Spend Governance & Distributed PM Budget Accountability',
+            subtitle:
+              'Transitioning from a single-resource manual bottleneck to distributed PM budget ownership and interactive fiscal dashboards.',
+            tag: 'Finance & OPEX',
+            proofAnchor: 'block',
+            metrics: 'Block · 30 to 5-Day Invoicing Lag · 5-10% SOW Variance Control',
+            star: {
+              situation:
+                'When joining Block, localization financial management relied on a single resource handling vendor management through heavily manual processes and invoicing cross-checks. This operating model could not scale with planned market expansion or growing transaction volume.',
+              task:
+                'Replace the single-point manual bottleneck with a scalable financial operating model by partnering with HR to expand PM responsibilities into end-to-end budget management (estimating, reconciling, monitoring, and reporting) and equipping teams with visual, interactive fiscal reporting.',
+              action:
+                'Partnered with HR to formally expand the PM role to own functional budget estimating, reconciliation, monitoring, and reporting; co-led the creation of visual, interactive fiscal dashboards with direct-report PMs, Engineering, Finance, Senior Leads, and Vendors so PMs could self-monitor and report spend transparently rather than relying on manual cross-checks.',
+              result:
+                'Replaced a single-resource manual bottleneck with distributed PM budget accountability and interactive cross-functional fiscal visibility across PMs, Engineering, Finance, leadership, and vendors, establishing a scalable spend-governance foundation ready for market expansion (reducing invoicing lag from 30 days to 5 days) and enabling us to become budget compliant with a 5-10% quarterly budget variance factored into negotiated SOWs.',
+            },
+            l6Principle:
+              'Scaling financial governance requires pairing role clarity and cross-functional dashboards with decentralized ownership, not adding manual bottlenecks to a single person.',
+          },
+          {
+            id: 'fom-microsoft',
+            title: 'Microsoft Procurement, SOWs & Master Agreement Governance',
+            subtitle:
+              'Standardizing SOW templates, volume discounting, and MSA commercial terms across 40+ international markets.',
+            tag: 'Finance & OPEX',
+            proofAnchor: 'microsoft',
+            metrics: '$500K Cost Avoidance · 35% Cycle Time Cut · 40+ Markets',
+            star: {
+              situation:
+                'At Microsoft (Jun. 2016 - Apr. 2020), supporting global marketing and localization operations across 40+ international markets meant working with multiple external language/vendor partners across regional teams where decentralized SOWs, inconsistent rate cards, ad-hoc SLAs, and manual tracking/invoicing cross-checks created cost friction and slow approvals.',
+              task:
+                'Partnered with Procurement and cross-functional stakeholders to audit supplier coverage, standardize SOWs and performance-based SLA tiers, and negotiate Master Services Agreement (MSA) commercial terms to protect budget and improve cycle times across a multi-million annual program allocation.',
+              action:
+                'Partnered with global Procurement to audit active localization suppliers, align cross-functional localization leads on unified SOW templates and performance-based contractual tiers, and review/negotiate MSA terms including enterprise bulk-of-work volume discounts; paired commercial terms with standardized SLAs, scorecards, and monthly/quarterly operational burn and capacity reviews with Finance and Engineering.',
+              result:
+                'Reduced vendor cycle times by 35% (15 to 9 days) across 40+ international markets (including cutting campaign/product localization launches from 15 days to 9 days), unlocked $500,000 in cost avoidance on the multi-million annual Microsoft Store allocation for reinvestment into high-growth markets, and sustained >90% CSAT/NPS alongside auditable 30-day invoice payment compliance.',
+            },
+            l6Principle:
+              'Pairing standardized SOWs, bulk commercial leverage, and transparent burn telemetry turns vendor spend into predictable capacity and budget efficiency.',
+          },
+        ],
+      },
+      {
+        id: 'bi-telemetry',
+        number: '10',
+        title: 'Operational Business Intelligence',
+        shortName: 'BI & Telemetry',
+        icon: 'BarChart3',
+        description: 'Real-time pipeline analytics, predictive bottleneck modeling, and stakeholder dashboards.',
+        subCards: [
+          {
+            id: 'bit-bf',
+            title: 'Real-Time Global Campaign Telemetry (Black Friday)',
+            subtitle:
+              'Unified real-time Power BI performance dashboards across global and local markets.',
+            tag: 'BI & Telemetry',
+            proofAnchor: 'microsoft',
+            metrics: '40+ Mkts · 24-48h Turnaround',
+            star: {
+              situation:
+                'During high-velocity global events like Black Friday, internal stakeholders lacked unified, real-time visibility into campaign delivery and performance across global and local markets, risking delayed course-corrections when regional pacing or conversion trends shifted mid-event.',
+              task:
+                'Partner with internal teams to build Power BI reporting dashboards that delivered real-time global and per-market campaign performance visibility, supported by clear visual mockups before development.',
+              action:
+                'Partnered cross-functionally with internal teams to standardize KPI definitions and global-to-local market rollups; designed visual graphic mockups upfront to align stakeholders on hierarchy and data presentation before building; and built Power BI dashboards tracking live global and market-specific performance across 40+ markets with near-real-time refresh cycles (e.g. every 60 minutes).',
+              result:
+                'Replaced fragmented manual status checks with a single source of truth across global and local market teams during peak Black Friday windows, cutting reporting turnaround time from 3-5 days into 24-48 hours and enabling faster mid-campaign adjustments across regional stakeholders for underperforming campaigns.',
+            },
+            l6Principle:
+              'Prototyping visual clarity first and pairing live telemetry with local market context turns raw campaign velocity into faster, coordinated execution.',
+          },
+          {
+            id: 'bit-vendor-governance',
+            title: 'Vendor Capacity, SLA and Operational Cost Governance',
+            subtitle:
+              'Unified Power BI dashboards connecting vendor throughput, on-time delivery SLAs, and operational budget guardrails.',
+            tag: 'Vendor Operations',
+            proofAnchor: 'microsoft',
+            metrics: '5 Vendor Workstreams · 30-Day SLA & 3-Mo Forecast Visibility',
+            star: {
+              situation:
+                'Managing vendor capacity, output, SLA adherence (including on-time delivery), and operational costs across active initiatives lacked a consolidated operational view, making it harder for teams to balance supplier workloads against budget guardrails.',
+              task:
+                'Design Power BI dashboards that unified vendor capacity, output, SLA performance (on-time delivery), and operational cost metrics to guide proactive capacity planning and budget governance.',
+              action:
+                'Collaborated with internal stakeholders to align on capacity utilization, throughput, on-time delivery SLA thresholds, and cost drivers; created visual views linking supplier output and SLA compliance directly to budget burn and capacity headroom across 5 suppliers and vendor workstreams.',
+              result:
+                'Gave program and budget owners real-time visibility into capacity bottlenecks, SLA adherence, and spend trajectory, improving on-time delivery visibility across all tracked deliverables and supporting tighter budget variance control, enabling up to 30 days compliance visibility and 3 months forecasting visibility without over-allocating supplier capacity.',
+            },
+            l6Principle:
+              'When operational throughput, SLA health, and cost live in one view, governance shifts from reactive firefighting to disciplined resource and budget stewardship.',
+          },
+          {
+            id: 'bit-1',
+            title: 'Global Release & Localization Operations BI',
+            subtitle:
+              'Unified stage-by-stage telemetry connecting Vendor TMS and Jira into proactive SLA alerting.',
+            tag: 'BI & Telemetry',
+            proofAnchor: 'microsoft',
+            metrics: '20+ Stakeholders · >50% Query Reduction · Automated Alerts',
+            star: {
+              situation:
+                'Cross-functional stakeholders across product, engineering, localization, and regional teams lacked end-to-end visibility into where individual requests stood across intake, triage, translation, and deployment, which caused bottlenecks to go unnoticed until deadlines tightened and triggered frequent ad-hoc status inquiries.',
+              task:
+                'Coordinated vendor APIs integration, designed and architected the visual graph framework for a centralized business intelligence telemetry portal that tracked live stage-by-stage throughput and SLA adherence across the full request lifecycle, empowering stakeholders with self-service visibility and proactive bottleneck alerts.',
+              action:
+                'Partnered with engineering, operations, and vendor leads to standardize stage definitions and SLA targets across intake, triage, localization/translation, and deployment; aggregated real-time event and status data from Vendor CAT tools like Translation Management Systems (TMS) to internal Microsoft tools like Jira into a unified telemetry portal; and configured automated alerts for aging requests and SLA threshold breaches so owners could intervene early.',
+              result:
+                'Gave over 20 cross-functional stakeholders real-time self-service visibility across every pipeline stage, reducing churn by cutting queries on status by more than half, speeding up bottleneck triage before release cutoffs, and turning subjective status chasing into objective SLA governance.',
+            },
+            l6Principle:
+              'Operational telemetry transforms subjective frustration into objective, actionable data.',
+          },
+          {
+            id: 'bit-workforce-capacity',
+            title: 'FTE & Temporary Workforce Capacity Balancing',
+            subtitle:
+              'Low-friction 0-to-1 capacity tracking and contingent workforce balancing across rapid team scaling.',
+            tag: 'Workforce Operations',
+            proofAnchor: 'block',
+            metrics: 'LinkedIn & Block · 1 to 5 Contingent Scale · 5 to 10 PGMs',
+            star: {
+              situation:
+                'At LinkedIn (managing 2 FTE direct reports and 15 linguists) and Block (scaling from 5 PMs to 10 PGMs amid market expansion), overwhelmed teams faced constant firefighting between reactive bug triage and new deliverables, while zero baseline telemetry existed to measure true workload or compare internal FTE capacity against temporary workers.',
+              task:
+                'Build a low-friction 0-to-1 capacity and work-allocation tracking model to relieve team overload, balance work across internal FTEs and temporary workers, and create an objective business case for expanding contingent capacity to support market expansion.',
+              action:
+                'Leveraged existing Jira workflows as an interim tracking layer, separating time spent on bug triage versus new project deliverables and logging off-Jira tasks inside Jira without adding administrative drag. Used those workload signals to rebalance work between FTEs and temporary workers, and at Block launched a dedicated contingent worker program scaling contractors from 1 to 5 to supplement FTE capacity for market expansion.',
+              result:
+                'Established immediate visibility into true workload and FTE versus temporary workforce allocation across both LinkedIn and Block, relieving team overload, scaling Block\'s temporary contractor pool from 1 to 5 alongside 5 PMs to 10 PGMs to support market expansion, and creating a repeatable data-backed capacity model.',
+            },
+            l6Principle:
+              'Turning existing operational signals into clear capacity visibility protects overwhelmed teams and backs resource requests with objective evidence.',
+          },
+        ],
       },
     ],
   },
@@ -475,7 +625,7 @@ export const operationalDomains = [
   },
   {
     id: 'operational-controls',
-    number: '07',
+    number: '08',
     title: 'Operational Controls and Compliance',
     shortName: 'Controls & Compliance',
     icon: 'Lock',
@@ -501,152 +651,6 @@ export const operationalDomains = [
         },
         l6Principle:
           'Strong portals and workforce systems succeed when workflow design, clear ownership, and operational visibility are built in from the start.',
-      },
-    ],
-  },
-  {
-    id: 'finance-opex',
-    number: '08',
-    title: 'Finance and OPEX Management',
-    shortName: 'Finance & OPEX',
-    icon: 'DollarSign',
-    description: 'Unit economics modeling, PO/invoice reconciliation, and compounding efficiency gains.',
-    subCards: [
-      {
-        id: 'fom-block',
-        title: 'Scalable Spend Governance & Distributed PM Budget Accountability',
-        subtitle:
-          'Transitioning from a single-resource manual bottleneck to distributed PM budget ownership and interactive fiscal dashboards.',
-        tag: 'Finance & OPEX',
-        proofAnchor: 'block',
-        metrics: 'Block · 30 to 5-Day Invoicing Lag · 5-10% SOW Variance Control',
-        star: {
-          situation:
-            'When joining Block, localization financial management relied on a single resource handling vendor management through heavily manual processes and invoicing cross-checks. This operating model could not scale with planned market expansion or growing transaction volume.',
-          task:
-            'Replace the single-point manual bottleneck with a scalable financial operating model by partnering with HR to expand PM responsibilities into end-to-end budget management (estimating, reconciling, monitoring, and reporting) and equipping teams with visual, interactive fiscal reporting.',
-          action:
-            'Partnered with HR to formally expand the PM role to own functional budget estimating, reconciliation, monitoring, and reporting; co-led the creation of visual, interactive fiscal dashboards with direct-report PMs, Engineering, Finance, Senior Leads, and Vendors so PMs could self-monitor and report spend transparently rather than relying on manual cross-checks.',
-          result:
-            'Replaced a single-resource manual bottleneck with distributed PM budget accountability and interactive cross-functional fiscal visibility across PMs, Engineering, Finance, leadership, and vendors, establishing a scalable spend-governance foundation ready for market expansion (reducing invoicing lag from 30 days to 5 days) and enabling us to become budget compliant with a 5-10% quarterly budget variance factored into negotiated SOWs.',
-        },
-        l6Principle:
-          'Scaling financial governance requires pairing role clarity and cross-functional dashboards with decentralized ownership, not adding manual bottlenecks to a single person.',
-      },
-      {
-        id: 'fom-microsoft',
-        title: 'Microsoft Procurement, SOWs & Master Agreement Governance',
-        subtitle:
-          'Standardizing SOW templates, volume discounting, and MSA commercial terms across 40+ international markets.',
-        tag: 'Finance & OPEX',
-        proofAnchor: 'microsoft',
-        metrics: '$500K Cost Avoidance · 35% Cycle Time Cut · 40+ Markets',
-        star: {
-          situation:
-            'At Microsoft (Jun. 2016 - Apr. 2020), supporting global marketing and localization operations across 40+ international markets meant working with multiple external language/vendor partners across regional teams where decentralized SOWs, inconsistent rate cards, ad-hoc SLAs, and manual tracking/invoicing cross-checks created cost friction and slow approvals.',
-          task:
-            'Partnered with Procurement and cross-functional stakeholders to audit supplier coverage, standardize SOWs and performance-based SLA tiers, and negotiate Master Services Agreement (MSA) commercial terms to protect budget and improve cycle times across a multi-million annual program allocation.',
-          action:
-            'Partnered with global Procurement to audit active localization suppliers, align cross-functional localization leads on unified SOW templates and performance-based contractual tiers, and review/negotiate MSA terms including enterprise bulk-of-work volume discounts; paired commercial terms with standardized SLAs, scorecards, and monthly/quarterly operational burn and capacity reviews with Finance and Engineering.',
-          result:
-            'Reduced vendor cycle times by 35% (15 to 9 days) across 40+ international markets (including cutting campaign/product localization launches from 15 days to 9 days), unlocked $500,000 in cost avoidance on the multi-million annual Microsoft Store allocation for reinvestment into high-growth markets, and sustained >90% CSAT/NPS alongside auditable 30-day invoice payment compliance.',
-        },
-        l6Principle:
-          'Pairing standardized SOWs, bulk commercial leverage, and transparent burn telemetry turns vendor spend into predictable capacity and budget efficiency.',
-      },
-    ],
-  },
-  {
-    id: 'bi-telemetry',
-    number: '09',
-    title: 'Operational Business Intelligence',
-    shortName: 'BI & Telemetry',
-    icon: 'BarChart3',
-    description: 'Real-time pipeline analytics, predictive bottleneck modeling, and stakeholder dashboards.',
-    subCards: [
-      {
-        id: 'bit-bf',
-        title: 'Real-Time Global Campaign Telemetry (Black Friday)',
-        subtitle:
-          'Unified real-time Power BI performance dashboards across global and local markets.',
-        tag: 'BI & Telemetry',
-        proofAnchor: 'microsoft',
-        metrics: '40+ Mkts · 24-48h Turnaround',
-        star: {
-          situation:
-            'During high-velocity global events like Black Friday, internal stakeholders lacked unified, real-time visibility into campaign delivery and performance across global and local markets, risking delayed course-corrections when regional pacing or conversion trends shifted mid-event.',
-          task:
-            'Partner with internal teams to build Power BI reporting dashboards that delivered real-time global and per-market campaign performance visibility, supported by clear visual mockups before development.',
-          action:
-            'Partnered cross-functionally with internal teams to standardize KPI definitions and global-to-local market rollups; designed visual graphic mockups upfront to align stakeholders on hierarchy and data presentation before building; and built Power BI dashboards tracking live global and market-specific performance across 40+ markets with near-real-time refresh cycles (e.g. every 60 minutes).',
-          result:
-            'Replaced fragmented manual status checks with a single source of truth across global and local market teams during peak Black Friday windows, cutting reporting turnaround time from 3-5 days into 24-48 hours and enabling faster mid-campaign adjustments across regional stakeholders for underperforming campaigns.',
-        },
-        l6Principle:
-          'Prototyping visual clarity first and pairing live telemetry with local market context turns raw campaign velocity into faster, coordinated execution.',
-      },
-      {
-        id: 'bit-vendor-governance',
-        title: 'Vendor Capacity, SLA and Operational Cost Governance',
-        subtitle:
-          'Unified Power BI dashboards connecting vendor throughput, on-time delivery SLAs, and operational budget guardrails.',
-        tag: 'Vendor Operations',
-        proofAnchor: 'microsoft',
-        metrics: '5 Vendor Workstreams · 30-Day SLA & 3-Mo Forecast Visibility',
-        star: {
-          situation:
-            'Managing vendor capacity, output, SLA adherence (including on-time delivery), and operational costs across active initiatives lacked a consolidated operational view, making it harder for teams to balance supplier workloads against budget guardrails.',
-          task:
-            'Design Power BI dashboards that unified vendor capacity, output, SLA performance (on-time delivery), and operational cost metrics to guide proactive capacity planning and budget governance.',
-          action:
-            'Collaborated with internal stakeholders to align on capacity utilization, throughput, on-time delivery SLA thresholds, and cost drivers; created visual views linking supplier output and SLA compliance directly to budget burn and capacity headroom across 5 suppliers and vendor workstreams.',
-          result:
-            'Gave program and budget owners real-time visibility into capacity bottlenecks, SLA adherence, and spend trajectory, improving on-time delivery visibility across all tracked deliverables and supporting tighter budget variance control, enabling up to 30 days compliance visibility and 3 months forecasting visibility without over-allocating supplier capacity.',
-        },
-        l6Principle:
-          'When operational throughput, SLA health, and cost live in one view, governance shifts from reactive firefighting to disciplined resource and budget stewardship.',
-      },
-      {
-        id: 'bit-1',
-        title: 'Global Release & Localization Operations BI',
-        subtitle:
-          'Unified stage-by-stage telemetry connecting Vendor TMS and Jira into proactive SLA alerting.',
-        tag: 'BI & Telemetry',
-        proofAnchor: 'microsoft',
-        metrics: '20+ Stakeholders · >50% Query Reduction · Automated Alerts',
-        star: {
-          situation:
-            'Cross-functional stakeholders across product, engineering, localization, and regional teams lacked end-to-end visibility into where individual requests stood across intake, triage, translation, and deployment, which caused bottlenecks to go unnoticed until deadlines tightened and triggered frequent ad-hoc status inquiries.',
-          task:
-            'Coordinated vendor APIs integration, designed and architected the visual graph framework for a centralized business intelligence telemetry portal that tracked live stage-by-stage throughput and SLA adherence across the full request lifecycle, empowering stakeholders with self-service visibility and proactive bottleneck alerts.',
-          action:
-            'Partnered with engineering, operations, and vendor leads to standardize stage definitions and SLA targets across intake, triage, localization/translation, and deployment; aggregated real-time event and status data from Vendor CAT tools like Translation Management Systems (TMS) to internal Microsoft tools like Jira into a unified telemetry portal; and configured automated alerts for aging requests and SLA threshold breaches so owners could intervene early.',
-          result:
-            'Gave over 20 cross-functional stakeholders real-time self-service visibility across every pipeline stage, reducing churn by cutting queries on status by more than half, speeding up bottleneck triage before release cutoffs, and turning subjective status chasing into objective SLA governance.',
-        },
-        l6Principle:
-          'Operational telemetry transforms subjective frustration into objective, actionable data.',
-      },
-      {
-        id: 'bit-workforce-capacity',
-        title: 'FTE & Temporary Workforce Capacity Balancing',
-        subtitle:
-          'Low-friction 0-to-1 capacity tracking and contingent workforce balancing across rapid team scaling.',
-        tag: 'Workforce Operations',
-        proofAnchor: 'block',
-        metrics: 'LinkedIn & Block · 1 to 5 Contingent Scale · 5 to 10 PGMs',
-        star: {
-          situation:
-            'At LinkedIn (managing 2 FTE direct reports and 15 linguists) and Block (scaling from 5 PMs to 10 PGMs amid market expansion), overwhelmed teams faced constant firefighting between reactive bug triage and new deliverables, while zero baseline telemetry existed to measure true workload or compare internal FTE capacity against temporary workers.',
-          task:
-            'Build a low-friction 0-to-1 capacity and work-allocation tracking model to relieve team overload, balance work across internal FTEs and temporary workers, and create an objective business case for expanding contingent capacity to support market expansion.',
-          action:
-            'Leveraged existing Jira workflows as an interim tracking layer, separating time spent on bug triage versus new project deliverables and logging off-Jira tasks inside Jira without adding administrative drag. Used those workload signals to rebalance work between FTEs and temporary workers, and at Block launched a dedicated contingent worker program scaling contractors from 1 to 5 to supplement FTE capacity for market expansion.',
-          result:
-            'Established immediate visibility into true workload and FTE versus temporary workforce allocation across both LinkedIn and Block, relieving team overload, scaling Block\'s temporary contractor pool from 1 to 5 alongside 5 PMs to 10 PGMs to support market expansion, and creating a repeatable data-backed capacity model.',
-        },
-        l6Principle:
-          'Turning existing operational signals into clear capacity visibility protects overwhelmed teams and backs resource requests with objective evidence.',
       },
     ],
   },

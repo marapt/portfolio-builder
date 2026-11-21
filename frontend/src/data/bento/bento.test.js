@@ -17,8 +17,6 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     'global-language',
     'strategy-enablement',
     'operational-controls',
-    'finance-opex',
-    'bi-telemetry',
   ];
 
   test('Tier 1 has exactly 4 Top Strategic Pillars in EN and PT', () => {
@@ -66,17 +64,17 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     const spPillarEN = topPillarsEN.find((p) => p.id === 'supplier-performance');
     const spPillarPT = topPillarsPT.find((p) => p.id === 'supplier-performance');
 
-    expect(spPillarEN.extendedSubsection).toBeDefined();
-    expect(spPillarPT.extendedSubsection).toBeDefined();
-    expect(spPillarEN.extendedSubsection.id).toBe('supplier-partner');
-    expect(spPillarPT.extendedSubsection.id).toBe('supplier-partner');
+    expect(spPillarEN.extendedSubsections).toBeDefined();
+    expect(spPillarPT.extendedSubsections).toBeDefined();
+    expect(spPillarEN.extendedSubsections[0].id).toBe('supplier-partner');
+    expect(spPillarPT.extendedSubsections[0].id).toBe('supplier-partner');
 
-    expect(spPillarEN.extendedSubsection.subCards.length).toBeGreaterThan(0);
-    expect(spPillarPT.extendedSubsection.subCards.length).toBe(
-      spPillarEN.extendedSubsection.subCards.length
+    expect(spPillarEN.extendedSubsections[0].subCards.length).toBeGreaterThan(0);
+    expect(spPillarPT.extendedSubsections[0].subCards.length).toBe(
+      spPillarEN.extendedSubsections[0].subCards.length
     );
 
-    spPillarEN.extendedSubsection.subCards.forEach((card) => {
+    spPillarEN.extendedSubsections[0].subCards.forEach((card) => {
       expect(card.id).toBeTruthy();
       expect(card.title).toBeTruthy();
       expect(card.star).toBeDefined();
@@ -88,9 +86,46 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Tier 2 has exactly 9 Specialized Operational Domains in EN and PT', () => {
-    expect(operationalDomainsEN).toHaveLength(9);
-    expect(operationalDomainsPT).toHaveLength(9);
+  test('Pillar 04 (Executive Health) has extended subsections for Domain 09 and 10 in EN and PT', () => {
+    const ehPillarEN = topPillarsEN.find((p) => p.id === 'executive-health');
+    const ehPillarPT = topPillarsPT.find((p) => p.id === 'executive-health');
+
+    expect(ehPillarEN.extendedSubsections).toBeDefined();
+    expect(ehPillarPT.extendedSubsections).toBeDefined();
+    expect(ehPillarEN.extendedSubsections).toHaveLength(2);
+    expect(ehPillarPT.extendedSubsections).toHaveLength(2);
+
+    expect(ehPillarEN.extendedSubsections.map((s) => s.id)).toEqual([
+      'finance-opex',
+      'bi-telemetry',
+    ]);
+    expect(ehPillarPT.extendedSubsections.map((s) => s.id)).toEqual([
+      'finance-opex',
+      'bi-telemetry',
+    ]);
+
+    ehPillarEN.extendedSubsections.forEach((subSec, sIdx) => {
+      expect(subSec.subCards.length).toBeGreaterThan(0);
+      expect(ehPillarPT.extendedSubsections[sIdx].subCards.length).toBe(
+        subSec.subCards.length
+      );
+
+      subSec.subCards.forEach((card) => {
+        expect(card.id).toBeTruthy();
+        expect(card.title).toBeTruthy();
+        expect(card.star).toBeDefined();
+        expect(card.star.situation).toBeTruthy();
+        expect(card.star.task).toBeTruthy();
+        expect(card.star.action).toBeTruthy();
+        expect(card.star.result).toBeTruthy();
+        expect(card.l6Principle).toBeTruthy();
+      });
+    });
+  });
+
+  test('Tier 2 has exactly 7 Specialized Operational Domains in EN and PT', () => {
+    expect(operationalDomainsEN).toHaveLength(7);
+    expect(operationalDomainsPT).toHaveLength(7);
 
     expect(operationalDomainsEN.map((d) => d.id)).toEqual(expectedDomainIds);
     expect(operationalDomainsPT.map((d) => d.id)).toEqual(expectedDomainIds);

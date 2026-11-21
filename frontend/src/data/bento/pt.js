@@ -9,8 +9,8 @@ export const bentoHero = {
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.',
   quickStats: [
     { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
-    { label: 'Domínios Operacionais', value: '9 Categorias' },
-    { label: 'Cartões Interativos', value: '25+ Cartões STAR' },
+    { label: 'Domínios Operacionais', value: '7 Categorias' },
+    { label: 'Cartões Interativos', value: '26 Cartões STAR' },
   ],
 };
 
@@ -150,38 +150,40 @@ export const topPillars = [
         l6Principle: 'Resolva problemas de fornecedores com dados objetivos e planos de recuperação antes de rescindir contratos.',
       },
     ],
-    extendedSubsection: {
-      id: 'supplier-partner',
-      number: '07',
-      title: 'Governação de Fornecedores e Parceiros',
-      shortName: 'Governação de Parceiros',
-      icon: 'ShieldCheck',
-      description:
-        'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.).\nParceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento.',
-      subCards: [
-        {
-          id: 'spg-rfp-governance',
-          title: 'RFP Global de Fornecedores, Governação de MSAs/SOWs e Cumprimento de SLAs',
-          subtitle:
-            'Liderança do primeiro RFP em mais de 5 anos, padronização de MSAs/SOWs e implementação de scorecards MBR/QBR.',
-          tag: 'Governação de Fornecedores',
-          proofAnchor: 'microsoft',
-          metrics: '10% Poupança Anual · 15% Eficiência · 95% Limiar de Qualidade',
-          star: {
-            situation:
-              'Na Microsoft (MSCOM em mais de 40 mercados internacionais), a organização não realizava um RFP competitivo para parceiros de globalização há mais de cinco anos, deixando o fornecimento, a responsabilização por SLAs, os ciclos de compras e a governação de SOWs estagnados face à evolução do negócio; de forma similar, em programas multimercado na Block (15+ mercados), acordos fragmentados e validações manuais de faturas causavam atrito de custos e disparidade de desempenho.',
-            task:
-              'Liderar um RFP competitivo e reestruturar a governação de parceiros em conjunto com Procurement, Legal e Finanças: expandir as opções de fornecedores qualificados, validar o desempenho dos parceiros em funções, padronizar MSAs/SOWs e scorecards de KPIs/SLAs (acompanhados via MBRs/QBRs) e otimizar fluxos de contratação e pagamento sem perturbar a entrega global.',
-            action:
-              'Propus e liderei um RFP estruturado com Procurement e equipas transversais para avaliar maturidade de mercado, inovação e continuidade; orientei a avaliação do comité para aprovar novos fornecedores enquanto validava os parceiros incumbentes; e colaborei com Procurement, Legal e Finanças para padronizar níveis de MSAs/SOWs, métricas de SLA, reuniões periódicas MBR/QBR e fluxos claros de encomendas e liquidação.',
-            result:
-              'Ampliei o leque de fornecedores aprovados em Procurement enquanto validei a capacidade dos parceiros incumbentes, reforcei a responsabilização contínua de SLAs através de MBRs/QBRs e MSAs/SOWs uniformizados, e aumentei a velocidade operacional e a previsibilidade de custos com cláusulas inovadoras, incluindo 10% de poupança anual, 15% de otimização operacional e limiares de qualidade de 95% em mercados Tier 1-Tier 2 e 90% no restante globo.',
+    extendedSubsections: [
+      {
+        id: 'supplier-partner',
+        number: '07',
+        title: 'Governação de Fornecedores e Parceiros',
+        shortName: 'Governação de Parceiros',
+        icon: 'ShieldCheck',
+        description:
+          'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.).\nParceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento.',
+        subCards: [
+          {
+            id: 'spg-rfp-governance',
+            title: 'RFP Global de Fornecedores, Governação de MSAs/SOWs e Cumprimento de SLAs',
+            subtitle:
+              'Liderança do primeiro RFP em mais de 5 anos, padronização de MSAs/SOWs e implementação de scorecards MBR/QBR.',
+            tag: 'Governação de Fornecedores',
+            proofAnchor: 'microsoft',
+            metrics: '10% Poupança Anual · 15% Eficiência · 95% Limiar de Qualidade',
+            star: {
+              situation:
+                'Na Microsoft (MSCOM em mais de 40 mercados internacionais), a organização não realizava um RFP competitivo para parceiros de globalização há mais de cinco anos, deixando o fornecimento, a responsabilização por SLAs, os ciclos de compras e a governação de SOWs estagnados face à evolução do negócio; de forma similar, em programas multimercado na Block (15+ mercados), acordos fragmentados e validações manuais de faturas causavam atrito de custos e disparidade de desempenho.',
+              task:
+                'Liderar um RFP competitivo e reestruturar a governação de parceiros em conjunto com Procurement, Legal e Finanças: expandir as opções de fornecedores qualificados, validar o desempenho dos parceiros em funções, padronizar MSAs/SOWs e scorecards de KPIs/SLAs (acompanhados via MBRs/QBRs) e otimizar fluxos de contratação e pagamento sem perturbar a entrega global.',
+              action:
+                'Propus e liderei um RFP estruturado com Procurement e equipas transversais para avaliar maturidade de mercado, inovação e continuidade; orientei a avaliação do comité para aprovar novos fornecedores enquanto validava os parceiros incumbentes; e colaborei com Procurement, Legal e Finanças para padronizar níveis de MSAs/SOWs, métricas de SLA, reuniões periódicas MBR/QBR e fluxos claros de encomendas e liquidação.',
+              result:
+                'Ampliei o leque de fornecedores aprovados em Procurement enquanto validei a capacidade dos parceiros incumbentes, reforcei a responsabilização contínua de SLAs através de MBRs/QBRs e MSAs/SOWs uniformizados, e aumentei a velocidade operacional e a previsibilidade de custos com cláusulas inovadoras, incluindo 10% de poupança anual, 15% de otimização operacional e limiares de qualidade de 95% em mercados Tier 1-Tier 2 e 90% no restante globo.',
+            },
+            l6Principle:
+              'RFPs competitivos periódicos, MSAs/SOWs transparentes e uma disciplina rigorosa de MBRs/QBRs salvaguardam a continuidade do negócio enquanto impulsionam inovação e poder negocial.',
           },
-          l6Principle:
-            'RFPs competitivos periódicos, MSAs/SOWs transparentes e uma disciplina rigorosa de MBRs/QBRs salvaguardam a continuidade do negócio enquanto impulsionam inovação e poder negocial.',
-        },
-      ],
-    },
+        ],
+      },
+    ],
   },
   {
     id: 'operations-change',
@@ -316,6 +318,154 @@ export const topPillars = [
             'Reduzi o custo por tarefa de $5 para $1.67, cumpri o orçamento de $10M e reduzi a integração de parceiros de 8 para 2 semanas.',
         },
         l6Principle: 'A escala atinge-se direcionando o talento humano para onde ele gera o maior valor estratégico.',
+      },
+    ],
+    extendedSubsections: [
+      {
+        id: 'finance-opex',
+        number: '09',
+        title: 'Gestão Financeira e Otimização de Custos (OPEX)',
+        shortName: 'Finanças & OPEX',
+        icon: 'DollarSign',
+        description: 'Economia unitária, estimativas orçamentais, conciliação de encomendas e eficiência contínua.',
+        subCards: [
+          {
+            id: 'fom-block',
+            title: 'Governação Orçamental Escalável e Responsabilidade Financeira Distribuída',
+            subtitle:
+              'Transição de um estrangulamento manual centrado numa única pessoa para ownership orçamental distribuída pelos PMs e dashboards interativos.',
+            tag: 'Finanças & OPEX',
+            proofAnchor: 'block',
+            metrics: 'Block · Processamento de Faturas de 30 para 5 Dias · Margem de 5-10% em SOWs',
+            star: {
+              situation:
+                'Ao integrar a Block, a gestão financeira de localização dependia de um único colaborador a gerir parceiros através de processos manuais e validações cruzadas de faturas. Este modelo não tinha capacidade de escalar face aos planos de expansão internacional e ao volume crescente de transações.',
+              task:
+                'Substituir o ponto único de estrangulamento manual por um modelo financeiro operacional escalável, estabelecendo uma parceria com os RH para expandir as responsabilidades dos PMs para a gestão orçamental ponta a ponta (estimativa, reconciliação, monitorização e reporte) e dotando as equipas de relatórios fiscais visuais e interativos.',
+              action:
+                'Colaborei com os RH para formalizar a expansão das funções dos PMs, integrando a estimativa, reconciliação, monitorização e reporte orçamental; coliderei a criação de dashboards fiscais interativos com PMs diretos, Engenharia, Finanças, Liderança Sénior e Fornecedores para permitir auto-monitorização e reporte transparente de despesas sem recurso a verificações manuais.',
+              result:
+                'Substituição de um ponto único de estrangulamento por responsabilidade orçamental distribuída entre os PMs e visibilidade fiscal interativa entre PMs, Engenharia, Finanças, liderança e fornecedores, estabelecendo uma base sólida de governação de despesas preparada para a expansão (reduzindo o tempo de faturação de 30 para 5 dias) e garantindo conformidade orçamental com uma margem de variação de 5-10% integrada nos SOWs negociados.',
+            },
+            l6Principle:
+              'Escalar a governação financeira exige associar clareza de funções e dashboards transversais a uma titularidade descentralizada, em vez de sobrecarregar uma única pessoa com estrangulamentos manuais.',
+          },
+          {
+            id: 'fom-microsoft',
+            title: 'Aquisições Microsoft, Gestão de SOWs e Acordos Globais',
+            subtitle:
+              'Padronização de modelos de SOW, descontos por volume e termos comerciais de MSA em mais de 40 mercados.',
+            tag: 'Finanças & OPEX',
+            proofAnchor: 'microsoft',
+            metrics: '$500K Custos Evitados · -35% Tempo de Ciclo · 40+ Mercados',
+            star: {
+              situation:
+                'Na Microsoft (jun. 2016 a abr. 2020), o suporte a operações de marketing global e localização em mais de 40 mercados internacionais implicava trabalhar com múltiplos parceiros externos de tradução e fornecedores em equipas regionais, onde SOWs descentralizados, tabelas de preços inconsistentes, SLAs ad-hoc e validações manuais de faturas causavam atrito de custos e atrasos nas aprovações.',
+              task:
+                'Estabelecer parceria com Procurement e partes interessadas multifuncionais para auditar a cobertura de fornecedores, padronizar SOWs e níveis de SLA baseados em desempenho, e negociar termos comerciais de Master Services Agreements (MSA) para proteger o orçamento e encurtar prazos de entrega num programa anual multimilionário.',
+              action:
+                'Colaborei com o departamento global de Procurement para auditar fornecedores ativos, alinhar equipas de localização em torno de modelos unificados de SOW e níveis contratuais orientados a resultados, e rever/negociar termos de MSA incluindo descontos por volume em escala corporativa; associei os termos comerciais a SLAs padronizados, scorecards e revisões mensais/trimestrais de capacidade e execução orçamental com Finanças e Engenharia.',
+              result:
+                'Reduzi os tempos de ciclo de fornecedores em 35% (de 15 para 9 dias) em mais de 40 mercados internacionais (incluindo lançamentos de campanhas e produtos cortados de 15 para 9 dias), desbloqueei 500.000 dólares em custos evitados no orçamento anual multimilionário da Microsoft Store para reinvestimento em mercados de alto crescimento, e mantive níveis superiores a 90% de CSAT/NPS com conformidade de pagamento a 30 dias.',
+            },
+            l6Principle:
+              'Associar SOWs padronizados, capacidade negocial por volume e telemetria transparente de despesa transforma o investimento em parceiros em capacidade previsível e rigor orçamental.',
+          },
+        ],
+      },
+      {
+        id: 'bi-telemetry',
+        number: '10',
+        title: 'Business Intelligence e Telemetria Operacional',
+        shortName: 'BI & Telemetria',
+        icon: 'BarChart3',
+        description: 'Análise de fluxos em tempo real, deteção preventiva de estrangulamentos e painéis para liderança.',
+        subCards: [
+          {
+            id: 'bit-bf',
+            title: 'Telemetria em Tempo Real para Campanhas Globais (Black Friday)',
+            subtitle:
+              'Dashboards Power BI em tempo real unificando o desempenho de campanhas em mercados globais e locais.',
+            tag: 'BI & Telemetria',
+            proofAnchor: 'microsoft',
+            metrics: '40+ Mercados · 24-48h Turnaround',
+            star: {
+              situation:
+                'Durante eventos globais de alta velocidade como a Black Friday, as partes interessadas internas não tinham visibilidade unificada e em tempo real sobre a entrega e desempenho de campanhas nos mercados globais e locais, arriscando correções de curso tardias quando o ritmo regional mudava a meio do evento.',
+              task:
+                'Colaborar com equipas internas para construir dashboards no Power BI com visibilidade de desempenho global e por mercado em tempo real, suportados por mockups visuais claros antes do desenvolvimento.',
+              action:
+                'Estabeleci parcerias multifuncionais para padronizar definições de KPIs e agregações de mercado globais e locais; desenhei mockups visuais antecipadamente para alinhar hierarquias de dados antes da construção; e implementei dashboards Power BI com atualização quase em tempo real (a cada 60 minutos) cobrindo mais de 40 mercados.',
+              result:
+                'Substituição de verificações manuais fragmentadas por uma fonte única de verdade durante a Black Friday, reduzindo o tempo de reporte de 3-5 dias para 24-48 horas e permitindo ajustes rápidos a campanhas com baixo desempenho.',
+            },
+            l6Principle:
+              'Prototipar a clareza visual primeiro e associar telemetria em tempo real ao contexto local transforma a velocidade de campanha em execução coordenada.',
+          },
+          {
+            id: 'bit-vendor-governance',
+            title: 'Capacidade de Fornecedores, SLAs e Governação de Custos Operacionais',
+            subtitle:
+              'Dashboards Power BI unificados integrando capacidade de fornecedores, SLAs de entrega e limites orçamentais.',
+            tag: 'Operações de Fornecedores',
+            proofAnchor: 'microsoft',
+            metrics: '5 Fornecedores · Visibilidade de SLAs a 30 Dias e Previsões a 3 Meses',
+            star: {
+              situation:
+                'A gestão de capacidade de fornecedores, volume de entregas, cumprimento de SLAs (incluindo pontualidade) e custos operacionais em iniciativas ativas não dispunha de uma visão consolidada, dificultando o equilíbrio da carga de trabalho dos parceiros face aos limites orçamentais.',
+              task:
+                'Desenhar dashboards no Power BI que unificassem capacidade de fornecedores, volume, desempenho de SLAs (pontualidade nas entregas) e métricas de custos operacionais para orientar o planeamento proativo e a governação orçamental.',
+              action:
+                'Colaborei com partes interessadas internas para alinhar a utilização de capacidade, volume de trabalho, limites de SLAs de entrega pontual e fatores de custo; criei visualizações ligando a produção de parceiros e a conformidade de SLAs diretamente à execução orçamental e margem de capacidade em 5 fluxos de fornecedores.',
+              result:
+                'Proporcionei aos responsáveis de programas e orçamento visibilidade em tempo real sobre estrangulamentos de capacidade, cumprimento de SLAs e trajetória de despesas, melhorando a visibilidade de entregas pontuais e permitindo um controlo orçamental mais rigoroso, com visibilidade de conformidade até 30 dias e previsões a 3 meses sem sobrecarregar fornecedores.',
+            },
+            l6Principle:
+              'Quando o volume operacional, a saúde dos SLAs e os custos coexistem numa única visão, a governação evolui da reação a urgências para uma gestão disciplinada de recursos e orçamento.',
+          },
+          {
+            id: 'bit-1',
+            title: 'BI para Operações de Lançamento Global e Localização',
+            subtitle:
+              'Telemetria etapa a etapa unificando TMS de fornecedores e Jira com alertas proativos de SLA.',
+            tag: 'BI & Telemetria',
+            proofAnchor: 'microsoft',
+            metrics: '20+ Partes Interessadas · >50% Redução de Pedidos de Estado',
+            star: {
+              situation:
+                'As partes interessadas em produto, engenharia, localização e equipas regionais não dispunham de visibilidade de ponta a ponta sobre onde cada pedido se encontrava entre admissão, triagem, tradução e lançamento, provocando estrangulamentos não detetados até prazos críticos e gerando frequentes pedidos ad-hoc de ponto de situação.',
+              task:
+                'Coordenei a integração de APIs de fornecedores, desenhei e estruturei a arquitetura visual de gráficos para um portal centralizado de telemetria e BI que acompanhava o rendimento etapa a etapa e o cumprimento de SLAs ao longo de todo o ciclo de vida do pedido, capacitando equipas com visibilidade em regime de autoatendimento e alertas de estrangulamento.',
+              action:
+                'Colaborei com lideranças de engenharia, operações e fornecedores para padronizar definições de etapas e metas de SLA em admissão, triagem, localização/tradução e implementação; agreguei eventos em tempo real desde ferramentas CAT de fornecedores (TMS) até ferramentas internas da Microsoft como o Jira num portal unificado; e configurei alertas automatizados para pedidos pendentes e quebras de SLA para permitir intervenção precoce.',
+              result:
+                'Disponibilizei a mais de 20 partes interessadas visibilidade em tempo real sobre cada etapa do fluxo, reduzindo o desgaste ao diminuir em mais de metade as consultas de estado, acelerando a resolução de estrangulamentos antes dos prazos de corte e transformando o acompanhamento subjetivo em governação objetiva de SLAs.',
+            },
+            l6Principle:
+              'A telemetria operacional transforma frustrações subjetivas em dados objetivos e acionáveis.',
+          },
+          {
+            id: 'bit-workforce-capacity',
+            title: 'Equilíbrio de Capacidade entre Colaboradores Internos e Trabalho Temporário',
+            subtitle:
+              'Modelo de capacidade 0-a-1 de baixa fricção e gestão de trabalho contingente em fases de rápida expansão.',
+            tag: 'Operações de Equipas',
+            proofAnchor: 'block',
+            metrics: 'LinkedIn & Block · Escala Contingente de 1 a 5 · 5 para 10 PGMs',
+            star: {
+              situation:
+                'No LinkedIn (a gerir 2 colaboradores diretos internos e 15 linguistas) e na Block (com crescimento de 5 PMs para 10 PGMs em plena expansão internacional), as equipas sobrecarregadas enfrentavam constantes urgências entre a triagem reativa de erros e novas entregas, sem qualquer telemetria de base para medir a carga real de trabalho ou comparar a capacidade de colaboradores internos face a trabalhadores temporários.',
+              task:
+                'Construir um modelo de monitorização de capacidade e alocação de trabalho 0-a-1 de baixa fricção para aliviar a sobrecarga da equipa, equilibrar tarefas entre colaboradores internos e temporários, e fundamentar com dados a expansão da capacidade contingente de apoio aos novos mercados.',
+              action:
+                'Utilizei fluxos de trabalho existentes no Jira como camada intercalar de monitorização, separando o tempo dedicado à resolução de erros face a novas entregas e registando tarefas fora do Jira sem burocracia excessiva. Utilizei esses sinais de volume de trabalho para reequilibrar tarefas entre internos e temporários e, na Block, criei um programa dedicado de contratação temporária, escalando de 1 para 5 prestadores de serviços para complementar a equipa interna.',
+              result:
+                'Estabeleci visibilidade imediata sobre a carga real de trabalho e a distribuição entre recursos internos e temporários no LinkedIn e na Block, aliviando a equipa, escalando a bolsa de prestadores da Block de 1 para 5 em paralelo com o crescimento de 5 PMs para 10 PGMs, e estabelecendo um modelo sustentado e replicável de capacidade.',
+            },
+            l6Principle:
+              'Transformar sinais operacionais já existentes em visibilidade clara de capacidade protege as equipas e apoia os pedidos de recursos com evidências objetivas.',
+          },
+        ],
       },
     ],
   },
@@ -475,7 +625,7 @@ export const operationalDomains = [
   },
   {
     id: 'operational-controls',
-    number: '07',
+    number: '08',
     title: 'Controlos Operacionais e Conformidade',
     shortName: 'Controlos & Conformidade',
     icon: 'Lock',
@@ -501,152 +651,6 @@ export const operationalDomains = [
         },
         l6Principle:
           'Grandes portais e sistemas de gestão de força de trabalho triunfam quando o desenho de fluxos, a titularidade clara e a visibilidade operacional são concebidos desde o primeiro dia.',
-      },
-    ],
-  },
-  {
-    id: 'finance-opex',
-    number: '08',
-    title: 'Gestão Financeira e Otimização de Custos (OPEX)',
-    shortName: 'Finanças & OPEX',
-    icon: 'DollarSign',
-    description: 'Economia unitária, estimativas orçamentais, conciliação de encomendas e eficiência contínua.',
-    subCards: [
-      {
-        id: 'fom-block',
-        title: 'Governação Orçamental Escalável e Responsabilidade Financeira Distribuída',
-        subtitle:
-          'Transição de um estrangulamento manual centrado numa única pessoa para ownership orçamental distribuída pelos PMs e dashboards interativos.',
-        tag: 'Finanças & OPEX',
-        proofAnchor: 'block',
-        metrics: 'Block · Processamento de Faturas de 30 para 5 Dias · Margem de 5-10% em SOWs',
-        star: {
-          situation:
-            'Ao integrar a Block, a gestão financeira de localização dependia de um único colaborador a gerir parceiros através de processos manuais e validações cruzadas de faturas. Este modelo não tinha capacidade de escalar face aos planos de expansão internacional e ao volume crescente de transações.',
-          task:
-            'Substituir o ponto único de estrangulamento manual por um modelo financeiro operacional escalável, estabelecendo uma parceria com os RH para expandir as responsabilidades dos PMs para a gestão orçamental ponta a ponta (estimativa, reconciliação, monitorização e reporte) e dotando as equipas de relatórios fiscais visuais e interativos.',
-          action:
-            'Colaborei com os RH para formalizar a expansão das funções dos PMs, integrando a estimativa, reconciliação, monitorização e reporte orçamental; coliderei a criação de dashboards fiscais interativos com PMs diretos, Engenharia, Finanças, Liderança Sénior e Fornecedores para permitir auto-monitorização e reporte transparente de despesas sem recurso a verificações manuais.',
-          result:
-            'Substituição de um ponto único de estrangulamento por responsabilidade orçamental distribuída entre os PMs e visibilidade fiscal interativa entre PMs, Engenharia, Finanças, liderança e fornecedores, estabelecendo uma base sólida de governação de despesas preparada para a expansão (reduzindo o tempo de faturação de 30 para 5 dias) e garantindo conformidade orçamental com uma margem de variação de 5-10% integrada nos SOWs negociados.',
-        },
-        l6Principle:
-          'Escalar a governação financeira exige associar clareza de funções e dashboards transversais a uma titularidade descentralizada, em vez de sobrecarregar uma única pessoa com estrangulamentos manuais.',
-      },
-      {
-        id: 'fom-microsoft',
-        title: 'Aquisições Microsoft, Gestão de SOWs e Acordos Globais',
-        subtitle:
-          'Padronização de modelos de SOW, descontos por volume e termos comerciais de MSA em mais de 40 mercados.',
-        tag: 'Finanças & OPEX',
-        proofAnchor: 'microsoft',
-        metrics: '$500K Custos Evitados · -35% Tempo de Ciclo · 40+ Mercados',
-        star: {
-          situation:
-            'Na Microsoft (jun. 2016 a abr. 2020), o suporte a operações de marketing global e localização em mais de 40 mercados internacionais implicava trabalhar com múltiplos parceiros externos de tradução e fornecedores em equipas regionais, onde SOWs descentralizados, tabelas de preços inconsistentes, SLAs ad-hoc e validações manuais de faturas causavam atrito de custos e atrasos nas aprovações.',
-          task:
-            'Estabelecer parceria com Procurement e partes interessadas multifuncionais para auditar a cobertura de fornecedores, padronizar SOWs e níveis de SLA baseados em desempenho, e negociar termos comerciais de Master Services Agreements (MSA) para proteger o orçamento e encurtar prazos de entrega num programa anual multimilionário.',
-          action:
-            'Colaborei com o departamento global de Procurement para auditar fornecedores ativos, alinhar equipas de localização em torno de modelos unificados de SOW e níveis contratuais orientados a resultados, e rever/negociar termos de MSA incluindo descontos por volume em escala corporativa; associei os termos comerciais a SLAs padronizados, scorecards e revisões mensais/trimestrais de capacidade e execução orçamental com Finanças e Engenharia.',
-          result:
-            'Reduzi os tempos de ciclo de fornecedores em 35% (de 15 para 9 dias) em mais de 40 mercados internacionais (incluindo lançamentos de campanhas e produtos cortados de 15 para 9 dias), desbloqueei 500.000 dólares em custos evitados no orçamento anual multimilionário da Microsoft Store para reinvestimento em mercados de alto crescimento, e mantive níveis superiores a 90% de CSAT/NPS com conformidade de pagamento a 30 dias.',
-        },
-        l6Principle:
-          'Associar SOWs padronizados, capacidade negocial por volume e telemetria transparente de despesa transforma o investimento em parceiros em capacidade previsível e rigor orçamental.',
-      },
-    ],
-  },
-  {
-    id: 'bi-telemetry',
-    number: '09',
-    title: 'Business Intelligence e Telemetria Operacional',
-    shortName: 'BI & Telemetria',
-    icon: 'BarChart3',
-    description: 'Análise de fluxos em tempo real, deteção preventiva de estrangulamentos e painéis para liderança.',
-    subCards: [
-      {
-        id: 'bit-bf',
-        title: 'Telemetria em Tempo Real para Campanhas Globais (Black Friday)',
-        subtitle:
-          'Dashboards Power BI em tempo real unificando o desempenho de campanhas em mercados globais e locais.',
-        tag: 'BI & Telemetria',
-        proofAnchor: 'microsoft',
-        metrics: '40+ Mercados · 24-48h Turnaround',
-        star: {
-          situation:
-            'Durante eventos globais de alta velocidade como a Black Friday, as partes interessadas internas não tinham visibilidade unificada e em tempo real sobre a entrega e desempenho de campanhas nos mercados globais e locais, arriscando correções de curso tardias quando o ritmo regional mudava a meio do evento.',
-          task:
-            'Colaborar com equipas internas para construir dashboards no Power BI com visibilidade de desempenho global e por mercado em tempo real, suportados por mockups visuais claros antes do desenvolvimento.',
-          action:
-            'Estabeleci parcerias multifuncionais para padronizar definições de KPIs e agregações de mercado globais e locais; desenhei mockups visuais antecipadamente para alinhar hierarquias de dados antes da construção; e implementei dashboards Power BI com atualização quase em tempo real (a cada 60 minutos) cobrindo mais de 40 mercados.',
-          result:
-            'Substituição de verificações manuais fragmentadas por uma fonte única de verdade durante a Black Friday, reduzindo o tempo de reporte de 3-5 dias para 24-48 horas e permitindo ajustes rápidos a campanhas com baixo desempenho.',
-        },
-        l6Principle:
-          'Prototipar a clareza visual primeiro e associar telemetria em tempo real ao contexto local transforma a velocidade de campanha em execução coordenada.',
-      },
-      {
-        id: 'bit-vendor-governance',
-        title: 'Capacidade de Fornecedores, SLAs e Governação de Custos Operacionais',
-        subtitle:
-          'Dashboards Power BI unificados integrando capacidade de fornecedores, SLAs de entrega e limites orçamentais.',
-        tag: 'Operações de Fornecedores',
-        proofAnchor: 'microsoft',
-        metrics: '5 Fornecedores · Visibilidade de SLAs a 30 Dias e Previsões a 3 Meses',
-        star: {
-          situation:
-            'A gestão de capacidade de fornecedores, volume de entregas, cumprimento de SLAs (incluindo pontualidade) e custos operacionais em iniciativas ativas não dispunha de uma visão consolidada, dificultando o equilíbrio da carga de trabalho dos parceiros face aos limites orçamentais.',
-          task:
-            'Desenhar dashboards no Power BI que unificassem capacidade de fornecedores, volume, desempenho de SLAs (pontualidade nas entregas) e métricas de custos operacionais para orientar o planeamento proativo e a governação orçamental.',
-          action:
-            'Colaborei com partes interessadas internas para alinhar a utilização de capacidade, volume de trabalho, limites de SLAs de entrega pontual e fatores de custo; criei visualizações ligando a produção de parceiros e a conformidade de SLAs diretamente à execução orçamental e margem de capacidade em 5 fluxos de fornecedores.',
-          result:
-            'Proporcionei aos responsáveis de programas e orçamento visibilidade em tempo real sobre estrangulamentos de capacidade, cumprimento de SLAs e trajetória de despesas, melhorando a visibilidade de entregas pontuais e permitindo um controlo orçamental mais rigoroso, com visibilidade de conformidade até 30 dias e previsões a 3 meses sem sobrecarregar fornecedores.',
-        },
-        l6Principle:
-          'Quando o volume operacional, a saúde dos SLAs e os custos coexistem numa única visão, a governação evolui da reação a urgências para uma gestão disciplinada de recursos e orçamento.',
-      },
-      {
-        id: 'bit-1',
-        title: 'BI para Operações de Lançamento Global e Localização',
-        subtitle:
-          'Telemetria etapa a etapa unificando TMS de fornecedores e Jira com alertas proativos de SLA.',
-        tag: 'BI & Telemetria',
-        proofAnchor: 'microsoft',
-        metrics: '20+ Partes Interessadas · >50% Redução de Pedidos de Estado',
-        star: {
-          situation:
-            'As partes interessadas em produto, engenharia, localização e equipas regionais não dispunham de visibilidade de ponta a ponta sobre onde cada pedido se encontrava entre admissão, triagem, tradução e lançamento, provocando estrangulamentos não detetados até prazos críticos e gerando frequentes pedidos ad-hoc de ponto de situação.',
-          task:
-            'Coordenei a integração de APIs de fornecedores, desenhei e estruturei a arquitetura visual de gráficos para um portal centralizado de telemetria e BI que acompanhava o rendimento etapa a etapa e o cumprimento de SLAs ao longo de todo o ciclo de vida do pedido, capacitando equipas com visibilidade em regime de autoatendimento e alertas de estrangulamento.',
-          action:
-            'Colaborei com lideranças de engenharia, operações e fornecedores para padronizar definições de etapas e metas de SLA em admissão, triagem, localização/tradução e implementação; agreguei eventos em tempo real desde ferramentas CAT de fornecedores (TMS) até ferramentas internas da Microsoft como o Jira num portal unificado; e configurei alertas automatizados para pedidos pendentes e quebras de SLA para permitir intervenção precoce.',
-          result:
-            'Disponibilizei a mais de 20 partes interessadas visibilidade em tempo real sobre cada etapa do fluxo, reduzindo o desgaste ao diminuir em mais de metade as consultas de estado, acelerando a resolução de estrangulamentos antes dos prazos de corte e transformando o acompanhamento subjetivo em governação objetiva de SLAs.',
-        },
-        l6Principle:
-          'A telemetria operacional transforma frustrações subjetivas em dados objetivos e acionáveis.',
-      },
-      {
-        id: 'bit-workforce-capacity',
-        title: 'Equilíbrio de Capacidade entre Colaboradores Internos e Trabalho Temporário',
-        subtitle:
-          'Modelo de capacidade 0-a-1 de baixa fricção e gestão de trabalho contingente em fases de rápida expansão.',
-        tag: 'Operações de Equipas',
-        proofAnchor: 'block',
-        metrics: 'LinkedIn & Block · Escala Contingente de 1 a 5 · 5 para 10 PGMs',
-        star: {
-          situation:
-            'No LinkedIn (a gerir 2 colaboradores diretos internos e 15 linguistas) e na Block (com crescimento de 5 PMs para 10 PGMs em plena expansão internacional), as equipas sobrecarregadas enfrentavam constantes urgências entre a triagem reativa de erros e novas entregas, sem qualquer telemetria de base para medir a carga real de trabalho ou comparar a capacidade de colaboradores internos face a trabalhadores temporários.',
-          task:
-            'Construir um modelo de monitorização de capacidade e alocação de trabalho 0-a-1 de baixa fricção para aliviar a sobrecarga da equipa, equilibrar tarefas entre colaboradores internos e temporários, e fundamentar com dados a expansão da capacidade contingente de apoio aos novos mercados.',
-          action:
-            'Utilizei fluxos de trabalho existentes no Jira como camada intercalar de monitorização, separando o tempo dedicado à resolução de erros face a novas entregas e registando tarefas fora do Jira sem burocracia excessiva. Utilizei esses sinais de volume de trabalho para reequilibrar tarefas entre internos e temporários e, na Block, criei um programa dedicado de contratação temporária, escalando de 1 para 5 prestadores de serviços para complementar a equipa interna.',
-          result:
-            'Estabeleci visibilidade imediata sobre a carga real de trabalho e a distribuição entre recursos internos e temporários no LinkedIn e na Block, aliviando a equipa, escalando a bolsa de prestadores da Block de 1 para 5 em paralelo com o crescimento de 5 PMs para 10 PGMs, e estabelecendo um modelo sustentado e replicável de capacidade.',
-        },
-        l6Principle:
-          'Transformar sinais operacionais já existentes em visibilidade clara de capacidade protege as equipas e apoia os pedidos de recursos com evidências objetivas.',
       },
     ],
   },
