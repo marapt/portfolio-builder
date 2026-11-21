@@ -61,6 +61,11 @@ export const companyBrandMap = {
     logo: '/company-logos/block.svg',
     logos: ['/company-logos/block.svg', '/company-logos/linkedin.svg'],
   },
+  'linkedin-block': {
+    name: 'LinkedIn & Block',
+    logo: '/company-logos/linkedin.svg',
+    logos: ['/company-logos/linkedin.svg', '/company-logos/block.svg'],
+  },
 };
 
 export const getCompanyBrand = (anchor) => {
@@ -95,6 +100,9 @@ export const getCompanyBrands = (cardOrAnchor) => {
   }
   if (anchor === 'block-linkedin' || anchor === 'block+linkedin') {
     return [companyBrandMap.block, companyBrandMap.linkedin].filter(Boolean);
+  }
+  if (anchor === 'linkedin-block' || anchor === 'linkedin+block') {
+    return [companyBrandMap.linkedin, companyBrandMap.block].filter(Boolean);
   }
 
   if (companyBrandMap[anchor]) {

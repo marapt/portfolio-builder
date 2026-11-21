@@ -505,11 +505,12 @@ export const topPillars = [
           },
           {
             id: 'bit-workforce-capacity',
-            title: 'Equilíbrio de Capacidade entre Colaboradores Internos e Trabalho Temporário',
+            title: 'LinkedIn e Block - Gestão de Capacidade de FTEs + Trabalho Temporário',
             subtitle:
               'Modelo de capacidade 0-a-1 de baixa fricção e gestão de trabalho contingente em fases de rápida expansão.',
             tag: 'Operações de Equipas',
-            proofAnchor: 'block',
+            proofAnchor: 'linkedin-block',
+            proofAnchors: ['linkedin', 'block'],
             metrics: 'LinkedIn & Block · Escala Contingente de 1 a 5 · 5 para 10 PGMs',
             star: {
               situation:
