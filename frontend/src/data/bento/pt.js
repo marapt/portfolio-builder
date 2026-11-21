@@ -389,7 +389,7 @@ export const topPillars = [
         subCards: [
           {
             id: 'fom-block',
-            title: "Block - Ownership e Reporte Orçamental dos PMs",
+            title: "Block - Gestão e Reporte Orçamental dos PGMs",
             subtitle:
               'Transição de um estrangulamento manual centrado numa única pessoa para ownership orçamental distribuída pelos PMs e dashboards interativos.',
             tag: 'Finanças & OPEX',

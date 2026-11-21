@@ -389,7 +389,7 @@ export const topPillars = [
         subCards: [
           {
             id: 'fom-block',
-            title: "Block - PM's Budget Ownership and Reporting",
+            title: "Block - PGM's Budget Management and Reporting",
             subtitle:
               'Transitioning from a single-resource manual bottleneck to distributed PM budget ownership and interactive fiscal dashboards.',
             tag: 'Finance & OPEX',
