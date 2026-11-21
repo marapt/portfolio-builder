@@ -150,7 +150,7 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
                       </span>
                       <span className="text-gray-300">·</span>
                       <span className="text-xs text-gray-500 font-mono font-medium">
-                        {pillar.subCards?.length || 0} STAR Cards
+                        {(pillar.subCards?.length || 0) + (pillar.extendedSubsection?.subCards?.length || 0)} STAR Cards
                       </span>
                     </div>
                     <h3 className="text-xl md:text-2xl font-black text-gray-900 tracking-tight">
@@ -180,6 +180,56 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
                   />
                 ))}
               </div>
+
+              {/* Extended Subsection (e.g. Domain 07 inside Pillar 02) */}
+              {pillar.extendedSubsection && (
+                <div className="mt-10 pt-8 border-t border-cyan-200/80">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+                    <div className="flex items-start sm:items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-cyan-100 border border-cyan-200 text-cyan-800 shadow-sm shrink-0">
+                        <ShieldCheck className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="font-mono text-[11px] font-bold text-cyan-700 uppercase tracking-wider bg-cyan-100/70 px-2 py-0.5 rounded border border-cyan-200/60">
+                            {isPt ? 'Subseção Alargada · Domínio 07' : 'Extended Subsection · Domain 07'}
+                          </span>
+                          <span className="text-gray-300">·</span>
+                          <span className="text-xs text-gray-500 font-mono font-medium">
+                            {pillar.extendedSubsection.subCards?.length || 0} {isPt ? 'Cartão STAR Alargado' : 'Extended STAR Card'}
+                          </span>
+                        </div>
+                        <h4 className="text-lg md:text-xl font-black text-gray-900 tracking-tight">
+                          {pillar.extendedSubsection.title}
+                        </h4>
+                      </div>
+                    </div>
+
+                    {pillar.extendedSubsection.description && (
+                      <p className="text-xs md:text-sm text-gray-600 max-w-xl lg:text-right font-normal leading-relaxed whitespace-pre-line">
+                        {pillar.extendedSubsection.description}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Extended Subsection Cards Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {(pillar.extendedSubsection.subCards || []).map((card) => (
+                      <BentoCard
+                        key={card.id}
+                        card={card}
+                        color={pillar.color || 'cyan'}
+                        domainTitle={pillar.extendedSubsection.title}
+                        isFlippedControlled={
+                          flippedCards ? !!flippedCards[card.id] : undefined
+                        }
+                        onToggleFlip={onToggleFlip}
+                        onExpand={onExpand}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           );
         })}

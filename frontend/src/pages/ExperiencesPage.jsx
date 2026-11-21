@@ -55,6 +55,9 @@ const ExperiencesPage = () => {
       (p.subCards || []).forEach((c) => {
         newFlippedState[c.id] = true;
       });
+      (p.extendedSubsection?.subCards || []).forEach((c) => {
+        newFlippedState[c.id] = true;
+      });
     });
     domains.forEach((d) => {
       (d.subCards || []).forEach((c) => {

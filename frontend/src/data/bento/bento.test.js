@@ -16,7 +16,6 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     'testing-response',
     'global-language',
     'strategy-enablement',
-    'supplier-partner',
     'operational-controls',
     'finance-opex',
     'bi-telemetry',
@@ -63,9 +62,35 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Tier 2 has exactly 10 Specialized Operational Domains in EN and PT', () => {
-    expect(operationalDomainsEN).toHaveLength(10);
-    expect(operationalDomainsPT).toHaveLength(10);
+  test('Pillar 02 (Supplier Performance) has an extended subsection for Domain 07 in EN and PT', () => {
+    const spPillarEN = topPillarsEN.find((p) => p.id === 'supplier-performance');
+    const spPillarPT = topPillarsPT.find((p) => p.id === 'supplier-performance');
+
+    expect(spPillarEN.extendedSubsection).toBeDefined();
+    expect(spPillarPT.extendedSubsection).toBeDefined();
+    expect(spPillarEN.extendedSubsection.id).toBe('supplier-partner');
+    expect(spPillarPT.extendedSubsection.id).toBe('supplier-partner');
+
+    expect(spPillarEN.extendedSubsection.subCards.length).toBeGreaterThan(0);
+    expect(spPillarPT.extendedSubsection.subCards.length).toBe(
+      spPillarEN.extendedSubsection.subCards.length
+    );
+
+    spPillarEN.extendedSubsection.subCards.forEach((card) => {
+      expect(card.id).toBeTruthy();
+      expect(card.title).toBeTruthy();
+      expect(card.star).toBeDefined();
+      expect(card.star.situation).toBeTruthy();
+      expect(card.star.task).toBeTruthy();
+      expect(card.star.action).toBeTruthy();
+      expect(card.star.result).toBeTruthy();
+      expect(card.l6Principle).toBeTruthy();
+    });
+  });
+
+  test('Tier 2 has exactly 9 Specialized Operational Domains in EN and PT', () => {
+    expect(operationalDomainsEN).toHaveLength(9);
+    expect(operationalDomainsPT).toHaveLength(9);
 
     expect(operationalDomainsEN.map((d) => d.id)).toEqual(expectedDomainIds);
     expect(operationalDomainsPT.map((d) => d.id)).toEqual(expectedDomainIds);

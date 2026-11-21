@@ -9,7 +9,7 @@ export const bentoHero = {
     'Showcasing my experience in enterprise governance models, extended workforce vendor management and field-tested processes through structured STAR cards.',
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
-    { label: 'Operational Domains', value: '10 Categories' },
+    { label: 'Operational Domains', value: '9 Categories' },
     { label: 'Interactive Cards', value: '25+ STAR Cards' },
   ],
 };
@@ -150,6 +150,38 @@ export const topPillars = [
         l6Principle: 'Address vendor failures with transparent objective telemetry and structured remediation before contractual severance.',
       },
     ],
+    extendedSubsection: {
+      id: 'supplier-partner',
+      number: '07',
+      title: 'Supplier and Partner Governance',
+      shortName: 'Supplier Governance',
+      icon: 'ShieldCheck',
+      description:
+        'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.).\nPartner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.',
+      subCards: [
+        {
+          id: 'spg-rfp-governance',
+          title: 'Global Vendor RFP, MSA/SOW Governance & SLA Accountability',
+          subtitle:
+            'Leading first competitive RFP in 5+ years, establishing unified MSAs/SOWs, and enforcing MBR/QBR scorecards.',
+          tag: 'Supplier Governance',
+          proofAnchor: 'microsoft',
+          metrics: '10% YoY Savings · 15% Efficiency · 95% Quality Threshold',
+          star: {
+            situation:
+              'At Microsoft (within MSCOM across 40+ international markets), the organization had not run a new globalization vendor RFP in over five years, leaving vendor sourcing, SLA accountability, procurement cycles, and payment/SOW governance stagnant as scale and market needs evolved; similarly, across multi-market programs at Block (15+ markets), fragmented vendor agreements and manual billing/reconciliation steps created cost friction and inconsistent accountability.',
+            task:
+              'Lead a competitive RFP and overhaul supplier governance alongside Procurement, Legal, and Finance: expanding vetted supplier options, validating incumbent performance, standardizing MSAs/SOWs and KPI/SLA scorecards (tracked through MBRs/QBRs), and tightening procurement and payment workflows without disrupting global delivery.',
+            action:
+              'Proposed and led a structured RFP with Procurement and cross-functional stakeholders to evaluate market readiness, innovation, and continuity; guided committee vetting and approval to expand the pool of approved suppliers while validating incumbent partners; and partnered with Procurement, Legal, and Finance to standardize MSA/SOW tiers, KPI/SLA scorecards, recurring MBRs/QBRs, and cleaner PO/payment workflows.',
+            result:
+              'Expanded the approved supplier pool in Procurement while validating incumbent vendor capability, strengthened ongoing KPI/SLA accountability through MBRs/QBRs and standardized MSAs/SOWs, and improved operational speed and cost predictability by negotiating new clauses including 10% YoY cost savings, 15% operations optimization through innovation, and increasing quality thresholds to 95% across T1-T2 markets and 90% for Rest of World.',
+          },
+          l6Principle:
+            'Periodic competitive RFPs, clear MSAs/SOWs, and disciplined MBR/QBR accountability protect business continuity while driving continuous innovation and commercial leverage.',
+        },
+      ],
+    },
   },
   {
     id: 'operations-change',
@@ -442,40 +474,8 @@ export const operationalDomains = [
     ],
   },
   {
-    id: 'supplier-partner',
-    number: '07',
-    title: 'Supplier and Partner Governance',
-    shortName: 'Supplier Governance',
-    icon: 'ShieldCheck',
-    description:
-      "Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.).\nPartner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.",
-    subCards: [
-      {
-        id: 'spg-rfp-governance',
-        title: 'Global Vendor RFP, MSA/SOW Governance & SLA Accountability',
-        subtitle:
-          'Leading first competitive RFP in 5+ years, establishing unified MSAs/SOWs, and enforcing MBR/QBR scorecards.',
-        tag: 'Supplier Governance',
-        proofAnchor: 'microsoft',
-        metrics: '10% YoY Savings · 15% Efficiency · 95% Quality Threshold',
-        star: {
-          situation:
-            'At Microsoft (within MSCOM across 40+ international markets), the organization had not run a new globalization vendor RFP in over five years, leaving vendor sourcing, SLA accountability, procurement cycles, and payment/SOW governance stagnant as scale and market needs evolved; similarly, across multi-market programs at Block (15+ markets), fragmented vendor agreements and manual billing/reconciliation steps created cost friction and inconsistent accountability.',
-          task:
-            'Lead a competitive RFP and overhaul supplier governance alongside Procurement, Legal, and Finance: expanding vetted supplier options, validating incumbent performance, standardizing MSAs/SOWs and KPI/SLA scorecards (tracked through MBRs/QBRs), and tightening procurement and payment workflows without disrupting global delivery.',
-          action:
-            'Proposed and led a structured RFP with Procurement and cross-functional stakeholders to evaluate market readiness, innovation, and continuity; guided committee vetting and approval to expand the pool of approved suppliers while validating incumbent partners; and partnered with Procurement, Legal, and Finance to standardize MSA/SOW tiers, KPI/SLA scorecards, recurring MBRs/QBRs, and cleaner PO/payment workflows.',
-          result:
-            'Expanded the approved supplier pool in Procurement while validating incumbent vendor capability, strengthened ongoing KPI/SLA accountability through MBRs/QBRs and standardized MSAs/SOWs, and improved operational speed and cost predictability by negotiating new clauses including 10% YoY cost savings, 15% operations optimization through innovation, and increasing quality thresholds to 95% across T1-T2 markets and 90% for Rest of World.',
-        },
-        l6Principle:
-          'Periodic competitive RFPs, clear MSAs/SOWs, and disciplined MBR/QBR accountability protect business continuity while driving continuous innovation and commercial leverage.',
-      },
-    ],
-  },
-  {
     id: 'operational-controls',
-    number: '08',
+    number: '07',
     title: 'Operational Controls and Compliance',
     shortName: 'Controls & Compliance',
     icon: 'Lock',
@@ -506,7 +506,7 @@ export const operationalDomains = [
   },
   {
     id: 'finance-opex',
-    number: '09',
+    number: '08',
     title: 'Finance and OPEX Management',
     shortName: 'Finance & OPEX',
     icon: 'DollarSign',
@@ -558,7 +558,7 @@ export const operationalDomains = [
   },
   {
     id: 'bi-telemetry',
-    number: '10',
+    number: '09',
     title: 'Operational Business Intelligence',
     shortName: 'BI & Telemetry',
     icon: 'BarChart3',
