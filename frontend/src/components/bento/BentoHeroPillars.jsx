@@ -79,8 +79,8 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
           </h2>
           <p className="text-slate-400 text-sm mt-1 max-w-2xl">
             {isPt
-              ? 'Quatro pilares estratégicos de liderança executiva para operações globais de alta velocidade, gestão de equipas externas e transparência executiva.'
-              : 'Four core executive leadership foundations calibrated for high-velocity global operations, extended workforce orchestration, and C-level transparency.'}
+              ? 'Com foco em Capacitação Operacional e Governação, o objetivo principal é evidenciar como atuo de forma autónoma para conferir estrutura, eficiência e escala a programas operacionais multifuncionais.'
+              : 'Focusing on Operational Enablement and Governance, main goals are to showcase how I operate autonomously to bring structure, efficiency and scale to cross-functional operational programs.'}
           </p>
         </div>
 
