@@ -149,7 +149,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
             ) : null}
           </div>
 
-          <h3 id="modal-card-title" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug mt-3 mb-2.5">
+          <h3 id="modal-card-title" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug mt-3 mb-2.5 whitespace-pre-line">
             {card.title}
           </h3>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">

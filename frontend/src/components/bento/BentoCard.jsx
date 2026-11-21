@@ -182,7 +182,7 @@ export const BentoCard = ({
             </div>
 
             {/* Title & Subtitle with improved vertical breathing room */}
-            <h3 className="text-lg font-bold text-white group-hover:text-indigo-200 transition-colors leading-snug tracking-tight mt-1 mb-3.5">
+            <h3 className="text-lg font-bold text-white group-hover:text-indigo-200 transition-colors leading-snug tracking-tight mt-1 mb-3.5 whitespace-pre-line">
               {card.title}
             </h3>
             <p className="text-sm text-slate-300/90 line-clamp-3 mb-4 leading-relaxed font-normal">
@@ -294,7 +294,7 @@ export const BentoCard = ({
               </div>
             </div>
 
-            <h4 className="text-sm font-bold text-white mb-3 line-clamp-1">{card.title}</h4>
+            <h4 className="text-sm font-bold text-white mb-3 line-clamp-2 whitespace-pre-line">{card.title}</h4>
 
             {/* STAR Content Grid with Contrasting Card Insets */}
             <div className="space-y-2.5 text-xs">

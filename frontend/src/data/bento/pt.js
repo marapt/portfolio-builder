@@ -306,7 +306,7 @@ export const topPillars = [
         subCards: [
           {
             id: 'occ-workforce-portal',
-            title: 'Reformulação do Microsoft Careers: Portal de Força de Trabalho e Conformidade Laboral',
+            title: 'Reformulação do Microsoft Careers\nPortal de Força de Trabalho e Conformidade Laboral',
             subtitle:
               'Modernização do portal de carreiras e força de trabalho da Microsoft para cumprir leis laborais e eliminar fricções operacionais.',
             tag: 'Controlos & Conformidade',
