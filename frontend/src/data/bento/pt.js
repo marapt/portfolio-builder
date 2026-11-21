@@ -438,7 +438,7 @@ export const topPillars = [
         subCards: [
           {
             id: 'bit-bf',
-            title: 'Telemetria em Tempo Real para Campanhas Globais (Black Friday)',
+            title: 'Campanhas Microsoft - Black Friday: Telemetria em Tempo Real para Campanhas Globais',
             subtitle:
               'Dashboards Power BI em tempo real unificando o desempenho de campanhas em mercados globais e locais.',
             tag: 'BI & Telemetria',

@@ -438,7 +438,7 @@ export const topPillars = [
         subCards: [
           {
             id: 'bit-bf',
-            title: 'Real-Time Global Campaign Telemetry (Black Friday)',
+            title: 'Microsoft Campaigns - Black Friday: Real-Time Global Campaign Telemetry',
             subtitle:
               'Unified real-time Power BI performance dashboards across global and local markets.',
             tag: 'BI & Telemetry',
