@@ -338,22 +338,25 @@ export const topPillars = [
       },
       {
         id: 'eh-2',
-        title: 'VP Executive Briefing Framework (30-Minute Model)',
-        subtitle: 'Structuring high-leverage decision briefings for C-suite and VP stakeholders.',
-        tag: 'Executive Presence',
-        metrics: '30-Min High-Impact Cadence · Fast Sign-Offs',
-        proofAnchor: 'miis',
+        title: 'Annual Performance Reviews + MBRs/QBRs',
+        subtitle:
+          'Aligning internal teams and vendors around OKRs, acting on risk decisions, and celebrating wins.',
+        tag: 'Executive Governance',
+        metrics: '50 to 10-20 Attendees · 3x Wkly to MBR/QBR · Fast Sign-Offs',
+        proofAnchor: 'block-microsoft',
+        proofAnchors: ['block', 'microsoft'],
         star: {
           situation:
-            'Cross-functional operational reviews were frequently bogged down in tactical granularities, exhausting VP time without securing decisions on critical blockers.',
+            'Cross-functional operational reviews were frequently bogged down in tactical granularities, exhausting VP, senior leads, and broader teams\' time without securing decisions on critical blockers. Teams also lacked consistent structure and clear alignment with broader organizational and company vision, mission, and OKRs.',
           task:
-            'Architect a crisp, high-leverage executive briefing framework tailored for senior leadership.',
+            'Partnered with Senior Leads and executive operations/admin stakeholders to design a high-leverage review framework across key functions, orgs, and vendors anchored to consistent OKRs, KPIs, and business objectives.',
           action:
-            'Instituted a 4-part agenda: 5 min OKR alignment & wins; 10 min strategic opportunities; 10 min critical unowned risks needing executive decision; 5 min next steps and clear RACI ownership.',
+            'Established a multi-cadence review operating model spanning Annual offsites, 45-minute Quarterly Business Reviews (QBRs), and 30-minute Monthly Business Reviews (MBRs) for both internal teams and external vendors. Introduced structured agendas with a traffic-light status system to keep reviews focused and drive rapid follow-through (e.g. structuring QBRs around lead updates on goals/changes, concise team OKR alignment and wins, strategic opportunities, critical unowned risks requiring executive decisions, and next steps with clear RACI ownership). In addition, owned pre-meeting data synthesis, risk reporting, and clear sign-off asks with team owners, distributing pre-read decks in advance to ensure "no surprises" and alignment on needed decisions, followed by distributing post-meeting action items and tracking follow-through across workstreams and priorities.',
           result:
-            'Streamlined executive sign-offs, cut meeting overhead by 40%, and earned direct praise for executive clarity and structured operational leadership.',
+            'Streamlined executive communications and sign-offs, reduced meeting participation from over 50 people down to 10 to 20, and shifted cadence from 3x weekly reviews to structured monthly, quarterly, and annual governance with leads; improved alignment around OKRs, risks, and decision ownership, earning direct praise for executive clarity and structured operational leadership.',
         },
-        l6Principle: 'Executive communication must lead with strategic trade-offs and decisions needed rather than tactical process details.',
+        l6Principle:
+          'Structured governance with clear data streamlines communication, drives concrete action and sign-offs, reduces friction, and gives teams space to feel seen and heard.',
       },
       {
         id: 'eh-3',

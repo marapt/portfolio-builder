@@ -8,7 +8,7 @@ import {
   Maximize2,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { getCompanyBrand } from '../../data/bento/brandMap';
+import { getCompanyBrands } from '../../data/bento/brandMap';
 import './BentoCard.css';
 
 const colorThemes = {
@@ -131,7 +131,7 @@ export const BentoCard = ({
 
   const theme = colorThemes[color] || colorThemes.indigo;
   const star = card.star || {};
-  const company = getCompanyBrand(card.proofAnchor);
+  const companies = getCompanyBrands(card);
 
   return (
     <div
@@ -207,16 +207,23 @@ export const BentoCard = ({
             )}
 
             <div className="flex items-center justify-between text-xs text-slate-400 pt-0.5">
-              {company ? (
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800/90 border border-slate-700/80 text-xs font-medium text-slate-200 shadow-sm">
-                  <img
-                    src={company.logo}
-                    alt={company.name}
-                    className="w-4 h-4 rounded-sm object-contain shrink-0"
-                    loading="lazy"
-                  />
-                  <span className="font-semibold text-slate-200 tracking-tight">{company.name}</span>
-                </span>
+              {companies.length > 0 ? (
+                <div className="flex flex-wrap items-center gap-1.5">
+                  {companies.map((comp) => (
+                    <span
+                      key={comp.name}
+                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-800/90 border border-slate-700/80 text-[11px] font-medium text-slate-200 shadow-sm"
+                    >
+                      <img
+                        src={comp.logo}
+                        alt={comp.name}
+                        className="w-3.5 h-3.5 rounded-sm object-contain shrink-0"
+                        loading="lazy"
+                      />
+                      <span className="font-semibold text-slate-200 tracking-tight">{comp.name}</span>
+                    </span>
+                  ))}
+                </div>
               ) : card.proofAnchor ? (
                 <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-slate-200 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
                   <Building2 className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
@@ -253,12 +260,15 @@ export const BentoCard = ({
                 <span className={`text-xs font-bold uppercase tracking-wider ${theme.accentText}`}>
                   STAR Framework
                 </span>
-                {company && (
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-800/80 border border-slate-700/60 text-[11px] text-slate-300">
-                    <img src={company.logo} alt="" className="w-3.5 h-3.5 rounded-sm object-contain" />
-                    <span className="font-medium">{company.name}</span>
+                {companies.map((comp) => (
+                  <span
+                    key={comp.name}
+                    className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-800/80 border border-slate-700/60 text-[10px] text-slate-300"
+                  >
+                    <img src={comp.logo} alt="" className="w-3 h-3 rounded-sm object-contain" />
+                    <span className="font-medium">{comp.name}</span>
                   </span>
-                )}
+                ))}
               </div>
               <div className="flex items-center gap-1.5">
                 <button

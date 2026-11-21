@@ -338,22 +338,25 @@ export const topPillars = [
       },
       {
         id: 'eh-2',
-        title: 'Modelo de Reunião Executiva de 30 Minutos com VPs',
-        subtitle: 'Estruturação de sessões de alto impacto focadas em decisões estratégicas para a administração.',
-        tag: 'Presença Executiva',
-        metrics: 'Sessões de 30 Minutos · Decisões Rápidas',
-        proofAnchor: 'miis',
+        title: 'Revisões Anuais de Desempenho + MBRs/QBRs',
+        subtitle:
+          'Alinhar equipas internas e fornecedores em torno de OKRs, agir sobre decisões de risco e celebrar conquistas.',
+        tag: 'Governação Executiva',
+        metrics: '50 para 10-20 Participantes · 3x Sem. para MBR/QBR · Decisões Rápidas',
+        proofAnchor: 'block-microsoft',
+        proofAnchors: ['block', 'microsoft'],
         star: {
           situation:
-            'Reuniões operacionais perdiam-se frequentemente em detalhes táticos, consumindo tempo dos VPs sem garantir decisões sobre bloqueios críticos.',
+            'As revisões operacionais multifuncionais ficavam frequentemente atoladas em minúcias táticas, consumindo o tempo de VPs, líderes seniores e equipas alargadas sem assegurar decisões sobre bloqueios críticos. Faltava também às equipas uma estrutura consistente e alinhamento claro com a visão, missão e OKRs da organização.',
           task:
-            'Desenvolver um modelo de reunião executiva direto, ágil e focado na tomada de decisões estratégicas.',
+            'Colaborar com líderes seniores e partes interessadas de operações executivas para desenhar um modelo de revisão de alto impacto em funções-chave, organizações e fornecedores, ancorado em OKRs, KPIs e objetivos de negócio consistentes.',
           action:
-            'Criei uma agenda de 4 pontos: 5 min para alinhamento de OKRs; 10 min para oportunidades; 10 min para riscos críticos a decidir; 5 min para próximos passos e responsabilidades.',
+            'Estabeleci um modelo operacional de revisão com múltiplas cadências, abrangendo encontros anuais (offsites), Quarterly Business Reviews (QBRs) de 45 minutos e Monthly Business Reviews (MBRs) de 30 minutos, tanto para equipas internas como para fornecedores externos. Introduzi agendas estruturadas com um sistema de semáforo para manter as revisões focadas e acelerar o seguimento (estruturando QBRs em atualizações de líderes sobre metas/mudanças, alinhamento conciso de OKRs e vitórias, oportunidades estratégicas, riscos críticos sem dono que exigem decisões executivas e próximos passos com matriz RACI clara). Além disso, assumi a síntese de dados pré-reunião, relatórios de risco e pedidos formais de aprovação, distribuindo os documentos com antecedência para garantir "zero surpresas" e alinhamento nas decisões necessárias, seguido da distribuição e acompanhamento rigoroso dos planos de ação acordados.',
           result:
-            'Acelerei aprovações executivas, reduzi o tempo de reuniões em 40% e recebi elogios diretos pela clareza na liderança.',
+            'Simplifiquei a comunicação executiva e os processos de aprovação, reduzi a participação em reuniões de mais de 50 pessoas para 10 a 20 e converti reuniões 3 vezes por semana numa governação estruturada mensal, trimestral e anual com as lideranças; melhorei o alinhamento em torno de OKRs, riscos e propriedade de decisões, obtendo elogios diretos pela clareza executiva e liderança operacional estruturada.',
         },
-        l6Principle: 'A comunicação com executivos deve focar-se nas decisões a tomar e não em detalhes técnicos secundários.',
+        l6Principle:
+          'Uma governação estruturada com dados claros simplifica a comunicação, impulsiona ações concretas e aprovações, reduz atritos e dá às equipas o espaço necessário para se sentirem valorizadas e ouvidas.',
       },
       {
         id: 'eh-3',

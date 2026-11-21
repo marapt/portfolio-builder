@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, CheckCircle2, Building2, Lightbulb, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { getCompanyBrand } from '../../data/bento/brandMap';
+import { getCompanyBrands } from '../../data/bento/brandMap';
 
 const colorThemes = {
   violet: {
@@ -87,7 +87,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
 
   const theme = colorThemes[color] || colorThemes.indigo;
   const star = card.star || {};
-  const company = getCompanyBrand(card.proofAnchor);
+  const companies = getCompanyBrands(card);
 
   return (
     <div
@@ -128,15 +128,20 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
               </span>
             )}
 
-            {company ? (
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-semibold text-slate-200 shadow-sm">
-                <img
-                  src={company.logo}
-                  alt={company.name}
-                  className="w-4 h-4 rounded-sm object-contain shrink-0"
-                />
-                <span>{company.name}</span>
-              </span>
+            {companies.length > 0 ? (
+              companies.map((comp) => (
+                <span
+                  key={comp.name}
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-semibold text-slate-200 shadow-sm"
+                >
+                  <img
+                    src={comp.logo}
+                    alt={comp.name}
+                    className="w-4 h-4 rounded-sm object-contain shrink-0"
+                  />
+                  <span>{comp.name}</span>
+                </span>
+              ))
             ) : card.proofAnchor ? (
               <span className="inline-flex items-center gap-1 font-mono text-xs text-slate-200 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
                 <Building2 className="w-3.5 h-3.5 text-indigo-400" />

@@ -51,9 +51,47 @@ export const companyBrandMap = {
     name: 'ESTG',
     logo: '/company-logos/estg.svg',
   },
+  'block-microsoft': {
+    name: 'Block & Microsoft',
+    logo: '/company-logos/block.svg',
+    logos: ['/company-logos/block.svg', '/company-logos/microsoft.svg'],
+  },
 };
 
 export const getCompanyBrand = (anchor) => {
   if (!anchor) return null;
   return companyBrandMap[anchor] || null;
+};
+
+/**
+ * Returns an array of brand objects for single or multi-company cards.
+ * Accepts a card object (with proofAnchors or proofAnchor) or a string anchor.
+ */
+export const getCompanyBrands = (cardOrAnchor) => {
+  if (!cardOrAnchor) return [];
+
+  if (typeof cardOrAnchor === 'object') {
+    if (Array.isArray(cardOrAnchor.proofAnchors) && cardOrAnchor.proofAnchors.length > 0) {
+      return cardOrAnchor.proofAnchors
+        .map((a) => companyBrandMap[a])
+        .filter(Boolean);
+    }
+    if (cardOrAnchor.proofAnchor) {
+      return getCompanyBrands(cardOrAnchor.proofAnchor);
+    }
+    return [];
+  }
+
+  const anchor = String(cardOrAnchor);
+
+  // If specific compound anchor exists, check if it maps to individual brands
+  if (anchor === 'block-microsoft' || anchor === 'block+microsoft') {
+    return [companyBrandMap.block, companyBrandMap.microsoft].filter(Boolean);
+  }
+
+  if (companyBrandMap[anchor]) {
+    return [companyBrandMap[anchor]];
+  }
+
+  return [];
 };
