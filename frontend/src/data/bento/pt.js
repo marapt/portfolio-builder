@@ -251,6 +251,27 @@ export const topPillars = [
         },
         l6Principle: 'Análises construtivas convertem falhas pontuais em resiliência sistémica duradoura.',
       },
+      {
+        id: 'oc-microsoft-content-ingestion',
+        title: 'Microsoft - Content Ingestion / Management',
+        subtitle:
+          'Substituição do intake fragmentado em sete sistemas por um pipeline automatizado integrado no M365 com validações MVG.',
+        tag: 'Otimização de Processos',
+        metrics: '5-10 Dias para 48h · Poupança de $300K · 40+ Mercados',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'Na Microsoft, o intake de conteúdos estava fragmentado por sete sistemas desconectados de Produto, Marketing e Engenharia. Isto gerava múltiplos fluxos manuais, atrasos e problemas no processamento de localização, duplicação de pedidos e uma experiência inconsistente para os clientes em mais de 40 idiomas e cerca de 200 mercados.',
+          task:
+            'Identificar e conceber soluções para lacunas de processos nas ferramentas para substituir o intake manual e ad-hoc por um pipeline de ingestão centralizado e automatizado com Governação Mínima Viável (MVG) desde o início, validando a completude e o encaminhamento prioritário sem desacelerar a Engenharia ou o Marketing.',
+          action:
+            'Padronizei o intake automatizado e gates de validação pré-voo (verificando completude de metadados, dependências de SKU/preços e estado de bloqueio), transitando de e-mails e folhas de cálculo para formulários padronizados e conectores API no M365. Implementei uma matriz de triagem P0-P3 que classificava payloads por criticidade e modalidade de lançamento, direcionando strings urgentes P0/P1 para pipelines automatizados contínuos enquanto agrupava colaterais P2/P3. Monitorei a capacidade de fornecedores em tempo real versus métricas de ingestão, tempo de triagem, profundidade de fila e taxas de rejeição para antecipar estrangulamentos dias antes da entrega regional.',
+          result:
+            'Eliminei estrangulamentos manuais de intake e perseguição entre equipas em mais de 40 mercados, reduzindo o tempo de ingestão e preparação de conteúdos de 5-10 dias para 48 horas. Calculei uma poupança de $300K na gestão de recursos em Engenharia e fornecedores. Alcancei adoção sem fricção ao integrar modelos nativamente nas rotinas do M365 e absorver a configuração inicial no orçamento de Globalização da Marcom, com zero necessidade de nova formação.',
+        },
+        l6Principle:
+          'A governação de intake escala com sucesso quando as validações e a triagem prioritária são integradas nativamente nas ferramentas que os parceiros já utilizam sem fricção.',
+      },
     ],
     extendedSubsections: [
       {

@@ -251,6 +251,27 @@ export const topPillars = [
         },
         l6Principle: 'Blameless retrospectives convert operational failures into permanent system resilience.',
       },
+      {
+        id: 'oc-microsoft-content-ingestion',
+        title: 'Microsoft - Content Ingestion / Management',
+        subtitle:
+          'Replacing fragmented intake across seven disconnected systems with an automated M365-integrated pipeline and MVG pre-flight gates.',
+        tag: 'Process Optimization',
+        metrics: '5-10 Days to 48 Hrs · $300K Resource Savings · 40+ Mkts',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'At Microsoft, content intake was fragmented across seven disconnected Product, Marketing, and Engineering systems. This created multiple manual content workstreams, content delays, processing issues in localization, duplicate content requests, and an inconsistent customer experience across 40+ languages and circa 200 markets.',
+          task:
+            'Identify and design solutions for process gaps across tool journeys to replace ad-hoc, manual file intake with a centralized, automated ingestion pipeline enforcing Minimum Viable Governance (MVG) from the get-go, while validating completeness and routing assets by priority without slowing Engineering or Marketing velocity.',
+          action:
+            'Standardized automated intake and pre-flight validation gates (checking metadata completeness, SKU/pricing dependencies, and lock status) by transitioning from emails and spreadsheets to structured intake templates and API connectors in M365. Implemented a P0-P3 triage and routing matrix that classified incoming payloads by launch criticality and modality, directing urgent P0/P1 release-critical strings straight into continuous automated pipelines while batching standard P2/P3 collateral. Monitored real-time vendor capacity against ingestion metrics, intake-to-triage turnaround, queue depth, and pre-flight rejections to spot and resolve upstream bottlenecks days before regional delivery.',
+          result:
+            'Eliminated manual intake bottlenecks and cross-team chasing across 40+ markets, reducing content ingestion and preparedness turnaround from 5-10 days down to 48 hours. Calculated $300K in resource management savings across FTE and vendor file preparation. Achieved frictionless adoption across Marketing and Product teams by embedding templates natively inside existing M365 workflows and absorbing setup lift within the Marcom Globalization budget with zero new tool training.',
+        },
+        l6Principle:
+          'Intake governance scales when validation gates and priority triage are integrated natively into existing partner tools with zero operational friction.',
+      },
     ],
     extendedSubsections: [
       {

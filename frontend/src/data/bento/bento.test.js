@@ -29,10 +29,10 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     expect(topPillarsPT.map((p) => p.id)).toEqual(expectedPillarIds);
   });
 
-  test('Each Top Pillar has up to 3 subcards with complete STAR data', () => {
+  test('Each Top Pillar has up to 4 subcards with complete STAR data', () => {
     topPillarsEN.forEach((pillar, pIdx) => {
       expect(pillar.subCards.length).toBeGreaterThan(0);
-      expect(pillar.subCards.length).toBeLessThanOrEqual(3);
+      expect(pillar.subCards.length).toBeLessThanOrEqual(4);
 
       pillar.subCards.forEach((card) => {
         expect(card.id).toBeTruthy();
