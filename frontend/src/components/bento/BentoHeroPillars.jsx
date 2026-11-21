@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Layers, ShieldCheck, Activity, TrendingUp, Sparkles, LayoutGrid } from 'lucide-react';
 import BentoCard from './BentoCard';
 
@@ -49,6 +50,8 @@ const pillarThemes = {
 };
 
 export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand }) => {
+  const { i18n } = useTranslation();
+  const isPt = i18n.language && i18n.language.startsWith('pt');
   const [selectedPillarId, setSelectedPillarId] = useState('all');
 
   const visiblePillars =
@@ -63,13 +66,21 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Tier 1 Architecture · Strategic Pillars</span>
+            <span>
+              {isPt
+                ? 'Arquitetura Tier 1 · Pilares Estratégicos'
+                : 'Tier 1 Architecture · Strategic Pillars'}
+            </span>
           </div>
           <h2 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
-            Top Executive Governance Pillars
+            {isPt
+              ? 'Principais Responsabilidades de Senior PGM'
+              : 'Senior PGM Core Responsibilities'}
           </h2>
           <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-            Four core executive leadership foundations calibrated for high-velocity global operations, extended workforce orchestration, and C-level transparency.
+            {isPt
+              ? 'Quatro pilares estratégicos de liderança executiva para operações globais de alta velocidade, gestão de equipas externas e transparência executiva.'
+              : 'Four core executive leadership foundations calibrated for high-velocity global operations, extended workforce orchestration, and C-level transparency.'}
           </p>
         </div>
 
@@ -85,7 +96,7 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
             }`}
           >
             <LayoutGrid className="w-3.5 h-3.5" />
-            <span>All Pillars (4)</span>
+            <span>{isPt ? 'Todos os Pilares (4)' : 'All Pillars (4)'}</span>
           </button>
 
           {pillars.map((pillar) => {
