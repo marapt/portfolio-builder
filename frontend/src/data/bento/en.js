@@ -420,7 +420,7 @@ export const operationalDomains = [
     title: 'Strategy Enablement and Vendor Management',
     shortName: 'Strategy Enablement',
     icon: 'TrendingUp',
-    description: 'Commercial partner strategy, capability roadmaps, and vendor innovation programs.',
+    description: 'Supplier strategy, governance, compliance, budget controls and cross-operational tooling.',
     subCards: [
       {
         id: 'se-1',

@@ -420,7 +420,7 @@ export const operationalDomains = [
     title: 'Habilitação Estratégica e Gestão de Fornecedores',
     shortName: 'Habilitação Estratégica',
     icon: 'TrendingUp',
-    description: 'Estratégia comercial com parceiros, planos de capacidades e programas conjuntos de inovação.',
+    description: 'Estratégia de fornecedores, governação, conformidade, controlo orçamental e ferramentas operacionais transversais.',
     subCards: [
       {
         id: 'se-1',
