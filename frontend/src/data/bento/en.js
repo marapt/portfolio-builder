@@ -87,7 +87,8 @@ export const topPillars = [
     id: 'supplier-performance',
     number: '02',
     title: 'Supplier Performance and Vendor Governance',
-    subtitle: 'Extended workforce (xWS) consolidation, outcome-based SOWs, and continuous SLAs.',
+    subtitle:
+      'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.).\nPartner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.',
     icon: 'Users',
     color: 'cyan',
     subCards: [
@@ -398,7 +399,7 @@ export const operationalDomains = [
     title: 'Global Language Services',
     shortName: 'Language Services',
     icon: 'Languages',
-    description: 'Linguistic quality frameworks, terminology Centers of Excellence, and cultural adaptation.',
+    description: 'Global Language Coverage and Localization Solutions.',
     subCards: [
       {
         id: 'gl-1',

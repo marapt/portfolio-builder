@@ -87,7 +87,8 @@ export const topPillars = [
     id: 'supplier-performance',
     number: '02',
     title: 'Desempenho de Fornecedores e Governação de Parceiros',
-    subtitle: 'Consolidação de força de trabalho externa (xWS), SOWs orientados a resultados e SLAs contínuos.',
+    subtitle:
+      'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.).\nParceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento.',
     icon: 'Users',
     color: 'cyan',
     subCards: [
@@ -398,7 +399,7 @@ export const operationalDomains = [
     title: 'Serviços Globais de Idiomas',
     shortName: 'Serviços de Idiomas',
     icon: 'Languages',
-    description: 'Gestão da qualidade linguística, Centros de Excelência de terminologia e adaptação cultural.',
+    description: 'Cobertura Linguística Global e Soluções de Localização.',
     subCards: [
       {
         id: 'gl-1',
