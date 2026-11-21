@@ -293,6 +293,27 @@ export const topPillars = [
         l6Principle:
           'Enterprise content operations scale when standardized metadata schemas enforce data hygiene at ingestion rather than patching errors downstream.',
       },
+      {
+        id: 'oc-microsoft-content-curation',
+        title: 'Microsoft - Content Curation, Reuse and Governance',
+        subtitle:
+          'Establishing 3-tier content reutilization, automated deprecation lifecycles, and vendor reuse KPIs across global storefronts.',
+        tag: 'Content Governance',
+        metrics: '10% YoY Vendor Cost Savings · +10% Volume · >90% NPS',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'Microsoft Stores ran simultaneous global launches, regional field marketing promotions, and seasonal consumer GTM campaigns across the globe, leading to massive content bloat and repository duplication. Regional teams re-created or re-translated near-identical promotional copy, outdated legal disclaimers lingered in active CMS branches, and high-performing localized assets were not surfaced for reuse, driving up vendor spend and slowing time-to-market.',
+          task:
+            'As the PGM leading the Globalization Program, establish an end-to-end content curation and lifecycle governance framework to maximize asset reuse across markets, enforce automated content deprecation, and supply regional marketers with pre-approved building blocks rather than starting from scratch.',
+          action:
+            'Designed a 3-tier content governance structure: Tier 1 Core + Global (locked product and legal copy), Tier 2 Modular Regional (pre-approved campaign blocks based on an 80/20 assembly model), and Tier 3 Net-New Local (high-touch transcreation). Partnered with Engineering and Legal to implement automated lifecycle deprecation rules, tagging assets with expiration dates and campaign lifecycle states to auto-archive expired promotions and prevent stale copy from polluting MS Store Search. Embedded content curation KPIs into vendor SOWs to reward translation memory leverage and modular reuse without added fees, while establishing regional review loops to promote top-performing local adaptations back into the global core library.',
+          result:
+            'Reduced redundant spend and rework by maximizing content reuse across global and regional campaigns, directly contributing to 10% YoY vendor cost savings and a 10% volume capacity increase as negotiated in SOWs, while sustaining customer satisfaction above 90% NPS. Cleaned up digital storefronts and MS Store Search by preventing expired seasonal copy and obsolete disclaimers from surfacing, streamlining customer discovery and the overall buyer journey.',
+        },
+        l6Principle:
+          'Sustainable content velocity requires proactive lifecycle governance: curating high-value assets for modular reuse and systematically deprecating obsolete collateral at the source.',
+      },
     ],
     extendedSubsections: [
       {

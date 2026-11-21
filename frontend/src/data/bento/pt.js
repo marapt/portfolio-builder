@@ -293,6 +293,27 @@ export const topPillars = [
         l6Principle:
           'As operações de conteúdo em escala funcionam quando schemas padronizados garantem higiene de dados na ingestão, em vez de corrigir falhas nas fases finais.',
       },
+      {
+        id: 'oc-microsoft-content-curation',
+        title: 'Microsoft - Content Curation, Reuse and Governance',
+        subtitle:
+          'Estrutura de reutilização de conteúdo em 3 níveis, ciclo de vida com depreciação automatizada e KPIs de reutilização em fornecedores.',
+        tag: 'Governação de Conteúdo',
+        metrics: 'Poupança Anual de 10% em Fornecedores · +10% Volume · NPS >90%',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'A realização simultânea de lançamentos globais, promoções regionais de Marketing e campanhas sazonais de GTM na Microsoft Stores gerava forte proliferação e duplicação de conteúdos. As equipas regionais recriavam ou retraduziam textos promocionais semelhantes, avisos legais obsoletos permaneciam em ramificações ativas do CMS e ativos locais de alto impacto não eram partilhados para reutilização, aumentando os custos com fornecedores e atrasando o time-to-market regional.',
+          task:
+            'Enquanto PGM responsável pelo Programa de Globalização, estabelecer um modelo integrado de curadoria e ciclo de vida de conteúdos para maximizar a reutilização entre mercados, garantir a atualização e depreciação de cópia obsoleta e fornecer blocos pré-aprovados para equipas regionais.',
+          action:
+            'Criei uma arquitetura de conteúdos em três níveis: Nível 1 Core Global (cópia legal e de produto bloqueada), Nível 2 Modular Regional (blocos de campanha pré-aprovados na regra 80/20) e Nível 3 Net-New Local (transcriação de alto impacto). Integrei com Engenharia e Legal regras automatizadas de expiração e estados de ciclo de vida para arquivar promoções expiradas e impedir a reingestão de textos obsoletos na Pesquisa da MS Store. Adicionei métricas de curadoria aos SOWs de fornecedores para recompensar o aproveitamento de memórias de tradução e reutilização modular sem custos adicionais, criando ainda um circuito de feedback para promover as melhores adaptações locais à biblioteca global.',
+          result:
+            'Reduzi despesas redundantes e retrabalho ao aumentar a reutilização de conteúdos em campanhas globais e regionais, contribuindo diretamente para uma poupança anual de 10% em custos de fornecedores e um aumento de 10% na capacidade de processamento, mantendo o índice de satisfação acima de 90% NPS. Eliminei conteúdos promocionais e legais obsoletos da montra digital e da Pesquisa da MS Store, melhorando a precisão dos resultados e a experiência de compra dos clientes.',
+        },
+        l6Principle:
+          'A velocidade sustentável de conteúdos exige uma governação proativa de ciclo de vida: curadoria de ativos de alto valor para montagem modular e depreciação sistemática de conteúdos obsoletos na origem.',
+      },
     ],
     extendedSubsections: [
       {
