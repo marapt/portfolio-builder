@@ -399,7 +399,7 @@ export const topPillars = [
               situation:
                 'Ao integrar a Block, a gestão financeira de localização dependia de um único colaborador a gerir fornecedores através de processos manuais e validações cruzadas de faturas. Este modelo operacional não tinha capacidade de escalar face aos planos de expansão internacional e ao volume crescente de transações.',
               task:
-                'Assumi a responsabilidade de substituir o estrangulamento manual por um modelo financeiro operacional escalável. Para isso, colaborei com os RH para expandir os níveis e responsabilidades dos PMs para a gestão orçamental ponta a ponta (estimativa, reconciliação, monitorização e reporte) e equipar as equipas com relatórios fiscais visuais e interativos.',
+                'Como líder de PGM, assumi a responsabilidade de substituir o estrangulamento manual por um modelo financeiro operacional escalável. Para isso, colaborei com os RH para expandir os níveis e responsabilidades dos PMs para a gestão orçamental ponta a ponta (estimativa, reconciliação, monitorização e reporte) e equipar as equipas com relatórios fiscais visuais e interativos.',
               action:
                 'Após formalizar com os RH a expansão da função dos PMs para assumirem a estimativa, reconciliação, monitorização e reporte orçamental, coliderei a criação de dashboards fiscais visuais e interativos com os PMs diretos, Engenharia, Finanças, Lideranças Seniores e Fornecedores, permitindo aos PMs auto-monitorizar e reportar custos de forma transparente sem depender de verificações manuais. Também organizei sessões de formação, partilhando com os PMs a minha experiência na gestão orçamental de fornecedores e programas transversais.',
               result:

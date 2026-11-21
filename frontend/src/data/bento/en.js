@@ -399,7 +399,7 @@ export const topPillars = [
               situation:
                 'When joining Block, localization financial management relied on a single resource handling vendor management through heavily manual processes and invoicing cross-checks. This operating model could not scale with the planned market expansion or growing transaction volume.',
               task:
-                'I took it upon my team to replace the single-point manual bottleneck with a scalable financial operating model. Thus, I partnered with HR to expand PM levels and responsibilities into end-to-end budget management (estimating, reconciling, monitoring, and reporting) and equipping teams with visual, interactive fiscal reporting.',
+                'As the PGM lead, I took it upon myself to replace the single-point manual bottleneck with a scalable financial operating model. Thus, I partnered with HR to expand PM levels and responsibilities into end-to-end budget management (estimating, reconciling, monitoring, and reporting) and equipping teams with visual, interactive fiscal reporting.',
               action:
                 'After partnering with HR to formally expand the PM role to own functional budget estimating, reconciliation, monitoring, and reporting, I co-led the creation of visual, interactive fiscal dashboards with direct-report PMs, Engineering, Finance, Senior Leads, and Vendors so PMs could self-monitor and report spend transparently rather than relying on manual cross-checks. I also arranged training and shared with PMs my own experience managing vendor budgets and cross-functional programs.',
               result:
