@@ -82,6 +82,44 @@ export const topPillars = [
         l6Principle: 'A gestão de prazos exige escalonamento modular e gestão preventiva de margens de segurança.',
       },
     ],
+    extendedSubsections: [
+      {
+        id: 'global-expansion-gtm',
+        number: '11',
+        title: 'Expansão Global / Go-to-Market (GTM)',
+        shortName: 'Expansão Global & GTM',
+        icon: 'Globe',
+        description:
+          'Sequenciação de lançamentos internacionais multi-onda, governação de campanhas GTM localizadas e alinhamento comercial entre mercados estratégicos.',
+        subCards: [
+          {
+            id: 'gtm-linkedin-stories-redesign',
+            title: 'LinkedIn - Stories e Redesenho da Plataforma: Governação Global Multi-Onda de GTM',
+            subtitle:
+              'Sequenciação de lançamentos internacionais faseados em 6 ondas, 26 idiomas e 17 mercados durante operações remotas da pandemia.',
+            tag: 'Expansão Global & GTM',
+            metrics: '6 Ondas Globais de GTM · 26 Idiomas e 17 Mercados',
+            proofAnchor: 'linkedin',
+            externalLink: {
+              url: 'https://www.linkedin.com/blog/member/product/a-new-look-for-linkedin-from-the-inside-out',
+              label: 'A New Look for LinkedIn: From the Inside Out',
+            },
+            star: {
+              situation:
+                'Durante a rápida transição para o trabalho remoto motivada pela COVID-19 em 2020, o LinkedIn precisava de lançar o LinkedIn Stories (um novo formato de narrativa visual para utilizadores, jornalistas e marcas) em ondas internacionais sequenciais e em paralelo com a primeira grande reformulação da plataforma em cinco anos. A coordenação de campanhas locais de GTM, atualizações de marca e gates de lançamento em 26 idiomas e 17 mercados sem um modelo centralizado prévio de localização de MARCOM criava riscos elevados de lançamentos fragmentados e perda de janelas regionais.',
+              task:
+                'Criar uma equipa de PGM de Marketing de Localização e executar um modelo escalável de governação de lançamentos e Go-to-Market (GTM) multi-onda, estabelecendo parcerias com Marketing, Engenharia de Localização, Legal e Notícias Editoriais para que cada lançamento regional cumprisse a sua janela, ligando a adoção do storytelling ao valor na jornada do cliente e ao ROI comercial.',
+              action:
+                'Estruturei lançamentos faseados por ondas começando no Brasil (Onda 1, abril de 2020) e expandindo pelos Países Baixos, EAU/MENA, Austrália, França, Redesenho Global e EUA/Canadá a 24 de setembro de 2020, e Reino Unido (Onda 6, outubro de 2020), aplicando critérios rigorosos de validação humana (Human-in-the-Loop) e alinhamento regional. Criei um modelo de governação de MARCOM com 2 PMs de Marketing de Localização, até 2 fornecedores MSP e até 15 linguistas internos para absorver picos de procura sem comprometer o ritmo de entrega. Mapeei a comunicação de GTM localizada a cada etapa da jornada dos membros e anunciantes: da descoberta e criação da primeira história (Ativação), à formação de hábitos diários no novo design (Retenção), até ao storytelling e desempenho de campanhas de marcas (ROI).',
+              result:
+                'Entreguei com sucesso lançamentos globais de GTM em 6 ondas, 26 idiomas e 17 mercados durante o período de trabalho remoto da pandemia, em conjunto com o redesenho global de setembro de 2020. Conectei a execução operacional de GTM a resultados comerciais e de retenção ao monitorizar sinais de ROI de anunciantes e métricas de utilizadores, no contexto em que o LinkedIn superou $10B em receita anual no FY21 e a LinkedIn Marketing Solutions atingiu um crescimento recorde de +97% YoY.',
+            },
+            l6Principle:
+              'Lançamentos globais complexos têm sucesso quando a coordenação de entregas multi-onda alinha a prontidão multifuncional com marcos mensuráveis na jornada do cliente, em vez de datas de lançamento isoladas.',
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'supplier-performance',

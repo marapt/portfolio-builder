@@ -82,6 +82,44 @@ export const topPillars = [
         l6Principle: 'Schedule management requires decoupled staging and proactive float allocation rather than reactive crunch.',
       },
     ],
+    extendedSubsections: [
+      {
+        id: 'global-expansion-gtm',
+        number: '11',
+        title: 'Global Expansion / Go-to-Market (GTM)',
+        shortName: 'Global Expansion & GTM',
+        icon: 'Globe',
+        description:
+          'Multi-wave international launch sequencing, localized GTM campaign governance, and cross-market commercial alignment across strategic expansion rollouts.',
+        subCards: [
+          {
+            id: 'gtm-linkedin-stories-redesign',
+            title: 'LinkedIn - Stories & Platform Redesign: Multi-Wave Global GTM Governance',
+            subtitle:
+              'Sequencing phased international GTM rollouts across 6 waves, 26 languages, and 17 markets during COVID-19 pandemic operations.',
+            tag: 'Global Expansion & GTM',
+            metrics: '6 Global GTM Waves · 26 Languages & 17 Markets',
+            proofAnchor: 'linkedin',
+            externalLink: {
+              url: 'https://www.linkedin.com/blog/member/product/a-new-look-for-linkedin-from-the-inside-out',
+              label: 'A New Look for LinkedIn: From the Inside Out',
+            },
+            star: {
+              situation:
+                'During the rapid COVID-19 shift to remote work in 2020, LinkedIn needed to launch LinkedIn Stories (a new visual storytelling format for members, journalists, and brands) across sequential international waves alongside LinkedIn\'s first major platform redesign in five years. Coordinating localized GTM campaigns, brand updates, and release gates across 26 languages and 17 markets without a pre-existing centralized MARCOM localization operating model risked fragmented launches and missed regional windows.',
+              task:
+                'Establish a dedicated Localization Marketing PGM team and execute a scalable multi-wave Go-to-Market (GTM) localization and launch governance model across Marketing, Localization Engineering, Legal, and Editorial News so every regional release hit its window while connecting localized storytelling adoption to customer journey value and commercial ROI.',
+              action:
+                'Sequenced phased launch waves starting with Brazil (Wave 1, Apr 2020) and expanding through the Netherlands, UAE/MENA, Australia, France, the September 24, 2020 Global Redesign and US/Canada rollout, and the UK (Wave 6, Oct 2020), enforcing readiness gates with Human-in-the-Loop validation and regional partner alignment. Established a resilient MARCOM localization operating model with 2 FTE Localization Marketing PMs, up to 2 Managed Service Provider (MSP) vendors, and up to 15 internal linguists to absorb surge demand without compromising velocity. Mapped localized GTM messaging to each stage of the member and advertiser journey, from initial discovery and first-story creation (Awareness & Activation), to daily habit formation (Engagement & Retention), to brand/creator storytelling and campaign performance (Advocacy & ROI).',
+              result:
+                'Successfully delivered scheduled multi-wave global GTM launches across 6 waves, 26 languages, and 17 markets during pandemic remote operations alongside the September 2020 global platform redesign. Connected localized GTM execution to commercial and customer journey outcomes by capturing advertiser ROI signals and user retention insights within the broader macro context of LinkedIn surpassing $10B in FY21 annual revenue and LinkedIn Marketing Solutions achieving +97% YoY peak growth.',
+            },
+            l6Principle:
+              'Complex global expansions succeed when multi-wave release gates align cross-functional readiness with measurable customer journey milestones rather than isolated launch dates.',
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'supplier-performance',

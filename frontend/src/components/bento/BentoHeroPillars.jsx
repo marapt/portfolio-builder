@@ -9,6 +9,7 @@ import {
   DollarSign,
   BarChart3,
   Lock,
+  Globe,
 } from 'lucide-react';
 import BentoCard from './BentoCard';
 
@@ -24,9 +25,17 @@ const subsectionIcons = {
   DollarSign,
   BarChart3,
   Lock,
+  Globe,
 };
 
 const subsectionThemeMap = {
+  'global-expansion-gtm': {
+    border: 'border-violet-200/80',
+    iconBg: 'bg-violet-100 border-violet-200 text-violet-800',
+    badge: 'bg-violet-100/80 text-violet-800 border-violet-200/60',
+    cardColor: 'violet',
+    Icon: Globe,
+  },
   'supplier-partner': {
     border: 'border-cyan-200/80',
     iconBg: 'bg-cyan-100 border-cyan-200 text-cyan-800',

@@ -62,6 +62,32 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
+  test('Pillar 01 (Portfolio Governance) has an extended subsection for Global Expansion / GTM in EN and PT', () => {
+    const pgPillarEN = topPillarsEN.find((p) => p.id === 'portfolio-governance');
+    const pgPillarPT = topPillarsPT.find((p) => p.id === 'portfolio-governance');
+
+    expect(pgPillarEN.extendedSubsections).toBeDefined();
+    expect(pgPillarPT.extendedSubsections).toBeDefined();
+    expect(pgPillarEN.extendedSubsections[0].id).toBe('global-expansion-gtm');
+    expect(pgPillarPT.extendedSubsections[0].id).toBe('global-expansion-gtm');
+
+    expect(pgPillarEN.extendedSubsections[0].subCards.length).toBeGreaterThan(0);
+    expect(pgPillarPT.extendedSubsections[0].subCards.length).toBe(
+      pgPillarEN.extendedSubsections[0].subCards.length
+    );
+
+    pgPillarEN.extendedSubsections[0].subCards.forEach((card) => {
+      expect(card.id).toBeTruthy();
+      expect(card.title).toBeTruthy();
+      expect(card.star).toBeDefined();
+      expect(card.star.situation).toBeTruthy();
+      expect(card.star.task).toBeTruthy();
+      expect(card.star.action).toBeTruthy();
+      expect(card.star.result).toBeTruthy();
+      expect(card.l6Principle).toBeTruthy();
+    });
+  });
+
   test('Pillar 02 (Supplier Performance) has an extended subsection for Domain 07 in EN and PT', () => {
     const spPillarEN = topPillarsEN.find((p) => p.id === 'supplier-performance');
     const spPillarPT = topPillarsPT.find((p) => p.id === 'supplier-performance');

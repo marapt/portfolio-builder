@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, Building2, Lightbulb, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, Building2, Lightbulb, ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getCompanyBrands } from '../../data/bento/brandMap';
 
@@ -229,18 +229,32 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
 
         {/* Modal Footer */}
         <div className="mt-6 pt-5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
-          {card.proofAnchor ? (
-            <Link
-              to={`/career#${card.proofAnchor}`}
-              className="text-xs sm:text-sm text-indigo-400 hover:text-indigo-300 font-semibold inline-flex items-center gap-1.5 transition-colors"
-              onClick={onClose}
-            >
-              <span>View company background in Career Timeline</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          ) : (
-            <span className="text-xs text-slate-400 font-mono">Calibrated Executive Framework</span>
-          )}
+          <div className="flex flex-wrap items-center gap-4">
+            {card.proofAnchor ? (
+              <Link
+                to={`/career#${card.proofAnchor}`}
+                className="text-xs sm:text-sm text-indigo-400 hover:text-indigo-300 font-semibold inline-flex items-center gap-1.5 transition-colors"
+                onClick={onClose}
+              >
+                <span>View company background in Career Timeline</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            ) : (
+              <span className="text-xs text-slate-400 font-mono">Calibrated Executive Framework</span>
+            )}
+
+            {card.externalLink && (
+              <a
+                href={card.externalLink.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs sm:text-sm text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-1.5 transition-colors"
+              >
+                <span>{card.externalLink.label || 'Official Launch Article'}</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
 
           <button
             type="button"
