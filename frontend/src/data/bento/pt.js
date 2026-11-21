@@ -6,7 +6,7 @@ export const bentoHero = {
   title: 'As Minhas Experiências',
   subheading: 'Modelos STAR',
   subtitle:
-    'Um sistema operacional interativo que apresenta estruturas comprovadas de governação empresarial, arquiteturas de workforce alargado e cartões STAR testados no terreno.',
+    'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.',
   quickStats: [
     { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
     { label: 'Domínios Operacionais', value: '10 Categorias' },

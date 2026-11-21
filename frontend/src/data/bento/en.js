@@ -6,7 +6,7 @@ export const bentoHero = {
   title: 'My Experiences',
   subheading: 'STAR Frameworks',
   subtitle:
-    'An interactive operational system showcasing proven enterprise governance models, extended workforce architectures, and field-tested STAR cards.',
+    'Showcasing my experience in enterprise governance models, extended workforce vendor management and field-tested processes through structured STAR cards.',
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
     { label: 'Operational Domains', value: '10 Categories' },
