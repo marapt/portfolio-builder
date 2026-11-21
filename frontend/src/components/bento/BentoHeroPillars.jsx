@@ -5,7 +5,6 @@ import {
   ShieldCheck,
   Activity,
   TrendingUp,
-  Sparkles,
   LayoutGrid,
   DollarSign,
   BarChart3,
@@ -112,8 +111,7 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-slate-800 pb-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-3">
             <span>
               {isPt
                 ? 'Arquitetura Tier 1 · Pilares Estratégicos'

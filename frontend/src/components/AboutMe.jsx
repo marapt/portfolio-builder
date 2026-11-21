@@ -10,7 +10,6 @@ import {
   BookOpen,
   ChevronDown,
   ChevronUp,
-  Sparkles,
   ShieldCheck,
   CheckCircle2,
   Layers,
@@ -148,8 +147,7 @@ const AboutMe = () => {
       <section className="space-y-6 pt-4 text-left">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-4 max-w-4xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-200">
-              <Sparkles size={14} aria-hidden="true" />
+            <div className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-200">
               {hero.eyebrow}
             </div>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug">
@@ -351,8 +349,7 @@ const AboutMe = () => {
                         {/* Dedicated Growth Edge Callout if present */}
                         {item.growthEdge && (
                           <div className="mt-3 pt-3 border-t border-white/10 rounded-xl bg-white/[0.03] p-3 border border-white/5 space-y-1.5">
-                            <span className="text-[10px] font-black uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
-                              <Sparkles size={12} className="text-amber-300 shrink-0" />
+                            <span className="text-[10px] font-black uppercase tracking-wider text-amber-300">
                               {isPt ? 'Área de Crescimento & Calibração' : 'Growth Edge & Calibration'}
                             </span>
                             <p className="text-xs text-slate-200 leading-relaxed font-medium italic">

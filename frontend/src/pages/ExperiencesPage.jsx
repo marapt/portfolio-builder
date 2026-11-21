@@ -16,7 +16,6 @@ import {
   operationalDomains as operationalDomainsPT,
 } from '../data/bento/pt';
 import {
-  Sparkles,
   Layers,
   ArrowRight,
   FileText,
@@ -88,8 +87,7 @@ const ExperiencesPage = () => {
             <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl -z-10 pointer-events-none" />
 
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-4">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-4">
                 <span>{hero.eyebrow}</span>
               </div>
 
@@ -173,8 +171,7 @@ const ExperiencesPage = () => {
           {/* EXECUTIVE ENGAGEMENT CTA */}
           <section className="bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 text-center relative overflow-hidden shadow-2xl">
             <div className="max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-3">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-3">
                 <span>{isPt ? 'Liderança Estratégica & Execução' : 'Strategic Leadership & Alignment'}</span>
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2">

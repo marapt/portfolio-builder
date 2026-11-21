@@ -4,7 +4,6 @@ import {
   CheckCircle2,
   Building2,
   Lightbulb,
-  Sparkles,
   Maximize2,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -151,9 +150,8 @@ export const BentoCard = ({
           <div>
             <div className="flex items-center justify-between gap-2 mb-3.5">
               <span
-                className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
+                className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
               >
-                <Sparkles className="w-3 h-3 shrink-0" />
                 <span className="truncate max-w-[140px] sm:max-w-[180px]">{card.tag || domainTitle || 'Operational Card'}</span>
               </span>
 

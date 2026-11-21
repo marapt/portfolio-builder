@@ -16,7 +16,6 @@ import {
   GraduationCap,
   Maximize2,
   Plane,
-  Sparkles,
   X,
 } from 'lucide-react';
 import { useCareerData } from '../data/career';
@@ -1153,8 +1152,7 @@ const CareerTimeline = () => {
           {/* Future Target Skills */}
           {Array.isArray(selectedItem.targetSkills) && selectedItem.targetSkills.length > 0 && (
             <div className="rounded-2xl border border-dashed border-emerald-400/35 bg-emerald-500/[0.05] p-4 sm:p-5 space-y-2.5">
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-200">
-                <Sparkles size={14} aria-hidden="true" />
+              <div className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-emerald-200">
                 Target Capabilities &amp; Focus Areas
               </div>
               <div className="flex flex-wrap gap-2">

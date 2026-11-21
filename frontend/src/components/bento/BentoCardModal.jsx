@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, Building2, Lightbulb, ArrowRight, Sparkles } from 'lucide-react';
+import { X, CheckCircle2, Building2, Lightbulb, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getCompanyBrands } from '../../data/bento/brandMap';
 
@@ -115,9 +115,8 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
         <div className="mb-6 pr-10">
           <div className="flex flex-wrap items-center gap-2.5 mb-3.5">
             <span
-              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
+              className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
             >
-              <Sparkles className="w-3.5 h-3.5" />
               {card.tag || domainTitle || 'STAR Card'}
             </span>
 
