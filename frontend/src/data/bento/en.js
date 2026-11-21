@@ -389,7 +389,7 @@ export const topPillars = [
         subCards: [
           {
             id: 'fom-block',
-            title: 'Scalable Spend Governance & Distributed PM Budget Accountability',
+            title: "Block - PM's Budget Ownership and Reporting",
             subtitle:
               'Transitioning from a single-resource manual bottleneck to distributed PM budget ownership and interactive fiscal dashboards.',
             tag: 'Finance & OPEX',
@@ -397,13 +397,13 @@ export const topPillars = [
             metrics: 'Block · 30 to 5-Day Invoicing Lag · 5-10% SOW Variance Control',
             star: {
               situation:
-                'When joining Block, localization financial management relied on a single resource handling vendor management through heavily manual processes and invoicing cross-checks. This operating model could not scale with planned market expansion or growing transaction volume.',
+                'When joining Block, localization financial management relied on a single resource handling vendor management through heavily manual processes and invoicing cross-checks. This operating model could not scale with the planned market expansion or growing transaction volume.',
               task:
-                'Replace the single-point manual bottleneck with a scalable financial operating model by partnering with HR to expand PM responsibilities into end-to-end budget management (estimating, reconciling, monitoring, and reporting) and equipping teams with visual, interactive fiscal reporting.',
+                'I took it upon my team to replace the single-point manual bottleneck with a scalable financial operating model. Thus, I partnered with HR to expand PM levels and responsibilities into end-to-end budget management (estimating, reconciling, monitoring, and reporting) and equipping teams with visual, interactive fiscal reporting.',
               action:
-                'Partnered with HR to formally expand the PM role to own functional budget estimating, reconciliation, monitoring, and reporting; co-led the creation of visual, interactive fiscal dashboards with direct-report PMs, Engineering, Finance, Senior Leads, and Vendors so PMs could self-monitor and report spend transparently rather than relying on manual cross-checks.',
+                'After partnering with HR to formally expand the PM role to own functional budget estimating, reconciliation, monitoring, and reporting, I co-led the creation of visual, interactive fiscal dashboards with direct-report PMs, Engineering, Finance, Senior Leads, and Vendors so PMs could self-monitor and report spend transparently rather than relying on manual cross-checks. I also arranged training and shared with PMs my own experience managing vendor budgets and cross-functional programs.',
               result:
-                'Replaced a single-resource manual bottleneck with distributed PM budget accountability and interactive cross-functional fiscal visibility across PMs, Engineering, Finance, leadership, and vendors, establishing a scalable spend-governance foundation ready for market expansion (reducing invoicing lag from 30 days to 5 days) and enabling us to become budget compliant with a 5-10% quarterly budget variance factored into negotiated SOWs.',
+                'Replaced a single-resource manual bottleneck with distributed PM budget accountability and interactive cross-functional fiscal visibility across PMs, Engineering, Finance, leadership, and vendors. By establishing a scalable spend-governance foundation ready for market expansion, it enabled the whole org to become budget compliant with a 5-10% quarterly budget variance factored into negotiated SOWs.',
             },
             l6Principle:
               'Scaling financial governance requires pairing role clarity and cross-functional dashboards with decentralized ownership, not adding manual bottlenecks to a single person.',

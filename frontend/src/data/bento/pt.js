@@ -389,7 +389,7 @@ export const topPillars = [
         subCards: [
           {
             id: 'fom-block',
-            title: 'Governação Orçamental Escalável e Responsabilidade Financeira Distribuída',
+            title: "Block - Ownership e Reporte Orçamental dos PMs",
             subtitle:
               'Transição de um estrangulamento manual centrado numa única pessoa para ownership orçamental distribuída pelos PMs e dashboards interativos.',
             tag: 'Finanças & OPEX',
@@ -397,13 +397,13 @@ export const topPillars = [
             metrics: 'Block · Processamento de Faturas de 30 para 5 Dias · Margem de 5-10% em SOWs',
             star: {
               situation:
-                'Ao integrar a Block, a gestão financeira de localização dependia de um único colaborador a gerir parceiros através de processos manuais e validações cruzadas de faturas. Este modelo não tinha capacidade de escalar face aos planos de expansão internacional e ao volume crescente de transações.',
+                'Ao integrar a Block, a gestão financeira de localização dependia de um único colaborador a gerir fornecedores através de processos manuais e validações cruzadas de faturas. Este modelo operacional não tinha capacidade de escalar face aos planos de expansão internacional e ao volume crescente de transações.',
               task:
-                'Substituir o ponto único de estrangulamento manual por um modelo financeiro operacional escalável, estabelecendo uma parceria com os RH para expandir as responsabilidades dos PMs para a gestão orçamental ponta a ponta (estimativa, reconciliação, monitorização e reporte) e dotando as equipas de relatórios fiscais visuais e interativos.',
+                'Assumi a responsabilidade de substituir o estrangulamento manual por um modelo financeiro operacional escalável. Para isso, colaborei com os RH para expandir os níveis e responsabilidades dos PMs para a gestão orçamental ponta a ponta (estimativa, reconciliação, monitorização e reporte) e equipar as equipas com relatórios fiscais visuais e interativos.',
               action:
-                'Colaborei com os RH para formalizar a expansão das funções dos PMs, integrando a estimativa, reconciliação, monitorização e reporte orçamental; coliderei a criação de dashboards fiscais interativos com PMs diretos, Engenharia, Finanças, Liderança Sénior e Fornecedores para permitir auto-monitorização e reporte transparente de despesas sem recurso a verificações manuais.',
+                'Após formalizar com os RH a expansão da função dos PMs para assumirem a estimativa, reconciliação, monitorização e reporte orçamental, coliderei a criação de dashboards fiscais visuais e interativos com os PMs diretos, Engenharia, Finanças, Lideranças Seniores e Fornecedores, permitindo aos PMs auto-monitorizar e reportar custos de forma transparente sem depender de verificações manuais. Também organizei sessões de formação, partilhando com os PMs a minha experiência na gestão orçamental de fornecedores e programas transversais.',
               result:
-                'Substituição de um ponto único de estrangulamento por responsabilidade orçamental distribuída entre os PMs e visibilidade fiscal interativa entre PMs, Engenharia, Finanças, liderança e fornecedores, estabelecendo uma base sólida de governação de despesas preparada para a expansão (reduzindo o tempo de faturação de 30 para 5 dias) e garantindo conformidade orçamental com uma margem de variação de 5-10% integrada nos SOWs negociados.',
+                'Substituição de um estrangulamento manual por responsabilidade orçamental distribuída entre os PMs e visibilidade fiscal interativa entre PMs, Engenharia, Finanças, liderança e fornecedores. Ao estabelecer uma base escalável de governação de despesas preparada para a expansão de mercados, permitiu a toda a organização cumprir os orçamentos com uma margem de variação trimestral de 5-10% integrada nos SOWs negociados.',
             },
             l6Principle:
               'Escalar a governação financeira exige associar clareza de funções e dashboards transversais a uma titularidade descentralizada, em vez de sobrecarregar uma única pessoa com estrangulamentos manuais.',
