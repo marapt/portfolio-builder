@@ -253,7 +253,7 @@ export const topPillars = [
       },
       {
         id: 'oc-microsoft-content-ingestion',
-        title: 'Microsoft - Content Ingestion / Management',
+        title: 'Microsoft - Content Ingestion and Management',
         subtitle:
           'Substituição do intake fragmentado em sete sistemas por um pipeline automatizado integrado no M365 com validações MVG.',
         tag: 'Otimização de Processos',

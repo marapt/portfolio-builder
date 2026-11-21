@@ -253,7 +253,7 @@ export const topPillars = [
       },
       {
         id: 'oc-microsoft-content-ingestion',
-        title: 'Microsoft - Content Ingestion / Management',
+        title: 'Microsoft - Content Ingestion and Management',
         subtitle:
           'Replacing fragmented intake across seven disconnected systems with an automated M365-integrated pipeline and MVG pre-flight gates.',
         tag: 'Process Optimization',
