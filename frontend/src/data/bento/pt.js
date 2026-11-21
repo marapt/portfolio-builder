@@ -480,7 +480,7 @@ export const topPillars = [
           },
           {
             id: 'bit-1',
-            title: 'BI para Operações de Lançamento Global e Localização',
+            title: 'Microsoft Power BI - Vendor Ops/SLAs e Continuidade de Negócio',
             subtitle:
               'Telemetria etapa a etapa unificando TMS de fornecedores e Jira com alertas proativos de SLA.',
             tag: 'BI & Telemetria',

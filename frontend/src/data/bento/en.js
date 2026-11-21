@@ -480,7 +480,7 @@ export const topPillars = [
           },
           {
             id: 'bit-1',
-            title: 'Global Release & Localization Operations BI',
+            title: 'Microsoft Power BI - Vendor Ops/SLAs and Business Continuity',
             subtitle:
               'Unified stage-by-stage telemetry connecting Vendor TMS and Jira into proactive SLA alerting.',
             tag: 'BI & Telemetry',
