@@ -19,7 +19,8 @@ export const topPillars = [
     id: 'portfolio-governance',
     number: '01',
     title: 'Governação de Portfólio e Desenho de Estruturas',
-    subtitle: 'Arquitetura de sistemas operacionais escaláveis, fluxos de lançamento e alinhamento multifuncional.',
+    subtitle:
+      'Desenhar, padronizar e escalar modelos operacionais e cadências de revisão em todos os pilares.\nEstabelecer processos estruturados de admissão, alocação de recursos e priorização de programas.',
     icon: 'Layers',
     color: 'violet',
     subCards: [

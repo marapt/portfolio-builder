@@ -19,7 +19,8 @@ export const topPillars = [
     id: 'portfolio-governance',
     number: '01',
     title: 'Portfolio Governance and Framework Design',
-    subtitle: 'Architecting scalable operating systems, release trains, and cross-functional alignment.',
+    subtitle:
+      'Design, standardize and scale operating models and review cadences across all pillars.\nEstablish structured intake, resource allocation and program prioritization processes.',
     icon: 'Layers',
     color: 'violet',
     subCards: [

@@ -148,7 +148,7 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
                   </div>
                 </div>
 
-                <p className="text-sm text-gray-600 max-w-xl lg:text-right font-normal leading-relaxed">
+                <p className="text-sm text-gray-600 max-w-xl lg:text-right font-normal leading-relaxed whitespace-pre-line">
                   {pillar.subtitle}
                 </p>
               </div>
