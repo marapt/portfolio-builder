@@ -459,7 +459,7 @@ export const topPillars = [
           },
           {
             id: 'bit-vendor-governance',
-            title: 'Capacidade de Fornecedores, SLAs e Governação de Custos Operacionais',
+            title: "Microsoft Power BI's: Capacidade de Fornecedores, SLAs e Governação de Custos Operacionais",
             subtitle:
               'Dashboards Power BI unificados integrando capacidade de fornecedores, SLAs de entrega e limites orçamentais.',
             tag: 'Operações de Fornecedores',
