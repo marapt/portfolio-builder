@@ -9,8 +9,8 @@ export const bentoHero = {
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.',
   quickStats: [
     { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
-    { label: 'Domínios Operacionais', value: '6 Categorias' },
-    { label: 'Cartões Interativos', value: '27 Cartões STAR' },
+    { label: 'Domínios Operacionais', value: '5 Categorias' },
+    { label: 'Cartões Interativos', value: '26 Cartões STAR' },
   ],
 };
 
@@ -297,6 +297,45 @@ export const topPillars = [
     ],
     extendedSubsections: [
       {
+        id: 'content-operations',
+        number: '01',
+        title: 'Operações de Conteúdo',
+        shortName: 'Operações de Conteúdo',
+        icon: 'FileText',
+        description:
+          'Cadeias de fornecimento de conteúdos digitais, integração de CMS/TMS e gestão de publicações multi-mercado.',
+        subCards: [
+          {
+            id: 'co-1',
+            title: 'Automação da Cadeia de Conteúdos Digitais',
+            subtitle: 'Ligação entre repositórios de engenharia e sistemas globais de marketing.',
+            tag: 'Cadeia de Conteúdos',
+            metrics: 'Ciclos Reduzidos em 67% · APIs Automatizadas',
+            star: {
+              situation: 'A passagem manual de ficheiros entre repositórios de código e o CMS causava atrasos consideráveis.',
+              task: 'Automatizar o fluxo de extração, validação e entrega de conteúdos.',
+              action: 'Concebi uma solução com webhooks do GitHub integrada com os motores de tradução.',
+              result: 'Reduzi o tempo de entrega de 15 para 5 dias úteis sem erros manuais.',
+            },
+            l6Principle: 'Automatizar os processos técnicos liberta as equipas criativas para se focarem na mensagem.',
+          },
+          {
+            id: 'co-2',
+            title: 'Conformidade Geopolítica e da Marca',
+            subtitle: 'Validação preventiva de conteúdos para evitar desalinhamentos culturais ou regulamentares.',
+            tag: 'Conformidade Geopolítica',
+            metrics: '200+ Mercados Protegidos · 0 Infrações',
+            star: {
+              situation: 'Materiais em dezenas de lojas internacionais arriscavam inconformidades regulamentares ou culturais.',
+              task: 'Criar pontos de validação prévia sem comprometer os prazos de lançamento.',
+              action: 'Implementei critérios padronizados de validação geopolítica articulados com o Jurídico.',
+              result: 'Mais de 200 mercados protegidos com total conformidade pelas diretrizes globais.',
+            },
+            l6Principle: 'A conformidade geopolítica deve ser antecipada e integrada desde o início nos fluxos de trabalho.',
+          },
+        ],
+      },
+      {
         id: 'operational-controls',
         number: '08',
         title: 'Controlos Operacionais e Conformidade',
@@ -557,42 +596,6 @@ export const topPillars = [
 ];
 
 export const operationalDomains = [
-  {
-    id: 'content-operations',
-    number: '01',
-    title: 'Operações de Conteúdo',
-    shortName: 'Operações de Conteúdo',
-    icon: 'FileText',
-    description: 'Cadeias de fornecimento de conteúdos digitais, integração de CMS/TMS e gestão de publicações multi-mercado.',
-    subCards: [
-      {
-        id: 'co-1',
-        title: 'Automação da Cadeia de Conteúdos Digitais',
-        subtitle: 'Ligação entre repositórios de engenharia e sistemas globais de marketing.',
-        metrics: 'Ciclos Reduzidos em 67% · APIs Automatizadas',
-        star: {
-          situation: 'A passagem manual de ficheiros entre repositórios de código e o CMS causava atrasos consideráveis.',
-          task: 'Automatizar o fluxo de extração, validação e entrega de conteúdos.',
-          action: 'Concebi uma solução com webhooks do GitHub integrada com os motores de tradução.',
-          result: 'Reduzi o tempo de entrega de 15 para 5 dias úteis sem erros manuais.',
-        },
-        l6Principle: 'Automatizar os processos técnicos liberta as equipas criativas para se focarem na mensagem.',
-      },
-      {
-        id: 'co-2',
-        title: 'Conformidade Geopolítica e da Marca',
-        subtitle: 'Validação preventiva de conteúdos para evitar desalinhamentos culturais ou regulamentares.',
-        metrics: '200+ Mercados Protegidos · 0 Infrações',
-        star: {
-          situation: 'Materiais em dezenas de lojas internacionais arriscavam inconformidades regulamentares ou culturais.',
-          task: 'Criar pontos de validação prévia sem comprometer os prazos de lançamento.',
-          action: 'Implementei critérios padronizados de validação geopolítica articulados com o Jurídico.',
-          result: 'Mais de 200 mercados protegidos com total conformidade pelas diretrizes globais.',
-        },
-        l6Principle: 'A conformidade geopolítica deve ser antecipada e integrada desde o início nos fluxos de trabalho.',
-      },
-    ],
-  },
   {
     id: 'eval-feedback',
     number: '02',

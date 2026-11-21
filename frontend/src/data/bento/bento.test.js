@@ -13,7 +13,6 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
   ];
 
   const expectedDomainIds = [
-    'content-operations',
     'eval-feedback',
     'ai-data-training',
     'testing-response',
@@ -157,35 +156,45 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Pillar 03 (Operations & Change) has an extended subsection for Domain 08 in EN and PT', () => {
+  test('Pillar 03 (Operations & Change) has extended subsections for Domain 01 and Domain 08 in EN and PT', () => {
     const ocPillarEN = topPillarsEN.find((p) => p.id === 'operations-change');
     const ocPillarPT = topPillarsPT.find((p) => p.id === 'operations-change');
 
     expect(ocPillarEN.extendedSubsections).toBeDefined();
     expect(ocPillarPT.extendedSubsections).toBeDefined();
-    expect(ocPillarEN.extendedSubsections[0].id).toBe('operational-controls');
-    expect(ocPillarPT.extendedSubsections[0].id).toBe('operational-controls');
+    expect(ocPillarEN.extendedSubsections).toHaveLength(2);
+    expect(ocPillarPT.extendedSubsections).toHaveLength(2);
+    expect(ocPillarEN.extendedSubsections.map((s) => s.id)).toEqual([
+      'content-operations',
+      'operational-controls',
+    ]);
+    expect(ocPillarPT.extendedSubsections.map((s) => s.id)).toEqual([
+      'content-operations',
+      'operational-controls',
+    ]);
 
-    expect(ocPillarEN.extendedSubsections[0].subCards.length).toBeGreaterThan(0);
-    expect(ocPillarPT.extendedSubsections[0].subCards.length).toBe(
-      ocPillarEN.extendedSubsections[0].subCards.length
-    );
+    ocPillarEN.extendedSubsections.forEach((subSec, sIdx) => {
+      expect(subSec.subCards.length).toBeGreaterThan(0);
+      expect(ocPillarPT.extendedSubsections[sIdx].subCards.length).toBe(
+        subSec.subCards.length
+      );
 
-    ocPillarEN.extendedSubsections[0].subCards.forEach((card) => {
-      expect(card.id).toBeTruthy();
-      expect(card.title).toBeTruthy();
-      expect(card.star).toBeDefined();
-      expect(card.star.situation).toBeTruthy();
-      expect(card.star.task).toBeTruthy();
-      expect(card.star.action).toBeTruthy();
-      expect(card.star.result).toBeTruthy();
-      expect(card.l6Principle).toBeTruthy();
+      subSec.subCards.forEach((card) => {
+        expect(card.id).toBeTruthy();
+        expect(card.title).toBeTruthy();
+        expect(card.star).toBeDefined();
+        expect(card.star.situation).toBeTruthy();
+        expect(card.star.task).toBeTruthy();
+        expect(card.star.action).toBeTruthy();
+        expect(card.star.result).toBeTruthy();
+        expect(card.l6Principle).toBeTruthy();
+      });
     });
   });
 
-  test('Tier 2 has exactly 6 Specialized Operational Domains in EN and PT', () => {
-    expect(operationalDomainsEN).toHaveLength(6);
-    expect(operationalDomainsPT).toHaveLength(6);
+  test('Tier 2 has exactly 5 Specialized Operational Domains in EN and PT', () => {
+    expect(operationalDomainsEN).toHaveLength(5);
+    expect(operationalDomainsPT).toHaveLength(5);
 
     expect(operationalDomainsEN.map((d) => d.id)).toEqual(expectedDomainIds);
     expect(operationalDomainsPT.map((d) => d.id)).toEqual(expectedDomainIds);

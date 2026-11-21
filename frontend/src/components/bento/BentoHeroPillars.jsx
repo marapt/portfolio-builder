@@ -10,6 +10,7 @@ import {
   BarChart3,
   Lock,
   Globe,
+  FileText,
 } from 'lucide-react';
 import BentoCard from './BentoCard';
 
@@ -26,9 +27,17 @@ const subsectionIcons = {
   BarChart3,
   Lock,
   Globe,
+  FileText,
 };
 
 const subsectionThemeMap = {
+  'content-operations': {
+    border: 'border-emerald-200/80',
+    iconBg: 'bg-emerald-100 border-emerald-200 text-emerald-800',
+    badge: 'bg-emerald-100/80 text-emerald-800 border-emerald-200/60',
+    cardColor: 'emerald',
+    Icon: FileText,
+  },
   'global-expansion-gtm': {
     border: 'border-violet-200/80',
     iconBg: 'bg-violet-100 border-violet-200 text-violet-800',

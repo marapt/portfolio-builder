@@ -9,8 +9,8 @@ export const bentoHero = {
     'Showcasing my experience in enterprise governance models, extended workforce vendor management and field-tested processes through structured STAR cards.',
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
-    { label: 'Operational Domains', value: '6 Categories' },
-    { label: 'Interactive Cards', value: '27 STAR Cards' },
+    { label: 'Operational Domains', value: '5 Categories' },
+    { label: 'Interactive Cards', value: '26 STAR Cards' },
   ],
 };
 
@@ -297,6 +297,45 @@ export const topPillars = [
     ],
     extendedSubsections: [
       {
+        id: 'content-operations',
+        number: '01',
+        title: 'Content Operations',
+        shortName: 'Content Ops',
+        icon: 'FileText',
+        description:
+          'High-velocity digital asset supply chains, CMS/TMS integration, and multi-market editorial release trains.',
+        subCards: [
+          {
+            id: 'co-1',
+            title: 'Digital Asset Supply Chain Automation',
+            subtitle: 'Linking engineering repositories with global Marcom content systems.',
+            tag: 'Content Supply Chain',
+            metrics: '67% Cycle Cut · Automated API Handoffs',
+            star: {
+              situation: 'Manual handoffs between code repositories and content CMS created severe release lag.',
+              task: 'Automate content extraction, validation, and delivery pipeline.',
+              action: 'Architected automated GitHub webhook pipeline feeding content into localization engines.',
+              result: 'Cut turnaround time from 15 to 5 business days with zero manual file copying errors.',
+            },
+            l6Principle: 'Automating content plumbing lets creative teams focus purely on messaging quality.',
+          },
+          {
+            id: 'co-2',
+            title: 'Geopolitical Readiness & Brand Compliance',
+            subtitle: 'Cross-market content validation preventing cultural and geopolitical missteps.',
+            tag: 'Geopolitical Compliance',
+            metrics: '200+ Mkts Protected · 0 Brand Violations',
+            star: {
+              situation: 'Multi-market storefront assets risked geopolitical and regulatory brand exposure.',
+              task: 'Establish pre-flight editorial clearance gates without slowing publishing velocity.',
+              action: 'Implemented standardized geopolitical clearance scorecards integrated with Legal and PR.',
+              result: 'Cleared 200+ global storefront markets with 100% compliance across international guidelines.',
+            },
+            l6Principle: 'Geopolitical compliance must be preventative and automated rather than reactive.',
+          },
+        ],
+      },
+      {
         id: 'operational-controls',
         number: '08',
         title: 'Operational Controls and Compliance',
@@ -557,42 +596,6 @@ export const topPillars = [
 ];
 
 export const operationalDomains = [
-  {
-    id: 'content-operations',
-    number: '01',
-    title: 'Content Operations',
-    shortName: 'Content Ops',
-    icon: 'FileText',
-    description: 'High-velocity digital asset supply chains, CMS/TMS integration, and multi-market editorial release trains.',
-    subCards: [
-      {
-        id: 'co-1',
-        title: 'Digital Asset Supply Chain Automation',
-        subtitle: 'Linking engineering repositories with global Marcom content systems.',
-        metrics: '67% Cycle Cut · Automated API Handoffs',
-        star: {
-          situation: 'Manual handoffs between code repositories and content CMS created severe release lag.',
-          task: 'Automate content extraction, validation, and delivery pipeline.',
-          action: 'Architected automated GitHub webhook pipeline feeding content into localization engines.',
-          result: 'Cut turnaround time from 15 to 5 business days with zero manual file copying errors.',
-        },
-        l6Principle: 'Automating content plumbing lets creative teams focus purely on messaging quality.',
-      },
-      {
-        id: 'co-2',
-        title: 'Geopolitical Readiness & Brand Compliance',
-        subtitle: 'Cross-market content validation preventing cultural and geopolitical missteps.',
-        metrics: '200+ Mkts Protected · 0 Brand Violations',
-        star: {
-          situation: 'Multi-market storefront assets risked geopolitical and regulatory brand exposure.',
-          task: 'Establish pre-flight editorial clearance gates without slowing publishing velocity.',
-          action: 'Implemented standardized geopolitical clearance scorecards integrated with Legal and PR.',
-          result: 'Cleared 200+ global storefront markets with 100% compliance across international guidelines.',
-        },
-        l6Principle: 'Geopolitical compliance must be preventative and automated rather than reactive.',
-      },
-    ],
-  },
   {
     id: 'eval-feedback',
     number: '02',

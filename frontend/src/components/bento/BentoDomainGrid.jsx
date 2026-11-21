@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   FileText,
   CheckSquare,
@@ -142,6 +143,8 @@ export const BentoDomainGrid = ({
   allFlipped,
   onExpand,
 }) => {
+  const { i18n } = useTranslation();
+  const isPt = i18n.language && i18n.language.startsWith('pt');
   const [selectedDomainId, setSelectedDomainId] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -199,7 +202,11 @@ export const BentoDomainGrid = ({
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">
             <Filter className="w-3.5 h-3.5" />
-            <span>Tier 2 Architecture · 10 Specialized Domains</span>
+            <span>
+              {isPt
+                ? `Arquitetura Tier 2 · ${domains.length} Domínios Especializados`
+                : `Tier 2 Architecture · ${domains.length} Specialized Domains`}
+            </span>
           </div>
           <h2 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
             Specialized Operational Domains
