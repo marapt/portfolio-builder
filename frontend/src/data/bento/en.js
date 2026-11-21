@@ -437,7 +437,8 @@ export const topPillars = [
         title: 'Operational Business Intelligence',
         shortName: 'BI & Telemetry',
         icon: 'BarChart3',
-        description: 'Real-time pipeline analytics, predictive bottleneck modeling, and stakeholder dashboards.',
+        description:
+          'Partnering with the Internal BI + Data Analytics Team to automate pipeline tracking, burndown metrics and executive dashboards.',
         subCards: [
           {
             id: 'bit-bf',

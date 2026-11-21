@@ -437,7 +437,8 @@ export const topPillars = [
         title: 'Business Intelligence e Telemetria Operacional',
         shortName: 'BI & Telemetria',
         icon: 'BarChart3',
-        description: 'Análise de fluxos em tempo real, deteção preventiva de estrangulamentos e painéis para liderança.',
+        description:
+          'Colaboração com a equipa interna de BI e análise de dados para automatizar o acompanhamento de fluxos, métricas de execução e dashboards executivos.',
         subCards: [
           {
             id: 'bit-bf',
