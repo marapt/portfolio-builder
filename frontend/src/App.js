@@ -14,6 +14,7 @@ import GTMDashboard from './pages/GTMDashboard';
 import TrainingNMTCaseStudy from './pages/TrainingNMTCaseStudy';
 import CareerPage from './pages/CareerPage';
 import AboutPage from './pages/AboutPage';
+import ExperiencesPage from './pages/ExperiencesPage';
 import VideoBubble from './components/VideoBubble';
 
 const ScrollToHash = () => {
@@ -62,6 +63,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/gtm" element={<GTMDashboard />} />
           <Route path="/career" element={<CareerPage />} />
+          <Route path="/experiences" element={<ExperiencesPage />} />
+          <Route path="/bento" element={<ExperiencesPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
         <VideoBubble />
