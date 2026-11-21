@@ -79,8 +79,8 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
           </h2>
           <p className="text-slate-400 text-sm mt-1 max-w-2xl">
             {isPt
-              ? 'Com foco em Capacitação Operacional e Governação, o objetivo principal é evidenciar como atuo de forma autónoma para conferir estrutura, eficiência e escala a programas operacionais multifuncionais.'
-              : 'Focusing on Operational Enablement and Governance, main goals are to showcase how I operate autonomously to bring structure, efficiency and scale to cross-functional operational programs.'}
+              ? 'Com foco em Capacitação Operacional e Governação, o meu objetivo é demonstrar como atuo de forma autónoma para conferir estrutura, eficiência e escala a programas multifuncionais.'
+              : 'Focusing on Operational Enablement and Governance, my goal is to show how I operate autonomously to bring structure, efficiency, and scale to cross-functional programs.'}
           </p>
         </div>
 
