@@ -365,7 +365,7 @@ export const topPillars = [
         subCards: [
           {
             id: 'occ-workforce-portal',
-            title: 'Microsoft Careers Revamp -\nContingent Workforce Portal & Labour Compliance',
+            title: 'Microsoft - Careers Web Revamp -\nContingent Workforce Portal & Labour Compliance',
             subtitle:
               'Revamping Microsoft\'s Careers Website and Workforce Portal to satisfy contingent labour laws and streamline operational handoffs.',
             tag: 'Controls & Compliance',
