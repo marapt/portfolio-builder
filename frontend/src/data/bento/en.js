@@ -483,11 +483,12 @@ export const topPillars = [
           },
           {
             id: 'bit-1',
-            title: 'Microsoft Power BI - Vendor Ops/SLAs and Business Continuity',
+            title: "Block and LinkedIn - Operations Enablement, SLA's and Business Continuity",
             subtitle:
               'Unified stage-by-stage telemetry connecting Vendor TMS and Jira into proactive SLA alerting.',
             tag: 'BI & Telemetry',
-            proofAnchor: 'microsoft',
+            proofAnchor: 'block-linkedin',
+            proofAnchors: ['block', 'linkedin'],
             metrics: '20+ Stakeholders · >50% Query Reduction · Automated Alerts',
             star: {
               situation:

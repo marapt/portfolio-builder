@@ -483,11 +483,12 @@ export const topPillars = [
           },
           {
             id: 'bit-1',
-            title: 'Microsoft Power BI - Vendor Ops/SLAs e Continuidade de Negócio',
+            title: 'Block e LinkedIn - Capacitação Operacional, SLAs e Continuidade de Negócio',
             subtitle:
               'Telemetria etapa a etapa unificando TMS de fornecedores e Jira com alertas proativos de SLA.',
             tag: 'BI & Telemetria',
-            proofAnchor: 'microsoft',
+            proofAnchor: 'block-linkedin',
+            proofAnchors: ['block', 'linkedin'],
             metrics: '20+ Partes Interessadas · >50% Redução de Pedidos de Estado',
             star: {
               situation:

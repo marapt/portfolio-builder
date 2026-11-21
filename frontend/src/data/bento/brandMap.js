@@ -56,6 +56,11 @@ export const companyBrandMap = {
     logo: '/company-logos/block.svg',
     logos: ['/company-logos/block.svg', '/company-logos/microsoft.svg'],
   },
+  'block-linkedin': {
+    name: 'Block & LinkedIn',
+    logo: '/company-logos/block.svg',
+    logos: ['/company-logos/block.svg', '/company-logos/linkedin.svg'],
+  },
 };
 
 export const getCompanyBrand = (anchor) => {
@@ -87,6 +92,9 @@ export const getCompanyBrands = (cardOrAnchor) => {
   // If specific compound anchor exists, check if it maps to individual brands
   if (anchor === 'block-microsoft' || anchor === 'block+microsoft') {
     return [companyBrandMap.block, companyBrandMap.microsoft].filter(Boolean);
+  }
+  if (anchor === 'block-linkedin' || anchor === 'block+linkedin') {
+    return [companyBrandMap.block, companyBrandMap.linkedin].filter(Boolean);
   }
 
   if (companyBrandMap[anchor]) {
