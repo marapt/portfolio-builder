@@ -9,7 +9,7 @@ export const bentoHero = {
     'Showcasing my experience in enterprise governance models, extended workforce vendor management and field-tested processes through structured STAR cards.',
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
-    { label: 'Operational Domains', value: '7 Categories' },
+    { label: 'Operational Domains', value: '6 Categories' },
     { label: 'Interactive Cards', value: '26 STAR Cards' },
   ],
 };
@@ -250,6 +250,39 @@ export const topPillars = [
             'Fully restored string pipelines with zero customer impact, permanently eliminating the root cause and fostering high psychological safety across teams.',
         },
         l6Principle: 'Blameless retrospectives convert operational failures into permanent system resilience.',
+      },
+    ],
+    extendedSubsections: [
+      {
+        id: 'operational-controls',
+        number: '08',
+        title: 'Operational Controls and Compliance',
+        shortName: 'Controls & Compliance',
+        icon: 'Lock',
+        description: 'Regulatory compliance, living risk registries, and audit readiness.',
+        subCards: [
+          {
+            id: 'occ-workforce-portal',
+            title: 'Contingent Workforce Portal & Labour Compliance Globalization',
+            subtitle:
+              'Revamping Microsoft\'s Careers Website and Workforce Portal to satisfy contingent labour laws and streamline operational handoffs.',
+            tag: 'Controls & Compliance',
+            proofAnchor: 'microsoft',
+            metrics: 'Microsoft · Global Labour Compliance · Cross-Team Workflows',
+            star: {
+              situation:
+                'In order to be legally compliant with Temporary Contingent Workforce and Labour Laws, the Procurement team wanted to revamp its Careers Website and Workforce Portal, which required aligning cross-functional stakeholders, content and operational workflows, and candidate or staffing visibility without fragmented handoffs, unclear status tracking, or manual bottlenecks across teams.',
+              task:
+                'Helped develop and operationalize the globalization of the Careers Website and Workforce Portal experience so stakeholders and workforce program teams had clear workflows, structured intake and visibility, and reliable operational execution at global scale.',
+              action:
+                'Partnered across product, engineering, and operational stakeholders to map end-to-end portal and workforce workflows, align on clear requirements and tracking views, and establish structured operational handoffs and visibility across the Careers Website and Workforce Portal.',
+              result:
+                'Delivered a cohesive Careers Website and Workforce Portal capability that streamlined cross-team coordination and operational visibility across workforce and hiring enablement workflows.',
+            },
+            l6Principle:
+              'Strong portals and workforce systems succeed when workflow design, clear ownership, and operational visibility are built in from the start.',
+          },
+        ],
       },
     ],
   },
@@ -620,37 +653,6 @@ export const operationalDomains = [
           result: 'Successfully scaled throughput by 300% to support global campaign rollouts across 17 international markets.',
         },
         l6Principle: 'Strategic vendor ecosystems act as elastic multipliers for core engineering and product teams.',
-      },
-    ],
-  },
-  {
-    id: 'operational-controls',
-    number: '08',
-    title: 'Operational Controls and Compliance',
-    shortName: 'Controls & Compliance',
-    icon: 'Lock',
-    description: 'Regulatory compliance, living risk registries, and audit readiness.',
-    subCards: [
-      {
-        id: 'occ-workforce-portal',
-        title: 'Contingent Workforce Portal & Labour Compliance Globalization',
-        subtitle:
-          'Revamping Microsoft\'s Careers Website and Workforce Portal to satisfy contingent labour laws and streamline operational handoffs.',
-        tag: 'Controls & Compliance',
-        proofAnchor: 'microsoft',
-        metrics: 'Microsoft · Global Labour Compliance · Cross-Team Workflows',
-        star: {
-          situation:
-            'In order to be legally compliant with Temporary Contingent Workforce and Labour Laws, the Procurement team wanted to revamp its Careers Website and Workforce Portal, which required aligning cross-functional stakeholders, content and operational workflows, and candidate or staffing visibility without fragmented handoffs, unclear status tracking, or manual bottlenecks across teams.',
-          task:
-            'Helped develop and operationalize the globalization of the Careers Website and Workforce Portal experience so stakeholders and workforce program teams had clear workflows, structured intake and visibility, and reliable operational execution at global scale.',
-          action:
-            'Partnered across product, engineering, and operational stakeholders to map end-to-end portal and workforce workflows, align on clear requirements and tracking views, and establish structured operational handoffs and visibility across the Careers Website and Workforce Portal.',
-          result:
-            'Delivered a cohesive Careers Website and Workforce Portal capability that streamlined cross-team coordination and operational visibility across workforce and hiring enablement workflows.',
-        },
-        l6Principle:
-          'Strong portals and workforce systems succeed when workflow design, clear ownership, and operational visibility are built in from the start.',
       },
     ],
   },

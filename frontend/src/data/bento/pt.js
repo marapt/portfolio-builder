@@ -9,7 +9,7 @@ export const bentoHero = {
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.',
   quickStats: [
     { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
-    { label: 'Domínios Operacionais', value: '7 Categorias' },
+    { label: 'Domínios Operacionais', value: '6 Categorias' },
     { label: 'Cartões Interativos', value: '26 Cartões STAR' },
   ],
 };
@@ -250,6 +250,39 @@ export const topPillars = [
             'Restaurei integralmente os pipelines sem impacto para clientes, eliminando a causa-raiz de forma definitiva.',
         },
         l6Principle: 'Análises construtivas convertem falhas pontuais em resiliência sistémica duradoura.',
+      },
+    ],
+    extendedSubsections: [
+      {
+        id: 'operational-controls',
+        number: '08',
+        title: 'Controlos Operacionais e Conformidade',
+        shortName: 'Controlos & Conformidade',
+        icon: 'Lock',
+        description: 'Conformidade regulamentar, gestão dinâmica de riscos e auditorias contínuas.',
+        subCards: [
+          {
+            id: 'occ-workforce-portal',
+            title: 'Portal de Força de Trabalho Global e Conformidade com Leis Laborais',
+            subtitle:
+              'Modernização do portal de carreiras e força de trabalho da Microsoft para cumprir leis laborais e eliminar fricções operacionais.',
+            tag: 'Controlos & Conformidade',
+            proofAnchor: 'microsoft',
+            metrics: 'Microsoft · Conformidade Laboral · Fluxos Integrados',
+            star: {
+              situation:
+                'Para garantir conformidade legal com leis laborais e de trabalho temporário/contingente, a equipa de Procurement pretendia modernizar o Careers Website e o Workforce Portal, exigindo o alinhamento de partes interessadas, fluxos de conteúdo/operações e visibilidade de recrutamento sem transferências fragmentadas ou estrangulamentos manuais.',
+              task:
+                'Ajudei a desenvolver e operacionalizar a globalização da experiência do Careers Website e Workforce Portal para que as equipas de programas tivessem fluxos claros, admissão estruturada e execução operacional fiável a nível global.',
+              action:
+                'Colaborei com equipas de produto, engenharia e operações para mapear fluxos de trabalho ponta a ponta, alinhar requisitos e vistas de acompanhamento, e estabelecer transferências operacionais estruturadas entre o Careers Website e o Workforce Portal.',
+              result:
+                'Entreguei uma plataforma coesa de Careers Website e Workforce Portal que otimizou a coordenação entre equipas e a visibilidade operacional nos fluxos de gestão e contratação de força de trabalho.',
+            },
+            l6Principle:
+              'Grandes portais e sistemas de gestão de força de trabalho triunfam quando o desenho de fluxos, a titularidade clara e a visibilidade operacional são concebidos desde o primeiro dia.',
+          },
+        ],
       },
     ],
   },
@@ -620,37 +653,6 @@ export const operationalDomains = [
           result: 'Tripliquei a capacidade de entrega e apoiei campanhas globais em 17 mercados em simultâneo.',
         },
         l6Principle: 'Fornecedores estratégicos devem funcionar como uma extensão flexível das equipas internas.',
-      },
-    ],
-  },
-  {
-    id: 'operational-controls',
-    number: '08',
-    title: 'Controlos Operacionais e Conformidade',
-    shortName: 'Controlos & Conformidade',
-    icon: 'Lock',
-    description: 'Conformidade regulamentar, gestão dinâmica de riscos e auditorias contínuas.',
-    subCards: [
-      {
-        id: 'occ-workforce-portal',
-        title: 'Portal de Força de Trabalho Global e Conformidade com Leis Laborais',
-        subtitle:
-          'Modernização do portal de carreiras e força de trabalho da Microsoft para cumprir leis laborais e eliminar fricções operacionais.',
-        tag: 'Controlos & Conformidade',
-        proofAnchor: 'microsoft',
-        metrics: 'Microsoft · Conformidade Laboral · Fluxos Integrados',
-        star: {
-          situation:
-            'Para garantir conformidade legal com leis laborais e de trabalho temporário/contingente, a equipa de Procurement pretendia modernizar o Careers Website e o Workforce Portal, exigindo o alinhamento de partes interessadas, fluxos de conteúdo/operações e visibilidade de recrutamento sem transferências fragmentadas ou estrangulamentos manuais.',
-          task:
-            'Ajudei a desenvolver e operacionalizar a globalização da experiência do Careers Website e Workforce Portal para que as equipas de programas tivessem fluxos claros, admissão estruturada e execução operacional fiável a nível global.',
-          action:
-            'Colaborei com equipas de produto, engenharia e operações para mapear fluxos de trabalho ponta a ponta, alinhar requisitos e vistas de acompanhamento, e estabelecer transferências operacionais estruturadas entre o Careers Website e o Workforce Portal.',
-          result:
-            'Entreguei uma plataforma coesa de Careers Website e Workforce Portal que otimizou a coordenação entre equipas e a visibilidade operacional nos fluxos de gestão e contratação de força de trabalho.',
-        },
-        l6Principle:
-          'Grandes portais e sistemas de gestão de força de trabalho triunfam quando o desenho de fluxos, a titularidade clara e a visibilidade operacional são concebidos desde o primeiro dia.',
       },
     ],
   },

@@ -9,6 +9,7 @@ import {
   LayoutGrid,
   DollarSign,
   BarChart3,
+  Lock,
 } from 'lucide-react';
 import BentoCard from './BentoCard';
 
@@ -23,6 +24,7 @@ const subsectionIcons = {
   ShieldCheck,
   DollarSign,
   BarChart3,
+  Lock,
 };
 
 const subsectionThemeMap = {
@@ -32,6 +34,13 @@ const subsectionThemeMap = {
     badge: 'bg-cyan-100/80 text-cyan-800 border-cyan-200/60',
     cardColor: 'cyan',
     Icon: ShieldCheck,
+  },
+  'operational-controls': {
+    border: 'border-emerald-200/80',
+    iconBg: 'bg-emerald-100 border-emerald-200 text-emerald-800',
+    badge: 'bg-emerald-100/80 text-emerald-800 border-emerald-200/60',
+    cardColor: 'emerald',
+    Icon: Lock,
   },
   'finance-opex': {
     border: 'border-amber-200/80',
