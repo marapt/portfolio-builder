@@ -11,6 +11,7 @@ import {
   Lock,
   Globe,
   FileText,
+  Languages,
 } from 'lucide-react';
 import BentoCard from './BentoCard';
 
@@ -28,6 +29,7 @@ const subsectionIcons = {
   Lock,
   Globe,
   FileText,
+  Languages,
 };
 
 const subsectionThemeMap = {
@@ -37,6 +39,13 @@ const subsectionThemeMap = {
     badge: 'bg-emerald-100/80 text-emerald-800 border-emerald-200/60',
     cardColor: 'emerald',
     Icon: FileText,
+  },
+  'global-language': {
+    border: 'border-violet-200/80',
+    iconBg: 'bg-violet-100 border-violet-200 text-violet-800',
+    badge: 'bg-violet-100/80 text-violet-800 border-violet-200/60',
+    cardColor: 'violet',
+    Icon: Languages,
   },
   'global-expansion-gtm': {
     border: 'border-violet-200/80',

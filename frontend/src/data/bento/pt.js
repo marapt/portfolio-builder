@@ -9,7 +9,7 @@ export const bentoHero = {
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.',
   quickStats: [
     { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
-    { label: 'Domínios Operacionais', value: '5 Categorias' },
+    { label: 'Domínios Operacionais', value: '4 Categorias' },
     { label: 'Cartões Interativos', value: '26 Cartões STAR' },
   ],
 };
@@ -25,6 +25,30 @@ export const topPillars = [
     color: 'violet',
     subCards: [],
     extendedSubsections: [
+      {
+        id: 'global-language',
+        number: '05',
+        title: 'Serviços Globais de Idiomas',
+        shortName: 'Serviços de Idiomas',
+        icon: 'Languages',
+        description: 'Cobertura Linguística Global e Soluções de Localização.',
+        subCards: [
+          {
+            id: 'gl-1',
+            title: 'Centro de Excelência (CoE) em Terminologia Corporativa',
+            subtitle: 'Unificação da voz da marca em todo o ecossistema digital de produtos.',
+            tag: 'CoE de Terminologia',
+            metrics: '100% Paridade Global · 26+ Idiomas',
+            star: {
+              situation: 'Terminologia inconsistente entre produto e marketing prejudicava a confiança internacional na marca.',
+              task: 'Centralizar a gestão terminológica numa plataforma corporativa acessível e colaborativa.',
+              action: 'Criei um portal de terminologia na cloud com ferramentas de validação integradas nos fluxos técnicos.',
+              result: 'Consegui 100% de consistência da marca em 26 idiomas e reduzi em 45% os erros linguísticos comunicados.',
+            },
+            l6Principle: 'A coerência terminológica é uma componente essencial da qualidade do produto.',
+          },
+        ],
+      },
       {
         id: 'global-expansion-gtm',
         number: '11',
@@ -662,29 +686,6 @@ export const operationalDomains = [
           result: 'Eliminei tempos de espera noturnos e alcancei respostas em menos de 30 minutos para falhas críticas.',
         },
         l6Principle: 'Operações globais contínuas dependem de comunicações assíncronas claras para não perder informação.',
-      },
-    ],
-  },
-  {
-    id: 'global-language',
-    number: '05',
-    title: 'Serviços Globais de Idiomas',
-    shortName: 'Serviços de Idiomas',
-    icon: 'Languages',
-    description: 'Cobertura Linguística Global e Soluções de Localização.',
-    subCards: [
-      {
-        id: 'gl-1',
-        title: 'Centro de Excelência (CoE) em Terminologia Corporativa',
-        subtitle: 'Unificação da voz da marca em todo o ecossistema digital de produtos.',
-        metrics: '100% Paridade Global · 26+ Idiomas',
-        star: {
-          situation: 'Terminologia inconsistente entre produto e marketing prejudicava a confiança internacional na marca.',
-          task: 'Centralizar a gestão terminológica numa plataforma corporativa acessível e colaborativa.',
-          action: 'Criei um portal de terminologia na cloud com ferramentas de validação integradas nos fluxos técnicos.',
-          result: 'Consegui 100% de consistência da marca em 26 idiomas e reduzi em 45% os erros linguísticos comunicados.',
-        },
-        l6Principle: 'A coerência terminológica é uma componente essencial da qualidade do produto.',
       },
     ],
   },

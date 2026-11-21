@@ -9,7 +9,7 @@ export const bentoHero = {
     'Showcasing my experience in enterprise governance models, extended workforce vendor management and field-tested processes through structured STAR cards.',
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
-    { label: 'Operational Domains', value: '5 Categories' },
+    { label: 'Operational Domains', value: '4 Categories' },
     { label: 'Interactive Cards', value: '26 STAR Cards' },
   ],
 };
@@ -25,6 +25,30 @@ export const topPillars = [
     color: 'violet',
     subCards: [],
     extendedSubsections: [
+      {
+        id: 'global-language',
+        number: '05',
+        title: 'Global Language Services',
+        shortName: 'Language Services',
+        icon: 'Languages',
+        description: 'Global Language Coverage and Localization Solutions.',
+        subCards: [
+          {
+            id: 'gl-1',
+            title: 'Enterprise Terminology Center of Excellence (CoE)',
+            subtitle: 'Unifying global corporate voice across distributed product ecosystems.',
+            tag: 'Terminology CoE',
+            metrics: '100% Global Parity · 26+ Languages',
+            star: {
+              situation: 'Inconsistent terminology across product, marketing, and support eroded brand trust internationally.',
+              task: 'Centralize enterprise terminology governance into an accessible self-service platform.',
+              action: 'Built a cloud-based terminology portal with automated linting extensions for engineering and marketing.',
+              result: 'Achieved 100% brand terminology parity across 26 languages and cut linguistic bug filings by 45%.',
+            },
+            l6Principle: 'Terminology consistency is a core product quality attribute, not an afterthought.',
+          },
+        ],
+      },
       {
         id: 'global-expansion-gtm',
         number: '11',
@@ -662,29 +686,6 @@ export const operationalDomains = [
           result: 'Eliminated overnight idle delays and achieved sub-30-minute response SLAs for critical blockers.',
         },
         l6Principle: 'Follow-the-Sun operations require standardized asynchronous handoff artifacts to prevent context loss.',
-      },
-    ],
-  },
-  {
-    id: 'global-language',
-    number: '05',
-    title: 'Global Language Services',
-    shortName: 'Language Services',
-    icon: 'Languages',
-    description: 'Global Language Coverage and Localization Solutions.',
-    subCards: [
-      {
-        id: 'gl-1',
-        title: 'Enterprise Terminology Center of Excellence (CoE)',
-        subtitle: 'Unifying global corporate voice across distributed product ecosystems.',
-        metrics: '100% Global Parity · 26+ Languages',
-        star: {
-          situation: 'Inconsistent terminology across product, marketing, and support eroded brand trust internationally.',
-          task: 'Centralize enterprise terminology governance into an accessible self-service platform.',
-          action: 'Built a cloud-based terminology portal with automated linting extensions for engineering and marketing.',
-          result: 'Achieved 100% brand terminology parity across 26 languages and cut linguistic bug filings by 45%.',
-        },
-        l6Principle: 'Terminology consistency is a core product quality attribute, not an afterthought.',
       },
     ],
   },

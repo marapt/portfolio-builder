@@ -16,7 +16,6 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     'eval-feedback',
     'ai-data-training',
     'testing-response',
-    'global-language',
     'strategy-enablement',
   ];
 
@@ -67,29 +66,39 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Pillar 01 (Portfolio Governance) has an extended subsection for Global Expansion / GTM in EN and PT', () => {
+  test('Pillar 01 (Portfolio Governance) has extended subsections for Domain 05 and Domain 11 in EN and PT', () => {
     const pgPillarEN = topPillarsEN.find((p) => p.id === 'portfolio-governance');
     const pgPillarPT = topPillarsPT.find((p) => p.id === 'portfolio-governance');
 
     expect(pgPillarEN.extendedSubsections).toBeDefined();
     expect(pgPillarPT.extendedSubsections).toBeDefined();
-    expect(pgPillarEN.extendedSubsections[0].id).toBe('global-expansion-gtm');
-    expect(pgPillarPT.extendedSubsections[0].id).toBe('global-expansion-gtm');
+    expect(pgPillarEN.extendedSubsections).toHaveLength(2);
+    expect(pgPillarPT.extendedSubsections).toHaveLength(2);
+    expect(pgPillarEN.extendedSubsections.map((s) => s.id)).toEqual([
+      'global-language',
+      'global-expansion-gtm',
+    ]);
+    expect(pgPillarPT.extendedSubsections.map((s) => s.id)).toEqual([
+      'global-language',
+      'global-expansion-gtm',
+    ]);
 
-    expect(pgPillarEN.extendedSubsections[0].subCards.length).toBeGreaterThan(0);
-    expect(pgPillarPT.extendedSubsections[0].subCards.length).toBe(
-      pgPillarEN.extendedSubsections[0].subCards.length
-    );
+    pgPillarEN.extendedSubsections.forEach((subSec, sIdx) => {
+      expect(subSec.subCards.length).toBeGreaterThan(0);
+      expect(pgPillarPT.extendedSubsections[sIdx].subCards.length).toBe(
+        subSec.subCards.length
+      );
 
-    pgPillarEN.extendedSubsections[0].subCards.forEach((card) => {
-      expect(card.id).toBeTruthy();
-      expect(card.title).toBeTruthy();
-      expect(card.star).toBeDefined();
-      expect(card.star.situation).toBeTruthy();
-      expect(card.star.task).toBeTruthy();
-      expect(card.star.action).toBeTruthy();
-      expect(card.star.result).toBeTruthy();
-      expect(card.l6Principle).toBeTruthy();
+      subSec.subCards.forEach((card) => {
+        expect(card.id).toBeTruthy();
+        expect(card.title).toBeTruthy();
+        expect(card.star).toBeDefined();
+        expect(card.star.situation).toBeTruthy();
+        expect(card.star.task).toBeTruthy();
+        expect(card.star.action).toBeTruthy();
+        expect(card.star.result).toBeTruthy();
+        expect(card.l6Principle).toBeTruthy();
+      });
     });
   });
 
@@ -192,9 +201,9 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Tier 2 has exactly 5 Specialized Operational Domains in EN and PT', () => {
-    expect(operationalDomainsEN).toHaveLength(5);
-    expect(operationalDomainsPT).toHaveLength(5);
+  test('Tier 2 has exactly 4 Specialized Operational Domains in EN and PT', () => {
+    expect(operationalDomainsEN).toHaveLength(4);
+    expect(operationalDomainsPT).toHaveLength(4);
 
     expect(operationalDomainsEN.map((d) => d.id)).toEqual(expectedDomainIds);
     expect(operationalDomainsPT.map((d) => d.id)).toEqual(expectedDomainIds);
