@@ -158,7 +158,7 @@ export const topPillars = [
         shortName: 'Governação de Parceiros',
         icon: 'ShieldCheck',
         description:
-          'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.).\nParceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento.',
+          'Padronização de modelos de gestão de fornecedores, cadernos de encargos (SOWs), tabelas de preços contratuais, fluxos de admissão e cumprimento de SLAs/SLOs.',
         subCards: [
           {
             id: 'spg-rfp-governance',

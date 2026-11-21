@@ -158,7 +158,7 @@ export const topPillars = [
         shortName: 'Supplier Governance',
         icon: 'ShieldCheck',
         description:
-          'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.).\nPartner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.',
+          'Standardizing vendor management frameworks, Statements of Work (SOWs), contract rate cards, intake flows, and SLA/SLO adherence.',
         subCards: [
           {
             id: 'spg-rfp-governance',
