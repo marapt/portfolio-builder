@@ -154,8 +154,9 @@ export const topPillars = [
   {
     id: 'operations-change',
     number: '03',
-    title: 'Operations & Change Management',
-    subtitle: 'Leading without formal authority, overcoming stakeholder skepticism, and cultural empathy.',
+    title: 'Operational Enablement and Process Optimization',
+    subtitle:
+      'Identify bottlenecks across cross-functional partners / organizations and workflows. Introduce tooling and workflow automations (process automation and integrations).\nAnd lead operational policy integrations and/or deployments (program governance, resource compliance and program data compliance).',
     icon: 'RefreshCw',
     color: 'emerald',
     subCards: [

@@ -154,8 +154,9 @@ export const topPillars = [
   {
     id: 'operations-change',
     number: '03',
-    title: 'Operações e Gestão da Mudança',
-    subtitle: 'Liderança sem autoridade formal, superação de ceticismo e empatia cultural.',
+    title: 'Capacitação Operacional e Otimização de Processos',
+    subtitle:
+      'Identificar estrangulamentos entre parceiros multifuncionais, organizações e fluxos de trabalho. Introduzir ferramentas e automação de fluxos (automação e integração de processos).\nLiderar a integração e implementação de políticas operacionais (governação de programas, conformidade de recursos e conformidade de dados).',
     icon: 'RefreshCw',
     color: 'emerald',
     subCards: [
