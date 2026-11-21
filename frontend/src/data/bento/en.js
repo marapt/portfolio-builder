@@ -443,7 +443,8 @@ export const operationalDomains = [
     title: 'Supplier and Partner Governance',
     shortName: 'Supplier Governance',
     icon: 'ShieldCheck',
-    description: 'Extended workforce (xWS) security, RBAC access controls, and compliance audits.',
+    description:
+      "Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.).\nPartner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows.",
     subCards: [
       {
         id: 'spg-1',

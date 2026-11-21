@@ -443,7 +443,8 @@ export const operationalDomains = [
     title: 'Governação de Fornecedores e Parceiros',
     shortName: 'Governação de Parceiros',
     icon: 'ShieldCheck',
-    description: 'Segurança da força de trabalho externa (xWS), controlo de acessos por função e auditorias de conformidade.',
+    description:
+      'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.).\nParceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento.',
     subCards: [
       {
         id: 'spg-1',

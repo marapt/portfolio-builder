@@ -335,7 +335,7 @@ export const BentoDomainGrid = ({
                     </div>
                   </div>
 
-                  <p className="text-xs md:text-sm text-gray-600 max-w-md sm:text-right font-normal leading-relaxed">
+                  <p className="text-xs md:text-sm text-gray-600 max-w-xl sm:text-right font-normal leading-relaxed whitespace-pre-line">
                     {domain.description}
                   </p>
                 </div>
