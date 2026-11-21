@@ -330,20 +330,25 @@ export const BentoCard = ({
               {star.result && (
                 <div className="bg-emerald-950/40 rounded-lg p-2.5 border-l-2 border-emerald-500 border border-emerald-500/30">
                   <span className="font-bold text-emerald-400 uppercase tracking-wide block text-[10px] mb-0.5">
-                    Result & Impact
+                    Results
                   </span>
                   <p className="text-slate-200 font-medium leading-relaxed line-clamp-3">{star.result}</p>
                 </div>
               )}
             </div>
 
-            {/* L6 Principle Callout */}
+            {/* L6 Principle / Learning Callout */}
             {card.l6Principle && (
               <div className="mt-3 p-2.5 rounded-lg bg-indigo-950/40 border border-indigo-500/40 flex items-start gap-2">
                 <Lightbulb className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                <p className="text-[11px] text-indigo-200 italic leading-snug line-clamp-2">
-                  {card.l6Principle}
-                </p>
+                <div className="min-w-0 flex-1">
+                  <span className="font-bold text-indigo-300 uppercase tracking-wide block text-[10px] mb-0.5">
+                    Learning
+                  </span>
+                  <p className="text-[11px] text-indigo-200 italic leading-snug line-clamp-2">
+                    {card.l6Principle}
+                  </p>
+                </div>
               </div>
             )}
           </div>

@@ -172,7 +172,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
           {star.situation && (
             <div className="bg-slate-950/70 rounded-2xl p-4 sm:p-5 border-l-4 border-amber-500 border border-slate-800/80 shadow-sm">
               <span className="font-bold text-amber-400 uppercase tracking-wide text-xs block mb-1">
-                Situation & Context
+                Situation
               </span>
               <p className="text-sm text-slate-200 leading-relaxed font-normal">
                 {star.situation}
@@ -183,7 +183,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
           {star.task && (
             <div className="bg-slate-950/70 rounded-2xl p-4 sm:p-5 border-l-4 border-sky-500 border border-slate-800/80 shadow-sm">
               <span className="font-bold text-sky-400 uppercase tracking-wide text-xs block mb-1">
-                Task & Executive Mandate
+                Task
               </span>
               <p className="text-sm text-slate-200 leading-relaxed font-normal">
                 {star.task}
@@ -194,7 +194,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
           {star.action && (
             <div className="bg-slate-950/70 rounded-2xl p-4 sm:p-5 border-l-4 border-indigo-500 border border-slate-800/80 shadow-sm">
               <span className="font-bold text-indigo-400 uppercase tracking-wide text-xs block mb-1">
-                Action & Governance Architecture
+                Action
               </span>
               <p className="text-sm text-slate-200 leading-relaxed font-normal">
                 {star.action}
@@ -205,7 +205,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
           {star.result && (
             <div className="bg-emerald-950/30 rounded-2xl p-4 sm:p-5 border-l-4 border-emerald-500 border border-emerald-500/30 shadow-sm">
               <span className="font-bold text-emerald-400 uppercase tracking-wide text-xs block mb-1">
-                Result & Measurable Business Impact
+                Results
               </span>
               <p className="text-sm sm:text-base text-white font-medium leading-relaxed">
                 {star.result}
@@ -218,7 +218,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
               <Lightbulb className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-300 block mb-0.5">
-                  Leadership Principle
+                  Learning
                 </span>
                 <p className="text-xs sm:text-sm text-indigo-100 italic leading-relaxed">
                   {card.l6Principle}
