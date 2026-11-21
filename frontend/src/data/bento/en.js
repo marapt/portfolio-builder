@@ -23,65 +23,7 @@ export const topPillars = [
       'Design, standardize and scale operating models and review cadences across all pillars. Establish structured intake, resource allocation and program prioritization processes.',
     icon: 'Layers',
     color: 'violet',
-    subCards: [
-      {
-        id: 'pg-1',
-        title: 'Global Release Train & Multi-Market Governance',
-        subtitle: 'Enterprise release train coordination across 45+ international storefront markets.',
-        tag: 'Portfolio Governance',
-        metrics: '45+ Mkts · Zero Launch Slips',
-        proofAnchor: 'microsoft',
-        star: {
-          situation:
-            'At Microsoft, global releases across 45+ international markets suffered from fragmented intake and uncoordinated regional marketing handoffs, putting critical launch windows at risk.',
-          task:
-            'Establish an end-to-end Release Train governance model aligning Product, Engineering, Geopolitical Content, and regional operations under unified milestone gates.',
-          action:
-            'Designed a synchronized 6-week cadence with strict T-minus operational readiness checkpoints; integrated automated pre-flight compliance checks; instituted cross-functional Launch Retrospectives.',
-          result:
-            'Achieved 100% on-time launch delivery across 45+ markets with zero critical geopolitical blockers, establishing the benchmark Rhythm of the Business (ROB) scorecard.',
-        },
-        l6Principle: 'Minimum Viable Governance (MVG) accelerates engineering velocity by eliminating ad-hoc friction.',
-      },
-      {
-        id: 'pg-2',
-        title: 'Minimum Viable Governance (MVG) Architecture',
-        subtitle: 'Balancing developer velocity with regulatory compliance and cross-system parity.',
-        tag: 'Framework Design',
-        metrics: 'Dual-System Parity · 100% Audit Pass',
-        proofAnchor: 'block',
-        star: {
-          situation:
-            'Engineering teams paused feature rollout due to fears that compliance checkpoints would slow sprint velocity, while operations faced audit exposure across international payment flows.',
-          task:
-            'Reconcile engineering autonomy with regulatory compliance by designing lightweight, automated governance guardrails.',
-          action:
-            'Mapped existing CI/CD pipelines to embed asynchronous compliance validation via Jira/GitHub API webhooks; decoupled non-blocking administrative audits from release-blocking security gates.',
-          result:
-            'Preserved continuous engineering release cycles while maintaining 100% audit compliance across multi-jurisdictional fintech requirements.',
-        },
-        l6Principle: 'Governance must be built directly into developer workflows rather than imposed as an external hurdle.',
-      },
-      {
-        id: 'pg-3',
-        title: 'Multi-Stream Timeline Slip & Dependency Triage',
-        subtitle: 'Proactive critical-path recovery across decoupled hardware and software dependencies.',
-        tag: 'Dependency Triage',
-        metrics: '2-Week Slip Recovered · Critical Path Protected',
-        proofAnchor: 'apple-2014',
-        star: {
-          situation:
-            'A core upstream localization API slipped by two weeks, threatening a synchronized worldwide software and support documentation milestone.',
-          task:
-            'Recover schedule slippage without compromising QA depth or overloading cross-functional teams.',
-          action:
-            'Conducted critical-path dependency analysis; isolated non-blocking string freezes; staged rolling handoffs across 24/7 Follow-the-Sun vendor shifts; prioritized Tier-1 core user flows.',
-          result:
-            'Absorbed the entire 2-week schedule slip with zero customer-facing launch delay and zero regression defects in localized production builds.',
-        },
-        l6Principle: 'Schedule management requires decoupled staging and proactive float allocation rather than reactive crunch.',
-      },
-    ],
+    subCards: [],
     extendedSubsections: [
       {
         id: 'global-expansion-gtm',

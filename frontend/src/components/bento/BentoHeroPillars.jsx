@@ -225,21 +225,23 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
               </div>
 
               {/* Subcards Grid (up to 3 cards per pillar) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {(pillar.subCards || []).map((card) => (
-                  <BentoCard
-                    key={card.id}
-                    card={card}
-                    color={pillar.color || 'indigo'}
-                    domainTitle={pillar.title}
-                    isFlippedControlled={
-                      flippedCards ? !!flippedCards[card.id] : undefined
-                    }
-                    onToggleFlip={onToggleFlip}
-                    onExpand={onExpand}
-                  />
-                ))}
-              </div>
+              {(pillar.subCards || []).length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {pillar.subCards.map((card) => (
+                    <BentoCard
+                      key={card.id}
+                      card={card}
+                      color={pillar.color || 'indigo'}
+                      domainTitle={pillar.title}
+                      isFlippedControlled={
+                        flippedCards ? !!flippedCards[card.id] : undefined
+                      }
+                      onToggleFlip={onToggleFlip}
+                      onExpand={onExpand}
+                    />
+                  ))}
+                </div>
+              )}
 
               {/* Extended Subsections (e.g. Domain 07 in Pillar 02, Domains 09 & 10 in Pillar 04) */}
               {(pillar.extendedSubsections || []).map((subSec) => {

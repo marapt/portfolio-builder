@@ -23,65 +23,7 @@ export const topPillars = [
       'Desenhar, padronizar e escalar modelos operacionais e cadências de revisão em todos os pilares. Estabelecer processos estruturados de admissão, alocação de recursos e priorização de programas.',
     icon: 'Layers',
     color: 'violet',
-    subCards: [
-      {
-        id: 'pg-1',
-        title: 'Release Train Global e Governação Multi-Mercado',
-        subtitle: 'Coordenação de lançamentos empresariais em mais de 45 mercados internacionais.',
-        tag: 'Governação de Portfólio',
-        metrics: '45+ Mercados · Zero Atrasos de Lançamento',
-        proofAnchor: 'microsoft',
-        star: {
-          situation:
-            'Na Microsoft, os lançamentos globais em mais de 45 mercados internacionais sofriam com admissão fragmentada e transições desarticuladas, colocando em risco janelas críticas de lançamento.',
-          task:
-            'Estabelecer um modelo de governação de Release Train de ponta a ponta alinhando Produto, Engenharia, Conteúdo Geopolítico e operações regionais sob pontos de controlo unificados.',
-          action:
-            'Concebi uma cadência sincronizada de 6 semanas com pontos de verificação operacionais rigorosos; integrei verificações automatizadas de conformidade e institui retrospetivas multifuncionais de lançamento.',
-          result:
-            'Alcancei 100% de entregas no prazo em mais de 45 mercados com zero bloqueios geopolíticos críticos, estabelecendo o painel de avaliação de referência da organização.',
-        },
-        l6Principle: 'A Governação Mínima Viável (MVG) acelera a velocidade da engenharia eliminando atritos pontuais.',
-      },
-      {
-        id: 'pg-2',
-        title: 'Arquitetura de Governação Mínima Viável (MVG)',
-        subtitle: 'Equilibrar a velocidade dos programadores com a conformidade regulamentar.',
-        tag: 'Desenho de Estruturas',
-        metrics: 'Paridade de Sistemas · 100% Conformidade em Auditoria',
-        proofAnchor: 'block',
-        star: {
-          situation:
-            'As equipas de engenharia pausaram lançamentos por receio de que as verificações de conformidade abrandassem a velocidade dos sprints, enquanto as operações enfrentavam riscos de auditoria em pagamentos internacionais.',
-          task:
-            'Harmonizar a autonomia da engenharia com a conformidade regulamentar, desenhando barreiras de governação leves e automatizadas.',
-          action:
-            'Mapeei os pipelines de CI/CD para incorporar validação assíncrona de conformidade através de webhooks da API Jira/GitHub; separei auditorias não bloqueantes de barreiras críticas de segurança.',
-          result:
-            'Preservei os ciclos contínuos de lançamento da engenharia, mantendo 100% de conformidade com as exigências regulamentares de fintech.',
-        },
-        l6Principle: 'A governação deve ser integrada diretamente nos fluxos de trabalho dos programadores e não imposta como obstáculo.',
-      },
-      {
-        id: 'pg-3',
-        title: 'Triagem de Dependências e Recuperação de Cronogramas',
-        subtitle: 'Recuperação proativa do caminho crítico entre dependências de hardware e software.',
-        tag: 'Triagem de Dependências',
-        metrics: 'Desvio de 2 Semanas Recuperado · Caminho Crítico Protegido',
-        proofAnchor: 'apple-2014',
-        star: {
-          situation:
-            'Uma API de localização atrasou-se duas semanas, ameaçando um marco mundial sincronizado de software e documentação de suporte.',
-          task:
-            'Recuperar o atraso no cronograma sem comprometer o rigor dos testes de qualidade ou sobrecarregar as equipas.',
-          action:
-            'Conduzi uma análise do caminho crítico; isolei congelamentos de texto não bloqueantes; estruturei transições em turnos 24/7 Follow-the-Sun; priorizei fluxos centrais de utilizador.',
-          result:
-            'Recuperei todo o desvio de duas semanas sem impacto para os clientes e com zero defeitos de regressão.',
-        },
-        l6Principle: 'A gestão de prazos exige escalonamento modular e gestão preventiva de margens de segurança.',
-      },
-    ],
+    subCards: [],
     extendedSubsections: [
       {
         id: 'global-expansion-gtm',

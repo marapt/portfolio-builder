@@ -31,7 +31,13 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
 
   test('Each Top Pillar has valid subcards with complete STAR data', () => {
     topPillarsEN.forEach((pillar, pIdx) => {
-      expect(pillar.subCards.length).toBeGreaterThan(0);
+      const totalCards =
+        (pillar.subCards?.length || 0) +
+        (pillar.extendedSubsections || []).reduce(
+          (acc, s) => acc + (s.subCards?.length || 0),
+          0
+        );
+      expect(totalCards).toBeGreaterThan(0);
       expect(pillar.subCards.length).toBeLessThanOrEqual(8);
 
       pillar.subCards.forEach((card) => {
