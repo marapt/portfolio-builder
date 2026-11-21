@@ -419,25 +419,6 @@ export const topPillars = [
     color: 'amber',
     subCards: [
       {
-        id: 'eh-1',
-        title: 'Leading vs. Lagging Telemetry Dashboards',
-        subtitle: 'Predicting launch bottlenecks before they become executive escalations.',
-        tag: 'Telemetry Architecture',
-        metrics: '99% Predictive Accuracy · Zero Surprise Slips',
-        proofAnchor: 'block',
-        star: {
-          situation:
-            'Executive leadership previously relied on lagging post-launch milestone retrospectives, discovering budget overruns and quality slips only after releases had occurred.',
-          task:
-            'Design an executive operational telemetry model providing real-time visibility into pipeline health and leading bottleneck indicators.',
-          action:
-            'Built a dual-tier dashboard tracking leading metrics (intake velocity, PR review lag, vendor capacity %) alongside lagging KPIs (on-time delivery, defect density, spend variance); established weekly flash digests.',
-          result:
-            'Enabled leadership to spot and mitigate capacity constraints 3 weeks before release freeze, cutting surprise launch delays to zero.',
-        },
-        l6Principle: 'Leading indicators provide decision leverage; lagging indicators only provide an autopsy.',
-      },
-      {
         id: 'eh-2',
         title: 'Block and Microsoft - Annual Performance Reviews + MBRs/QBRs',
         subtitle:

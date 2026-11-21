@@ -419,25 +419,6 @@ export const topPillars = [
     color: 'amber',
     subCards: [
       {
-        id: 'eh-1',
-        title: 'Painéis com Indicadores Preditivos vs. Tardios',
-        subtitle: 'Antecipar estrangulamentos antes que se transformem em crises executivas.',
-        tag: 'Arquitetura de Métricas',
-        metrics: '99% Precisão Preditiva · Zero Atrasos Surpresa',
-        proofAnchor: 'block',
-        star: {
-          situation:
-            'A liderança executiva dependia de retrospetivas tardias pós-lançamento, descobrindo derrapagens orçamentais apenas após a entrega dos projetos.',
-          task:
-            'Desenhar um modelo de telemetria operacional com visibilidade em tempo real sobre a saúde dos fluxos de trabalho.',
-          action:
-            'Construí um painel duplo com indicadores preditivos (volume de entrada, atrasos de revisão, capacidade dos parceiros) e métricas consolidadas de prazo e orçamento.',
-          result:
-            'Permitiu à liderança identificar restrições de capacidade com 3 semanas de antecedência, reduzindo atrasos surpresa a zero.',
-        },
-        l6Principle: 'Métricas preditivas proporcionam capacidade de decisão; métricas tardias apenas explicam o passado.',
-      },
-      {
         id: 'eh-2',
         title: 'Block and Microsoft - Revisões Anuais de Desempenho + MBRs/QBRs',
         subtitle:
