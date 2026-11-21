@@ -205,7 +205,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
           {star.result && (
             <div className="bg-emerald-950/30 rounded-2xl p-4 sm:p-5 border-l-4 border-emerald-500 border border-emerald-500/30 shadow-sm">
               <span className="font-bold text-emerald-400 uppercase tracking-wide text-xs block mb-1">
-                Results
+                Result
               </span>
               <p className="text-sm sm:text-base text-white font-medium leading-relaxed">
                 {star.result}

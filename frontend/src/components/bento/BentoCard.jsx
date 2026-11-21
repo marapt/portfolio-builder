@@ -330,7 +330,7 @@ export const BentoCard = ({
               {star.result && (
                 <div className="bg-emerald-950/40 rounded-lg p-2.5 border-l-2 border-emerald-500 border border-emerald-500/30">
                   <span className="font-bold text-emerald-400 uppercase tracking-wide block text-[10px] mb-0.5">
-                    Results
+                    Result
                   </span>
                   <p className="text-slate-200 font-medium leading-relaxed line-clamp-3">{star.result}</p>
                 </div>
