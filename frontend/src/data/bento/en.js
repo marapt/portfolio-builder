@@ -222,7 +222,8 @@ export const topPillars = [
     id: 'executive-health',
     number: '04',
     title: 'Executive Health and Impact Reporting',
-    subtitle: 'Leading vs. lagging telemetry, VP briefings, and unit economics modeling.',
+    subtitle:
+      'Maintain an Executive Health Index for Program Operations and Governance, surfacing spend, SLA compliance, resource capacity allocation and success metrics for Leadership.\nBridge operational metrics with Organization Vision, Mission, Goals, and OKRs.',
     icon: 'Activity',
     color: 'amber',
     subCards: [

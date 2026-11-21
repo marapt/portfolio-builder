@@ -222,7 +222,8 @@ export const topPillars = [
     id: 'executive-health',
     number: '04',
     title: 'Monitorização Executiva e Relatórios de Impacto',
-    subtitle: 'Métricas preditivas vs. tardias, reuniões executivas e otimização de custos unitários.',
+    subtitle:
+      'Manter um Índice de Saúde Executiva para Operações e Governação de Programas, evidenciando despesas, cumprimento de SLAs, alocação de capacidade de recursos e métricas de sucesso para a Liderança.\nFazer a ponte entre métricas operacionais e a Visão, Missão, Objetivos e OKRs da Organização.',
     icon: 'Activity',
     color: 'amber',
     subCards: [
