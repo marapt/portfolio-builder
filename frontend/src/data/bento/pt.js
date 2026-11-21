@@ -259,7 +259,8 @@ export const topPillars = [
         title: 'Controlos Operacionais e Conformidade',
         shortName: 'Controlos & Conformidade',
         icon: 'Lock',
-        description: 'Conformidade regulamentar, gestão dinâmica de riscos e auditorias contínuas.',
+        description:
+          'Gestão da governação de acessos (políticas de equipa e transições de sistemas legados para novas plataformas de força de trabalho), integração/saída de colaboradores e mitigação de riscos operacionais.',
         subCards: [
           {
             id: 'occ-workforce-portal',

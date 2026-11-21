@@ -259,7 +259,8 @@ export const topPillars = [
         title: 'Operational Controls and Compliance',
         shortName: 'Controls & Compliance',
         icon: 'Lock',
-        description: 'Regulatory compliance, living risk registries, and audit readiness.',
+        description:
+          'Managing access governance (Team Policies and Transitions from legacy to new workforce platforms), workforce onboarding/offboarding and operational risk mitigation.',
         subCards: [
           {
             id: 'occ-workforce-portal',
