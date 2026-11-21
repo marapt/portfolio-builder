@@ -410,7 +410,7 @@ export const topPillars = [
           },
           {
             id: 'fom-microsoft',
-            title: 'Microsoft Procurement, SOWs & Master Agreement Governance',
+            title: 'Microsoft - RFP and MA / SOW Governance',
             subtitle:
               'Standardizing SOW templates, volume discounting, and MSA commercial terms across 40+ international markets.',
             tag: 'Finance & OPEX',

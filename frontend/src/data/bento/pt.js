@@ -410,7 +410,7 @@ export const topPillars = [
           },
           {
             id: 'fom-microsoft',
-            title: 'Aquisições Microsoft, Gestão de SOWs e Acordos Globais',
+            title: 'Microsoft - RFP e Governação de MA / SOW',
             subtitle:
               'Padronização de modelos de SOW, descontos por volume e termos comerciais de MSA em mais de 40 mercados.',
             tag: 'Finanças & OPEX',
