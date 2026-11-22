@@ -427,8 +427,8 @@ const BuildJourneyPage = () => {
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 {isPt
-                  ? 'Explore os 5 Pilares Estratégicos e os 27 Cartões STAR com dados de impacto comprovado em empresas como Microsoft, Block e LinkedIn.'
-                  : 'Explore the 5 Strategic Pillars and 27 STAR Framework cards with real metric achievements delivered at Microsoft, Block, and LinkedIn.'}
+                  ? 'Explore os 6 Pilares Estratégicos e os 27 Cartões STAR com dados de impacto comprovado em empresas como Microsoft, Block e LinkedIn.'
+                  : 'Explore the 6 Strategic Pillars and 27 STAR Framework cards with real metric achievements delivered at Microsoft, Block, and LinkedIn.'}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link

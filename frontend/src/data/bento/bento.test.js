@@ -11,17 +11,17 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     'operations-change',
     'executive-health',
     'cross-functional-partners',
+    'live-incidents-response',
   ];
 
   const expectedDomainIds = [
     'eval-feedback',
     'ai-data-training',
-    'testing-response',
   ];
 
-  test('Tier 1 has exactly 5 Top Strategic Pillars in EN and PT', () => {
-    expect(topPillarsEN).toHaveLength(5);
-    expect(topPillarsPT).toHaveLength(5);
+  test('Tier 1 has exactly 6 Top Strategic Pillars in EN and PT', () => {
+    expect(topPillarsEN).toHaveLength(6);
+    expect(topPillarsPT).toHaveLength(6);
 
     expect(topPillarsEN.map((p) => p.id)).toEqual(expectedPillarIds);
     expect(topPillarsPT.map((p) => p.id)).toEqual(expectedPillarIds);
@@ -198,9 +198,21 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Tier 2 has exactly 3 Specialized Operational Domains in EN and PT', () => {
-    expect(operationalDomainsEN).toHaveLength(3);
-    expect(operationalDomainsPT).toHaveLength(3);
+  test('Pillar 06 (Live Incidents Response) has subcards for Follow-the-Sun and Thailand Crisis in EN and PT', () => {
+    const lirPillarEN = topPillarsEN.find((p) => p.id === 'live-incidents-response');
+    const lirPillarPT = topPillarsPT.find((p) => p.id === 'live-incidents-response');
+
+    expect(lirPillarEN).toBeDefined();
+    expect(lirPillarPT).toBeDefined();
+    expect(lirPillarEN.subCards).toHaveLength(2);
+    expect(lirPillarPT.subCards).toHaveLength(2);
+    expect(lirPillarEN.subCards.map((c) => c.id)).toEqual(['tr-1', 'tr-thailand-crisis']);
+    expect(lirPillarPT.subCards.map((c) => c.id)).toEqual(['tr-1', 'tr-thailand-crisis']);
+  });
+
+  test('Tier 2 has exactly 2 Specialized Operational Domains in EN and PT', () => {
+    expect(operationalDomainsEN).toHaveLength(2);
+    expect(operationalDomainsPT).toHaveLength(2);
 
     expect(operationalDomainsEN.map((d) => d.id)).toEqual(expectedDomainIds);
     expect(operationalDomainsPT.map((d) => d.id)).toEqual(expectedDomainIds);

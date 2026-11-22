@@ -8,8 +8,8 @@ export const bentoHero = {
   subtitle:
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.\n\nA minha missão: Ajudar a tornar produtos, serviços e soluções acessíveis a todos e em qualquer lugar.',
   quickStats: [
-    { label: 'Pilares Estratégicos', value: '5 Pilares de Topo' },
-    { label: 'Domínios Operacionais', value: '3 Domínios Especializados' },
+    { label: 'Pilares Estratégicos', value: '6 Pilares de Topo' },
+    { label: 'Domínios Operacionais', value: '2 Domínios Especializados' },
     { label: 'Cartões Interativos', value: '27 Cartões STAR' },
   ],
 };
@@ -567,12 +567,59 @@ export const topPillars = [
     ],
     extendedSubsections: [],
   },
+  {
+    id: 'live-incidents-response',
+    number: '06',
+    title: 'Resposta a Incidentes em Tempo Real',
+    shortName: 'Incidentes',
+    subtitle:
+      'Triagem de incidentes com base em SLAs, transições 24/7 Follow-the-Sun, mitigação de crises geopolíticas em tempo real e testes automatizados de regressão.',
+    icon: 'Zap',
+    color: 'rose',
+    subCards: [
+      {
+        id: 'tr-1',
+        title: 'Triagem de Incidentes 24/7 Follow-the-Sun',
+        subtitle: 'Transições entre equipas em fusos horários diferentes para assegurar continuidade operacional.',
+        metrics: 'Resposta P0 <30 Min · Cobertura 24/7 Ativa',
+        star: {
+          situation: 'Bloqueios críticos identificados ao final do dia na Europa ficavam parados até à manhã nos EUA.',
+          task: 'Implementar um modelo operacional de transição contínua entre fornecedores em vários fusos horários.',
+          action: 'Padronizei relatórios diários assíncronos de passagem de turno e alertas automatizados para incidentes P0.',
+          result: 'Eliminei tempos de espera noturnos e alcancei respostas em menos de 30 minutos para falhas críticas.',
+        },
+        l6Principle: 'Operações globais contínuas dependem de comunicações assíncronas claras para não perder informação.',
+      },
+      {
+        id: 'tr-thailand-crisis',
+        title: 'Morte do Rei da Tailândia',
+        subtitle:
+          'Ativação de uma força-tarefa de resposta rápida e matriz de decisão com 3 opções para proteger a integridade da marca durante uma crise nacional imprevista.',
+        tag: 'Resposta a Crises',
+        proofAnchor: 'microsoft',
+        metrics: 'Implementação em 48 Horas · 0 Infrações RP/Legais · Playbook para 200+ Mercados',
+        star: {
+          situation:
+            'Durante a liderança das operações globais de Marcom para as Microsoft Stores (2016–2020), surgiu uma crise geopolítica e cultural súbita com o falecimento do Rei da Tailândia. A nossa montra digital de comércio eletrónico na Tailândia estava a executar campanhas promocionais de retalho ativas, o que representava um risco imediato e de elevado impacto. A manutenção de vendas comerciais normais durante um período de profundo luto nacional arriscava reações públicas severas contra a marca, insensibilidade cultural e eventual incumprimento de regulamentos locais em rápida evolução, acarretando sérias consequências geopolíticas e de relações públicas para a Microsoft a nível global.',
+          task:
+            'Assim que a equipa regional da Tailândia me alertou, assumi a liderança da resposta em tempo real ativando um protocolo de comando de emergência multifuncional para alinhar o Jurídico, RP, Design, Engenharia e lideranças regionais numa solução conforme, culturalmente respeitosa e tecnicamente exequível em poucas horas, e não em dias.',
+          action:
+            'Mobilização de Força-Tarefa de Resposta Rápida: Reuni de imediato pontos de contacto locais da Tailândia com as equipas globais de Design, Jurídico, RP, Desenvolvimento Web, Engenharia e liderança executiva para avaliar requisitos regulamentares, riscos de marca e viabilidade técnica em tempo real.\n\nEstruturação de Matriz de Decisão Executiva com 3 Opções (Trade-Offs Explícitos): Em vez de escalar um problema em aberto, liderei a equipa na síntese de três opções concretas com equilíbrios claros entre risco e receita para aprovação executiva:\n\nOpção 1 - Manutenção do Status Quo + Alerta de RP: Menor esforço técnico, mas risco inaceitavelmente elevado para a marca, cultura e conformidade legal.\n\nOpção 2 - Desativação Total da Loja: Eliminação imediata do risco cultural e legal, mas resultando num apagão comercial total e má experiência para clientes que necessitavam de suporte essencial ou downloads.\n\nOpção 3 - Redesenho com Adaptação Cultural + Prontidão para Moratória Legal (Recomendada): Remoção imediata de faixas promocionais e transição da montra para uma paleta sóbria e monocromática expressando condolências nacionais, preservando funcionalidades essenciais da loja enquanto uma equipa de piquete de Engenharia e Jurídico permanecia pronta para desativação instantânea se o governo tailandês decretasse uma moratória comercial obrigatória.\n\nExecução Rápida e Monitorização Contínua: Obtive o alinhamento executivo na Opção 3, acelerei a localização de design e QA com a equipa regional tailandesa para garantir o rigor cultural e linguístico, e implementei a nova montra em produção em 48 horas mantendo um gatilho de prontidão 24/7 para alterações regulamentares.',
+          result:
+            'Zero Danos Reputacionais, de RP ou Legais: Lançamento da montra culturalmente adaptada em 48 horas com zero cobertura negativa nos media, zero infrações regulamentares e disponibilidade ininterrupta das funções nucleares da loja.\n\nInstitucionalização de Playbook de Crises Geopolíticas: Transformação do modelo de decisão em 3 opções e do protocolo de resposta rápida num Playbook reutilizável de Resposta Rápida Geopolítica e Cultural do Centro de Excelência (CoE). Partilha de boas práticas com todas as outras equipas regionais, proporcionando a equipas em mais de 200 mercados um caminho de escalamento pré-alinhado para emergências nacionais repentinas, mudanças regulamentares ou desastres naturais.',
+        },
+        l6Principle:
+          'Em crises geopolíticas ou culturais imprevistas, a resposta a incidentes em tempo real tem sucesso ao substituir escalamentos em aberto por uma matriz estruturada de trade-offs explícitos entre risco e receita, combinando adaptação culturalmente respeitosa com gatilhos de prontidão contínua para proteger a integridade global da marca.',
+      },
+    ],
+    extendedSubsections: [],
+  },
 ];
 
 export const operationalDomains = [
   {
     id: 'eval-feedback',
-    number: '02',
+    number: '01',
     title: 'Avaliação e Feedback em Escala',
     shortName: 'Avaliação & Feedback',
     icon: 'CheckSquare',
@@ -609,7 +656,7 @@ export const operationalDomains = [
   },
   {
     id: 'ai-data-training',
-    number: '03',
+    number: '02',
     title: 'Dados e Treino de IA',
     shortName: 'Dados & Treino de IA',
     icon: 'Cpu',
@@ -646,50 +693,6 @@ export const operationalDomains = [
             'Reduzi o custo por tarefa de $5 para $1.67, cumpri o orçamento de $10M e reduzi a integração de parceiros de 8 para 2 semanas.',
         },
         l6Principle: 'A escala atinge-se direcionando o talento humano para onde ele gera o maior valor estratégico.',
-      },
-    ],
-  },
-  {
-    id: 'testing-response',
-    number: '04',
-    title: 'Testes e Resposta em Tempo Real',
-    shortName: 'Testes & Tempo Real',
-    icon: 'Zap',
-    description: 'Triagem de incidentes com base em SLAs, cobertura 24/7 Follow-the-Sun e testes automáticos de regressão.',
-    subCards: [
-      {
-        id: 'tr-1',
-        title: 'Triagem de Incidentes 24/7 Follow-the-Sun',
-        subtitle: 'Transições entre equipas em fusos horários diferentes para assegurar continuidade operacional.',
-        metrics: 'Resposta P0 <30 Min · Cobertura 24/7 Ativa',
-        star: {
-          situation: 'Bloqueios críticos identificados ao final do dia na Europa ficavam parados até à manhã nos EUA.',
-          task: 'Implementar um modelo operacional de transição contínua entre fornecedores em vários fusos horários.',
-          action: 'Padronizei relatórios diários assíncronos de passagem de turno e alertas automatizados para incidentes P0.',
-          result: 'Eliminei tempos de espera noturnos e alcancei respostas em menos de 30 minutos para falhas críticas.',
-        },
-        l6Principle: 'Operações globais contínuas dependem de comunicações assíncronas claras para não perder informação.',
-      },
-      {
-        id: 'tr-thailand-crisis',
-        title: 'Morte do Rei da Tailândia',
-        subtitle:
-          'Ativação de uma força-tarefa de resposta rápida e matriz de decisão com 3 opções para proteger a integridade da marca durante uma crise nacional imprevista.',
-        tag: 'Resposta a Crises',
-        proofAnchor: 'microsoft',
-        metrics: 'Implementação em 48 Horas · 0 Infrações RP/Legais · Playbook para 200+ Mercados',
-        star: {
-          situation:
-            'Durante a liderança das operações globais de Marcom para as Microsoft Stores (2016–2020), surgiu uma crise geopolítica e cultural súbita com o falecimento do Rei da Tailândia. A nossa montra digital de comércio eletrónico na Tailândia estava a executar campanhas promocionais de retalho ativas, o que representava um risco imediato e de elevado impacto. A manutenção de vendas comerciais normais durante um período de profundo luto nacional arriscava reações públicas severas contra a marca, insensibilidade cultural e eventual incumprimento de regulamentos locais em rápida evolução, acarretando sérias consequências geopolíticas e de relações públicas para a Microsoft a nível global.',
-          task:
-            'Assim que a equipa regional da Tailândia me alertou, assumi a liderança da resposta em tempo real ativando um protocolo de comando de emergência multifuncional para alinhar o Jurídico, RP, Design, Engenharia e lideranças regionais numa solução conforme, culturalmente respeitosa e tecnicamente exequível em poucas horas, e não em dias.',
-          action:
-            'Mobilização de Força-Tarefa de Resposta Rápida: Reuni de imediato pontos de contacto locais da Tailândia com as equipas globais de Design, Jurídico, RP, Desenvolvimento Web, Engenharia e liderança executiva para avaliar requisitos regulamentares, riscos de marca e viabilidade técnica em tempo real.\n\nEstruturação de Matriz de Decisão Executiva com 3 Opções (Trade-Offs Explícitos): Em vez de escalar um problema em aberto, liderei a equipa na síntese de três opções concretas com equilíbrios claros entre risco e receita para aprovação executiva:\n\nOpção 1 - Manutenção do Status Quo + Alerta de RP: Menor esforço técnico, mas risco inaceitavelmente elevado para a marca, cultura e conformidade legal.\n\nOpção 2 - Desativação Total da Loja: Eliminação imediata do risco cultural e legal, mas resultando num apagão comercial total e má experiência para clientes que necessitavam de suporte essencial ou downloads.\n\nOpção 3 - Redesenho com Adaptação Cultural + Prontidão para Moratória Legal (Recomendada): Remoção imediata de faixas promocionais e transição da montra para uma paleta sóbria e monocromática expressando condolências nacionais, preservando funcionalidades essenciais da loja enquanto uma equipa de piquete de Engenharia e Jurídico permanecia pronta para desativação instantânea se o governo tailandês decretasse uma moratória comercial obrigatória.\n\nExecução Rápida e Monitorização Contínua: Obtive o alinhamento executivo na Opção 3, acelerei a localização de design e QA com a equipa regional tailandesa para garantir o rigor cultural e linguístico, e implementei a nova montra em produção em 48 horas mantendo um gatilho de prontidão 24/7 para alterações regulamentares.',
-          result:
-            'Zero Danos Reputacionais, de RP ou Legais: Lançamento da montra culturalmente adaptada em 48 horas com zero cobertura negativa nos media, zero infrações regulamentares e disponibilidade ininterrupta das funções nucleares da loja.\n\nInstitucionalização de Playbook de Crises Geopolíticas: Transformação do modelo de decisão em 3 opções e do protocolo de resposta rápida num Playbook reutilizável de Resposta Rápida Geopolítica e Cultural do Centro de Excelência (CoE). Partilha de boas práticas com todas as outras equipas regionais, proporcionando a equipas em mais de 200 mercados um caminho de escalamento pré-alinhado para emergências nacionais repentinas, mudanças regulamentares ou desastres naturais.',
-        },
-        l6Principle:
-          'Em crises geopolíticas ou culturais imprevistas, a resposta a incidentes em tempo real tem sucesso ao substituir escalamentos em aberto por uma matriz estruturada de trade-offs explícitos entre risco e receita, combinando adaptação culturalmente respeitosa com gatilhos de prontidão contínua para proteger a integridade global da marca.',
       },
     ],
   },

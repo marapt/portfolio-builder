@@ -14,6 +14,7 @@ import {
   Languages,
   Users,
   Network,
+  Zap,
 } from 'lucide-react';
 import BentoCard from './BentoCard';
 
@@ -24,6 +25,7 @@ const pillarIcons = {
   TrendingUp,
   Users,
   Network,
+  Zap,
 };
 
 const subsectionIcons = {
@@ -152,6 +154,15 @@ const pillarThemes = {
     iconBadge: 'bg-indigo-100 border-indigo-200 text-indigo-700',
     textAccent: 'text-indigo-600',
   },
+  rose: {
+    pillActive: 'bg-rose-600 text-white shadow-lg shadow-rose-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-rose-50/40 to-white',
+    boxBorder: 'border-rose-200/80 hover:border-rose-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(244,63,94,0.08)]',
+    ambientGlow: 'bg-rose-100/60',
+    iconBadge: 'bg-rose-100 border-rose-200 text-rose-700',
+    textAccent: 'text-rose-600',
+  },
 };
 
 export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand }) => {
@@ -220,7 +231,7 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
-                <span>{pillar.title.split(' ')[0]}</span>
+                <span>{pillar.shortName || pillar.title.split(' ')[0]}</span>
               </button>
             );
           })}
