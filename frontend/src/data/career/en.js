@@ -3841,13 +3841,13 @@ export const timelineItems = [
         },
         {
           label: 'Measurable Outcome:',
-          text: 'Delivered an interactive, production-grade portfolio with 6 strategic pillars, 28 STAR frameworks, and a dedicated AI build journey showcase.',
+          text: 'Delivered an interactive, production-grade portfolio with 6 strategic pillars, 29 STAR frameworks, and a dedicated AI build journey showcase.',
         },
       ],
     },
     metrics: [
       {
-        value: '28 Cards',
+        value: '29 Cards',
         label: 'STAR frameworks across 6 strategic pillars',
         kind: 'scale',
         placeholder: false,

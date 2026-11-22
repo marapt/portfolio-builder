@@ -51,7 +51,7 @@ export const buildJourneyGuardrails = {
       risk: 'High-speed AI code edits risked dropping Portuguese keys, causing text truncation, or desynchronizing STAR card counts between locales.',
       guardrail:
         'I instituted automated Jest schema assertions that verify exact 1:1 ID parity across en.js and pt.js, paired with strict character-level split diff reviews before committing.',
-      outcome: 'Zero locale drift across 28 STAR cards, 6 Strategic Pillars, and 2 Specialized Domains.',
+      outcome: 'Zero locale drift across 29 STAR cards, 6 Strategic Pillars, and 2 Specialized Domains.',
     },
     {
       title: 'Third-Party API Outages & Network Failures',

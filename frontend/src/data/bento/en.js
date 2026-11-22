@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Strategic Pillars', value: '6 Top Pillars' },
     { label: 'Operational Domains', value: '2 Specialized Domains' },
-    { label: 'Interactive Cards', value: '28 STAR Cards' },
+    { label: 'Interactive Cards', value: '29 STAR Cards' },
   ],
 };
 
@@ -713,6 +713,31 @@ export const operationalDomains = [
         },
         l6Principle:
           'A strong portfolio should do more than list past wins: it should demonstrate how you structure information, design clear decision paths, and turn complex operational work into something easy to navigate.',
+      },
+      {
+        id: 'ai-nmt-case-study',
+        title: 'AI NMT - CASE STUDY',
+        subtitle:
+          'Enterprise custom NMT training, 5-stage corpus sanitization, and tripartite quality evaluation with interactive pipeline simulator.',
+        tag: 'Custom NMT & LLM Fine-Tuning',
+        metrics:
+          'Modeled ~40% Cost Reduction ($1.125M/Yr on 25M Words) · 60% Catalog/UI Time Cut · 0.85+ COMET Gate · ≥0.75 LaBSE Cosine',
+        externalLink: {
+          url: '/case-studies/training-nmt',
+          label: 'View Interactive NMT Case Study & Simulator',
+        },
+        star: {
+          situation:
+            'Enterprise localization programs scaling across dozens of languages and markets face a split between repetitive UI/catalog strings (roughly 45% of a modeled 25M-word annual volume at a ~$0.112 blended human rate, or $2.8M/year) and creative transcreation, while raw translation memories often contain broken markup, internal ticket IDs (rdar://, Jira), unlocalized English copy in target files, or misaligned sentence pairs. Relying on single metrics like BLEU alone also fails on creative synonyms and compound words.',
+          task:
+            'Design an end-to-end custom Neural Machine Translation (NMT) training, sanitization, and evaluation methodology (paired with a live interactive browser simulator in nmtPipelineEngine.js) that cleans noisy bilingual corpora, fine-tunes domain-stratified models via transfer learning, enforces strict quality and semantic gates, and preserves human craft for high-impact creative marketing.',
+          action:
+            '5-Stage Corpus Sanitization & Anti-Leakage Gating: Built a multi-stage funnel (reducing a modeled 500k segment ingest down to 250k clean segments) that normalizes HTML/XML tags and placeholders (<var>), strips internal ticket references and PII, runs language ID checks (fastText / CLD3) to catch untranslated English leaks, enforces length-ratio bounds (0.4 to 2.5) and sentence limits, and prunes semantic misalignment with LaBSE cosine similarity gates (greater than or equal to 0.75) before deduplication and split isolation. Domain-Stratified Transfer Learning: Fine-tuned open foundation models (such as NLLB, MarianMT, or Llama 3 via LoRA/QLoRA or managed cloud) on curated bilingual data using style tokens (such as <style:editorial> and <style:ui_concise>) rather than training from scratch. Tripartite Evaluation & Selective Routing: Paired BLEU (catastrophic omission check), chrF++ (morphological and compound-word sensitivity), and COMET (neural semantic gate at 0.85+ vs. 0.80 to 0.82 academic parity) with MQM/DQF post-editing workflows, routing 11.25M rote UI/catalog words through NMT + light MTPE (moving from 2,500 to 6,250 words/day) while keeping creative campaigns human-led.',
+          result:
+            'Modeled Financial & Velocity ROI: Modeled ~$1.125M in annual savings (~40% net cost reduction on a $2.8M baseline) and a 60% turnaround cut on catalog and UI copy (from 2,500 to 6,250 words/day), with low fine-tuning compute costs (~$20 to $100 per language pair). Quality & Gate Rigor: Established a 94% MTPE acceptance benchmark under MQM/DQF evaluation, a 0.85+ COMET production gate, and a greater than or equal to 0.75 LaBSE alignment filter while keeping creative marketing copy in human hands.',
+        },
+        l6Principle:
+          'Model performance hinges on strict pre-ingestion cleaning and semantic gating (preventing garbage-in, garbage-out), while pairing selective automation on repetitive strings with human transcreation on high-visibility copy protects brand voice and budget.',
       },
     ],
   },

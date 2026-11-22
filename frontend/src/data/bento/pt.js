@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Pilares Estratégicos', value: '6 Pilares de Topo' },
     { label: 'Domínios Operacionais', value: '2 Domínios Especializados' },
-    { label: 'Cartões Interativos', value: '28 Cartões STAR' },
+    { label: 'Cartões Interativos', value: '29 Cartões STAR' },
   ],
 };
 
@@ -713,6 +713,31 @@ export const operationalDomains = [
         },
         l6Principle:
           'Um portfólio sólido deve ir além de listar conquistas passadas: deve demonstrar como estruturamos informação, desenhamos caminhos de decisão claros e transformamos trabalho operacional complexo numa experiência intuitiva.',
+      },
+      {
+        id: 'ai-nmt-case-study',
+        title: 'NMT com IA - ESTUDO DE CASO',
+        subtitle:
+          'Metodologia empresarial de treino de NMT customizado, sanitização de corpora em 5 fases e avaliação tripartida com simulador interativo.',
+        tag: 'NMT Customizado e Treino de IA',
+        metrics:
+          'Redução Modelada de ~40% em Custos ($1.125M/Ano em 25M Palavras) · -60% Tempo em Catálogo/UI · COMET ≥0.85 · LaBSE Cosine ≥0.75',
+        externalLink: {
+          url: '/case-studies/training-nmt',
+          label: 'Ver Estudo de Caso NMT e Simulador Interativo',
+        },
+        star: {
+          situation:
+            'Programas de localização empresarial em dezenas de idiomas enfrentam a divisão entre cadeias repetitivas de UI e catálogo (cerca de 45% de um volume anual modelado de 25M de palavras a uma taxa humana média de ~$0.112, ou $2.8M/ano) e transcriação criativa, enquanto memórias de tradução brutas contêm frequentemente tags corrompidas, IDs de tickets internos (rdar://, Jira), texto em inglês não traduzido ou frases desalinhadas. Depender apenas do BLEU também falha em sinónimos criativos e palavras compostas.',
+          task:
+            'Desenhar uma metodologia completa de treino, sanitização e avaliação de Tradução Automática Neuronal (NMT) personalizada (associada a um simulador interativo no browser em nmtPipelineEngine.js) que limpe corpora ruidosos, ajuste modelos estratificados por domínio via transfer learning, aplique critérios rigorosos de qualidade semântica e preserve a criatividade humana para campanhas de marketing de alto impacto.',
+          action:
+            'Sanitização em 5 Fases e Prevenção de Fugas: Construí um funil multifásico (reduzindo um ingest modelado de 500k segmentos para 250k segmentos limpos) que normaliza tags HTML/XML e marcadores (<var>), remove referências internas e dados pessoais, valida idiomas com fastText/CLD3 para detetar texto em inglês não traduzido, aplica rácios de comprimento (0.4 a 2.5) e elimina desalinhamentos semânticos com LaBSE cosine (maior ou igual a 0.75) antes da deduplicação e divisão de dados. Transfer Learning Estratificado por Domínio: Ajustei modelos abertos (como NLLB, MarianMT ou Llama 3 via LoRA/QLoRA) em dados bilingues curados usando marcadores de estilo (<style:editorial> e <style:ui_concise>) em vez de treinar de raiz. Avaliação Tripartida e Roteamento Seletivo: Combinei BLEU (verificação de omissões críticas), chrF++ (sensibilidade morfológica) e COMET (critério neural semântico de 0.85+ vs. paridade académica de 0.80 a 0.82) com fluxos MQM/DQF, encaminhando 11.25M de palavras repetitivas para NMT + pós-edição ligeira (de 2.500 para 6.250 palavras/dia) mantendo campanhas criativas lideradas por humanos.',
+          result:
+            'Retorno Financeiro e de Velocidade Modelado: Economia anual modelada de ~$1.125M (~40% de redução líquida de custos sobre uma base de $2.8M) e redução de 60% no tempo de resposta em catálogo e UI (de 2.500 para 6.250 palavras/dia), com baixos custos de computação de ajuste (~$20 a $100 por par de idiomas). Rigor nas Métricas de Qualidade: Estabeleci um índice de 94% de aceitação em pós-edição sob critérios MQM/DQF, validação de produção COMET ≥0.85 e filtro de alinhamento LaBSE ≥0.75, preservando o trabalho criativo em mãos humanas.',
+        },
+        l6Principle:
+          'O desempenho dos modelos depende de uma rigorosa limpeza e validação semântica pré-ingestão (evitando lixo à entrada, lixo à saída), enquanto a combinação de automação seletiva em conteúdos repetitivos com transcriação humana em materiais estratégicos protege a voz da marca e o orçamento.',
       },
     ],
   },
