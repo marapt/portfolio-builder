@@ -202,22 +202,24 @@ export const topPillars = [
       },
       {
         id: 'oc-3',
-        title: 'Adaptação Ágil e Cultura Construtiva dos 5-Porquês',
-        subtitle: 'Transformar imprevistos técnicos e erros operacionais em robustez sistémica permanente.',
-        tag: 'Resiliência Operacional',
-        metrics: 'Causa-Raiz Resolvida · Zero Recorrência',
+        title: 'Microsoft - Operações de Migração de CRM e Poupança de Custos',
+        subtitle:
+          'Validação de pipelines InDesign, testes shadow e triagem P0-P3 para proteger $500M em continuidade de campanhas durante a desativação de CRM.',
+        tag: 'Migração de Plataformas',
+        metrics: 'Protegidos ~$500M de Orçamento · 0 Lançamentos Falhados · >90% NPS',
         proofAnchor: 'microsoft',
         star: {
           situation:
-            'Uma migração de ferramentas causou inesperadamente erros de codificação em bases de dados antigas, corrompendo textos de teste em idiomas não latinos.',
+            'Na Microsoft, durante a liderança das operações globais de Marcom em mais de 40 idiomas e 200 mercados, a Engenharia recebeu a tarefa de desativar um CRM legado e migrar para uma nova plataforma, em simultâneo com a publicação ativa de campanhas sazonais e de retalho ao vivo. Surgiu um risco técnico crítico baseado na suposição de lift-and-shift da Engenharia para migrar os pipelines de ingestão e extração do Adobe InDesign tal como estavam, com risco de corrupção de esquemas visuais multicamada, perda de variáveis dinâmicas de preços/SKUs e quebra de conteúdos localizados em produção.',
           task:
-            'Conter o risco de produção, resolver a dívida técnica e implementar salvaguardas sem apontar culpados.',
+            'Após identificar esse risco através da extração manual de ficheiros .indd e auditorias de impacto com fornecedores (que revelaram uma exposição estimada de $500M no orçamento de Globalização MARCOM e potenciais disrupções nas campanhas de retalho em todos os mercados), assumi um mandato alargado de ligação PgM multifuncional entre Engenharia, equipas regionais de Marketing e parceiros linguísticos externos. O meu objetivo foi desenhar um modelo de testes pré-migração e uma resposta de produção em tempo real que assegurasse zero regressões de layout ou localização durante a desativação do CRM, sem abrandar lançamentos regionais ao vivo.',
           action:
-            'Pausei os pipelines afetados em 30 minutos; conduzi uma análise construtiva de 5-Porquês com engenharia e fornecedores; integrei validações automáticas no pré-commit.',
+            'Validação Empírica do Risco e Criação da Coligação: Para afastar a Engenharia da suposição de lift-and-shift, executei uma prova de conceito recolhendo ficheiros .indd reais e elaborando relatórios de impacto técnico com fornecedores Tier-1 para apresentar uma proposta unificada com a Gestão, Marketing e equipas regionais. Redução da Superfície de Migração e Testes Shadow: Auditei campanhas ativas vs inativas, implementando congelamento temporário e desativação de ativos obsoletos. Coordenei Engenharia e fornecedores em testes shadow paralelos com cargas InDesign e feeds de CRM de alta complexidade (recorrendo a trocas manuais controladas em sandbox para isolar pipelines em produção e poupar recursos de engenharia), validando 100% de integridade na extração de texto, expansão de caracteres e reinjeção. Ritmo de Comando de Cutover em Tempo Real e Portões Pré-Voo: Como os lançamentos decorriam em simultâneo, estabeleci uma matriz de triagem P0-P3 com SLAs rigorosos (enxame P0 imediato para quebras em produção ou variáveis perdidas e SLA de 24 horas para P1s), convertendo cada caso de exceção em validações pré-voo automáticas no nosso CoE para evitar repetições.',
           result:
-            'Restaurei integralmente os pipelines sem impacto para clientes, eliminando a causa-raiz de forma definitiva.',
+            'Proteção de ~$500M em Continuidade de Negócio e Campanhas: Concluí a desativação do CRM e a migração dos pipelines InDesign dentro do prazo, com zero falhas em lançamentos ao vivo e zero quebras com impacto em receita. Manutenção de Velocidade e Qualidade Máximas: Preservei prazos 35% mais rápidos e uma satisfação de clientes superior a 90% NPS durante uma transição arquitetural de alto risco. Normalização de Padrões Empresariais de Teste: Transformei as listas de verificação de testes shadow, os manuais de depreciação e os protocolos de triagem P0-P3 em padrões permanentes de governação do CoE para migrações futuras (incluindo a posterior transição para Adobe).',
         },
-        l6Principle: 'Análises construtivas convertem falhas pontuais em resiliência sistémica duradoura.',
+        l6Principle:
+          'Migrações arquiteturais complexas exigem validação empírica de riscos com dados dos parceiros e isolamento de fluxos de produção através de testes shadow em paralelo antes do corte definitivo.',
       },
       {
         id: 'oc-microsoft-content-ingestion',

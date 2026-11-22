@@ -202,22 +202,24 @@ export const topPillars = [
       },
       {
         id: 'oc-3',
-        title: 'Agile Course Correction & Blameless 5-Whys Culture',
-        subtitle: 'Transforming technical discoveries and operational errors into durable system resilience.',
-        tag: 'Operational Resilience',
-        metrics: 'Root Cause Fixed · 0 Recurrence',
+        title: 'Microsoft - CRM Migration Ops and Costs Savings',
+        subtitle:
+          'Managing Adobe InDesign pipeline validation, shadow testing, and P0-P3 triage to protect $500M in campaign continuity during CRM decommissioning.',
+        tag: 'Platform Migration',
+        metrics: 'Protected ~$500M Budget · 0 Missed Launches · >90% NPS',
         proofAnchor: 'microsoft',
         star: {
           situation:
-            'A third-party tooling migration unexpectedly broke character encoding in legacy downstream database tables, corrupting non-Latin localized test strings.',
+            'At Microsoft, while leading global Marcom operations across 40+ languages and 200+ markets, Engineering was tasked with decommissioning a legacy CRM and migrating to a new platform, all while actively publishing live seasonal and retail campaigns. A major technical risk emerged from Engineering\'s assumption of a direct lift-and-shift of the Adobe InDesign ingestion and extraction pipelines to the new CRM, which risked corrupting complex multi-layer layouts, dropping dynamic pricing/SKU variables, and breaking localized assets in flight.',
           task:
-            'Contain production risk, resolve technical debt, and establish systemic safeguards without finger-pointing.',
+            'After uncovering this risk through manual InDesign (.indd) file extractions and vendor impact audits (revealing an estimated $500M spend exposure to the Globalization MARCOM budget alongside live retail campaign disruption across markets), I took on an expanded cross-functional PgM liaison role bridging Engineering, Regional Marketing, and external language partners. My mandate was to design a pre-cutover testing framework and real-time production response model guaranteeing zero layout or localization regressions during CRM decommissioning without slowing live regional launches.',
           action:
-            'Halted affected deployment pipelines within 30 minutes; conducted a blameless 5-Whys retrospective with engineering and vendor leads; implemented automated regex linting checks in pre-commit hooks.',
+            'Validated the Risk Empirically & Built Coalition: To move Engineering off their lift-and-shift assumption, I ran a diagnostic proof-of-concept pulling live .indd source files and partnering with Tier-1 vendors to produce a technical impact report, aligning management, Regional teams, and Marketing on a unified proposal. Reduced Migration Surface Area & Ran Parallel Shadow Testing: Partnered with Regional teams to audit active vs dormant campaigns, establishing a temporary content freeze and deprecation of unused assets. Coordinated Engineering and Tier-1 vendors to execute parallel shadow-ingestion tests on high-complexity InDesign payloads and CRM feeds (using controlled manual file exchanges during sandbox testing to insulate live pipelines and preserve Engineering bandwidth), verifying 100% integrity across text extraction, character expansion, linked graphics, and re-injection. Stood Up Real-Time Cutover Command Rhythm & Pre-Flight Gates: Instituted a real-time triage matrix with strict SLAs triggering immediate P0 Engineering/vendor swarms for live build breaks or dropped CRM variables, enforcing a 24-hour resolution SLA for P1 launch-critical defects. Converted every edge case caught during shadow testing into automated pre-flight validation checks inside our CoE workflow, preventing repeat regressions across subsequent regional waves.',
           result:
-            'Fully restored string pipelines with zero customer impact, permanently eliminating the root cause and fostering high psychological safety across teams.',
+            'Protected ~$500M in Campaign & Business Continuity: Completed the CRM decommissioning and InDesign pipeline cutover on schedule with zero missed live campaign launches and zero revenue-impacting localization outages. Maintained Peak Speed & Quality: Preserved our 35% faster turnaround time and >90% customer satisfaction (NPS) throughout a high-risk architectural transition. Institutionalized Enterprise Testing Standards: Turned our InDesign shadow-testing checklist, surface-area deprecation playbook, and P0-P3 cutover triage protocol into a permanent CoE governance standard for subsequent platform migrations (including our later Adobe transition).',
         },
-        l6Principle: 'Blameless retrospectives convert operational failures into permanent system resilience.',
+        l6Principle:
+          'Critical architectural migrations require validating technical risk through fast, empirical partner data and isolating live pipelines with parallel shadow testing before cutover, ensuring business continuity without organizational churn.',
       },
       {
         id: 'oc-microsoft-content-ingestion',
