@@ -3,7 +3,7 @@
 
 export const bentoHero = {
   eyebrow: 'SISTEMAS OPERACIONAIS E CARTÕES STAR',
-  title: 'As Minhas Experiências',
+  title: 'Experiências',
   subheading: 'Modelos STAR',
   subtitle:
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.\n\nA minha missão: Ajudar a tornar produtos, serviços e soluções acessíveis a todos e em qualquer lugar.',

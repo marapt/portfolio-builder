@@ -37,8 +37,8 @@ const ExperiencesPage = () => {
 
   useEffect(() => {
     document.title = isPt
-      ? 'Minhas Experiências · Modelos STAR | Mara Martins'
-      : 'My Experiences · STAR Frameworks | Mara Martins';
+      ? 'Experiências · Modelos STAR | Mara Martins'
+      : 'Experiences · STAR Frameworks | Mara Martins';
   }, [isPt]);
 
   const handleToggleFlip = (cardId) => {
