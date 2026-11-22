@@ -656,7 +656,8 @@ export const topPillars = [
         title: 'Construção de Portfólio com IA',
         subtitle:
           'Transformação de marcos de carreira, estruturas de governação operacional e artefactos de entrega num sistema de portfólio bilingue e interativo.',
-        tag: 'Arquitetura de Portfólio',
+        tag: 'Desenvolvimento e Crescimento Pessoal',
+        contextLabel: 'Projeto Pessoal',
         metrics: '26 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
         externalLink: {
           url: '/how-i-built-this',
@@ -682,6 +683,7 @@ export const topPillars = [
         subtitle:
           'Metodologia empresarial de treino de NMT customizado, sanitização de corpora em 5 fases e avaliação tripartida com simulador interativo.',
         tag: 'NMT Customizado e Treino de IA',
+        contextLabel: 'Estudo de Caso e Simulador',
         metrics:
           'Redução Modelada de ~40% em Custos ($1.125M/Ano em 25M Palavras) · -60% Tempo em Catálogo/UI · COMET ≥0.85 · LaBSE Cosine ≥0.75',
         externalLink: {

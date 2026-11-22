@@ -240,7 +240,9 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
                 <ArrowRight className="w-4 h-4" />
               </Link>
             ) : (
-              <span className="text-xs text-slate-400 font-mono">Calibrated Executive Framework</span>
+              <span className="text-xs text-slate-400 font-mono">
+                {card.contextLabel || 'Personal Project'}
+              </span>
             )}
 
             {card.externalLink && (

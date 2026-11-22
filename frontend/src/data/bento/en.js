@@ -656,7 +656,8 @@ export const topPillars = [
         title: 'AI Portfolio Building',
         subtitle:
           'Turning career milestones, operational governance frameworks, and live delivery artifacts into an interactive, bilingual portfolio experience.',
-        tag: 'Portfolio Systems & Architecture',
+        tag: 'Personal Growth & Development',
+        contextLabel: 'Personal Project',
         metrics: '26 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
         externalLink: {
           url: '/how-i-built-this',
@@ -682,6 +683,7 @@ export const topPillars = [
         subtitle:
           'Enterprise custom NMT training, 5-stage corpus sanitization, and tripartite quality evaluation with interactive pipeline simulator.',
         tag: 'Custom NMT & LLM Fine-Tuning',
+        contextLabel: 'Case Study & Simulator',
         metrics:
           'Modeled ~40% Cost Reduction ($1.125M/Yr on 25M Words) · 60% Catalog/UI Time Cut · 0.85+ COMET Gate · ≥0.75 LaBSE Cosine',
         externalLink: {

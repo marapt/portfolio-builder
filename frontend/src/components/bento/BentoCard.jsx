@@ -229,7 +229,9 @@ export const BentoCard = ({
                   <span>{card.proofAnchor.toUpperCase()}</span>
                 </span>
               ) : (
-                <span className="text-[11px] text-slate-400">Executive Card</span>
+                <span className="text-[11px] text-slate-300 font-medium">
+                  {card.contextLabel || 'Personal Project'}
+                </span>
               )}
 
               <div className="flex items-center gap-2">
