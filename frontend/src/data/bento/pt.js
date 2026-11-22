@@ -20,94 +20,73 @@ export const topPillars = [
     number: '01',
     title: 'Governação de Portfólio e Desenho de Estruturas',
     subtitle:
-      'Desenhar, padronizar e escalar modelos operacionais e cadências de revisão em todos os pilares. Estabelecer processos estruturados de admissão, alocação de recursos e priorização de programas.',
+      'Desenhar, padronizar e escalar modelos operacionais e cadências de revisão em todos os pilares. Estabelecer processos estruturados de admissão, alocação de recursos e priorização de programas. Cobertura Linguística Global e Soluções de Localização. Sequenciação de lançamentos internacionais multi-onda, governação de campanhas GTM localizadas e alinhamento comercial entre mercados estratégicos.',
     icon: 'Layers',
     color: 'violet',
-    subCards: [],
-    extendedSubsections: [
+    subCards: [
       {
-        id: 'global-language',
-        number: '05',
-        title: 'Serviços Globais de Idiomas',
-        shortName: 'Serviços de Idiomas',
-        icon: 'Languages',
-        description: 'Cobertura Linguística Global e Soluções de Localização.',
-        subCards: [
-          {
-            id: 'gl-1',
-            title: 'Centro de Excelência (CoE) em Terminologia Corporativa',
-            subtitle: 'Unificação da voz da marca em todo o ecossistema digital de produtos.',
-            tag: 'CoE de Terminologia',
-            metrics: '100% Paridade Global · 26+ Idiomas',
-            star: {
-              situation: 'Terminologia inconsistente entre produto e marketing prejudicava a confiança internacional na marca.',
-              task: 'Centralizar a gestão terminológica numa plataforma corporativa acessível e colaborativa.',
-              action: 'Criei um portal de terminologia na cloud com ferramentas de validação integradas nos fluxos técnicos.',
-              result: 'Consegui 100% de consistência da marca em 26 idiomas e reduzi em 45% os erros linguísticos comunicados.',
-            },
-            l6Principle: 'A coerência terminológica é uma componente essencial da qualidade do produto.',
-          },
-          {
-            id: 'gl-2',
-            title: 'Microsoft - Conformidade Geopolítica e da Marca',
-            subtitle:
-              'Implementação de portões pré-voo, scorecards padronizados e revisões no terreno em mais de 40–45 mercados.',
-            tag: 'Conformidade Geopolítica',
-            proofAnchor: 'microsoft',
-            metrics: '200+ Mercados · 40–45+ Países · 0 Infrações · 100% Conformidade',
-            star: {
-              situation:
-                'Na Microsoft, o suporte aos lançamentos globais de lojas e marketing em mais de 40–45 mercados internacionais e 200 pontos de venda digitais significava que os conteúdos de marketing regional, editorial e produto enfrentavam riscos geopolíticos, regulamentares e culturais. Sem pontos de validação pré-lançamento padronizados e articulados entre o Jurídico, Relações Públicas e equipas regionais/geopolíticas, uma localização fragmentada e normas inconsistentes colocavam em risco a reputação da marca, gerando conflitos e atrasos de lançamento.',
-              task:
-                'Estabelecer pontos de validação prévia de conformidade geopolítica e de marca integrados no ritmo de lançamento global, em parceria com o Jurídico, RP e partes interessadas regionais/geopolíticas, garantindo que os lançamentos internacionais cumpriam os requisitos em simultâneo com as etapas de localização e engenharia, sem abrandar a velocidade de publicação.',
-              action:
-                'Integração de Portões de Lançamento Geopolíticos e de Políticas: Considerei a preparação geopolítica, de políticas de conteúdo e de marketing regional como portões simultâneos de lançamento no comboio global de entregas, em vez de verificações de última hora. Padronização de Scorecards de Aprovação e Alinhamento Terminológico: Colaborei com o Jurídico, RP e equipas geopolíticas/marca para padronizar grelhas de avaliação, diretrizes de sensibilidade regional e materiais de referência e terminologia partilhados. Revisão com Partes Interessadas Regionais e no Terreno: Estabeleci parceria com linguistas locais, revisores no terreno e líderes multifuncionais para equilibrar a consistência global da marca com as especificidades locais e resolver sensibilidades culturais atempadamente durante os ciclos de negócio (ROB) e revisões de lançamento.',
-              result:
-                'Aprovei mais de 200 mercados de montras globais em 40–45+ países com 0 infrações de marca e 100% de conformidade face às diretrizes internacionais. Reduzi os escalamentos associados a desajustes culturais ou geopolíticos e consolidei o alinhamento entre o Jurídico, RP, Produto e equipas regionais.',
-            },
-            l6Principle:
-              'A conformidade geopolítica deve ser antecipada, padronizada e integrada de raiz nas etapas do comboio de lançamentos, em vez de constituir um obstáculo reativo de última hora.',
-          },
-        ],
+        id: 'gl-1',
+        title: 'Centro de Excelência (CoE) em Terminologia Corporativa',
+        subtitle: 'Unificação da voz da marca em todo o ecossistema digital de produtos.',
+        tag: 'CoE de Terminologia',
+        metrics: '100% Paridade Global · 26+ Idiomas',
+        star: {
+          situation: 'Terminologia inconsistente entre produto e marketing prejudicava a confiança internacional na marca.',
+          task: 'Centralizar a gestão terminológica numa plataforma corporativa acessível e colaborativa.',
+          action: 'Criei um portal de terminologia na cloud com ferramentas de validação integradas nos fluxos técnicos.',
+          result: 'Consegui 100% de consistência da marca em 26 idiomas e reduzi em 45% os erros linguísticos comunicados.',
+        },
+        l6Principle: 'A coerência terminológica é uma componente essencial da qualidade do produto.',
       },
       {
-        id: 'global-expansion-gtm',
-        number: '11',
-        title: 'Expansão Global / Go-to-Market (GTM)',
-        shortName: 'Expansão Global & GTM',
-        icon: 'Globe',
-        description:
-          'Sequenciação de lançamentos internacionais multi-onda, governação de campanhas GTM localizadas e alinhamento comercial entre mercados estratégicos.',
-        subCards: [
-          {
-            id: 'gtm-linkedin-stories-redesign',
-            title:
-              'LinkedIn - Stories e Redesenho da Plataforma\nGovernação Global Multi-Onda de GTM',
-            subtitle:
-              'Sequenciação de lançamentos internacionais faseados em 6 ondas, 26 idiomas e 17 mercados durante operações remotas da pandemia.',
-            tag: 'Expansão Global & GTM',
-            metrics: '6 Ondas Globais de GTM · 26 Idiomas e 17 Mercados',
-            proofAnchor: 'linkedin',
-            externalLink: {
-              url: 'https://www.linkedin.com/blog/member/product/a-new-look-for-linkedin-from-the-inside-out',
-              label: 'A New Look for LinkedIn: From the Inside Out',
-            },
-            star: {
-              situation:
-                'Durante a rápida transição para o trabalho remoto motivada pela COVID-19 em 2020, o LinkedIn precisava de lançar o LinkedIn Stories (um novo formato de narrativa visual para utilizadores, jornalistas e marcas) em ondas internacionais sequenciais e em paralelo com a primeira grande reformulação da plataforma em cinco anos. A coordenação de campanhas locais de GTM, atualizações de marca e gates de lançamento em 26 idiomas e 17 mercados sem um modelo centralizado prévio de localização de MARCOM criava riscos elevados de lançamentos fragmentados e perda de janelas regionais.',
-              task:
-                'Criar uma equipa de PGM de Marketing de Localização e executar um modelo escalável de governação de lançamentos e Go-to-Market (GTM) multi-onda, estabelecendo parcerias com Marketing, Engenharia de Localização, Legal e Notícias Editoriais para que cada lançamento regional cumprisse a sua janela, ligando a adoção do storytelling ao valor na jornada do cliente e ao ROI comercial.',
-              action:
-                'Estruturei lançamentos faseados por ondas começando no Brasil (Onda 1, abril de 2020) e expandindo pelos Países Baixos, EAU/MENA, Austrália, França, Redesenho Global e EUA/Canadá a 24 de setembro de 2020, e Reino Unido (Onda 6, outubro de 2020), aplicando critérios rigorosos de validação humana (Human-in-the-Loop) e alinhamento regional. Criei um modelo de governação de MARCOM com 2 PMs de Marketing de Localização, até 2 fornecedores MSP e até 15 linguistas internos para absorver picos de procura sem comprometer o ritmo de entrega. Mapeei a comunicação de GTM localizada a cada etapa da jornada dos membros e anunciantes: da descoberta e criação da primeira história (Ativação), à formação de hábitos diários no novo design (Retenção), até ao storytelling e desempenho de campanhas de marcas (ROI).',
-              result:
-                'Entreguei com sucesso lançamentos globais de GTM em 6 ondas, 26 idiomas e 17 mercados durante o período de trabalho remoto da pandemia, em conjunto com o redesenho global de setembro de 2020. Conectei a execução operacional de GTM a resultados comerciais e de retenção ao monitorizar sinais de ROI de anunciantes e métricas de utilizadores, no contexto em que o LinkedIn superou $10B em receita anual no FY21 e a LinkedIn Marketing Solutions atingiu um crescimento recorde de +97% YoY.',
-            },
-            l6Principle:
-              'Lançamentos globais complexos têm sucesso quando a coordenação de entregas multi-onda alinha a prontidão multifuncional com marcos mensuráveis na jornada do cliente, em vez de datas de lançamento isoladas.',
-          },
-        ],
+        id: 'gl-2',
+        title: 'Microsoft - Conformidade Geopolítica e da Marca',
+        subtitle:
+          'Implementação de portões pré-voo, scorecards padronizados e revisões no terreno em mais de 40–45 mercados.',
+        tag: 'Conformidade Geopolítica',
+        proofAnchor: 'microsoft',
+        metrics: '200+ Mercados · 40–45+ Países · 0 Infrações · 100% Conformidade',
+        star: {
+          situation:
+            'Na Microsoft, o suporte aos lançamentos globais de lojas e marketing em mais de 40–45 mercados internacionais e 200 pontos de venda digitais significava que os conteúdos de marketing regional, editorial e produto enfrentavam riscos geopolíticos, regulamentares e culturais. Sem pontos de validação pré-lançamento padronizados e articulados entre o Jurídico, Relações Públicas e equipas regionais/geopolíticas, uma localização fragmentada e normas inconsistentes colocavam em risco a reputação da marca, gerando conflitos e atrasos de lançamento.',
+          task:
+            'Estabelecer pontos de validação prévia de conformidade geopolítica e de marca integrados no ritmo de lançamento global, em parceria com o Jurídico, RP e partes interessadas regionais/geopolíticas, garantindo que os lançamentos internacionais cumpriam os requisitos em simultâneo com as etapas de localização e engenharia, sem abrandar a velocidade de publicação.',
+          action:
+            'Integração de Portões de Lançamento Geopolíticos e de Políticas: Considerei a preparação geopolítica, de políticas de conteúdo e de marketing regional como portões simultâneos de lançamento no comboio global de entregas, em vez de verificações de última hora. Padronização de Scorecards de Aprovação e Alinhamento Terminológico: Colaborei com o Jurídico, RP e equipas geopolíticas/marca para padronizar grelhas de avaliação, diretrizes de sensibilidade regional e materiais de referência e terminologia partilhados. Revisão com Partes Interessadas Regionais e no Terreno: Estabeleci parceria com linguistas locais, revisores no terreno e líderes multifuncionais para equilibrar a consistência global da marca com as especificidades locais e resolver sensibilidades culturais atempadamente durante os ciclos de negócio (ROB) e revisões de lançamento.',
+          result:
+            'Aprovei mais de 200 mercados de montras globais em 40–45+ países com 0 infrações de marca e 100% de conformidade face às diretrizes internacionais. Reduzi os escalamentos associados a desajustes culturais ou geopolíticos e consolidei o alinhamento entre o Jurídico, RP, Produto e equipas regionais.',
+        },
+        l6Principle:
+          'A conformidade geopolítica deve ser antecipada, padronizada e integrada de raiz nas etapas do comboio de lançamentos, em vez de constituir um obstáculo reativo de última hora.',
+      },
+      {
+        id: 'gtm-linkedin-stories-redesign',
+        title:
+          'LinkedIn - Stories e Redesenho da Plataforma\nGovernação Global Multi-Onda de GTM',
+        subtitle:
+          'Sequenciação de lançamentos internacionais faseados em 6 ondas, 26 idiomas e 17 mercados durante operações remotas da pandemia.',
+        tag: 'Expansão Global & GTM',
+        metrics: '6 Ondas Globais de GTM · 26 Idiomas e 17 Mercados',
+        proofAnchor: 'linkedin',
+        externalLink: {
+          url: 'https://www.linkedin.com/blog/member/product/a-new-look-for-linkedin-from-the-inside-out',
+          label: 'A New Look for LinkedIn: From the Inside Out',
+        },
+        star: {
+          situation:
+            'Durante a rápida transição para o trabalho remoto motivada pela COVID-19 em 2020, o LinkedIn precisava de lançar o LinkedIn Stories (um novo formato de narrativa visual para utilizadores, jornalistas e marcas) em ondas internacionais sequenciais e em paralelo com a primeira grande reformulação da plataforma em cinco anos. A coordenação de campanhas locais de GTM, atualizações de marca e gates de lançamento em 26 idiomas e 17 mercados sem um modelo centralizado prévio de localização de MARCOM criava riscos elevados de lançamentos fragmentados e perda de janelas regionais.',
+          task:
+            'Criar uma equipa de PGM de Marketing de Localização e executar um modelo escalável de governação de lançamentos e Go-to-Market (GTM) multi-onda, estabelecendo parcerias com Marketing, Engenharia de Localização, Legal e Notícias Editoriais para que cada lançamento regional cumprisse a sua janela, ligando a adoção do storytelling ao valor na jornada do cliente e ao ROI comercial.',
+          action:
+            'Estruturei lançamentos faseados por ondas começando no Brasil (Onda 1, abril de 2020) e expandindo pelos Países Baixos, EAU/MENA, Austrália, França, Redesenho Global e EUA/Canadá a 24 de setembro de 2020, e Reino Unido (Onda 6, outubro de 2020), aplicando critérios rigorosos de validação humana (Human-in-the-Loop) e alinhamento regional. Criei um modelo de governação de MARCOM com 2 PMs de Marketing de Localização, até 2 fornecedores MSP e até 15 linguistas internos para absorver picos de procura sem comprometer o ritmo de entrega. Mapeei a comunicação de GTM localizada a cada etapa da jornada dos membros e anunciantes: da descoberta e criação da primeira história (Ativação), à formação de hábitos diários no novo design (Retenção), até ao storytelling e desempenho de campanhas de marcas (ROI).',
+          result:
+            'Entreguei com sucesso lançamentos globais de GTM em 6 ondas, 26 idiomas e 17 mercados durante o período de trabalho remoto da pandemia, em conjunto com o redesenho global de setembro de 2020. Conectei a execução operacional de GTM a resultados comerciais e de retenção ao monitorizar sinais de ROI de anunciantes e métricas de utilizadores, no contexto em que o LinkedIn superou $10B em receita anual no FY21 e a LinkedIn Marketing Solutions atingiu um crescimento recorde de +97% YoY.',
+        },
+        l6Principle:
+          'Lançamentos globais complexos têm sucesso quando a coordenação de entregas multi-onda alinha a prontidão multifuncional com marcos mensuráveis na jornada do cliente, em vez de datas de lançamento isoladas.',
       },
     ],
+    extendedSubsections: [],
   },
   {
     id: 'supplier-performance',

@@ -66,39 +66,32 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Pillar 01 (Portfolio Governance) has extended subsections for Domain 05 and Domain 11 in EN and PT', () => {
+  test('Pillar 01 (Portfolio Governance) has core subcards for Terminology CoE, Microsoft Geopolitical Compliance, and LinkedIn GTM in EN and PT', () => {
     const pgPillarEN = topPillarsEN.find((p) => p.id === 'portfolio-governance');
     const pgPillarPT = topPillarsPT.find((p) => p.id === 'portfolio-governance');
 
-    expect(pgPillarEN.extendedSubsections).toBeDefined();
-    expect(pgPillarPT.extendedSubsections).toBeDefined();
-    expect(pgPillarEN.extendedSubsections).toHaveLength(2);
-    expect(pgPillarPT.extendedSubsections).toHaveLength(2);
-    expect(pgPillarEN.extendedSubsections.map((s) => s.id)).toEqual([
-      'global-language',
-      'global-expansion-gtm',
-    ]);
-    expect(pgPillarPT.extendedSubsections.map((s) => s.id)).toEqual([
-      'global-language',
-      'global-expansion-gtm',
-    ]);
+    expect(pgPillarEN.subCards).toHaveLength(3);
+    expect(pgPillarPT.subCards).toHaveLength(3);
+    expect(pgPillarEN.subCards.map((c) => c.id)).toContain('gl-1');
+    expect(pgPillarEN.subCards.map((c) => c.id)).toContain('gl-2');
+    expect(pgPillarEN.subCards.map((c) => c.id)).toContain('gtm-linkedin-stories-redesign');
+    expect(pgPillarPT.subCards.map((c) => c.id)).toContain('gl-1');
+    expect(pgPillarPT.subCards.map((c) => c.id)).toContain('gl-2');
+    expect(pgPillarPT.subCards.map((c) => c.id)).toContain('gtm-linkedin-stories-redesign');
 
-    pgPillarEN.extendedSubsections.forEach((subSec, sIdx) => {
-      expect(subSec.subCards.length).toBeGreaterThan(0);
-      expect(pgPillarPT.extendedSubsections[sIdx].subCards.length).toBe(
-        subSec.subCards.length
-      );
+    // Domains 05 and 11 subsections merged into main pillar
+    expect(pgPillarEN.extendedSubsections || []).toHaveLength(0);
+    expect(pgPillarPT.extendedSubsections || []).toHaveLength(0);
 
-      subSec.subCards.forEach((card) => {
-        expect(card.id).toBeTruthy();
-        expect(card.title).toBeTruthy();
-        expect(card.star).toBeDefined();
-        expect(card.star.situation).toBeTruthy();
-        expect(card.star.task).toBeTruthy();
-        expect(card.star.action).toBeTruthy();
-        expect(card.star.result).toBeTruthy();
-        expect(card.l6Principle).toBeTruthy();
-      });
+    pgPillarEN.subCards.forEach((card) => {
+      expect(card.id).toBeTruthy();
+      expect(card.title).toBeTruthy();
+      expect(card.star).toBeDefined();
+      expect(card.star.situation).toBeTruthy();
+      expect(card.star.task).toBeTruthy();
+      expect(card.star.action).toBeTruthy();
+      expect(card.star.result).toBeTruthy();
+      expect(card.l6Principle).toBeTruthy();
     });
   });
 

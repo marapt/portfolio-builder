@@ -20,94 +20,73 @@ export const topPillars = [
     number: '01',
     title: 'Portfolio Governance and Framework Design',
     subtitle:
-      'Design, standardize and scale operating models and review cadences across all pillars. Establish structured intake, resource allocation and program prioritization processes.',
+      'Design, standardize and scale operating models and review cadences across all pillars. Establish structured intake, resource allocation and program prioritization processes. Global Language Coverage and Localization Solutions. Multi-wave international launch sequencing, localized GTM campaign governance, and cross-market commercial alignment across strategic expansion rollouts.',
     icon: 'Layers',
     color: 'violet',
-    subCards: [],
-    extendedSubsections: [
+    subCards: [
       {
-        id: 'global-language',
-        number: '05',
-        title: 'Global Language Services',
-        shortName: 'Language Services',
-        icon: 'Languages',
-        description: 'Global Language Coverage and Localization Solutions.',
-        subCards: [
-          {
-            id: 'gl-1',
-            title: 'Enterprise Terminology Center of Excellence (CoE)',
-            subtitle: 'Unifying global corporate voice across distributed product ecosystems.',
-            tag: 'Terminology CoE',
-            metrics: '100% Global Parity · 26+ Languages',
-            star: {
-              situation: 'Inconsistent terminology across product, marketing, and support eroded brand trust internationally.',
-              task: 'Centralize enterprise terminology governance into an accessible self-service platform.',
-              action: 'Built a cloud-based terminology portal with automated linting extensions for engineering and marketing.',
-              result: 'Achieved 100% brand terminology parity across 26 languages and cut linguistic bug filings by 45%.',
-            },
-            l6Principle: 'Terminology consistency is a core product quality attribute, not an afterthought.',
-          },
-          {
-            id: 'gl-2',
-            title: 'Microsoft - Geopolitical Readiness & Brand Compliance',
-            subtitle:
-              'Establishing pre-flight geopolitical gates, standardized clearance scorecards, and in-market reviews across 40–45+ markets.',
-            tag: 'Geopolitical Compliance',
-            proofAnchor: 'microsoft',
-            metrics: '200+ Storefronts · 40–45+ Mkts · 0 Violations · 100% Compliance',
-            star: {
-              situation:
-                'At Microsoft, supporting global storefront and marketing launches across 40–45+ international markets and 200+ regional storefront endpoints meant regional marketing, editorial, and product assets risked geopolitical, regulatory, and cultural missteps. Without standardized pre-launch clearance gates aligned across Legal, PR, and regional/geopolitical teams, fragmented localization and inconsistent standards risked brand exposure, escalations, or late launch delays.',
-              task:
-                'Establish pre-flight geopolitical and brand-compliance clearance gates integrated into the global release rhythm, partnering with Legal, PR, and geopolitical/regional stakeholders, so international launches cleared compliance simultaneously with localization and engineering gates without slowing publishing velocity.',
-              action:
-                'Embedded Geopolitical & Policy Release Gates: Treated geopolitical, content-policy, and regional-marketing readiness as simultaneous launch gates within the global release train rather than last-minute checks. Standardized Clearance Scorecards & Terminology Alignment: Partnered with Legal, PR, and geopolitical/brand teams to standardize clearance scorecards, regional sensitivity guidelines, and shared terminology/reference materials. In-Market & Regional Stakeholder Review: Partnered with regional linguists, in-market reviewers, and cross-functional leads to balance global brand consistency with local nuance and resolve regional/cultural sensitivities early during Rhythm-of-Business (ROB) and launch reviews.',
-              result:
-                'Cleared 200+ global storefront markets across 40–45+ international markets with 0 brand violations and 100% compliance across international guidelines. Reduced escalations tied to cultural or geopolitical misalignment and strengthened alignment across Legal, PR, product, and regional teams.',
-            },
-            l6Principle:
-              'Geopolitical compliance must be preventative, standardized, and integrated natively into release train gates rather than treated as a reactive late-stage hurdle.',
-          },
-        ],
+        id: 'gl-1',
+        title: 'Enterprise Terminology Center of Excellence (CoE)',
+        subtitle: 'Unifying global corporate voice across distributed product ecosystems.',
+        tag: 'Terminology CoE',
+        metrics: '100% Global Parity · 26+ Languages',
+        star: {
+          situation: 'Inconsistent terminology across product, marketing, and support eroded brand trust internationally.',
+          task: 'Centralize enterprise terminology governance into an accessible self-service platform.',
+          action: 'Built a cloud-based terminology portal with automated linting extensions for engineering and marketing.',
+          result: 'Achieved 100% brand terminology parity across 26 languages and cut linguistic bug filings by 45%.',
+        },
+        l6Principle: 'Terminology consistency is a core product quality attribute, not an afterthought.',
       },
       {
-        id: 'global-expansion-gtm',
-        number: '11',
-        title: 'Global Expansion / Go-to-Market (GTM)',
-        shortName: 'Global Expansion & GTM',
-        icon: 'Globe',
-        description:
-          'Multi-wave international launch sequencing, localized GTM campaign governance, and cross-market commercial alignment across strategic expansion rollouts.',
-        subCards: [
-          {
-            id: 'gtm-linkedin-stories-redesign',
-            title:
-              'LinkedIn - Stories & Platform Redesign\nMulti-Wave Global GTM Governance',
-            subtitle:
-              'Sequencing phased international GTM rollouts across 6 waves, 26 languages, and 17 markets during COVID-19 pandemic operations.',
-            tag: 'Global Expansion & GTM',
-            metrics: '6 Global GTM Waves · 26 Languages & 17 Markets',
-            proofAnchor: 'linkedin',
-            externalLink: {
-              url: 'https://www.linkedin.com/blog/member/product/a-new-look-for-linkedin-from-the-inside-out',
-              label: 'A New Look for LinkedIn: From the Inside Out',
-            },
-            star: {
-              situation:
-                'During the rapid COVID-19 shift to remote work in 2020, LinkedIn needed to launch LinkedIn Stories (a new visual storytelling format for members, journalists, and brands) across sequential international waves alongside LinkedIn\'s first major platform redesign in five years. Coordinating localized GTM campaigns, brand updates, and release gates across 26 languages and 17 markets without a pre-existing centralized MARCOM localization operating model risked fragmented launches and missed regional windows.',
-              task:
-                'Establish a dedicated Localization Marketing PGM team and execute a scalable multi-wave Go-to-Market (GTM) localization and launch governance model across Marketing, Localization Engineering, Legal, and Editorial News so every regional release hit its window while connecting localized storytelling adoption to customer journey value and commercial ROI.',
-              action:
-                'Sequenced phased launch waves starting with Brazil (Wave 1, Apr 2020) and expanding through the Netherlands, UAE/MENA, Australia, France, the September 24, 2020 Global Redesign and US/Canada rollout, and the UK (Wave 6, Oct 2020), enforcing readiness gates with Human-in-the-Loop validation and regional partner alignment. Established a resilient MARCOM localization operating model with 2 FTE Localization Marketing PMs, up to 2 Managed Service Provider (MSP) vendors, and up to 15 internal linguists to absorb surge demand without compromising velocity. Mapped localized GTM messaging to each stage of the member and advertiser journey, from initial discovery and first-story creation (Awareness & Activation), to daily habit formation (Engagement & Retention), to brand/creator storytelling and campaign performance (Advocacy & ROI).',
-              result:
-                'Successfully delivered scheduled multi-wave global GTM launches across 6 waves, 26 languages, and 17 markets during pandemic remote operations alongside the September 2020 global platform redesign. Connected localized GTM execution to commercial and customer journey outcomes by capturing advertiser ROI signals and user retention insights within the broader macro context of LinkedIn surpassing $10B in FY21 annual revenue and LinkedIn Marketing Solutions achieving +97% YoY peak growth.',
-            },
-            l6Principle:
-              'Complex global expansions succeed when multi-wave release gates align cross-functional readiness with measurable customer journey milestones rather than isolated launch dates.',
-          },
-        ],
+        id: 'gl-2',
+        title: 'Microsoft - Geopolitical Readiness & Brand Compliance',
+        subtitle:
+          'Establishing pre-flight geopolitical gates, standardized clearance scorecards, and in-market reviews across 40–45+ markets.',
+        tag: 'Geopolitical Compliance',
+        proofAnchor: 'microsoft',
+        metrics: '200+ Storefronts · 40–45+ Mkts · 0 Violations · 100% Compliance',
+        star: {
+          situation:
+            'At Microsoft, supporting global storefront and marketing launches across 40–45+ international markets and 200+ regional storefront endpoints meant regional marketing, editorial, and product assets risked geopolitical, regulatory, and cultural missteps. Without standardized pre-launch clearance gates aligned across Legal, PR, and regional/geopolitical teams, fragmented localization and inconsistent standards risked brand exposure, escalations, or late launch delays.',
+          task:
+            'Establish pre-flight geopolitical and brand-compliance clearance gates integrated into the global release rhythm, partnering with Legal, PR, and geopolitical/regional stakeholders, so international launches cleared compliance simultaneously with localization and engineering gates without slowing publishing velocity.',
+          action:
+            'Embedded Geopolitical & Policy Release Gates: Treated geopolitical, content-policy, and regional-marketing readiness as simultaneous launch gates within the global release train rather than last-minute checks. Standardized Clearance Scorecards & Terminology Alignment: Partnered with Legal, PR, and geopolitical/brand teams to standardize clearance scorecards, regional sensitivity guidelines, and shared terminology/reference materials. In-Market & Regional Stakeholder Review: Partnered with regional linguists, in-market reviewers, and cross-functional leads to balance global brand consistency with local nuance and resolve regional/cultural sensitivities early during Rhythm-of-Business (ROB) and launch reviews.',
+          result:
+            'Cleared 200+ global storefront markets across 40–45+ international markets with 0 brand violations and 100% compliance across international guidelines. Reduced escalations tied to cultural or geopolitical misalignment and strengthened alignment across Legal, PR, product, and regional teams.',
+        },
+        l6Principle:
+          'Geopolitical compliance must be preventative, standardized, and integrated natively into release train gates rather than treated as a reactive late-stage hurdle.',
+      },
+      {
+        id: 'gtm-linkedin-stories-redesign',
+        title:
+          'LinkedIn - Stories & Platform Redesign\nMulti-Wave Global GTM Governance',
+        subtitle:
+          'Sequencing phased international GTM rollouts across 6 waves, 26 languages, and 17 markets during COVID-19 pandemic operations.',
+        tag: 'Global Expansion & GTM',
+        metrics: '6 Global GTM Waves · 26 Languages & 17 Markets',
+        proofAnchor: 'linkedin',
+        externalLink: {
+          url: 'https://www.linkedin.com/blog/member/product/a-new-look-for-linkedin-from-the-inside-out',
+          label: 'A New Look for LinkedIn: From the Inside Out',
+        },
+        star: {
+          situation:
+            'During the rapid COVID-19 shift to remote work in 2020, LinkedIn needed to launch LinkedIn Stories (a new visual storytelling format for members, journalists, and brands) across sequential international waves alongside LinkedIn\'s first major platform redesign in five years. Coordinating localized GTM campaigns, brand updates, and release gates across 26 languages and 17 markets without a pre-existing centralized MARCOM localization operating model risked fragmented launches and missed regional windows.',
+          task:
+            'Establish a dedicated Localization Marketing PGM team and execute a scalable multi-wave Go-to-Market (GTM) localization and launch governance model across Marketing, Localization Engineering, Legal, and Editorial News so every regional release hit its window while connecting localized storytelling adoption to customer journey value and commercial ROI.',
+          action:
+            'Sequenced phased launch waves starting with Brazil (Wave 1, Apr 2020) and expanding through the Netherlands, UAE/MENA, Australia, France, the September 24, 2020 Global Redesign and US/Canada rollout, and the UK (Wave 6, Oct 2020), enforcing readiness gates with Human-in-the-Loop validation and regional partner alignment. Established a resilient MARCOM localization operating model with 2 FTE Localization Marketing PMs, up to 2 Managed Service Provider (MSP) vendors, and up to 15 internal linguists to absorb surge demand without compromising velocity. Mapped localized GTM messaging to each stage of the member and advertiser journey, from initial discovery and first-story creation (Awareness & Activation), to daily habit formation (Engagement & Retention), to brand/creator storytelling and campaign performance (Advocacy & ROI).',
+          result:
+            'Successfully delivered scheduled multi-wave global GTM launches across 6 waves, 26 languages, and 17 markets during pandemic remote operations alongside the September 2020 global platform redesign. Connected localized GTM execution to commercial and customer journey outcomes by capturing advertiser ROI signals and user retention insights within the broader macro context of LinkedIn surpassing $10B in FY21 annual revenue and LinkedIn Marketing Solutions achieving +97% YoY peak growth.',
+        },
+        l6Principle:
+          'Complex global expansions succeed when multi-wave release gates align cross-functional readiness with measurable customer journey milestones rather than isolated launch dates.',
       },
     ],
+    extendedSubsections: [],
   },
   {
     id: 'supplier-performance',
