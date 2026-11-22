@@ -26,17 +26,24 @@ export const topPillars = [
     subCards: [
       {
         id: 'gl-1',
-        title: 'Enterprise Terminology Center of Excellence (CoE)',
-        subtitle: 'Unifying global corporate voice across distributed product ecosystems.',
-        tag: 'Terminology CoE',
-        metrics: '100% Global Parity · 26+ Languages',
+        title: 'IATE -  Data Trainee - Training Fundamentals',
+        subtitle:
+          'Mastering termbase curation, search relevance evaluation, and multi-role catalog workflows across EU multilingual repositories.',
+        tag: 'Data & Terminology',
+        proofAnchor: 'eu-dgt',
+        metrics: '50 Terms/Day · 30-Day Sprint · EN-PT / PT-EN',
         star: {
-          situation: 'Inconsistent terminology across product, marketing, and support eroded brand trust internationally.',
-          task: 'Centralize enterprise terminology governance into an accessible self-service platform.',
-          action: 'Built a cloud-based terminology portal with automated linting extensions for engineering and marketing.',
-          result: 'Achieved 100% brand terminology parity across 26 languages and cut linguistic bug filings by 45%.',
+          situation:
+            'Shortly after the IATE (InterActive Terminology for Europe) database launched in June 2008 as a large-scale multilingual terminology repository (growing to millions of terms and searches), building out the Portuguese language pair (EN-PT and PT-EN) required structured termbase contribution alongside rigorous evaluation of how users searched, retrieved, and experienced the platform.',
+          task:
+            'As a User and Data Trainee intern, build deep mastery of the IATE database from both an end-user/curator and data-evaluation standpoint, focusing on high-quality termbase curation for Portuguese, navigating multi-role permissions, evaluating search relevance and data labeling, and testing pre-release features, to establish a strong foundation for future work with catalogs (across both front-end user flows and back-end data/engine structures).',
+          action:
+            'High-Cadence Termbase Curation & Role Mastery: Focused dedicated daily blocks (around 4 hours/day, or 50% of daily time, aiming for at least 50 terms per day over a 30-day sprint) on adding, reviewing, and approving EN-PT / PT-EN terms while mastering IATE\'s interface across terminologist, reviewer, and approver permission roles. Search Relevance, Data Labeling & Pre-Release Testing: Partnered with internal data and engineering stakeholders to inspect user search query types, result quality, and missed terms, evaluate search relevance and data-labeling criteria, audit the terms engine/back-end behavior, and test pre-release features. Catalog & System Foundation Lens: Treated every term entry, metadata/role state, and search result as a structured catalog record, building early fluency in how front-end search/curator interfaces and back-end data/engine logic interact in large-scale repositories (while keeping deeper back-end infrastructure engineering outside internship scope).',
+          result:
+            'Completed the 30-day structured termbase curation sprint for the Portuguese pair while mastering multi-role IATE workflows. Delivered practical search-query, missed-term, data-labeling, and pre-release testing insights alongside data and engineering partners. Built a durable foundational mental model for large-scale catalog operations, connecting front-end usability and curation accuracy with back-end data integrity in later roles.',
         },
-        l6Principle: 'Terminology consistency is a core product quality attribute, not an afterthought.',
+        l6Principle:
+          'Applying focused, measurable execution to a large-scale database early on and looking at both how users query/curate data on the front end and how data quality/relevance behaves underneath creates a lasting foundation for managing complex catalogs later in your career.',
       },
       {
         id: 'gl-2',

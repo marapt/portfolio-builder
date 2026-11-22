@@ -26,17 +26,24 @@ export const topPillars = [
     subCards: [
       {
         id: 'gl-1',
-        title: 'Centro de Excelência (CoE) em Terminologia Corporativa',
-        subtitle: 'Unificação da voz da marca em todo o ecossistema digital de produtos.',
-        tag: 'CoE de Terminologia',
-        metrics: '100% Paridade Global · 26+ Idiomas',
+        title: 'IATE -  Data Trainee - Training Fundamentals',
+        subtitle:
+          'Domínio da curadoria terminológica, avaliação da relevância de pesquisa e fluxos de catálogo com múltiplos perfis no repositório multilingue da UE.',
+        tag: 'Fundamentos de Dados',
+        proofAnchor: 'eu-dgt',
+        metrics: '50 Termos/Dia · Sprint de 30 Dias · EN-PT / PT-EN',
         star: {
-          situation: 'Terminologia inconsistente entre produto e marketing prejudicava a confiança internacional na marca.',
-          task: 'Centralizar a gestão terminológica numa plataforma corporativa acessível e colaborativa.',
-          action: 'Criei um portal de terminologia na cloud com ferramentas de validação integradas nos fluxos técnicos.',
-          result: 'Consegui 100% de consistência da marca em 26 idiomas e reduzi em 45% os erros linguísticos comunicados.',
+          situation:
+            'Pouco depois do lançamento da base de dados IATE (InterActive Terminology for Europe) em junho de 2008 como repositório terminológico multilingue de grande escala (evoluindo para milhões de termos e pesquisas), a estruturação do par de idiomas português (EN-PT e PT-EN) exigiu uma contribuição estruturada para a base de termos, aliada a uma avaliação rigorosa sobre como os utilizadores pesquisavam, recuperavam e experienciavam a plataforma.',
+          task:
+            'Como estagiário de utilizador e dados, adquirir domínio aprofundado da base de dados IATE, tanto da perspetiva de utilizador final/curador como de avaliação de dados, concentrando-me na curadoria terminológica de elevada qualidade para português, gestão de permissões com múltiplos perfis, avaliação da relevância de pesquisa e rotulagem de dados, e teste de funcionalidades pré-lançamento, estabelecendo bases sólidas para trabalhos futuros com catálogos (tanto em fluxos de utilizador no front-end como em estruturas de dados/motores no back-end).',
+          action:
+            'Curadoria Terminológica de Alto Ritmo e Domínio de Perfis: Dediquei blocos diários focados (cerca de 4 horas/dia, ou 50% do tempo diário, com a meta de pelo menos 50 termos por dia durante um sprint de 30 dias) à inserção, revisão e aprovação de termos EN-PT / PT-EN, dominando a interface do IATE nos perfis de terminólogo, revisor e aprovador. Relevância de Pesquisa, Rotulagem de Dados e Testes Pré-Lançamento: Colaborei com equipas internas de dados e engenharia na inspeção de tipos de pesquisa dos utilizadores, qualidade dos resultados e termos não encontrados, avaliei a relevância de pesquisa e critérios de rotulagem de dados, auditei o comportamento do motor/back-end de termos e testei funcionalidades pré-lançamento. Perspetiva Estrutural de Catálogos e Sistemas: Tratei cada entrada de termo, metadados/estados de perfil e resultados de pesquisa como registos estruturados de catálogo, desenvolvendo fluência precoce sobre como interfaces de pesquisa/curadoria no front-end interagem com a lógica de dados/motores no back-end em repositórios de grande escala (mantendo a engenharia de infraestrutura profunda fora do âmbito do estágio).',
+          result:
+            'Concluí com êxito o sprint estruturado de 30 dias de curadoria terminológica para o par português, dominando fluxos de trabalho com múltiplos perfis no IATE. Entreguei contributos práticos sobre consultas de pesquisa, termos em falta, rotulagem de dados e testes de funcionalidades pré-lançamento junto das equipas de dados e engenharia. Construí um modelo mental duradouro para operações de catálogos em grande escala, articulando usabilidade no front-end e rigor de curadoria com integridade de dados no back-end em funções posteriores.',
         },
-        l6Principle: 'A coerência terminológica é uma componente essencial da qualidade do produto.',
+        l6Principle:
+          'Aplicar uma execução focada e mensurável a uma base de dados de grande escala desde o início, analisando tanto como os utilizadores consultam/curam dados no front-end como o comportamento subjacente de qualidade e relevância, cria uma base sólida e duradoura para a gestão de catálogos complexos ao longo da carreira.',
       },
       {
         id: 'gl-2',
