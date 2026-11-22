@@ -8,9 +8,9 @@ export const bentoHero = {
   subtitle:
     'Showcasing my experience in enterprise governance models, extended workforce vendor management and field-tested processes through structured STAR cards.',
   quickStats: [
-    { label: 'Strategic Pillars', value: '4 Top Pillars' },
-    { label: 'Operational Domains', value: '4 Categories' },
-    { label: 'Interactive Cards', value: '24 STAR Cards' },
+    { label: 'Strategic Pillars', value: '5 Top Pillars' },
+    { label: 'Operational Domains', value: '3 Specialized Domains' },
+    { label: 'Interactive Cards', value: '26 STAR Cards' },
   ],
 };
 

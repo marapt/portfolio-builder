@@ -8,9 +8,9 @@ export const bentoHero = {
   subtitle:
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.',
   quickStats: [
-    { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
-    { label: 'Domínios Operacionais', value: '4 Categorias' },
-    { label: 'Cartões Interativos', value: '24 Cartões STAR' },
+    { label: 'Pilares Estratégicos', value: '5 Pilares de Topo' },
+    { label: 'Domínios Operacionais', value: '3 Domínios Especializados' },
+    { label: 'Cartões Interativos', value: '26 Cartões STAR' },
   ],
 };
 

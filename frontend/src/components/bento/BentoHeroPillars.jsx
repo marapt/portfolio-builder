@@ -293,7 +293,9 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
               )}
 
               {/* Extended Subsections (e.g. Domain 07 in Pillar 02, Domains 09 & 10 in Pillar 04) */}
-              {(pillar.extendedSubsections || []).map((subSec) => {
+              {(pillar.extendedSubsections || [])
+                .filter((subSec) => (subSec.subCards || []).length > 0)
+                .map((subSec) => {
                 const subTheme = subsectionThemeMap[subSec.id] || {
                   border: 'border-gray-200',
                   iconBg: 'bg-gray-100 border-gray-200 text-gray-800',
