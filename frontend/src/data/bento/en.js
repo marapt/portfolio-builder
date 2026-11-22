@@ -537,7 +537,7 @@ export const topPillars = [
     number: '05',
     title: 'Cross-functional Partners and Stakeholders',
     subtitle:
-      'Foster cross-functional collaboration, strategic stakeholder alignment, and executive consensus across Product, Engineering, Marketing, Legal, and Regional leadership.',
+      'Foster cross-functional collaboration, strategic stakeholder alignment, and executive consensus across Product, Engineering, Marketing, Legal, and Regional leadership. Track record of driving alignment with engineering teams and senior leads, finance controllers, cross-functional partners across time-zones and external vendors and executives.',
     icon: 'Network',
     color: 'blue',
     subCards: [

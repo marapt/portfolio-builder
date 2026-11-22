@@ -537,7 +537,7 @@ export const topPillars = [
     number: '05',
     title: 'Parceiros Multifuncionais e Partes Interessadas',
     subtitle:
-      'Promover a colaboração multifuncional, o alinhamento estratégico com partes interessadas e o consenso executivo entre Produto, Engenharia, Marketing, Jurídico e lideranças regionais.',
+      'Promover a colaboração multifuncional, o alinhamento estratégico com partes interessadas e o consenso executivo entre Produto, Engenharia, Marketing, Jurídico e lideranças regionais. Histórico comprovado de alinhamento com equipas de engenharia e líderes sénior, controladores financeiros, parceiros multifuncionais em diferentes fusos horários, fornecedores externos e executivos.',
     icon: 'Network',
     color: 'blue',
     subCards: [
