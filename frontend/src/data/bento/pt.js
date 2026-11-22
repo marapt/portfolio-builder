@@ -536,7 +536,8 @@ export const topPillars = [
           },
           {
             id: 'bit-workforce-capacity',
-            title: 'LinkedIn e Block - Gestão de Capacidade de FTEs + Trabalho Temporário',
+            title:
+              'LinkedIn e Block - FTEs e Força de Trabalho Temporária\nGestão de Recursos e Capacidade',
             subtitle:
               'Modelo de capacidade 0-a-1 de baixa fricção e gestão de trabalho contingente em fases de rápida expansão.',
             tag: 'Operações de Equipas',

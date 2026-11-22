@@ -536,7 +536,8 @@ export const topPillars = [
           },
           {
             id: 'bit-workforce-capacity',
-            title: "LinkedIn and Block - FTE's + Temporary Workforce Capacity Management",
+            title:
+              "LinkedIn and Block - FTE's plus and Temporary Workforce\nResource and Capacity Management",
             subtitle:
               'Low-friction 0-to-1 capacity tracking and contingent workforce balancing across rapid team scaling.',
             tag: 'Workforce Operations',
