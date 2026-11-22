@@ -542,6 +542,17 @@ export const topPillars = [
       },
     ],
   },
+  {
+    id: 'cross-functional-partners',
+    number: '05',
+    title: 'Parceiros Multifuncionais e Partes Interessadas',
+    subtitle:
+      'Promover a colaboração multifuncional, o alinhamento estratégico com partes interessadas e o consenso executivo entre Produto, Engenharia, Marketing, Jurídico e lideranças regionais.',
+    icon: 'Network',
+    color: 'blue',
+    subCards: [],
+    extendedSubsections: [],
+  },
 ];
 
 export const operationalDomains = [

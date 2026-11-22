@@ -12,6 +12,8 @@ import {
   Globe,
   FileText,
   Languages,
+  Users,
+  Network,
 } from 'lucide-react';
 import BentoCard from './BentoCard';
 
@@ -20,6 +22,8 @@ const pillarIcons = {
   ShieldCheck,
   Activity,
   TrendingUp,
+  Users,
+  Network,
 };
 
 const subsectionIcons = {
@@ -121,6 +125,33 @@ const pillarThemes = {
     iconBadge: 'bg-sky-100 border-sky-200 text-sky-700',
     textAccent: 'text-sky-600',
   },
+  cyan: {
+    pillActive: 'bg-cyan-600 text-white shadow-lg shadow-cyan-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-cyan-50/40 to-white',
+    boxBorder: 'border-cyan-200/80 hover:border-cyan-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(6,182,212,0.08)]',
+    ambientGlow: 'bg-cyan-100/60',
+    iconBadge: 'bg-cyan-100 border-cyan-200 text-cyan-700',
+    textAccent: 'text-cyan-600',
+  },
+  blue: {
+    pillActive: 'bg-blue-600 text-white shadow-lg shadow-blue-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-blue-50/40 to-white',
+    boxBorder: 'border-blue-200/80 hover:border-blue-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(59,130,246,0.08)]',
+    ambientGlow: 'bg-blue-100/60',
+    iconBadge: 'bg-blue-100 border-blue-200 text-blue-700',
+    textAccent: 'text-blue-600',
+  },
+  indigo: {
+    pillActive: 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/25',
+    boxBg: 'bg-gradient-to-br from-white via-indigo-50/40 to-white',
+    boxBorder: 'border-indigo-200/80 hover:border-indigo-300',
+    boxShadow: 'shadow-[0_20px_50px_rgba(99,102,241,0.08)]',
+    ambientGlow: 'bg-indigo-100/60',
+    iconBadge: 'bg-indigo-100 border-indigo-200 text-indigo-700',
+    textAccent: 'text-indigo-600',
+  },
 };
 
 export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand }) => {
@@ -169,7 +200,7 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
             }`}
           >
             <LayoutGrid className="w-3.5 h-3.5" />
-            <span>{isPt ? 'Todos os Pilares (4)' : 'All Pillars (4)'}</span>
+            <span>{isPt ? `Todos os Pilares (${pillars.length})` : `All Pillars (${pillars.length})`}</span>
           </button>
 
           {pillars.map((pillar) => {

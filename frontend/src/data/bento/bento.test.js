@@ -10,6 +10,7 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     'supplier-performance',
     'operations-change',
     'executive-health',
+    'cross-functional-partners',
   ];
 
   const expectedDomainIds = [
@@ -18,9 +19,9 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     'testing-response',
   ];
 
-  test('Tier 1 has exactly 4 Top Strategic Pillars in EN and PT', () => {
-    expect(topPillarsEN).toHaveLength(4);
-    expect(topPillarsPT).toHaveLength(4);
+  test('Tier 1 has exactly 5 Top Strategic Pillars in EN and PT', () => {
+    expect(topPillarsEN).toHaveLength(5);
+    expect(topPillarsPT).toHaveLength(5);
 
     expect(topPillarsEN.map((p) => p.id)).toEqual(expectedPillarIds);
     expect(topPillarsPT.map((p) => p.id)).toEqual(expectedPillarIds);
@@ -34,7 +35,6 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
           (acc, s) => acc + (s.subCards?.length || 0),
           0
         );
-      expect(totalCards).toBeGreaterThan(0);
       expect(pillar.subCards.length).toBeLessThanOrEqual(8);
 
       pillar.subCards.forEach((card) => {

@@ -542,6 +542,17 @@ export const topPillars = [
       },
     ],
   },
+  {
+    id: 'cross-functional-partners',
+    number: '05',
+    title: 'Cross-functional Partners and Stakeholders',
+    subtitle:
+      'Foster cross-functional collaboration, strategic stakeholder alignment, and executive consensus across Product, Engineering, Marketing, Legal, and Regional leadership.',
+    icon: 'Network',
+    color: 'blue',
+    subCards: [],
+    extendedSubsections: [],
+  },
 ];
 
 export const operationalDomains = [
