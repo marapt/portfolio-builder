@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Pilares Estratégicos', value: '7 Pilares de Topo' },
     { label: 'Estruturas Empresariais', value: 'Arquitetura STAR' },
-    { label: 'Cartões Interativos', value: '26 Cartões STAR' },
+    { label: 'Cartões Interativos', value: '27 Cartões STAR' },
   ],
 };
 
@@ -653,13 +653,36 @@ export const topPillars = [
           'Acelerar fluxos de localização em grande volume exige combinar tradução automática com critérios objetivos de qualidade como o TAUS DQF, reduzindo prazos enquanto se protege a satisfação do cliente.',
       },
       {
+        id: 'loc-solutions-framework',
+        title: 'Arquitetura de Soluções de Localização Empresarial',
+        subtitle:
+          'Modelo Operacional em 5 Pilares: CoE, MTPE, Telemetria, HITL e Governação Cultural.',
+        tag: 'Soluções e Arquitetura de Localização',
+        contextLabel: 'Soluções Empresariais',
+        proofAnchors: ['microsoft', 'apple-2014', 'linkedin', 'block'],
+        proofAnchor: 'microsoft',
+        metrics: 'Tiering de SOW/SLA Empresarial · Telemetria Automatizada e MTPE · HITL Estratificado · 50+ Mercados',
+        star: {
+          situation:
+            'Operar em organizações globais descentralizadas (como a Microsoft, Apple, LinkedIn, Block e Hogarth Worldwide) resultava frequentemente em acordos de fornecedores fragmentados, acompanhamento manual por folhas de cálculo, atrasos de entrega e riscos não mitigados entre conteúdos de grande volume e marketing criativo de alto impacto.',
+          task:
+            'Conceber e institucionalizar soluções de localização reutilizáveis e de nível empresarial que escalassem a entrega de conteúdos globais por dezenas de mercados internacionais sem expandir o orçamento ou o número de efetivos, protegendo a integridade da marca, a rapidez e a conformidade regulamentar.',
+          action:
+            'Desenhei e implementei 5 soluções centrais de localização empresarial em equipas operacionais globais:\n\n1. CoE Centralizado e Tiering de SOW/SLA: Substituição de acordos de fornecedores fragmentados por região por um modelo unificado de Centro de Excelência (CoE) e SOWs/SLAs padronizados multinível associados a cartões de pontuação de desempenho objetivos (Microsoft, LinkedIn).\n\n2. Fluxos de Tradução Automática (MT) e Pós-Edição Neuronal (MTPE): Introdução de canais de tradução assistida por IA e modelos de MTPE para conteúdos de base de grande volume, combinados com avaliação de qualidade objetiva usando o TAUS Dynamic Quality Framework (DQF) (Microsoft Stores, Block).\n\n3. Telemetria e Canais de Ingestão Automatizados por API: Parceria com a Engenharia Central para substituir o acompanhamento manual por folhas de cálculo por canais automatizados de ingestão por API, scripts de triagem de incidentes e painéis de estado operacional em tempo real, reduzindo a latência de admissão para menos de 24 horas (Microsoft, Apple).\n\n4. Estruturas de Avaliação com Estratificação de Risco e Human-in-the-Loop (HITL): Desenho de um modelo de verificação de qualidade em 3 níveis combinando verificações estruturais automatizadas, validações semânticas assistidas por modelos e revisão humana (HITL) focada estritamente em casos ambíguos, culturais ou legais de alto risco (Microsoft, MIIS).\n\n5. Governação de Transcriação e Adaptação Cultural Multi-Mercado: Estabelecimento de fluxos rigorosos de transcriação, gestão de bases terminológicas e memórias de tradução, e diretrizes de marca em 26 a 50+ mercados para preservar a integridade da marca e a conformidade regulamentar (Hogarth Worldwide, LinkedIn).',
+          result:
+            'Redução substancial de custos operacionais e de tradução de base, eliminação de estrangulamentos em transferências manuais, aceleração de prazos de entrega em dezenas de mercados internacionais e escalabilidade da capacidade de processamento sem aumento de equipa.',
+        },
+        l6Principle:
+          'A globalização moderna atinge o sucesso quando as organizações deixam de tratar a localização como um serviço pós-produção e a estruturam como uma infraestrutura de produto automatizada e estratificada por risco com governação humana contínua.',
+      },
+      {
         id: 'ai-portfolio-building',
         title: 'Construção de Portfólio com IA',
         subtitle:
           'Transformação de marcos de carreira, estruturas de governação operacional e artefactos de entrega num sistema de portfólio bilingue e interativo.',
         tag: 'Desenvolvimento e Crescimento Pessoal',
         contextLabel: 'Projeto Pessoal',
-        metrics: '26 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
+        metrics: '27 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
         externalLink: {
           url: '/how-i-built-this',
           label: 'Como Construí Este Portfólio (Jornada IA)',
@@ -671,7 +694,7 @@ export const topPillars = [
           task:
             'Conceber uma experiência de portfólio interativa e bilingue que transformasse marcos de carreira, governação operacional e artefactos de entrega em níveis intuitivos e navegáveis.',
           action:
-            'Estruturei uma arquitetura Bento multinível organizando 26 cartões STAR em 7 pilares estratégicos com controlos de rotação, expansão e pesquisa. Integrei vistas dinâmicas incluindo uma linha de tempo de carreira contínua de 20 marcos e painéis Scrum resilientes, garantindo sincronização rigorosa entre inglês (en.js) e português (pt.js).',
+            'Estruturei uma arquitetura Bento multinível organizando 27 cartões STAR em 7 pilares estratégicos com controlos de rotação, expansão e pesquisa. Integrei vistas dinâmicas incluindo uma linha de tempo de carreira contínua de 20 marcos e painéis Scrum resilientes, garantindo sincronização rigorosa entre inglês (en.js) e português (pt.js).',
           result:
             'Entrega de um sistema de portfólio em produção que combina métricas de impacto imediatas com blocos estruturados de Situação, Tarefa, Ação, Resultado e Aprendizagem, permitindo analisar sínteses executivas ou aprofundar detalhes de execução a pedido.',
         },

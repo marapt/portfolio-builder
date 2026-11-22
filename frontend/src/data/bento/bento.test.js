@@ -25,7 +25,7 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     expect(topPillarsPT.map((p) => p.id)).toEqual(expectedPillarIds);
   });
 
-  test('Total interactive STAR cards across all 7 Top Strategic Pillars equals 26 in EN and PT', () => {
+  test('Total interactive STAR cards across all 7 Top Strategic Pillars equals 27 in EN and PT', () => {
     const countCards = (pillars) =>
       pillars.reduce((total, p) => {
         const core = p.subCards?.length || 0;
@@ -36,8 +36,8 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
         return total + core + extended;
       }, 0);
 
-    expect(countCards(topPillarsEN)).toBe(26);
-    expect(countCards(topPillarsPT)).toBe(26);
+    expect(countCards(topPillarsEN)).toBe(27);
+    expect(countCards(topPillarsPT)).toBe(27);
   });
 
   test('Each Top Pillar has valid subcards with complete STAR data', () => {
@@ -229,15 +229,17 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
 
     expect(oiPillarEN).toBeDefined();
     expect(oiPillarPT).toBeDefined();
-    expect(oiPillarEN.subCards).toHaveLength(3);
-    expect(oiPillarPT.subCards).toHaveLength(3);
+    expect(oiPillarEN.subCards).toHaveLength(4);
+    expect(oiPillarPT.subCards).toHaveLength(4);
     expect(oiPillarEN.subCards.map((c) => c.id)).toEqual([
       'ai-1',
+      'loc-solutions-framework',
       'ai-portfolio-building',
       'ai-nmt-case-study',
     ]);
     expect(oiPillarPT.subCards.map((c) => c.id)).toEqual([
       'ai-1',
+      'loc-solutions-framework',
       'ai-portfolio-building',
       'ai-nmt-case-study',
     ]);

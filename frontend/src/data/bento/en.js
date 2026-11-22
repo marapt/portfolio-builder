@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Strategic Pillars', value: '7 Top Pillars' },
     { label: 'Enterprise Frameworks', value: 'STAR Architecture' },
-    { label: 'Interactive Cards', value: '26 STAR Cards' },
+    { label: 'Interactive Cards', value: '27 STAR Cards' },
   ],
 };
 
@@ -653,13 +653,36 @@ export const topPillars = [
           'Scaling high-volume localization requires pairing automated MT workflows with objective quality frameworks like TAUS DQF to accelerate turnaround while safeguarding customer satisfaction.',
       },
       {
+        id: 'loc-solutions-framework',
+        title: 'Enterprise Localization Solutions Architecture',
+        subtitle:
+          '5-Pillar Operating Model: CoE, MTPE, Telemetry, HITL & Cultural Governance.',
+        tag: 'Localization Solutions & Architecture',
+        contextLabel: 'Enterprise Solutions',
+        proofAnchors: ['microsoft', 'apple-2014', 'linkedin', 'block'],
+        proofAnchor: 'microsoft',
+        metrics: 'Enterprise SOW/SLA Tiering · Automated Telemetry & MTPE · Risk-Tiered HITL · 50+ Markets',
+        star: {
+          situation:
+            'Operating across decentralized global organizations (such as Microsoft, Apple, LinkedIn, Block, and Hogarth Worldwide) frequently resulted in fragmented vendor agreements, manual spreadsheet tracking, turnaround bottlenecks, and unmitigated risk between high-volume baseline copy and high-stakes creative marketing.',
+          task:
+            'Architect and institutionalize reusable, enterprise-grade localization solutions that scale global content delivery across dozens of international markets without expanding headcount or budget, while protecting brand equity, velocity, and regulatory compliance.',
+          action:
+            'Designed and deployed 5 core enterprise localization solutions across global operating teams:\n\n1. Centralized CoE & SOW/SLA Tiering: Replaced fragmented, region-by-region vendor arrangements with a unified MARCOM Center of Excellence (CoE) model and standardized multi-tiered SOWs and SLAs tied to objective performance scorecards (Microsoft, LinkedIn).\n\n2. Machine Translation (MT) & Neural MT Post-Editing (MTPE) Workflows: Introduced AI-assisted translation pipelines and MTPE models for high-volume baseline content, combined with objective quality evaluation using the TAUS Dynamic Quality Framework (DQF) (Microsoft Stores, Block).\n\n3. Automated API-Driven Telemetry & Ingestion Pipelines: Partnered with Core Engineering to replace manual spreadsheet tracking with automated API ingestion pipelines, bug triage automation scripts, and real-time operational status dashboards, cutting intake latency to under 24 hours (Microsoft, Apple).\n\n4. Risk-Tiered & Human-in-the-Loop (HITL) Evaluation Frameworks: Designed a 3-tier quality verification model combining automated structural/linting checks, model-assisted semantic checks, and targeted HITL review focused strictly on high-risk, ambiguous, cultural, or legal edge cases (Microsoft, MIIS).\n\n5. Multi-Market Transcreation & Cultural Adaptation Governance: Established rigorous transcreation workflows, termbase/translation memory management, and brand guideline guardrails across 26 to 50+ markets to preserve global brand equity and compliance (Hogarth Worldwide, LinkedIn).',
+          result:
+            'Significantly lowered baseline operational and translation costs, eliminated manual spreadsheet handoff bottlenecks, reduced delivery turnaround cycles across international markets, and scaled content delivery capacity with zero headcount expansion.',
+        },
+        l6Principle:
+          'Modern globalization succeeds when organizations stop treating localization as a post-production translation service and instead architect it as an automated, risk-stratified product infrastructure with clear human-in-the-loop governance.',
+      },
+      {
         id: 'ai-portfolio-building',
         title: 'AI Portfolio Building',
         subtitle:
           'Turning career milestones, operational governance frameworks, and live delivery artifacts into an interactive, bilingual portfolio experience.',
         tag: 'Personal Growth & Development',
         contextLabel: 'Personal Project',
-        metrics: '26 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
+        metrics: '27 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
         externalLink: {
           url: '/how-i-built-this',
           label: 'How I Built This Portfolio (AI Showcase)',
@@ -671,7 +694,7 @@ export const topPillars = [
           task:
             'Architect an interactive, bilingual portfolio experience that turns career milestones, operational governance frameworks, and live delivery artifacts into scannable, inspectable tiers.',
           action:
-            'Structured a multi-tier Bento box framework organizing 26 STAR cards across 7 strategic pillars with flip, expand, and search controls. Connected narrative career progression with dynamic views such as a 20-milestone continuous career timeline and live Scrum delivery boards while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
+            'Structured a multi-tier Bento box framework organizing 27 STAR cards across 7 strategic pillars with flip, expand, and search controls. Connected narrative career progression with dynamic views such as a 20-milestone continuous career timeline and live Scrum delivery boards while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
           result:
             'Delivered a production-grade portfolio system pairing concise headline metrics with scannable Situation, Task, Action, Result, and Learning blocks, enabling visitors to inspect high-level outcomes first or dive into full execution details on demand.',
         },
