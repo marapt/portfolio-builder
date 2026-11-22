@@ -620,7 +620,7 @@ export const topPillars = [
     title: 'Optimization and Innovation',
     subtitle:
       'Pioneering AI-driven workflow acceleration, custom Neural Machine Translation training, unit economics compression, and autonomous full-stack product systems.',
-    icon: 'Sparkles',
+    icon: 'Cpu',
     color: 'indigo',
     subCards: [
       {

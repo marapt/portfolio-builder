@@ -24,7 +24,6 @@ import {
   Globe,
   Cloud,
   CheckCircle2,
-  Sparkles,
   Terminal,
   ShieldCheck,
   ShieldAlert,
@@ -143,7 +142,7 @@ const BuildJourneyPage = () => {
 
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-4">
-                <Sparkles className="w-3.5 h-3.5" />
+                <Cpu className="w-3.5 h-3.5" />
                 <span>{hero.eyebrow}</span>
               </div>
 
@@ -265,7 +264,7 @@ const BuildJourneyPage = () => {
                   <ul className="space-y-3">
                     {ownership.aiExecuted.items.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        <Sparkles className="w-4 h-4 text-purple-400 mt-1 shrink-0" />
+                        <Bot className="w-4 h-4 text-indigo-400 mt-1 shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -526,7 +525,7 @@ const BuildJourneyPage = () => {
           <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950/40 to-slate-900 border border-slate-800 p-8 md:p-12 shadow-2xl relative overflow-hidden">
             <div className="max-w-3xl mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-3">
-                <Sparkles className="w-3.5 h-3.5" />
+                <Terminal className="w-3.5 h-3.5" />
                 <span>{mindset.eyebrow}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight mb-4">

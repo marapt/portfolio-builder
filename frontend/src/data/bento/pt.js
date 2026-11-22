@@ -620,7 +620,7 @@ export const topPillars = [
     title: 'Otimização e Inovação',
     subtitle:
       'Liderança na otimização de fluxos com IA, treino de modelos neuronais customizados, compressão de economia unitária e sistemas de produto autónomos.',
-    icon: 'Sparkles',
+    icon: 'Cpu',
     color: 'indigo',
     subCards: [
       {

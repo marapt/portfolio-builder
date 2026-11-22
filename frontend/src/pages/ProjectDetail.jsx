@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Calendar, Users, Globe, CheckCircle, Github, Sparkles, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, Users, Globe, CheckCircle, Github, Cpu, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
@@ -159,7 +159,7 @@ const ProjectDetail = () => {
                   <div className="mt-8 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-indigo-700/40 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
                       <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-[10px] font-black uppercase tracking-wider mb-3 border border-indigo-400/30">
-                        <Sparkles size={12} />
+                        <Cpu size={12} />
                         <span>{lang === 'pt' ? 'Jornada Visual Interativa' : 'Interactive Visual Journey'}</span>
                       </div>
                       <h3 className="text-2xl font-black text-white tracking-tight">
@@ -408,7 +408,7 @@ const ProjectDetail = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-full mb-8">
-             <Sparkles size={14} className="text-indigo-600" />
+             <Cpu size={14} className="text-indigo-600" />
              <span className="text-[10px] font-black text-indigo-600 uppercase tracking-[0.2em]">{project.technologiesBadge || 'Technology stack'}</span>
           </div>
           <h2 className="text-4xl font-black text-gray-900 mb-12 tracking-tighter">{project.technologiesTitle || 'Infrastructure & Tools Used'}</h2>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe, ChevronDown, Bot, Sparkles } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, Bot, Cpu } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTranslation } from 'react-i18next';
 import {
@@ -156,7 +156,7 @@ const Header = () => {
                   : 'bg-emerald-600/10 border-emerald-500/20 text-emerald-400/80 hover:bg-emerald-600/20 hover:border-emerald-500/40 hover:text-emerald-400'
               }`}
             >
-              <Sparkles size={10} />
+              <Cpu size={10} />
               {buildJourneyLink.label}
             </Link>
           </nav>
@@ -318,7 +318,7 @@ const Header = () => {
                     : 'text-emerald-500 hover:bg-emerald-50'
                 }`}
               >
-                <Sparkles size={14} />
+                <Cpu size={14} />
                 {t('nav.build_journey') || 'Built with AI'}
               </Link>
 

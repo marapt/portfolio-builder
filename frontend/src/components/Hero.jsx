@@ -5,7 +5,6 @@ import { Linkedin, Twitter, Github, Globe, Brain, Layout, Heart, ArrowUpRight } 
 import { Button } from './ui/button';
 import { personalInfo as personalInfoEN } from '../data/site/en';
 import { personalInfo as personalInfoPT } from '../data/site/pt';
-import aiGlassIcon from '../assets/branding/ai-glass-icon.png';
 
 const InsightCard = ({ label, description, icon: Icon, position, targetId, isPrimary, isPage }) => {
   const [isHovered, setIsHovered] = useState(false);

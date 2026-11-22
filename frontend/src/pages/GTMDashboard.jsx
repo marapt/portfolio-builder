@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Globe, CheckCircle, XCircle, AlertTriangle, ChevronDown, ChevronUp, MapPin, TrendingUp, Users, Target, Clock, BookOpen, Zap, Lock, Unlock, Sparkles, Copy, CheckCheck } from 'lucide-react';
+import { Globe, CheckCircle, XCircle, AlertTriangle, ChevronDown, ChevronUp, MapPin, TrendingUp, Users, Target, Clock, BookOpen, Zap, Lock, Unlock, Copy, CheckCheck } from 'lucide-react';
 
 // ── GTM Phase Data ────────────────────────────────────────────────────────────
 const PHASES = [
@@ -461,7 +461,7 @@ const BlogPost = ({ post, expanded, onToggle }) => {
           <div className="border-t border-white/5 pt-6 mt-6">
             <div className="flex items-center justify-between mb-4">
               <span className="text-[10px] font-black uppercase tracking-widest text-white/40 flex items-center gap-2">
-                <Sparkles size={11} className="text-violet-400" /> {t('gtm.post.avery_comms')}
+                <Zap size={11} className="text-violet-400" /> {t('gtm.post.avery_comms')}
               </span>
               <button 
                 onClick={handleDraft}

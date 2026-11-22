@@ -241,6 +241,10 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
       'ai-portfolio-building',
       'ai-nmt-case-study',
     ]);
+    expect(oiPillarEN.icon).toBe('Cpu');
+    expect(oiPillarPT.icon).toBe('Cpu');
+    expect(oiPillarEN.icon).not.toBe('Sparkles');
+    expect(oiPillarPT.icon).not.toBe('Sparkles');
   });
 
   test('Tier 2 has 0 Specialized Operational Domains in EN and PT', () => {

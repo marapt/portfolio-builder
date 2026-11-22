@@ -15,7 +15,6 @@ import {
   Users,
   Network,
   Zap,
-  Sparkles,
   Cpu,
 } from 'lucide-react';
 import BentoCard from './BentoCard';
@@ -28,7 +27,6 @@ const pillarIcons = {
   Users,
   Network,
   Zap,
-  Sparkles,
   Cpu,
 };
 

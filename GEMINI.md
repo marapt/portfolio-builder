@@ -23,3 +23,6 @@
 
 ## 4. Contact Form & API Resilience
 - Public contact forms must never rely exclusively on backend availability. If the backend API endpoint (`/api/contact`) is unavailable, immediately fall back to a pre-filled `mailto:marapt@gmail.com` client link.
+
+## 5. Visual & Icon Invariants
+- **No Sparkles or "AI Magic" Symbols:** Strictly do NOT use sparkle/starburst icons (`Sparkles`, `✨`, or generic 4-pointed star AI glyphs) to represent AI, automation, or innovation. Replace any AI-looking sparkle symbols with professional, grounded engineering/technical icons (e.g., `Cpu`, `Bot`, `Zap`, `Brain`, `Code2`, `Workflow`, `Terminal`, `CheckCircle2`) or clean functional UI.

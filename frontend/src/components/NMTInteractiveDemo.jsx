@@ -5,7 +5,6 @@ import {
   CheckCircle, 
   AlertTriangle, 
   XCircle, 
-  Sparkles, 
   Filter, 
   BarChart3, 
   Cpu, 
@@ -608,7 +607,7 @@ const NMTInteractiveDemo = () => {
                 }`}>
                   <div className="flex items-center gap-3">
                     {pipelineResult.verdict === 'PASS' && <CheckCircle size={20} className="text-emerald-400" />}
-                    {pipelineResult.verdict === 'CLEANED & PASSED' && <Sparkles size={20} className="text-blue-400" />}
+                    {pipelineResult.verdict === 'CLEANED & PASSED' && <FileCheck size={20} className="text-blue-400" />}
                     {pipelineResult.verdict === 'REJECTED' && <XCircle size={20} className="text-rose-400" />}
                     <div>
                       <span className="text-xs font-black uppercase tracking-widest block">Pipeline Verdict: {pipelineResult.verdict}</span>

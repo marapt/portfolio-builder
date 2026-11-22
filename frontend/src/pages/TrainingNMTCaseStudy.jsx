@@ -14,7 +14,7 @@ import {
   X, 
   ChevronRight, 
   ShieldCheck, 
-  Sparkles, 
+  Play, 
   BookOpen, 
   GitFork, 
   Workflow,
@@ -366,7 +366,7 @@ const TrainingNMTCaseStudy = () => {
                   }}
                   className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black text-xs uppercase tracking-wider shadow-xl shadow-indigo-600/30 transition-all transform hover:-translate-y-0.5"
                 >
-                  <Sparkles size={16} className="text-yellow-300" />
+                  <Play size={14} className="text-indigo-200 fill-indigo-200/40" />
                   <span>Try Live Pipeline Demo ↓</span>
                 </a>
                 <a
@@ -551,7 +551,7 @@ const TrainingNMTCaseStudy = () => {
               }}
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-300 border bg-gradient-to-r from-indigo-950 to-purple-950/70 border-indigo-500/60 text-indigo-300 hover:text-white shadow-sm"
             >
-              <Sparkles size={13} className="text-yellow-300" />
+              <Play size={12} className="text-indigo-300 fill-indigo-300/40" />
               <span>Interactive Demo</span>
             </a>
             <div className="h-6 w-px bg-slate-800 flex-shrink-0" />
@@ -639,7 +639,7 @@ const TrainingNMTCaseStudy = () => {
                     }}
                     className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-xl bg-indigo-950/80 border border-indigo-700/60 text-indigo-300 hover:text-white text-xs font-bold transition-all shadow-sm"
                   >
-                    <Sparkles size={14} className="text-yellow-300" />
+                    <Play size={13} className="text-indigo-300 fill-indigo-300/40" />
                     <span>
                       {activeStep === 0 ? 'Launch Step 1 Sanitization Funnel Simulator ↑' : 'Test BLEU, chrF++, and COMET in Simulator ↑'}
                     </span>
@@ -1162,7 +1162,7 @@ if (cosineScore < 0.75) {
                   }}
                   className="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2"
                 >
-                  <Sparkles size={14} className="text-yellow-300" />
+                  <Play size={13} className="text-white fill-white/40" />
                   <span>Launch Interactive Simulator ↗</span>
                 </a>
                 <a
@@ -1605,7 +1605,7 @@ if (cosineScore < 0.75) {
                   }}
                   className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-emerald-600/30 flex items-center gap-2"
                 >
-                  <Sparkles size={14} className="text-yellow-300" />
+                  <Play size={13} className="text-white fill-white/40" />
                   <span>Test Quality Gating in Demo ↗</span>
                 </a>
                 <Link to="/#portfolio">
@@ -1848,7 +1848,7 @@ if (cosineScore < 0.75) {
                   }}
                   className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2"
                 >
-                  <Sparkles size={14} className="text-yellow-300" />
+                  <Play size={13} className="text-white fill-white/40" />
                   <span>Test Quality Gating in Live Demo ↗</span>
                 </a>
                 <Link to="/#portfolio">
@@ -2128,7 +2128,7 @@ if (cosineScore < 0.75) {
                 }}
                 className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2"
               >
-                <Sparkles size={14} className="text-yellow-300" />
+                <Play size={13} className="text-white fill-white/40" />
                 <span>Test Live Pipeline Demo ↑</span>
               </a>
             </div>
