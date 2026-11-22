@@ -625,16 +625,24 @@ export const topPillars = [
     subCards: [
       {
         id: 'ai-1',
-        title: 'MTPE Turnaround Acceleration (15 to 5 Days)',
-        subtitle: 'Enterprise machine translation post-editing optimization and domain tuning.',
-        metrics: '67% Cycle Time Cut · 99.2% Quality SLA',
+        title: 'Microsoft - MTPE Pilot Rollout',
+        subtitle:
+          "Enabling high-volume localization and optimizing SLA's through AI-assisted translation and objective evaluation.",
+        tag: 'MT & AI Workflows',
+        proofAnchor: 'microsoft',
+        metrics: '15 to 5 Days (-67%) · 35% Overall Cycle Cut · 5B Words Capacity · >90% NPS',
         star: {
-          situation: 'Legacy translation memory workflows took 15 business days for major software releases.',
-          task: 'Accelerate localization delivery by integrating trained neural MT engines with human-in-the-loop review.',
-          action: 'Fine-tuned custom domain MT engines on historical approved bilingual corpora; established post-editing guidelines.',
-          result: 'Compressed delivery cycles to 5 days while meeting or exceeding human translation quality scores.',
+          situation:
+            'As a Senior Marcom Manager at Microsoft, supporting global marketing and localization operations for Microsoft Stores across 40+ international markets involved high volume and slow manual/legacy turnaround cycles.',
+          task:
+            'Lead an MVP test and pilot adoption of Machine Translation (MT) and AI-assisted translation workflows integrated with TMS and objective quality evaluation (TAUS DQF) for Microsoft Stores to accelerate delivery speed and expand processing capacity while maintaining quality and customer satisfaction.',
+          action:
+            'Piloted and introduced MT and AI-assisted translation workflows into marketing operations alongside TMS integration and TAUS DQF quality evaluation, partnering across teams and vendors to validate quality and throughput.',
+          result:
+            'Reduced turnaround from 15 days to 5 days on the MT workflow (and achieved a 35% overall localization turnaround reduction across 40+ markets), scaled processing capacity up to 5 billion words, and sustained greater than 90% NPS.',
         },
-        l6Principle: 'AI workflow acceleration requires rigorous domain fine-tuning and standardized human review rubrics.',
+        l6Principle:
+          'Scaling high-volume localization requires pairing automated MT workflows with objective quality frameworks like TAUS DQF to accelerate turnaround while safeguarding customer satisfaction.',
       },
       {
         id: 'ai-2',

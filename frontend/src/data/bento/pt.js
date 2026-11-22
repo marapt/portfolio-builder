@@ -625,16 +625,24 @@ export const topPillars = [
     subCards: [
       {
         id: 'ai-1',
-        title: 'Aceleração de Pós-Edição de Tradução Automática (15 para 5 Dias)',
-        subtitle: 'Ajuste de modelos neuronais especializados e alinhamento com equipas de linguistas.',
-        metrics: 'Ciclo Reduzido em 67% · 99.2% Cumprimento de SLA',
+        title: 'Microsoft - Lançamento Piloto de MTPE',
+        subtitle:
+          'Viabilização de localização em grande escala e otimização de SLAs através de tradução com IA e avaliação objetiva.',
+        tag: 'Fluxos de MT e IA',
+        proofAnchor: 'microsoft',
+        metrics: '15 para 5 Dias no Fluxo de MT · -35% Tempo Global de Entrega · 5B Palavras · >90% NPS',
         star: {
-          situation: 'Processos tradicionais de tradução demoravam 15 dias úteis para lançamentos de software.',
-          task: 'Acelerar os lançamentos integrando tradução automática neuronal com revisão humana qualificada.',
-          action: 'Ajustei motores de tradução automática com históricos corporativos e criei guias claros de pós-edição.',
-          result: 'Prazos reduzidos para 5 dias, mantendo ou superando as métricas históricas de qualidade humana.',
+          situation:
+            'Como Senior Marcom Manager na Microsoft, a gestão de operações globais de marketing e localização para as Microsoft Stores em mais de 40 mercados internacionais envolvia volumes elevados e ciclos de entrega manuais lentos.',
+          task:
+            'Liderar um teste MVP e a adoção piloto de tradução automática (MT) e fluxos assistidos por IA integrados com TMS e avaliação objetiva de qualidade (TAUS DQF) para as Microsoft Stores, de modo a acelerar a entrega e expandir a capacidade mantendo a qualidade e a satisfação do cliente.',
+          action:
+            'Testei e introduzi fluxos de tradução automática e assistida por IA nas operações de marketing, com integração em TMS e avaliação de qualidade via TAUS DQF, colaborando com equipas internas e fornecedores para validar qualidade e rendimento.',
+          result:
+            'Reduzi o tempo de entrega de 15 para 5 dias no fluxo de MT (e alcancei uma redução global de 35% no ciclo de localização em mais de 40 mercados), expandi a capacidade de processamento até 5 mil milhões de palavras e mantive um NPS superior a 90%.',
         },
-        l6Principle: 'Acelerar processos com IA exige modelos bem treinados e critérios de avaliação claros.',
+        l6Principle:
+          'Acelerar fluxos de localização em grande volume exige combinar tradução automática com critérios objetivos de qualidade como o TAUS DQF, reduzindo prazos enquanto se protege a satisfação do cliente.',
       },
       {
         id: 'ai-2',
