@@ -210,23 +210,21 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     expect(lirPillarPT.subCards.map((c) => c.id)).toEqual(['tr-1', 'tr-thailand-crisis']);
   });
 
-  test('Pillar 07 (Optimization and Innovation) has subcards for MTPE, AI Unit Economics, AI Portfolio Building, and AI NMT Case Study in EN and PT', () => {
+  test('Pillar 07 (Optimization and Innovation) has subcards for MTPE, AI Portfolio Building, and AI NMT Case Study in EN and PT', () => {
     const oiPillarEN = topPillarsEN.find((p) => p.id === 'optimization-innovation');
     const oiPillarPT = topPillarsPT.find((p) => p.id === 'optimization-innovation');
 
     expect(oiPillarEN).toBeDefined();
     expect(oiPillarPT).toBeDefined();
-    expect(oiPillarEN.subCards).toHaveLength(4);
-    expect(oiPillarPT.subCards).toHaveLength(4);
+    expect(oiPillarEN.subCards).toHaveLength(3);
+    expect(oiPillarPT.subCards).toHaveLength(3);
     expect(oiPillarEN.subCards.map((c) => c.id)).toEqual([
       'ai-1',
-      'ai-2',
       'ai-portfolio-building',
       'ai-nmt-case-study',
     ]);
     expect(oiPillarPT.subCards.map((c) => c.id)).toEqual([
       'ai-1',
-      'ai-2',
       'ai-portfolio-building',
       'ai-nmt-case-study',
     ]);

@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Pilares Estratégicos', value: '7 Pilares de Topo' },
     { label: 'Domínios Operacionais', value: '1 Domínio Especializado' },
-    { label: 'Cartões Interativos', value: '29 Cartões STAR' },
+    { label: 'Cartões Interativos', value: '28 Cartões STAR' },
   ],
 };
 
@@ -645,31 +645,12 @@ export const topPillars = [
           'Acelerar fluxos de localização em grande volume exige combinar tradução automática com critérios objetivos de qualidade como o TAUS DQF, reduzindo prazos enquanto se protege a satisfação do cliente.',
       },
       {
-        id: 'ai-2',
-        title: 'Otimização de Custos Unitários e Eficiência à Escala',
-        subtitle: 'Reduzir custos por tarefa de avaliação sem comprometer a qualidade em idiomas complexos.',
-        tag: 'Economia Unitária',
-        metrics: '$5 para $1.67 por Unidade · Orçamento de $10M Cumprido',
-        proofAnchor: 'microsoft',
-        star: {
-          situation:
-            'O volume de avaliação triplicou de 2M para 6M tarefas mantendo o orçamento fixo de $10M, enquanto o método manual custava $5/tarefa e demorava 8 semanas na integração de avaliadores.',
-          task:
-            'Aumentar o volume em 3 vezes mantendo o orçamento e garantindo rigor em idiomas mais suscetíveis a alucinações de IA.',
-          action:
-            'Desenhei um modelo de avaliação baseado em risco, reservando a revisão humana para casos ambíguos e aplicando IA em verificações automatizadas; padronizei contratos com fornecedores.',
-          result:
-            'Reduzi o custo por tarefa de $5 para $1.67, cumpri o orçamento de $10M e reduzi a integração de parceiros de 8 para 2 semanas.',
-        },
-        l6Principle: 'A escala atinge-se direcionando o talento humano para onde ele gera o maior valor estratégico.',
-      },
-      {
         id: 'ai-portfolio-building',
         title: 'Construção de Portfólio com IA',
         subtitle:
           'Transformação de marcos de carreira, estruturas de governação operacional e artefactos de entrega num sistema de portfólio bilingue e interativo.',
         tag: 'Arquitetura de Portfólio',
-        metrics: '29 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
+        metrics: '28 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
         externalLink: {
           url: '/how-i-built-this',
           label: 'Como Construí Este Portfólio (Jornada IA)',
@@ -681,7 +662,7 @@ export const topPillars = [
           task:
             'Conceber uma experiência de portfólio interativa e bilingue que transformasse marcos de carreira, governação operacional e artefactos de entrega em níveis intuitivos e navegáveis.',
           action:
-            'Estruturei uma arquitetura Bento multinível organizando 29 cartões STAR em 7 pilares estratégicos e domínios especializados com controlos de rotação, expansão e pesquisa. Integrei vistas dinâmicas incluindo uma linha de tempo de carreira contínua de 20 marcos e painéis Scrum resilientes, garantindo sincronização rigorosa entre inglês (en.js) e português (pt.js).',
+            'Estruturei uma arquitetura Bento multinível organizando 28 cartões STAR em 7 pilares estratégicos e domínios especializados com controlos de rotação, expansão e pesquisa. Integrei vistas dinâmicas incluindo uma linha de tempo de carreira contínua de 20 marcos e painéis Scrum resilientes, garantindo sincronização rigorosa entre inglês (en.js) e português (pt.js).',
           result:
             'Entrega de um sistema de portfólio em produção que combina métricas de impacto imediatas com blocos estruturados de Situação, Tarefa, Ação, Resultado e Aprendizagem, permitindo analisar sínteses executivas ou aprofundar detalhes de execução a pedido.',
         },

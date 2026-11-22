@@ -413,7 +413,7 @@ From orchestrating rapid AI iterations in Google Antigravity and VS Code to esta
     challenges: [
       'Translating deep executive leadership and operational governance into an engaging, interactive digital experience',
       'Learning modern React, Tailwind CSS, and full-stack workflows while maintaining enterprise coding standards',
-      'Maintaining continuous bilingual parity (English and Portuguese) across 29 STAR cards and complex case studies',
+      'Maintaining continuous bilingual parity (English and Portuguese) across 28 STAR cards and complex case studies',
       'Establishing automated CI/CD pipelines with zero downtime and resilient offline fallbacks'
     ],
     solutions: [
@@ -425,7 +425,7 @@ From orchestrating rapid AI iterations in Google Antigravity and VS Code to esta
     results: [
       { value: '100%', label: 'AI-Leveraged Build' },
       { value: '7 Top Pillars', label: 'Strategic Architecture' },
-      { value: '29', label: 'Interactive STAR Cards' },
+      { value: '28', label: 'Interactive STAR Cards' },
       { value: '2', label: 'Locales (EN & PT)' }
     ],
     locales: {
@@ -441,7 +441,7 @@ Desde a orquestração de iterações rápidas com o Google Antigravity e o VS C
         challenges: [
           'Traduzir liderança executiva e governação operacional numa experiência digital interativa e envolvente',
           'Aprender React, Tailwind CSS e fluxos de programação modernos mantendo padrões de qualidade de nível empresarial',
-          'Garantir paridade bilingue contínua (Inglês e Português) em 29 cartões STAR e estudos de caso',
+          'Garantir paridade bilingue contínua (Inglês e Português) em 28 cartões STAR e estudos de caso',
           'Configurar processos de CI/CD automatizados com zero tempo de inatividade e suporte offline resiliente'
         ],
         solutions: [
@@ -453,7 +453,7 @@ Desde a orquestração de iterações rápidas com o Google Antigravity e o VS C
         results: [
           { value: '100%', label: 'Desenvolvido com IA' },
           { value: '7 Pilares', label: 'Arquitetura Estratégica' },
-          { value: '29', label: 'Cartões STAR Interativos' },
+          { value: '28', label: 'Cartões STAR Interativos' },
           { value: '2', label: 'Idiomas (EN e PT)' }
         ]
       }

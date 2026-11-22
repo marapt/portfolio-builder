@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Strategic Pillars', value: '7 Top Pillars' },
     { label: 'Operational Domains', value: '1 Specialized Domain' },
-    { label: 'Interactive Cards', value: '29 STAR Cards' },
+    { label: 'Interactive Cards', value: '28 STAR Cards' },
   ],
 };
 
@@ -645,31 +645,12 @@ export const topPillars = [
           'Scaling high-volume localization requires pairing automated MT workflows with objective quality frameworks like TAUS DQF to accelerate turnaround while safeguarding customer satisfaction.',
       },
       {
-        id: 'ai-2',
-        title: 'AI-Enabled Unit Economics & Scale Optimization',
-        subtitle: 'Compressing evaluation costs while protecting edge-case and low-resource quality.',
-        tag: 'Unit Economics',
-        metrics: '$5 to $1.67/Unit · $10M Flat Budget Protected',
-        proofAnchor: 'microsoft',
-        star: {
-          situation:
-            'Global evaluation volume tripled from 2M to 6M tasks under a flat $10M budget envelope, while legacy 100% manual dual-rater review cost $5/task and choked onboarding.',
-          task:
-            'Scale evaluation throughput 3x within existing budget while protecting quality in high-hallucination language markets.',
-          action:
-            'Designed a risk-tiered evaluation model reserving 100% human review for complex/high-risk edge cases while deploying model-assisted pre-checks on high-confidence slices; standardized vendor onboarding templates.',
-          result:
-            'Compressed blended cost per evaluation task from $5 to $1.67, stayed strictly within the $10M budget, and compressed onboarding lead time from 8 weeks to 2 weeks.',
-        },
-        l6Principle: 'Scale is achieved not by cutting quality, but by risk-tiering human expertise where it provides the highest return.',
-      },
-      {
         id: 'ai-portfolio-building',
         title: 'AI Portfolio Building',
         subtitle:
           'Turning career milestones, operational governance frameworks, and live delivery artifacts into an interactive, bilingual portfolio experience.',
         tag: 'Portfolio Systems & Architecture',
-        metrics: '29 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
+        metrics: '28 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
         externalLink: {
           url: '/how-i-built-this',
           label: 'How I Built This Portfolio (AI Showcase)',
@@ -681,7 +662,7 @@ export const topPillars = [
           task:
             'Architect an interactive, bilingual portfolio experience that turns career milestones, operational governance frameworks, and live delivery artifacts into scannable, inspectable tiers.',
           action:
-            'Structured a multi-tier Bento box framework organizing 29 STAR cards across 7 strategic pillars and specialized operational domains with flip, expand, and search controls. Connected narrative career progression with dynamic views such as a 20-milestone continuous career timeline and live Scrum delivery boards while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
+            'Structured a multi-tier Bento box framework organizing 28 STAR cards across 7 strategic pillars and specialized operational domains with flip, expand, and search controls. Connected narrative career progression with dynamic views such as a 20-milestone continuous career timeline and live Scrum delivery boards while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
           result:
             'Delivered a production-grade portfolio system pairing concise headline metrics with scannable Situation, Task, Action, Result, and Learning blocks, enabling visitors to inspect high-level outcomes first or dive into full execution details on demand.',
         },
