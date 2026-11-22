@@ -682,7 +682,7 @@ export const topPillars = [
       },
       {
         id: 'ai-nmt-case-study',
-        title: 'NMT com IA - ESTUDO DE CASO',
+        title: 'NMT com IA - SIMULADOR & ESTUDO DE CASO',
         subtitle:
           'Metodologia empresarial de treino de NMT customizado, sanitização de corpora em 5 fases e avaliação tripartida com simulador interativo.',
         tag: 'NMT Customizado e Treino de IA',

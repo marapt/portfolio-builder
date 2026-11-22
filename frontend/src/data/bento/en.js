@@ -682,7 +682,7 @@ export const topPillars = [
       },
       {
         id: 'ai-nmt-case-study',
-        title: 'AI NMT - CASE STUDY',
+        title: 'AI NMT - CASE STUDY SIMULATOR',
         subtitle:
           'Enterprise custom NMT training, 5-stage corpus sanitization, and tripartite quality evaluation with interactive pipeline simulator.',
         tag: 'Custom NMT & LLM Fine-Tuning',
