@@ -93,7 +93,7 @@ export const topPillars = [
     number: '02',
     title: 'Supplier Performance and Vendor Governance',
     subtitle:
-      'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.). Partner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows. Standardizing vendor management frameworks, Statements of Work (SOWs), contract rate cards, intake flows, and SLA/SLO adherence.',
+      'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.). Partner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows. Standardizing vendor management frameworks, Statements of Work (SOWs), contract rate cards, intake flows, and SLA/SLO adherence. Supplier strategy, governance, compliance, budget controls and cross-operational tooling.',
     icon: 'Users',
     color: 'cyan',
     subCards: [
