@@ -624,7 +624,8 @@ export const topPillars = [
   {
     id: 'optimization-innovation',
     number: '07',
-    title: 'Otimização e Inovação',
+    title: 'Otimização e Inovação\nMTPE + IA + HIL',
+    shortName: 'Otimização e Inovação',
     subtitle:
       'Liderança na otimização de fluxos com IA, treino de modelos neuronais customizados, compressão de economia unitária e sistemas de produto autónomos.',
     icon: 'Cpu',

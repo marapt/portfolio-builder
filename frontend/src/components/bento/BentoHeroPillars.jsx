@@ -275,7 +275,7 @@ export const BentoHeroPillars = ({ pillars, flippedCards, onToggleFlip, onExpand
                         STAR Cards
                       </span>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-black text-gray-900 tracking-tight">
+                    <h3 className="text-xl md:text-2xl font-black text-gray-900 tracking-tight whitespace-pre-line">
                       {pillar.title}
                     </h3>
                   </div>
