@@ -25,25 +25,25 @@ export const topPillars = [
     color: 'violet',
     subCards: [
       {
-        id: 'gl-1',
-        title: 'IATE -  Data Trainee - Training Fundamentals',
+        id: 'block-eu-expansion',
+        title: 'Block - EU New Market Expansion & Checkout Recovery',
         subtitle:
-          'Mastering termbase curation, search relevance evaluation, and multi-role catalog workflows across EU multilingual repositories.',
-        tag: 'Data & Terminology',
-        proofAnchor: 'eu-dgt',
-        metrics: '50 Terms/Day · 30-Day Sprint · EN-PT / PT-EN',
+          'Coordinating cross-functional EU rollouts, resolving checkout payment friction, and institutionalizing post-mortem governance.',
+        tag: 'Market Expansion & GTM',
+        proofAnchor: 'block',
+        metrics: '4 EU Markets · ~$185M European ARR · Up to 10% Revenue Recovery',
         star: {
           situation:
-            'Shortly after the IATE (InterActive Terminology for Europe) database launched in June 2008 as a large-scale multilingual terminology repository (growing to millions of terms and searches), building out the Portuguese language pair (EN-PT and PT-EN) required structured termbase contribution alongside rigorous evaluation of how users searched, retrieved, and experienced the platform.',
+            'At Block, expanding Square into European markets (including Ireland [IE], France [FR], Spain [ES], and Portugal [PT]) required coordinating cross-functional readiness across Product, Engineering, Finance, Legal, Localization, and PR. During EU expansion and checkout rollouts, gaps in regulatory licensing, local banking/payment rails (such as Multibanco/MB WAY), and pre-launch testing left Square Terminal checkout inoperable for certain payment flows and exposed expansion timelines to regulatory and cultural blind spots, putting projected EU launch revenue at risk and forcing Spain (ES) to shift to January 2022 while Portugal (PT) was moved to a Tier 5 market.',
           task:
-            'As a User and Data Trainee intern, build deep mastery of the IATE database from both an end-user/curator and data-evaluation standpoint, focusing on high-quality termbase curation for Portuguese, navigating multi-role permissions, evaluating search relevance and data labeling, and testing pre-release features, to establish a strong foundation for future work with catalogs (across both front-end user flows and back-end data/engine structures).',
+            'Coordinate end-to-end market rollout planning, RACI alignment, and launch rooms across functional leads while stepping in on critical launch and payment blockers to protect revenue, localize the customer journey (local currency, local payment methods, and culturally adapted experiences), and capture learnings for future expansion.',
           action:
-            'High-Cadence Termbase Curation & Role Mastery: Focused dedicated daily blocks (around 4 hours/day, or 50% of daily time, aiming for at least 50 terms per day over a 30-day sprint) on adding, reviewing, and approving EN-PT / PT-EN terms while mastering IATE\'s interface across terminologist, reviewer, and approver permission roles. Search Relevance, Data Labeling & Pre-Release Testing: Partnered with internal data and engineering stakeholders to inspect user search query types, result quality, and missed terms, evaluate search relevance and data-labeling criteria, audit the terms engine/back-end behavior, and test pre-release features. Catalog & System Foundation Lens: Treated every term entry, metadata/role state, and search result as a structured catalog record, building early fluency in how front-end search/curator interfaces and back-end data/engine logic interact in large-scale repositories (while keeping deeper back-end infrastructure engineering outside internship scope).',
+            'Cross-Functional Planning, RACI & Launch Rooms: Aligned Marketing, Product, Engineering, Finance, Legal, Localization, and PR on market proposals, budgets, hiring needs, RACI ownership, sprint plans, and launch rooms for executive/committee sign-off. Payment & Checkout Issue Mitigation: Partnered with Engineering, Legal, Finance, and PR on emergency triage and testing when checkout/payment gaps surfaced, pivoting GTM support around established payment methods (such as Visa, Apple Pay, and Google Pay), deferring unsupported rails like MB WAY, aligning PR/leadership to avoid premature public statements or brand backlash, and localizing pricing, currency, and checkout flows. Post-Mortem & Local Vendor Governance: Led post-mortems and company-wide learnings after issues were addressed, identifying regulatory/banking gaps between Legal, Finance, and local cultural context; then hiring local regulatory/market consultants, updating RACI and launch milestones, and re-tiering Portugal to Tier 5.',
           result:
-            'Completed the 30-day structured termbase curation sprint for the Portuguese pair while mastering multi-role IATE workflows. Delivered practical search-query, missed-term, data-labeling, and pre-release testing insights alongside data and engineering partners. Built a durable foundational mental model for large-scale catalog operations, connecting front-end usability and curation accuracy with back-end data integrity in later roles.',
+            'Launched Ireland (IE) and France (FR) during the 2021 rollout cycle alongside broader European expansion momentum where Square\'s European annual revenue reached ~$185M (~95% YoY growth in 2021). Recovered up to 10% in localized transaction revenue by resolving checkout friction and enabling core payment methods in target European markets. Institutionalized post-mortem learnings, local regulatory consultancy support, and clearer RACI/launch-gate governance across teams.',
         },
         l6Principle:
-          'Applying focused, measurable execution to a large-scale database early on and looking at both how users query/curate data on the front end and how data quality/relevance behaves underneath creates a lasting foundation for managing complex catalogs later in your career.',
+          'Market expansion succeeds when regulatory licensing, local payment rails, and cultural/banking due diligence are validated early, and when teams pair rapid checkout mitigation with candid post-mortems that turn launch setbacks into stronger governance.',
       },
       {
         id: 'gl-2',
@@ -93,25 +93,25 @@ export const topPillars = [
           'Complex global expansions succeed when multi-wave release gates align cross-functional readiness with measurable customer journey milestones rather than isolated launch dates.',
       },
       {
-        id: 'block-eu-expansion',
-        title: 'Block - EU New Market Expansion & Checkout Recovery',
+        id: 'gl-1',
+        title: 'IATE -  Data Trainee - Training Fundamentals',
         subtitle:
-          'Coordinating cross-functional EU rollouts, resolving checkout payment friction, and institutionalizing post-mortem governance.',
-        tag: 'Market Expansion & GTM',
-        proofAnchor: 'block',
-        metrics: '4 EU Markets · ~$185M European ARR · Up to 10% Revenue Recovery',
+          'Mastering termbase curation, search relevance evaluation, and multi-role catalog workflows across EU multilingual repositories.',
+        tag: 'Data & Terminology',
+        proofAnchor: 'eu-dgt',
+        metrics: '50 Terms/Day · 30-Day Sprint · EN-PT / PT-EN',
         star: {
           situation:
-            'At Block, expanding Square into European markets (including Ireland [IE], France [FR], Spain [ES], and Portugal [PT]) required coordinating cross-functional readiness across Product, Engineering, Finance, Legal, Localization, and PR. During EU expansion and checkout rollouts, gaps in regulatory licensing, local banking/payment rails (such as Multibanco/MB WAY), and pre-launch testing left Square Terminal checkout inoperable for certain payment flows and exposed expansion timelines to regulatory and cultural blind spots, putting projected EU launch revenue at risk and forcing Spain (ES) to shift to January 2022 while Portugal (PT) was moved to a Tier 5 market.',
+            'Shortly after the IATE (InterActive Terminology for Europe) database launched in June 2008 as a large-scale multilingual terminology repository (growing to millions of terms and searches), building out the Portuguese language pair (EN-PT and PT-EN) required structured termbase contribution alongside rigorous evaluation of how users searched, retrieved, and experienced the platform.',
           task:
-            'Coordinate end-to-end market rollout planning, RACI alignment, and launch rooms across functional leads while stepping in on critical launch and payment blockers to protect revenue, localize the customer journey (local currency, local payment methods, and culturally adapted experiences), and capture learnings for future expansion.',
+            'As a User and Data Trainee intern, build deep mastery of the IATE database from both an end-user/curator and data-evaluation standpoint, focusing on high-quality termbase curation for Portuguese, navigating multi-role permissions, evaluating search relevance and data labeling, and testing pre-release features, to establish a strong foundation for future work with catalogs (across both front-end user flows and back-end data/engine structures).',
           action:
-            'Cross-Functional Planning, RACI & Launch Rooms: Aligned Marketing, Product, Engineering, Finance, Legal, Localization, and PR on market proposals, budgets, hiring needs, RACI ownership, sprint plans, and launch rooms for executive/committee sign-off. Payment & Checkout Issue Mitigation: Partnered with Engineering, Legal, Finance, and PR on emergency triage and testing when checkout/payment gaps surfaced, pivoting GTM support around established payment methods (such as Visa, Apple Pay, and Google Pay), deferring unsupported rails like MB WAY, aligning PR/leadership to avoid premature public statements or brand backlash, and localizing pricing, currency, and checkout flows. Post-Mortem & Local Vendor Governance: Led post-mortems and company-wide learnings after issues were addressed, identifying regulatory/banking gaps between Legal, Finance, and local cultural context; then hiring local regulatory/market consultants, updating RACI and launch milestones, and re-tiering Portugal to Tier 5.',
+            'High-Cadence Termbase Curation & Role Mastery: Focused dedicated daily blocks (around 4 hours/day, or 50% of daily time, aiming for at least 50 terms per day over a 30-day sprint) on adding, reviewing, and approving EN-PT / PT-EN terms while mastering IATE\'s interface across terminologist, reviewer, and approver permission roles. Search Relevance, Data Labeling & Pre-Release Testing: Partnered with internal data and engineering stakeholders to inspect user search query types, result quality, and missed terms, evaluate search relevance and data-labeling criteria, audit the terms engine/back-end behavior, and test pre-release features. Catalog & System Foundation Lens: Treated every term entry, metadata/role state, and search result as a structured catalog record, building early fluency in how front-end search/curator interfaces and back-end data/engine logic interact in large-scale repositories (while keeping deeper back-end infrastructure engineering outside internship scope).',
           result:
-            'Launched Ireland (IE) and France (FR) during the 2021 rollout cycle alongside broader European expansion momentum where Square\'s European annual revenue reached ~$185M (~95% YoY growth in 2021). Recovered up to 10% in localized transaction revenue by resolving checkout friction and enabling core payment methods in target European markets. Institutionalized post-mortem learnings, local regulatory consultancy support, and clearer RACI/launch-gate governance across teams.',
+            'Completed the 30-day structured termbase curation sprint for the Portuguese pair while mastering multi-role IATE workflows. Delivered practical search-query, missed-term, data-labeling, and pre-release testing insights alongside data and engineering partners. Built a durable foundational mental model for large-scale catalog operations, connecting front-end usability and curation accuracy with back-end data integrity in later roles.',
         },
         l6Principle:
-          'Market expansion succeeds when regulatory licensing, local payment rails, and cultural/banking due diligence are validated early, and when teams pair rapid checkout mitigation with candid post-mortems that turn launch setbacks into stronger governance.',
+          'Applying focused, measurable execution to a large-scale database early on and looking at both how users query/curate data on the front end and how data quality/relevance behaves underneath creates a lasting foundation for managing complex catalogs later in your career.',
       },
     ],
     extendedSubsections: [],
