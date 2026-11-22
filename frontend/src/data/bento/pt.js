@@ -6,7 +6,7 @@ export const bentoHero = {
   title: 'As Minhas Experiências',
   subheading: 'Modelos STAR',
   subtitle:
-    'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.',
+    'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.\n\nA minha missão: Ajudar a tornar produtos, serviços e soluções acessíveis a todos e em qualquer lugar.',
   quickStats: [
     { label: 'Pilares Estratégicos', value: '5 Pilares de Topo' },
     { label: 'Domínios Operacionais', value: '3 Domínios Especializados' },

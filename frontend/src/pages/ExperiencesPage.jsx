@@ -98,7 +98,7 @@ const ExperiencesPage = () => {
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 whitespace-pre-line">
                 {hero.subtitle}
               </p>
 
