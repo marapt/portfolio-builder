@@ -76,6 +76,7 @@ describe('career timeline placeholder dataset', () => {
     expect(ids.has('relocation')).toBe(true);
     expect(ids.has('ai-rnd')).toBe(false);
     expect(ids.has('apple-2026')).toBe(true);
+    expect(ids.has('current-2026')).toBe(true);
     expect(ids.has('future-2027')).toBe(true);
     expect(ids.has('future-2028')).toBe(true);
     expect(ids.has('future-2029')).toBe(true);
@@ -104,6 +105,10 @@ describe('career timeline placeholder dataset', () => {
     const apple2026 = timelineItems.find((item) => item.id === 'apple-2026');
     expect(apple2026.isToday).toBeFalsy();
     expect(apple2026.subLabel).toBe('May–Sep 2026 · Contract');
+
+    const current2026 = timelineItems.find((item) => item.id === 'current-2026');
+    expect(current2026.isToday).toBe(true);
+    expect(current2026.subLabel).toBe('Oct–Dec 2026 · Current');
   });
 
   test('every item logo points to an existing asset inside frontend/public/company-logos', () => {

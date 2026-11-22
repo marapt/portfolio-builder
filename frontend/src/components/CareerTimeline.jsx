@@ -148,7 +148,8 @@ const CareerTimeline = () => {
         return hashId;
       }
     }
-    return 'apple-2026';
+    const currentItem = timelineItems.find((item) => item.isToday || item.id === 'current-2026');
+    return currentItem ? currentItem.id : 'apple-2026';
   });
 
   useEffect(() => {
@@ -307,7 +308,8 @@ const CareerTimeline = () => {
 
   const selectedIndex = useMemo(() => {
     const idx = visibleItems.findIndex((item) => item.id === selectedId);
-    return idx >= 0 ? idx : Math.max(0, visibleItems.findIndex((item) => item.id === 'apple-2026'));
+    const fallbackId = visibleItems.some((item) => item.id === 'current-2026') ? 'current-2026' : 'apple-2026';
+    return idx >= 0 ? idx : Math.max(0, visibleItems.findIndex((item) => item.id === fallbackId));
   }, [visibleItems, selectedId]);
 
   const selectedItem = visibleItems[selectedIndex] || visibleItems[0];
@@ -315,9 +317,10 @@ const CareerTimeline = () => {
 
   useEffect(() => {
     if (!showFuture && selectedItem?.type === 'future') {
-      setSelectedId('apple-2026');
+      const fallbackId = visibleItems.some((item) => item.id === 'current-2026') ? 'current-2026' : 'apple-2026';
+      setSelectedId(fallbackId);
     }
-  }, [showFuture, selectedItem]);
+  }, [showFuture, selectedItem, visibleItems]);
 
   useEffect(() => {
     const activeTab = tabRefs.current[selectedItem?.id];

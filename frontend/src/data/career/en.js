@@ -3804,6 +3804,106 @@ export const timelineItems = [
     placeholder: false,
   },
   {
+    id: 'current-2026',
+    type: 'role',
+    era: 'ai',
+    chipLabel: 'Current · 2026',
+    subLabel: 'Oct–Dec 2026 · Current',
+    company: 'Autonomous AI Engineering & Executive Advisory',
+    countryFlag: '🇺🇸',
+    location: 'Silicon Valley, CA, USA / Global',
+    monogram: '⚡',
+    title: 'Current: AI Engineering, Full-Stack Architecture & Executive Program Leadership',
+    officialTitle: 'Autonomous AI Engineering, Technical Upskilling & Executive Advisory',
+    dutiesBeyondScope:
+      'Architected and built full-stack digital experiences leveraging autonomous AI agents, multi-agent workflows, and modern web frameworks while establishing production CI/CD and localization pipelines.',
+    period: 'Oct 2026 – Dec 2026 (Current)',
+    startYear: 2026,
+    endYear: 2026,
+    isToday: true,
+    pillars: ['program', 'leadership', 'ai'],
+    summary:
+      'Dedicated sprint phase (October to December 2026) focused on autonomous AI engineering, learning to code modern web architectures, and building a high-performance personal portfolio leveraging Google Antigravity, VS Code, GitHub, Crowdin, and Vercel while conducting strategic executive advisory.',
+    executionSummary: {
+      heading: 'Program Arc: Autonomous AI Engineering & Full-Stack Systems Architecture',
+      items: [
+        {
+          label: 'Context & Ambiguity:',
+          text: 'Bridging executive program management and hands-on software engineering by adopting autonomous AI pair-programming tools to build scalable, bilingual web applications from scratch.',
+        },
+        {
+          label: 'Governance & System Built:',
+          text: 'Architected a multi-tier Bento box framework, integrated Crowdin CAT workflows, implemented client-side resilient fallbacks, and deployed automated Vercel CI/CD pipelines.',
+        },
+        {
+          label: 'Cross-Functional Trade-Offs:',
+          text: 'Balanced rapid agentic code generation with strict enterprise quality standards, full test coverage, and complete English/Portuguese bilingual parity.',
+        },
+        {
+          label: 'Measurable Outcome:',
+          text: 'Delivered an interactive, production-grade portfolio with 6 strategic pillars, 27 STAR frameworks, and a dedicated AI build journey showcase.',
+        },
+      ],
+    },
+    metrics: [
+      {
+        value: '27 Cards',
+        label: 'STAR frameworks across 6 strategic pillars',
+        kind: 'scale',
+        placeholder: false,
+        hint: 'Comprehensive L6 operational leadership proof points delivered with complete EN/PT bilingual parity',
+        evidenceId: 'cur26-01',
+      },
+      {
+        value: '<48h Sprints',
+        label: 'Rapid AI prototyping & cloud deployment velocity',
+        kind: 'velocity',
+        placeholder: false,
+        hint: 'Continuous integration and instant preview deployments via GitHub and Vercel',
+        evidenceId: 'cur26-02',
+      },
+      {
+        value: '100% Parity',
+        label: 'Bilingual localization & automated test reliability',
+        kind: 'quality',
+        placeholder: false,
+        hint: 'Zero-defect test suites, strict copywriting guardrails, and resilient offline fallbacks',
+        evidenceId: 'cur26-03',
+      },
+    ],
+    highlights: [
+      'Autonomous AI Engineering: Orchestrated multi-agent development workflows using Google Antigravity and VS Code, mastering full-stack React and modern build pipelines.',
+      'Bilingual CAT Localization: Integrated Crowdin CAT tooling and i18next workflows to achieve simultaneous English and European Portuguese localization.',
+      'Production Cloud Delivery: Configured automated GitHub branching workflows, Jest automated regression suites, and serverless Vercel deployments.',
+    ],
+    evidence: {
+      note: 'Active Development & Executive Portfolio: Explore the live implementation, interactive STAR cards, and the technical build journey documented in this portfolio.',
+      sections: [
+        {
+          id: 'cur-ai-portfolio',
+          title: '1. Executive Portfolio & AI Build Journey',
+          badge: 'Live Production Architecture',
+          defaultOpen: true,
+          summary:
+            'Comprehensive showcase of hands-on technical skills and executive program management, documented at /how-i-built-this with live screenshots of Antigravity, VS Code, GitHub, Crowdin, and Vercel.',
+          link: '/how-i-built-this',
+          linkLabel: 'Explore AI Build Journey',
+        },
+        {
+          id: 'cur-bento-systems',
+          title: '2. Multimodal Bento Box & STAR Frameworks',
+          badge: 'Operational Systems',
+          defaultOpen: false,
+          summary:
+            'Structured operational system spanning 6 Strategic Pillars and 2 Specialized Domains, featuring 27 interactive STAR framework cards with verified business impact metrics.',
+          link: '/experiences',
+          linkLabel: 'Explore Experiences Bento Box',
+        },
+      ],
+    },
+    placeholder: false,
+  },
+  {
     id: 'future-2027',
     type: 'future',
     era: 'future',
