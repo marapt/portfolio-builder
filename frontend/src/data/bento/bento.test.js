@@ -12,16 +12,16 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     'executive-health',
     'cross-functional-partners',
     'live-incidents-response',
+    'optimization-innovation',
   ];
 
   const expectedDomainIds = [
     'eval-feedback',
-    'ai-data-training',
   ];
 
-  test('Tier 1 has exactly 6 Top Strategic Pillars in EN and PT', () => {
-    expect(topPillarsEN).toHaveLength(6);
-    expect(topPillarsPT).toHaveLength(6);
+  test('Tier 1 has exactly 7 Top Strategic Pillars in EN and PT', () => {
+    expect(topPillarsEN).toHaveLength(7);
+    expect(topPillarsPT).toHaveLength(7);
 
     expect(topPillarsEN.map((p) => p.id)).toEqual(expectedPillarIds);
     expect(topPillarsPT.map((p) => p.id)).toEqual(expectedPillarIds);
@@ -210,9 +210,31 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     expect(lirPillarPT.subCards.map((c) => c.id)).toEqual(['tr-1', 'tr-thailand-crisis']);
   });
 
-  test('Tier 2 has exactly 2 Specialized Operational Domains in EN and PT', () => {
-    expect(operationalDomainsEN).toHaveLength(2);
-    expect(operationalDomainsPT).toHaveLength(2);
+  test('Pillar 07 (Optimization and Innovation) has subcards for MTPE, AI Unit Economics, AI Portfolio Building, and AI NMT Case Study in EN and PT', () => {
+    const oiPillarEN = topPillarsEN.find((p) => p.id === 'optimization-innovation');
+    const oiPillarPT = topPillarsPT.find((p) => p.id === 'optimization-innovation');
+
+    expect(oiPillarEN).toBeDefined();
+    expect(oiPillarPT).toBeDefined();
+    expect(oiPillarEN.subCards).toHaveLength(4);
+    expect(oiPillarPT.subCards).toHaveLength(4);
+    expect(oiPillarEN.subCards.map((c) => c.id)).toEqual([
+      'ai-1',
+      'ai-2',
+      'ai-portfolio-building',
+      'ai-nmt-case-study',
+    ]);
+    expect(oiPillarPT.subCards.map((c) => c.id)).toEqual([
+      'ai-1',
+      'ai-2',
+      'ai-portfolio-building',
+      'ai-nmt-case-study',
+    ]);
+  });
+
+  test('Tier 2 has exactly 1 Specialized Operational Domain in EN and PT', () => {
+    expect(operationalDomainsEN).toHaveLength(1);
+    expect(operationalDomainsPT).toHaveLength(1);
 
     expect(operationalDomainsEN.map((d) => d.id)).toEqual(expectedDomainIds);
     expect(operationalDomainsPT.map((d) => d.id)).toEqual(expectedDomainIds);

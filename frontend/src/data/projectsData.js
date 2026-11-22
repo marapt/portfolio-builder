@@ -418,13 +418,13 @@ From orchestrating rapid AI iterations in Google Antigravity and VS Code to esta
     ],
     solutions: [
       'Leveraged Google Antigravity and VS Code as autonomous AI engineering partners to accelerate development and master code patterns',
-      'Architected a 6-Pillar Bento Grid and interactive STAR framework modal system for granular leadership proof points',
+      'Architected a 7-Pillar Bento Grid and interactive STAR framework modal system for granular leadership proof points',
       'Implemented Crowdin CAT localization workflow and i18next integration for native EN/PT switching',
       'Configured GitHub pull-request workflows with automated test validation and Vercel cloud deployments'
     ],
     results: [
       { value: '100%', label: 'AI-Leveraged Build' },
-      { value: '6 Top Pillars', label: 'Strategic Architecture' },
+      { value: '7 Top Pillars', label: 'Strategic Architecture' },
       { value: '29', label: 'Interactive STAR Cards' },
       { value: '2', label: 'Locales (EN & PT)' }
     ],
@@ -446,13 +446,13 @@ Desde a orquestração de iterações rápidas com o Google Antigravity e o VS C
         ],
         solutions: [
           'Utilização do Google Antigravity e VS Code como parceiros de IA para acelerar o desenvolvimento e compreender padrões de código',
-          'Desenho de uma estrutura Bento de 6 Pilares e sistema modal de cartões STAR para evidências granulares de liderança',
+          'Desenho de uma estrutura Bento de 7 Pilares e sistema modal de cartões STAR para evidências granulares de liderança',
           'Implementação de fluxo de localização CAT com Crowdin e i18next para transição nativa EN/PT',
           'Configuração de fluxos GitHub com testes automatizados e implementações na cloud através da Vercel'
         ],
         results: [
           { value: '100%', label: 'Desenvolvido com IA' },
-          { value: '6 Pilares', label: 'Arquitetura Estratégica' },
+          { value: '7 Pilares', label: 'Arquitetura Estratégica' },
           { value: '29', label: 'Cartões STAR Interativos' },
           { value: '2', label: 'Idiomas (EN e PT)' }
         ]

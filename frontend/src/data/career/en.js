@@ -3841,14 +3841,14 @@ export const timelineItems = [
         },
         {
           label: 'Measurable Outcome:',
-          text: 'Delivered an interactive, production-grade portfolio with 6 strategic pillars, 29 STAR frameworks, and a dedicated AI build journey showcase.',
+          text: 'Delivered an interactive, production-grade portfolio with 7 strategic pillars, 29 STAR frameworks, and a dedicated AI build journey showcase.',
         },
       ],
     },
     metrics: [
       {
         value: '29 Cards',
-        label: 'STAR frameworks across 6 strategic pillars',
+        label: 'STAR frameworks across 7 strategic pillars',
         kind: 'scale',
         placeholder: false,
         hint: 'Comprehensive operational leadership proof points delivered with complete EN/PT bilingual parity',
@@ -3895,7 +3895,7 @@ export const timelineItems = [
           badge: 'Operational Systems',
           defaultOpen: false,
           summary:
-            'Structured operational system spanning 6 Strategic Pillars and 2 Specialized Domains, featuring 27 interactive STAR framework cards with verified business impact metrics.',
+            'Structured operational system spanning 7 Strategic Pillars and 1 Specialized Domain, featuring 29 interactive STAR framework cards with verified business impact metrics.',
           link: '/experiences',
           linkLabel: 'Explore Experiences Bento Box',
         },

@@ -8,8 +8,8 @@ export const bentoHero = {
   subtitle:
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.\n\nA minha missão: Ajudar a tornar produtos, serviços e soluções acessíveis a todos e em qualquer lugar.',
   quickStats: [
-    { label: 'Pilares Estratégicos', value: '6 Pilares de Topo' },
-    { label: 'Domínios Operacionais', value: '2 Domínios Especializados' },
+    { label: 'Pilares Estratégicos', value: '7 Pilares de Topo' },
+    { label: 'Domínios Operacionais', value: '1 Domínio Especializado' },
     { label: 'Cartões Interativos', value: '29 Cartões STAR' },
   ],
 };
@@ -614,53 +614,14 @@ export const topPillars = [
     ],
     extendedSubsections: [],
   },
-];
-
-export const operationalDomains = [
   {
-    id: 'eval-feedback',
-    number: '01',
-    title: 'Avaliação e Feedback em Escala',
-    shortName: 'Avaliação & Feedback',
-    icon: 'CheckSquare',
-    description: 'Validação humana integrada, calibração de avaliadores e fluxos contínuos de resposta.',
-    subCards: [
-      {
-        id: 'ef-1',
-        title: 'Amostragem Baseada em Risco e Calibração de Avaliadores',
-        subtitle: 'Concentrar o conhecimento humano nos casos complexos e na verificação de alucinações de modelos.',
-        metrics: 'Volume Multiplicado por 3 · 98% Consistência',
-        star: {
-          situation: 'A avaliação manual constante tornou-se insustentável com o aumento acelerado do volume de dados.',
-          task: 'Conceber um sistema adaptável que responda ao crescimento sem disparar os custos operacionais.',
-          action: 'Implementei uma amostragem que direciona avaliadores humanos apenas para conteúdos com menor índice de confiança algorítmica.',
-          result: 'Mantive 98% de consistência entre avaliadores e reduzi o esforço manual total em 60%.',
-        },
-        l6Principle: 'A avaliação humana deve ser reservada para decisões complexas e de elevado impacto.',
-      },
-      {
-        id: 'co-1',
-        title: 'Automação da Cadeia de Conteúdos Digitais',
-        subtitle: 'Ligação entre repositórios de engenharia e sistemas globais de marketing.',
-        tag: 'Cadeia de Conteúdos',
-        metrics: 'Ciclos Reduzidos em 67% · APIs Automatizadas',
-        star: {
-          situation: 'A passagem manual de ficheiros entre repositórios de código e o CMS causava atrasos consideráveis.',
-          task: 'Automatizar o fluxo de extração, validação e entrega de conteúdos.',
-          action: 'Concebi uma solução com webhooks do GitHub integrada com os motores de tradução.',
-          result: 'Reduzi o tempo de entrega de 15 para 5 dias úteis sem erros manuais.',
-        },
-        l6Principle: 'Automatizar os processos técnicos liberta as equipas criativas para se focarem na mensagem.',
-      },
-    ],
-  },
-  {
-    id: 'ai-data-training',
-    number: '02',
-    title: 'Dados e Treino de IA',
-    shortName: 'Dados & Treino de IA',
-    icon: 'Cpu',
-    description: 'Conjuntos de dados para treino de LLMs, engenharia de prompts, pós-edição de tradução automática e segurança.',
+    id: 'optimization-innovation',
+    number: '07',
+    title: 'Otimização e Inovação',
+    subtitle:
+      'Liderança na otimização de fluxos com IA, treino de modelos neuronais customizados, compressão de economia unitária e sistemas de produto autónomos.',
+    icon: 'Sparkles',
+    color: 'indigo',
     subCards: [
       {
         id: 'ai-1',
@@ -700,14 +661,14 @@ export const operationalDomains = [
         subtitle:
           'Transformação de marcos de carreira, estruturas de governação operacional e artefactos de entrega num sistema de portfólio bilingue e interativo.',
         tag: 'Arquitetura de Portfólio',
-        metrics: '28 Cartões STAR · 6 Pilares Estratégicos · 100% Paridade EN/PT',
+        metrics: '29 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
         star: {
           situation:
             'Em vez de apresentar um currículo estático ou uma lista tradicional de cargos anteriores, era necessário tratar a liderança operacional como um produto de software interativo para públicos executivos e técnicos.',
           task:
             'Conceber uma experiência de portfólio interativa e bilingue que transformasse marcos de carreira, governação operacional e artefactos de entrega em níveis intuitivos e navegáveis.',
           action:
-            'Estruturei uma arquitetura Bento multinível organizando 28 cartões STAR em pilares estratégicos e domínios especializados com controlos de rotação, expansão e pesquisa. Integrei vistas dinâmicas incluindo uma linha de tempo de carreira contínua de 20 marcos e painéis Scrum resilientes, garantindo sincronização rigorosa entre inglês (en.js) e português (pt.js).',
+            'Estruturei uma arquitetura Bento multinível organizando 29 cartões STAR em 7 pilares estratégicos e domínios especializados com controlos de rotação, expansão e pesquisa. Integrei vistas dinâmicas incluindo uma linha de tempo de carreira contínua de 20 marcos e painéis Scrum resilientes, garantindo sincronização rigorosa entre inglês (en.js) e português (pt.js).',
           result:
             'Entrega de um sistema de portfólio em produção que combina métricas de impacto imediatas com blocos estruturados de Situação, Tarefa, Ação, Resultado e Aprendizagem, permitindo analisar sínteses executivas ou aprofundar detalhes de execução a pedido.',
         },
@@ -738,6 +699,47 @@ export const operationalDomains = [
         },
         l6Principle:
           'O desempenho dos modelos depende de uma rigorosa limpeza e validação semântica pré-ingestão (evitando lixo à entrada, lixo à saída), enquanto a combinação de automação seletiva em conteúdos repetitivos com transcriação humana em materiais estratégicos protege a voz da marca e o orçamento.',
+      },
+    ],
+    extendedSubsections: [],
+  },
+];
+
+export const operationalDomains = [
+  {
+    id: 'eval-feedback',
+    number: '01',
+    title: 'Avaliação e Feedback em Escala',
+    shortName: 'Avaliação & Feedback',
+    icon: 'CheckSquare',
+    description: 'Validação humana integrada, calibração de avaliadores e fluxos contínuos de resposta.',
+    subCards: [
+      {
+        id: 'ef-1',
+        title: 'Amostragem Baseada em Risco e Calibração de Avaliadores',
+        subtitle: 'Concentrar o conhecimento humano nos casos complexos e na verificação de alucinações de modelos.',
+        metrics: 'Volume Multiplicado por 3 · 98% Consistência',
+        star: {
+          situation: 'A avaliação manual constante tornou-se insustentável com o aumento acelerado do volume de dados.',
+          task: 'Conceber um sistema adaptável que responda ao crescimento sem disparar os custos operacionais.',
+          action: 'Implementei uma amostragem que direciona avaliadores humanos apenas para conteúdos com menor índice de confiança algorítmica.',
+          result: 'Mantive 98% de consistência entre avaliadores e reduzi o esforço manual total em 60%.',
+        },
+        l6Principle: 'A avaliação humana deve ser reservada para decisões complexas e de elevado impacto.',
+      },
+      {
+        id: 'co-1',
+        title: 'Automação da Cadeia de Conteúdos Digitais',
+        subtitle: 'Ligação entre repositórios de engenharia e sistemas globais de marketing.',
+        tag: 'Cadeia de Conteúdos',
+        metrics: 'Ciclos Reduzidos em 67% · APIs Automatizadas',
+        star: {
+          situation: 'A passagem manual de ficheiros entre repositórios de código e o CMS causava atrasos consideráveis.',
+          task: 'Automatizar o fluxo de extração, validação e entrega de conteúdos.',
+          action: 'Concebi uma solução com webhooks do GitHub integrada com os motores de tradução.',
+          result: 'Reduzi o tempo de entrega de 15 para 5 dias úteis sem erros manuais.',
+        },
+        l6Principle: 'Automatizar os processos técnicos liberta as equipas criativas para se focarem na mensagem.',
       },
     ],
   },
