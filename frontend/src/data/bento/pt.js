@@ -592,7 +592,7 @@ export const topPillars = [
       },
       {
         id: 'tr-thailand-crisis',
-        title: 'Morte do Rei da Tailândia',
+        title: 'Microsoft - Morte do Rei da Tailândia',
         subtitle:
           'Ativação de uma força-tarefa de resposta rápida e matriz de decisão com 3 opções para proteger a integridade da marca durante uma crise nacional imprevista.',
         tag: 'Resposta a Crises',

@@ -592,7 +592,7 @@ export const topPillars = [
       },
       {
         id: 'tr-thailand-crisis',
-        title: 'Death of King of Thailand',
+        title: 'Microsoft - Death of King of Thailand',
         subtitle:
           'Activating an emergency cross-functional task force and 3-option decision matrix to protect brand integrity during a sudden national crisis.',
         tag: 'Crisis Response & Governance',
