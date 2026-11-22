@@ -2,9 +2,9 @@
 
 export const aboutHero = {
   eyebrow: 'Gestão de Programas Empresariais & Narrativa de Sistemas',
-  title: 'Líder Global de PgM & Gestora de Operações de coração - Expansão para a Gestão de Programas Empresariais',
-  titlePrimary: 'Líder Global de PgM & Gestora de Operações de coração',
-  titleSecondary: 'Expansão para a Gestão de Programas Empresariais',
+  title: 'Líder Global de PgM & Gestora de Operações - Objetivo: Aberta a Oportunidades em Operações e Gestão de Programas',
+  titlePrimary: 'Líder Global de PgM & Gestora de Operações',
+  titleSecondary: 'Objetivo: Aberta a Oportunidades em Operações e Gestão de Programas',
   lead:
     'Com base em anos de expansão de lançamentos globais, fluxos de ferramentas e operações multifuncionais nas principais organizações tecnológicas, trago a liderança de programas de grande escala para a gestão de programas empresariais (PgM): transformando iniciativas ambíguas e multifuncionais em sistemas operacionais previsíveis e resultados mensuráveis entre equipas, sistemas e mercados.',
   tagline:
@@ -82,7 +82,7 @@ export const functionalPillars = [
     title: 'Porque Deve Trabalhar Comigo',
     focus: 'Como abordo a ambiguidade, alinho partes móveis e faço avançar iniciativas complexas.',
     color: 'cyan',
-    avatar: '🎯',
+    icon: 'Compass',
     items: [
       {
         title: 'Gestão de Programas & Entrega Multifuncional',
@@ -107,7 +107,7 @@ export const functionalPillars = [
     title: 'Estilo de Trabalho, Atitude & Hábitos',
     focus: 'O meu ritmo operacional diário, mentalidade e equilíbrio entre rigor e velocidade.',
     color: 'violet',
-    avatar: '⚡',
+    icon: 'Workflow',
     items: [
       {
         title: 'Como conduzo a execução',
@@ -134,7 +134,7 @@ export const functionalPillars = [
     title: 'Como me Apresento & Crio Ligações',
     focus: 'A minha presença humana, construção de relações e colaboração multifuncional.',
     color: 'emerald',
-    avatar: '🤝',
+    icon: 'Network',
     items: [
       {
         title: 'Alinhamento Multifuncional',
@@ -161,7 +161,7 @@ export const functionalPillars = [
     title: 'Que Valor Posso Trazer-lhe',
     focus: 'Alavancagem empresarial concreta fundamentada no meu percurso profissional.',
     color: 'amber',
-    avatar: '🚀',
+    icon: 'TrendingUp',
     items: [
       {
         title: 'Escala organizacional e multimercado',

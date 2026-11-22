@@ -11,14 +11,22 @@ describe('About Me dataset & structure', () => {
 
   test('aboutHero contains exact title, eyebrow, origin story, and scale metrics', () => {
     expect(aboutEN.aboutHero.title).toBe(
-      'Global PM Lead & Operations Manager at heart - Expanding Into Enterprise Program Management'
+      'Global PM Lead & Operations Manager - Goal: Open to Opportunities in Operations and Program Management'
+    );
+    expect(aboutEN.aboutHero.titlePrimary).toBe('Global PM Lead & Operations Manager');
+    expect(aboutEN.aboutHero.titleSecondary).toBe(
+      'Goal: Open to Opportunities in Operations and Program Management'
     );
     expect(aboutEN.aboutHero.eyebrow).toBe(
       'Enterprise Program Management & Systems Narrative'
     );
     expect(aboutEN.aboutHero.lead).toContain('broader enterprise PgM');
     expect(aboutPT.aboutHero.title).toBe(
-      'Líder Global de PgM & Gestora de Operações de coração - Expansão para a Gestão de Programas Empresariais'
+      'Líder Global de PgM & Gestora de Operações - Objetivo: Aberta a Oportunidades em Operações e Gestão de Programas'
+    );
+    expect(aboutPT.aboutHero.titlePrimary).toBe('Líder Global de PgM & Gestora de Operações');
+    expect(aboutPT.aboutHero.titleSecondary).toBe(
+      'Objetivo: Aberta a Oportunidades em Operações e Gestão de Programas'
     );
     expect(aboutEN.aboutHero.originStory.title).toBe(
       'My Journey: Language + Tech = Access = User-First'
@@ -62,7 +70,9 @@ describe('About Me dataset & structure', () => {
     expect(aboutPT.functionalPillars.map((p) => p.id)).toEqual(expectedPillarIds);
 
     [aboutEN.functionalPillars, aboutPT.functionalPillars].forEach((pillarList) => {
+      expect(pillarList.map((p) => p.icon)).toEqual(['Compass', 'Workflow', 'Network', 'TrendingUp']);
       pillarList.forEach((pillar) => {
+        expect(pillar.avatar).toBeUndefined();
         expect(pillar.title.length).toBeGreaterThan(5);
         expect(pillar.focus.length).toBeGreaterThan(15);
         expect(pillar.items).toHaveLength(3);

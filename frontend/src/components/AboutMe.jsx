@@ -25,6 +25,9 @@ import {
   Handshake,
   Code2,
   TrendingUp,
+  Workflow,
+  Network,
+  Globe,
 } from 'lucide-react';
 import {
   aboutHero as aboutHeroEN,
@@ -57,11 +60,15 @@ const iconMap = {
   Handshake,
   Code2,
   TrendingUp,
+  Workflow,
+  Network,
+  Globe,
 };
 
 const pillarColorMap = {
   violet: {
     badge: 'border-violet-400/30 bg-violet-400/10 text-violet-200',
+    iconBox: 'border-violet-400/30 bg-violet-400/10 text-violet-300',
     border: 'border-violet-500/25 hover:border-violet-400/40',
     glow: 'from-violet-950/25 via-slate-900/40 to-slate-950/40',
     accentText: 'text-violet-400',
@@ -70,6 +77,7 @@ const pillarColorMap = {
   },
   cyan: {
     badge: 'border-cyan-400/30 bg-cyan-400/10 text-cyan-200',
+    iconBox: 'border-cyan-400/30 bg-cyan-400/10 text-cyan-300',
     border: 'border-cyan-500/25 hover:border-cyan-400/40',
     glow: 'from-cyan-950/25 via-slate-900/40 to-slate-950/40',
     accentText: 'text-cyan-400',
@@ -78,6 +86,7 @@ const pillarColorMap = {
   },
   emerald: {
     badge: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-200',
+    iconBox: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300',
     border: 'border-emerald-500/25 hover:border-emerald-400/40',
     glow: 'from-emerald-950/25 via-slate-900/40 to-slate-950/40',
     accentText: 'text-emerald-400',
@@ -86,6 +95,7 @@ const pillarColorMap = {
   },
   amber: {
     badge: 'border-amber-400/30 bg-amber-400/10 text-amber-200',
+    iconBox: 'border-amber-400/30 bg-amber-400/10 text-amber-300',
     border: 'border-amber-500/25 hover:border-amber-400/40',
     glow: 'from-amber-950/25 via-slate-900/40 to-slate-950/40',
     accentText: 'text-amber-400',
@@ -297,6 +307,7 @@ const AboutMe = () => {
           .filter((pillar) => activeTab === 'all' || activeTab === pillar.id)
           .map((pillar) => {
             const colors = pillarColorMap[pillar.color] || pillarColorMap.violet;
+            const PillarIcon = iconMap[pillar.icon] || Compass;
 
             return (
               <section
@@ -307,9 +318,12 @@ const AboutMe = () => {
                 {/* Pillar Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
                   <div className="flex items-start gap-4">
-                    <span className="text-3xl sm:text-4xl p-2.5 rounded-2xl bg-white/5 border border-white/10 shrink-0" role="img" aria-label={pillar.title}>
-                      {pillar.avatar}
-                    </span>
+                    <div
+                      className={`p-3 rounded-2xl border ${colors.iconBox} shrink-0 shadow-sm`}
+                      aria-hidden="true"
+                    >
+                      <PillarIcon size={26} />
+                    </div>
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
                         <span className={`text-[11px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${colors.badge}`}>
@@ -399,9 +413,12 @@ const AboutMe = () => {
           {/* Section Header Inside Box */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
             <div className="flex items-start gap-4">
-              <span className="text-3xl sm:text-4xl p-2.5 rounded-2xl bg-white/5 border border-white/10 shrink-0" role="img" aria-label="Beyond the Resume">
-                🌟
-              </span>
+              <div
+                className="p-3 rounded-2xl border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 shrink-0 shadow-sm"
+                aria-hidden="true"
+              >
+                <Globe size={26} />
+              </div>
               <div className="space-y-1 max-w-3xl">
                 <span className="text-xs font-black uppercase tracking-[0.18em] text-cyan-400">
                   05 · {isPt ? 'Além do Currículo' : 'Beyond the Resume'}
