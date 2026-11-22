@@ -311,17 +311,24 @@ export const topPillars = [
           },
           {
             id: 'co-2',
-            title: 'Conformidade Geopolítica e da Marca',
-            subtitle: 'Validação preventiva de conteúdos para evitar desalinhamentos culturais ou regulamentares.',
+            title: 'Microsoft - Conformidade Geopolítica e da Marca',
+            subtitle:
+              'Implementação de portões pré-voo, scorecards padronizados e revisões no terreno em mais de 40–45 mercados.',
             tag: 'Conformidade Geopolítica',
-            metrics: '200+ Mercados Protegidos · 0 Infrações',
+            proofAnchor: 'microsoft',
+            metrics: '200+ Mercados · 40–45+ Países · 0 Infrações · 100% Conformidade',
             star: {
-              situation: 'Materiais em dezenas de lojas internacionais arriscavam inconformidades regulamentares ou culturais.',
-              task: 'Criar pontos de validação prévia sem comprometer os prazos de lançamento.',
-              action: 'Implementei critérios padronizados de validação geopolítica articulados com o Jurídico.',
-              result: 'Mais de 200 mercados protegidos com total conformidade pelas diretrizes globais.',
+              situation:
+                'Na Microsoft, o suporte aos lançamentos globais de lojas e marketing em mais de 40–45 mercados internacionais e 200 pontos de venda digitais significava que os conteúdos de marketing regional, editorial e produto enfrentavam riscos geopolíticos, regulamentares e culturais. Sem pontos de validação pré-lançamento padronizados e articulados entre o Jurídico, Relações Públicas e equipas regionais/geopolíticas, uma localização fragmentada e normas inconsistentes colocavam em risco a reputação da marca, gerando conflitos e atrasos de lançamento.',
+              task:
+                'Estabelecer pontos de validação prévia de conformidade geopolítica e de marca integrados no ritmo de lançamento global, em parceria com o Jurídico, RP e partes interessadas regionais/geopolíticas, garantindo que os lançamentos internacionais cumpriam os requisitos em simultâneo com as etapas de localização e engenharia, sem abrandar a velocidade de publicação.',
+              action:
+                'Integração de Portões de Lançamento Geopolíticos e de Políticas: Considerei a preparação geopolítica, de políticas de conteúdo e de marketing regional como portões simultâneos de lançamento no comboio global de entregas, em vez de verificações de última hora. Padronização de Scorecards de Aprovação e Alinhamento Terminológico: Colaborei com o Jurídico, RP e equipas geopolíticas/marca para padronizar grelhas de avaliação, diretrizes de sensibilidade regional e materiais de referência e terminologia partilhados. Revisão com Partes Interessadas Regionais e no Terreno: Estabeleci parceria com linguistas locais, revisores no terreno e líderes multifuncionais para equilibrar a consistência global da marca com as especificidades locais e resolver sensibilidades culturais atempadamente durante os ciclos de negócio (ROB) e revisões de lançamento.',
+              result:
+                'Aprovei mais de 200 mercados de montras globais em 40–45+ países com 0 infrações de marca e 100% de conformidade face às diretrizes internacionais. Reduzi os escalamentos associados a desajustes culturais ou geopolíticos e consolidei o alinhamento entre o Jurídico, RP, Produto e equipas regionais.',
             },
-            l6Principle: 'A conformidade geopolítica deve ser antecipada e integrada desde o início nos fluxos de trabalho.',
+            l6Principle:
+              'A conformidade geopolítica deve ser antecipada, padronizada e integrada de raiz nas etapas do comboio de lançamentos, em vez de constituir um obstáculo reativo de última hora.',
           },
         ],
       },

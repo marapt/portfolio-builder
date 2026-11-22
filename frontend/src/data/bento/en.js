@@ -311,17 +311,24 @@ export const topPillars = [
           },
           {
             id: 'co-2',
-            title: 'Geopolitical Readiness & Brand Compliance',
-            subtitle: 'Cross-market content validation preventing cultural and geopolitical missteps.',
+            title: 'Microsoft - Geopolitical Readiness & Brand Compliance',
+            subtitle:
+              'Establishing pre-flight geopolitical gates, standardized clearance scorecards, and in-market reviews across 40–45+ markets.',
             tag: 'Geopolitical Compliance',
-            metrics: '200+ Mkts Protected · 0 Brand Violations',
+            proofAnchor: 'microsoft',
+            metrics: '200+ Storefronts · 40–45+ Mkts · 0 Violations · 100% Compliance',
             star: {
-              situation: 'Multi-market storefront assets risked geopolitical and regulatory brand exposure.',
-              task: 'Establish pre-flight editorial clearance gates without slowing publishing velocity.',
-              action: 'Implemented standardized geopolitical clearance scorecards integrated with Legal and PR.',
-              result: 'Cleared 200+ global storefront markets with 100% compliance across international guidelines.',
+              situation:
+                'At Microsoft, supporting global storefront and marketing launches across 40–45+ international markets and 200+ regional storefront endpoints meant regional marketing, editorial, and product assets risked geopolitical, regulatory, and cultural missteps. Without standardized pre-launch clearance gates aligned across Legal, PR, and regional/geopolitical teams, fragmented localization and inconsistent standards risked brand exposure, escalations, or late launch delays.',
+              task:
+                'Establish pre-flight geopolitical and brand-compliance clearance gates integrated into the global release rhythm, partnering with Legal, PR, and geopolitical/regional stakeholders, so international launches cleared compliance simultaneously with localization and engineering gates without slowing publishing velocity.',
+              action:
+                'Embedded Geopolitical & Policy Release Gates: Treated geopolitical, content-policy, and regional-marketing readiness as simultaneous launch gates within the global release train rather than last-minute checks. Standardized Clearance Scorecards & Terminology Alignment: Partnered with Legal, PR, and geopolitical/brand teams to standardize clearance scorecards, regional sensitivity guidelines, and shared terminology/reference materials. In-Market & Regional Stakeholder Review: Partnered with regional linguists, in-market reviewers, and cross-functional leads to balance global brand consistency with local nuance and resolve regional/cultural sensitivities early during Rhythm-of-Business (ROB) and launch reviews.',
+              result:
+                'Cleared 200+ global storefront markets across 40–45+ international markets with 0 brand violations and 100% compliance across international guidelines. Reduced escalations tied to cultural or geopolitical misalignment and strengthened alignment across Legal, PR, product, and regional teams.',
             },
-            l6Principle: 'Geopolitical compliance must be preventative and automated rather than reactive.',
+            l6Principle:
+              'Geopolitical compliance must be preventative, standardized, and integrated natively into release train gates rather than treated as a reactive late-stage hurdle.',
           },
         ],
       },
