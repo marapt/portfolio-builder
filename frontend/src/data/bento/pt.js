@@ -176,25 +176,6 @@ export const topPillars = [
     color: 'emerald',
     subCards: [
       {
-        id: 'oc-1',
-        title: 'Transformar Líderes Céticos em Promotores da Mudança',
-        subtitle: 'Superar resistências operacionais através de dados comparativos e liderança partilhada.',
-        tag: 'Liderança da Mudança',
-        metrics: '8 Regiões Alinhadas · 100% Adesão',
-        proofAnchor: 'block',
-        star: {
-          situation:
-            'Os responsáveis de mercado regionais resistiam à transição de agências locais para um modelo global unificado, temendo a perda de autonomia e qualidade cultural.',
-          task:
-            'Construir consenso e obter a aprovação de líderes em 8 organizações regionais dispersas.',
-          action:
-            'Realizei auditorias transparentes comparando qualidade local e centralizada; lancei um piloto de 30 dias dando aos líderes copropriedade dos critérios do scorecard; partilhei painéis semanais.',
-          result:
-            'Converti líderes céticos em defensores convictos do programa, garantindo adesão unânime ao modelo global.',
-        },
-        l6Principle: 'A influência sem autoridade conquista-se através da transparência de dados e da partilha da autoria da mudança.',
-      },
-      {
         id: 'oc-2',
         title: 'Liderança Emergente em Ambientes de Alta Pressão',
         subtitle: 'Assumir a liderança no vazio operacional para estabelecer clareza e alinhamento.',
@@ -550,7 +531,27 @@ export const topPillars = [
       'Promover a colaboração multifuncional, o alinhamento estratégico com partes interessadas e o consenso executivo entre Produto, Engenharia, Marketing, Jurídico e lideranças regionais.',
     icon: 'Network',
     color: 'blue',
-    subCards: [],
+    subCards: [
+      {
+        id: 'oc-1',
+        title: 'Transformar Líderes Céticos em Promotores da Mudança',
+        subtitle: 'Superar resistências operacionais através de dados comparativos e liderança partilhada.',
+        tag: 'Liderança da Mudança',
+        metrics: '8 Regiões Alinhadas · 100% Adesão',
+        proofAnchor: 'block',
+        star: {
+          situation:
+            'Os responsáveis de mercado regionais resistiam à transição de agências locais para um modelo global unificado, temendo a perda de autonomia e qualidade cultural.',
+          task:
+            'Construir consenso e obter a aprovação de líderes em 8 organizações regionais dispersas.',
+          action:
+            'Realizei auditorias transparentes comparando qualidade local e centralizada; lancei um piloto de 30 dias dando aos líderes copropriedade dos critérios do scorecard; partilhei painéis semanais.',
+          result:
+            'Converti líderes céticos em defensores convictos do programa, garantindo adesão unânime ao modelo global.',
+        },
+        l6Principle: 'A influência sem autoridade conquista-se através da transparência de dados e da partilha da autoria da mudança.',
+      },
+    ],
     extendedSubsections: [],
   },
 ];

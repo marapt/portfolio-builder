@@ -176,25 +176,6 @@ export const topPillars = [
     color: 'emerald',
     subCards: [
       {
-        id: 'oc-1',
-        title: 'Turning Skeptical Regional Leaders into Advocates',
-        subtitle: 'Overcoming operational resistance through baseline telemetry and shared ownership.',
-        tag: 'Change Leadership',
-        metrics: '8 Regions Aligned · 100% Buy-In',
-        proofAnchor: 'block',
-        star: {
-          situation:
-            'Regional market leads resisted transitioning from bespoke local agencies to a unified global operating model, fearing loss of nuanced cultural quality and autonomy.',
-          task:
-            'Build cross-functional consensus and leadership buy-in across 8 distributed regional organizations.',
-          action:
-            'Ran transparent baseline quality audits comparing local vs centralized output; launched a 30-day pilot giving regional leads direct co-ownership of scorecard criteria; shared weekly telemetry dashboards.',
-          result:
-            'Converted skeptical regional stakeholders into active program champions, securing unanimous approval for the global operating model.',
-        },
-        l6Principle: 'Influence without authority is won by sharing data transparently and giving stakeholders co-authorship of change.',
-      },
-      {
         id: 'oc-2',
         title: 'Emergent Leadership in High-Urgency Environments',
         subtitle: 'Stepping into operational voids to establish triage clarity and multi-org alignment.',
@@ -550,7 +531,27 @@ export const topPillars = [
       'Foster cross-functional collaboration, strategic stakeholder alignment, and executive consensus across Product, Engineering, Marketing, Legal, and Regional leadership.',
     icon: 'Network',
     color: 'blue',
-    subCards: [],
+    subCards: [
+      {
+        id: 'oc-1',
+        title: 'Turning Skeptical Regional Leaders into Advocates',
+        subtitle: 'Overcoming operational resistance through baseline telemetry and shared ownership.',
+        tag: 'Change Leadership',
+        metrics: '8 Regions Aligned · 100% Buy-In',
+        proofAnchor: 'block',
+        star: {
+          situation:
+            'Regional market leads resisted transitioning from bespoke local agencies to a unified global operating model, fearing loss of nuanced cultural quality and autonomy.',
+          task:
+            'Build cross-functional consensus and leadership buy-in across 8 distributed regional organizations.',
+          action:
+            'Ran transparent baseline quality audits comparing local vs centralized output; launched a 30-day pilot giving regional leads direct co-ownership of scorecard criteria; shared weekly telemetry dashboards.',
+          result:
+            'Converted skeptical regional stakeholders into active program champions, securing unanimous approval for the global operating model.',
+        },
+        l6Principle: 'Influence without authority is won by sharing data transparently and giving stakeholders co-authorship of change.',
+      },
+    ],
     extendedSubsections: [],
   },
 ];
