@@ -60,7 +60,8 @@ export const topPillars = [
         subCards: [
           {
             id: 'gtm-linkedin-stories-redesign',
-            title: 'LinkedIn - Stories & Platform Redesign: Multi-Wave Global GTM Governance',
+            title:
+              'LinkedIn - Stories & Platform Redesign\nMulti-Wave Global GTM Governance',
             subtitle:
               'Sequencing phased international GTM rollouts across 6 waves, 26 languages, and 17 markets during COVID-19 pandemic operations.',
             tag: 'Global Expansion & GTM',

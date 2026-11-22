@@ -60,7 +60,8 @@ export const topPillars = [
         subCards: [
           {
             id: 'gtm-linkedin-stories-redesign',
-            title: 'LinkedIn - Stories e Redesenho da Plataforma: Governação Global Multi-Onda de GTM',
+            title:
+              'LinkedIn - Stories e Redesenho da Plataforma\nGovernação Global Multi-Onda de GTM',
             subtitle:
               'Sequenciação de lançamentos internacionais faseados em 6 ondas, 26 idiomas e 17 mercados durante operações remotas da pandemia.',
             tag: 'Expansão Global & GTM',
