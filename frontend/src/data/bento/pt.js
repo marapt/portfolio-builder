@@ -579,16 +579,23 @@ export const topPillars = [
     subCards: [
       {
         id: 'tr-1',
-        title: 'Triagem de Incidentes 24/7 Follow-the-Sun',
-        subtitle: 'Transições entre equipas em fusos horários diferentes para assegurar continuidade operacional.',
-        metrics: 'Resposta P0 <30 Min · Cobertura 24/7 Ativa',
+        title: 'Microsoft e LinkedIn - Modelo 24/7 Follow-the-Sun',
+        subtitle: 'Triagem de Incidentes em Escala',
+        tag: 'Triagem Operacional de Incidentes',
+        proofAnchor: 'microsoft',
+        metrics: 'Triagem P0/P1 Quase em Tempo Real · SLA Obrigatório 24-48h · Prontidão Global 24/7',
         star: {
-          situation: 'Bloqueios críticos identificados ao final do dia na Europa ficavam parados até à manhã nos EUA.',
-          task: 'Implementar um modelo operacional de transição contínua entre fornecedores em vários fusos horários.',
-          action: 'Padronizei relatórios diários assíncronos de passagem de turno e alertas automatizados para incidentes P0.',
-          result: 'Eliminei tempos de espera noturnos e alcancei respostas em menos de 30 minutos para falhas críticas.',
+          situation:
+            'Nas operações de grande volume e grandes campanhas na Microsoft e no LinkedIn, lançamentos multimilionários e períodos de pico como a Black Friday exigiam cobertura global ininterrupta. Sem um modelo operacional contínuo, as diferenças de fuso horário e os riscos em campanhas ativas podiam paralisar a execução ou atrasar correções urgentes.',
+          task:
+            'Supervisionar as operações centralizadas de fornecedores Managed Service Provider (MSP) e equipas internas, construindo um modelo 24 horas follow-the-sun com cobertura global em prontidão, especialmente para períodos críticos como a Black Friday. Isto exigia capacidade pré-planeada em avença e prontidão, fluxos claros de mitigação de riscos, e permissões de administração e marcos de aprovação pré-configurados.',
+          action:
+            'Desenhei e implementei um modelo operacional 24 horas follow-the-sun com fornecedores, parceiros e equipas regionais, com capacidade dedicada de prontidão e avença para janelas de pico. Assegurei a validação financeira e de liderança para equipas, aprovações e protocolos de mitigação de risco para que as equipas pudessem executar lançamentos e resolver riscos em direto sem esperar por aprovações ou transferências de cobertura.',
+          result:
+            'Assegurei lançamentos de campanha sem falhas e resposta rápida a riscos, resolvendo incidentes críticos P0 e P1 quase em tempo real face a um SLA obrigatório de 24 a 48 horas.',
         },
-        l6Principle: 'Operações globais contínuas dependem de comunicações assíncronas claras para não perder informação.',
+        l6Principle:
+          'Operações globais contínuas follow-the-sun exigem capacidade dedicada de prontidão e protocolos de aprovação pré-alinhados para eliminar dependências de fuso horário.',
       },
       {
         id: 'tr-thailand-crisis',

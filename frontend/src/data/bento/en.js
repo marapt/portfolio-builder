@@ -579,16 +579,23 @@ export const topPillars = [
     subCards: [
       {
         id: 'tr-1',
-        title: '24/7 Follow-the-Sun Incident Triage',
-        subtitle: 'Decoupled multi-regional shift handoffs ensuring continuous operational coverage.',
-        metrics: '<30 Min P0 Triage · 24/7 Active Handoffs',
+        title: 'Microsoft and LinkedIn - 24/7 Follow-the-Sun Model',
+        subtitle: 'Incident Triage at Scale',
+        tag: 'Operational Incident Triage',
+        proofAnchor: 'microsoft',
+        metrics: 'Near Real-Time P0/P1 Triage · 24-48h Mandatory SLA · 24/7 Global Standby',
         star: {
-          situation: 'Critical release blockers identified in European evening hours stalled until US morning.',
-          task: 'Architect a 24/7 Follow-the-Sun operational handoff model across global vendor hubs.',
-          action: 'Standardized daily asynchronous shift handoff briefs and automated P0 escalation webhooks.',
-          result: 'Eliminated overnight idle delays and achieved sub-30-minute response SLAs for critical blockers.',
+          situation:
+            'Across high-volume operations and major campaigns at Microsoft and LinkedIn, multi-million-dollar launches and peak events such as Black Friday required uninterrupted global coverage. Without a continuous operating model, time-zone gaps and live campaign risks could stall execution or delay urgent fixes.',
+          task:
+            'Oversee centralized Managed Service Provider (MSP) vendor operations and internal teams while building a 24-hour follow-the-sun model with global standby coverage, especially for peak periods like Black Friday. This required pre-planned capacity on retainer and standby, clear risk mitigation workflows, and pre-configured admin permissions and approval milestones.',
+          action:
+            'Designed and implemented a 24-hour follow-the-sun operating model across vendors, partners, and regional teams with dedicated standby and retainer capacity for peak windows. Secured finance and leadership sign-off on staffing, approvals, and risk mitigation protocols so teams could execute launches and resolve live risks without waiting for approval or coverage handoffs.',
+          result:
+            'Delivered smooth campaign launches and rapid risk response, resolving high-priority P0 and P1 issues near real time against a mandatory 24-to-48-hour SLA.',
         },
-        l6Principle: 'Follow-the-Sun operations require standardized asynchronous handoff artifacts to prevent context loss.',
+        l6Principle:
+          'Follow-the-Sun operations require standardized asynchronous handoff artifacts, pre-approved standby capacity, and pre-cleared permissions to resolve critical incidents without coverage loss.',
       },
       {
         id: 'tr-thailand-crisis',
