@@ -9,9 +9,9 @@ export const resumeData = {
       location: 'Área da Baía de São Francisco, CA',
       period: 'Set 2026 - Presente',
       type: 'Transição de Carreira',
-      description: 'Em exploração ativa de funções de liderança sénior de programas (L6/Staff PGM) em governação de programas de IA empresarial, operações globais de lançamento e escala multi-mercado.',
+      description: 'Em exploração ativa de funções de liderança sénior e staff de programas em governação de programas de IA empresarial, operações globais de lançamento e escala multi-mercado.',
       achievements: [
-        'Foco em funções de liderança em gestão sénior de programas (L6/Staff PGM) em orquestração de IA empresarial, operações globais de lançamento e escala internacional',
+        'Foco em funções de liderança sénior e staff em gestão de programas em orquestração de IA empresarial, operações globais de lançamento e escala internacional',
         'Mais de 15 anos de liderança em governação inter-funcional, ecossistemas multi-fornecedor (até 20 fornecedores MSP) e prontidão de produto em 200 mercados e 100 línguas',
         'Disponível para cargos executivos de liderança de programas, consultoria estratégica ou iniciativas de transformação empresarial'
       ],

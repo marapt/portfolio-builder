@@ -12,9 +12,9 @@ export const resumeData = {
       location: 'San Francisco Bay Area, CA',
       period: 'Sep 2026 - Present',
       type: 'Career Transition',
-      description: 'Actively exploring senior program leadership (L6/Staff PGM) roles across enterprise AI program governance, global launch operations, and multi-market scale.',
+      description: 'Actively exploring senior and staff program leadership roles across enterprise AI program governance, global launch operations, and multi-market scale.',
       achievements: [
-        'Targeting senior program management (L6/Staff PGM) leadership roles across enterprise AI orchestration, global launch operations, and international scale',
+        'Targeting senior and staff program management leadership roles across enterprise AI orchestration, global launch operations, and international scale',
         'Leveraging 15+ years driving cross-functional governance, multi-vendor ecosystems (up to 20 MSP vendors), and multi-market product readiness across 200 markets and 100 languages',
         'Available for full-time executive program leadership, strategic advisory, or enterprise transformation initiatives'
       ],

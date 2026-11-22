@@ -8,16 +8,170 @@ export const bentoHero = {
   subtitle:
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.\n\nA minha missão: Ajudar a tornar produtos, serviços e soluções acessíveis a todos e em qualquer lugar.',
   quickStats: [
-    { label: 'Pilares Estratégicos', value: '7 Pilares de Topo' },
+    { label: 'Pilares Estratégicos', value: '8 Pilares de Topo' },
     { label: 'Estruturas Empresariais', value: 'Arquitetura STAR' },
-    { label: 'Cartões Interativos', value: '27 Cartões STAR' },
+    { label: 'Cartões Interativos', value: '28 Cartões STAR' },
   ],
 };
 
 export const topPillars = [
   {
-    id: 'portfolio-governance',
+    id: 'executive-health',
     number: '01',
+    title: 'Monitorização Executiva e Relatórios de Impacto',
+    subtitle:
+      'Manter um Índice de Saúde Executiva para Operações e Governação de Programas, evidenciando despesas, cumprimento de SLAs, alocação de capacidade de recursos e métricas de sucesso para a Liderança. Fazer a ponte entre métricas operacionais e a Visão, Missão, Objetivos e OKRs da Organização.',
+    icon: 'Activity',
+    color: 'amber',
+    subCards: [
+      {
+        id: 'eh-2',
+        title: 'Block and Microsoft - Revisões Anuais de Desempenho + MBRs/QBRs',
+        subtitle:
+          'Alinhar equipas internas e fornecedores em torno de OKRs, agir sobre decisões de risco e celebrar conquistas.',
+        tag: 'Governação Executiva',
+        metrics: '50 para 10-20 Participantes · 3x Sem. para MBR/QBR · Decisões Rápidas',
+        proofAnchor: 'block-microsoft',
+        proofAnchors: ['block', 'microsoft'],
+        star: {
+          situation:
+            'As revisões operacionais multifuncionais ficavam frequentemente presas em detalhes táticos, consumindo tempo de VPs, líderes seniores e equipas sem garantir decisões sobre bloqueios críticos. Faltava também às equipas uma estrutura consistente e um alinhamento claro com a visão, missão e OKRs mais amplos da organização e da empresa.',
+          task:
+            'Fui encarregada de desenhar um modelo de revisão de alto impacto em funções-chave, organizações e fornecedores, em conjunto com líderes seniores e partes interessadas de operações executivas, ancorado em OKRs, KPIs e objetivos de negócio consistentes.',
+          action:
+            'Estabeleci um modelo operacional de revisão com múltiplas cadências, abrangendo encontros anuais de alinhamento, Quarterly Business Reviews (QBRs) de 45 minutos e Monthly Business Reviews (MBRs) de 30 minutos para equipas internas e fornecedores externos. Introduzi agendas estruturadas com um sistema de semáforo para manter o foco e promover resoluções rápidas (por exemplo, estruturando as QBRs em torno de atualizações de liderança sobre objetivos/mudanças, alinhamento conciso de OKRs e sucessos de equipa, oportunidades estratégicas, riscos críticos sem responsável atribuído a exigir decisões executivas e próximos passos com titularidade clara no modelo RACI). Adicionalmente, assumi a síntese de dados pré-reunião, relatórios de riscos e pedidos claros de aprovação com os responsáveis pelas equipas, distribuindo apresentações prévias para assegurar o princípio de \"sem surpresas\" e o alinhamento nas decisões necessárias, assegurando em seguida a distribuição e acompanhamento dos planos de ação pós-reunião.',
+          result:
+            'Simplifiquei as comunicações e aprovações executivas, reduzi a participação em reuniões de mais de 50 pessoas para entre 10 e 20, e alterei a cadência de 3 revisões semanais para uma governação mensal, trimestral e anual estruturada com os responsáveis; melhorei o alinhamento quanto a OKRs, riscos e titularidade de decisões, obtendo reconhecimento direto pela clareza executiva e liderança operacional estruturada.',
+        },
+        l6Principle:
+          'Uma governação estruturada com dados claros simplifica a comunicação, impulsiona ações concretas e aprovações, reduz atritos e dá às equipas o espaço necessário para se sentirem valorizadas e ouvidas.',
+      },
+      {
+        id: 'fom-block',
+        title: "Block - Gestão e Reporte Orçamental dos PGMs",
+        subtitle:
+          'Transição de um estrangulamento manual centrado numa única pessoa para ownership orçamental distribuída pelos PMs e dashboards interativos.',
+        tag: 'Finanças & OPEX',
+        proofAnchor: 'block',
+        metrics: 'Block · Processamento de Faturas de 30 para 5 Dias · Margem de 5-10% em SOWs',
+        star: {
+      situation:
+        'Ao ingressar na Block, a gestão financeira de localização dependia de um único recurso que tratava da gestão de fornecedores através de processos marcadamente manuais e validações cruzadas de faturas. Este modelo operacional não conseguia escalar perante a expansão de mercado planeada ou o aumento no volume de transações.',
+      task:
+        'Como líder de PGM, assumi a responsabilidade de substituir o estrangulamento manual por um modelo financeiro operacional escalável. Para isso, colaborei com os RH para expandir os níveis e responsabilidades dos PMs para a gestão orçamental ponta a ponta (estimativa, reconciliação, monitorização e reporte) e equipar as equipas com relatórios fiscais visuais e interativos.',
+      action:
+        'Após formalizar com os RH a expansão da função dos PMs para assumirem a estimativa, reconciliação, monitorização e reporte de orçamentos funcionais, coliderei a criação de painéis fiscais visuais e interativos com PMs sob a minha orientação, Engenharia, Finanças, Líderes Seniores e Fornecedores, permitindo aos PMs monitorizarem e reportarem despesas de forma transparente sem dependerem de verificações manuais cruzadas. Também organizei sessões de capacitação, orientando os PMs na gestão de orçamentos de fornecedores, acompanhamento de variações e governação de programas multifuncionais.',
+      result:
+        'Substituí um estrangulamento manual centrado num único recurso por responsabilidade orçamental distribuída pelos PMs e visibilidade fiscal multifuncional e interativa entre PMs, Engenharia, Finanças, liderança e fornecedores. Ao estabelecer uma base escalável de governação de despesas preparada para expansão de mercados, capacitei toda a organização a cumprir as metas orçamentais, mantendo uma variação orçamental trimestral controlada de 5-10% integrada nos SOWs negociados.',
+        },
+        l6Principle:
+          'Escalar a governação financeira exige associar clareza de funções e dashboards transversais a uma titularidade descentralizada, em vez de sobrecarregar uma única pessoa com estrangulamentos manuais.',
+      },
+      {
+        id: 'fom-microsoft',
+        title: 'Microsoft - RFP e Governação de MA / SOW',
+        subtitle:
+          'Padronização de modelos de SOW, descontos por volume e termos comerciais de MSA em mais de 40 mercados.',
+        tag: 'Finanças & OPEX',
+        proofAnchor: 'microsoft',
+        metrics: '$500K Custos Evitados · -35% Tempo de Ciclo · 40+ Mercados',
+        star: {
+      situation:
+        'Na Microsoft (jun. de 2016 - abr. de 2020), o suporte a operações globais de marketing e localização em mais de 40 mercados internacionais implicava trabalhar com múltiplos parceiros linguísticos e fornecedores externos em equipas regionais, onde SOWs descentralizados, tabelas de preços inconsistentes, SLAs pontuais e verificações manuais de faturação criavam atrito nos custos e atrasos nas aprovações.',
+      task:
+        'Fui encarregada de auditar a cobertura de fornecedores em conjunto com Procurement e partes interessadas multifuncionais, padronizar SOWs e níveis de SLA baseados em desempenho, e negociar termos comerciais de Master Services Agreements (MSA) para proteger o orçamento e encurtar prazos de entrega num programa anual multimilionário.',
+      action:
+        'Colaborei com o departamento global de Procurement para auditar fornecedores ativos de localização, alinhar responsáveis multifuncionais de localização em modelos uniformizados de SOW e níveis contratuais baseados em desempenho, e negociar termos de MSA, incluindo descontos corporativos por volume agregado de trabalho; articulei termos comerciais com SLAs padronizados, scorecards e revisões operacionais mensais e trimestrais de execução orçamental e capacidade com Finanças e Engenharia.',
+      result:
+        'Reduzi os prazos de ciclo dos fornecedores em 35% (de 15 para 9 dias) em mais de 40 mercados internacionais (incluindo a redução nos lançamentos de localização de campanhas e produtos de 15 para 9 dias), consegui $500.000 em custos evitados na dotação anual multimilionária da Microsoft Store para reinvestimento em mercados de elevado crescimento, e mantive um índice de satisfação do cliente (CSAT/NPS) superior a 90%, a par da conformidade auditável de pagamento de faturas a 30 dias.',
+        },
+        l6Principle:
+          'Associar SOWs padronizados, capacidade negocial por volume e telemetria transparente de despesa transforma o investimento em parceiros em capacidade previsível e rigor orçamental.',
+      },
+    ],
+    extendedSubsections: [],
+  },
+  {
+    id: 'operational-bi',
+    number: '02',
+    title: 'Business Intelligence Operacional',
+    shortName: 'BI & Telemetria',
+    subtitle:
+      'Colaboro com as equipas internas de BI e Análise de Dados para automatizar o acompanhamento de fluxos, a telemetria de SLAs, as métricas de execução e os dashboards executivos, transformando dados operacionais numa fonte única de verdade para decisões mais rápidas.',
+    icon: 'BarChart3',
+    color: 'sky',
+    subCards: [
+      {
+        id: 'bit-bf',
+        title: 'Campanhas Microsoft - Black Friday: Telemetria em Tempo Real para Campanhas Globais',
+        subtitle:
+          'Dashboards Power BI em tempo real unificando o desempenho de campanhas em mercados globais e locais.',
+        tag: 'BI & Telemetria',
+        proofAnchor: 'microsoft',
+        metrics: '40+ Mercados · 24-48h Turnaround',
+        star: {
+      situation:
+        'Durante eventos globais de alta velocidade como a Black Friday, as partes interessadas internas não tinham visibilidade unificada e em tempo real sobre a entrega e o desempenho de campanhas nos mercados globais e locais, arriscando correções de rumo tardias sempre que os ritmos regionais ou tendências de conversão variavam a meio do evento.',
+      task:
+        'Fui encarregada de construir dashboards no Power BI com visibilidade de desempenho global e por mercado em tempo real, em colaboração com equipas internas de BI e engenharia, suportados por mockups visuais claros antes do desenvolvimento técnico.',
+      action:
+        'Estabeleci parcerias multifuncionais para padronizar definições de KPIs e agregações de dados entre mercados globais e locais. Desenhei mockups visuais prévios para alinhar as partes interessadas na hierarquia e apresentação dos dados antes da programação, e construí dashboards no Power BI acompanhando o desempenho ao vivo nos mercados globais e locais em mais de 40 mercados com ciclos de atualização quase em tempo real (como a cada 60 minutos).',
+      result:
+        'Substituí verificações manuais e fragmentadas de estado por uma fonte única de verdade entre equipas globais e locais durante períodos críticos de Black Friday, reduzindo o tempo de reporte de 3-5 dias para 24-48 horas e permitindo ajustes mais rápidos a meio de campanhas com desempenho abaixo do esperado.',
+        },
+        l6Principle:
+          'Prototipar a clareza visual primeiro e associar telemetria em tempo real ao contexto local transforma a velocidade de campanha em execução coordenada.',
+      },
+      {
+        id: 'bit-vendor-governance',
+        title:
+          "Microsoft Power BI's -  Fornecedores -\nCapacidade, SLAs e Governação de Custos Operacionais",
+        subtitle:
+          'Dashboards Power BI unificados integrando capacidade de fornecedores, SLAs de entrega e limites orçamentais.',
+        tag: 'Operações de Fornecedores',
+        proofAnchor: 'microsoft',
+        metrics: '5 Fornecedores · Visibilidade de SLAs a 30 Dias e Previsões a 3 Meses',
+        star: {
+      situation:
+        'A gestão de capacidade de fornecedores, volume, cumprimento de SLAs (incluindo entregas no prazo) e custos operacionais nas iniciativas ativas não dispunha de uma visão operacional consolidada, dificultando o equilíbrio das cargas de trabalho face aos limites orçamentais.',
+      task:
+        'Fui encarregada de desenhar dashboards no Power BI que unificassem capacidade de fornecedores, volume, desempenho de SLAs (pontualidade nas entregas) e métricas de custos operacionais para orientar o planeamento proativo e a governação orçamental.',
+      action:
+        'Colaborei com partes interessadas internas para alinhar a utilização de capacidade, volume produzido, limiares de SLA de pontualidade e vetores de custos. Desenvolvi vistas visuais de telemetria relacionando a produção de fornecedores e a conformidade de SLAs diretamente com a execução orçamental e a margem de capacidade em 5 fluxos de trabalho de fornecedores.',
+      result:
+        'Assegurei aos responsáveis de programas e orçamentos visibilidade em tempo real sobre estrangulamentos de capacidade, cumprimento de SLAs e evolução de despesas. Melhorei a visibilidade de entregas no prazo em todos os itens acompanhados, apoiei um controlo mais rigoroso de variações orçamentais e viabilizei até 30 dias de visibilidade de conformidade e 3 meses de previsão sem sobrealocação de fornecedores.',
+        },
+        l6Principle:
+          'Quando o volume operacional, a saúde dos SLAs e os custos coexistem numa única visão, a governação evolui da reação a urgências para uma gestão disciplinada de recursos e orçamento.',
+      },
+      {
+        id: 'bit-1',
+        title: 'Block e LinkedIn - Capacitação Operacional, SLAs e Continuidade de Negócio',
+        subtitle:
+          'Telemetria etapa a etapa unificando TMS de fornecedores e Jira com alertas proativos de SLA.',
+        tag: 'BI & Telemetria',
+        proofAnchor: 'block-linkedin',
+        proofAnchors: ['block', 'linkedin'],
+        metrics: '20+ Partes Interessadas · >50% Redução de Pedidos de Estado',
+        star: {
+      situation:
+        'As partes interessadas multifuncionais em produto, engenharia, localização e equipas regionais não dispunham de visibilidade de ponta a ponta sobre o ponto em que cada pedido individual se encontrava nas etapas de intake, triagem, tradução e implementação, o que fazia com que bloqueios passassem despercebidos até os prazos ficarem apertados, originando pedidos constantes de ponto de situação.',
+      task:
+        'Fui encarregada de coordenar a integração de APIs de fornecedores e desenhar a arquitetura visual de gráficos para um portal centralizado de telemetria e BI que acompanhasse o rendimento etapa a etapa e o cumprimento de SLAs ao longo de todo o ciclo de vida do pedido, capacitando equipas com visibilidade em regime de autoatendimento e alertas de estrangulamento.',
+      action:
+        'Colaborei com lideranças de engenharia, operações e fornecedores para padronizar definições de etapas e metas de SLA ao longo do intake, triagem, localização/tradução e implementação. Agreguei dados de eventos e estados em tempo real de ferramentas CAT/TMS de fornecedores para sistemas internos como o Jira num portal unificado de telemetria, configurando alertas automáticos para pedidos parados e quebras de SLAs para que os responsáveis pudessem intervir precocemente.',
+      result:
+        'Concedi a mais de 20 partes interessadas multifuncionais visibilidade em tempo real e autoatendimento sobre cada fase do processo, reduzindo atritos ao cortar consultas de estado em mais de metade, acelerando a triagem de estrangulamentos antes das datas-limite de lançamento e convertendo cobranças subjetivas em governação objetiva de SLAs.',
+        },
+        l6Principle:
+          'A telemetria operacional transforma frustrações subjetivas em dados objetivos e acionáveis.',
+      },
+    ],
+    extendedSubsections: [],
+  },
+  {
+    id: 'portfolio-governance',
+    number: '03',
     title: 'Governação de Portfólio e Desenho de Estruturas',
     subtitle:
       'Desenhar, padronizar e escalar modelos operacionais e cadências de revisão em todos os pilares. Estabelecer processos estruturados de admissão, alocação de recursos e priorização de programas. Cobertura Linguística Global e Soluções de Localização. Sequenciação de lançamentos internacionais multi-onda, governação de campanhas GTM localizadas e alinhamento comercial entre mercados estratégicos.',
@@ -118,7 +272,7 @@ export const topPillars = [
   },
   {
     id: 'supplier-performance',
-    number: '02',
+    number: '04',
     title: 'Desempenho de Fornecedores e Governação de Parceiros',
     subtitle:
       'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.). Parceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento. Padronização de modelos de gestão de fornecedores, cadernos de encargos (SOWs), tabelas de preços contratuais, fluxos de admissão e cumprimento de SLAs/SLOs. Estratégia de fornecedores, governação, conformidade, controlo orçamental e ferramentas operacionais transversais.',
@@ -196,7 +350,7 @@ export const topPillars = [
   },
   {
     id: 'operations-change',
-    number: '03',
+    number: '05',
     title: 'Capacitação Operacional e Otimização de Processos',
     subtitle:
       'Identificar estrangulamentos entre parceiros multifuncionais, organizações e fluxos de trabalho. Introduzir ferramentas e automação de fluxos (automação e integração de processos), e liderar a integração e implementação de políticas operacionais (governação de programas, conformidade de recursos e conformidade de dados).',
@@ -287,240 +441,55 @@ export const topPillars = [
         l6Principle:
           'A velocidade sustentável de conteúdos exige uma governação proativa de ciclo de vida: curadoria de ativos de alto valor para montagem modular e depreciação sistemática de conteúdos obsoletos na origem.',
       },
-    ],
-    extendedSubsections: [
       {
-        id: 'content-operations',
-        number: '01',
-        title: 'Operações de Conteúdo',
-        shortName: 'Operações de Conteúdo',
-        icon: 'FileText',
-        description:
-          'Cadeias de fornecimento de conteúdos digitais, integração de CMS/TMS e gestão de publicações multi-mercado.',
-        subCards: [],
-      },
-      {
-        id: 'operational-controls',
-        number: '08',
-        title: 'Controlos Operacionais e Conformidade',
-        shortName: 'Controlos & Conformidade',
-        icon: 'Lock',
-        description:
-          'Gestão da governação de acessos (políticas de equipa e transições de sistemas legados para novas plataformas de força de trabalho), integração/saída de colaboradores e mitigação de riscos operacionais.',
-        subCards: [
-          {
-            id: 'occ-workforce-portal',
-            title: 'Microsoft - Reformulação da Web Careers -\nPortal de Força de Trabalho e Conformidade Laboral',
-            subtitle:
-              'Modernização do portal de carreiras e força de trabalho da Microsoft para cumprir leis laborais e eliminar fricções operacionais.',
-            tag: 'Controlos & Conformidade',
-            proofAnchor: 'microsoft',
-            metrics: 'Microsoft · Conformidade Laboral · Fluxos Integrados',
-            star: {
-          situation:
-            'Para cumprir a legislação sobre Força de Trabalho Contingente e Leis Laborais, a equipa de Procurement necessitou de renovar o Website de Carreiras e o Portal de Força de Trabalho, o que exigiu alinhar partes interessadas multifuncionais, fluxos operacionais e de conteúdos, e visibilidade de candidatos ou recrutamento sem transições fragmentadas, monitorização pouco clara ou estrangulamentos manuais.',
-          task:
-            'Fui encarregada de desenvolver e operacionalizar a globalização da experiência do Careers Website e Workforce Portal para que as equipas de programas tivessem fluxos claros, admissão estruturada e execução operacional fiável a nível global.',
-          action:
-            'Colaborei com equipas de produto, engenharia e operações para mapear fluxos de trabalho completos em portais e equipas, alinhar requisitos e vistas de acompanhamento claras, e estabelecer transições operacionais estruturadas e visibilidade no Careers Website e Workforce Portal.',
-          result:
-            'Disponibilizei uma capacidade coerente para o Careers Website e Workforce Portal que simplificou a coordenação entre equipas e a visibilidade operacional nos fluxos de integração e recrutamento, assegurando total conformidade com a legislação laboral e de pessoal contingente.',
-            },
-            l6Principle:
-              'Grandes portais e sistemas de gestão de força de trabalho triunfam quando o desenho de fluxos, a titularidade clara e a visibilidade operacional são concebidos desde o primeiro dia.',
-          },
-          {
-            id: 'occ-block-temp-workers',
-            title: 'Block - Proposta de Programa de Trabalhadores Temporários',
-            subtitle:
-              'Auditoria à capacidade interna, extensão de portais transversais e financiamento para cinco mercados de expansão.',
-            tag: 'Governação de Equipas',
-            proofAnchor: 'block',
-            metrics: 'Block · 5 Mercados Expandidos · 5 Recursos Contingentes · Contratação em 4 Semanas',
-            star: {
-          situation:
-            'Na Block, os objetivos de crescimento acelerado em cinco mercados adicionais e iniciativas concorrentes a nível de toda a organização geraram tensão com a continuidade das operações diárias. A capacidade interna de colaboradores e as estruturas de equipa existentes não conseguiam absorver o pico de trabalho sem arriscar estrangulamentos operacionais ou falhas de conformidade.',
-          task:
-            'Fui encarregada de liderar uma auditoria multifuncional com a gestão sénior e RH sobre equipas internas e necessidades de contratação temporária, definir perfis de competências necessários, propor um Programa formal de Trabalho Temporário para Globalização e assegurar a aprovação e financiamento da liderança.',
-          action:
-            'Mapeei a pressão de trabalho, lacunas de competências e riscos de continuidade nos cinco mercados de expansão; liderei uma auditoria estruturada de necessidades com a gestão sénior e RH para formalizar requisitos de apoio externo; e apresentei uma proposta abrangente de programa detalhando perfis funcionais, salvaguardas de governação e orçamento. Concomitantemente, orquestrei cinco integrações operacionais: 1) estendi o Portal de Trabalhadores Temporários de uma organização parceira à operação de globalização; 2) expandi o grupo de agências especializadas para quatro fornecedores especialistas; 3) colaborei com TI na gestão segura de acessos, integração e desativação; 4) estabeleci um Master Agreement e SOW padronizados com os RH e agências; e 5) alinhei com o Jurídico o cumprimento das leis laborais internacionais e normas para contratados.',
-          result:
-            'Estabeleci um Programa dedicado de Trabalho Temporário para Globalização com financiamento aprovado e planeamento previsível de capacidade nos cinco mercados de expansão, protegendo a continuidade do negócio: expandi o grupo de fornecedores para 4 agências, garanti aprovação orçamental para 5 colaboradores temporários adicionais, reduzi os ciclos de contratação de 4-8 semanas para 4 semanas e lancei todos os cinco mercados-alvo dentro do prazo e orçamento.',
-            },
-            l6Principle:
-              'A governação proativa de equipas e a extensão transversal de plataformas expandem a capacidade elástica enquanto protegem a conformidade laboral e a sustentabilidade das equipas.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'executive-health',
-    number: '04',
-    title: 'Monitorização Executiva e Relatórios de Impacto',
-    subtitle:
-      'Manter um Índice de Saúde Executiva para Operações e Governação de Programas, evidenciando despesas, cumprimento de SLAs, alocação de capacidade de recursos e métricas de sucesso para a Liderança. Fazer a ponte entre métricas operacionais e a Visão, Missão, Objetivos e OKRs da Organização.',
-    icon: 'Activity',
-    color: 'amber',
-    subCards: [
-      {
-        id: 'eh-2',
-        title: 'Block and Microsoft - Revisões Anuais de Desempenho + MBRs/QBRs',
+        id: 'occ-workforce-portal',
+        title: 'Microsoft - Reformulação da Web Careers -\nPortal de Força de Trabalho e Conformidade Laboral',
         subtitle:
-          'Alinhar equipas internas e fornecedores em torno de OKRs, agir sobre decisões de risco e celebrar conquistas.',
-        tag: 'Governação Executiva',
-        metrics: '50 para 10-20 Participantes · 3x Sem. para MBR/QBR · Decisões Rápidas',
-        proofAnchor: 'block-microsoft',
-        proofAnchors: ['block', 'microsoft'],
+          'Modernização do portal de carreiras e força de trabalho da Microsoft para cumprir leis laborais e eliminar fricções operacionais.',
+        tag: 'Controlos & Conformidade',
+        proofAnchor: 'microsoft',
+        metrics: 'Microsoft · Conformidade Laboral · Fluxos Integrados',
         star: {
-          situation:
-            'As revisões operacionais multifuncionais ficavam frequentemente presas em detalhes táticos, consumindo tempo de VPs, líderes seniores e equipas sem garantir decisões sobre bloqueios críticos. Faltava também às equipas uma estrutura consistente e um alinhamento claro com a visão, missão e OKRs mais amplos da organização e da empresa.',
-          task:
-            'Fui encarregada de desenhar um modelo de revisão de alto impacto em funções-chave, organizações e fornecedores, em conjunto com líderes seniores e partes interessadas de operações executivas, ancorado em OKRs, KPIs e objetivos de negócio consistentes.',
-          action:
-            'Estabeleci um modelo operacional de revisão com múltiplas cadências, abrangendo encontros anuais de alinhamento, Quarterly Business Reviews (QBRs) de 45 minutos e Monthly Business Reviews (MBRs) de 30 minutos para equipas internas e fornecedores externos. Introduzi agendas estruturadas com um sistema de semáforo para manter o foco e promover resoluções rápidas (por exemplo, estruturando as QBRs em torno de atualizações de liderança sobre objetivos/mudanças, alinhamento conciso de OKRs e sucessos de equipa, oportunidades estratégicas, riscos críticos sem responsável atribuído a exigir decisões executivas e próximos passos com titularidade clara no modelo RACI). Adicionalmente, assumi a síntese de dados pré-reunião, relatórios de riscos e pedidos claros de aprovação com os responsáveis pelas equipas, distribuindo apresentações prévias para assegurar o princípio de \"sem surpresas\" e o alinhamento nas decisões necessárias, assegurando em seguida a distribuição e acompanhamento dos planos de ação pós-reunião.',
-          result:
-            'Simplifiquei as comunicações e aprovações executivas, reduzi a participação em reuniões de mais de 50 pessoas para entre 10 e 20, e alterei a cadência de 3 revisões semanais para uma governação mensal, trimestral e anual estruturada com os responsáveis; melhorei o alinhamento quanto a OKRs, riscos e titularidade de decisões, obtendo reconhecimento direto pela clareza executiva e liderança operacional estruturada.',
+      situation:
+        'Para cumprir a legislação sobre Força de Trabalho Contingente e Leis Laborais, a equipa de Procurement necessitou de renovar o Website de Carreiras e o Portal de Força de Trabalho, o que exigiu alinhar partes interessadas multifuncionais, fluxos operacionais e de conteúdos, e visibilidade de candidatos ou recrutamento sem transições fragmentadas, monitorização pouco clara ou estrangulamentos manuais.',
+      task:
+        'Fui encarregada de desenvolver e operacionalizar a globalização da experiência do Careers Website e Workforce Portal para que as equipas de programas tivessem fluxos claros, admissão estruturada e execução operacional fiável a nível global.',
+      action:
+        'Colaborei com equipas de produto, engenharia e operações para mapear fluxos de trabalho completos em portais e equipas, alinhar requisitos e vistas de acompanhamento claras, e estabelecer transições operacionais estruturadas e visibilidade no Careers Website e Workforce Portal.',
+      result:
+        'Disponibilizei uma capacidade coerente para o Careers Website e Workforce Portal que simplificou a coordenação entre equipas e a visibilidade operacional nos fluxos de integração e recrutamento, assegurando total conformidade com a legislação laboral e de pessoal contingente.',
         },
         l6Principle:
-          'Uma governação estruturada com dados claros simplifica a comunicação, impulsiona ações concretas e aprovações, reduz atritos e dá às equipas o espaço necessário para se sentirem valorizadas e ouvidas.',
-      },
-    ],
-    extendedSubsections: [
-      {
-        id: 'finance-opex',
-        number: '09',
-        title: 'Gestão Financeira e Otimização de Custos (OPEX)',
-        shortName: 'Finanças & OPEX',
-        icon: 'DollarSign',
-        description: 'Economia unitária, estimativas orçamentais, conciliação de encomendas e eficiência contínua.',
-        subCards: [
-          {
-            id: 'fom-block',
-            title: "Block - Gestão e Reporte Orçamental dos PGMs",
-            subtitle:
-              'Transição de um estrangulamento manual centrado numa única pessoa para ownership orçamental distribuída pelos PMs e dashboards interativos.',
-            tag: 'Finanças & OPEX',
-            proofAnchor: 'block',
-            metrics: 'Block · Processamento de Faturas de 30 para 5 Dias · Margem de 5-10% em SOWs',
-            star: {
-          situation:
-            'Ao ingressar na Block, a gestão financeira de localização dependia de um único recurso que tratava da gestão de fornecedores através de processos marcadamente manuais e validações cruzadas de faturas. Este modelo operacional não conseguia escalar perante a expansão de mercado planeada ou o aumento no volume de transações.',
-          task:
-            'Como líder de PGM, assumi a responsabilidade de substituir o estrangulamento manual por um modelo financeiro operacional escalável. Para isso, colaborei com os RH para expandir os níveis e responsabilidades dos PMs para a gestão orçamental ponta a ponta (estimativa, reconciliação, monitorização e reporte) e equipar as equipas com relatórios fiscais visuais e interativos.',
-          action:
-            'Após formalizar com os RH a expansão da função dos PMs para assumirem a estimativa, reconciliação, monitorização e reporte de orçamentos funcionais, coliderei a criação de painéis fiscais visuais e interativos com PMs sob a minha orientação, Engenharia, Finanças, Líderes Seniores e Fornecedores, permitindo aos PMs monitorizarem e reportarem despesas de forma transparente sem dependerem de verificações manuais cruzadas. Também organizei sessões de capacitação, orientando os PMs na gestão de orçamentos de fornecedores, acompanhamento de variações e governação de programas multifuncionais.',
-          result:
-            'Substituí um estrangulamento manual centrado num único recurso por responsabilidade orçamental distribuída pelos PMs e visibilidade fiscal multifuncional e interativa entre PMs, Engenharia, Finanças, liderança e fornecedores. Ao estabelecer uma base escalável de governação de despesas preparada para expansão de mercados, capacitei toda a organização a cumprir as metas orçamentais, mantendo uma variação orçamental trimestral controlada de 5-10% integrada nos SOWs negociados.',
-            },
-            l6Principle:
-              'Escalar a governação financeira exige associar clareza de funções e dashboards transversais a uma titularidade descentralizada, em vez de sobrecarregar uma única pessoa com estrangulamentos manuais.',
-          },
-          {
-            id: 'fom-microsoft',
-            title: 'Microsoft - RFP e Governação de MA / SOW',
-            subtitle:
-              'Padronização de modelos de SOW, descontos por volume e termos comerciais de MSA em mais de 40 mercados.',
-            tag: 'Finanças & OPEX',
-            proofAnchor: 'microsoft',
-            metrics: '$500K Custos Evitados · -35% Tempo de Ciclo · 40+ Mercados',
-            star: {
-          situation:
-            'Na Microsoft (jun. de 2016 - abr. de 2020), o suporte a operações globais de marketing e localização em mais de 40 mercados internacionais implicava trabalhar com múltiplos parceiros linguísticos e fornecedores externos em equipas regionais, onde SOWs descentralizados, tabelas de preços inconsistentes, SLAs pontuais e verificações manuais de faturação criavam atrito nos custos e atrasos nas aprovações.',
-          task:
-            'Fui encarregada de auditar a cobertura de fornecedores em conjunto com Procurement e partes interessadas multifuncionais, padronizar SOWs e níveis de SLA baseados em desempenho, e negociar termos comerciais de Master Services Agreements (MSA) para proteger o orçamento e encurtar prazos de entrega num programa anual multimilionário.',
-          action:
-            'Colaborei com o departamento global de Procurement para auditar fornecedores ativos de localização, alinhar responsáveis multifuncionais de localização em modelos uniformizados de SOW e níveis contratuais baseados em desempenho, e negociar termos de MSA, incluindo descontos corporativos por volume agregado de trabalho; articulei termos comerciais com SLAs padronizados, scorecards e revisões operacionais mensais e trimestrais de execução orçamental e capacidade com Finanças e Engenharia.',
-          result:
-            'Reduzi os prazos de ciclo dos fornecedores em 35% (de 15 para 9 dias) em mais de 40 mercados internacionais (incluindo a redução nos lançamentos de localização de campanhas e produtos de 15 para 9 dias), consegui $500.000 em custos evitados na dotação anual multimilionária da Microsoft Store para reinvestimento em mercados de elevado crescimento, e mantive um índice de satisfação do cliente (CSAT/NPS) superior a 90%, a par da conformidade auditável de pagamento de faturas a 30 dias.',
-            },
-            l6Principle:
-              'Associar SOWs padronizados, capacidade negocial por volume e telemetria transparente de despesa transforma o investimento em parceiros em capacidade previsível e rigor orçamental.',
-          },
-        ],
+          'Grandes portais e sistemas de gestão de força de trabalho triunfam quando o desenho de fluxos, a titularidade clara e a visibilidade operacional são concebidos desde o primeiro dia.',
       },
       {
-        id: 'bi-telemetry',
-        number: '10',
-        title: 'Business Intelligence e Telemetria Operacional',
-        shortName: 'BI & Telemetria',
-        icon: 'BarChart3',
-        description:
-          'Colaboração com a equipa interna de BI e análise de dados para automatizar o acompanhamento de fluxos, métricas de execução e dashboards executivos.',
-        subCards: [
-          {
-            id: 'bit-bf',
-            title: 'Campanhas Microsoft - Black Friday: Telemetria em Tempo Real para Campanhas Globais',
-            subtitle:
-              'Dashboards Power BI em tempo real unificando o desempenho de campanhas em mercados globais e locais.',
-            tag: 'BI & Telemetria',
-            proofAnchor: 'microsoft',
-            metrics: '40+ Mercados · 24-48h Turnaround',
-            star: {
-          situation:
-            'Durante eventos globais de alta velocidade como a Black Friday, as partes interessadas internas não tinham visibilidade unificada e em tempo real sobre a entrega e o desempenho de campanhas nos mercados globais e locais, arriscando correções de rumo tardias sempre que os ritmos regionais ou tendências de conversão variavam a meio do evento.',
-          task:
-            'Fui encarregada de construir dashboards no Power BI com visibilidade de desempenho global e por mercado em tempo real, em colaboração com equipas internas de BI e engenharia, suportados por mockups visuais claros antes do desenvolvimento técnico.',
-          action:
-            'Estabeleci parcerias multifuncionais para padronizar definições de KPIs e agregações de dados entre mercados globais e locais. Desenhei mockups visuais prévios para alinhar as partes interessadas na hierarquia e apresentação dos dados antes da programação, e construí dashboards no Power BI acompanhando o desempenho ao vivo nos mercados globais e locais em mais de 40 mercados com ciclos de atualização quase em tempo real (como a cada 60 minutos).',
-          result:
-            'Substituí verificações manuais e fragmentadas de estado por uma fonte única de verdade entre equipas globais e locais durante períodos críticos de Black Friday, reduzindo o tempo de reporte de 3-5 dias para 24-48 horas e permitindo ajustes mais rápidos a meio de campanhas com desempenho abaixo do esperado.',
-            },
-            l6Principle:
-              'Prototipar a clareza visual primeiro e associar telemetria em tempo real ao contexto local transforma a velocidade de campanha em execução coordenada.',
-          },
-          {
-            id: 'bit-vendor-governance',
-            title:
-              "Microsoft Power BI's -  Fornecedores -\nCapacidade, SLAs e Governação de Custos Operacionais",
-            subtitle:
-              'Dashboards Power BI unificados integrando capacidade de fornecedores, SLAs de entrega e limites orçamentais.',
-            tag: 'Operações de Fornecedores',
-            proofAnchor: 'microsoft',
-            metrics: '5 Fornecedores · Visibilidade de SLAs a 30 Dias e Previsões a 3 Meses',
-            star: {
-          situation:
-            'A gestão de capacidade de fornecedores, volume, cumprimento de SLAs (incluindo entregas no prazo) e custos operacionais nas iniciativas ativas não dispunha de uma visão operacional consolidada, dificultando o equilíbrio das cargas de trabalho face aos limites orçamentais.',
-          task:
-            'Fui encarregada de desenhar dashboards no Power BI que unificassem capacidade de fornecedores, volume, desempenho de SLAs (pontualidade nas entregas) e métricas de custos operacionais para orientar o planeamento proativo e a governação orçamental.',
-          action:
-            'Colaborei com partes interessadas internas para alinhar a utilização de capacidade, volume produzido, limiares de SLA de pontualidade e vetores de custos. Desenvolvi vistas visuais de telemetria relacionando a produção de fornecedores e a conformidade de SLAs diretamente com a execução orçamental e a margem de capacidade em 5 fluxos de trabalho de fornecedores.',
-          result:
-            'Assegurei aos responsáveis de programas e orçamentos visibilidade em tempo real sobre estrangulamentos de capacidade, cumprimento de SLAs e evolução de despesas. Melhorei a visibilidade de entregas no prazo em todos os itens acompanhados, apoiei um controlo mais rigoroso de variações orçamentais e viabilizei até 30 dias de visibilidade de conformidade e 3 meses de previsão sem sobrealocação de fornecedores.',
-            },
-            l6Principle:
-              'Quando o volume operacional, a saúde dos SLAs e os custos coexistem numa única visão, a governação evolui da reação a urgências para uma gestão disciplinada de recursos e orçamento.',
-          },
-          {
-            id: 'bit-1',
-            title: 'Block e LinkedIn - Capacitação Operacional, SLAs e Continuidade de Negócio',
-            subtitle:
-              'Telemetria etapa a etapa unificando TMS de fornecedores e Jira com alertas proativos de SLA.',
-            tag: 'BI & Telemetria',
-            proofAnchor: 'block-linkedin',
-            proofAnchors: ['block', 'linkedin'],
-            metrics: '20+ Partes Interessadas · >50% Redução de Pedidos de Estado',
-            star: {
-          situation:
-            'As partes interessadas multifuncionais em produto, engenharia, localização e equipas regionais não dispunham de visibilidade de ponta a ponta sobre o ponto em que cada pedido individual se encontrava nas etapas de intake, triagem, tradução e implementação, o que fazia com que bloqueios passassem despercebidos até os prazos ficarem apertados, originando pedidos constantes de ponto de situação.',
-          task:
-            'Fui encarregada de coordenar a integração de APIs de fornecedores e desenhar a arquitetura visual de gráficos para um portal centralizado de telemetria e BI que acompanhasse o rendimento etapa a etapa e o cumprimento de SLAs ao longo de todo o ciclo de vida do pedido, capacitando equipas com visibilidade em regime de autoatendimento e alertas de estrangulamento.',
-          action:
-            'Colaborei com lideranças de engenharia, operações e fornecedores para padronizar definições de etapas e metas de SLA ao longo do intake, triagem, localização/tradução e implementação. Agreguei dados de eventos e estados em tempo real de ferramentas CAT/TMS de fornecedores para sistemas internos como o Jira num portal unificado de telemetria, configurando alertas automáticos para pedidos parados e quebras de SLAs para que os responsáveis pudessem intervir precocemente.',
-          result:
-            'Concedi a mais de 20 partes interessadas multifuncionais visibilidade em tempo real e autoatendimento sobre cada fase do processo, reduzindo atritos ao cortar consultas de estado em mais de metade, acelerando a triagem de estrangulamentos antes das datas-limite de lançamento e convertendo cobranças subjetivas em governação objetiva de SLAs.',
-            },
-            l6Principle:
-              'A telemetria operacional transforma frustrações subjetivas em dados objetivos e acionáveis.',
-          },
-        ],
+        id: 'occ-block-temp-workers',
+        title: 'Block - Proposta de Programa de Trabalhadores Temporários',
+        subtitle:
+          'Auditoria à capacidade interna, extensão de portais transversais e financiamento para cinco mercados de expansão.',
+        tag: 'Governação de Equipas',
+        proofAnchor: 'block',
+        metrics: 'Block · 5 Mercados Expandidos · 5 Recursos Contingentes · Contratação em 4 Semanas',
+        star: {
+      situation:
+        'Na Block, os objetivos de crescimento acelerado em cinco mercados adicionais e iniciativas concorrentes a nível de toda a organização geraram tensão com a continuidade das operações diárias. A capacidade interna de colaboradores e as estruturas de equipa existentes não conseguiam absorver o pico de trabalho sem arriscar estrangulamentos operacionais ou falhas de conformidade.',
+      task:
+        'Fui encarregada de liderar uma auditoria multifuncional com a gestão sénior e RH sobre equipas internas e necessidades de contratação temporária, definir perfis de competências necessários, propor um Programa formal de Trabalho Temporário para Globalização e assegurar a aprovação e financiamento da liderança.',
+      action:
+        'Mapeei a pressão de trabalho, lacunas de competências e riscos de continuidade nos cinco mercados de expansão; liderei uma auditoria estruturada de necessidades com a gestão sénior e RH para formalizar requisitos de apoio externo; e apresentei uma proposta abrangente de programa detalhando perfis funcionais, salvaguardas de governação e orçamento. Concomitantemente, orquestrei cinco integrações operacionais: 1) estendi o Portal de Trabalhadores Temporários de uma organização parceira à operação de globalização; 2) expandi o grupo de agências especializadas para quatro fornecedores especialistas; 3) colaborei com TI na gestão segura de acessos, integração e desativação; 4) estabeleci um Master Agreement e SOW padronizados com os RH e agências; e 5) alinhei com o Jurídico o cumprimento das leis laborais internacionais e normas para contratados.',
+      result:
+        'Estabeleci um Programa dedicado de Trabalho Temporário para Globalização com financiamento aprovado e planeamento previsível de capacidade nos cinco mercados de expansão, protegendo a continuidade do negócio: expandi o grupo de fornecedores para 4 agências, garanti aprovação orçamental para 5 colaboradores temporários adicionais, reduzi os ciclos de contratação de 4-8 semanas para 4 semanas e lancei todos os cinco mercados-alvo dentro do prazo e orçamento.',
+        },
+        l6Principle:
+          'A governação proativa de equipas e a extensão transversal de plataformas expandem a capacidade elástica enquanto protegem a conformidade laboral e a sustentabilidade das equipas.',
       },
     ],
+    extendedSubsections: [],
   },
   {
     id: 'cross-functional-partners',
-    number: '05',
-    title: 'Parceiros Multifuncionais e Partes Interessadas',
+    number: '06',
+    title: 'Alinhamento Multifuncional\n(Partes Interessadas, Parceiros e Clientes)',
     subtitle:
       'Promover a colaboração multifuncional, o alinhamento estratégico com partes interessadas e o consenso executivo entre Produto, Engenharia, Marketing, Jurídico e lideranças regionais. Histórico comprovado de alinhamento com equipas de engenharia e líderes sénior, controladores financeiros, parceiros multifuncionais em diferentes fusos horários, fornecedores externos e executivos.',
     icon: 'Network',
@@ -569,7 +538,7 @@ export const topPillars = [
   },
   {
     id: 'live-incidents-response',
-    number: '06',
+    number: '07',
     title: 'Resposta a Incidentes em Tempo Real',
     shortName: 'Incidentes',
     subtitle:
@@ -579,7 +548,7 @@ export const topPillars = [
     subCards: [
       {
         id: 'tr-1',
-        title: 'Microsoft e LinkedIn - Modelo 24/7 Follow-the-Sun',
+        title: 'Microsoft e LinkedIn\nModelo 24/7 Follow-the-Sun',
         subtitle: 'Triagem de Incidentes em Escala',
         tag: 'Triagem Operacional de Incidentes',
         proofAnchor: 'microsoft',
@@ -623,7 +592,7 @@ export const topPillars = [
   },
   {
     id: 'optimization-innovation',
-    number: '07',
+    number: '08',
     title: 'Otimização e Inovação\nMTPE + IA + HIL',
     shortName: 'Otimização e Inovação',
     subtitle:
@@ -710,7 +679,7 @@ export const topPillars = [
           'Transformação de marcos de carreira, estruturas de governação operacional e artefactos de entrega num sistema de portfólio bilingue e interativo.',
         tag: 'Desenvolvimento e Crescimento Pessoal',
         contextLabel: 'Projeto Pessoal',
-        metrics: '28 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
+        metrics: '28 Cartões STAR · 8 Pilares Estratégicos · 100% Paridade EN/PT',
         externalLink: {
           url: '/how-i-built-this',
           label: 'Como Construí Este Portfólio (Jornada IA)',
@@ -722,7 +691,7 @@ export const topPillars = [
           task:
             'Propus-me conceber uma experiência de portfólio interativa e bilingue que transformasse marcos de carreira, governação operacional e artefactos de entrega em níveis intuitivos e navegáveis.',
           action:
-            'Estruturei uma arquitetura Bento multinível organizando 28 cartões STAR em 7 pilares estratégicos com controlos de rotação, expansão e pesquisa. Interliguei a progressão narrativa de carreira a vistas dinâmicas, incluindo uma cronologia contínua de 20 marcos e quadros Scrum ao vivo, mantendo uma correspondência sincronizada entre inglês (en.js) e português (pt.js) em todos os componentes interativos e filtros.',
+            'Estruturei uma arquitetura Bento multinível organizando 28 cartões STAR em 8 pilares estratégicos com controlos de rotação, expansão e pesquisa. Interliguei a progressão narrativa de carreira a vistas dinâmicas, incluindo uma cronologia contínua de 20 marcos e quadros Scrum ao vivo, mantendo uma correspondência sincronizada entre inglês (en.js) e português (pt.js) em todos os componentes interativos e filtros.',
           result:
             'Disponibilizei um sistema de portfólio em qualidade de produção combinando métricas essenciais em destaque com secções fáceis de ler de Situação, Tarefa, Ação, Resultado e Aprendizagem, permitindo aos visitantes consultar primeiro os resultados de alto nível ou aprofundar todos os detalhes de execução conforme pretendido.',
         },
@@ -731,11 +700,11 @@ export const topPillars = [
       },
       {
         id: 'ai-nmt-case-study',
-        title: 'NMT com IA - SIMULADOR & ESTUDO DE CASO',
+        title: 'NMT com IA - Simulador & estudo de caso',
         subtitle:
           'Metodologia empresarial de treino de NMT customizado, sanitização de corpora em 5 fases e avaliação tripartida com simulador interativo.',
-        tag: 'NMT Customizado e Treino de IA',
-        contextLabel: 'Estudo de Caso e Simulador',
+        tag: 'Desenvolvimento e Crescimento Pessoal',
+        contextLabel: 'Projeto Pessoal',
         metrics:
           'Redução Modelada de ~40% em Custos ($1.125M/Ano em 25M Palavras) · -60% Tempo em Catálogo/UI · COMET ≥0.85 · LaBSE Cosine ≥0.75',
         externalLink: {

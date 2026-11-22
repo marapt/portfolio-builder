@@ -135,7 +135,7 @@ export const BentoCard = ({
 
   return (
     <div
-      className="bento-card-container group w-full"
+      className="bento-card-container group w-full min-w-0"
       tabIndex={0}
       role="region"
       aria-label={`${card.title}. Click to expand STAR details, or press Flip.`}
@@ -144,19 +144,19 @@ export const BentoCard = ({
       <div className={`bento-card-inner ${isFlipped ? 'flipped' : ''}`}>
         {/* FRONT FACE (Elevated Surface with High Contrast) */}
         <div
-          className={`bento-card-face bento-card-front bg-gradient-to-br from-slate-800/95 via-slate-850 to-slate-900/95 p-6 border ${theme.border} transition-all duration-300 shadow-xl hover:shadow-2xl hover:border-indigo-400/60 cursor-pointer flex flex-col justify-between`}
+          className={`bento-card-face bento-card-front bg-gradient-to-br from-slate-800/95 via-slate-850 to-slate-900/95 p-5 sm:p-6 border ${theme.border} transition-all duration-300 shadow-xl hover:shadow-2xl hover:border-indigo-400/60 cursor-pointer flex flex-col justify-between`}
           onClick={handleCardClick}
         >
           {/* Top Row: Domain / Tag and Actions */}
           <div>
-            <div className="flex items-center justify-between gap-2 mb-3.5">
+            <div className="flex items-center justify-between gap-2 mb-3 sm:mb-3.5">
               <span
                 className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
               >
-                <span className="truncate max-w-[140px] sm:max-w-[180px]">{card.tag || domainTitle || 'Operational Card'}</span>
+                <span className="truncate max-w-[130px] sm:max-w-[180px]">{card.tag || domainTitle || 'Operational Card'}</span>
               </span>
 
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5 shrink-0">
                 <button
                   type="button"
                   onClick={handleFlip}
@@ -182,36 +182,36 @@ export const BentoCard = ({
               </div>
             </div>
 
-            {/* Title & Subtitle with improved vertical breathing room */}
-            <h3 className="text-lg font-bold text-white group-hover:text-indigo-200 transition-colors leading-snug tracking-tight mt-1 mb-3.5 whitespace-pre-line">
+            {/* Title & Subtitle: clamped so every card keeps the same compact size */}
+            <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-indigo-200 transition-colors leading-snug tracking-tight mt-1 mb-2 whitespace-pre-line line-clamp-2">
               {card.title}
             </h3>
-            <p className="text-sm text-slate-300/90 line-clamp-3 mb-4 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-slate-300/90 line-clamp-2 mb-2 leading-relaxed font-normal">
               {card.subtitle}
             </p>
           </div>
 
           {/* Bottom Area: Key Metrics Pill & Expand Trigger */}
-          <div className="pt-4 border-t border-slate-700/60 mt-auto">
+          <div className="pt-3 border-t border-slate-700/60 mt-auto">
             {card.metrics && (
-              <div className="mb-3.5">
+              <div className="mb-2.5">
                 <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-1">
                   Validated Impact
                 </span>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-medium shadow-sm">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                  <span>{card.metrics}</span>
+                <div className="flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-[11px] font-mono font-medium shadow-sm max-w-full">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-px" />
+                  <span className="leading-snug line-clamp-2 min-w-0">{card.metrics}</span>
                 </div>
               </div>
             )}
 
-            <div className="flex items-center justify-between text-xs text-slate-400 pt-0.5">
+            <div className="flex flex-nowrap items-center justify-between gap-2 text-xs text-slate-400">
               {companies.length > 0 ? (
-                <div className="flex flex-wrap items-center gap-1.5">
-                  {companies.map((comp) => (
+                <div className="flex flex-nowrap items-center gap-1.5 min-w-0 overflow-hidden">
+                  {companies.slice(0, 2).map((comp) => (
                     <span
                       key={comp.name}
-                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-800/90 border border-slate-700/80 text-[11px] font-medium text-slate-200 shadow-sm"
+                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-800/90 border border-slate-700/80 text-[11px] font-medium text-slate-200 shadow-sm shrink-0"
                     >
                       <img
                         src={comp.logo}
@@ -222,19 +222,27 @@ export const BentoCard = ({
                       <span className="font-semibold text-slate-200 tracking-tight">{comp.name}</span>
                     </span>
                   ))}
+                  {companies.length > 2 && (
+                    <span
+                      className="inline-flex items-center px-1.5 py-0.5 rounded-md bg-slate-800/90 border border-slate-700/80 text-[11px] font-semibold text-slate-300 shrink-0"
+                      title={companies.slice(2).map((c) => c.name).join(', ')}
+                    >
+                      +{companies.length - 2}
+                    </span>
+                  )}
                 </div>
               ) : card.proofAnchor ? (
-                <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-slate-200 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
+                <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-slate-200 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700 min-w-0">
                   <Building2 className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
-                  <span>{card.proofAnchor.toUpperCase()}</span>
+                  <span className="truncate">{card.proofAnchor.toUpperCase()}</span>
                 </span>
               ) : (
-                <span className="text-[11px] text-slate-300 font-medium">
+                <span className="text-[11px] text-slate-300 font-medium truncate min-w-0">
                   {card.contextLabel || 'Personal Project'}
                 </span>
               )}
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 {card.externalLink && (
                   card.externalLink.url.startsWith('/') && !card.externalLink.url.match(/\.(jpg|jpeg|png|gif|webp|pdf)$/i) ? (
                     <Link
@@ -267,7 +275,7 @@ export const BentoCard = ({
                     e.stopPropagation();
                     if (onExpand) onExpand(card, color, domainTitle);
                   }}
-                  className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 font-semibold group-hover:translate-x-0.5 transition-all text-xs"
+                  className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 font-semibold group-hover:translate-x-0.5 transition-all text-xs whitespace-nowrap"
                 >
                   <span>Read Full STAR</span>
                   <Maximize2 className="w-3.5 h-3.5" />
@@ -279,27 +287,18 @@ export const BentoCard = ({
 
         {/* BACK FACE (Flipped STAR Model with Quick Peek) */}
         <div
-          className={`bento-card-face bento-card-back bg-gradient-to-b from-slate-800/95 via-slate-850 to-slate-900/95 p-6 border border-slate-700/80 border-t-2 ${theme.topBorder} shadow-2xl ring-1 ring-white/10 flex flex-col justify-between cursor-pointer`}
+          className={`bento-card-face bento-card-back bg-gradient-to-b from-slate-800/95 via-slate-850 to-slate-900/95 p-5 border border-slate-700/80 border-t-2 ${theme.topBorder} shadow-2xl ring-1 ring-white/10 flex flex-col justify-start cursor-pointer`}
           onClick={handleCardClick}
         >
           {/* Header Row */}
           <div>
-            <div className="flex items-center justify-between pb-3 border-b border-slate-700/80 mb-3">
-              <div className="flex items-center gap-2">
-                <span className={`text-xs font-bold uppercase tracking-wider ${theme.accentText}`}>
+            <div className="flex items-center justify-between gap-2 pb-3 border-b border-slate-700/80 mb-3">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className={`text-xs font-bold uppercase tracking-wider truncate ${theme.accentText}`}>
                   STAR Framework
                 </span>
-                {companies.map((comp) => (
-                  <span
-                    key={comp.name}
-                    className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-800/80 border border-slate-700/60 text-[10px] text-slate-300"
-                  >
-                    <img src={comp.logo} alt="" className="w-3 h-3 rounded-sm object-contain" />
-                    <span className="font-medium">{comp.name}</span>
-                  </span>
-                ))}
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5 shrink-0">
                 <button
                   type="button"
                   onClick={(e) => {
@@ -325,7 +324,9 @@ export const BentoCard = ({
               </div>
             </div>
 
-            <h4 className="text-sm font-bold text-white mb-3 line-clamp-2 whitespace-pre-line">{card.title}</h4>
+            <h4 className="text-sm font-bold text-white mb-2.5 line-clamp-2 whitespace-pre-line min-h-[2.25rem] flex items-center">
+              <span>{card.title}</span>
+            </h4>
 
             {/* STAR Content Grid with Contrasting Card Insets */}
             <div className="space-y-2.5 text-xs">
@@ -383,7 +384,7 @@ export const BentoCard = ({
           </div>
 
           {/* Footer Action */}
-          <div className="pt-3 mt-3 border-t border-slate-700/80 flex items-center justify-between text-[11px]">
+          <div className="pt-3 mt-3 border-t border-slate-700/80 flex flex-wrap items-center justify-between gap-2 text-[11px]">
             {card.externalLink ? (
               card.externalLink.url.startsWith('/') && !card.externalLink.url.match(/\.(jpg|jpeg|png|gif|webp|pdf)$/i) ? (
                 <Link

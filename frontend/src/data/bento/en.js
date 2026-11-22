@@ -8,16 +8,170 @@ export const bentoHero = {
   subtitle:
     'Showcasing my experience in enterprise governance models, extended workforce vendor management and field-tested processes through structured STAR cards.\n\nMy mission: Help make products, services and solutions accessible to everyone and everywhere.',
   quickStats: [
-    { label: 'Strategic Pillars', value: '7 Top Pillars' },
+    { label: 'Strategic Pillars', value: '8 Top Pillars' },
     { label: 'Enterprise Frameworks', value: 'STAR Architecture' },
-    { label: 'Interactive Cards', value: '27 STAR Cards' },
+    { label: 'Interactive Cards', value: '28 STAR Cards' },
   ],
 };
 
 export const topPillars = [
   {
-    id: 'portfolio-governance',
+    id: 'executive-health',
     number: '01',
+    title: 'Executive Health and Impact Reporting',
+    subtitle:
+      'Maintain an Executive Health Index for Program Operations and Governance, surfacing spend, SLA compliance, resource capacity allocation, and success metrics for Leadership. Bridge operational metrics with Organization Vision, Mission, Goals, and OKRs.',
+    icon: 'Activity',
+    color: 'amber',
+    subCards: [
+      {
+        id: 'eh-2',
+        title: 'Block and Microsoft - Annual Performance Reviews + MBRs/QBRs',
+        subtitle:
+          'Aligning internal teams and vendors around OKRs, acting on risk decisions, and celebrating wins.',
+        tag: 'Executive Governance',
+        metrics: '50 to 10-20 Attendees · 3x Wkly to MBR/QBR · Fast Sign-Offs',
+        proofAnchor: 'block-microsoft',
+        proofAnchors: ['block', 'microsoft'],
+        star: {
+          situation:
+            'Cross-functional operational reviews were frequently bogged down in tactical granularities, exhausting VP, senior leads, and broader teams\' time without securing decisions on critical blockers. Teams also lacked consistent structure and clear alignment with broader organizational and company vision, mission, and OKRs.',
+          task:
+            'I was tasked with partnering with Senior Leads and executive operations/admin stakeholders to design a high-leverage review framework across key functions, orgs, and vendors anchored to consistent OKRs, KPIs, and business objectives.',
+          action:
+            'I established a multi-cadence review operating model spanning Annual offsites, 45-minute Quarterly Business Reviews (QBRs), and 30-minute Monthly Business Reviews (MBRs) for both internal teams and external vendors. I introduced structured agendas with a traffic-light status system to keep reviews focused and drive rapid follow-through (e.g. structuring QBRs around lead updates on goals and changes, concise team OKR alignment and wins, strategic opportunities, critical unowned risks requiring executive decisions, and next steps with clear RACI ownership). In addition, I owned pre-meeting data synthesis, risk reporting, and clear sign-off asks with team owners, distributing pre-read decks in advance to ensure \"no surprises\" and alignment on needed decisions, followed by distributing post-meeting action items and tracking follow-through across workstreams and priorities.',
+          result:
+            'I streamlined executive communications and sign-offs, reduced meeting participation from over 50 people down to 10 to 20, and shifted the cadence from 3x weekly reviews to structured monthly, quarterly, and annual governance with leads. I improved alignment around OKRs, risks, and decision ownership, earning direct praise for executive clarity and structured operational leadership.',
+        },
+        l6Principle:
+          'Structured governance with clear data streamlines communication, drives concrete action and sign-offs, reduces friction, and gives teams space to feel seen and heard.',
+      },
+      {
+        id: 'fom-block',
+        title: "Block - PGM's Budget Management and Reporting",
+        subtitle:
+          'Transitioning from a single-resource manual bottleneck to distributed PM budget ownership and interactive fiscal dashboards.',
+        tag: 'Finance & OPEX',
+        proofAnchor: 'block',
+        metrics: 'Block · 30 to 5-Day Invoicing Lag · 5-10% SOW Variance Control',
+        star: {
+      situation:
+        'When I joined Block, localization financial management relied on a single resource handling vendor management through heavily manual processes and invoicing cross-checks. This operating model could not scale with planned market expansion or growing transaction volume.',
+      task:
+        'As the PGM lead, I took on the responsibility to replace the single-point manual bottleneck with a scalable financial operating model. I partnered with HR to expand PM responsibilities into end-to-end budget management (estimating, reconciling, monitoring, and reporting) and equip teams with visual, interactive fiscal reporting.',
+      action:
+        'After partnering with HR to formally expand the PM role to own functional budget estimating, reconciliation, monitoring, and reporting, I co-led the creation of visual, interactive fiscal dashboards with direct-report PMs, Engineering, Finance, Senior Leads, and Vendors so PMs could self-monitor and report spend transparently rather than relying on manual cross-checks. I also led training sessions, coaching PMs on vendor budget management, variance tracking, and cross-functional program governance.',
+      result:
+        'I replaced a single-resource manual bottleneck with distributed PM budget accountability and interactive cross-functional fiscal visibility across PMs, Engineering, Finance, leadership, and vendors. By establishing a scalable spend-governance foundation ready for market expansion, I enabled the entire organization to achieve budget compliance with a 5-10% quarterly budget variance factored into negotiated SOWs.',
+        },
+        l6Principle:
+          'Scaling financial governance requires pairing role clarity and cross-functional dashboards with decentralized ownership, not adding manual bottlenecks to a single person.',
+      },
+      {
+        id: 'fom-microsoft',
+        title: 'Microsoft - RFP and MA / SOW Governance',
+        subtitle:
+          'Standardizing SOW templates, volume discounting, and MSA commercial terms across 40+ international markets.',
+        tag: 'Finance & OPEX',
+        proofAnchor: 'microsoft',
+        metrics: '$500K Cost Avoidance · 35% Cycle Time Cut · 40+ Markets',
+        star: {
+      situation:
+        'At Microsoft (Jun. 2016 - Apr. 2020), supporting global marketing and localization operations across 40+ international markets meant working with multiple external language and vendor partners across regional teams where decentralized SOWs, inconsistent rate cards, ad-hoc SLAs, and manual tracking and invoicing cross-checks created cost friction and slow approvals.',
+      task:
+        'I was tasked with auditing supplier coverage alongside Procurement and cross-functional stakeholders, standardizing SOWs and performance-based SLA tiers, and negotiating Master Services Agreement (MSA) commercial terms to protect budget and improve cycle times across a multi-million annual program allocation.',
+      action:
+        'I partnered with global Procurement to audit active localization suppliers, aligned cross-functional localization leads on unified SOW templates and performance-based contractual tiers, and negotiated MSA terms including enterprise bulk-of-work volume discounts. I paired commercial terms with standardized SLAs, scorecards, and monthly and quarterly operational burn and capacity reviews with Finance and Engineering.',
+      result:
+        'I reduced vendor cycle times by 35% (15 to 9 days) across 40+ international markets (including cutting campaign and product localization launches from 15 days to 9 days), unlocked $500,000 in cost avoidance on the multi-million annual Microsoft Store allocation for reinvestment into high-growth markets, and sustained >90% CSAT/NPS alongside auditable 30-day invoice payment compliance.',
+        },
+        l6Principle:
+          'Pairing standardized SOWs, bulk commercial leverage, and transparent burn telemetry turns vendor spend into predictable capacity and budget efficiency.',
+      },
+    ],
+    extendedSubsections: [],
+  },
+  {
+    id: 'operational-bi',
+    number: '02',
+    title: 'Operational Business Intelligence',
+    shortName: 'BI & Telemetry',
+    subtitle:
+      'I partner with internal BI and Data Analytics teams to automate pipeline tracking, SLA telemetry, burndown metrics, and executive dashboards, turning raw operational data into a single source of truth for faster decisions.',
+    icon: 'BarChart3',
+    color: 'sky',
+    subCards: [
+      {
+        id: 'bit-bf',
+        title: 'Microsoft Campaigns - Black Friday: Real-Time Global Campaign Telemetry',
+        subtitle:
+          'Unified real-time Power BI performance dashboards across global and local markets.',
+        tag: 'BI & Telemetry',
+        proofAnchor: 'microsoft',
+        metrics: '40+ Mkts · 24-48h Turnaround',
+        star: {
+      situation:
+        'During high-velocity global events like Black Friday, internal stakeholders lacked unified, real-time visibility into campaign delivery and performance across global and local markets, risking delayed course-corrections when regional pacing or conversion trends shifted mid-event.',
+      task:
+        'I was tasked with partnering with internal BI and engineering teams to build Power BI reporting dashboards that delivered real-time global and per-market campaign performance visibility, supported by clear visual mockups prior to technical development.',
+      action:
+        'I partnered cross-functionally with internal teams to standardize KPI definitions and global-to-local market rollups. I designed visual graphic mockups upfront to align stakeholders on hierarchy and data presentation before building, and I built Power BI dashboards tracking live global and market-specific performance across 40+ markets with near-real-time refresh cycles (such as every 60 minutes).',
+      result:
+        'I replaced fragmented manual status checks with a single source of truth across global and local market teams during peak Black Friday windows, cutting reporting turnaround time from 3-5 days to 24-48 hours and enabling faster mid-campaign adjustments across regional stakeholders for underperforming campaigns.',
+        },
+        l6Principle:
+          'Prototyping visual clarity first and pairing live telemetry with local market context turns raw campaign velocity into faster, coordinated execution.',
+      },
+      {
+        id: 'bit-vendor-governance',
+        title:
+          "Microsoft Power BI's -  Vendors -\nCapacity, SLA and Operational Cost Governance",
+        subtitle:
+          'Unified Power BI dashboards connecting vendor throughput, on-time delivery SLAs, and operational budget guardrails.',
+        tag: 'Vendor Operations',
+        proofAnchor: 'microsoft',
+        metrics: '5 Vendor Workstreams · 30-Day SLA & 3-Mo Forecast Visibility',
+        star: {
+      situation:
+        'Managing vendor capacity, output, SLA adherence (including on-time delivery), and operational costs across active initiatives lacked a consolidated operational view, making it harder for teams to balance supplier workloads against budget guardrails.',
+      task:
+        'I was tasked with designing Power BI dashboards that unified vendor capacity, output, SLA performance (on-time delivery), and operational cost metrics to guide proactive capacity planning and budget governance.',
+      action:
+        'I collaborated with internal stakeholders to align on capacity utilization, throughput, on-time delivery SLA thresholds, and cost drivers. I created visual telemetry views linking supplier output and SLA compliance directly to budget burn and capacity headroom across 5 suppliers and vendor workstreams.',
+      result:
+        'I provided program and budget owners with real-time visibility into capacity bottlenecks, SLA adherence, and spend trajectory. This improved on-time delivery visibility across all tracked deliverables, supported tighter budget variance control, and enabled up to 30 days of compliance visibility and 3 months of forecasting visibility without over-allocating supplier capacity.',
+        },
+        l6Principle:
+          'When operational throughput, SLA health, and cost live in one view, governance shifts from reactive firefighting to disciplined resource and budget stewardship.',
+      },
+      {
+        id: 'bit-1',
+        title: "Block and LinkedIn - Operations Enablement, SLA's and Business Continuity",
+        subtitle:
+          'Unified stage-by-stage telemetry connecting Vendor TMS and Jira into proactive SLA alerting.',
+        tag: 'BI & Telemetry',
+        proofAnchor: 'block-linkedin',
+        proofAnchors: ['block', 'linkedin'],
+        metrics: '20+ Stakeholders · >50% Query Reduction · Automated Alerts',
+        star: {
+      situation:
+        'Cross-functional stakeholders across product, engineering, localization, and regional teams lacked end-to-end visibility into where individual requests stood across intake, triage, translation, and deployment, which caused bottlenecks to go unnoticed until deadlines tightened and triggered frequent ad-hoc status inquiries.',
+      task:
+        'I was tasked with coordinating vendor API integrations and designing the visual architecture for a centralized business intelligence telemetry portal that tracked live stage-by-stage throughput and SLA adherence across the full request lifecycle, empowering stakeholders with self-service visibility and proactive bottleneck alerts.',
+      action:
+        'I partnered with engineering, operations, and vendor leads to standardize stage definitions and SLA targets across intake, triage, localization/translation, and deployment. I aggregated real-time event and status data from Vendor CAT tools like Translation Management Systems (TMS) into internal tracking systems like Jira within a unified telemetry portal, and I configured automated alerts for aging requests and SLA threshold breaches so owners could intervene early.',
+      result:
+        'I gave over 20 cross-functional stakeholders real-time self-service visibility across every pipeline stage, reducing churn by cutting queries on status by more than half, speeding up bottleneck triage before release cutoffs, and turning subjective status chasing into objective SLA governance.',
+        },
+        l6Principle:
+          'Operational telemetry transforms subjective frustration into objective, actionable data.',
+      },
+    ],
+    extendedSubsections: [],
+  },
+  {
+    id: 'portfolio-governance',
+    number: '03',
     title: 'Portfolio Governance and Framework Design',
     subtitle:
       'Design, standardize and scale operating models and review cadences across all pillars. Establish structured intake, resource allocation and program prioritization processes. Global Language Coverage and Localization Solutions. Multi-wave international launch sequencing, localized GTM campaign governance, and cross-market commercial alignment across strategic expansion rollouts.',
@@ -118,7 +272,7 @@ export const topPillars = [
   },
   {
     id: 'supplier-performance',
-    number: '02',
+    number: '04',
     title: 'Supplier Performance and Vendor Governance',
     subtitle:
       'Drive Supplier Strategy, Performance Reviews (MBRs/QBRs), and KPI/SLA accountability across global vendors (e.g. Lionbridge, Moravia, Accenture, PwC, etc.). Partner with Microsoft/Block Procurement, Legal, and Finance on RFPs (Requests for Proposals), procurement cycles, Master Agreements, SOWs governance, and payment workflows. Standardizing vendor management frameworks, Statements of Work (SOWs), contract rate cards, intake flows, and SLA/SLO adherence. Supplier strategy, governance, compliance, budget controls and cross-operational tooling.',
@@ -196,7 +350,7 @@ export const topPillars = [
   },
   {
     id: 'operations-change',
-    number: '03',
+    number: '05',
     title: 'Operational Enablement and Process Optimization',
     subtitle:
       'Identify bottlenecks across cross-functional partners, organizations, and workflows. Introduce tooling and workflow automations (process automation and integrations), and lead operational policy integrations and deployments (program governance, resource compliance, and program data compliance).',
@@ -287,240 +441,55 @@ export const topPillars = [
         l6Principle:
           'Sustainable content velocity requires proactive lifecycle governance: curating high-value assets for modular reuse and systematically deprecating obsolete collateral at the source.',
       },
-    ],
-    extendedSubsections: [
       {
-        id: 'content-operations',
-        number: '01',
-        title: 'Content Operations',
-        shortName: 'Content Ops',
-        icon: 'FileText',
-        description:
-          'High-velocity digital asset supply chains, CMS/TMS integration, and multi-market editorial release trains.',
-        subCards: [],
-      },
-      {
-        id: 'operational-controls',
-        number: '08',
-        title: 'Operational Controls and Compliance',
-        shortName: 'Controls & Compliance',
-        icon: 'Lock',
-        description:
-          'Managing access governance (Team Policies and Transitions from legacy to new workforce platforms), workforce onboarding/offboarding and operational risk mitigation.',
-        subCards: [
-          {
-            id: 'occ-workforce-portal',
-            title: 'Microsoft - Careers Web Revamp -\nContingent Workforce Portal & Labour Compliance',
-            subtitle:
-              'Revamping Microsoft\'s Careers Website and Workforce Portal to satisfy contingent labour laws and streamline operational handoffs.',
-            tag: 'Controls & Compliance',
-            proofAnchor: 'microsoft',
-            metrics: 'Microsoft · Global Labour Compliance · Cross-Team Workflows',
-            star: {
-          situation:
-            'In order to be legally compliant with Temporary Contingent Workforce and Labour Laws, the Procurement team needed to revamp its Careers Website and Workforce Portal, which required aligning cross-functional stakeholders, content and operational workflows, and candidate or staffing visibility without fragmented handoffs, unclear status tracking, or manual bottlenecks across teams.',
-          task:
-            'I was tasked with driving and operationalizing the globalization of the Careers Website and Workforce Portal experience, ensuring stakeholders and workforce program teams had clear workflows, structured intake and visibility, and reliable operational execution at global scale.',
-          action:
-            'I partnered across Product, Engineering, and operational stakeholders to map end-to-end portal and workforce workflows, align on clear requirements and tracking views, and establish structured operational handoffs and visibility across the Careers Website and Workforce Portal.',
-          result:
-            'I delivered a cohesive Careers Website and Workforce Portal capability that streamlined cross-team coordination and operational visibility across workforce and hiring enablement workflows, ensuring full compliance with Temporary Contingent Workforce and Labour Laws.',
-            },
-            l6Principle:
-              'Strong portals and workforce systems succeed when workflow design, clear ownership, and operational visibility are built in from the start.',
-          },
-          {
-            id: 'occ-block-temp-workers',
-            title: 'Block - Temporary Workers Program Proposal',
-            subtitle:
-              'Auditing FTE capacity, extending internal portal governance, and securing funding across five expansion markets.',
-            tag: 'Workforce Governance',
-            proofAnchor: 'block',
-            metrics: 'Block · 5 Markets Expanded · 5 Contingent FTEs · 4-Wk Hiring',
-            star: {
-          situation:
-            'At Block, rapid growth objectives across five additional markets and concurrent org-wide initiatives created tension with day-to-day business continuity. Existing FTE capacity and team structures could not absorb the surge without risking operational bottlenecks or compliance gaps.',
-          task:
-            'I was tasked with auditing current FTE staff and temporary staffing needs alongside senior management and HR, defining required skill sets, architecting a formal Temporary Work Program for Globalization, and securing executive funding and sign-off.',
-          action:
-            'I mapped workload pressures, skill gaps, and business-continuity risks across the five expansion markets; led a structured staffing audit with senior management and HR to formalize contingent needs; and presented a comprehensive program proposal outlining role profiles, governance guardrails, and budget. Concurrently, I orchestrated five operational integrations: 1) extended an existing partner org\'s Temp Worker Portal to globalization operations; 2) expanded the specialized agency pool to four domain-expert vendors; 3) partnered with IT on secure identity, onboarding, and offboarding admin; 4) established a standardized Master Agreement and SOW with HR and agencies; and 5) aligned with Legal on international labor laws and contractor compliance.',
-          result:
-            'I established a dedicated Temporary Work Program for Globalization with approved funding and predictable capacity planning across five expansion markets while safeguarding business continuity. I expanded the vendor pool to 4 agencies, secured funding approval for 5 extra temporary workers, accelerated hiring cycles from 4-8 weeks down to 4 weeks, and successfully launched all five target markets on time and on budget.',
-            },
-            l6Principle:
-              'Proactive workforce governance and cross-functional portal extensions expand capacity elastically while safeguarding compliance and team health.',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'executive-health',
-    number: '04',
-    title: 'Executive Health and Impact Reporting',
-    subtitle:
-      'Maintain an Executive Health Index for Program Operations and Governance, surfacing spend, SLA compliance, resource capacity allocation, and success metrics for Leadership. Bridge operational metrics with Organization Vision, Mission, Goals, and OKRs.',
-    icon: 'Activity',
-    color: 'amber',
-    subCards: [
-      {
-        id: 'eh-2',
-        title: 'Block and Microsoft - Annual Performance Reviews + MBRs/QBRs',
+        id: 'occ-workforce-portal',
+        title: 'Microsoft - Careers Web Revamp -\nContingent Workforce Portal & Labour Compliance',
         subtitle:
-          'Aligning internal teams and vendors around OKRs, acting on risk decisions, and celebrating wins.',
-        tag: 'Executive Governance',
-        metrics: '50 to 10-20 Attendees · 3x Wkly to MBR/QBR · Fast Sign-Offs',
-        proofAnchor: 'block-microsoft',
-        proofAnchors: ['block', 'microsoft'],
+          'Revamping Microsoft\'s Careers Website and Workforce Portal to satisfy contingent labour laws and streamline operational handoffs.',
+        tag: 'Controls & Compliance',
+        proofAnchor: 'microsoft',
+        metrics: 'Microsoft · Global Labour Compliance · Cross-Team Workflows',
         star: {
-          situation:
-            'Cross-functional operational reviews were frequently bogged down in tactical granularities, exhausting VP, senior leads, and broader teams\' time without securing decisions on critical blockers. Teams also lacked consistent structure and clear alignment with broader organizational and company vision, mission, and OKRs.',
-          task:
-            'I was tasked with partnering with Senior Leads and executive operations/admin stakeholders to design a high-leverage review framework across key functions, orgs, and vendors anchored to consistent OKRs, KPIs, and business objectives.',
-          action:
-            'I established a multi-cadence review operating model spanning Annual offsites, 45-minute Quarterly Business Reviews (QBRs), and 30-minute Monthly Business Reviews (MBRs) for both internal teams and external vendors. I introduced structured agendas with a traffic-light status system to keep reviews focused and drive rapid follow-through (e.g. structuring QBRs around lead updates on goals and changes, concise team OKR alignment and wins, strategic opportunities, critical unowned risks requiring executive decisions, and next steps with clear RACI ownership). In addition, I owned pre-meeting data synthesis, risk reporting, and clear sign-off asks with team owners, distributing pre-read decks in advance to ensure \"no surprises\" and alignment on needed decisions, followed by distributing post-meeting action items and tracking follow-through across workstreams and priorities.',
-          result:
-            'I streamlined executive communications and sign-offs, reduced meeting participation from over 50 people down to 10 to 20, and shifted the cadence from 3x weekly reviews to structured monthly, quarterly, and annual governance with leads. I improved alignment around OKRs, risks, and decision ownership, earning direct praise for executive clarity and structured operational leadership.',
+      situation:
+        'In order to be legally compliant with Temporary Contingent Workforce and Labour Laws, the Procurement team needed to revamp its Careers Website and Workforce Portal, which required aligning cross-functional stakeholders, content and operational workflows, and candidate or staffing visibility without fragmented handoffs, unclear status tracking, or manual bottlenecks across teams.',
+      task:
+        'I was tasked with driving and operationalizing the globalization of the Careers Website and Workforce Portal experience, ensuring stakeholders and workforce program teams had clear workflows, structured intake and visibility, and reliable operational execution at global scale.',
+      action:
+        'I partnered across Product, Engineering, and operational stakeholders to map end-to-end portal and workforce workflows, align on clear requirements and tracking views, and establish structured operational handoffs and visibility across the Careers Website and Workforce Portal.',
+      result:
+        'I delivered a cohesive Careers Website and Workforce Portal capability that streamlined cross-team coordination and operational visibility across workforce and hiring enablement workflows, ensuring full compliance with Temporary Contingent Workforce and Labour Laws.',
         },
         l6Principle:
-          'Structured governance with clear data streamlines communication, drives concrete action and sign-offs, reduces friction, and gives teams space to feel seen and heard.',
-      },
-    ],
-    extendedSubsections: [
-      {
-        id: 'finance-opex',
-        number: '09',
-        title: 'Finance and OPEX Management',
-        shortName: 'Finance & OPEX',
-        icon: 'DollarSign',
-        description: 'Unit economics modeling, PO/invoice reconciliation, and compounding efficiency gains.',
-        subCards: [
-          {
-            id: 'fom-block',
-            title: "Block - PGM's Budget Management and Reporting",
-            subtitle:
-              'Transitioning from a single-resource manual bottleneck to distributed PM budget ownership and interactive fiscal dashboards.',
-            tag: 'Finance & OPEX',
-            proofAnchor: 'block',
-            metrics: 'Block · 30 to 5-Day Invoicing Lag · 5-10% SOW Variance Control',
-            star: {
-          situation:
-            'When I joined Block, localization financial management relied on a single resource handling vendor management through heavily manual processes and invoicing cross-checks. This operating model could not scale with planned market expansion or growing transaction volume.',
-          task:
-            'As the PGM lead, I took on the responsibility to replace the single-point manual bottleneck with a scalable financial operating model. I partnered with HR to expand PM responsibilities into end-to-end budget management (estimating, reconciling, monitoring, and reporting) and equip teams with visual, interactive fiscal reporting.',
-          action:
-            'After partnering with HR to formally expand the PM role to own functional budget estimating, reconciliation, monitoring, and reporting, I co-led the creation of visual, interactive fiscal dashboards with direct-report PMs, Engineering, Finance, Senior Leads, and Vendors so PMs could self-monitor and report spend transparently rather than relying on manual cross-checks. I also led training sessions, coaching PMs on vendor budget management, variance tracking, and cross-functional program governance.',
-          result:
-            'I replaced a single-resource manual bottleneck with distributed PM budget accountability and interactive cross-functional fiscal visibility across PMs, Engineering, Finance, leadership, and vendors. By establishing a scalable spend-governance foundation ready for market expansion, I enabled the entire organization to achieve budget compliance with a 5-10% quarterly budget variance factored into negotiated SOWs.',
-            },
-            l6Principle:
-              'Scaling financial governance requires pairing role clarity and cross-functional dashboards with decentralized ownership, not adding manual bottlenecks to a single person.',
-          },
-          {
-            id: 'fom-microsoft',
-            title: 'Microsoft - RFP and MA / SOW Governance',
-            subtitle:
-              'Standardizing SOW templates, volume discounting, and MSA commercial terms across 40+ international markets.',
-            tag: 'Finance & OPEX',
-            proofAnchor: 'microsoft',
-            metrics: '$500K Cost Avoidance · 35% Cycle Time Cut · 40+ Markets',
-            star: {
-          situation:
-            'At Microsoft (Jun. 2016 - Apr. 2020), supporting global marketing and localization operations across 40+ international markets meant working with multiple external language and vendor partners across regional teams where decentralized SOWs, inconsistent rate cards, ad-hoc SLAs, and manual tracking and invoicing cross-checks created cost friction and slow approvals.',
-          task:
-            'I was tasked with auditing supplier coverage alongside Procurement and cross-functional stakeholders, standardizing SOWs and performance-based SLA tiers, and negotiating Master Services Agreement (MSA) commercial terms to protect budget and improve cycle times across a multi-million annual program allocation.',
-          action:
-            'I partnered with global Procurement to audit active localization suppliers, aligned cross-functional localization leads on unified SOW templates and performance-based contractual tiers, and negotiated MSA terms including enterprise bulk-of-work volume discounts. I paired commercial terms with standardized SLAs, scorecards, and monthly and quarterly operational burn and capacity reviews with Finance and Engineering.',
-          result:
-            'I reduced vendor cycle times by 35% (15 to 9 days) across 40+ international markets (including cutting campaign and product localization launches from 15 days to 9 days), unlocked $500,000 in cost avoidance on the multi-million annual Microsoft Store allocation for reinvestment into high-growth markets, and sustained >90% CSAT/NPS alongside auditable 30-day invoice payment compliance.',
-            },
-            l6Principle:
-              'Pairing standardized SOWs, bulk commercial leverage, and transparent burn telemetry turns vendor spend into predictable capacity and budget efficiency.',
-          },
-        ],
+          'Strong portals and workforce systems succeed when workflow design, clear ownership, and operational visibility are built in from the start.',
       },
       {
-        id: 'bi-telemetry',
-        number: '10',
-        title: 'Operational Business Intelligence',
-        shortName: 'BI & Telemetry',
-        icon: 'BarChart3',
-        description:
-          'Partnering with the Internal BI + Data Analytics Team to automate pipeline tracking, burndown metrics and executive dashboards.',
-        subCards: [
-          {
-            id: 'bit-bf',
-            title: 'Microsoft Campaigns - Black Friday: Real-Time Global Campaign Telemetry',
-            subtitle:
-              'Unified real-time Power BI performance dashboards across global and local markets.',
-            tag: 'BI & Telemetry',
-            proofAnchor: 'microsoft',
-            metrics: '40+ Mkts · 24-48h Turnaround',
-            star: {
-          situation:
-            'During high-velocity global events like Black Friday, internal stakeholders lacked unified, real-time visibility into campaign delivery and performance across global and local markets, risking delayed course-corrections when regional pacing or conversion trends shifted mid-event.',
-          task:
-            'I was tasked with partnering with internal BI and engineering teams to build Power BI reporting dashboards that delivered real-time global and per-market campaign performance visibility, supported by clear visual mockups prior to technical development.',
-          action:
-            'I partnered cross-functionally with internal teams to standardize KPI definitions and global-to-local market rollups. I designed visual graphic mockups upfront to align stakeholders on hierarchy and data presentation before building, and I built Power BI dashboards tracking live global and market-specific performance across 40+ markets with near-real-time refresh cycles (such as every 60 minutes).',
-          result:
-            'I replaced fragmented manual status checks with a single source of truth across global and local market teams during peak Black Friday windows, cutting reporting turnaround time from 3-5 days to 24-48 hours and enabling faster mid-campaign adjustments across regional stakeholders for underperforming campaigns.',
-            },
-            l6Principle:
-              'Prototyping visual clarity first and pairing live telemetry with local market context turns raw campaign velocity into faster, coordinated execution.',
-          },
-          {
-            id: 'bit-vendor-governance',
-            title:
-              "Microsoft Power BI's -  Vendors -\nCapacity, SLA and Operational Cost Governance",
-            subtitle:
-              'Unified Power BI dashboards connecting vendor throughput, on-time delivery SLAs, and operational budget guardrails.',
-            tag: 'Vendor Operations',
-            proofAnchor: 'microsoft',
-            metrics: '5 Vendor Workstreams · 30-Day SLA & 3-Mo Forecast Visibility',
-            star: {
-          situation:
-            'Managing vendor capacity, output, SLA adherence (including on-time delivery), and operational costs across active initiatives lacked a consolidated operational view, making it harder for teams to balance supplier workloads against budget guardrails.',
-          task:
-            'I was tasked with designing Power BI dashboards that unified vendor capacity, output, SLA performance (on-time delivery), and operational cost metrics to guide proactive capacity planning and budget governance.',
-          action:
-            'I collaborated with internal stakeholders to align on capacity utilization, throughput, on-time delivery SLA thresholds, and cost drivers. I created visual telemetry views linking supplier output and SLA compliance directly to budget burn and capacity headroom across 5 suppliers and vendor workstreams.',
-          result:
-            'I provided program and budget owners with real-time visibility into capacity bottlenecks, SLA adherence, and spend trajectory. This improved on-time delivery visibility across all tracked deliverables, supported tighter budget variance control, and enabled up to 30 days of compliance visibility and 3 months of forecasting visibility without over-allocating supplier capacity.',
-            },
-            l6Principle:
-              'When operational throughput, SLA health, and cost live in one view, governance shifts from reactive firefighting to disciplined resource and budget stewardship.',
-          },
-          {
-            id: 'bit-1',
-            title: "Block and LinkedIn - Operations Enablement, SLA's and Business Continuity",
-            subtitle:
-              'Unified stage-by-stage telemetry connecting Vendor TMS and Jira into proactive SLA alerting.',
-            tag: 'BI & Telemetry',
-            proofAnchor: 'block-linkedin',
-            proofAnchors: ['block', 'linkedin'],
-            metrics: '20+ Stakeholders · >50% Query Reduction · Automated Alerts',
-            star: {
-          situation:
-            'Cross-functional stakeholders across product, engineering, localization, and regional teams lacked end-to-end visibility into where individual requests stood across intake, triage, translation, and deployment, which caused bottlenecks to go unnoticed until deadlines tightened and triggered frequent ad-hoc status inquiries.',
-          task:
-            'I was tasked with coordinating vendor API integrations and designing the visual architecture for a centralized business intelligence telemetry portal that tracked live stage-by-stage throughput and SLA adherence across the full request lifecycle, empowering stakeholders with self-service visibility and proactive bottleneck alerts.',
-          action:
-            'I partnered with engineering, operations, and vendor leads to standardize stage definitions and SLA targets across intake, triage, localization/translation, and deployment. I aggregated real-time event and status data from Vendor CAT tools like Translation Management Systems (TMS) into internal tracking systems like Jira within a unified telemetry portal, and I configured automated alerts for aging requests and SLA threshold breaches so owners could intervene early.',
-          result:
-            'I gave over 20 cross-functional stakeholders real-time self-service visibility across every pipeline stage, reducing churn by cutting queries on status by more than half, speeding up bottleneck triage before release cutoffs, and turning subjective status chasing into objective SLA governance.',
-            },
-            l6Principle:
-              'Operational telemetry transforms subjective frustration into objective, actionable data.',
-          },
-        ],
+        id: 'occ-block-temp-workers',
+        title: 'Block - Temporary Workers Program Proposal',
+        subtitle:
+          'Auditing FTE capacity, extending internal portal governance, and securing funding across five expansion markets.',
+        tag: 'Workforce Governance',
+        proofAnchor: 'block',
+        metrics: 'Block · 5 Markets Expanded · 5 Contingent FTEs · 4-Wk Hiring',
+        star: {
+      situation:
+        'At Block, rapid growth objectives across five additional markets and concurrent org-wide initiatives created tension with day-to-day business continuity. Existing FTE capacity and team structures could not absorb the surge without risking operational bottlenecks or compliance gaps.',
+      task:
+        'I was tasked with auditing current FTE staff and temporary staffing needs alongside senior management and HR, defining required skill sets, architecting a formal Temporary Work Program for Globalization, and securing executive funding and sign-off.',
+      action:
+        'I mapped workload pressures, skill gaps, and business-continuity risks across the five expansion markets; led a structured staffing audit with senior management and HR to formalize contingent needs; and presented a comprehensive program proposal outlining role profiles, governance guardrails, and budget. Concurrently, I orchestrated five operational integrations: 1) extended an existing partner org\'s Temp Worker Portal to globalization operations; 2) expanded the specialized agency pool to four domain-expert vendors; 3) partnered with IT on secure identity, onboarding, and offboarding admin; 4) established a standardized Master Agreement and SOW with HR and agencies; and 5) aligned with Legal on international labor laws and contractor compliance.',
+      result:
+        'I established a dedicated Temporary Work Program for Globalization with approved funding and predictable capacity planning across five expansion markets while safeguarding business continuity. I expanded the vendor pool to 4 agencies, secured funding approval for 5 extra temporary workers, accelerated hiring cycles from 4-8 weeks down to 4 weeks, and successfully launched all five target markets on time and on budget.',
+        },
+        l6Principle:
+          'Proactive workforce governance and cross-functional portal extensions expand capacity elastically while safeguarding compliance and team health.',
       },
     ],
+    extendedSubsections: [],
   },
   {
     id: 'cross-functional-partners',
-    number: '05',
-    title: 'Cross-functional Partners and Stakeholders',
+    number: '06',
+    title: 'Cross-functional Alignment\n(Stakeholders, Partners and Clients)',
     subtitle:
       'Foster cross-functional collaboration, strategic stakeholder alignment, and executive consensus across Product, Engineering, Marketing, Legal, and Regional leadership. Track record of driving alignment with engineering teams and senior leads, finance controllers, cross-functional partners across time-zones and external vendors and executives.',
     icon: 'Network',
@@ -569,7 +538,7 @@ export const topPillars = [
   },
   {
     id: 'live-incidents-response',
-    number: '06',
+    number: '07',
     title: 'Live Incidents Response',
     shortName: 'Live Incidents',
     subtitle:
@@ -579,7 +548,7 @@ export const topPillars = [
     subCards: [
       {
         id: 'tr-1',
-        title: 'Microsoft and LinkedIn - 24/7 Follow-the-Sun Model',
+        title: 'Microsoft and LinkedIn\n24/7 Follow-the-Sun Model',
         subtitle: 'Incident Triage at Scale',
         tag: 'Operational Incident Triage',
         proofAnchor: 'microsoft',
@@ -623,7 +592,7 @@ export const topPillars = [
   },
   {
     id: 'optimization-innovation',
-    number: '07',
+    number: '08',
     title: 'Optimization and Innovation\nMTPE + AI + HIL',
     shortName: 'Optimization & Innovation',
     subtitle:
@@ -710,7 +679,7 @@ export const topPillars = [
           'Turning career milestones, operational governance frameworks, and live delivery artifacts into an interactive, bilingual portfolio experience.',
         tag: 'Personal Growth & Development',
         contextLabel: 'Personal Project',
-        metrics: '28 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
+        metrics: '28 STAR Cards · 8 Strategic Pillars · 100% EN/PT Parity',
         externalLink: {
           url: '/how-i-built-this',
           label: 'How I Built This Portfolio (AI Showcase)',
@@ -722,7 +691,7 @@ export const topPillars = [
           task:
             'I was tasked with architecting an interactive, bilingual portfolio experience that turned my career milestones, operational governance frameworks, and live delivery artifacts into scannable, inspectable tiers.',
           action:
-            'I structured a multi-tier Bento box framework organizing 28 STAR cards across 7 strategic pillars with flip, expand, and search controls. Connected narrative career progression with dynamic views, including a 20-milestone continuous career timeline and live Scrum delivery boards, while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
+            'I structured a multi-tier Bento box framework organizing 28 STAR cards across 8 strategic pillars with flip, expand, and search controls. Connected narrative career progression with dynamic views, including a 20-milestone continuous career timeline and live Scrum delivery boards, while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
           result:
             'I delivered a production-grade portfolio system pairing concise headline metrics with scannable Situation, Task, Action, Result, and Learning blocks, enabling visitors to inspect high-level outcomes first or dive into full execution details on demand.',
         },
@@ -731,11 +700,11 @@ export const topPillars = [
       },
       {
         id: 'ai-nmt-case-study',
-        title: 'AI NMT - CASE STUDY SIMULATOR',
+        title: 'AI NMT - Case study simulator',
         subtitle:
           'Enterprise custom NMT training, 5-stage corpus sanitization, and tripartite quality evaluation with interactive pipeline simulator.',
-        tag: 'Custom NMT & LLM Fine-Tuning',
-        contextLabel: 'Case Study & Simulator',
+        tag: 'Personal Growth & Development',
+        contextLabel: 'Personal Project',
         metrics:
           'Modeled ~40% Cost Reduction ($1.125M/Yr on 25M Words) · 60% Catalog/UI Time Cut · 0.85+ COMET Gate · ≥0.75 LaBSE Cosine',
         externalLink: {

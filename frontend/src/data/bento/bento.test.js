@@ -6,10 +6,11 @@ import { companyBrandMap, getCompanyBrand } from './brandMap';
 
 describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
   const expectedPillarIds = [
+    'executive-health',
+    'operational-bi',
     'portfolio-governance',
     'supplier-performance',
     'operations-change',
-    'executive-health',
     'cross-functional-partners',
     'live-incidents-response',
     'optimization-innovation',
@@ -17,15 +18,15 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
 
   const expectedDomainIds = [];
 
-  test('Tier 1 has exactly 7 Top Strategic Pillars in EN and PT', () => {
-    expect(topPillarsEN).toHaveLength(7);
-    expect(topPillarsPT).toHaveLength(7);
+  test('Tier 1 has exactly 8 Top Strategic Pillars in EN and PT', () => {
+    expect(topPillarsEN).toHaveLength(8);
+    expect(topPillarsPT).toHaveLength(8);
 
     expect(topPillarsEN.map((p) => p.id)).toEqual(expectedPillarIds);
     expect(topPillarsPT.map((p) => p.id)).toEqual(expectedPillarIds);
   });
 
-  test('Total interactive STAR cards across all 7 Top Strategic Pillars equals 28 in EN and PT', () => {
+  test('Total interactive STAR cards across all 8 Top Strategic Pillars equals 28 in EN and PT', () => {
     const countCards = (pillars) =>
       pillars.reduce((total, p) => {
         const core = p.subCards?.length || 0;
@@ -138,77 +139,62 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Pillar 04 (Executive Health) has extended subsections for Domain 09 and 10 in EN and PT', () => {
+  test('Pillar 01 (Executive Health) holds Finance & OPEX cards inline with no extended subsections in EN and PT', () => {
     const ehPillarEN = topPillarsEN.find((p) => p.id === 'executive-health');
     const ehPillarPT = topPillarsPT.find((p) => p.id === 'executive-health');
 
-    expect(ehPillarEN.extendedSubsections).toBeDefined();
-    expect(ehPillarPT.extendedSubsections).toBeDefined();
-    expect(ehPillarEN.extendedSubsections).toHaveLength(2);
-    expect(ehPillarPT.extendedSubsections).toHaveLength(2);
+    expect(ehPillarEN.number).toBe('01');
+    expect(ehPillarPT.number).toBe('01');
+    const expected = ['eh-2', 'fom-block', 'fom-microsoft'];
+    expect(ehPillarEN.subCards.map((c) => c.id)).toEqual(expected);
+    expect(ehPillarPT.subCards.map((c) => c.id)).toEqual(expected);
+    expect(ehPillarEN.extendedSubsections || []).toHaveLength(0);
+    expect(ehPillarPT.extendedSubsections || []).toHaveLength(0);
 
-    expect(ehPillarEN.extendedSubsections.map((s) => s.id)).toEqual([
-      'finance-opex',
-      'bi-telemetry',
-    ]);
-    expect(ehPillarPT.extendedSubsections.map((s) => s.id)).toEqual([
-      'finance-opex',
-      'bi-telemetry',
-    ]);
+    // Finance cards keep their original naming tag
+    expect(ehPillarEN.subCards.filter((c) => c.tag === 'Finance & OPEX')).toHaveLength(2);
+  });
 
-    ehPillarEN.extendedSubsections.forEach((subSec, sIdx) => {
-      expect(subSec.subCards.length).toBeGreaterThan(0);
-      expect(ehPillarPT.extendedSubsections[sIdx].subCards.length).toBe(
-        subSec.subCards.length
-      );
+  test('Pillar 02 (Operational Business Intelligence) holds the BI & Telemetry cards in EN and PT', () => {
+    const biPillarEN = topPillarsEN.find((p) => p.id === 'operational-bi');
+    const biPillarPT = topPillarsPT.find((p) => p.id === 'operational-bi');
 
-      subSec.subCards.forEach((card) => {
-        expect(card.id).toBeTruthy();
-        expect(card.title).toBeTruthy();
-        expect(card.star).toBeDefined();
-        expect(card.star.situation).toBeTruthy();
-        expect(card.star.task).toBeTruthy();
-        expect(card.star.action).toBeTruthy();
-        expect(card.star.result).toBeTruthy();
-        expect(card.l6Principle).toBeTruthy();
-      });
+    expect(biPillarEN.number).toBe('02');
+    expect(biPillarPT.number).toBe('02');
+    expect(biPillarEN.title).toBe('Operational Business Intelligence');
+    const expected = ['bit-bf', 'bit-vendor-governance', 'bit-1'];
+    expect(biPillarEN.subCards.map((c) => c.id)).toEqual(expected);
+    expect(biPillarPT.subCards.map((c) => c.id)).toEqual(expected);
+
+    biPillarEN.subCards.forEach((card) => {
+      expect(card.star.situation).toBeTruthy();
+      expect(card.star.task).toBeTruthy();
+      expect(card.star.action).toBeTruthy();
+      expect(card.star.result).toBeTruthy();
+      expect(card.l6Principle).toBeTruthy();
     });
   });
 
-  test('Pillar 03 (Operations & Change) has extended subsections for Domain 01 and Domain 08 in EN and PT', () => {
+  test('Pillar 03 (Operations & Change) holds Controls & Compliance cards inline with no extended subsections in EN and PT', () => {
     const ocPillarEN = topPillarsEN.find((p) => p.id === 'operations-change');
     const ocPillarPT = topPillarsPT.find((p) => p.id === 'operations-change');
 
-    expect(ocPillarEN.extendedSubsections).toBeDefined();
-    expect(ocPillarPT.extendedSubsections).toBeDefined();
-    expect(ocPillarEN.extendedSubsections).toHaveLength(2);
-    expect(ocPillarPT.extendedSubsections).toHaveLength(2);
-    expect(ocPillarEN.extendedSubsections.map((s) => s.id)).toEqual([
-      'content-operations',
-      'operational-controls',
-    ]);
-    expect(ocPillarPT.extendedSubsections.map((s) => s.id)).toEqual([
-      'content-operations',
-      'operational-controls',
-    ]);
+    const expected = [
+      'oc-3',
+      'oc-microsoft-content-ingestion',
+      'oc-microsoft-content-schema',
+      'oc-microsoft-content-curation',
+      'occ-workforce-portal',
+      'occ-block-temp-workers',
+    ];
+    expect(ocPillarEN.subCards.map((c) => c.id)).toEqual(expected);
+    expect(ocPillarPT.subCards.map((c) => c.id)).toEqual(expected);
+    expect(ocPillarEN.extendedSubsections || []).toHaveLength(0);
+    expect(ocPillarPT.extendedSubsections || []).toHaveLength(0);
 
-    ocPillarEN.extendedSubsections.forEach((subSec, sIdx) => {
-      expect(subSec.subCards.length).toBeGreaterThanOrEqual(0);
-      expect(ocPillarPT.extendedSubsections[sIdx].subCards.length).toBe(
-        subSec.subCards.length
-      );
-
-      subSec.subCards.forEach((card) => {
-        expect(card.id).toBeTruthy();
-        expect(card.title).toBeTruthy();
-        expect(card.star).toBeDefined();
-        expect(card.star.situation).toBeTruthy();
-        expect(card.star.task).toBeTruthy();
-        expect(card.star.action).toBeTruthy();
-        expect(card.star.result).toBeTruthy();
-        expect(card.l6Principle).toBeTruthy();
-      });
-    });
+    // Inlined cards keep their original naming tags
+    expect(ocPillarEN.subCards.find((c) => c.id === 'occ-workforce-portal').tag).toBe('Controls & Compliance');
+    expect(ocPillarEN.subCards.find((c) => c.id === 'occ-block-temp-workers').tag).toBe('Workforce Governance');
   });
 
   test('Pillar 06 (Live Incidents Response) has subcards for Follow-the-Sun and Thailand Crisis in EN and PT', () => {

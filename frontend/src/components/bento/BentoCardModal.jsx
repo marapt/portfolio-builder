@@ -91,14 +91,14 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-card-title"
     >
       <div
-        className={`relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-slate-900 border border-slate-700/80 border-t-4 ${theme.topBorder} p-6 sm:p-8 shadow-2xl text-left transition-all transform scale-100 ring-1 ring-white/10`}
+        className={`relative w-full max-w-5xl xl:max-w-6xl max-h-[92vh] overflow-y-auto rounded-3xl bg-slate-900 border border-slate-700/80 border-t-4 ${theme.topBorder} p-6 sm:p-8 md:p-10 shadow-2xl text-left transition-all transform scale-100 ring-1 ring-white/10`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button Top Right */}
@@ -106,23 +106,23 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
           type="button"
           onClick={onClose}
           aria-label="Close expanded card"
-          className="absolute top-5 right-5 p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors shadow-md"
+          className="absolute top-5 right-5 sm:top-6 sm:right-6 p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors shadow-md z-10"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Top Header: Badge, Metric Pill, Company Logo and Title */}
-        <div className="mb-6 pr-10">
+        <div className="mb-6 sm:mb-8 pr-12">
           <div className="flex flex-wrap items-center gap-2.5 mb-3.5">
             <span
-              className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
+              className={`inline-flex items-center px-3.5 py-1 rounded-full text-xs font-semibold border ${theme.badge}`}
             >
               {card.tag || domainTitle || 'STAR Card'}
             </span>
 
             {card.metrics && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-medium">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs sm:text-sm font-mono font-medium shadow-sm">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>{card.metrics}</span>
               </span>
             )}
@@ -142,71 +142,84 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
                 </span>
               ))
             ) : card.proofAnchor ? (
-              <span className="inline-flex items-center gap-1 font-mono text-xs text-slate-200 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
-                <Building2 className="w-3.5 h-3.5 text-indigo-400" />
-                {card.proofAnchor.toUpperCase()}
+              <span className="inline-flex items-center gap-1.5 font-mono text-xs text-slate-200 bg-slate-800 px-3 py-1 rounded-full border border-slate-700 shadow-sm">
+                <Building2 className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                <span>{card.proofAnchor.toUpperCase()}</span>
               </span>
-            ) : null}
+            ) : (
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-medium text-slate-300 shadow-sm">
+                {card.contextLabel || 'Personal Project'}
+              </span>
+            )}
           </div>
 
-          <h3 id="modal-card-title" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug mt-3 mb-2.5 whitespace-pre-line">
+          <h3 id="modal-card-title" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug mt-3 mb-3 whitespace-pre-line">
             {card.title}
           </h3>
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed font-normal max-w-4xl">
             {card.subtitle}
           </p>
         </div>
 
         {/* Expanded STAR Framework Content */}
-        <div className="space-y-4 pt-4 border-t border-slate-800">
+        <div className="space-y-5 pt-5 border-t border-slate-800">
           <div className="flex items-center justify-between pb-1">
             <span className={`text-xs font-bold uppercase tracking-wider ${theme.accentText}`}>
               Full STAR Execution Model
             </span>
-            <span className="text-xs text-slate-400 font-mono">
-              Click anywhere outside or Esc to close
+            <span className="text-xs text-slate-400 font-mono hidden sm:inline">
+              Click outside or press Esc to close
             </span>
           </div>
 
-          {star.situation && (
-            <div className="bg-slate-950/70 rounded-2xl p-4 sm:p-5 border-l-4 border-amber-500 border border-slate-800/80 shadow-sm">
-              <span className="font-bold text-amber-400 uppercase tracking-wide text-xs block mb-1">
-                Situation
-              </span>
-              <p className="text-sm text-slate-200 leading-relaxed font-normal whitespace-pre-line">
-                {star.situation}
-              </p>
-            </div>
-          )}
+          {/* Situation & Task 2-Column Responsive Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+            {star.situation && (
+              <div className="bg-slate-950/70 rounded-2xl p-5 sm:p-6 border-l-4 border-amber-500 border border-slate-800/80 shadow-sm flex flex-col">
+                <span className="font-bold text-amber-400 uppercase tracking-wide text-xs block mb-2 flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
+                  Situation
+                </span>
+                <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal whitespace-pre-line flex-1">
+                  {star.situation}
+                </p>
+              </div>
+            )}
 
-          {star.task && (
-            <div className="bg-slate-950/70 rounded-2xl p-4 sm:p-5 border-l-4 border-sky-500 border border-slate-800/80 shadow-sm">
-              <span className="font-bold text-sky-400 uppercase tracking-wide text-xs block mb-1">
-                Task
-              </span>
-              <p className="text-sm text-slate-200 leading-relaxed font-normal whitespace-pre-line">
-                {star.task}
-              </p>
-            </div>
-          )}
+            {star.task && (
+              <div className="bg-slate-950/70 rounded-2xl p-5 sm:p-6 border-l-4 border-sky-500 border border-slate-800/80 shadow-sm flex flex-col">
+                <span className="font-bold text-sky-400 uppercase tracking-wide text-xs block mb-2 flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-sky-400 shrink-0" />
+                  Task
+                </span>
+                <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal whitespace-pre-line flex-1">
+                  {star.task}
+                </p>
+              </div>
+            )}
+          </div>
 
+          {/* Action (Full Width for Multi-Tier Execution Steps) */}
           {star.action && (
-            <div className="bg-slate-950/70 rounded-2xl p-4 sm:p-5 border-l-4 border-indigo-500 border border-slate-800/80 shadow-sm">
-              <span className="font-bold text-indigo-400 uppercase tracking-wide text-xs block mb-1">
+            <div className="bg-slate-950/70 rounded-2xl p-5 sm:p-6 border-l-4 border-indigo-500 border border-slate-800/80 shadow-sm">
+              <span className="font-bold text-indigo-400 uppercase tracking-wide text-xs block mb-2 flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-indigo-400 shrink-0" />
                 Action
               </span>
-              <p className="text-sm text-slate-200 leading-relaxed font-normal whitespace-pre-line">
+              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal whitespace-pre-line">
                 {star.action}
               </p>
             </div>
           )}
 
+          {/* Result (Full Width for Impact & Outcomes) */}
           {star.result && (
-            <div className="bg-emerald-950/30 rounded-2xl p-4 sm:p-5 border-l-4 border-emerald-500 border border-emerald-500/30 shadow-sm">
-              <span className="font-bold text-emerald-400 uppercase tracking-wide text-xs block mb-1">
+            <div className="bg-emerald-950/30 rounded-2xl p-5 sm:p-6 border-l-4 border-emerald-500 border border-emerald-500/30 shadow-sm">
+              <span className="font-bold text-emerald-400 uppercase tracking-wide text-xs block mb-2 flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 Result
               </span>
-              <p className="text-sm sm:text-base text-white font-medium leading-relaxed whitespace-pre-line">
+              <p className="text-sm sm:text-base lg:text-lg text-white font-medium leading-relaxed whitespace-pre-line">
                 {star.result}
               </p>
             </div>
@@ -214,40 +227,40 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
 
           {/* Screenshot Artifact Preview */}
           {card.screenshot && (
-            <div className="rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950/80 p-2.5 shadow-xl">
-              <div className="flex items-center justify-between px-3 py-1.5 text-xs text-slate-400 font-mono border-b border-slate-800/80 mb-2">
+            <div className="rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950/80 p-3 sm:p-4 shadow-xl">
+              <div className="flex items-center justify-between px-3 py-2 text-xs text-slate-400 font-mono border-b border-slate-800/80 mb-3">
                 <span className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-slate-300 font-semibold tracking-wide">Live Tactical Dashboard Telemetry</span>
+                  <span className="text-slate-200 font-semibold tracking-wide">Live Tactical Dashboard Telemetry</span>
                 </span>
                 <a
                   href={card.screenshot}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1 text-[11px]"
+                  className="text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1.5 text-xs font-semibold"
                 >
                   <span>Open Full Resolution</span>
-                  <ExternalLink className="w-3 h-3" />
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
               <a href={card.screenshot} target="_blank" rel="noopener noreferrer" className="block cursor-zoom-in">
                 <img
                   src={card.screenshot}
                   alt={card.title}
-                  className="w-full h-auto rounded-xl border border-slate-800 object-cover max-h-[420px] hover:opacity-95 transition-opacity"
+                  className="w-full h-auto rounded-xl border border-slate-800 object-cover max-h-[500px] hover:opacity-95 transition-opacity"
                 />
               </a>
             </div>
           )}
 
           {card.l6Principle && (
-            <div className="p-4 sm:p-5 rounded-2xl bg-indigo-950/40 border border-indigo-500/40 flex items-start gap-3 shadow-sm">
+            <div className="p-5 sm:p-6 rounded-2xl bg-indigo-950/40 border border-indigo-500/40 flex items-start gap-3.5 shadow-sm">
               <Lightbulb className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-300 block mb-0.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-indigo-300 block mb-1">
                   Learning
                 </span>
-                <p className="text-xs sm:text-sm text-indigo-100 italic leading-relaxed whitespace-pre-line">
+                <p className="text-sm sm:text-base text-indigo-100 italic leading-relaxed whitespace-pre-line">
                   {card.l6Principle}
                 </p>
               </div>
@@ -256,7 +269,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
         </div>
 
         {/* Modal Footer */}
-        <div className="mt-6 pt-5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
+        <div className="mt-8 pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-4">
             {card.proofAnchor ? (
               <Link

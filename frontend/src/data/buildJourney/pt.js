@@ -51,7 +51,7 @@ export const buildJourneyGuardrails = {
       risk: 'Alterações rápidas de IA arriscavam omitir chaves em português, causar quebras de formatação ou dessincronizar a contagem de cartões STAR entre idiomas.',
       guardrail:
         'Implementei validações automatizadas em Jest que verificam a paridade estrita 1:1 entre en.js e pt.js, complementadas por revisões linha a linha em split-diff antes de cada commit.',
-      outcome: 'Zero desfasamento linguístico em 27 cartões STAR e 7 Pilares Estratégicos.',
+      outcome: 'Zero desfasamento linguístico em 28 cartões STAR e 8 Pilares Estratégicos.',
     },
     {
       title: 'Interrupções de APIs e Serviços Externos',
