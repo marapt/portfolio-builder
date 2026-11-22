@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Strategic Pillars', value: '6 Top Pillars' },
     { label: 'Operational Domains', value: '2 Specialized Domains' },
-    { label: 'Interactive Cards', value: '27 STAR Cards' },
+    { label: 'Interactive Cards', value: '28 STAR Cards' },
   ],
 };
 
@@ -693,6 +693,26 @@ export const operationalDomains = [
             'Compressed blended cost per evaluation task from $5 to $1.67, stayed strictly within the $10M budget, and compressed onboarding lead time from 8 weeks to 2 weeks.',
         },
         l6Principle: 'Scale is achieved not by cutting quality, but by risk-tiering human expertise where it provides the highest return.',
+      },
+      {
+        id: 'ai-portfolio-building',
+        title: 'AI Portfolio Building',
+        subtitle:
+          'Turning career milestones, operational governance frameworks, and live delivery artifacts into an interactive, bilingual portfolio experience.',
+        tag: 'Portfolio Systems & Architecture',
+        metrics: '28 STAR Cards · 6 Strategic Pillars · 100% EN/PT Parity',
+        star: {
+          situation:
+            'Rather than presenting a static resume or a flat list of past roles, the portfolio needed to treat operational leadership like an interactive product system for executive and technical audiences.',
+          task:
+            'Architect an interactive, bilingual portfolio experience that turns career milestones, operational governance frameworks, and live delivery artifacts into scannable, inspectable tiers.',
+          action:
+            'Structured a multi-tier Bento box framework organizing 28 STAR cards across strategic pillars and specialized operational domains with flip, expand, and search controls. Connected narrative career progression with dynamic views such as a 20-milestone continuous career timeline and live Scrum delivery boards while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
+          result:
+            'Delivered a production-grade portfolio system pairing concise headline metrics with scannable Situation, Task, Action, Result, and Learning blocks, enabling visitors to inspect high-level outcomes first or dive into full execution details on demand.',
+        },
+        l6Principle:
+          'A strong portfolio should do more than list past wins: it should demonstrate how you structure information, design clear decision paths, and turn complex operational work into something easy to navigate.',
       },
     ],
   },

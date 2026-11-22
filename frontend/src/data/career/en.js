@@ -3841,17 +3841,17 @@ export const timelineItems = [
         },
         {
           label: 'Measurable Outcome:',
-          text: 'Delivered an interactive, production-grade portfolio with 6 strategic pillars, 27 STAR frameworks, and a dedicated AI build journey showcase.',
+          text: 'Delivered an interactive, production-grade portfolio with 6 strategic pillars, 28 STAR frameworks, and a dedicated AI build journey showcase.',
         },
       ],
     },
     metrics: [
       {
-        value: '27 Cards',
+        value: '28 Cards',
         label: 'STAR frameworks across 6 strategic pillars',
         kind: 'scale',
         placeholder: false,
-        hint: 'Comprehensive L6 operational leadership proof points delivered with complete EN/PT bilingual parity',
+        hint: 'Comprehensive operational leadership proof points delivered with complete EN/PT bilingual parity',
         evidenceId: 'cur26-01',
       },
       {

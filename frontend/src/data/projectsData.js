@@ -409,11 +409,11 @@ This project is open source and available on GitHub as part of my commitment to 
     caseStudyBannerSubtitle: 'Visual walkthrough of my engineering journey: Google Antigravity, VS Code, GitHub, Crowdin CAT localization, and Vercel CI/CD.',
     overview: `This project showcases how I designed and engineered my executive portfolio from the ground up, leveraging AI pair-programming and modern web technologies while learning to code.
 
-From orchestrating rapid AI iterations in Google Antigravity and VS Code to establishing professional Git branch workflows, Crowdin CAT localization pipelines, and automated Vercel CI/CD deployments, this portfolio demonstrates hands-on technical execution alongside L6 operational program leadership.`,
+From orchestrating rapid AI iterations in Google Antigravity and VS Code to establishing professional Git branch workflows, Crowdin CAT localization pipelines, and automated Vercel CI/CD deployments, this portfolio demonstrates hands-on technical execution alongside executive operational program leadership.`,
     challenges: [
       'Translating deep executive leadership and operational governance into an engaging, interactive digital experience',
       'Learning modern React, Tailwind CSS, and full-stack workflows while maintaining enterprise coding standards',
-      'Maintaining continuous bilingual parity (English and Portuguese) across 27 STAR cards and complex case studies',
+      'Maintaining continuous bilingual parity (English and Portuguese) across 28 STAR cards and complex case studies',
       'Establishing automated CI/CD pipelines with zero downtime and resilient offline fallbacks'
     ],
     solutions: [
@@ -425,7 +425,7 @@ From orchestrating rapid AI iterations in Google Antigravity and VS Code to esta
     results: [
       { value: '100%', label: 'AI-Leveraged Build' },
       { value: '6 Top Pillars', label: 'Strategic Architecture' },
-      { value: '27', label: 'Interactive STAR Cards' },
+      { value: '28', label: 'Interactive STAR Cards' },
       { value: '2', label: 'Locales (EN & PT)' }
     ],
     locales: {
@@ -434,14 +434,14 @@ From orchestrating rapid AI iterations in Google Antigravity and VS Code to esta
         description: 'Como construí o meu portfólio pessoal alavancando IA e competências de engenharia enquanto aprendi a programar com Antigravity, VS Code, GitHub, Crowdin e Vercel.',
         overview: `Este projeto demonstra como concebi e construí o meu portfólio executivo de raiz, combinando programação assistida por IA e tecnologias web modernas enquanto aprendia a programar.
 
-Desde a orquestração de iterações rápidas com o Google Antigravity e o VS Code até ao estabelecimento de fluxos Git profissionais, canais de localização CAT com o Crowdin e implementações contínuas no Vercel, este portfólio reflete a execução técnica aliada à liderança de programas de nível L6.`,
+Desde a orquestração de iterações rápidas com o Google Antigravity e o VS Code até ao estabelecimento de fluxos Git profissionais, canais de localização CAT com o Crowdin e implementações contínuas no Vercel, este portfólio reflete a execução técnica aliada à liderança de programas operacionais executivos.`,
         caseStudyLabel: 'Como Construí Este Portfólio (Jornada IA)',
         caseStudyBannerTitle: 'Como Construí Este Portfólio Alavancando IA',
         caseStudyBannerSubtitle: 'Visita guiada visual pela minha jornada de engenharia: Google Antigravity, VS Code, GitHub, localização CAT no Crowdin e CI/CD na Vercel.',
         challenges: [
           'Traduzir liderança executiva e governação operacional numa experiência digital interativa e envolvente',
           'Aprender React, Tailwind CSS e fluxos de programação modernos mantendo padrões de qualidade de nível empresarial',
-          'Garantir paridade bilingue contínua (Inglês e Português) em 27 cartões STAR e estudos de caso',
+          'Garantir paridade bilingue contínua (Inglês e Português) em 28 cartões STAR e estudos de caso',
           'Configurar processos de CI/CD automatizados com zero tempo de inatividade e suporte offline resiliente'
         ],
         solutions: [
@@ -453,7 +453,7 @@ Desde a orquestração de iterações rápidas com o Google Antigravity e o VS C
         results: [
           { value: '100%', label: 'Desenvolvido com IA' },
           { value: '6 Pilares', label: 'Arquitetura Estratégica' },
-          { value: '27', label: 'Cartões STAR Interativos' },
+          { value: '28', label: 'Cartões STAR Interativos' },
           { value: '2', label: 'Idiomas (EN e PT)' }
         ]
       }

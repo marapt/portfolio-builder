@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Pilares Estratégicos', value: '6 Pilares de Topo' },
     { label: 'Domínios Operacionais', value: '2 Domínios Especializados' },
-    { label: 'Cartões Interativos', value: '27 Cartões STAR' },
+    { label: 'Cartões Interativos', value: '28 Cartões STAR' },
   ],
 };
 
@@ -693,6 +693,26 @@ export const operationalDomains = [
             'Reduzi o custo por tarefa de $5 para $1.67, cumpri o orçamento de $10M e reduzi a integração de parceiros de 8 para 2 semanas.',
         },
         l6Principle: 'A escala atinge-se direcionando o talento humano para onde ele gera o maior valor estratégico.',
+      },
+      {
+        id: 'ai-portfolio-building',
+        title: 'Construção de Portfólio com IA',
+        subtitle:
+          'Transformação de marcos de carreira, estruturas de governação operacional e artefactos de entrega num sistema de portfólio bilingue e interativo.',
+        tag: 'Arquitetura de Portfólio',
+        metrics: '28 Cartões STAR · 6 Pilares Estratégicos · 100% Paridade EN/PT',
+        star: {
+          situation:
+            'Em vez de apresentar um currículo estático ou uma lista tradicional de cargos anteriores, era necessário tratar a liderança operacional como um produto de software interativo para públicos executivos e técnicos.',
+          task:
+            'Conceber uma experiência de portfólio interativa e bilingue que transformasse marcos de carreira, governação operacional e artefactos de entrega em níveis intuitivos e navegáveis.',
+          action:
+            'Estruturei uma arquitetura Bento multinível organizando 28 cartões STAR em pilares estratégicos e domínios especializados com controlos de rotação, expansão e pesquisa. Integrei vistas dinâmicas incluindo uma linha de tempo de carreira contínua de 20 marcos e painéis Scrum resilientes, garantindo sincronização rigorosa entre inglês (en.js) e português (pt.js).',
+          result:
+            'Entrega de um sistema de portfólio em produção que combina métricas de impacto imediatas com blocos estruturados de Situação, Tarefa, Ação, Resultado e Aprendizagem, permitindo analisar sínteses executivas ou aprofundar detalhes de execução a pedido.',
+        },
+        l6Principle:
+          'Um portfólio sólido deve ir além de listar conquistas passadas: deve demonstrar como estruturamos informação, desenhamos caminhos de decisão claros e transformamos trabalho operacional complexo numa experiência intuitiva.',
       },
     ],
   },
