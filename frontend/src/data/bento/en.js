@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Strategic Pillars', value: '5 Top Pillars' },
     { label: 'Operational Domains', value: '3 Specialized Domains' },
-    { label: 'Interactive Cards', value: '26 STAR Cards' },
+    { label: 'Interactive Cards', value: '27 STAR Cards' },
   ],
 };
 
@@ -669,6 +669,27 @@ export const operationalDomains = [
           result: 'Eliminated overnight idle delays and achieved sub-30-minute response SLAs for critical blockers.',
         },
         l6Principle: 'Follow-the-Sun operations require standardized asynchronous handoff artifacts to prevent context loss.',
+      },
+      {
+        id: 'tr-thailand-crisis',
+        title: 'Death of King of Thailand',
+        subtitle:
+          'Activating an emergency cross-functional task force and 3-option decision matrix to protect brand integrity during a sudden national crisis.',
+        tag: 'Crisis Response & Governance',
+        proofAnchor: 'microsoft',
+        metrics: '48-Hour Live Deployment · 0 PR/Legal Fallout · 200+ Mkts Playbook',
+        star: {
+          situation:
+            'While leading global Marcom operations for Microsoft Stores (2016–2020), a sudden geopolitical and cultural crisis hit when the King of Thailand passed away. Our live Thailand e-commerce storefront was actively running promotional retail campaigns, which posed an immediate, high-stakes risk. Continuing standard commercial sales during a period of profound national mourning risked severe brand backlash, cultural insensitivity, and potential non-compliance with rapidly evolving local Thai mourning regulations, which carried serious PR and geopolitical consequences for Microsoft globally.',
+          task:
+            'As soon as our regional Thailand team alerted me, I took ownership of the real-time incident response by activating an emergency cross-functional command protocol to align Legal, PR, Design, Engineering, and Regional leadership on a compliant, culturally respectful, and technically executable path forward within hours, not days.',
+          action:
+            'Mobilized a Cross-Functional Rapid-Response Task Force: Immediately convened regional Thailand POCs alongside global Design, Legal, PR, Web Development, Engineering, and senior executive leads to assess regulatory requirements, brand risk, and technical feasibility in real time.\n\nStructured a 3-Option Executive Decision Matrix (Explicit Trade-Offs): Rather than escalating an open-ended problem, I drove the task force to synthesize three concrete options with clear risk/revenue trade-offs for leadership sign-off:\n\nOption 1 - Status Quo + PR Standby: Lowest engineering lift, but unacceptably high brand, cultural, and legal compliance risk.\n\nOption 2 - Full Storefront Take-Down: Eliminated cultural/legal risk immediately, but caused total commercial blackout and poor user experience for customers needing essential support/downloads.\n\nOption 3 - Culturally Adaptive Redesign + Legal Moratorium Standby (Recommended): Rapidly strip promotional banners and shift the storefront to a subdued, monochrome/respectful palette expressing national condolences, preserving essential store functionality while keeping an on-call Engineering/Legal team ready to execute an instant shutoff if the Thai government imposed a mandatory commercial moratorium.\n\nExecuted Rapid Deployment & Real-Time Monitoring: Secured executive alignment on Option 3, fast-tracked design localization and QA with our Thai regional team to ensure cultural and linguistic nuance, and deployed the redesigned storefront live within 48 hours while maintaining a 24/7 standby trigger for regulatory changes.',
+          result:
+            'Zero Brand, PR, or Legal Fallout: Launched the culturally respectful storefront within 48 hours with zero negative press, zero regulatory violations, and uninterrupted core store availability.\n\nInstitutionalized a Geopolitical Crisis Playbook: Turned our 3-option decision framework and cross-functional rapid-response protocol into a reusable CoE Geopolitical & Cultural Rapid-Response Playbook. Shared best-practices learned with all other Regional teams giving regional teams across 200+ markets a pre-aligned escalation path for sudden national emergencies, regulatory shifts, or natural disasters.',
+        },
+        l6Principle:
+          'In sudden geopolitical or cultural crises, real-time incident response succeeds by replacing open-ended escalations with a structured decision matrix of explicit risk-revenue trade-offs, pairing culturally respectful adaptation with continuous standby triggers to protect global brand integrity.',
       },
     ],
   },
