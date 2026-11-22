@@ -15,9 +15,7 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     'optimization-innovation',
   ];
 
-  const expectedDomainIds = [
-    'eval-feedback',
-  ];
+  const expectedDomainIds = [];
 
   test('Tier 1 has exactly 7 Top Strategic Pillars in EN and PT', () => {
     expect(topPillarsEN).toHaveLength(7);
@@ -25,6 +23,21 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
 
     expect(topPillarsEN.map((p) => p.id)).toEqual(expectedPillarIds);
     expect(topPillarsPT.map((p) => p.id)).toEqual(expectedPillarIds);
+  });
+
+  test('Total interactive STAR cards across all 7 Top Strategic Pillars equals 26 in EN and PT', () => {
+    const countCards = (pillars) =>
+      pillars.reduce((total, p) => {
+        const core = p.subCards?.length || 0;
+        const extended = (p.extendedSubsections || []).reduce(
+          (acc, sub) => acc + (sub.subCards?.length || 0),
+          0
+        );
+        return total + core + extended;
+      }, 0);
+
+    expect(countCards(topPillarsEN)).toBe(26);
+    expect(countCards(topPillarsPT)).toBe(26);
   });
 
   test('Each Top Pillar has valid subcards with complete STAR data', () => {
@@ -230,9 +243,9 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     ]);
   });
 
-  test('Tier 2 has exactly 1 Specialized Operational Domain in EN and PT', () => {
-    expect(operationalDomainsEN).toHaveLength(1);
-    expect(operationalDomainsPT).toHaveLength(1);
+  test('Tier 2 has 0 Specialized Operational Domains in EN and PT', () => {
+    expect(operationalDomainsEN).toHaveLength(0);
+    expect(operationalDomainsPT).toHaveLength(0);
 
     expect(operationalDomainsEN.map((d) => d.id)).toEqual(expectedDomainIds);
     expect(operationalDomainsPT.map((d) => d.id)).toEqual(expectedDomainIds);

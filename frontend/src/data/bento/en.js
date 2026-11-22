@@ -9,8 +9,8 @@ export const bentoHero = {
     'Showcasing my experience in enterprise governance models, extended workforce vendor management and field-tested processes through structured STAR cards.\n\nMy mission: Help make products, services and solutions accessible to everyone and everywhere.',
   quickStats: [
     { label: 'Strategic Pillars', value: '7 Top Pillars' },
-    { label: 'Operational Domains', value: '1 Specialized Domain' },
-    { label: 'Interactive Cards', value: '28 STAR Cards' },
+    { label: 'Enterprise Frameworks', value: 'STAR Architecture' },
+    { label: 'Interactive Cards', value: '26 STAR Cards' },
   ],
 };
 
@@ -650,7 +650,7 @@ export const topPillars = [
         subtitle:
           'Turning career milestones, operational governance frameworks, and live delivery artifacts into an interactive, bilingual portfolio experience.',
         tag: 'Portfolio Systems & Architecture',
-        metrics: '28 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
+        metrics: '26 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
         externalLink: {
           url: '/how-i-built-this',
           label: 'How I Built This Portfolio (AI Showcase)',
@@ -662,7 +662,7 @@ export const topPillars = [
           task:
             'Architect an interactive, bilingual portfolio experience that turns career milestones, operational governance frameworks, and live delivery artifacts into scannable, inspectable tiers.',
           action:
-            'Structured a multi-tier Bento box framework organizing 28 STAR cards across 7 strategic pillars and specialized operational domains with flip, expand, and search controls. Connected narrative career progression with dynamic views such as a 20-milestone continuous career timeline and live Scrum delivery boards while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
+            'Structured a multi-tier Bento box framework organizing 26 STAR cards across 7 strategic pillars with flip, expand, and search controls. Connected narrative career progression with dynamic views such as a 20-milestone continuous career timeline and live Scrum delivery boards while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
           result:
             'Delivered a production-grade portfolio system pairing concise headline metrics with scannable Situation, Task, Action, Result, and Learning blocks, enabling visitors to inspect high-level outcomes first or dive into full execution details on demand.',
         },
@@ -699,42 +699,4 @@ export const topPillars = [
   },
 ];
 
-export const operationalDomains = [
-  {
-    id: 'eval-feedback',
-    number: '01',
-    title: 'Evaluation and Feedback at Scale',
-    shortName: 'Eval & Feedback',
-    icon: 'CheckSquare',
-    description: 'Human-in-the-loop validation, rater calibration, and high-throughput feedback loops.',
-    subCards: [
-      {
-        id: 'ef-1',
-        title: 'Risk-Tiered Sampling & Rater Calibration',
-        subtitle: 'Focusing human expertise on ambiguous edge cases and high-hallucination slices.',
-        metrics: '3x Volume Scaled · 98% Inter-Rater Reliability',
-        star: {
-          situation: 'Blanket manual dual-rater evaluation was unsustainable under surging model outputs.',
-          task: 'Design an adaptive evaluation architecture that scales with volume without budget spikes.',
-          action: 'Instituted stratified sampling based on uncertainty scores, directing human raters to low-confidence bands.',
-          result: 'Maintained 98% inter-rater calibration while reducing total manual evaluation burden by 60%.',
-        },
-        l6Principle: 'Human evaluation should be reserved for high-leverage ambiguity and strategic edge cases.',
-      },
-      {
-        id: 'co-1',
-        title: 'Digital Asset Supply Chain Automation',
-        subtitle: 'Linking engineering repositories with global Marcom content systems.',
-        tag: 'Content Supply Chain',
-        metrics: '67% Cycle Cut · Automated API Handoffs',
-        star: {
-          situation: 'Manual handoffs between code repositories and content CMS created severe release lag.',
-          task: 'Automate content extraction, validation, and delivery pipeline.',
-          action: 'Architected automated GitHub webhook pipeline feeding content into localization engines.',
-          result: 'Cut turnaround time from 15 to 5 business days with zero manual file copying errors.',
-        },
-        l6Principle: 'Automating content plumbing lets creative teams focus purely on messaging quality.',
-      },
-    ],
-  },
-];
+export const operationalDomains = [];

@@ -9,8 +9,8 @@ export const bentoHero = {
     'Demonstração da minha experiência em modelos de governação empresarial, gestão de fornecedores externos e processos comprovados através de cartões estruturados STAR.\n\nA minha missão: Ajudar a tornar produtos, serviços e soluções acessíveis a todos e em qualquer lugar.',
   quickStats: [
     { label: 'Pilares Estratégicos', value: '7 Pilares de Topo' },
-    { label: 'Domínios Operacionais', value: '1 Domínio Especializado' },
-    { label: 'Cartões Interativos', value: '28 Cartões STAR' },
+    { label: 'Estruturas Empresariais', value: 'Arquitetura STAR' },
+    { label: 'Cartões Interativos', value: '26 Cartões STAR' },
   ],
 };
 
@@ -650,7 +650,7 @@ export const topPillars = [
         subtitle:
           'Transformação de marcos de carreira, estruturas de governação operacional e artefactos de entrega num sistema de portfólio bilingue e interativo.',
         tag: 'Arquitetura de Portfólio',
-        metrics: '28 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
+        metrics: '26 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
         externalLink: {
           url: '/how-i-built-this',
           label: 'Como Construí Este Portfólio (Jornada IA)',
@@ -662,7 +662,7 @@ export const topPillars = [
           task:
             'Conceber uma experiência de portfólio interativa e bilingue que transformasse marcos de carreira, governação operacional e artefactos de entrega em níveis intuitivos e navegáveis.',
           action:
-            'Estruturei uma arquitetura Bento multinível organizando 28 cartões STAR em 7 pilares estratégicos e domínios especializados com controlos de rotação, expansão e pesquisa. Integrei vistas dinâmicas incluindo uma linha de tempo de carreira contínua de 20 marcos e painéis Scrum resilientes, garantindo sincronização rigorosa entre inglês (en.js) e português (pt.js).',
+            'Estruturei uma arquitetura Bento multinível organizando 26 cartões STAR em 7 pilares estratégicos com controlos de rotação, expansão e pesquisa. Integrei vistas dinâmicas incluindo uma linha de tempo de carreira contínua de 20 marcos e painéis Scrum resilientes, garantindo sincronização rigorosa entre inglês (en.js) e português (pt.js).',
           result:
             'Entrega de um sistema de portfólio em produção que combina métricas de impacto imediatas com blocos estruturados de Situação, Tarefa, Ação, Resultado e Aprendizagem, permitindo analisar sínteses executivas ou aprofundar detalhes de execução a pedido.',
         },
@@ -699,42 +699,4 @@ export const topPillars = [
   },
 ];
 
-export const operationalDomains = [
-  {
-    id: 'eval-feedback',
-    number: '01',
-    title: 'Avaliação e Feedback em Escala',
-    shortName: 'Avaliação & Feedback',
-    icon: 'CheckSquare',
-    description: 'Validação humana integrada, calibração de avaliadores e fluxos contínuos de resposta.',
-    subCards: [
-      {
-        id: 'ef-1',
-        title: 'Amostragem Baseada em Risco e Calibração de Avaliadores',
-        subtitle: 'Concentrar o conhecimento humano nos casos complexos e na verificação de alucinações de modelos.',
-        metrics: 'Volume Multiplicado por 3 · 98% Consistência',
-        star: {
-          situation: 'A avaliação manual constante tornou-se insustentável com o aumento acelerado do volume de dados.',
-          task: 'Conceber um sistema adaptável que responda ao crescimento sem disparar os custos operacionais.',
-          action: 'Implementei uma amostragem que direciona avaliadores humanos apenas para conteúdos com menor índice de confiança algorítmica.',
-          result: 'Mantive 98% de consistência entre avaliadores e reduzi o esforço manual total em 60%.',
-        },
-        l6Principle: 'A avaliação humana deve ser reservada para decisões complexas e de elevado impacto.',
-      },
-      {
-        id: 'co-1',
-        title: 'Automação da Cadeia de Conteúdos Digitais',
-        subtitle: 'Ligação entre repositórios de engenharia e sistemas globais de marketing.',
-        tag: 'Cadeia de Conteúdos',
-        metrics: 'Ciclos Reduzidos em 67% · APIs Automatizadas',
-        star: {
-          situation: 'A passagem manual de ficheiros entre repositórios de código e o CMS causava atrasos consideráveis.',
-          task: 'Automatizar o fluxo de extração, validação e entrega de conteúdos.',
-          action: 'Concebi uma solução com webhooks do GitHub integrada com os motores de tradução.',
-          result: 'Reduzi o tempo de entrega de 15 para 5 dias úteis sem erros manuais.',
-        },
-        l6Principle: 'Automatizar os processos técnicos liberta as equipas criativas para se focarem na mensagem.',
-      },
-    ],
-  },
-];
+export const operationalDomains = [];

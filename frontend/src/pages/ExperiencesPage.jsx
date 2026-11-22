@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BentoHeroPillars from '../components/bento/BentoHeroPillars';
-import BentoDomainGrid from '../components/bento/BentoDomainGrid';
 import BentoCardModal from '../components/bento/BentoCardModal';
 import {
   bentoHero as bentoHeroEN,
@@ -58,11 +57,6 @@ const ExperiencesPage = () => {
         (subSec.subCards || []).forEach((c) => {
           newFlippedState[c.id] = true;
         });
-      });
-    });
-    domains.forEach((d) => {
-      (d.subCards || []).forEach((c) => {
-        newFlippedState[c.id] = true;
       });
     });
     setFlippedCards(newFlippedState);
@@ -150,19 +144,6 @@ const ExperiencesPage = () => {
             pillars={pillars}
             flippedCards={flippedCards}
             onToggleFlip={handleToggleFlip}
-            onExpand={(card, color, domainTitle) =>
-              setExpandedCard({ ...card, color, domainTitle })
-            }
-          />
-
-          {/* TIER 2: 10 SPECIALIZED OPERATIONAL DOMAINS */}
-          <BentoDomainGrid
-            domains={domains}
-            flippedCards={flippedCards}
-            onToggleFlip={handleToggleFlip}
-            onFlipAll={handleFlipAll}
-            onResetAll={handleResetAll}
-            allFlipped={allFlipped}
             onExpand={(card, color, domainTitle) =>
               setExpandedCard({ ...card, color, domainTitle })
             }
