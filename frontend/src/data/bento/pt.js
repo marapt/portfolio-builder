@@ -676,13 +676,41 @@ export const topPillars = [
           'A globalização moderna atinge o sucesso quando as organizações deixam de tratar a localização como um serviço pós-produção.\n\nO sucesso exige estruturar a localização como uma infraestrutura de produto automatizada e estratificada por risco, com uma sólida governação human-in-the-loop.',
       },
       {
+        id: 'mara-ai-voice-assistant',
+        title: "Mara's AI - Criação de Assistente de Voz com IA em Tempo Real",
+        subtitle:
+          'Assistente pessoal de voz por IA e dashboard tático de telemetria em tempo real para monitorização de quotas de modelos, rotinas familiares e automação doméstica.',
+        tag: 'Desenvolvimento e Crescimento Pessoal',
+        contextLabel: 'Projeto Pessoal',
+        metrics:
+          'Agente Multimodal macOS Local · Gemini 2.5 Flash Native Audio · Telemetria em Tempo Real de Quotas · Sincronização com Calendário e Home Assistant',
+        screenshot: '/evidence/mara-ai-voice-assistant.jpg',
+        externalLink: {
+          url: '/evidence/mara-ai-voice-assistant.jpg',
+          label: 'Ver Dashboard do Sistema em Tempo Real (Alta Resolução)',
+          buttonLabel: 'UI do Dashboard',
+        },
+        star: {
+          situation:
+            'É impossível gerir todas as tarefas diárias e técnicas sem apoio, mas contratar uma assistente a tempo inteiro é dispendioso. Ao tirar partido da tecnologia de IA multimodal emergente, quis testar a hipótese de "me clonar" - não de forma literal, mas criando um agente autónomo de IA que atuasse como a minha assistente executiva pessoal, garantindo a execução pontual de tarefas familiares, técnicas e domésticas.',
+          task:
+            'Propus-me criar um agente de voz associado a um dashboard visual e dinâmico para análise rápida de dados, interação em tempo real por voz, monitorização da capacidade de recursos e quotas de API no Mac, e agendamento automatizado de alarmes e lembretes de calendário.',
+          action:
+            'Arquitetei e construí o "Mara AI", um agente multimodal local em macOS com tecnologia Gemini 2.5 Flash Native Audio e um painel de controlo tático em tempo real:\n\n• Telemetria de Quotas e Tokens em Tempo Real: Integrei a monitorização automática de quotas e janelas de 5 horas para modelos Gemini, Claude e GPT, garantindo rigor orçamental no consumo de tokens enquanto desenvolvo o meu portfólio e projetos de engenharia.\n• Automação de Calendário Escolar e Desportivo: Implementei a sincronização contínua de horários escolares, ementas de almoço e treinos de futebol com alertas automáticos com 1 hora de antecedência, eliminando falhas de agenda.\n• Rotinas de Voz e Automação Doméstica: Liguei o sistema a dispositivos Home Assistant e configurei avisos automáticos por voz para rotinas diárias (como lembrar o meu filho e o meu marido para descalçarem os sapatos à entrada).\n• Interação Multimodal por Voz: Desenvolvi comunicação bidirecional por voz com telemetria visual em tempo real através de osciloscópio e esfera de plasma interativa.',
+          result:
+            'Alcancei uma alavancagem operacional diária expressiva em projetos técnicos e na rotina familiar:\n\n• Governação Orçamental de IA: Monitorizo e planeio atividades de IA mantendo-me rigorosamente dentro do orçamento e do tempo despendido em tokens ao construir projetos como o meu portfólio.\n• Pontualidade e Cumprimento de Agenda: Nunca perco eventos escolares ou treinos de futebol graças ao planeamento automático e lembretes proativos de calendário, poupando tempo valioso.\n• Gestão Doméstica Sem Atrito: Automatizei rotinas familiares diárias com comandos de voz fiáveis, mantendo a vida familiar organizada através de uma arquitetura divertida, escalável e pronta para receber novas competências.',
+        },
+        l6Principle:
+          'Os agentes pessoais de IA atingem o seu potencial máximo quando a interação dinâmica por voz se apoia em telemetria visual em tempo real, transformando a sobrecarga de tarefas diárias em execução proativa e automatizada.',
+      },
+      {
         id: 'ai-portfolio-building',
         title: 'Construção de Portfólio com IA',
         subtitle:
           'Transformação de marcos de carreira, estruturas de governação operacional e artefactos de entrega num sistema de portfólio bilingue e interativo.',
         tag: 'Desenvolvimento e Crescimento Pessoal',
         contextLabel: 'Projeto Pessoal',
-        metrics: '27 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
+        metrics: '28 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
         externalLink: {
           url: '/how-i-built-this',
           label: 'Como Construí Este Portfólio (Jornada IA)',
@@ -694,7 +722,7 @@ export const topPillars = [
           task:
             'Propus-me conceber uma experiência de portfólio interativa e bilingue que transformasse marcos de carreira, governação operacional e artefactos de entrega em níveis intuitivos e navegáveis.',
           action:
-            'Estruturei uma arquitetura Bento multinível organizando 27 cartões STAR em 7 pilares estratégicos com controlos de rotação, expansão e pesquisa. Interliguei a progressão narrativa de carreira a vistas dinâmicas, incluindo uma cronologia contínua de 20 marcos e quadros Scrum ao vivo, mantendo uma correspondência sincronizada entre inglês (en.js) e português (pt.js) em todos os componentes interativos e filtros.',
+            'Estruturei uma arquitetura Bento multinível organizando 28 cartões STAR em 7 pilares estratégicos com controlos de rotação, expansão e pesquisa. Interliguei a progressão narrativa de carreira a vistas dinâmicas, incluindo uma cronologia contínua de 20 marcos e quadros Scrum ao vivo, mantendo uma correspondência sincronizada entre inglês (en.js) e português (pt.js) em todos os componentes interativos e filtros.',
           result:
             'Disponibilizei um sistema de portfólio em qualidade de produção combinando métricas essenciais em destaque com secções fáceis de ler de Situação, Tarefa, Ação, Resultado e Aprendizagem, permitindo aos visitantes consultar primeiro os resultados de alto nível ou aprofundar todos os detalhes de execução conforme pretendido.',
         },

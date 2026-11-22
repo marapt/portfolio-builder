@@ -212,6 +212,34 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
             </div>
           )}
 
+          {/* Screenshot Artifact Preview */}
+          {card.screenshot && (
+            <div className="rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950/80 p-2.5 shadow-xl">
+              <div className="flex items-center justify-between px-3 py-1.5 text-xs text-slate-400 font-mono border-b border-slate-800/80 mb-2">
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-slate-300 font-semibold tracking-wide">Live Tactical Dashboard Telemetry</span>
+                </span>
+                <a
+                  href={card.screenshot}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1 text-[11px]"
+                >
+                  <span>Open Full Resolution</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+              <a href={card.screenshot} target="_blank" rel="noopener noreferrer" className="block cursor-zoom-in">
+                <img
+                  src={card.screenshot}
+                  alt={card.title}
+                  className="w-full h-auto rounded-xl border border-slate-800 object-cover max-h-[420px] hover:opacity-95 transition-opacity"
+                />
+              </a>
+            </div>
+          )}
+
           {card.l6Principle && (
             <div className="p-4 sm:p-5 rounded-2xl bg-indigo-950/40 border border-indigo-500/40 flex items-start gap-3 shadow-sm">
               <Lightbulb className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
@@ -246,7 +274,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
             )}
 
             {card.externalLink && (
-              card.externalLink.url.startsWith('/') ? (
+              card.externalLink.url.startsWith('/') && !card.externalLink.url.match(/\.(jpg|jpeg|png|gif|webp|pdf)$/i) ? (
                 <Link
                   to={card.externalLink.url}
                   onClick={onClose}
@@ -262,7 +290,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
                   rel="noopener noreferrer"
                   className="text-xs sm:text-sm text-cyan-300 hover:text-cyan-200 font-semibold inline-flex items-center gap-1.5 transition-colors bg-cyan-950/60 hover:bg-cyan-900/70 px-3.5 py-2 rounded-xl border border-cyan-500/40 shadow-sm"
                 >
-                  <span>{card.externalLink.label || 'Official Launch Article'}</span>
+                  <span>{card.externalLink.label || 'View Full Screen Artifact'}</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               )

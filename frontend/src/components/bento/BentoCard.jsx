@@ -236,7 +236,7 @@ export const BentoCard = ({
 
               <div className="flex items-center gap-2">
                 {card.externalLink && (
-                  card.externalLink.url.startsWith('/') ? (
+                  card.externalLink.url.startsWith('/') && !card.externalLink.url.match(/\.(jpg|jpeg|png|gif|webp|pdf)$/i) ? (
                     <Link
                       to={card.externalLink.url}
                       onClick={(e) => e.stopPropagation()}
@@ -255,7 +255,7 @@ export const BentoCard = ({
                       className="text-cyan-400 hover:text-cyan-300 flex items-center gap-1 font-semibold transition-colors text-xs bg-cyan-950/50 hover:bg-cyan-900/60 px-2 py-1 rounded-md border border-cyan-500/30"
                       title={card.externalLink.label || 'View Link'}
                     >
-                      <span>Article</span>
+                      <span>{card.externalLink.buttonLabel || 'Preview'}</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   )
@@ -385,7 +385,7 @@ export const BentoCard = ({
           {/* Footer Action */}
           <div className="pt-3 mt-3 border-t border-slate-700/80 flex items-center justify-between text-[11px]">
             {card.externalLink ? (
-              card.externalLink.url.startsWith('/') ? (
+              card.externalLink.url.startsWith('/') && !card.externalLink.url.match(/\.(jpg|jpeg|png|gif|webp|pdf)$/i) ? (
                 <Link
                   to={card.externalLink.url}
                   onClick={(e) => e.stopPropagation()}
@@ -400,9 +400,9 @@ export const BentoCard = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-1"
+                  className="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-1 bg-cyan-950/50 hover:bg-cyan-900/60 px-2 py-0.5 rounded border border-cyan-500/30"
                 >
-                  <span>Official Article</span>
+                  <span>{card.externalLink.buttonLabel || 'Preview UI'}</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               )

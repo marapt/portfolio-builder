@@ -676,13 +676,41 @@ export const topPillars = [
           'Modern globalization succeeds when organizations stop treating localization as a post-production translation service.\n\nInstead, enterprise teams must architect localization as an automated, risk-stratified product infrastructure with clear human-in-the-loop governance.',
       },
       {
+        id: 'mara-ai-voice-assistant',
+        title: "Mara's AI - AI LIVE VOICE ASSISTANT CREATION",
+        subtitle:
+          'Personal multimodal AI voice assistant and live tactical telemetry dashboard for real-time model quota tracking, family schedules, and smart home automation.',
+        tag: 'Personal Growth & Development',
+        contextLabel: 'Personal Project',
+        metrics:
+          'Local macOS Multimodal Agent · Gemini 2.5 Flash Native Audio · Live Quota Telemetry · Home Assistant & Calendar Sync',
+        screenshot: '/evidence/mara-ai-voice-assistant.jpg',
+        externalLink: {
+          url: '/evidence/mara-ai-voice-assistant.jpg',
+          label: 'View Live System Dashboard (Full Resolution)',
+          buttonLabel: 'Dashboard UI',
+        },
+        star: {
+          situation:
+            'It is impossible to manage all daily and technical tasks without help, but hiring a full-time assistant is expensive. By leveraging emerging multimodal AI technology, I wanted to test the hypothesis of whether I could "clone myself" - not literally, but by creating an autonomous AI agent to serve as my personal executive assistant, keeping all family, technical, and household tasks strictly executed on time.',
+          task:
+            'I was tasked with creating a voice agent paired with a visual, dynamic dashboard for quick data analysis, real-time voice interaction, Mac resource and API quota monitoring, and automated scheduling for family alarms and calendar reminders.',
+          action:
+            'I architected and built "Mara AI", a local macOS multimodal live agent powered by Gemini 2.5 Flash Native Audio with a real-time tactical command dashboard:\n\n• Live Model Quota & Token Telemetry: Integrated automated tracking across Gemini, Claude, and GPT model quotas and 5-hour windows, ensuring strict token budget discipline while building my AI portfolio and engineering projects.\n• Family & School Calendar Automation: Built continuous sync for school schedules, lunch menus, and soccer practices with automated 1-hour alerts, eliminating missed events without manual calendar checking.\n• Smart Home & Household Voice Routine: Connected Home Assistant device controls and configured automated voice triggers for household routines (such as reminding my son and husband to take off their shoes at the door).\n• Multimodal Voice Interaction: Engineered responsive bidirectional voice communication with live visual waveform and plasma sphere status telemetry.',
+          result:
+            'I achieved significant daily operational leverage across technical projects and family life:\n\n• Token & Spend Governance: I continuously monitor and plan AI activities to stay strictly on track with budget and token spend while developing projects like my portfolio.\n• Flawless Schedule Adherence: I never miss school or soccer events through automated calendar planning and proactive voice reminders, saving valuable planning time.\n• Frictionless Household Operations: Automated daily household reminders with high-accuracy voice execution, keeping family life organized with a fun, scalable agent architecture ready for additional skill plugins.',
+        },
+        l6Principle:
+          'Personal AI agents achieve maximum leverage when dynamic voice interaction is grounded in real-time visual telemetry, turning everyday task overload into proactive, automated execution.',
+      },
+      {
         id: 'ai-portfolio-building',
         title: 'AI Portfolio Building',
         subtitle:
           'Turning career milestones, operational governance frameworks, and live delivery artifacts into an interactive, bilingual portfolio experience.',
         tag: 'Personal Growth & Development',
         contextLabel: 'Personal Project',
-        metrics: '27 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
+        metrics: '28 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
         externalLink: {
           url: '/how-i-built-this',
           label: 'How I Built This Portfolio (AI Showcase)',
@@ -694,7 +722,7 @@ export const topPillars = [
           task:
             'I was tasked with architecting an interactive, bilingual portfolio experience that turned my career milestones, operational governance frameworks, and live delivery artifacts into scannable, inspectable tiers.',
           action:
-            'I structured a multi-tier Bento box framework organizing 27 STAR cards across 7 strategic pillars with flip, expand, and search controls. I connected narrative career progression with dynamic views, including a 20-milestone continuous career timeline and live Scrum delivery boards, while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
+            'I structured a multi-tier Bento box framework organizing 28 STAR cards across 7 strategic pillars with flip, expand, and search controls. Connected narrative career progression with dynamic views, including a 20-milestone continuous career timeline and live Scrum delivery boards, while maintaining synchronized English (en.js) and Portuguese (pt.js) parity across all interactive components and filters.',
           result:
             'I delivered a production-grade portfolio system pairing concise headline metrics with scannable Situation, Task, Action, Result, and Learning blocks, enabling visitors to inspect high-level outcomes first or dive into full execution details on demand.',
         },
