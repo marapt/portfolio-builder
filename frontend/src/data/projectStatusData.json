@@ -1,0 +1,155 @@
+{
+  "project": "Mara Martins Product Development Hub",
+  "project_key": "PJM",
+  "sprint": {
+    "name": "Sprint 3: Agentic QA & Governance",
+    "goal": "Integrating autonomous auditing fleet, security hardening, and live governance orchestration.",
+    "id": 3
+  },
+  "tasks": [
+    {
+      "key": "PJM-72",
+      "summary": "LATAM Entry: Locale Selection & GTM Sizing (es-419 vs pt-BR)",
+      "description": "Evaluate market opportunity, localization complexity, and commercial ROI between Latin American Spanish (es-419) and Brazilian Portuguese (pt-BR).",
+      "status": "To Do",
+      "priority": "High",
+      "labels": ["Strategy", "GTM", "LATAM"]
+    },
+    {
+      "key": "PJM-74",
+      "summary": "LATAM Entry: Legal & Data Privacy Compliance Review",
+      "description": "Audit regulatory requirements and regional consumer data privacy laws across target Latin American jurisdictions.",
+      "status": "To Do",
+      "priority": "Medium",
+      "labels": ["Legal", "Compliance", "LATAM"]
+    },
+    {
+      "key": "PJM-75",
+      "summary": "APAC Vision: Executive Market Scope & Localization Strategy",
+      "description": "Define business vision, enterprise partnership model, and executive engagement strategy for Asia-Pacific technology hubs (Taipei, Tokyo, Singapore).",
+      "status": "To Do",
+      "priority": "Medium",
+      "labels": ["Strategy", "APAC"]
+    },
+    {
+      "key": "PJM-76",
+      "summary": "APAC Vision: CJK Rendering & Font Stack Engineering",
+      "description": "Validate typography, font loading performance, and bidirectional/multilingual UI rendering for Traditional Chinese and Japanese storefronts.",
+      "status": "To Do",
+      "priority": "Low",
+      "labels": ["Engineering", "Typography", "APAC"]
+    },
+    {
+      "key": "PJM-88",
+      "summary": "Automated Agent QA Suite Construction",
+      "description": "Construct automated multi-agent quality gates for continuous linguistic validation, security scanning, and content verification.",
+      "status": "In Progress",
+      "priority": "High",
+      "labels": ["AI_Agents", "Governance", "Sprint_3"]
+    },
+    {
+      "key": "PJM-47",
+      "summary": "Security Hardening: Marcus & Read-Only Gates",
+      "description": "Harden backend API routes, enforce strict CSP headers, and implement read-only sandbox controls for agent interactions.",
+      "status": "In Progress",
+      "priority": "High",
+      "labels": ["Security", "Infrastructure", "Sprint_3"]
+    },
+    {
+      "key": "PJM-90",
+      "summary": "Annotation Mode UX with Smart Navigation",
+      "description": "Implement interactive reviewer annotation mode with floating audit widgets, quick dismiss, and localized tooltip navigation.",
+      "status": "In Progress",
+      "priority": "Medium",
+      "labels": ["UX", "Frontend", "Sprint_3"]
+    },
+    {
+      "key": "PJM-92",
+      "summary": "Multimodal Bento Box Experiences & STAR Frameworks",
+      "description": "Architect 5 strategic pillars and 26 interactive STAR cards highlighting L6 operational leadership, vendor governance, and GTM execution.",
+      "status": "Done",
+      "priority": "High",
+      "labels": ["Portfolio", "Bento", "Sprint_3"]
+    },
+    {
+      "key": "PJM-44",
+      "summary": "UX: High-Fidelity Interactive Scrum Dashboard",
+      "description": "Design and build an interactive agile Scrum dashboard displaying active sprint metrics, delivery progress, and detailed issue drawers.",
+      "status": "Done",
+      "priority": "High",
+      "labels": ["UX", "Meta-Build"]
+    },
+    {
+      "key": "PJM-46",
+      "summary": "Infrastructure: Secure API Proxy Implementation",
+      "description": "Architect a robust backend proxy layer for external service integrations with rate limiting and API key verification.",
+      "status": "Done",
+      "priority": "High",
+      "labels": ["Infrastructure", "Security"]
+    },
+    {
+      "key": "PJM-61",
+      "summary": "Governance Dashboard: Pre-Approval Queue & Merge Gates",
+      "description": "Deploy automated governance approval workflows and audit trails for production release gates.",
+      "status": "Done",
+      "priority": "Medium",
+      "labels": ["Governance", "Release"]
+    },
+    {
+      "key": "PJM-67",
+      "summary": "Localize GTM Dashboard & Inject Global Navigation",
+      "description": "Complete bilingual localization of GTM rollout dashboard, hreflang tags, and cross-locale navigation links.",
+      "status": "Done",
+      "priority": "High",
+      "labels": ["Localization", "GTM"]
+    },
+    {
+      "key": "PJM-68",
+      "summary": "Resolve LQA pt-PT Legal Term Mapping & Imprint",
+      "description": "Standardize European Portuguese terminology for statutory disclosures and verify compliant Imprint page.",
+      "status": "Done",
+      "priority": "Medium",
+      "labels": ["LQA", "Legal"]
+    },
+    {
+      "key": "PJM-69",
+      "summary": "GDPR Compliance Audit for EU Expansion",
+      "description": "Conduct thorough GDPR and ePrivacy directive compliance assessment for European market readiness.",
+      "status": "Done",
+      "priority": "High",
+      "labels": ["Compliance", "Legal"]
+    },
+    {
+      "key": "PJM-83",
+      "summary": "Linguistic Overhaul & Legal AI Agent Disclaimers",
+      "description": "Refine cross-locale translations based on Tiago audit feedback and add transparent AI disclosure statements.",
+      "status": "Done",
+      "priority": "Medium",
+      "labels": ["Localization", "AI_Ethics"]
+    },
+    {
+      "key": "PJM-21",
+      "summary": "Professional Brand Identity Definition",
+      "description": "Define Midnight Slate design tokens, typography scale, and unified branding system.",
+      "status": "Done",
+      "priority": "Medium",
+      "labels": ["Design", "Brand"]
+    },
+    {
+      "key": "PJM-10",
+      "summary": "Strategy: Site Information Architecture & Localization Hierarchy",
+      "description": "Establish routing structure, locale switching rules, and canonical sitemaps across en-US and pt-PT.",
+      "status": "Done",
+      "priority": "High",
+      "labels": ["Strategy", "IA"]
+    },
+    {
+      "key": "PJM-7",
+      "summary": "Confirm SSL & HTTPS (SiteGround)",
+      "description": "Enforce strict HTTPS redirect, HSTS headers, and SSL certificate installation on host.",
+      "status": "Done",
+      "priority": "High",
+      "labels": ["Infrastructure", "Security"]
+    }
+  ]
+}

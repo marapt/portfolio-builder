@@ -48,34 +48,40 @@ const ScrumBoardPage = () => {
       let finalSprints = sprintList.status === 'fulfilled' ? sprintList.value : [];
       let finalRoadmap = roadmap.status === 'fulfilled' ? roadmap.value : null;
 
-      // 2. Fallback logic: If Jira fails but local roadmap (project_status.json) is available
-      if (!finalBoard && finalRoadmap) {
-        console.warn("Jira Live Sync failed. Falling back to local project status.");
-        setIsLocalFallback(true);
-        
-        // Transform local tasks into board-like structure
-        finalBoard = {
-          issues: (finalRoadmap.tasks || []).map(task => ({
-            key: task.key,
-            summary: task.summary,
-            status: task.status,
-            priority: task.priority || 'Medium',
-            updated: new Date().toISOString(),
-            description: task.description || 'Synced from local project status.',
-            labels: task.labels || [],
-            url: '#'
-          })),
-          last_synced: new Date().toISOString()
-        };
+      // 2. Fallback logic: If Jira fails or backend is unreachable, fall back to local project status
+      if (!finalBoard) {
+        if (!finalRoadmap && typeof jiraService.getFallbackRoadmap === 'function') {
+          finalRoadmap = jiraService.getFallbackRoadmap();
+        }
 
-        if (finalRoadmap.sprint) {
-          finalSprints = [{
-            id: finalRoadmap.sprint.id,
-            name: finalRoadmap.sprint.name,
-            state: 'active',
-            goal: finalRoadmap.sprint.goal,
-            endDate: null
-          }];
+        if (finalRoadmap) {
+          console.warn("Jira Live Sync unavailable. Falling back to local project status.");
+          setIsLocalFallback(true);
+          
+          // Transform local tasks into board-like structure
+          finalBoard = {
+            issues: (finalRoadmap.tasks || []).map(task => ({
+              key: task.key,
+              summary: task.summary,
+              status: task.status,
+              priority: task.priority || 'Medium',
+              updated: new Date().toISOString(),
+              description: task.description || 'Synced from local project status.',
+              labels: task.labels || [],
+              url: '#'
+            })),
+            last_synced: new Date().toISOString()
+          };
+
+          if (finalRoadmap.sprint) {
+            finalSprints = [{
+              id: finalRoadmap.sprint.id,
+              name: finalRoadmap.sprint.name,
+              state: 'active',
+              goal: finalRoadmap.sprint.goal,
+              endDate: null
+            }];
+          }
         }
       }
 

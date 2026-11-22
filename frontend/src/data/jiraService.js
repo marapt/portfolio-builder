@@ -7,6 +7,8 @@
  * HARDENING: We use a shared internal API key to authorize these requests.
  */
 
+import fallbackRoadmap from './projectStatusData.json';
+
 const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:8000').replace(/\/$/, '');
 const JIRA_BOARD_ID = process.env.REACT_APP_JIRA_BOARD_ID || '1';
 const INTERNAL_API_KEY = process.env.REACT_APP_INTERNAL_API_KEY;
@@ -37,7 +39,13 @@ export const jiraService = {
     return fetchWithAuth(url);
   },
   fetchRoadmap: async () => {
-    const url = `${API_BASE_URL}/api/project/roadmap`;
-    return fetchWithAuth(url);
-  }
+    try {
+      const url = `${API_BASE_URL}/api/project/roadmap`;
+      return await fetchWithAuth(url);
+    } catch (err) {
+      console.warn('Backend roadmap unavailable, using local project status fallback:', err.message);
+      return fallbackRoadmap;
+    }
+  },
+  getFallbackRoadmap: () => fallbackRoadmap
 };
