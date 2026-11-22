@@ -633,27 +633,4 @@ export const operationalDomains = [
       },
     ],
   },
-  {
-    id: 'strategy-enablement',
-    number: '06',
-    title: 'Strategy Enablement and Vendor Management',
-    shortName: 'Strategy Enablement',
-    icon: 'TrendingUp',
-    description: 'Supplier strategy, governance, compliance, budget controls and cross-operational tooling.',
-    subCards: [
-      {
-        id: 'se-1',
-        title: 'MSP Partner Program & Strategic Sourcing',
-        subtitle: 'Scaling specialized agency bandwidth while maintaining strict enterprise governance.',
-        metrics: '20-Vendor Partner Ecosystem · 100% Capacity Scale',
-        star: {
-          situation: 'Core internal team capacity was constrained during massive COVID-19 remote work expansion.',
-          task: 'Build a scalable Managed Service Provider (MSP) ecosystem without growing internal FTE headcount.',
-          action: 'Architected a hybrid operational model onboarding vetted MSP partners with standardized SLAs and security controls.',
-          result: 'Successfully scaled throughput by 300% to support global campaign rollouts across 17 international markets.',
-        },
-        l6Principle: 'Strategic vendor ecosystems act as elastic multipliers for core engineering and product teams.',
-      },
-    ],
-  },
 ];

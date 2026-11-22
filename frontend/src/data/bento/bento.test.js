@@ -16,7 +16,6 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     'eval-feedback',
     'ai-data-training',
     'testing-response',
-    'strategy-enablement',
   ];
 
   test('Tier 1 has exactly 4 Top Strategic Pillars in EN and PT', () => {
@@ -197,9 +196,9 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Tier 2 has exactly 4 Specialized Operational Domains in EN and PT', () => {
-    expect(operationalDomainsEN).toHaveLength(4);
-    expect(operationalDomainsPT).toHaveLength(4);
+  test('Tier 2 has exactly 3 Specialized Operational Domains in EN and PT', () => {
+    expect(operationalDomainsEN).toHaveLength(3);
+    expect(operationalDomainsPT).toHaveLength(3);
 
     expect(operationalDomainsEN.map((d) => d.id)).toEqual(expectedDomainIds);
     expect(operationalDomainsPT.map((d) => d.id)).toEqual(expectedDomainIds);

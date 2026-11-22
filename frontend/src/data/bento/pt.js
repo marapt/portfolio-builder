@@ -633,27 +633,4 @@ export const operationalDomains = [
       },
     ],
   },
-  {
-    id: 'strategy-enablement',
-    number: '06',
-    title: 'Habilitação Estratégica e Gestão de Fornecedores',
-    shortName: 'Habilitação Estratégica',
-    icon: 'TrendingUp',
-    description: 'Estratégia de fornecedores, governação, conformidade, controlo orçamental e ferramentas operacionais transversais.',
-    subCards: [
-      {
-        id: 'se-1',
-        title: 'Programa de Parceiros Especializados e Capacidade Elástica',
-        subtitle: 'Aumentar a capacidade através de agências parceiras mantendo controlos rigorosos.',
-        metrics: '20 Parceiros Homologados · Capacidade 3x Superior',
-        star: {
-          situation: 'A capacidade interna ficou sobrecarregada durante a rápida expansão digital motivada pelo teletrabalho.',
-          task: 'Criar um modelo elástico de parceiros externos sem necessidade de novas contratações internas permanentes.',
-          action: 'Estruturei um ecossistema operacional híbrido integrando parceiros qualificados com SLAs padronizados.',
-          result: 'Tripliquei a capacidade de entrega e apoiei campanhas globais em 17 mercados em simultâneo.',
-        },
-        l6Principle: 'Fornecedores estratégicos devem funcionar como uma extensão flexível das equipas internas.',
-      },
-    ],
-  },
 ];
