@@ -662,6 +662,11 @@ export const topPillars = [
           'Turning career milestones, operational governance frameworks, and live delivery artifacts into an interactive, bilingual portfolio experience.',
         tag: 'Portfolio Systems & Architecture',
         metrics: '29 STAR Cards · 7 Strategic Pillars · 100% EN/PT Parity',
+        externalLink: {
+          url: '/how-i-built-this',
+          label: 'How I Built This Portfolio (AI Showcase)',
+          buttonLabel: 'How I Built This',
+        },
         star: {
           situation:
             'Rather than presenting a static resume or a flat list of past roles, the portfolio needed to treat operational leadership like an interactive product system for executive and technical audiences.',

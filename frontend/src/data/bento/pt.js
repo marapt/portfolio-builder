@@ -662,6 +662,11 @@ export const topPillars = [
           'Transformação de marcos de carreira, estruturas de governação operacional e artefactos de entrega num sistema de portfólio bilingue e interativo.',
         tag: 'Arquitetura de Portfólio',
         metrics: '29 Cartões STAR · 7 Pilares Estratégicos · 100% Paridade EN/PT',
+        externalLink: {
+          url: '/how-i-built-this',
+          label: 'Como Construí Este Portfólio (Jornada IA)',
+          buttonLabel: 'Como Foi Construído',
+        },
         star: {
           situation:
             'Em vez de apresentar um currículo estático ou uma lista tradicional de cargos anteriores, era necessário tratar a liderança operacional como um produto de software interativo para públicos executivos e técnicos.',

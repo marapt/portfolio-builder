@@ -241,7 +241,7 @@ export const BentoCard = ({
                       className="text-cyan-400 hover:text-cyan-300 flex items-center gap-1 font-semibold transition-colors text-xs bg-cyan-950/50 hover:bg-cyan-900/60 px-2 py-1 rounded-md border border-cyan-500/30"
                       title={card.externalLink.label || 'View Case Study'}
                     >
-                      <span>Case Study</span>
+                      <span>{card.externalLink.buttonLabel || 'Case Study'}</span>
                       <ExternalLink className="w-3 h-3" />
                     </Link>
                   ) : (
@@ -389,7 +389,7 @@ export const BentoCard = ({
                   onClick={(e) => e.stopPropagation()}
                   className="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-1 bg-cyan-950/50 hover:bg-cyan-900/60 px-2 py-0.5 rounded border border-cyan-500/30"
                 >
-                  <span>Interactive Case Study</span>
+                  <span>{card.externalLink.buttonLabel || 'Interactive Case Study'}</span>
                   <ExternalLink className="w-3 h-3" />
                 </Link>
               ) : (
