@@ -173,7 +173,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
               <span className="font-bold text-amber-400 uppercase tracking-wide text-xs block mb-1">
                 Situation
               </span>
-              <p className="text-sm text-slate-200 leading-relaxed font-normal">
+              <p className="text-sm text-slate-200 leading-relaxed font-normal whitespace-pre-line">
                 {star.situation}
               </p>
             </div>
@@ -184,7 +184,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
               <span className="font-bold text-sky-400 uppercase tracking-wide text-xs block mb-1">
                 Task
               </span>
-              <p className="text-sm text-slate-200 leading-relaxed font-normal">
+              <p className="text-sm text-slate-200 leading-relaxed font-normal whitespace-pre-line">
                 {star.task}
               </p>
             </div>
@@ -195,7 +195,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
               <span className="font-bold text-indigo-400 uppercase tracking-wide text-xs block mb-1">
                 Action
               </span>
-              <p className="text-sm text-slate-200 leading-relaxed font-normal">
+              <p className="text-sm text-slate-200 leading-relaxed font-normal whitespace-pre-line">
                 {star.action}
               </p>
             </div>
@@ -206,7 +206,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
               <span className="font-bold text-emerald-400 uppercase tracking-wide text-xs block mb-1">
                 Result
               </span>
-              <p className="text-sm sm:text-base text-white font-medium leading-relaxed">
+              <p className="text-sm sm:text-base text-white font-medium leading-relaxed whitespace-pre-line">
                 {star.result}
               </p>
             </div>
@@ -219,7 +219,7 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
                 <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-300 block mb-0.5">
                   Learning
                 </span>
-                <p className="text-xs sm:text-sm text-indigo-100 italic leading-relaxed">
+                <p className="text-xs sm:text-sm text-indigo-100 italic leading-relaxed whitespace-pre-line">
                   {card.l6Principle}
                 </p>
               </div>

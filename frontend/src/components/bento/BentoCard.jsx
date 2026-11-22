@@ -334,7 +334,7 @@ export const BentoCard = ({
                   <span className="font-bold text-amber-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Situation
                   </span>
-                  <p className="text-slate-300 leading-relaxed line-clamp-3">{star.situation}</p>
+                  <p className="text-slate-300 leading-relaxed line-clamp-3 whitespace-pre-line">{star.situation}</p>
                 </div>
               )}
 
@@ -343,7 +343,7 @@ export const BentoCard = ({
                   <span className="font-bold text-sky-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Task
                   </span>
-                  <p className="text-slate-300 leading-relaxed line-clamp-3">{star.task}</p>
+                  <p className="text-slate-300 leading-relaxed line-clamp-3 whitespace-pre-line">{star.task}</p>
                 </div>
               )}
 
@@ -352,7 +352,7 @@ export const BentoCard = ({
                   <span className="font-bold text-indigo-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Action
                   </span>
-                  <p className="text-slate-300 leading-relaxed line-clamp-3">{star.action}</p>
+                  <p className="text-slate-300 leading-relaxed line-clamp-3 whitespace-pre-line">{star.action}</p>
                 </div>
               )}
 
@@ -361,7 +361,7 @@ export const BentoCard = ({
                   <span className="font-bold text-emerald-400 uppercase tracking-wide block text-[10px] mb-0.5">
                     Result
                   </span>
-                  <p className="text-slate-200 font-medium leading-relaxed line-clamp-3">{star.result}</p>
+                  <p className="text-slate-200 font-medium leading-relaxed line-clamp-3 whitespace-pre-line">{star.result}</p>
                 </div>
               )}
             </div>
