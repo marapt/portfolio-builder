@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 const Portfolio = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language.split('-')[0];
+  const isPt = lang === 'pt';
 
   const getLocalizedProject = (project) => {
     const details = projectDetails[project.id];
@@ -149,8 +150,42 @@ const Portfolio = () => {
           })}
         </div>
 
-        {/* Technical Architecture Deep-Dive Feature */}
-        <div className="mt-16">
+        {/* Showcase Feature Cards */}
+        <div className="mt-16 space-y-8">
+          {/* How I Built This Portfolio Leveraging AI Feature */}
+          <Link to="/how-i-built-this" className="block group">
+            <div className="bg-gradient-to-br from-[#0c1322] via-[#101b33] to-[#0c1322] border border-indigo-900/60 rounded-[3rem] p-8 lg:p-12 shadow-xl hover:shadow-2xl hover:border-indigo-500/50 transition-all duration-500 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px] pointer-events-none -z-0"></div>
+              <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div className="lg:col-span-8">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <span className="px-3.5 py-1 rounded-full bg-purple-950/80 border border-purple-700/60 text-purple-300 text-[10px] font-black uppercase tracking-wider">
+                      {isPt ? 'Engenharia com IA' : 'AI-Leveraged Engineering'}
+                    </span>
+                    <span className="text-slate-400 text-xs font-semibold">
+                      Antigravity · VS Code · GitHub · Crowdin · Vercel
+                    </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-4 group-hover:text-purple-300 transition-colors">
+                    {isPt ? 'Como Construí Este Portfólio Alavancando IA' : 'How I Built This Portfolio Leveraging AI'}
+                  </h3>
+                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+                    {isPt
+                      ? 'Demonstração de como concebi o meu portfólio executivo e aprendi a programar utilizando agentes de IA autónomos, ambientes de desenvolvimento modernos, pipelines de localização CAT e implementação contínua na nuvem.'
+                      : 'A visual walkthrough showcasing how I architected my executive portfolio and learned to code by leveraging autonomous AI agents, modern IDE tooling, CAT localization pipelines, and cloud CI/CD.'}
+                  </p>
+                </div>
+                <div className="lg:col-span-4 flex lg:justify-end">
+                  <span className="inline-flex items-center gap-3 bg-purple-600 group-hover:bg-purple-500 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-wider text-xs shadow-xl shadow-purple-600/20 transition-all group-hover:translate-x-1">
+                    {isPt ? 'Explorar Jornada' : 'Explore Build Journey'}
+                    <ArrowRight size={16} />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* Technical Architecture Deep-Dive Feature */}
           <Link to="/case-studies/training-nmt" className="block group">
             <div className="bg-[#0b101e] border border-slate-800 rounded-[3rem] p-8 lg:p-12 shadow-xl hover:shadow-2xl hover:border-indigo-500/50 transition-all duration-500 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none -z-0"></div>

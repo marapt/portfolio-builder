@@ -391,6 +391,90 @@ This project is open source and available on GitHub as part of my commitment to 
       'Automation'
     ],
     gallery: []
+  },
+
+  'my-portfolio': {
+    id: 'my-portfolio',
+    title: 'My Portfolio',
+    description: 'How I built my personal portfolio leveraging AI and modern engineering skills while learning to code with Antigravity, VS Code, GitHub, Crowdin, and Vercel.',
+    heroImage: '/assets/build-journey/vercel-deployment-cloud.jpg',
+    tags: ['AI-Leveraged', 'React', 'Localization', 'Vercel', 'Antigravity'],
+    duration: 'Multi-Phase Delivery',
+    teamSize: 'Solo (AI-Augmented)',
+    scope: 'Full-Stack Portfolio & Bento Architecture',
+    liveUrl: 'https://maramartins.com',
+    caseStudyUrl: '/how-i-built-this',
+    caseStudyLabel: 'How I Built This (AI Journey)',
+    caseStudyBannerTitle: 'How I Built This Portfolio Leveraging AI',
+    caseStudyBannerSubtitle: 'Visual walkthrough of my engineering journey: Google Antigravity, VS Code, GitHub, Crowdin CAT localization, and Vercel CI/CD.',
+    overview: `This project showcases how I designed and engineered my executive portfolio from the ground up, leveraging AI pair-programming and modern web technologies while learning to code.
+
+From orchestrating rapid AI iterations in Google Antigravity and VS Code to establishing professional Git branch workflows, Crowdin CAT localization pipelines, and automated Vercel CI/CD deployments, this portfolio demonstrates hands-on technical execution alongside L6 operational program leadership.`,
+    challenges: [
+      'Translating deep executive leadership and operational governance into an engaging, interactive digital experience',
+      'Learning modern React, Tailwind CSS, and full-stack workflows while maintaining enterprise coding standards',
+      'Maintaining continuous bilingual parity (English and Portuguese) across 27 STAR cards and complex case studies',
+      'Establishing automated CI/CD pipelines with zero downtime and resilient offline fallbacks'
+    ],
+    solutions: [
+      'Leveraged Google Antigravity and VS Code as autonomous AI engineering partners to accelerate development and master code patterns',
+      'Architected a 6-Pillar Bento Grid and interactive STAR framework modal system for granular leadership proof points',
+      'Implemented Crowdin CAT localization workflow and i18next integration for native EN/PT switching',
+      'Configured GitHub pull-request workflows with automated test validation and Vercel cloud deployments'
+    ],
+    results: [
+      { value: '100%', label: 'AI-Leveraged Build' },
+      { value: '6 Top Pillars', label: 'Strategic Architecture' },
+      { value: '27', label: 'Interactive STAR Cards' },
+      { value: '2', label: 'Locales (EN & PT)' }
+    ],
+    locales: {
+      pt: {
+        title: 'O Meu Portfólio',
+        description: 'Como construí o meu portfólio pessoal alavancando IA e competências de engenharia enquanto aprendi a programar com Antigravity, VS Code, GitHub, Crowdin e Vercel.',
+        overview: `Este projeto demonstra como concebi e construí o meu portfólio executivo de raiz, combinando programação assistida por IA e tecnologias web modernas enquanto aprendia a programar.
+
+Desde a orquestração de iterações rápidas com o Google Antigravity e o VS Code até ao estabelecimento de fluxos Git profissionais, canais de localização CAT com o Crowdin e implementações contínuas no Vercel, este portfólio reflete a execução técnica aliada à liderança de programas de nível L6.`,
+        caseStudyLabel: 'Como Construí Este Portfólio (Jornada IA)',
+        caseStudyBannerTitle: 'Como Construí Este Portfólio Alavancando IA',
+        caseStudyBannerSubtitle: 'Visita guiada visual pela minha jornada de engenharia: Google Antigravity, VS Code, GitHub, localização CAT no Crowdin e CI/CD na Vercel.',
+        challenges: [
+          'Traduzir liderança executiva e governação operacional numa experiência digital interativa e envolvente',
+          'Aprender React, Tailwind CSS e fluxos de programação modernos mantendo padrões de qualidade de nível empresarial',
+          'Garantir paridade bilingue contínua (Inglês e Português) em 27 cartões STAR e estudos de caso',
+          'Configurar processos de CI/CD automatizados com zero tempo de inatividade e suporte offline resiliente'
+        ],
+        solutions: [
+          'Utilização do Google Antigravity e VS Code como parceiros de IA para acelerar o desenvolvimento e compreender padrões de código',
+          'Desenho de uma estrutura Bento de 6 Pilares e sistema modal de cartões STAR para evidências granulares de liderança',
+          'Implementação de fluxo de localização CAT com Crowdin e i18next para transição nativa EN/PT',
+          'Configuração de fluxos GitHub com testes automatizados e implementações na cloud através da Vercel'
+        ],
+        results: [
+          { value: '100%', label: 'Desenvolvido com IA' },
+          { value: '6 Pilares', label: 'Arquitetura Estratégica' },
+          { value: '27', label: 'Cartões STAR Interativos' },
+          { value: '2', label: 'Idiomas (EN e PT)' }
+        ]
+      }
+    },
+    technologies: [
+      'Google Antigravity',
+      'VS Code',
+      'GitHub',
+      'Crowdin CAT',
+      'Vercel',
+      'React',
+      'Tailwind CSS',
+      'i18next'
+    ],
+    gallery: [
+      { url: '/assets/build-journey/vscode-editor-diff.jpg', caption: 'VS Code & Antigravity AI Pair Programming' },
+      { url: '/assets/build-journey/antigravity-ide-preview.jpg', caption: 'Antigravity IDE & Live Preview Environment' },
+      { url: '/assets/build-journey/github-repo-pipeline.jpg', caption: 'GitHub Version Control & CI/CD Pipelines' },
+      { url: '/assets/build-journey/crowdin-cat-localization.png', caption: 'Crowdin CAT Tool & Bilingual Parity' },
+      { url: '/assets/build-journey/vercel-deployment-cloud.jpg', caption: 'Vercel Production Deployment & Domain Hosting' }
+    ]
   }
 };
 
@@ -404,6 +488,16 @@ export const projects = [
     tags: ['AI', 'Translation', 'Accessibility'],
     link: 'https://aipolyglots.com/',
     featured: true,
+    hasDetailPage: true
+  },
+  {
+    id: 'my-portfolio',
+    title: 'My Portfolio',
+    description: 'How I built my own personal portfolio leveraging AI and modern engineering skills while learning to code with Antigravity, VS Code, GitHub, Crowdin, and Vercel.',
+    image: '/assets/build-journey/vercel-deployment-cloud.jpg',
+    tags: ['AI-Leveraged', 'React', 'Vercel', 'Crowdin'],
+    link: '/how-i-built-this',
+    featured: false,
     hasDetailPage: true
   },
   {

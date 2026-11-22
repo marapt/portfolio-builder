@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Calendar, Users, Globe, CheckCircle, Github, Sparkles } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, Users, Globe, CheckCircle, Github, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
@@ -110,7 +110,7 @@ const ProjectDetail = () => {
                 {project.caseStudyUrl && (
                   <Link to={project.caseStudyUrl}>
                     <Button className="bg-indigo-600 hover:bg-black text-white px-8 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-100 flex items-center gap-2 transform hover:-translate-y-1">
-                      NMT Architecture Case Study
+                      {project.caseStudyLabel || 'NMT Architecture Case Study'}
                       <ExternalLink size={14} />
                     </Button>
                   </Link>
@@ -154,6 +154,29 @@ const ProjectDetail = () => {
                 <p className="text-xl text-gray-500 font-medium leading-relaxed italic border-l-4 border-indigo-100 pl-8">
                    {project.overview}
                 </p>
+
+                {project.caseStudyUrl && (
+                  <div className="mt-8 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-indigo-700/40 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                      <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-[10px] font-black uppercase tracking-wider mb-3 border border-indigo-400/30">
+                        <Sparkles size={12} />
+                        <span>{lang === 'pt' ? 'Jornada Visual Interativa' : 'Interactive Visual Journey'}</span>
+                      </div>
+                      <h3 className="text-2xl font-black text-white tracking-tight">
+                        {project.caseStudyBannerTitle || (lang === 'pt' ? 'Como Construí Este Portfólio Alavancando IA' : 'How I Built This Portfolio Leveraging AI')}
+                      </h3>
+                      <p className="text-slate-300 text-sm mt-2 max-w-xl leading-relaxed">
+                        {project.caseStudyBannerSubtitle || (lang === 'pt' ? 'Visita passo a passo pela minha arquitetura de engenharia com capturas de ecrã do Antigravity, VS Code, GitHub, Crowdin e Vercel.' : 'Step-by-step visual walkthrough of my engineering architecture with screenshots of Antigravity, VS Code, GitHub, Crowdin, and Vercel.')}
+                      </p>
+                    </div>
+                    <Link to={project.caseStudyUrl} className="shrink-0">
+                      <Button className="bg-indigo-600 hover:bg-indigo-500 text-white font-black px-8 py-6 rounded-2xl text-xs uppercase tracking-wider shadow-xl shadow-indigo-600/30 flex items-center gap-2">
+                        <span>{project.caseStudyLabel || (lang === 'pt' ? 'Explorar Jornada' : 'Explore Journey')}</span>
+                        <ArrowRight size={14} />
+                      </Button>
+                    </Link>
+                  </div>
+                )}
               </div>
            </div>
         </div>
