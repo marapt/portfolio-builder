@@ -92,7 +92,7 @@ export const topPillars = [
     number: '02',
     title: 'Desempenho de Fornecedores e Governação de Parceiros',
     subtitle:
-      'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.). Parceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento.',
+      'Liderar a estratégia de fornecedores, avaliações de desempenho (MBRs/QBRs) e responsabilização por KPIs/SLAs em parceiros globais (ex.: Lionbridge, Moravia, Accenture, PwC, etc.). Parceria com Procurement, Legal e Finanças da Microsoft/Block em RFPs, ciclos de contratação, acordos-quadro, governação de SOWs e fluxos de pagamento. Padronização de modelos de gestão de fornecedores, cadernos de encargos (SOWs), tabelas de preços contratuais, fluxos de admissão e cumprimento de SLAs/SLOs.',
     icon: 'Users',
     color: 'cyan',
     subCards: [
@@ -117,42 +117,30 @@ export const topPillars = [
         l6Principle:
           'Articule telemetria objetiva e reencaminhamento de contingência imediato com alinhamento executivo estruturado e salvaguardas contratuais no SOW para que fornecedores em dificuldade recuperem com métricas sólidas sem paralisar lançamentos globais.',
       },
-    ],
-    extendedSubsections: [
       {
-        id: 'supplier-partner',
-        number: '07',
-        title: 'Governação de Fornecedores e Parceiros',
-        shortName: 'Governação de Parceiros',
-        icon: 'ShieldCheck',
-        description:
-          'Padronização de modelos de gestão de fornecedores, cadernos de encargos (SOWs), tabelas de preços contratuais, fluxos de admissão e cumprimento de SLAs/SLOs.',
-        subCards: [
-          {
-            id: 'spg-rfp-governance',
-            title:
-              'Microsoft - RFP Global de Fornecedores, Governação de MSAs/SOWs e Cumprimento de SLAs',
-            subtitle:
-              'Liderança do primeiro RFP em mais de 5 anos, padronização de MSAs/SOWs e implementação de scorecards MBR/QBR.',
-            tag: 'Governação de Fornecedores',
-            proofAnchor: 'microsoft',
-            metrics: '10% Poupança Anual · 15% Eficiência · 95% Limiar de Qualidade',
-            star: {
-              situation:
-                'Na Microsoft (MSCOM em mais de 40 mercados internacionais), a organização não realizava um RFP competitivo para parceiros de globalização há mais de cinco anos, deixando o fornecimento, a responsabilização por SLAs, os ciclos de compras e a governação de SOWs estagnados face à evolução do negócio; de forma similar, em programas multimercado na Block (15+ mercados), acordos fragmentados e validações manuais de faturas causavam atrito de custos e disparidade de desempenho.',
-              task:
-                'Liderar um RFP competitivo e reestruturar a governação de parceiros em conjunto com Procurement, Legal e Finanças: expandir as opções de fornecedores qualificados, validar o desempenho dos parceiros em funções, padronizar MSAs/SOWs e scorecards de KPIs/SLAs (acompanhados via MBRs/QBRs) e otimizar fluxos de contratação e pagamento sem perturbar a entrega global.',
-              action:
-                'Propus e liderei um RFP estruturado com Procurement e equipas transversais para avaliar maturidade de mercado, inovação e continuidade; orientei a avaliação do comité para aprovar novos fornecedores enquanto validava os parceiros incumbentes; e colaborei com Procurement, Legal e Finanças para padronizar níveis de MSAs/SOWs, métricas de SLA, reuniões periódicas MBR/QBR e fluxos claros de encomendas e liquidação.',
-              result:
-                'Ampliei o leque de fornecedores aprovados em Procurement enquanto validei a capacidade dos parceiros incumbentes, reforcei a responsabilização contínua de SLAs através de MBRs/QBRs e MSAs/SOWs uniformizados, e aumentei a velocidade operacional e a previsibilidade de custos com cláusulas inovadoras, incluindo 10% de poupança anual, 15% de otimização operacional e limiares de qualidade de 95% em mercados Tier 1-Tier 2 e 90% no restante globo.',
-            },
-            l6Principle:
-              'RFPs competitivos periódicos, MSAs/SOWs transparentes e uma disciplina rigorosa de MBRs/QBRs salvaguardam a continuidade do negócio enquanto impulsionam inovação e poder negocial.',
-          },
-        ],
+        id: 'spg-rfp-governance',
+        title:
+          'Microsoft - RFP Global de Fornecedores, Governação de MSAs/SOWs e Cumprimento de SLAs',
+        subtitle:
+          'Liderança do primeiro RFP em mais de 5 anos, padronização de MSAs/SOWs e implementação de scorecards MBR/QBR.',
+        tag: 'Governação de Fornecedores',
+        proofAnchor: 'microsoft',
+        metrics: '10% Poupança Anual · 15% Eficiência · 95% Limiar de Qualidade',
+        star: {
+          situation:
+            'Na Microsoft (MSCOM em mais de 40 mercados internacionais), a organização não realizava um RFP competitivo para parceiros de globalização há mais de cinco anos, deixando o fornecimento, a responsabilização por SLAs, os ciclos de compras e a governação de SOWs estagnados face à evolução do negócio; de forma similar, em programas multimercado na Block (15+ mercados), acordos fragmentados e validações manuais de faturas causavam atrito de custos e disparidade de desempenho.',
+          task:
+            'Liderar um RFP competitivo e reestruturar a governação de parceiros em conjunto com Procurement, Legal e Finanças: expandir as opções de fornecedores qualificados, validar o desempenho dos parceiros em funções, padronizar MSAs/SOWs e scorecards de KPIs/SLAs (acompanhados via MBRs/QBRs) e otimizar fluxos de contratação e pagamento sem perturbar a entrega global.',
+          action:
+            'Propus e liderei um RFP estruturado com Procurement e equipas transversais para avaliar maturidade de mercado, inovação e continuidade; orientei a avaliação do comité para aprovar novos fornecedores enquanto validava os parceiros incumbentes; e colaborei com Procurement, Legal e Finanças para padronizar níveis de MSAs/SOWs, métricas de SLA, reuniões periódicas MBR/QBR e fluxos claros de encomendas e liquidação.',
+          result:
+            'Ampliei o leque de fornecedores aprovados em Procurement enquanto validei a capacidade dos parceiros incumbentes, reforcei a responsabilização contínua de SLAs através de MBRs/QBRs e MSAs/SOWs uniformizados, e aumentei a velocidade operacional e a previsibilidade de custos com cláusulas inovadoras, incluindo 10% de poupança anual, 15% de otimização operacional e limiares de qualidade de 95% em mercados Tier 1-Tier 2 e 90% no restante globo.',
+        },
+        l6Principle:
+          'RFPs competitivos periódicos, MSAs/SOWs transparentes e uma disciplina rigorosa de MBRs/QBRs salvaguardam a continuidade do negócio enquanto impulsionam inovação e poder negocial.',
       },
     ],
+    extendedSubsections: [],
   },
   {
     id: 'operations-change',

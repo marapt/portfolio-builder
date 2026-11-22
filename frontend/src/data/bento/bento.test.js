@@ -102,21 +102,22 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Pillar 02 (Supplier Performance) has an extended subsection for Domain 07 in EN and PT', () => {
+  test('Pillar 02 (Supplier Performance) has core subcards for Block and Microsoft supplier governance in EN and PT', () => {
     const spPillarEN = topPillarsEN.find((p) => p.id === 'supplier-performance');
     const spPillarPT = topPillarsPT.find((p) => p.id === 'supplier-performance');
 
-    expect(spPillarEN.extendedSubsections).toBeDefined();
-    expect(spPillarPT.extendedSubsections).toBeDefined();
-    expect(spPillarEN.extendedSubsections[0].id).toBe('supplier-partner');
-    expect(spPillarPT.extendedSubsections[0].id).toBe('supplier-partner');
+    expect(spPillarEN.subCards).toHaveLength(2);
+    expect(spPillarPT.subCards).toHaveLength(2);
+    expect(spPillarEN.subCards.map((c) => c.id)).toContain('sp-3');
+    expect(spPillarEN.subCards.map((c) => c.id)).toContain('spg-rfp-governance');
+    expect(spPillarPT.subCards.map((c) => c.id)).toContain('sp-3');
+    expect(spPillarPT.subCards.map((c) => c.id)).toContain('spg-rfp-governance');
 
-    expect(spPillarEN.extendedSubsections[0].subCards.length).toBeGreaterThan(0);
-    expect(spPillarPT.extendedSubsections[0].subCards.length).toBe(
-      spPillarEN.extendedSubsections[0].subCards.length
-    );
+    // Domain 07 subsection merged into main pillar
+    expect(spPillarEN.extendedSubsections || []).toHaveLength(0);
+    expect(spPillarPT.extendedSubsections || []).toHaveLength(0);
 
-    spPillarEN.extendedSubsections[0].subCards.forEach((card) => {
+    spPillarEN.subCards.forEach((card) => {
       expect(card.id).toBeTruthy();
       expect(card.title).toBeTruthy();
       expect(card.star).toBeDefined();
