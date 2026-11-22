@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Strategic Pillars', value: '4 Top Pillars' },
     { label: 'Operational Domains', value: '4 Categories' },
-    { label: 'Interactive Cards', value: '26 STAR Cards' },
+    { label: 'Interactive Cards', value: '24 STAR Cards' },
   ],
 };
 
@@ -96,44 +96,6 @@ export const topPillars = [
     icon: 'Users',
     color: 'cyan',
     subCards: [
-      {
-        id: 'sp-1',
-        title: 'Global Tier-1 Vendor Ecosystem Consolidation',
-        subtitle: 'Restructuring decentralized regional suppliers into a high-performance partner pool.',
-        tag: 'xWS Architecture',
-        metrics: '30% Cost Cut · 15+ Mkts Unified',
-        proofAnchor: 'block',
-        star: {
-          situation:
-            'At Block across 15+ international markets, 8 regional teams independently contracted local agencies on ad-hoc Time-and-Materials SOWs, creating redundant management overhead and 14-day turnaround delays.',
-          task:
-            'Consolidate supplier ecosystem, automate PO/invoice reconciliation, and establish predictable quality SLAs across multi-million-dollar annual spend.',
-          action:
-            'Partnered with Global Procurement to run an RFP consolidating fragmented agencies into a concentrated Tier-1 vendor pool; implemented 24/7 Follow-the-Sun workflows; restructured contracts to outcome-based deliverables.',
-          result:
-            'Delivered a verified 30% reduction in turnaround time and operational spend, enforced 100% feature parity at launch, and created a repeatable vendor capacity model.',
-        },
-        l6Principle: 'Consolidating vendor leverage unlocks economies of scale and enforces accountable contractual SLAs.',
-      },
-      {
-        id: 'sp-2',
-        title: 'Outcome-Based MSA & SOW Architecture',
-        subtitle: 'Building annual productivity gains and quality thresholds into supplier contracts.',
-        tag: 'Commercial Strategy',
-        metrics: '5-10% YoY Compounding Savings · 95% SLA',
-        proofAnchor: 'linkedin',
-        star: {
-          situation:
-            'Legacy vendor master service agreements (MSAs) lacked efficiency incentives, resulting in steadily escalating annual translation and operations costs as product surface expanded.',
-          task:
-            'Restructure supplier commercial models to align vendor profitability with technical innovation and workflow automation.',
-          action:
-            'Authored performance-based SOWs incorporating compounding 5–10% YoY productivity/AI savings; embedded strict 95% quality and turnaround SLAs tied to contractual credits; instituted quarterly business reviews (QBRs).',
-          result:
-            'Captured sustained double-digit cost efficiency while elevating vendor partner NPS and establishing strategic co-innovation partnerships.',
-        },
-        l6Principle: 'Contracts should reward vendors for implementing AI and tooling efficiencies rather than billing hourly friction.',
-      },
       {
         id: 'sp-3',
         title: "Block - Vendor Contractual Breach - Failure to Deliver per SLA's",

@@ -10,7 +10,7 @@ export const bentoHero = {
   quickStats: [
     { label: 'Pilares Estratégicos', value: '4 Pilares de Topo' },
     { label: 'Domínios Operacionais', value: '4 Categorias' },
-    { label: 'Cartões Interativos', value: '26 Cartões STAR' },
+    { label: 'Cartões Interativos', value: '24 Cartões STAR' },
   ],
 };
 
@@ -96,44 +96,6 @@ export const topPillars = [
     icon: 'Users',
     color: 'cyan',
     subCards: [
-      {
-        id: 'sp-1',
-        title: 'Consolidação Global do Ecossistema de Fornecedores Tier-1',
-        subtitle: 'Reestruturação de fornecedores regionais descentralizados num ecossistema de alto desempenho.',
-        tag: 'Arquitetura xWS',
-        metrics: 'Redução de 30% em Custos · 15+ Mercados Unificados',
-        proofAnchor: 'block',
-        star: {
-          situation:
-            'No Block em mais de 15 mercados internacionais, 8 equipas regionais contratavam agências locais de forma independente em modelos de tempo e materiais, gerando sobrecustos e atrasos de 14 dias.',
-          task:
-            'Consolidar a rede de fornecedores, automatizar a reconciliação financeira e estabelecer SLAs previsíveis.',
-          action:
-            'Em parceria com Compras Globais, liderei um RFP para consolidar agências dispersas num grupo concentrado Tier-1; implementei fluxos 24/7 Follow-the-Sun; converti contratos em modelos baseados em resultados.',
-          result:
-            'Conquistei uma redução verificada de 30% no tempo de entrega e despesas operacionais, assegurando 100% de paridade no lançamento.',
-        },
-        l6Principle: 'Consolidar o poder de compra desbloqueia economias de escala e impõe SLAs contratuais claros.',
-      },
-      {
-        id: 'sp-2',
-        title: 'Arquitetura de Contratos MSA e SOW Baseados em Resultados',
-        subtitle: 'Integrar ganhos anuais de produtividade e métricas de qualidade nos contratos de parceiros.',
-        tag: 'Estratégia Comercial',
-        metrics: 'Ganhos de 5-10% ao Ano · 95% SLA',
-        proofAnchor: 'linkedin',
-        star: {
-          situation:
-            'Os acordos-quadro tradicionais não tinham incentivos de eficiência, resultando em custos crescentes à medida que o portfólio de produtos expandia.',
-          task:
-            'Reestruturar os modelos comerciais dos fornecedores para alinhar a sua rentabilidade com a inovação técnica e automação.',
-          action:
-            'Criei SOWs com metas anuais de produtividade de 5 a 10%; defini SLAs rigorosos de 95% de qualidade associados a créditos financeiros; implementei revisões trimestrais de negócio (QBRs).',
-          result:
-            'Garanti eficiências de dois dígitos sustentadas, elevando a satisfação dos parceiros e estabelecendo colaborações estratégicas.',
-        },
-        l6Principle: 'Os contratos devem recompensar os parceiros pela automação e IA, em vez de faturar ineficiência por hora.',
-      },
       {
         id: 'sp-3',
         title: "Block - Incumprimento Contratual de Fornecedor - Falha no Cumprimento de SLAs",
