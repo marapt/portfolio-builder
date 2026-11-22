@@ -494,7 +494,8 @@ export const topPillars = [
           },
           {
             id: 'bit-vendor-governance',
-            title: "Microsoft Power BI's: Vendor Capacity, SLA and Operational Cost Governance",
+            title:
+              "Microsoft Power BI's -  Vendors -\nCapacity, SLA and Operational Cost Governance",
             subtitle:
               'Unified Power BI dashboards connecting vendor throughput, on-time delivery SLAs, and operational budget guardrails.',
             tag: 'Vendor Operations',
