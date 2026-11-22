@@ -407,25 +407,6 @@ export const topPillars = [
         l6Principle:
           'Uma governação estruturada com dados claros simplifica a comunicação, impulsiona ações concretas e aprovações, reduz atritos e dá às equipas o espaço necessário para se sentirem valorizadas e ouvidas.',
       },
-      {
-        id: 'eh-3',
-        title: 'Otimização de Custos Unitários e Eficiência à Escala',
-        subtitle: 'Reduzir custos por tarefa de avaliação sem comprometer a qualidade em idiomas complexos.',
-        tag: 'Economia Unitária',
-        metrics: '$5 para $1.67 por Unidade · Orçamento de $10M Cumprido',
-        proofAnchor: 'microsoft',
-        star: {
-          situation:
-            'O volume de avaliação triplicou de 2M para 6M tarefas mantendo o orçamento fixo de $10M, enquanto o método manual custava $5/tarefa e demorava 8 semanas na integração de avaliadores.',
-          task:
-            'Aumentar o volume em 3 vezes mantendo o orçamento e garantindo rigor em idiomas mais suscetíveis a alucinações de IA.',
-          action:
-            'Desenhei um modelo de avaliação baseado em risco, reservando a revisão humana para casos ambíguos e aplicando IA em verificações automatizadas; padronizei contratos com fornecedores.',
-          result:
-            'Reduzi o custo por tarefa de $5 para $1.67, cumpri o orçamento de $10M e reduzi a integração de parceiros de 8 para 2 semanas.',
-        },
-        l6Principle: 'A escala atinge-se direcionando o talento humano para onde ele gera o maior valor estratégico.',
-      },
     ],
     extendedSubsections: [
       {
@@ -625,6 +606,25 @@ export const operationalDomains = [
           result: 'Prazos reduzidos para 5 dias, mantendo ou superando as métricas históricas de qualidade humana.',
         },
         l6Principle: 'Acelerar processos com IA exige modelos bem treinados e critérios de avaliação claros.',
+      },
+      {
+        id: 'ai-2',
+        title: 'Otimização de Custos Unitários e Eficiência à Escala',
+        subtitle: 'Reduzir custos por tarefa de avaliação sem comprometer a qualidade em idiomas complexos.',
+        tag: 'Economia Unitária',
+        metrics: '$5 para $1.67 por Unidade · Orçamento de $10M Cumprido',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'O volume de avaliação triplicou de 2M para 6M tarefas mantendo o orçamento fixo de $10M, enquanto o método manual custava $5/tarefa e demorava 8 semanas na integração de avaliadores.',
+          task:
+            'Aumentar o volume em 3 vezes mantendo o orçamento e garantindo rigor em idiomas mais suscetíveis a alucinações de IA.',
+          action:
+            'Desenhei um modelo de avaliação baseado em risco, reservando a revisão humana para casos ambíguos e aplicando IA em verificações automatizadas; padronizei contratos com fornecedores.',
+          result:
+            'Reduzi o custo por tarefa de $5 para $1.67, cumpri o orçamento de $10M e reduzi a integração de parceiros de 8 para 2 semanas.',
+        },
+        l6Principle: 'A escala atinge-se direcionando o talento humano para onde ele gera o maior valor estratégico.',
       },
     ],
   },

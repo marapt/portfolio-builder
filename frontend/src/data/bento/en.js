@@ -407,25 +407,6 @@ export const topPillars = [
         l6Principle:
           'Structured governance with clear data streamlines communication, drives concrete action and sign-offs, reduces friction, and gives teams space to feel seen and heard.',
       },
-      {
-        id: 'eh-3',
-        title: 'AI-Enabled Unit Economics & Scale Optimization',
-        subtitle: 'Compressing evaluation costs while protecting edge-case and low-resource quality.',
-        tag: 'Unit Economics',
-        metrics: '$5 to $1.67/Unit · $10M Flat Budget Protected',
-        proofAnchor: 'microsoft',
-        star: {
-          situation:
-            'Global evaluation volume tripled from 2M to 6M tasks under a flat $10M budget envelope, while legacy 100% manual dual-rater review cost $5/task and choked onboarding.',
-          task:
-            'Scale evaluation throughput 3x within existing budget while protecting quality in high-hallucination language markets.',
-          action:
-            'Designed a risk-tiered evaluation model reserving 100% human review for complex/high-risk edge cases while deploying model-assisted pre-checks on high-confidence slices; standardized vendor onboarding templates.',
-          result:
-            'Compressed blended cost per evaluation task from $5 to $1.67, stayed strictly within the $10M budget, and compressed onboarding lead time from 8 weeks to 2 weeks.',
-        },
-        l6Principle: 'Scale is achieved not by cutting quality, but by risk-tiering human expertise where it provides the highest return.',
-      },
     ],
     extendedSubsections: [
       {
@@ -625,6 +606,25 @@ export const operationalDomains = [
           result: 'Compressed delivery cycles to 5 days while meeting or exceeding human translation quality scores.',
         },
         l6Principle: 'AI workflow acceleration requires rigorous domain fine-tuning and standardized human review rubrics.',
+      },
+      {
+        id: 'ai-2',
+        title: 'AI-Enabled Unit Economics & Scale Optimization',
+        subtitle: 'Compressing evaluation costs while protecting edge-case and low-resource quality.',
+        tag: 'Unit Economics',
+        metrics: '$5 to $1.67/Unit · $10M Flat Budget Protected',
+        proofAnchor: 'microsoft',
+        star: {
+          situation:
+            'Global evaluation volume tripled from 2M to 6M tasks under a flat $10M budget envelope, while legacy 100% manual dual-rater review cost $5/task and choked onboarding.',
+          task:
+            'Scale evaluation throughput 3x within existing budget while protecting quality in high-hallucination language markets.',
+          action:
+            'Designed a risk-tiered evaluation model reserving 100% human review for complex/high-risk edge cases while deploying model-assisted pre-checks on high-confidence slices; standardized vendor onboarding templates.',
+          result:
+            'Compressed blended cost per evaluation task from $5 to $1.67, stayed strictly within the $10M budget, and compressed onboarding lead time from 8 weeks to 2 weeks.',
+        },
+        l6Principle: 'Scale is achieved not by cutting quality, but by risk-tiering human expertise where it provides the highest return.',
       },
     ],
   },
