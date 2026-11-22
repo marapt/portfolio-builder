@@ -130,7 +130,8 @@ export const topPillars = [
         subCards: [
           {
             id: 'spg-rfp-governance',
-            title: 'RFP Global de Fornecedores, Governação de MSAs/SOWs e Cumprimento de SLAs',
+            title:
+              'Microsoft - RFP Global de Fornecedores, Governação de MSAs/SOWs e Cumprimento de SLAs',
             subtitle:
               'Liderança do primeiro RFP em mais de 5 anos, padronização de MSAs/SOWs e implementação de scorecards MBR/QBR.',
             tag: 'Governação de Fornecedores',
