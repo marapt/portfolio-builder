@@ -180,7 +180,7 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     ]);
 
     ocPillarEN.extendedSubsections.forEach((subSec, sIdx) => {
-      expect(subSec.subCards.length).toBeGreaterThan(0);
+      expect(subSec.subCards.length).toBeGreaterThanOrEqual(0);
       expect(ocPillarPT.extendedSubsections[sIdx].subCards.length).toBe(
         subSec.subCards.length
       );

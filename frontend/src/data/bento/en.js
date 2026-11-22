@@ -297,22 +297,7 @@ export const topPillars = [
         icon: 'FileText',
         description:
           'High-velocity digital asset supply chains, CMS/TMS integration, and multi-market editorial release trains.',
-        subCards: [
-          {
-            id: 'co-1',
-            title: 'Digital Asset Supply Chain Automation',
-            subtitle: 'Linking engineering repositories with global Marcom content systems.',
-            tag: 'Content Supply Chain',
-            metrics: '67% Cycle Cut · Automated API Handoffs',
-            star: {
-              situation: 'Manual handoffs between code repositories and content CMS created severe release lag.',
-              task: 'Automate content extraction, validation, and delivery pipeline.',
-              action: 'Architected automated GitHub webhook pipeline feeding content into localization engines.',
-              result: 'Cut turnaround time from 15 to 5 business days with zero manual file copying errors.',
-            },
-            l6Principle: 'Automating content plumbing lets creative teams focus purely on messaging quality.',
-          },
-        ],
+        subCards: [],
       },
       {
         id: 'operational-controls',
@@ -605,6 +590,20 @@ export const operationalDomains = [
           result: 'Maintained 98% inter-rater calibration while reducing total manual evaluation burden by 60%.',
         },
         l6Principle: 'Human evaluation should be reserved for high-leverage ambiguity and strategic edge cases.',
+      },
+      {
+        id: 'co-1',
+        title: 'Digital Asset Supply Chain Automation',
+        subtitle: 'Linking engineering repositories with global Marcom content systems.',
+        tag: 'Content Supply Chain',
+        metrics: '67% Cycle Cut · Automated API Handoffs',
+        star: {
+          situation: 'Manual handoffs between code repositories and content CMS created severe release lag.',
+          task: 'Automate content extraction, validation, and delivery pipeline.',
+          action: 'Architected automated GitHub webhook pipeline feeding content into localization engines.',
+          result: 'Cut turnaround time from 15 to 5 business days with zero manual file copying errors.',
+        },
+        l6Principle: 'Automating content plumbing lets creative teams focus purely on messaging quality.',
       },
     ],
   },

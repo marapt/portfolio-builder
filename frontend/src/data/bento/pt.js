@@ -297,22 +297,7 @@ export const topPillars = [
         icon: 'FileText',
         description:
           'Cadeias de fornecimento de conteúdos digitais, integração de CMS/TMS e gestão de publicações multi-mercado.',
-        subCards: [
-          {
-            id: 'co-1',
-            title: 'Automação da Cadeia de Conteúdos Digitais',
-            subtitle: 'Ligação entre repositórios de engenharia e sistemas globais de marketing.',
-            tag: 'Cadeia de Conteúdos',
-            metrics: 'Ciclos Reduzidos em 67% · APIs Automatizadas',
-            star: {
-              situation: 'A passagem manual de ficheiros entre repositórios de código e o CMS causava atrasos consideráveis.',
-              task: 'Automatizar o fluxo de extração, validação e entrega de conteúdos.',
-              action: 'Concebi uma solução com webhooks do GitHub integrada com os motores de tradução.',
-              result: 'Reduzi o tempo de entrega de 15 para 5 dias úteis sem erros manuais.',
-            },
-            l6Principle: 'Automatizar os processos técnicos liberta as equipas criativas para se focarem na mensagem.',
-          },
-        ],
+        subCards: [],
       },
       {
         id: 'operational-controls',
@@ -605,6 +590,20 @@ export const operationalDomains = [
           result: 'Mantive 98% de consistência entre avaliadores e reduzi o esforço manual total em 60%.',
         },
         l6Principle: 'A avaliação humana deve ser reservada para decisões complexas e de elevado impacto.',
+      },
+      {
+        id: 'co-1',
+        title: 'Automação da Cadeia de Conteúdos Digitais',
+        subtitle: 'Ligação entre repositórios de engenharia e sistemas globais de marketing.',
+        tag: 'Cadeia de Conteúdos',
+        metrics: 'Ciclos Reduzidos em 67% · APIs Automatizadas',
+        star: {
+          situation: 'A passagem manual de ficheiros entre repositórios de código e o CMS causava atrasos consideráveis.',
+          task: 'Automatizar o fluxo de extração, validação e entrega de conteúdos.',
+          action: 'Concebi uma solução com webhooks do GitHub integrada com os motores de tradução.',
+          result: 'Reduzi o tempo de entrega de 15 para 5 dias úteis sem erros manuais.',
+        },
+        l6Principle: 'Automatizar os processos técnicos liberta as equipas criativas para se focarem na mensagem.',
       },
     ],
   },
