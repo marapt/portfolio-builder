@@ -5,11 +5,15 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import {
   buildJourneyHero as heroEN,
+  buildJourneyOwnership as ownershipEN,
+  buildJourneyGuardrails as guardrailsEN,
   buildJourneyPillars as pillarsEN,
   buildJourneyMindset as mindsetEN,
 } from '../data/buildJourney/en';
 import {
   buildJourneyHero as heroPT,
+  buildJourneyOwnership as ownershipPT,
+  buildJourneyGuardrails as guardrailsPT,
   buildJourneyPillars as pillarsPT,
   buildJourneyMindset as mindsetPT,
 } from '../data/buildJourney/pt';
@@ -23,14 +27,18 @@ import {
   Sparkles,
   Terminal,
   ShieldCheck,
+  ShieldAlert,
+  AlertTriangle,
   ZoomIn,
   X,
   ArrowRight,
   Layers,
   FileText,
   Mail,
-  ChevronRight,
   Eye,
+  UserCheck,
+  Bot,
+  RefreshCw,
 } from 'lucide-react';
 
 const toolIcons = {
@@ -89,6 +97,8 @@ const BuildJourneyPage = () => {
   const isPt = i18n.language && i18n.language.startsWith('pt');
 
   const hero = isPt ? heroPT : heroEN;
+  const ownership = isPt ? ownershipPT : ownershipEN;
+  const guardrails = isPt ? guardrailsPT : guardrailsEN;
   const pillars = isPt ? pillarsPT : pillarsEN;
   const mindset = isPt ? mindsetPT : mindsetEN;
 
@@ -184,6 +194,86 @@ const BuildJourneyPage = () => {
                   <span>{isPt ? 'Carreira e Liderança' : 'Career Timeline'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* OWNERSHIP BOUNDARIES: WHAT I OWNED VS WHAT AUTOMATION EXECUTED */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-16">
+          <div className="p-8 md:p-10 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-2xl relative overflow-hidden">
+            <div className="max-w-3xl mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-3">
+                <UserCheck className="w-3.5 h-3.5" />
+                <span>{ownership.eyebrow}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">
+                {ownership.title}
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                {ownership.subtitle}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Human Owned Card */}
+              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-indigo-950/40 via-slate-950 to-slate-950 border border-indigo-500/30 flex flex-col justify-between space-y-5">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2.5 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 shrink-0">
+                      <UserCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white tracking-tight">
+                        {ownership.humanOwned.title}
+                      </h3>
+                      <span className="text-xs uppercase tracking-wider text-indigo-400 font-semibold">
+                        {ownership.humanOwned.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3">
+                    {ownership.humanOwned.items.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-1 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-indigo-500/20 text-xs font-semibold text-indigo-300">
+                  {isPt ? 'Princípio: Decisões de arquitetura e qualidade são sempre humanas.' : 'Principle: Architectural decisions and quality approvals remain strictly human.'}
+                </div>
+              </div>
+
+              {/* AI Executed Card */}
+              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900/60 via-slate-950 to-slate-950 border border-slate-700/60 flex flex-col justify-between space-y-5">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2.5 rounded-xl bg-slate-800 text-slate-300 border border-slate-700 shrink-0">
+                      <Bot className="w-5 h-5 text-indigo-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white tracking-tight">
+                        {ownership.aiExecuted.title}
+                      </h3>
+                      <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold">
+                        {ownership.aiExecuted.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3">
+                    {ownership.aiExecuted.items.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        <Sparkles className="w-4 h-4 text-purple-400 mt-1 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-slate-800 text-xs font-semibold text-slate-400">
+                  {isPt ? 'Princípio: Automação acelera a prototipagem sem comprometer o controlo.' : 'Principle: Automation accelerates throughput without bypassing governance gates.'}
+                </div>
               </div>
             </div>
           </div>
@@ -365,7 +455,7 @@ const BuildJourneyPage = () => {
                       <div className="flex items-center gap-2 mb-2 text-indigo-400">
                         <ShieldCheck className="w-4 h-4" />
                         <span className="text-xs font-bold uppercase tracking-wider">
-                          {isPt ? 'Perspetiva de Senior Program Manager' : 'Executive PGM Takeaway'}
+                          {isPt ? 'Perspetiva de Senior Program Manager' : 'Executive Program Manager Takeaway'}
                         </span>
                       </div>
                       <p className="text-xs sm:text-sm text-indigo-100 font-medium leading-relaxed italic">
@@ -377,6 +467,58 @@ const BuildJourneyPage = () => {
               </div>
             );
           })}
+        </section>
+
+        {/* FAILURE MODES, GUARDRAILS & REVERSIBLE ROLLOUTS */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
+          <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-slate-800 shadow-2xl relative overflow-hidden">
+            <div className="max-w-3xl mb-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-rose-500/10 text-rose-400 border border-rose-500/20 mb-3">
+                <ShieldAlert className="w-3.5 h-3.5" />
+                <span>{guardrails.eyebrow}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight mb-3">
+                {guardrails.title}
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                {guardrails.subtitle}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {guardrails.items.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="p-6 rounded-2xl bg-slate-950/70 border border-slate-800/80 flex flex-col justify-between space-y-4 hover:border-slate-700 transition-colors"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-amber-400">
+                      <AlertTriangle className="w-4 h-4 shrink-0" />
+                      <span className="text-xs uppercase tracking-wider font-bold">
+                        {isPt ? `Risco Antecipado 0${idx + 1}` : `Failure Mode 0${idx + 1}`}
+                      </span>
+                    </div>
+                    <h3 className="text-base font-bold text-white tracking-tight leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-rose-300/80 leading-relaxed">
+                      <span className="font-semibold text-rose-400">{isPt ? 'Risco:' : 'Risk:'} </span>
+                      {item.risk}
+                    </p>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      <span className="font-semibold text-emerald-400">{isPt ? 'Salvaguarda:' : 'Guardrail:'} </span>
+                      {item.guardrail}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-800/80 text-[11px] text-indigo-300 font-medium">
+                    <span className="text-slate-400">{isPt ? 'Resultado:' : 'Outcome:'} </span>
+                    {item.outcome}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* EXECUTIVE MINDSET & LEADERSHIP SYNTHESIS */}
