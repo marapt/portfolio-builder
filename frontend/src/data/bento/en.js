@@ -136,22 +136,24 @@ export const topPillars = [
       },
       {
         id: 'sp-3',
-        title: 'Vendor Breach & 30-Day Corrective Action (CAP)',
-        subtitle: 'Systemic remediation framework for chronic delivery slippage and quality dips.',
-        tag: 'Vendor Escalation',
-        metrics: '14-Day Recovery · Zero Launch Disruption',
+        title: "Block - Vendor Contractual Breach - Failure to Deliver per SLA's",
+        subtitle:
+          'Diagnosing root causes, rerouting contingency volume, and structuring a 30-day CAP and SOW guardrails to recover SLA adherence.',
+        tag: 'Vendor Governance',
+        metrics: 'SLA Recovery in 4 Wks · Defect Leakage <5% · Zero Launch Disruption',
         proofAnchor: 'block',
         star: {
           situation:
-            'A strategic external vendor partner fell below contractual quality thresholds for three consecutive sprint cycles during a major multi-market expansion phase.',
+            'At Block (Nov. 2021 – Nov. 2022), during multi-market continuous software delivery across 15+ international markets, an external tier-1 vendor partner handling asset testing and internationalization began consistently missing agreed SLA turnaround times and exceeding our 5% defect-leakage threshold.',
           task:
-            'Remediate vendor performance immediately without breaking continuous release delivery or destabilizing partner relationship.',
+            'As Senior PGM Lead, I was responsible for diagnosing the root cause using objective data reporting, protecting active multi-market release schedules and quality thresholds, and enforcing contractual/SOW accountability without derailing production or breaking vendor continuity, ensuring vendor contractual breach was addressed and a corrective path provided.',
           action:
-            'Issued formal notice backed by objective scorecard telemetry; initiated a mandatory 30-day Corrective Action Plan (CAP) with daily operational standups; parallelized volume allocation to backup Tier-1 vendors.',
+            'Carried out an objective diagnostic and root cause audit by gathering partner escalations and auditing vendor performance data, identifying a 20% increase in turnaround latency (20 late out of 100 deliveries monthly over 3 to 6 months) and defect leakage above the 5% threshold. Worked with the vendor account executive and lead PM over 3 months to audit operations, uncovering post-acquisition staff turnover and onboarding gaps on custom tooling. Initiated contingency volume routing by immediately shifting roughly 30% of incoming volume to a backup vendor partner to protect release critical paths while remediation progressed. Built a 30-day remediation plan with weekly checkpoints and aligned Block and vendor senior executives on Master Agreement (MA) and SOW progress, incorporating updated technical playbooks, a dedicated vendor account team, a senior QA lead reviewing outgoing packages at the vendor\'s expense, and emergency launch contingency retainer terms in the SOW.',
           result:
-            'Vendor successfully restored quality SLA to 98% within 14 days, avoiding costly contract termination and preventing any downstream launch impact.',
+            'Brought defect rates back below the 5% target threshold and stabilized delivery velocity within 4 weeks. Restored standard volume allocations within 90 days as SLA adherence recovered, turning a vendor performance breach into a durable, audited operating model with zero downstream launch disruption.',
         },
-        l6Principle: 'Address vendor failures with transparent objective telemetry and structured remediation before contractual severance.',
+        l6Principle:
+          'Pair objective telemetry and immediate contingency routing with structured executive alignment and SOW guardrails so underperforming vendors recover on hard metrics without stalling global launches.',
       },
     ],
     extendedSubsections: [

@@ -136,22 +136,24 @@ export const topPillars = [
       },
       {
         id: 'sp-3',
-        title: 'Incumprimento Contratual e Plano de Ação de 30 Dias (CAP)',
-        subtitle: 'Processo sistemático de recuperação para quebras crónicas de entrega e qualidade.',
-        tag: 'Escalamento de Fornecedores',
-        metrics: 'Recuperação em 14 Dias · Zero Impacto no Lançamento',
+        title: "Block - Incumprimento Contratual de Fornecedor - Falha no Cumprimento de SLAs",
+        subtitle:
+          'Diagnóstico de causas-raiz, reencaminhamento de contingência e plano de ação corretiva de 30 dias para recuperar a adesão a SLAs.',
+        tag: 'Governação de Fornecedores',
+        metrics: 'Recuperação em 4 Semanas · Fuga de Defeitos <5% · Zero Impacto no Lançamento',
         proofAnchor: 'block',
         star: {
           situation:
-            'Um parceiro externo estratégico caiu abaixo dos limites de qualidade contratuais durante três ciclos consecutivos num período crítico de expansão.',
+            'Na Block (Nov. 2021 – Nov. 2022), durante a entrega contínua de software em mais de 15 mercados internacionais, um parceiro externo Tier-1 de testes e internacionalização começou a falhar de forma consistente os prazos acordados de SLA e a exceder o nosso limite de 5% de fuga de defeitos.',
           task:
-            'Recuperar o desempenho do fornecedor imediatamente sem interromper os lançamentos ou quebrar a relação de parceria.',
+            'Como Senior PGM Lead, fui responsável por diagnosticar a causa-raiz com relatórios de dados objetivos, proteger os cronogramas de lançamento e limites de qualidade multi-mercado, e aplicar a responsabilidade contratual/SOW sem descarrilar a produção ou quebrar a continuidade do fornecedor, assegurando que o incumprimento contratual era tratado e uma via corretiva implementada.',
           action:
-            'Notifiquei formalmente o parceiro com base em dados do scorecard; iniciei um Plano de Ação Corretiva (CAP) de 30 dias com reuniões diárias; redirecionei volume para fornecedores de reserva Tier-1.',
+            'Conduzi um diagnóstico objetivo e auditoria de causa-raiz, reunindo escalamentos internos e dados de desempenho do fornecedor onde identifiquei um aumento de 20% na latência de entrega (20 entregas atrasadas em 100 mensais ao longo de 3 a 6 meses) e fuga de defeitos acima do limite de 5%. Trabalhei com o Account Executive e o Lead PM do fornecedor ao longo de 3 meses, descobrindo rotatividade de equipa pós-aquisição e lacunas de integração em ferramentas personalizadas. Ativei o reencaminhamento de volume de contingência, transferindo de imediato cerca de 30% do volume para um parceiro de reserva para proteger o caminho crítico dos lançamentos. Construí um plano de remediação de 30 dias com pontos de controlo semanais e alinhei a liderança executiva da Block e do parceiro no âmbito do Master Agreement (MA) e SOW, incorporando manuais técnicos atualizados, uma equipa de conta dedicada, um líder sénior de QA a rever entregas a expensas do fornecedor e termos de retenção de contingência para lançamentos de emergência no SOW.',
           result:
-            'O fornecedor restaurou o SLA para 98% em 14 dias, evitando a rescisão contratual e salvaguardando o lançamento.',
+            'Reduzi a taxa de defeitos para níveis abaixo do limiar de 5% e estabilizei a velocidade de entrega em 4 semanas. Restaurei as alocações normais de volume em 90 dias com a recuperação da adesão aos SLAs, transformando um incumprimento de desempenho num modelo operacional duradouro e auditado, com zero impacto nos lançamentos globais.',
         },
-        l6Principle: 'Resolva problemas de fornecedores com dados objetivos e planos de recuperação antes de rescindir contratos.',
+        l6Principle:
+          'Articule telemetria objetiva e reencaminhamento de contingência imediato com alinhamento executivo estruturado e salvaguardas contratuais no SOW para que fornecedores em dificuldade recuperem com métricas sólidas sem paralisar lançamentos globais.',
       },
     ],
     extendedSubsections: [
