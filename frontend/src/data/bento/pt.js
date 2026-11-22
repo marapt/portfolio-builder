@@ -176,25 +176,6 @@ export const topPillars = [
     color: 'emerald',
     subCards: [
       {
-        id: 'oc-2',
-        title: 'Liderança Emergente em Ambientes de Alta Pressão',
-        subtitle: 'Assumir a liderança no vazio operacional para estabelecer clareza e alinhamento.',
-        tag: 'Influência Sem Autoridade',
-        metrics: 'Prazos Reduzidos a Metade · Clareza Total',
-        proofAnchor: 'apple-2026',
-        star: {
-          situation:
-            'Num ambiente de produção acelerado, várias equipas de engenharia e design submetiam pedidos concorrentes sem critérios claros de priorização, gerando atrasos.',
-          task:
-            'Preencher o vazio operacional sem autoridade hierárquica formal para estabelecer processos claros de triagem.',
-          action:
-            'Mapeei o ciclo de vida dos pedidos; implementei um painel centralizado de triagem com SLAs claros de P0 a P3; orientei os responsáveis em boas práticas de alinhamento assíncrono.',
-          result:
-            'Reduzi o tempo de resposta em 50%, eliminei conflitos entre equipas e criei um sistema adotado por toda a organização.',
-        },
-        l6Principle: 'A verdadeira liderança demonstra-se resolvendo ambiguidades que ninguém assumiu.',
-      },
-      {
         id: 'oc-3',
         title: 'Microsoft - Operações de Migração de CRM e Poupança de Custos',
         subtitle:
@@ -550,6 +531,25 @@ export const topPillars = [
             'Converti líderes céticos em defensores convictos do programa, garantindo adesão unânime ao modelo global.',
         },
         l6Principle: 'A influência sem autoridade conquista-se através da transparência de dados e da partilha da autoria da mudança.',
+      },
+      {
+        id: 'oc-2',
+        title: 'Liderança Emergente em Ambientes de Alta Pressão',
+        subtitle: 'Assumir a liderança no vazio operacional para estabelecer clareza e alinhamento.',
+        tag: 'Influência Sem Autoridade',
+        metrics: 'Prazos Reduzidos a Metade · Clareza Total',
+        proofAnchor: 'apple-2026',
+        star: {
+          situation:
+            'Num ambiente de produção acelerado, várias equipas de engenharia e design submetiam pedidos concorrentes sem critérios claros de priorização, gerando atrasos.',
+          task:
+            'Preencher o vazio operacional sem autoridade hierárquica formal para estabelecer processos claros de triagem.',
+          action:
+            'Mapeei o ciclo de vida dos pedidos; implementei um painel centralizado de triagem com SLAs claros de P0 a P3; orientei os responsáveis em boas práticas de alinhamento assíncrono.',
+          result:
+            'Reduzi o tempo de resposta em 50%, eliminei conflitos entre equipas e criei um sistema adotado por toda a organização.',
+        },
+        l6Principle: 'A verdadeira liderança demonstra-se resolvendo ambiguidades que ninguém assumiu.',
       },
     ],
     extendedSubsections: [],

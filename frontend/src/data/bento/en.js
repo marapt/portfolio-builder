@@ -176,25 +176,6 @@ export const topPillars = [
     color: 'emerald',
     subCards: [
       {
-        id: 'oc-2',
-        title: 'Emergent Leadership in High-Urgency Environments',
-        subtitle: 'Stepping into operational voids to establish triage clarity and multi-org alignment.',
-        tag: 'Influence Without Authority',
-        metrics: 'Intake SLAs Halved · 100% Cross-Org Clarity',
-        proofAnchor: 'apple-2026',
-        star: {
-          situation:
-            'During a fast-paced production contract, multiple engineering and design tracks were submitting competing unvetted requests without clear priority criteria, creating friction and missed handoffs.',
-          task:
-            'Step into the operational vacuum without formal managerial authority to establish structured triage and calm operating rhythm.',
-          action:
-            'Mapped end-to-end request lifecycle; established a centralized intake dashboard with explicit P0–P3 SLAs; coached cross-functional leads on asynchronous pre-reads and structured triage.',
-          result:
-            'Reduced request turnaround time by 50%, eliminated cross-team escalations, and established a durable intake system adopted across the broader group.',
-        },
-        l6Principle: 'Leadership is defined by solving unowned ambiguity and establishing calm clarity for the whole team.',
-      },
-      {
         id: 'oc-3',
         title: 'Microsoft - CRM Migration Ops and Costs Savings',
         subtitle:
@@ -550,6 +531,25 @@ export const topPillars = [
             'Converted skeptical regional stakeholders into active program champions, securing unanimous approval for the global operating model.',
         },
         l6Principle: 'Influence without authority is won by sharing data transparently and giving stakeholders co-authorship of change.',
+      },
+      {
+        id: 'oc-2',
+        title: 'Emergent Leadership in High-Urgency Environments',
+        subtitle: 'Stepping into operational voids to establish triage clarity and multi-org alignment.',
+        tag: 'Influence Without Authority',
+        metrics: 'Intake SLAs Halved · 100% Cross-Org Clarity',
+        proofAnchor: 'apple-2026',
+        star: {
+          situation:
+            'During a fast-paced production contract, multiple engineering and design tracks were submitting competing unvetted requests without clear priority criteria, creating friction and missed handoffs.',
+          task:
+            'Step into the operational vacuum without formal managerial authority to establish structured triage and calm operating rhythm.',
+          action:
+            'Mapped end-to-end request lifecycle; established a centralized intake dashboard with explicit P0–P3 SLAs; coached cross-functional leads on asynchronous pre-reads and structured triage.',
+          result:
+            'Reduced request turnaround time by 50%, eliminated cross-team escalations, and established a durable intake system adopted across the broader group.',
+        },
+        l6Principle: 'Leadership is defined by solving unowned ambiguity and establishing calm clarity for the whole team.',
       },
     ],
     extendedSubsections: [],
