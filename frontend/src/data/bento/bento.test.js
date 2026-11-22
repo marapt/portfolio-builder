@@ -102,16 +102,18 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Pillar 02 (Supplier Performance) has core subcards for Block and Microsoft supplier governance in EN and PT', () => {
+  test('Pillar 02 (Supplier Performance) has core subcards for Block, Microsoft, and LinkedIn supplier/workforce governance in EN and PT', () => {
     const spPillarEN = topPillarsEN.find((p) => p.id === 'supplier-performance');
     const spPillarPT = topPillarsPT.find((p) => p.id === 'supplier-performance');
 
-    expect(spPillarEN.subCards).toHaveLength(2);
-    expect(spPillarPT.subCards).toHaveLength(2);
+    expect(spPillarEN.subCards).toHaveLength(3);
+    expect(spPillarPT.subCards).toHaveLength(3);
     expect(spPillarEN.subCards.map((c) => c.id)).toContain('sp-3');
     expect(spPillarEN.subCards.map((c) => c.id)).toContain('spg-rfp-governance');
+    expect(spPillarEN.subCards.map((c) => c.id)).toContain('bit-workforce-capacity');
     expect(spPillarPT.subCards.map((c) => c.id)).toContain('sp-3');
     expect(spPillarPT.subCards.map((c) => c.id)).toContain('spg-rfp-governance');
+    expect(spPillarPT.subCards.map((c) => c.id)).toContain('bit-workforce-capacity');
 
     // Domain 07 subsection merged into main pillar
     expect(spPillarEN.extendedSubsections || []).toHaveLength(0);
