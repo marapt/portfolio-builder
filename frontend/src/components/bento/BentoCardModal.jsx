@@ -244,15 +244,26 @@ export const BentoCardModal = ({ card, color = 'indigo', domainTitle, onClose })
             )}
 
             {card.externalLink && (
-              <a
-                href={card.externalLink.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs sm:text-sm text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-1.5 transition-colors"
-              >
-                <span>{card.externalLink.label || 'Official Launch Article'}</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              card.externalLink.url.startsWith('/') ? (
+                <Link
+                  to={card.externalLink.url}
+                  onClick={onClose}
+                  className="text-xs sm:text-sm text-cyan-300 hover:text-cyan-200 font-semibold inline-flex items-center gap-1.5 transition-colors bg-cyan-950/60 hover:bg-cyan-900/70 px-3.5 py-2 rounded-xl border border-cyan-500/40 shadow-sm"
+                >
+                  <span>{card.externalLink.label || 'View Interactive Case Study'}</span>
+                  <ExternalLink className="w-4 h-4" />
+                </Link>
+              ) : (
+                <a
+                  href={card.externalLink.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs sm:text-sm text-cyan-300 hover:text-cyan-200 font-semibold inline-flex items-center gap-1.5 transition-colors bg-cyan-950/60 hover:bg-cyan-900/70 px-3.5 py-2 rounded-xl border border-cyan-500/40 shadow-sm"
+                >
+                  <span>{card.externalLink.label || 'Official Launch Article'}</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )
             )}
           </div>
 

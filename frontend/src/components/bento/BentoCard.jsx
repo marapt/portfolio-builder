@@ -5,6 +5,7 @@ import {
   Building2,
   Lightbulb,
   Maximize2,
+  ExternalLink,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getCompanyBrands } from '../../data/bento/brandMap';
@@ -231,17 +232,45 @@ export const BentoCard = ({
                 <span className="text-[11px] text-slate-400">Executive Card</span>
               )}
 
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (onExpand) onExpand(card, color, domainTitle);
-                }}
-                className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 font-semibold group-hover:translate-x-0.5 transition-all text-xs"
-              >
-                <span>Read Full STAR</span>
-                <Maximize2 className="w-3.5 h-3.5" />
-              </button>
+              <div className="flex items-center gap-2">
+                {card.externalLink && (
+                  card.externalLink.url.startsWith('/') ? (
+                    <Link
+                      to={card.externalLink.url}
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-cyan-400 hover:text-cyan-300 flex items-center gap-1 font-semibold transition-colors text-xs bg-cyan-950/50 hover:bg-cyan-900/60 px-2 py-1 rounded-md border border-cyan-500/30"
+                      title={card.externalLink.label || 'View Case Study'}
+                    >
+                      <span>Case Study</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </Link>
+                  ) : (
+                    <a
+                      href={card.externalLink.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-cyan-400 hover:text-cyan-300 flex items-center gap-1 font-semibold transition-colors text-xs bg-cyan-950/50 hover:bg-cyan-900/60 px-2 py-1 rounded-md border border-cyan-500/30"
+                      title={card.externalLink.label || 'View Link'}
+                    >
+                      <span>Article</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )
+                )}
+
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (onExpand) onExpand(card, color, domainTitle);
+                  }}
+                  className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 font-semibold group-hover:translate-x-0.5 transition-all text-xs"
+                >
+                  <span>Read Full STAR</span>
+                  <Maximize2 className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -353,7 +382,31 @@ export const BentoCard = ({
 
           {/* Footer Action */}
           <div className="pt-3 mt-3 border-t border-slate-700/80 flex items-center justify-between text-[11px]">
-            <span className="text-slate-400">Click to read full STAR</span>
+            {card.externalLink ? (
+              card.externalLink.url.startsWith('/') ? (
+                <Link
+                  to={card.externalLink.url}
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-1 bg-cyan-950/50 hover:bg-cyan-900/60 px-2 py-0.5 rounded border border-cyan-500/30"
+                >
+                  <span>Interactive Case Study</span>
+                  <ExternalLink className="w-3 h-3" />
+                </Link>
+              ) : (
+                <a
+                  href={card.externalLink.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-cyan-400 hover:text-cyan-300 font-semibold inline-flex items-center gap-1"
+                >
+                  <span>Official Article</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )
+            ) : (
+              <span className="text-slate-400">Click to read full STAR</span>
+            )}
             <span className="text-indigo-400 font-semibold inline-flex items-center gap-1">
               <span>Open Expand</span>
               <Maximize2 className="w-3 h-3" />
