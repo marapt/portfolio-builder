@@ -85,6 +85,27 @@ export const topPillars = [
         l6Principle:
           'Complex global expansions succeed when multi-wave release gates align cross-functional readiness with measurable customer journey milestones rather than isolated launch dates.',
       },
+      {
+        id: 'block-eu-expansion',
+        title: 'Block - EU New Market Expansion & Checkout Recovery',
+        subtitle:
+          'Coordinating cross-functional EU rollouts, resolving checkout payment friction, and institutionalizing post-mortem governance.',
+        tag: 'Market Expansion & GTM',
+        proofAnchor: 'block',
+        metrics: '4 EU Markets · ~$185M European ARR · Up to 10% Revenue Recovery',
+        star: {
+          situation:
+            'At Block, expanding Square into European markets (including Ireland [IE], France [FR], Spain [ES], and Portugal [PT]) required coordinating cross-functional readiness across Product, Engineering, Finance, Legal, Localization, and PR. During EU expansion and checkout rollouts, gaps in regulatory licensing, local banking/payment rails (such as Multibanco/MB WAY), and pre-launch testing left Square Terminal checkout inoperable for certain payment flows and exposed expansion timelines to regulatory and cultural blind spots, putting projected EU launch revenue at risk and forcing Spain (ES) to shift to January 2022 while Portugal (PT) was moved to a Tier 5 market.',
+          task:
+            'Coordinate end-to-end market rollout planning, RACI alignment, and launch rooms across functional leads while stepping in on critical launch and payment blockers to protect revenue, localize the customer journey (local currency, local payment methods, and culturally adapted experiences), and capture learnings for future expansion.',
+          action:
+            'Cross-Functional Planning, RACI & Launch Rooms: Aligned Marketing, Product, Engineering, Finance, Legal, Localization, and PR on market proposals, budgets, hiring needs, RACI ownership, sprint plans, and launch rooms for executive/committee sign-off. Payment & Checkout Issue Mitigation: Partnered with Engineering, Legal, Finance, and PR on emergency triage and testing when checkout/payment gaps surfaced, pivoting GTM support around established payment methods (such as Visa, Apple Pay, and Google Pay), deferring unsupported rails like MB WAY, aligning PR/leadership to avoid premature public statements or brand backlash, and localizing pricing, currency, and checkout flows. Post-Mortem & Local Vendor Governance: Led post-mortems and company-wide learnings after issues were addressed, identifying regulatory/banking gaps between Legal, Finance, and local cultural context; then hiring local regulatory/market consultants, updating RACI and launch milestones, and re-tiering Portugal to Tier 5.',
+          result:
+            'Launched Ireland (IE) and France (FR) during the 2021 rollout cycle alongside broader European expansion momentum where Square\'s European annual revenue reached ~$185M (~95% YoY growth in 2021). Recovered up to 10% in localized transaction revenue by resolving checkout friction and enabling core payment methods in target European markets. Institutionalized post-mortem learnings, local regulatory consultancy support, and clearer RACI/launch-gate governance across teams.',
+        },
+        l6Principle:
+          'Market expansion succeeds when regulatory licensing, local payment rails, and cultural/banking due diligence are validated early, and when teams pair rapid checkout mitigation with candid post-mortems that turn launch setbacks into stronger governance.',
+      },
     ],
     extendedSubsections: [],
   },

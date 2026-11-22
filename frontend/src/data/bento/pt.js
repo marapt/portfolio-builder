@@ -85,6 +85,27 @@ export const topPillars = [
         l6Principle:
           'Lançamentos globais complexos têm sucesso quando a coordenação de entregas multi-onda alinha a prontidão multifuncional com marcos mensuráveis na jornada do cliente, em vez de datas de lançamento isoladas.',
       },
+      {
+        id: 'block-eu-expansion',
+        title: 'Block - Expansão para Novos Mercados na UE e Recuperação de Checkout',
+        subtitle:
+          'Coordenação de lançamentos na UE, resolução de atritos no checkout e institucionalização de governança pós-morte.',
+        tag: 'Expansão de Mercados',
+        proofAnchor: 'block',
+        metrics: '4 Mercados na UE · ~$185M Receita Europeia · Até 10% Recuperação de Receita',
+        star: {
+          situation:
+            'Na Block, a expansão do Square para mercados europeus (incluindo Irlanda [IE], França [FR], Espanha [ES] e Portugal [PT]) exigiu a coordenação multifuncional entre Produto, Engenharia, Finanças, Jurídico, Localização e RP. Durante a expansão na UE e os lançamentos de checkout, lacunas no licenciamento regulamentar, redes locais de pagamento/bancárias (como Multibanco/MB WAY) e testes pré-lançamento deixaram o checkout do Square Terminal inoperacional para certos fluxos de pagamento e expuseram os cronogramas a pontos cegos regulamentares e culturais, colocando em risco a receita projetada de lançamento na UE e forçando a Espanha (ES) a adiar para janeiro de 2022, enquanto Portugal (PT) foi reposicionado como mercado Tier 5.',
+          task:
+            'Coordenar o planeamento de lançamento de mercado de ponta a ponta, o alinhamento de RACI e launch rooms entre líderes funcionais, intervindo em bloqueadores críticos de lançamento e pagamento para proteger a receita, localizar a jornada do cliente (moeda local, métodos de pagamento locais e experiências adaptadas à cultura) e capturar aprendizagens para futuras expansões.',
+          action:
+            'Planeamento Multifuncional, RACI e Launch Rooms: Alinhei Marketing, Produto, Engenharia, Finanças, Jurídico, Localização e RP em propostas de mercado, orçamentos, necessidades de contratação, matriz RACI, planos de sprint e launch rooms para aprovação executiva. Mitigação de Problemas de Pagamento e Checkout: Colaborei com Engenharia, Jurídico, Finanças e RP na triagem de emergência e testes quando surgiram falhas no checkout, direcionando o suporte de GTM para métodos de pagamento consolidados (como Visa, Apple Pay e Google Pay), adiando redes não suportadas como MB WAY, alinhando RP e liderança para evitar declarações públicas prematuras ou danos à reputação da marca, e localizando preços, moeda e fluxos de checkout. Post-Mortem e Governação de Consultoria Local: Liderei post-mortems e partilha de aprendizagens transversais após a resolução dos problemas, identificando lacunas regulamentares e bancárias entre Jurídico, Finanças e o contexto cultural local; contratei consultores regulamentares/de mercado locais, atualizei marcos de lançamento e RACI, e reclassifiquei Portugal para Tier 5.',
+          result:
+            'Lançamento bem-sucedido na Irlanda (IE) e França (FR) durante o ciclo de 2021 em paralelo com o momento de expansão europeia onde a receita anual europeia do Square atingiu ~$185M (~95% de crescimento homólogo em 2021). Recuperação de até 10% na receita de transações localizadas através da resolução de atritos no checkout e viabilização dos principais métodos de pagamento nos mercados europeus alvo. Institucionalização de aprendizagens pós-morte, apoio de consultoria regulamentar local e governação mais clara de gates de lançamento e RACI entre equipas.',
+        },
+        l6Principle:
+          'A expansão de mercados tem sucesso quando o licenciamento regulamentar, as redes locais de pagamento e a devida diligência cultural e bancária são validados antecipadamente, e quando as equipas combinam a mitigação rápida de problemas de checkout com post-mortems transparentes que convertem contratempos em governação mais sólida.',
+      },
     ],
     extendedSubsections: [],
   },

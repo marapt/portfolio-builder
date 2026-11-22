@@ -65,18 +65,20 @@ describe('Multimodal Bento Box Datasets (en.js and pt.js)', () => {
     });
   });
 
-  test('Pillar 01 (Portfolio Governance) has core subcards for Terminology CoE, Microsoft Geopolitical Compliance, and LinkedIn GTM in EN and PT', () => {
+  test('Pillar 01 (Portfolio Governance) has core subcards for Terminology CoE, Microsoft Geopolitical Compliance, LinkedIn GTM, and Block EU Expansion in EN and PT', () => {
     const pgPillarEN = topPillarsEN.find((p) => p.id === 'portfolio-governance');
     const pgPillarPT = topPillarsPT.find((p) => p.id === 'portfolio-governance');
 
-    expect(pgPillarEN.subCards).toHaveLength(3);
-    expect(pgPillarPT.subCards).toHaveLength(3);
+    expect(pgPillarEN.subCards).toHaveLength(4);
+    expect(pgPillarPT.subCards).toHaveLength(4);
     expect(pgPillarEN.subCards.map((c) => c.id)).toContain('gl-1');
     expect(pgPillarEN.subCards.map((c) => c.id)).toContain('gl-2');
     expect(pgPillarEN.subCards.map((c) => c.id)).toContain('gtm-linkedin-stories-redesign');
+    expect(pgPillarEN.subCards.map((c) => c.id)).toContain('block-eu-expansion');
     expect(pgPillarPT.subCards.map((c) => c.id)).toContain('gl-1');
     expect(pgPillarPT.subCards.map((c) => c.id)).toContain('gl-2');
     expect(pgPillarPT.subCards.map((c) => c.id)).toContain('gtm-linkedin-stories-redesign');
+    expect(pgPillarPT.subCards.map((c) => c.id)).toContain('block-eu-expansion');
 
     // Domains 05 and 11 subsections merged into main pillar
     expect(pgPillarEN.extendedSubsections || []).toHaveLength(0);
