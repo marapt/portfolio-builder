@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe, ChevronDown, Bot } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, Bot, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import { useTranslation } from 'react-i18next';
 import {
@@ -43,6 +43,7 @@ const Header = () => {
 
   const dashboardLink = { href: '/dashboard', label: 'AI Agents', isPage: true };
   const gtmLink = { href: '/gtm', label: 'GTM', isPage: true };
+  const buildJourneyLink = { href: '/how-i-built-this', label: t('nav.build_journey') || 'Built with AI', isPage: true };
 
   const handleNavClick = (e, link) => {
     if (link.isPage) {
@@ -144,6 +145,19 @@ const Header = () => {
             >
               <Globe size={10} />
               {gtmLink.label}
+            </Link>
+
+            {/* Build Journey (How I Built This) */}
+            <Link
+              to={buildJourneyLink.href}
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-300 font-black text-[9px] uppercase tracking-[0.2em] shrink-0 ${
+                location.pathname === buildJourneyLink.href
+                  ? 'bg-emerald-600/20 border-emerald-500/40 text-emerald-400'
+                  : 'bg-emerald-600/10 border-emerald-500/20 text-emerald-400/80 hover:bg-emerald-600/20 hover:border-emerald-500/40 hover:text-emerald-400'
+              }`}
+            >
+              <Sparkles size={10} />
+              {buildJourneyLink.label}
             </Link>
           </nav>
 
@@ -292,6 +306,20 @@ const Header = () => {
               >
                 <Globe size={14} />
                 GTM Strategy
+              </Link>
+
+              {/* Build Journey (Mobile) */}
+              <Link
+                to="/how-i-built-this"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-4 py-4 font-black text-xs uppercase tracking-[0.3em] rounded-2xl transition-all ${
+                  location.pathname === '/how-i-built-this'
+                    ? 'bg-emerald-50 text-emerald-600'
+                    : 'text-emerald-500 hover:bg-emerald-50'
+                }`}
+              >
+                <Sparkles size={14} />
+                {t('nav.build_journey') || 'Built with AI'}
               </Link>
 
               <div className="pt-8">

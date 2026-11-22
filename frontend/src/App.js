@@ -15,6 +15,7 @@ import TrainingNMTCaseStudy from './pages/TrainingNMTCaseStudy';
 import CareerPage from './pages/CareerPage';
 import AboutPage from './pages/AboutPage';
 import ExperiencesPage from './pages/ExperiencesPage';
+import BuildJourneyPage from './pages/BuildJourneyPage';
 import VideoBubble from './components/VideoBubble';
 
 const ScrollToHash = () => {
@@ -65,6 +66,8 @@ function App() {
           <Route path="/career" element={<CareerPage />} />
           <Route path="/experiences" element={<ExperiencesPage />} />
           <Route path="/bento" element={<ExperiencesPage />} />
+          <Route path="/how-i-built-this" element={<BuildJourneyPage />} />
+          <Route path="/build-journey" element={<BuildJourneyPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
         <VideoBubble />
