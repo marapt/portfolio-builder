@@ -334,63 +334,87 @@ This project is open source and available on GitHub as part of my commitment to 
 
   'jira-scrum-board': {
     id: 'jira-scrum-board',
-    title: 'Agile Scrum Board',
-    description: 'A live dashboard fetching real-time data from my Jira Scrum board to demonstrate sprint planning and task tracking.',
-    heroImage: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&h=500&fit=crop',
-    tags: ['Agile', 'Scrum', 'Jira', 'Program Management'],
-    duration: 'Ongoing',
-    teamSize: 'Cross-functional',
-    scope: 'Global Operations',
+    title: 'Jira + AI Automation',
+    description: 'How I automated my live Jira Cloud Scrum dashboard with real sprint metrics using Google Antigravity, Python Git sync hooks, and a hardened FastAPI proxy.',
+    heroImage: '/assets/build-journey/jira-live-agile-board.jpg',
+    tags: ['Jira Cloud', 'Antigravity AI', 'FastAPI Proxy', 'Live Telemetry', 'Scrum'],
+    duration: 'Continuous Live Sync (Sprint 3)',
+    teamSize: 'Solo (AI-Augmented)',
+    scope: 'End-to-End Jira REST API & Live Telemetry',
     liveUrl: '/scrum-board',
-    overview: `This page integrates my live Jira Scrum board, providing a transparent view of current workflows, sprint progress, and task prioritization. As a Program Manager, I utilize Jira to maintain organizational clarity and ensure on-time delivery of complex localization projects.`,
+    liveUrlLabel: 'Open Live Jira Dashboard',
+    caseStudyUrl: '/scrum-board',
+    caseStudyLabel: 'Open Live Jira Dashboard',
+    caseStudyBannerTitle: 'Live Jira + Antigravity Scrum Dashboard',
+    caseStudyBannerSubtitle: 'Inspect real-time Sprint 3 burndown metrics (61% completion across 18 PJM issues), the 5-phase strategic delivery roadmap, and interactive ticket drawers.',
+    overview: `This project showcases how I architected an automated, self-healing Jira Cloud telemetry pipeline and live Scrum dashboard using Google Antigravity, Python Git hooks, and a hardened FastAPI backend proxy.
+
+Rather than maintaining static status slides or manual spreadsheets, I connected my development environment directly to Atlassian Jira Cloud (Project Key: PJM). As features, security gates, and localization milestones are built in Antigravity and VS Code, automated sync workflows update issue states and surface real-time sprint completion, 5-phase delivery roadmaps, and interactive ticket drawers on the live dashboard.`,
     challenges: [
-      'Managing high-volume task dependencies across multiple time zones',
-      'Ensuring real-time visibility for stakeholders during rapid development cycles',
-      'Maintaining a clean backlog while balancing urgent localization requests'
+      'Eliminating manual status reporting by synchronizing live code execution in Google Antigravity and VS Code directly with Atlassian Jira Cloud (PJM board)',
+      'Protecting Atlassian API tokens and preventing CORS exposure while serving real-time board, sprint, and roadmap endpoints to public visitors',
+      'Guaranteeing 100% dashboard uptime and real metric visibility even when external cloud APIs or backend containers experience cold starts or downtime',
+      'Translating raw Jira ticket JSON into an executive-ready view combining active sprint velocity, a 5-phase strategic roadmap, and bilingual (EN/PT) issue inspection'
     ],
     solutions: [
-      'Implemented customized Scrum workflows with automated status triggers',
-      'Established bi-weekly grooming sessions to maintain backlog health',
-      'Integrated live reporting dashboards for instantaneous progress tracking'
+      'Built automated Python workspace-to-Jira sync scripts triggered via Git commit workflows in Antigravity to keep PJM epics and tasks aligned with real code delivery',
+      'Engineered a FastAPI proxy layer (/api/jira/board, /sprints, /roadmap) hardened with internal x-api-key authentication to fetch live Jira Cloud data securely',
+      'Designed an automatic zero-downtime failover architecture in jiraService.js (Promise.allSettled + projectStatusData.json snapshot) so the board never renders an empty state',
+      'Created a responsive Scrum & Roadmap UI at /scrum-board featuring live completion progress bars, 5-stage delivery tracking (Discovery, Strategy, Infra, Production, Launch), and slide-out ticket drawers'
     ],
     results: [
-      { value: '100%', label: 'Sprint Completion' },
-      { value: '25%', label: 'Efficiency Increase' },
-      { value: 'Live', label: 'Tracking' },
-      { value: 'Agile', label: 'Methodology' }
+      { value: '18', label: 'Tracked PJM Epics & Tasks' },
+      { value: '61%', label: 'Sprint 3 Velocity (11/18 Done)' },
+      { value: '5 Phases', label: 'Strategic Delivery Roadmap' },
+      { value: '100%', label: 'Live API + Snapshot Uptime' }
     ],
     locales: {
       pt: {
-        title: 'Quadro Scrum Ágil',
-        description: 'Um painel ao vivo que busca dados em tempo real do meu quadro Jira Scrum.',
-        overview: `Esta página integra meu quadro Jira Scrum ao vivo, fornecendo uma visão transparente dos fluxos de trabalho atuais.`,
+        title: 'Jira + Automação com IA',
+        description: 'Como automatizei o meu dashboard Jira Cloud Scrum ao vivo com métricas reais de sprint utilizando Google Antigravity, hooks Git em Python e um proxy FastAPI seguro.',
+        overview: `Este projeto demonstra como concebi um pipeline automatizado de telemetria Jira Cloud e um dashboard Scrum ao vivo utilizando o Google Antigravity, hooks Git em Python e um proxy de backend FastAPI seguro.
+
+Em vez de manter apresentações estáticas de estado ou folhas de cálculo manuais, interliguei o meu ambiente de desenvolvimento diretamente ao Atlassian Jira Cloud (Chave do Projeto: PJM). À medida que funcionalidades, controlos de segurança e marcos de localização são desenvolvidos no Antigravity e no VS Code, fluxos automatizados sincronizam o estado das tarefas e apresentam métricas reais de conclusão de sprint, roteiros de entrega em 5 fases e gavetas interativas de detalhes no dashboard ao vivo.`,
+        liveUrlLabel: 'Abrir Dashboard Jira ao Vivo',
+        caseStudyLabel: 'Abrir Dashboard Jira ao Vivo',
+        caseStudyBannerTitle: 'Dashboard Scrum ao Vivo: Jira + Antigravity',
+        caseStudyBannerSubtitle: 'Consulte em tempo real as métricas de execução da Sprint 3 (61% de conclusão em 18 tarefas PJM), o roteiro estratégico de 5 fases e os detalhes interativos de cada tarefa.',
         challenges: [
-          'Gestão de dependências de tarefas de alto volume em fusos horários',
-          'Garantia de visibilidade em tempo real para stakeholders',
-          'Manutenção de um backlog limpo durante ciclos rápidos'
+          'Eliminar relatórios de estado manuais sincronizando a execução de código no Google Antigravity e VS Code diretamente com o Atlassian Jira Cloud (quadro PJM)',
+          'Proteger tokens de API da Atlassian e evitar exposição de CORS ao disponibilizar endpoints em tempo real de quadro, sprints e roteiro para visitantes públicos',
+          'Garantir 100% de disponibilidade do dashboard e visibilidade de métricas reais mesmo quando APIs externas ou servidores sofrem latência ou indisponibilidade',
+          'Transformar dados JSON brutos do Jira numa vista executiva combinando velocidade de sprint ativa, roteiro estratégico de 5 fases e inspeção bilingue (EN/PT)'
         ],
         solutions: [
-          'Implementação de fluxos de trabalho Scrum customizados',
-          'Sessões quinzenais de refinamento do backlog',
-          'Integração de painéis de relatórios ao vivo'
+          'Desenvolvimento de scripts Python de sincronização automática entre o workspace e o Jira acionados por commits Git no Antigravity para manter épicos e tarefas PJM alinhados com a entrega real',
+          'Construção de uma camada proxy em FastAPI (/api/jira/board, /sprints, /roadmap) protegida por autenticação interna x-api-key para consultar dados do Jira Cloud com segurança',
+          'Arquitetura de contingência automática sem tempo de inatividade em jiraService.js (Promise.allSettled + snapshot projectStatusData.json) garantindo que o quadro nunca falha',
+          'Criação de uma interface Scrum e Roteiro responsiva em /scrum-board com barras de progresso em tempo real, acompanhamento em 5 fases (Descoberta, Estratégia, Infra, Produção, Lançamento) e gavetas de detalhes'
         ],
         results: [
-          { value: '100%', label: 'Conclusão de Sprints' },
-          { value: '25%', label: 'Aumento de Eficiência' },
-          { value: 'Ao Vivo', label: 'Rastreamento' },
-          { value: 'Ágil', label: 'Metodologia' }
+          { value: '18', label: 'Tarefas e Épicos PJM' },
+          { value: '61%', label: 'Velocidade Sprint 3 (11/18)' },
+          { value: '5 Fases', label: 'Roteiro Estratégico' },
+          { value: '100%', label: 'Disponibilidade API + Snapshot' }
         ]
       }
     },
     technologies: [
-      'Jira Software',
-      'Atlassian Confluence',
-      'Agile Framework',
-      'Sprint Planning',
-      'Kanban',
-      'Automation'
+      'Atlassian Jira Cloud REST API',
+      'Google Antigravity',
+      'FastAPI Backend Proxy',
+      'Python Git Sync Hooks',
+      'React & Tailwind CSS',
+      'Resilient Snapshot Failover',
+      'Agile Scrum Telemetry',
+      'i18next Bilingual UI'
     ],
-    gallery: []
+    gallery: [
+      { url: '/assets/build-journey/jira-live-agile-board.jpg', caption: 'Live Agile Scrum Dashboard (Sprint 3 & 5-Phase Strategic Roadmap)' },
+      { url: '/assets/build-journey/antigravity-ide-preview.jpg', caption: 'Antigravity AI Agent & Live Telemetry Preview' },
+      { url: '/assets/build-journey/vscode-editor-diff.jpg', caption: 'Automated Post-Commit Workspace-to-Jira Sync' },
+      { url: '/assets/build-journey/github-repo-pipeline.jpg', caption: 'GitHub Pipeline & Resilient Snapshot Governance' }
+    ]
   },
 
   'my-portfolio': {
@@ -501,6 +525,26 @@ export const projects = [
     hasDetailPage: true
   },
   {
+    id: 'localization-training-program',
+    title: 'MIIS Teaching & AI Speaker Series',
+    description: 'Visiting Professor at Middlebury Institute, teaching graduate courses on Translation and Localization Management while leading the AI in Localization Speaker Series.',
+    image: '/miis-ai-series.jpg',
+    tags: ['Education', 'AI', 'MIIS'],
+    link: null,
+    featured: false,
+    hasDetailPage: true
+  },
+  {
+    id: 'jira-scrum-board',
+    title: 'Jira + AI Automation',
+    description: 'How I automated my live Jira Cloud Scrum dashboard with real sprint metrics using Google Antigravity, Python Git sync hooks, and a hardened FastAPI proxy.',
+    image: '/assets/build-journey/jira-live-agile-board.jpg',
+    tags: ['Jira Cloud', 'Antigravity AI', 'FastAPI', 'Live Telemetry'],
+    link: '/scrum-board',
+    featured: false,
+    hasDetailPage: true
+  },
+  {
     id: 'global-marketing-localization',
     title: 'Global Marketing Localization',
     description: 'Led end-to-end localization of marketing campaigns across 40+ languages for a Fortune 500 tech company.',
@@ -519,25 +563,8 @@ export const projects = [
     link: null,
     featured: false,
     hasDetailPage: true
-  },
-  {
-    id: 'localization-training-program',
-    title: 'MIIS Teaching & AI Speaker Series',
-    description: 'Visiting Professor at Middlebury Institute, teaching graduate courses on Translation and Localization Management while leading the AI in Localization Speaker Series.',
-    image: '/miis-ai-series.jpg',
-    tags: ['Education', 'AI', 'MIIS'],
-    link: null,
-    featured: false,
-    hasDetailPage: true
-  },
-  {
-    id: 'jira-scrum-board',
-    title: 'Agile Scrum Board',
-    description: 'Live Jira Scrum board demonstrating my program management methodologies and task tracking.',
-    image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&h=400&fit=crop',
-    tags: ['Agile', 'Jira', 'Management'],
-    link: '/scrum-board',
-    featured: false,
-    hasDetailPage: true
   }
 ];
+
+// Alias jira-ai-automation to jira-scrum-board so both URLs resolve cleanly
+projectDetails['jira-ai-automation'] = projectDetails['jira-scrum-board'];

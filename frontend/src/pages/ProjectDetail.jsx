@@ -100,14 +100,23 @@ const ProjectDetail = () => {
               
               <div className="flex flex-wrap gap-4">
                 {project.liveUrl && (
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <Button className="bg-indigo-600 hover:bg-black text-white px-10 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-100 flex items-center gap-2 transform hover:-translate-y-1">
-                      View Live Project
-                      <ExternalLink size={14} />
-                    </Button>
-                  </a>
+                  project.liveUrl.startsWith('/') ? (
+                    <Link to={project.liveUrl}>
+                      <Button className="bg-indigo-600 hover:bg-black text-white px-10 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-100 flex items-center gap-2 transform hover:-translate-y-1">
+                        {project.liveUrlLabel || 'View Live Project'}
+                        <ArrowRight size={14} />
+                      </Button>
+                    </Link>
+                  ) : (
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <Button className="bg-indigo-600 hover:bg-black text-white px-10 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-100 flex items-center gap-2 transform hover:-translate-y-1">
+                        {project.liveUrlLabel || 'View Live Project'}
+                        <ExternalLink size={14} />
+                      </Button>
+                    </a>
+                  )
                 )}
-                {project.caseStudyUrl && (
+                {project.caseStudyUrl && project.caseStudyUrl !== project.liveUrl && (
                   <Link to={project.caseStudyUrl}>
                     <Button className="bg-indigo-600 hover:bg-black text-white px-8 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-100 flex items-center gap-2 transform hover:-translate-y-1">
                       {project.caseStudyLabel || 'NMT Architecture Case Study'}

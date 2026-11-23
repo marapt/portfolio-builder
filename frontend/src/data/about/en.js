@@ -2,9 +2,9 @@
 
 export const aboutHero = {
   eyebrow: 'Enterprise Program Management & Systems Narrative',
-  title: 'Global PM Lead & Operations Manager at heart - Expanding Into Enterprise Program Management',
-  titlePrimary: 'Global PM Lead & Operations Manager at heart',
-  titleSecondary: 'Expanding Into Enterprise Program Management',
+  title: 'Global PM Lead & Operations Manager - Open to Opportunities in Operations and Program Management',
+  titlePrimary: 'Global PM Lead & Operations Manager',
+  titleSecondary: 'Open to Opportunities in Operations and Program Management',
   lead:
     'Grounded in years of scaling global rollouts, tooling workflows, and cross-functional operations across major tech organizations, I bring high-scale program leadership into broader enterprise PgM: turning ambiguous, cross-org initiatives into predictable operating systems and measurable outcomes across teams, systems, and markets.',
   tagline:
@@ -82,7 +82,7 @@ export const functionalPillars = [
     title: 'Why You Should Work With Me',
     focus: 'How I tackle ambiguity, align moving parts, and move complex work forward.',
     color: 'cyan',
-    avatar: '🎯',
+    icon: 'Compass',
     items: [
       {
         title: 'Program & Cross-Org Delivery',
@@ -107,7 +107,7 @@ export const functionalPillars = [
     title: 'Work Style, Attitude & Habits',
     focus: 'My daily operating cadence, mindset, and how I balance rigor with speed.',
     color: 'violet',
-    avatar: '⚡',
+    icon: 'Workflow',
     items: [
       {
         title: 'How I run execution',
@@ -134,7 +134,7 @@ export const functionalPillars = [
     title: 'How I Show Up & Build Connections',
     focus: 'My human presence, relationship building, and cross-functional collaboration.',
     color: 'emerald',
-    avatar: '🤝',
+    icon: 'Network',
     items: [
       {
         title: 'Cross-Org Alignment',
@@ -161,7 +161,7 @@ export const functionalPillars = [
     title: 'What Value I Bring to You',
     focus: 'Concrete enterprise leverage grounded in my track record.',
     color: 'amber',
-    avatar: '🚀',
+    icon: 'TrendingUp',
     items: [
       {
         title: 'Multi-market & org scale',

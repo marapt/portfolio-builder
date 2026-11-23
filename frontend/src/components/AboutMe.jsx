@@ -25,6 +25,9 @@ import {
   Handshake,
   Code2,
   TrendingUp,
+  Workflow,
+  Network,
+  Globe,
 } from 'lucide-react';
 import {
   aboutHero as aboutHeroEN,
@@ -57,11 +60,15 @@ const iconMap = {
   Handshake,
   Code2,
   TrendingUp,
+  Workflow,
+  Network,
+  Globe,
 };
 
 const pillarColorMap = {
   violet: {
     badge: 'border-violet-400/30 bg-violet-400/10 text-violet-200',
+    iconBox: 'border-violet-400/30 bg-violet-400/10 text-violet-300',
     border: 'border-violet-500/25 hover:border-violet-400/40',
     glow: 'from-violet-950/25 via-slate-900/40 to-slate-950/40',
     accentText: 'text-violet-400',
@@ -70,6 +77,7 @@ const pillarColorMap = {
   },
   cyan: {
     badge: 'border-cyan-400/30 bg-cyan-400/10 text-cyan-200',
+    iconBox: 'border-cyan-400/30 bg-cyan-400/10 text-cyan-300',
     border: 'border-cyan-500/25 hover:border-cyan-400/40',
     glow: 'from-cyan-950/25 via-slate-900/40 to-slate-950/40',
     accentText: 'text-cyan-400',
@@ -78,6 +86,7 @@ const pillarColorMap = {
   },
   emerald: {
     badge: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-200',
+    iconBox: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300',
     border: 'border-emerald-500/25 hover:border-emerald-400/40',
     glow: 'from-emerald-950/25 via-slate-900/40 to-slate-950/40',
     accentText: 'text-emerald-400',
@@ -86,6 +95,7 @@ const pillarColorMap = {
   },
   amber: {
     badge: 'border-amber-400/30 bg-amber-400/10 text-amber-200',
+    iconBox: 'border-amber-400/30 bg-amber-400/10 text-amber-300',
     border: 'border-amber-500/25 hover:border-amber-400/40',
     glow: 'from-amber-950/25 via-slate-900/40 to-slate-950/40',
     accentText: 'text-amber-400',
@@ -147,8 +157,10 @@ const AboutMe = () => {
       <section className="space-y-6 pt-4 text-left">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-4 max-w-4xl">
-            <div className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-200">
-              {hero.eyebrow}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-200">
+                {hero.eyebrow}
+              </div>
             </div>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-snug">
               {hero.titlePrimary && hero.titleSecondary ? (
@@ -167,8 +179,83 @@ const AboutMe = () => {
             </p>
           </div>
 
-          {/* Quick Grasp Controls */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
+          {/* Open to New Opportunities Neon Pill Banner & Quick Grasp Controls */}
+          <div className="flex flex-col items-start lg:items-end gap-4 shrink-0">
+            <a
+              href="/#contact"
+              aria-label={isPt ? 'Aberta a Novas Oportunidades - Entrar em Contacto' : 'Open to New Opportunities - Get in Touch'}
+              className="group relative inline-flex rounded-full p-[2.5px] bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 shadow-[0_0_26px_rgba(34,211,238,0.45),0_0_52px_rgba(16,185,129,0.28)] hover:shadow-[0_0_34px_rgba(34,211,238,0.65),0_0_64px_rgba(16,185,129,0.42)] transition-all duration-300 hover:scale-[1.02]"
+            >
+              {/* Subtle corner light flares */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -top-1 right-6 h-2.5 w-10 rounded-full bg-emerald-300/60 blur-md transition-opacity group-hover:opacity-100"
+              />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-1 left-6 h-2.5 w-10 rounded-full bg-cyan-300/60 blur-md transition-opacity group-hover:opacity-100"
+              />
+
+              {/* Inner dark channel */}
+              <span className="inline-flex rounded-full bg-slate-950/95 p-[4px]">
+                {/* Inner glass capsule */}
+                <span className="inline-flex items-center gap-3.5 sm:gap-4 rounded-full border border-cyan-300/45 bg-gradient-to-br from-slate-800/90 via-slate-900/85 to-teal-950/80 px-5 py-2.5 sm:px-6 sm:py-3 shadow-[inset_0_1px_12px_rgba(52,211,153,0.18)] backdrop-blur-md">
+                  {/* Neon Open Door + Arrow SVG Icon */}
+                  <svg
+                    viewBox="0 0 44 44"
+                    className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 drop-shadow-[0_0_8px_rgba(52,211,153,0.65)]"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <linearGradient id="openDoorGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stopColor="#6ee7b7" />
+                        <stop offset="55%" stopColor="#2dd4bf" />
+                        <stop offset="100%" stopColor="#22d3ee" />
+                      </linearGradient>
+                    </defs>
+                    {/* Outer door frame (right side) */}
+                    <path
+                      d="M22 8H35C36.1 8 37 8.9 37 10V34C37 35.1 36.1 36 35 36H22"
+                      stroke="url(#openDoorGrad)"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    {/* Angled open door panel */}
+                    <path
+                      d="M17 9.5L28 5.5V38.5L17 34.5V9.5Z"
+                      stroke="url(#openDoorGrad)"
+                      strokeWidth="2.2"
+                      strokeLinejoin="round"
+                      fill="rgba(34, 211, 238, 0.08)"
+                    />
+                    {/* Door handle dot */}
+                    <circle cx="24.5" cy="22" r="1.3" fill="#6ee7b7" />
+                    {/* Entering arrow */}
+                    <path
+                      d="M4 22H18M18 22L13 17M18 22L13 27"
+                      stroke="url(#openDoorGrad)"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+
+                  {/* Glowing Two-Line Headline */}
+                  <span className="flex flex-col text-left leading-[1.08] tracking-wider font-black uppercase text-white [text-shadow:0_0_12px_rgba(52,211,153,0.65),0_0_24px_rgba(34,211,238,0.35)]">
+                    <span className="text-sm sm:text-base md:text-lg">
+                      {isPt ? 'ABERTA A NOVAS' : 'OPEN TO NEW'}
+                    </span>
+                    <span className="text-sm sm:text-base md:text-lg">
+                      {isPt ? 'OPORTUNIDADES' : 'OPPORTUNITIES'}
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </a>
+
             <button
               onClick={toggleAll}
               className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-2.5 text-xs font-bold text-slate-200 hover:text-white transition-all shadow-lg backdrop-blur-md cursor-pointer"
@@ -297,6 +384,7 @@ const AboutMe = () => {
           .filter((pillar) => activeTab === 'all' || activeTab === pillar.id)
           .map((pillar) => {
             const colors = pillarColorMap[pillar.color] || pillarColorMap.violet;
+            const PillarIcon = iconMap[pillar.icon] || Compass;
 
             return (
               <section
@@ -307,9 +395,12 @@ const AboutMe = () => {
                 {/* Pillar Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
                   <div className="flex items-start gap-4">
-                    <span className="text-3xl sm:text-4xl p-2.5 rounded-2xl bg-white/5 border border-white/10 shrink-0" role="img" aria-label={pillar.title}>
-                      {pillar.avatar}
-                    </span>
+                    <div
+                      className={`p-3 rounded-2xl border ${colors.iconBox} shrink-0 shadow-sm`}
+                      aria-hidden="true"
+                    >
+                      <PillarIcon size={26} />
+                    </div>
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
                         <span className={`text-[11px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${colors.badge}`}>
@@ -399,9 +490,12 @@ const AboutMe = () => {
           {/* Section Header Inside Box */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
             <div className="flex items-start gap-4">
-              <span className="text-3xl sm:text-4xl p-2.5 rounded-2xl bg-white/5 border border-white/10 shrink-0" role="img" aria-label="Beyond the Resume">
-                🌟
-              </span>
+              <div
+                className="p-3 rounded-2xl border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 shrink-0 shadow-sm"
+                aria-hidden="true"
+              >
+                <Globe size={26} />
+              </div>
               <div className="space-y-1 max-w-3xl">
                 <span className="text-xs font-black uppercase tracking-[0.18em] text-cyan-400">
                   05 · {isPt ? 'Além do Currículo' : 'Beyond the Resume'}
