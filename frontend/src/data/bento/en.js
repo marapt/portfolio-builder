@@ -33,6 +33,11 @@ export const topPillars = [
         metrics: '50 to 10-20 Attendees · 3x Wkly to MBR/QBR · Fast Sign-Offs',
         proofAnchor: 'block-microsoft',
         proofAnchors: ['block', 'microsoft'],
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'View MBR/QBR, Vendor Governance & BI Slide Showcase',
+          buttonLabel: 'MBR/QBR Deck',
+        },
         star: {
           situation:
             'Cross-functional operational reviews were frequently bogged down in tactical granularities, exhausting VP, senior leads, and broader teams\' time without securing decisions on critical blockers. Teams also lacked consistent structure and clear alignment with broader organizational and company vision, mission, and OKRs.',
@@ -54,6 +59,11 @@ export const topPillars = [
         tag: 'Finance & OPEX',
         proofAnchor: 'block',
         metrics: 'Block · 30 to 5-Day Invoicing Lag · 5-10% SOW Variance Control',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'View Fiscal OPEX Graphs & MBR/QBR Slide Showcase',
+          buttonLabel: 'MBR/QBR & BI',
+        },
         star: {
       situation:
         'When I joined Block, localization financial management relied on a single resource handling vendor management through heavily manual processes and invoicing cross-checks. This operating model could not scale with planned market expansion or growing transaction volume.',
@@ -75,6 +85,11 @@ export const topPillars = [
         tag: 'Finance & OPEX',
         proofAnchor: 'microsoft',
         metrics: '$500K Cost Avoidance · 35% Cycle Time Cut · 40+ Markets',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'View Vendor SOW Tiering, OPEX Graphs & MBR/QBR Showcase',
+          buttonLabel: 'MBR/QBR & BI',
+        },
         star: {
       situation:
         'At Microsoft (Jun. 2016 - Apr. 2020), supporting global marketing and localization operations across 40+ international markets meant working with multiple external language and vendor partners across regional teams where decentralized SOWs, inconsistent rate cards, ad-hoc SLAs, and manual tracking and invoicing cross-checks created cost friction and slow approvals.',
@@ -109,6 +124,11 @@ export const topPillars = [
         tag: 'BI & Telemetry',
         proofAnchor: 'microsoft',
         metrics: '40+ Mkts · 24-48h Turnaround',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'View Business Intelligence Graphs & MBR/QBR Slide Showcase',
+          buttonLabel: 'BI & Slides',
+        },
         star: {
       situation:
         'During high-velocity global events like Black Friday, internal stakeholders lacked unified, real-time visibility into campaign delivery and performance across global and local markets, risking delayed course-corrections when regional pacing or conversion trends shifted mid-event.',
@@ -131,6 +151,11 @@ export const topPillars = [
         tag: 'Vendor Operations',
         proofAnchor: 'microsoft',
         metrics: '5 Vendor Workstreams · 30-Day SLA & 3-Mo Forecast Visibility',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'View Vendor Management & BI Telemetry Graphs Showcase',
+          buttonLabel: 'BI & Slides',
+        },
         star: {
       situation:
         'Managing vendor capacity, output, SLA adherence (including on-time delivery), and operational costs across active initiatives lacked a consolidated operational view, making it harder for teams to balance supplier workloads against budget guardrails.',
@@ -153,6 +178,11 @@ export const topPillars = [
         proofAnchor: 'block-linkedin',
         proofAnchors: ['block', 'linkedin'],
         metrics: '20+ Stakeholders · >50% Query Reduction · Automated Alerts',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'View Business Intelligence Telemetry & MBR/QBR Slide Showcase',
+          buttonLabel: 'BI & Slides',
+        },
         star: {
       situation:
         'Cross-functional stakeholders across product, engineering, localization, and regional teams lacked end-to-end visibility into where individual requests stood across intake, triage, translation, and deployment, which caused bottlenecks to go unnoticed until deadlines tightened and triggered frequent ad-hoc status inquiries.',
@@ -287,6 +317,11 @@ export const topPillars = [
         tag: 'Vendor Governance',
         metrics: 'SLA Recovery in 4 Wks · Defect Leakage <5% · Zero Launch Disruption',
         proofAnchor: 'block',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'View Vendor SLA Scorecards & MBR/QBR Governance Showcase',
+          buttonLabel: 'MBR/QBR & BI',
+        },
         star: {
           situation:
             'At Block (Nov. 2021 - Nov. 2022), during multi-market continuous software delivery across 15+ international markets, an external tier-1 vendor partner handling asset testing and internationalization began consistently missing agreed SLA turnaround times and exceeding our 5% defect-leakage threshold.',
@@ -309,6 +344,11 @@ export const topPillars = [
         tag: 'Supplier Governance',
         proofAnchor: 'microsoft',
         metrics: '10% YoY Savings · 15% Efficiency · 95% Quality Threshold',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'View Vendor MBR/QBR Scorecards, SOW Tiering & BI Showcase',
+          buttonLabel: 'MBR/QBR Deck',
+        },
         star: {
           situation:
             'At Microsoft (within MSCOM across 40+ international markets), the organization had not run a new globalization vendor RFP in over five years, leaving vendor sourcing, SLA accountability, procurement cycles, and payment/SOW governance stagnant as scale and market needs evolved; similarly, across multi-market programs at Block (15+ markets), fragmented vendor agreements and manual billing/reconciliation steps created cost friction and inconsistent accountability.',
@@ -332,6 +372,11 @@ export const topPillars = [
         proofAnchor: 'linkedin-block',
         proofAnchors: ['linkedin', 'block'],
         metrics: 'LinkedIn & Block · 1 to 5 Contingent Scale · 5 to 10 PGMs',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'View Vendor & Workforce Capacity BI Graphs Showcase',
+          buttonLabel: 'MBR/QBR & BI',
+        },
         star: {
           situation:
             'At LinkedIn (managing 2 FTE direct reports and 15 linguists) and Block (scaling from 5 PMs to 10 PGMs amid market expansion), overwhelmed teams faced constant firefighting between reactive bug triage and new deliverables, while zero baseline telemetry existed to measure true workload or compare internal FTE capacity against temporary workers.',
