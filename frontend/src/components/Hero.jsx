@@ -77,7 +77,7 @@ const Hero = () => {
       description: t('hero.val_geo_desc'), 
       icon: Globe, 
       position: "-bottom-8 -right-8 lg:-bottom-16 lg:-right-16",
-      targetId: "/resume",
+      targetId: "/project/global-marketing-localization",
       isPage: true
     },
     { 
@@ -85,7 +85,8 @@ const Hero = () => {
       description: t('hero.val_pm_desc'), 
       icon: Layout, 
       position: "-bottom-8 -left-8 lg:-bottom-16 lg:-left-16",
-      targetId: "#scrum-board"
+      targetId: "/experiences",
+      isPage: true
     },
     { 
       label: t('hero.val_culture_title'), 
@@ -109,7 +110,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="flex flex-col space-y-10 animate-in fade-in slide-in-from-left duration-1000">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-black text-white leading-tight tracking-tighter">
+              <h1 className="text-3xl sm:text-4xl lg:text-[2.35rem] xl:text-5xl font-black text-white leading-[1.15] tracking-tight whitespace-pre-line">
                 {t('hero.title')}
               </h1>
               

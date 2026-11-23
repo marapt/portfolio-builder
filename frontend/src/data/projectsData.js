@@ -499,6 +499,97 @@ Desde a orquestração de iterações rápidas com o Google Antigravity e o VS C
       { url: '/assets/build-journey/crowdin-cat-localization.png', caption: 'Crowdin CAT Tool & Bilingual Parity' },
       { url: '/assets/build-journey/vercel-deployment-cloud.jpg', caption: 'Vercel Production Deployment & Domain Hosting' }
     ]
+  },
+
+  'experiences-star-framework': {
+    id: 'experiences-star-framework',
+    title: 'My Experiences in STAR Framework',
+    description: 'How I distilled 15+ years of real-world program leadership into 28 interactive STAR cards across 8 strategic pillars for interview preparation, recruiter discovery, and executive review, built with Google Antigravity.',
+    heroImage: '/assets/build-journey/experiences-star-bento.jpg',
+    tags: ['STAR Framework', 'Interview Prep', 'Antigravity AI', '8 Pillars', 'Recruiter Ready'],
+    duration: '15+ Years Distilled (2006–2026)',
+    teamSize: 'Solo (AI-Augmented via Antigravity)',
+    scope: '8 Strategic Pillars & 28 STAR Cards',
+    liveUrl: '/experiences',
+    liveUrlLabel: 'Explore Experiences (STAR Cards)',
+    caseStudyUrl: '/experiences',
+    caseStudyLabel: 'Explore Experiences Page',
+    secondaryUrl: '/career',
+    secondaryUrlLabel: 'View Career Timeline (2006–2026)',
+    caseStudyBannerTitle: 'Explore My 28 Interactive STAR Cards & Full Career Timeline',
+    caseStudyBannerSubtitle: 'Visit the Experiences page to filter, flip, and expand all 28 STAR stories in detail, or open the interactive Career Timeline for concrete milestone-by-milestone visibility into my roles, metrics, and evidence artifacts.',
+    overview: `I created the Experiences page for two core purposes: to prepare systematically for senior program management and operations interviews, and to give recruiters, hiring managers, and portfolio visitors a fast, transparent way to evaluate my real-world track record.
+
+First, I authored the content from my own real-life experiences across Microsoft, Apple, LinkedIn, Block, Hogarth Worldwide, MIIS, and European Union institutions. Rather than listing generic resume responsibilities, I structured 28 concrete operational case studies using the Situation, Task, Action, Result, and Learning (STAR) framework, anchoring every story in first-person ownership ("I") and verified business metrics.
+
+Next, I partnered with Google Antigravity in VS Code to turn that dense library of interview stories into a fast, digestible Bento Box experience (/experiences). Visitors can filter across 8 core Senior PgM pillars, read the headline Validated Impact pill at a glance, flip any card for a quick summary, expand into a wide full-text reading modal, or jump straight to my Career Timeline (/career) for deeper chronological context and evidence artifacts.`,
+    challenges: [
+      'Distilling 15+ years of complex global operations, vendor governance, and AI program leadership across multiple enterprise organizations into an interview-ready format that recruiters and hiring leaders can digest in seconds',
+      'Moving beyond flat resume bullets to show true first-person ownership: the operational problem (Situation), my mandate (Task), the governance and systems I engineered (Action), and the measurable impact (Result & Learning)',
+      'Balancing two different reader needs in one UI: rapid 10-second scanning for busy recruiters and deep architectural detail for hiring managers and interview loops',
+      'Linking topical STAR examples directly to my chronological career milestones and maintaining 100% bilingual parity across English and European Portuguese'
+    ],
+    solutions: [
+      'Synthesized 28 real-life operational stories in active first-person voice across 8 Strategic Pillars: Executive Health & Impact Reporting, Operational BI, Portfolio Governance, Supplier Performance, Operational Enablement, Cross-functional Alignment, Live Incidents Response, and Optimization & Innovation (MTPE + AI + HIL)',
+      'Leveraged Google Antigravity as an AI engineering partner to design a compact, uniform 3D Bento Card system (/experiences) featuring headline Validated Impact badges, company logos, instant Flip summaries, and a wide modal reader',
+      'Built instant pillar filtering and search controls so recruiters and interviewers can immediately isolate proof points in finance/OPEX, Power BI telemetry, vendor SOW governance, 24/7 crisis triage, or NMT/AI workflows',
+      'Cross-linked the STAR cards directly to the interactive 20-milestone Career Timeline (/career) so visitors who want concrete chronological visibility can inspect role dates, executive deliverables, and primary evidence artifacts'
+    ],
+    results: [
+      { value: '28', label: 'Real-Life STAR Cards' },
+      { value: '8 Pillars', label: 'Core PgM Responsibilities' },
+      { value: '2006–2026', label: 'Linked Career Timeline' },
+      { value: '100%', label: 'EN/PT Bilingual Parity' }
+    ],
+    locales: {
+      pt: {
+        title: 'As Minhas Experiências no Modelo STAR',
+        description: 'Como sintetizei mais de 15 anos de liderança real de programas em 28 cartões STAR interativos em 8 pilares estratégicos para preparação de entrevistas, partilha com recrutadores e consulta rápida com o Google Antigravity.',
+        overview: `Criei a página de Experiências com dois objetivos principais: preparar-me de forma estruturada para entrevistas de liderança sénior em gestão de programas e operações, e oferecer a recrutadores, diretores de contratação e visitantes uma forma rápida e transparente de avaliar o meu percurso real.
+
+Em primeiro lugar, redigi o conteúdo a partir das minhas próprias experiências reais na Microsoft, Apple, LinkedIn, Block, Hogarth Worldwide, MIIS e instituições da União Europeia. Em vez de listar responsabilidades genéricas de currículo, estruturei 28 casos reais segundo o modelo Situação, Tarefa, Ação, Resultado e Aprendizagem (STAR), apresentando cada história na primeira pessoa ("Eu") e fundamentada em métricas reais de negócio.
+
+Em seguida, utilizei o Google Antigravity no VS Code para transformar essa biblioteca densa de histórias de entrevista numa experiência Bento Box rápida e intuitiva (/experiences). Os visitantes podem filtrar por 8 pilares estratégicos de gestão de programas, consultar o impacto validado num relance, virar qualquer cartão para um resumo rápido, expandir para uma leitura completa ou aceder diretamente à minha Linha de Carreira (/career) para visibilidade cronológica detalhada.`,
+        liveUrlLabel: 'Explorar Experiências (Cartões STAR)',
+        caseStudyLabel: 'Explorar Página de Experiências',
+        secondaryUrlLabel: 'Ver Linha de Carreira (2006–2026)',
+        caseStudyBannerTitle: 'Explore os Meus 28 Cartões STAR Interativos e a Minha Linha de Carreira',
+        caseStudyBannerSubtitle: 'Visite a página de Experiências para filtrar, virar e expandir em detalhe as 28 histórias STAR, ou abra a Linha de Carreira interativa para visibilidade concreta sobre cada função, métricas e evidências.',
+        challenges: [
+          'Sintetizar mais de 15 anos de operações globais, governação de fornecedores e liderança de programas de IA num formato pronto para entrevistas que recrutadores e líderes possam analisar em segundos',
+          'Ir além de tópicos estáticos de currículo para demonstrar responsabilidade direta na primeira pessoa: o desafio operacional (Situação), a minha missão (Tarefa), os sistemas que implementei (Ação) e o impacto mensurável (Resultado e Aprendizagem)',
+          'Equilibrar duas necessidades de leitura numa única interface: leitura rápida em 10 segundos para recrutadores e detalhe arquitetural profundo para entrevistas técnicas',
+          'Interligar exemplos temáticos STAR aos marcos cronológicos da minha carreira mantendo 100% de paridade bilingue entre inglês e português europeu'
+        ],
+        solutions: [
+          'Autoria de 28 histórias operacionais reais na primeira pessoa em 8 Pilares Estratégicos: Monitorização Executiva, Business Intelligence Operacional, Governação de Portfólio, Desempenho de Fornecedores, Capacitação Operacional, Alinhamento Multifuncional, Resposta a Incidentes e Otimização e Inovação (MTPE + IA + HIL)',
+          'Utilização do Google Antigravity como parceiro de engenharia com IA para criar um sistema uniforme de cartões Bento 3D (/experiences) com indicadores de impacto validado, logótipos de empresas, rotação rápida e leitura modal alargada',
+          'Implementação de filtros instantâneos por pilar e pesquisa para que recrutadores e entrevistadores possam isolar rapidamente evidências em finanças/OPEX, telemetria Power BI, governação SOW, triagem 24/7 ou fluxos de NMT/IA',
+          'Ligação direta dos cartões STAR à Linha de Carreira interativa de 20 marcos (/career) para que os visitantes que procuram visibilidade cronológica concreta possam consultar datas, entregas e artefactos de evidência'
+        ],
+        results: [
+          { value: '28', label: 'Cartões STAR de Casos Reais' },
+          { value: '8 Pilares', label: 'Responsabilidades PgM' },
+          { value: '2006–2026', label: 'Linha de Carreira Ligada' },
+          { value: '100%', label: 'Paridade Bilingue EN/PT' }
+        ]
+      }
+    },
+    technologies: [
+      'STAR Interview Framework',
+      'Google Antigravity',
+      '8-Pillar Bento Architecture',
+      'Interactive 3D Flip & Modal UI',
+      'React & Tailwind CSS',
+      'Career Timeline Cross-Linking',
+      'Jest Guardrail Testing',
+      'EN/PT Bilingual Parity'
+    ],
+    gallery: [
+      { url: '/assets/build-journey/experiences-star-bento.jpg', caption: '8-Pillar Bento Grid & 28 Interactive STAR Cards (/experiences)' },
+      { url: '/assets/build-journey/antigravity-ide-preview.jpg', caption: 'Distilling Real Career Stories into Digestible UI with Antigravity' },
+      { url: '/assets/build-journey/vscode-editor-diff.jpg', caption: 'First-Person STAR Narrative & Bilingual EN/PT Schema' }
+    ]
   }
 };
 
@@ -541,6 +632,16 @@ export const projects = [
     image: '/assets/build-journey/jira-live-agile-board.jpg',
     tags: ['Jira Cloud', 'Antigravity AI', 'FastAPI', 'Live Telemetry'],
     link: '/scrum-board',
+    featured: false,
+    hasDetailPage: true
+  },
+  {
+    id: 'experiences-star-framework',
+    title: 'My Experiences in STAR Framework',
+    description: 'How I distilled 15+ years of real-world program leadership into 28 interactive STAR cards across 8 strategic pillars for interview preparation, recruiter discovery, and quick portfolio access using Google Antigravity.',
+    image: '/assets/build-journey/experiences-star-bento.jpg',
+    tags: ['STAR Framework', 'Interview Prep', 'Antigravity AI', '8 Pillars'],
+    link: '/experiences',
     featured: false,
     hasDetailPage: true
   },

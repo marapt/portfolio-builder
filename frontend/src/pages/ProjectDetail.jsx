@@ -124,6 +124,14 @@ const ProjectDetail = () => {
                     </Button>
                   </Link>
                 )}
+                {project.secondaryUrl && (
+                  <Link to={project.secondaryUrl}>
+                    <Button variant="outline" className="border-2 border-indigo-200 bg-white text-indigo-700 hover:bg-indigo-600 hover:text-white hover:border-indigo-600 px-8 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 flex items-center gap-2 transform hover:-translate-y-1">
+                      {project.secondaryUrlLabel || 'Explore Career Timeline'}
+                      <ArrowRight size={14} />
+                    </Button>
+                  </Link>
+                )}
                 {project.githubUrl && (
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-10 py-7 rounded-2xl font-black uppercase tracking-widest text-xs transition-all duration-500 transform hover:-translate-y-1">
@@ -160,7 +168,7 @@ const ProjectDetail = () => {
                  </h2>
               </div>
               <div className="lg:w-2/3">
-                <p className="text-xl text-gray-500 font-medium leading-relaxed italic border-l-4 border-indigo-100 pl-8">
+                <p className="text-xl text-gray-500 font-medium leading-relaxed italic border-l-4 border-indigo-100 pl-8 whitespace-pre-line">
                    {project.overview}
                 </p>
 
@@ -178,12 +186,22 @@ const ProjectDetail = () => {
                         {project.caseStudyBannerSubtitle || (lang === 'pt' ? 'Visita passo a passo pela minha arquitetura de engenharia com capturas de ecrã do Antigravity, VS Code, GitHub, Crowdin e Vercel.' : 'Step-by-step visual walkthrough of my engineering architecture with screenshots of Antigravity, VS Code, GitHub, Crowdin, and Vercel.')}
                       </p>
                     </div>
-                    <Link to={project.caseStudyUrl} className="shrink-0">
-                      <Button className="bg-indigo-600 hover:bg-indigo-500 text-white font-black px-8 py-6 rounded-2xl text-xs uppercase tracking-wider shadow-xl shadow-indigo-600/30 flex items-center gap-2">
-                        <span>{project.caseStudyLabel || (lang === 'pt' ? 'Explorar Jornada' : 'Explore Journey')}</span>
-                        <ArrowRight size={14} />
-                      </Button>
-                    </Link>
+                    <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+                      <Link to={project.caseStudyUrl}>
+                        <Button className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-black px-8 py-6 rounded-2xl text-xs uppercase tracking-wider shadow-xl shadow-indigo-600/30 flex items-center justify-center gap-2">
+                          <span>{project.caseStudyLabel || (lang === 'pt' ? 'Explorar Jornada' : 'Explore Journey')}</span>
+                          <ArrowRight size={14} />
+                        </Button>
+                      </Link>
+                      {project.secondaryUrl && (
+                        <Link to={project.secondaryUrl}>
+                          <Button variant="outline" className="w-full border border-indigo-400/40 bg-white/5 hover:bg-white/15 text-indigo-200 hover:text-white font-black px-8 py-5 rounded-2xl text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                            <span>{project.secondaryUrlLabel || (lang === 'pt' ? 'Ver Linha de Carreira' : 'View Career Timeline')}</span>
+                            <ArrowRight size={14} />
+                          </Button>
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
