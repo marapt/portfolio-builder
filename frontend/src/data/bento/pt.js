@@ -33,6 +33,11 @@ export const topPillars = [
         metrics: '50 para 10-20 Participantes · 3x Sem. para MBR/QBR · Decisões Rápidas',
         proofAnchor: 'block-microsoft',
         proofAnchors: ['block', 'microsoft'],
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'Ver Showcase de Slides MBR/QBR, Fornecedores e Gráficos BI',
+          buttonLabel: 'Slides MBR/QBR',
+        },
         star: {
           situation:
             'As revisões operacionais multifuncionais ficavam frequentemente presas em detalhes táticos, consumindo tempo de VPs, líderes seniores e equipas sem garantir decisões sobre bloqueios críticos. Faltava também às equipas uma estrutura consistente e um alinhamento claro com a visão, missão e OKRs mais amplos da organização e da empresa.',
@@ -54,6 +59,11 @@ export const topPillars = [
         tag: 'Finanças & OPEX',
         proofAnchor: 'block',
         metrics: 'Block · Processamento de Faturas de 30 para 5 Dias · Margem de 5-10% em SOWs',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'Ver Gráficos Fiscais OPEX e Showcase de Slides MBR/QBR',
+          buttonLabel: 'MBR/QBR & BI',
+        },
         star: {
       situation:
         'Ao ingressar na Block, a gestão financeira de localização dependia de um único recurso que tratava da gestão de fornecedores através de processos marcadamente manuais e validações cruzadas de faturas. Este modelo operacional não conseguia escalar perante a expansão de mercado planeada ou o aumento no volume de transações.',
@@ -75,6 +85,11 @@ export const topPillars = [
         tag: 'Finanças & OPEX',
         proofAnchor: 'microsoft',
         metrics: '$500K Custos Evitados · -35% Tempo de Ciclo · 40+ Mercados',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'Ver Matriz SOW, Gráficos OPEX e Showcase MBR/QBR',
+          buttonLabel: 'MBR/QBR & BI',
+        },
         star: {
       situation:
         'Na Microsoft (jun. de 2016 - abr. de 2020), o suporte a operações globais de marketing e localização em mais de 40 mercados internacionais implicava trabalhar com múltiplos parceiros linguísticos e fornecedores externos em equipas regionais, onde SOWs descentralizados, tabelas de preços inconsistentes, SLAs pontuais e verificações manuais de faturação criavam atrito nos custos e atrasos nas aprovações.',
@@ -109,6 +124,11 @@ export const topPillars = [
         tag: 'BI & Telemetria',
         proofAnchor: 'microsoft',
         metrics: '40+ Mercados · 24-48h Turnaround',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'Ver Gráficos de Business Intelligence e Slides MBR/QBR',
+          buttonLabel: 'BI & Slides',
+        },
         star: {
       situation:
         'Durante eventos globais de alta velocidade como a Black Friday, as partes interessadas internas não tinham visibilidade unificada e em tempo real sobre a entrega e o desempenho de campanhas nos mercados globais e locais, arriscando correções de rumo tardias sempre que os ritmos regionais ou tendências de conversão variavam a meio do evento.',
@@ -131,6 +151,11 @@ export const topPillars = [
         tag: 'Operações de Fornecedores',
         proofAnchor: 'microsoft',
         metrics: '5 Fornecedores · Visibilidade de SLAs a 30 Dias e Previsões a 3 Meses',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'Ver Showcase de Governação de Fornecedores e Gráficos BI',
+          buttonLabel: 'BI & Slides',
+        },
         star: {
       situation:
         'A gestão de capacidade de fornecedores, volume, cumprimento de SLAs (incluindo entregas no prazo) e custos operacionais nas iniciativas ativas não dispunha de uma visão operacional consolidada, dificultando o equilíbrio das cargas de trabalho face aos limites orçamentais.',
@@ -153,6 +178,11 @@ export const topPillars = [
         proofAnchor: 'block-linkedin',
         proofAnchors: ['block', 'linkedin'],
         metrics: '20+ Partes Interessadas · >50% Redução de Pedidos de Estado',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'Ver Telemetria de Business Intelligence e Slides MBR/QBR',
+          buttonLabel: 'BI & Slides',
+        },
         star: {
       situation:
         'As partes interessadas multifuncionais em produto, engenharia, localização e equipas regionais não dispunham de visibilidade de ponta a ponta sobre o ponto em que cada pedido individual se encontrava nas etapas de intake, triagem, tradução e implementação, o que fazia com que bloqueios passassem despercebidos até os prazos ficarem apertados, originando pedidos constantes de ponto de situação.',
@@ -287,6 +317,11 @@ export const topPillars = [
         tag: 'Governação de Fornecedores',
         metrics: 'Recuperação em 4 Semanas · Fuga de Defeitos <5% · Zero Impacto no Lançamento',
         proofAnchor: 'block',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'Ver Scorecards de SLA de Fornecedores e Governação MBR/QBR',
+          buttonLabel: 'MBR/QBR & BI',
+        },
         star: {
           situation:
             'Na Block (nov. de 2021 - nov. de 2022), durante a entrega contínua de software em mais de 15 mercados internacionais, um fornecedor de nível 1 responsável pelo teste de recursos e internacionalização começou a falhar de forma consistente os prazos de SLA acordados e a ultrapassar o nosso limite de 5% de defeitos não detetados.',
@@ -309,6 +344,11 @@ export const topPillars = [
         tag: 'Governação de Fornecedores',
         proofAnchor: 'microsoft',
         metrics: '10% Poupança Anual · 15% Eficiência · 95% Limiar de Qualidade',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'Ver Scorecards MBR/QBR de Fornecedores, Escalões SOW e BI',
+          buttonLabel: 'Slides MBR/QBR',
+        },
         star: {
           situation:
             'Na Microsoft (na MSCOM, em mais de 40 mercados internacionais), a organização não realizava um novo RFP de fornecedores de globalização há mais de cinco anos, deixando o aprovisionamento, o cumprimento de SLAs, os ciclos de compras e a gestão de pagamentos/SOWs desatualizados face à evolução da escala e das necessidades de mercado; de forma semelhante, nos programas multi-mercado da Block (15+ mercados), contratos fragmentados e processos manuais de faturação e reconciliação criavam atritos nos custos e inconsistências na prestação de contas.',
@@ -332,6 +372,11 @@ export const topPillars = [
         proofAnchor: 'linkedin-block',
         proofAnchors: ['linkedin', 'block'],
         metrics: 'LinkedIn & Block · Escala Contingente de 1 a 5 · 5 para 10 PGMs',
+        externalLink: {
+          url: '/mbr-qbr-showcase',
+          label: 'Ver Gráficos BI de Capacidade de Fornecedores e Equipas',
+          buttonLabel: 'MBR/QBR & BI',
+        },
         star: {
           situation:
             'No LinkedIn (gerindo 2 colaboradores diretos a tempo inteiro e 15 linguistas) e na Block (escalando de 5 PMs para 10 PGMs durante a expansão de mercado), as equipas sobrecarregadas enfrentavam uma gestão de crises constante entre a triagem reativa de erros e novas entregas, sem que existisse qualquer telemetria de base para medir a carga de trabalho real ou comparar a capacidade interna de efetivos face aos trabalhadores temporários.',

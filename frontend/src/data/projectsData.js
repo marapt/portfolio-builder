@@ -590,6 +590,100 @@ Em seguida, utilizei o Google Antigravity no VS Code para transformar essa bibli
       { url: '/assets/build-journey/antigravity-ide-preview.jpg', caption: 'Distilling Real Career Stories into Digestible UI with Antigravity' },
       { url: '/assets/build-journey/vscode-editor-diff.jpg', caption: 'First-Person STAR Narrative & Bilingual EN/PT Schema' }
     ]
+  },
+
+  'mbr-qbr-vendor-bi': {
+    id: 'mbr-qbr-vendor-bi',
+    title: 'MBR/QBR, Vendor Governance & BI',
+    description: 'Executive showcase of Monthly and Quarterly Business Review (MBR/QBR) slides, vendor SOW governance presentations, and typical Business Intelligence telemetry graphs (illustrative data for NDA compliance) presented to senior leadership teams.',
+    heroImage: '/assets/mbr-qbr-deck/slide-49.jpg',
+    tags: ['MBR / QBR', 'Vendor Governance', 'Business Intelligence', 'OPEX & SLAs', 'Executive Deck'],
+    duration: 'Monthly, Quarterly & Annual Cadences',
+    teamSize: 'Cross-Functional Leads & 5+ Global Vendors',
+    scope: '40+ Markets & Multi-Million OPEX Governance',
+    liveUrl: '/mbr-qbr-showcase',
+    liveUrlLabel: 'Open MBR/QBR & BI Showcase',
+    caseStudyUrl: '/mbr-qbr-showcase',
+    caseStudyLabel: 'Explore Interactive BI Graphs & Slides',
+    secondaryUrl: '/experiences',
+    secondaryUrlLabel: 'Explore 28 STAR Cards',
+    caseStudyBannerTitle: 'Interactive MBR/QBR Slide Deck, Vendor Scorecards & BI Telemetry',
+    caseStudyBannerSubtitle: 'Inspect presentation slides (Slides 49-66), interactive multi-year OPEX and component charts, and the 44-language SOW tiering architecture (illustrative metrics for confidentiality).',
+    overview: `This executive showcase demonstrates the structure, visual telemetry, and presentation frameworks I use when leading Monthly Business Reviews (MBRs), Quarterly Business Reviews (QBRs), and Vendor Governance reviews with senior leadership teams, Finance, Engineering, and external agency partners.
+
+Note on Data Confidentiality: All financial figures, volume projections, and percentages in these slides and charts are illustrative mock representations designed to demonstrate executive reporting methodology, visual hierarchy, and vendor governance without disclosing proprietary corporate data.
+
+The showcase combines rendered presentation slides from my strategic portfolio deck (Slides 49-66) with interactive Business Intelligence visualizations: multi-year OPEX reduction trends ($3.1M to $2.3M, -25.8%), monthly forecast-versus-actual burn guardrails, workflow component attribution (Web 77.7%, DemandGen 13.7%, Adhoc 8.6%), and a 5-tier, 44-language Statement of Work (SOW) architecture.`,
+    challenges: [
+      'Giving senior leadership and Finance clear, scannable visibility into multi-million localization OPEX, vendor SLA compliance, and year-over-year cost optimization without drowning reviews in raw spreadsheet tables',
+      'Standardizing Monthly (30-minute MBR) and Quarterly (45-minute QBR) review cadences across internal teams and external suppliers so meetings focus on strategic trade-offs, unowned risks, and executive sign-offs',
+      'Breaking down annual spend by delivery component (Web, DemandGen, Adhoc) and language tier to expose hidden budget leaks such as unforecasted ad-hoc project requests',
+      'Showcasing realistic executive presentation slides and Business Intelligence telemetry graphs in a public portfolio while strictly protecting employer confidentiality and NDA boundaries'
+    ],
+    solutions: [
+      'Designed an executive MBR/QBR slide framework pairing traffic-light KPI scorecards, YoY growth highlights, and 3-column strategic priorities (Budget, Quality, Innovation) for fast leadership alignment',
+      'Built interactive Business Intelligence charts modeling 3-year OPEX optimization ($3.1M to $2.3M, -25.8% reduction), monthly burn trajectories ($60K to $245K seasonal peaks), and component spend splits',
+      'Established a 5-Tier SOW language governance matrix across 44 languages (Tier 1 Core through Tier 5 Adhoc) pairing differentiated localization scope with automated volume discounting and MTPE routing',
+      'Created a filterable 14-slide presentation gallery (/mbr-qbr-showcase) with full-screen lightbox inspection and bilingual (EN/PT) context notes'
+    ],
+    results: [
+      { value: '-25.8%', label: 'Modeled 3-Yr OPEX Trajectory' },
+      { value: '44 Langs', label: '5-Tier SOW Governance Matrix' },
+      { value: '14 Slides', label: 'Executive MBR/QBR Deck Gallery' },
+      { value: '4 BI Views', label: 'Interactive Telemetry Graphs' }
+    ],
+    locales: {
+      pt: {
+        title: 'MBR/QBR, Governação de Fornecedores e BI',
+        description: 'Showcase executivo de slides de Monthly e Quarterly Business Reviews (MBR/QBR), apresentações de governação de fornecedores (SOW) e gráficos típicos de Business Intelligence (dados ilustrativos para conformidade com NDA) apresentados a equipas de liderança sénior.',
+        overview: `Este showcase executivo demonstra a estrutura, a telemetria visual e os modelos de apresentação que utilizo ao liderar Monthly Business Reviews (MBRs), Quarterly Business Reviews (QBRs) e revisões de Governação de Fornecedores com equipas de liderança sénior, Finanças, Engenharia e agências parceiras.
+
+Nota sobre Confidencialidade de Dados: Todos os valores financeiros, projeções de volume e percentagens nestes slides e gráficos são representações ilustrativas criadas para demonstrar a metodologia de reporte executivo, a hierarquia visual e a governação de fornecedores sem divulgar dados empresariais confidenciais.
+
+O showcase combina slides reais do meu portfólio estratégico (Slides 49-66) com gráficos interativos de Business Intelligence: evolução plurianual de redução de OPEX ($3,1M para $2,3M, -25,8%), controlo mensal de execução orçamental face a previsões, distribuição por componente (Web 77,7%, DemandGen 13,7%, Adhoc 8,6%) e arquitetura SOW de 44 idiomas em 5 escalões.`,
+        liveUrlLabel: 'Abrir Showcase MBR/QBR & BI',
+        caseStudyLabel: 'Explorar Gráficos BI & Slides Interativos',
+        secondaryUrlLabel: 'Explorar 28 Cartões STAR',
+        caseStudyBannerTitle: 'Apresentação Interativa MBR/QBR, Scorecards de Fornecedores e Telemetria BI',
+        caseStudyBannerSubtitle: 'Consulte os slides de apresentação (Slides 49-66), os gráficos interativos de OPEX plurianual e distribuição por componente, e a matriz SOW de 44 idiomas (métricas ilustrativas para confidencialidade).',
+        challenges: [
+          'Proporcionar à liderança sénior e a Finanças visibilidade clara sobre OPEX multimilionário, cumprimento de SLAs de fornecedores e otimização anual de custos sem sobrecarregar as reuniões com folhas de cálculo complexas',
+          'Padronizar cadências de revisão Mensal (MBR de 30 minutos) e Trimestral (QBR de 45 minutos) entre equipas internas e fornecedores para focar as reuniões em decisões estratégicas e mitigação de riscos',
+          'Desagregar a despesa anual por componente de entrega (Web, DemandGen, Adhoc) e escalão de idioma para expor desvios orçamentais como pedidos ad-hoc não planeados',
+          'Apresentar slides executivos e gráficos típicos de Business Intelligence num portfólio público respeitando rigorosamente os limites de confidencialidade e NDA'
+        ],
+        solutions: [
+          'Criação de uma estrutura executiva de slides MBR/QBR combinando scorecards de KPIs, destaques de crescimento homólogo e prioridades estratégicas em 3 colunas (Orçamento, Qualidade, Inovação)',
+          'Desenvolvimento de gráficos interativos de Business Intelligence modelando a otimização de OPEX a 3 anos ($3,1M para $2,3M, -25,8%), curvas de despesa mensal e divisão por componente',
+          'Implementação de uma matriz de governação SOW de 5 escalões para 44 idiomas (Tier 1 Core a Tier 5 Adhoc) associando âmbito de localização diferenciado a descontos de volume e fluxos MTPE',
+          'Construção de uma galeria filtrável de 14 slides (/mbr-qbr-showcase) com inspeção em ecrã inteiro e notas de contexto bilingues (EN/PT)'
+        ],
+        results: [
+          { value: '-25,8%', label: 'Trajetória OPEX a 3 Anos (Modelo)' },
+          { value: '44 Idiomas', label: 'Matriz SOW em 5 Escalões' },
+          { value: '14 Slides', label: 'Galeria Executiva MBR/QBR' },
+          { value: '4 Vistas BI', label: 'Gráficos de Telemetria Interativos' }
+        ]
+      }
+    },
+    technologies: [
+      'Power BI Telemetry Design',
+      'Executive MBR / QBR Frameworks',
+      'Vendor SOW & MSA Tiering',
+      'OPEX Variance & Burn Analytics',
+      'SLA / KPI Scorecarding',
+      '5-Tier Language Architecture',
+      'React Interactive BI Charts',
+      'EN/PT Bilingual Parity'
+    ],
+    gallery: [
+      { url: '/assets/mbr-qbr-deck/slide-49.jpg', caption: 'Slide 49: Localization Overview, 44 Languages & Multi-Year OPEX Trajectory' },
+      { url: '/assets/mbr-qbr-deck/slide-50.jpg', caption: 'Slide 50: Annual Spend Breakdown & Component Attribution (Web, DemandGen, Adhoc)' },
+      { url: '/assets/mbr-qbr-deck/slide-51.jpg', caption: 'Slide 51: 5-Tier Language Matrix & Scope Governance Across 44 Languages' },
+      { url: '/assets/mbr-qbr-deck/slide-61.jpg', caption: 'Slide 61: Quarterly Business Review (QBR) Executive Summary & YoY Growth' },
+      { url: '/assets/mbr-qbr-deck/slide-62.jpg', caption: 'Slide 62: Strategic Priorities & Vendor Operations Roadmap (Budget, Quality, Innovation)' },
+      { url: '/assets/mbr-qbr-deck/slide-66.jpg', caption: 'Slide 66: Business Impact, Cost Per Word (-30%) & Quality Thresholds (<5% Defects)' }
+    ]
   }
 };
 
@@ -642,6 +736,16 @@ export const projects = [
     image: '/assets/build-journey/experiences-star-bento.jpg',
     tags: ['STAR Framework', 'Interview Prep', 'Antigravity AI', '8 Pillars'],
     link: '/experiences',
+    featured: false,
+    hasDetailPage: true
+  },
+  {
+    id: 'mbr-qbr-vendor-bi',
+    title: 'MBR/QBR, Vendor Governance & BI',
+    description: 'Executive showcase of Monthly and Quarterly Business Review (MBR/QBR) slides, vendor SOW governance presentations, and typical Business Intelligence telemetry graphs (illustrative data for NDA compliance) presented to senior leadership teams.',
+    image: '/assets/mbr-qbr-deck/slide-49.jpg',
+    tags: ['MBR / QBR', 'Vendor Governance', 'Business Intelligence', 'OPEX & SLAs'],
+    link: '/mbr-qbr-showcase',
     featured: false,
     hasDetailPage: true
   },

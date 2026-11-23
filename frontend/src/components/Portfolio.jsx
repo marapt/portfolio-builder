@@ -213,6 +213,43 @@ const Portfolio = () => {
               </div>
             </div>
           </Link>
+
+          {/* Executive MBR/QBR, Vendor Governance & BI Telemetry Showcase Feature */}
+          <Link to="/mbr-qbr-showcase" className="block group">
+            <div className="bg-gradient-to-br from-[#0c1626] via-[#0f1f38] to-[#0b1322] border border-cyan-900/60 rounded-[3rem] p-8 lg:p-12 shadow-xl hover:shadow-2xl hover:border-cyan-400/50 transition-all duration-500 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none -z-0"></div>
+              <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div className="lg:col-span-8">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <span className="px-3.5 py-1 rounded-full bg-cyan-950/90 border border-cyan-700/60 text-cyan-300 text-[10px] font-black uppercase tracking-wider">
+                      {isPt ? 'Showcase Executivo MBR/QBR & BI' : 'Executive MBR/QBR & BI Showcase'}
+                    </span>
+                    <span className="text-slate-400 text-xs font-semibold">
+                      {isPt
+                        ? 'Governação de Fornecedores · Gráficos OPEX · Dados Ilustrativos (NDA)'
+                        : 'Vendor Governance · OPEX Graphs · Illustrative Data (NDA)'}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight mb-4 group-hover:text-cyan-300 transition-colors">
+                    {isPt
+                      ? 'Slides MBR/QBR, Governação de Fornecedores e Gráficos de Business Intelligence'
+                      : 'MBR/QBR Presentations, Vendor Governance & Business Intelligence Graphs'}
+                  </h3>
+                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+                    {isPt
+                      ? 'Explore os slides e gráficos típicos de Business Intelligence que apresento a equipas de liderança sénior: scorecards MBR/QBR, análise plurianual de custos OPEX (-25,8%), distribuição por componente (Web, DemandGen, Adhoc) e matrizes de escalões SOW.'
+                      : 'Explore the presentation slides and Business Intelligence charts I present to senior leadership teams: MBR/QBR scorecards, multi-year OPEX optimization (-25.8%), component attribution (Web, DemandGen, Adhoc), and SOW language tiering matrices.'}
+                  </p>
+                </div>
+                <div className="lg:col-span-4 flex lg:justify-end">
+                  <span className="inline-flex items-center gap-3 bg-cyan-600 group-hover:bg-cyan-500 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-wider text-xs shadow-xl shadow-cyan-600/20 transition-all group-hover:translate-x-1">
+                    {isPt ? 'Ver Slides & Gráficos BI' : 'Explore Slides & BI Graphs'}
+                    <ArrowRight size={16} />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* CTA */}

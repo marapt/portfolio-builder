@@ -485,7 +485,7 @@ describe('career timeline placeholder dataset', () => {
         l.url.includes('microsoft.com/en-us/locale')
       )
     ).toBe(true);
-    expect(msft.evidence.sections).toHaveLength(8);
+    expect(msft.evidence.sections).toHaveLength(9);
     expect(msft.evidence.sections[1].id).toBe('adobe-partnership-integration');
     expect(msft.evidence.sections[1].snapshots).toHaveLength(1);
     expect(msft.evidence.sections[2].id).toBe('xbox-store-rebrand');
@@ -514,6 +514,8 @@ describe('career timeline placeholder dataset', () => {
     expect(msft.evidence.sections[7].title).toContain(
       'Professional Development & Community Contributions'
     );
+    expect(msft.evidence.sections[8].id).toBe('mbr-qbr-vendor-bi-governance');
+    expect(msft.evidence.sections[8].snapshots).toHaveLength(6);
     expect(msft.highlights.length).toBeGreaterThanOrEqual(4);
     expect(
       msft.highlights.some((h) =>

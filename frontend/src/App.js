@@ -16,6 +16,7 @@ import CareerPage from './pages/CareerPage';
 import AboutPage from './pages/AboutPage';
 import ExperiencesPage from './pages/ExperiencesPage';
 import BuildJourneyPage from './pages/BuildJourneyPage';
+import MbrQbrShowcasePage from './pages/MbrQbrShowcasePage';
 import VideoBubble from './components/VideoBubble';
 
 const ScrollToHash = () => {
@@ -68,6 +69,8 @@ function App() {
           <Route path="/bento" element={<ExperiencesPage />} />
           <Route path="/how-i-built-this" element={<BuildJourneyPage />} />
           <Route path="/build-journey" element={<BuildJourneyPage />} />
+          <Route path="/mbr-qbr-showcase" element={<MbrQbrShowcasePage />} />
+          <Route path="/case-studies/mbr-qbr-vendor-bi" element={<MbrQbrShowcasePage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
         <VideoBubble />
