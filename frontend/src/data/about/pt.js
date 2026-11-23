@@ -2,9 +2,9 @@
 
 export const aboutHero = {
   eyebrow: 'Gestão de Programas Empresariais & Narrativa de Sistemas',
-  title: 'Líder Global de PgM & Gestora de Operações - Objetivo: Aberta a Oportunidades em Operações e Gestão de Programas',
+  title: 'Líder Global de PgM & Gestora de Operações - Aberta a Oportunidades em Operações e Gestão de Programas',
   titlePrimary: 'Líder Global de PgM & Gestora de Operações',
-  titleSecondary: 'Objetivo: Aberta a Oportunidades em Operações e Gestão de Programas',
+  titleSecondary: 'Aberta a Oportunidades em Operações e Gestão de Programas',
   lead:
     'Com base em anos de expansão de lançamentos globais, fluxos de ferramentas e operações multifuncionais nas principais organizações tecnológicas, trago a liderança de programas de grande escala para a gestão de programas empresariais (PgM): transformando iniciativas ambíguas e multifuncionais em sistemas operacionais previsíveis e resultados mensuráveis entre equipas, sistemas e mercados.',
   tagline:

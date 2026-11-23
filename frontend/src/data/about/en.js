@@ -2,9 +2,9 @@
 
 export const aboutHero = {
   eyebrow: 'Enterprise Program Management & Systems Narrative',
-  title: 'Global PM Lead & Operations Manager - Goal: Open to Opportunities in Operations and Program Management',
+  title: 'Global PM Lead & Operations Manager - Open to Opportunities in Operations and Program Management',
   titlePrimary: 'Global PM Lead & Operations Manager',
-  titleSecondary: 'Goal: Open to Opportunities in Operations and Program Management',
+  titleSecondary: 'Open to Opportunities in Operations and Program Management',
   lead:
     'Grounded in years of scaling global rollouts, tooling workflows, and cross-functional operations across major tech organizations, I bring high-scale program leadership into broader enterprise PgM: turning ambiguous, cross-org initiatives into predictable operating systems and measurable outcomes across teams, systems, and markets.',
   tagline:
